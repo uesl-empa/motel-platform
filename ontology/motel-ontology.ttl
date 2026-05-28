@@ -1,0 +1,10 @@
+@prefix motel: <https://w3id.org/motel#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+motel: a owl:Ontology ;
+    rdfs:label "MOTEL Ontology" ;
+    rdfs:comment "Core ontology scaffold for MOTEL technology data integration." .
+
+motel:Technology a owl:Class ;
+    rdfs:label "Technology" .

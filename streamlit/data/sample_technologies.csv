@@ -1,0 +1,7 @@
+technology,category,capex_chf_per_kw,lifetime_years,efficiency
+Solar PV Utility,conversion,920,30,0.20
+Onshore Wind,conversion,1450,25,0.42
+CCGT,conversion,1100,30,0.58
+Li-Ion Battery,storage,450,15,0.90
+Pumped Hydro,storage,2300,60,0.82
+HVDC Link,grid,1700,40,0.98

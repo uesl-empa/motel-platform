@@ -1,0 +1,4 @@
+source_id,source_name,organization,year,url,license
+refuel_2025,reFuel.ch technology assumptions,ETH Zurich,2025,https://example.org/refuel,CC-BY-4.0
+jasm_2024,JASM parameter release,JASM Consortium,2024,https://example.org/jasm,CC-BY-4.0
+entsoe_2024,ENTSO-E data extract,ENTSO-E,2024,https://example.org/entsoe,CC-BY-4.0

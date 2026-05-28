@@ -1,0 +1,3 @@
+technology_id,name,capex_chf_per_kw,lifetime_years,efficiency,source_id
+hvdc_link,HVDC Link,1700,40,0.98,entsoe_2024
+ac_substation,AC Substation,620,35,0.99,entsoe_2024

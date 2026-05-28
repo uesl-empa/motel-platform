@@ -1,0 +1,3 @@
+technology_id,name,capex_chf_per_kw,lifetime_years,efficiency,source_id
+li_ion_battery,Li-Ion Battery,450,15,0.90,jasm_2024
+pumped_hydro,Pumped Hydro,2300,60,0.82,refuel_2025

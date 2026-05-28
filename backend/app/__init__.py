@@ -1,0 +1,1 @@
+"""MOTEL FastAPI backend package."""
