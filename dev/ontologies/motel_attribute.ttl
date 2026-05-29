@@ -1,0 +1,346 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix oeo: <https://openenergyplatform.org/ontology/oeo/> .
+@prefix motel: <https://empa.ch/motel/> .
+
+<https://empa.ch/motel/attributes/> a owl:Ontology ;
+    rdfs:label "MOTEL Project Technology and Process Attributes Ontology Module"@en ;
+    rdfs:comment "A detailed schema (TBox) defining datatype properties, operational attributes, storage characteristics, quality validation flags, and economic parameters for energy technologies and processes."@en ;
+    owl:versionInfo "1.0.0" .
+
+### -----------------------------------------------------------------
+### Top-Level Abstract Classes (For Domain Mapping)
+### -----------------------------------------------------------------
+
+# Ensuring alignment with the core technology and process classes
+motel:MOTELEntity a owl:Class .
+motel:Technology a owl:Class ; rdfs:subClassOf motel:MOTELEntity .
+motel:Process a owl:Class ; rdfs:subClassOf motel:MOTELEntity .
+
+### -----------------------------------------------------------------
+### Property Hierarchy (Taxonomy of Attributes)
+### -----------------------------------------------------------------
+
+# Base property for all attributes
+motel:hasMOTELAttribute a owl:DatatypeProperty ;
+    rdfs:label "has MOTEL attribute"@en ;
+    rdfs:comment "Super-property grouping all parameter types."@en ;
+    rdfs:domain motel:MOTELEntity .
+
+# Categorised attribute groupings (Sub-properties)
+motel:classificationAttribute rdfs:subPropertyOf motel:hasMOTELAttribute .
+motel:technicalAttribute rdfs:subPropertyOf motel:hasMOTELAttribute .
+motel:conversionAttribute rdfs:subPropertyOf motel:hasMOTELAttribute .
+motel:storageAttribute rdfs:subPropertyOf motel:hasMOTELAttribute .
+motel:economicAttribute rdfs:subPropertyOf motel:hasMOTELAttribute .
+motel:qualityAttribute rdfs:subPropertyOf motel:hasMOTELAttribute .
+motel:balanceAttribute rdfs:subPropertyOf motel:hasMOTELAttribute .
+motel:provenanceAttribute rdfs:subPropertyOf motel:hasMOTELAttribute .
+
+### -----------------------------------------------------------------
+### 1. Classification & Meta-Attributes
+### -----------------------------------------------------------------
+
+motel:techID a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:classificationAttribute ;
+    rdfs:label "technology ID"@en ;
+    rdfs:comment "Unique identifier for the technology (e.g., T_C_Conv_Solar_PV)."@en ;
+    rdfs:range xsd:string .
+
+motel:techYear a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:classificationAttribute ;
+    rdfs:label "technology year"@en ;
+    rdfs:comment "The target projection year for which the parameters are reported (e.g., 2020, 2030, 2040, 2050)."@en ;
+    rdfs:range xsd:integer .
+
+motel:unitOperation a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:classificationAttribute ;
+    rdfs:label "unit operation"@en ;
+    rdfs:comment "Specific component or equipment configuration (e.g., CCGT, PEM, SOFC)."@en ;
+    rdfs:range xsd:string .
+
+motel:techType a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:classificationAttribute ;
+    rdfs:label "technology type"@en ;
+    rdfs:comment "Categorisation to distinguish conversion from storage technologies."@en ;
+    rdfs:range xsd:string .
+
+motel:referenceUnitSize a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "reference unit size"@en ;
+    rdfs:comment "Nameplate capacity on which specific cost and performance data are based [kW] or [ltr]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:costBasis a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "cost basis"@en ;
+    rdfs:comment "Geographical region or framework basis on which cost parameters are defined (e.g., CH, EU)."@en ;
+    rdfs:range xsd:string .
+
+motel:currency a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "currency"@en ;
+    rdfs:comment "Currency code (e.g., CHF, EUR) for monetary expressions."@en ;
+    rdfs:range xsd:string .
+
+motel:trl a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "technology readiness level"@en ;
+    rdfs:comment "Technology Readiness Level index from 1 to 9."@en ;
+    rdfs:range xsd:integer .
+
+motel:techMaturity a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "technology maturity"@en ;
+    rdfs:comment "Qualitative maturity phase (e.g., Prototype, Emerging, Mature)."@en ;
+    rdfs:range xsd:string .
+
+motel:techBoundary a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "technology boundary"@en ;
+    rdfs:comment "Boundary condition for CAPEX accounting (e.g., Inside Gate, Complete Installation)."@en ;
+    rdfs:range xsd:string .
+
+### -----------------------------------------------------------------
+### 2. Efficiency & Operational Parameters
+### -----------------------------------------------------------------
+
+motel:technicalEfficiency a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "technical efficiency"@en ;
+    rdfs:comment "Primary conversion efficiency of the technology [0 to 1]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:theoreticalEfficiency a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "theoretical efficiency limit"@en ;
+    rdfs:comment "Maximum thermodynamic limit of conversion [0 to 1]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:operatingTemperature a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "operating temperature"@en ;
+    rdfs:comment "Characteristic operational process temperature [°C]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:minInstallationSize a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:technicalAttribute ;
+    rdfs:label "minimum installation size"@en ;
+    rdfs:comment "Lower bound capacity limit for scaling [kW] or [kg/h]."@en ;
+    rdfs:range xsd:decimal .
+
+### -----------------------------------------------------------------
+### 3. Flow & Ratio Conversion Parameters
+### -----------------------------------------------------------------
+
+motel:carriersInList a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:conversionAttribute ;
+    rdfs:label "carriers input list"@en ;
+    rdfs:comment "Semicolon-separated list or textual list of raw energy/material inputs."@en ;
+    rdfs:range xsd:string .
+
+motel:mainInputCarrier a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:conversionAttribute ;
+    rdfs:label "main input carrier"@en ;
+    rdfs:comment "The reference input carrier against which conversions are normalised."@en ;
+    rdfs:range xsd:string .
+
+motel:ratiosInList a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:conversionAttribute ;
+    rdfs:label "input ratio values"@en ;
+    rdfs:comment "List of scaling ratios relative to main input."@en ;
+    rdfs:range xsd:string .
+
+motel:carriersOutList a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:conversionAttribute ;
+    rdfs:label "carriers output list"@en ;
+    rdfs:comment "Semicolon-separated list of energy/material output products."@en ;
+    rdfs:range xsd:string .
+
+motel:mainOutputCarrier a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:conversionAttribute ;
+    rdfs:label "main output carrier"@en ;
+    rdfs:comment "The reference output carrier representing nameplate capacity."@en ;
+    rdfs:range xsd:string .
+
+motel:ratiosOutList a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:conversionAttribute ;
+    rdfs:label "output ratio values"@en ;
+    rdfs:comment "List of scaling ratios relative to main output."@en ;
+    rdfs:range xsd:string .
+
+### -----------------------------------------------------------------
+### 4. Storage Specific Parameters (StorTech)
+### -----------------------------------------------------------------
+
+motel:storageCarrier a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "storage carrier"@en ;
+    rdfs:comment "Reference carrier representing the medium being stored."@en ;
+    rdfs:range xsd:string .
+
+motel:minInstallationCapacity a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "minimum storage capacity"@en ;
+    rdfs:comment "Minimum unit size constraints on stored volume/capacity [kWh]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:chargingCapacityFactor a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "charging capacity factor"@en ;
+    rdfs:comment "Ratio of charging power relative to rated capacity (C-rate equivalent) [/h]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:dischargingCapacityFactor a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "discharging capacity factor"@en ;
+    rdfs:comment "Ratio of discharging power relative to rated capacity [/h]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:chargingEfficiency a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "charging efficiency"@en ;
+    rdfs:comment "The efficiency of filling or charging operations [0 to 1]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:dischargingEfficiency a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "discharging efficiency"@en ;
+    rdfs:comment "The efficiency of emptying or discharging operations [0 to 1]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:minSOC a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "minimum state of charge"@en ;
+    rdfs:comment "Lower bounds on stored capacity to prevent degradation [0 to 1]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:maxSOC a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "maximum state of charge"@en ;
+    rdfs:comment "Upper bounds on stored capacity [0 to 1]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:standbyLossPerHour a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:storageAttribute ;
+    rdfs:label "standby loss per hour"@en ;
+    rdfs:comment "Self-discharge rate / thermal leakage per hour [1/h]."@en ;
+    rdfs:range xsd:decimal .
+
+### -----------------------------------------------------------------
+### 5. Economic & Cost Parameters
+### -----------------------------------------------------------------
+
+motel:economicLifetime a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "economic lifetime"@en ;
+    rdfs:comment "The planned operational lifetime of the system [years]."@en ;
+    rdfs:range xsd:integer .
+
+motel:capexOneTime a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "lump-sum CAPEX"@en ;
+    rdfs:comment "Fixed capital expenditure independent of scaling [Currency]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:capexPerCapacity a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "specific CAPEX per capacity"@en ;
+    rdfs:comment "Capital cost per unit of rated power [Currency/kW]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:capexPerStorCapacity a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "specific CAPEX per storage capacity"@en ;
+    rdfs:comment "Capital cost per unit of stored volume [Currency/kWh]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:opexOneTime a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "lump-sum OPEX"@en ;
+    rdfs:comment "Fixed yearly operational expenditure independent of scaling [Currency]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:opexPctOfCapex a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "OPEX percentage of CAPEX"@en ;
+    rdfs:comment "Operational expenditure expressed as a percentage of total CAPEX [%]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:opexPerCapacityYr a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "specific OPEX per capacity per year"@en ;
+    rdfs:comment "Fixed operational cost per unit of rated capacity [Currency/kW/yr]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:opexPerStorCapacityYr a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "specific OPEX per storage capacity per year"@en ;
+    rdfs:comment "Fixed operational cost per unit of storage volume [Currency/kWh/yr]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:opexPerEnergy a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "variable OPEX per energy"@en ;
+    rdfs:comment "Variable operational costs per unit of throughput [Currency/kWh] or [Currency/kg]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:discountRatePct a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:economicAttribute ;
+    rdfs:label "discount rate"@en ;
+    rdfs:comment "Weighted average cost of capital [%]."@en ;
+    rdfs:range xsd:decimal .
+
+### -----------------------------------------------------------------
+### 6. Mass, Energy, Quality, & Provenance Attributes
+### -----------------------------------------------------------------
+
+motel:valueRangeCheck a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:qualityAttribute ;
+    rdfs:label "value range check"@en ;
+    rdfs:comment "Boolean flag representing validation compliance."@en ;
+    rdfs:range xsd:boolean .
+
+motel:uncertaintyRating a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:qualityAttribute ;
+    rdfs:label "uncertainty rating"@en ;
+    rdfs:comment "Quality and uncertainty index classification."@en ;
+    rdfs:range xsd:string .
+
+motel:massInflowList a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:balanceAttribute ;
+    rdfs:label "mass inflows"@en ;
+    rdfs:comment "Mass inputs required to produce 1000 kg of primary product [kg]."@en ;
+    rdfs:range xsd:string .
+
+motel:massOutflowList a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:balanceAttribute ;
+    rdfs:label "mass outflows"@en ;
+    rdfs:comment "Mass outputs/residuals per 1000 kg of primary product [kg]."@en ;
+    rdfs:range xsd:string .
+
+motel:energyBalanceErrorPct a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:balanceAttribute ;
+    rdfs:label "energy balance error"@en ;
+    rdfs:comment "Relative discrepancy between input and output energy bounds [%]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:massBalanceErrorPct a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:balanceAttribute ;
+    rdfs:label "mass balance error"@en ;
+    rdfs:comment "Relative discrepancy between input and output mass flows [%]."@en ;
+    rdfs:range xsd:decimal .
+
+motel:balancePassFlag a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:balanceAttribute ;
+    rdfs:label "balance check pass"@en ;
+    rdfs:comment "Flag indicating if mass/energy bounds close within acceptable tolerances."@en ;
+    rdfs:range xsd:boolean .
+
+motel:sourceReferences a owl:DatatypeProperty ;
+    rdfs:subPropertyOf motel:provenanceAttribute ;
+    rdfs:label "source references"@en ;
+    rdfs:comment "Semicolon-separated list of academic papers or system reports matching the variables."@en ;
+    rdfs:range xsd:string .
