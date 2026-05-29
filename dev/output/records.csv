@@ -1,0 +1,4 @@
+record_id,version_number,date_created,date_modified,tech_id,source_id,assumption_id,geographic_scope,temporal_scope,capacity_scope,system_boundary,attribute_id,value,value_format,value_type,unit,uncertainty,note
+REC_001,1.0,2026-05-29,2026-05-29,TECH_SOLAR_PV_UTILITY,SRC_NREL_ATB_2024,,GEO_USA,TIME_2030,CAP_UTILITY,COND_ISO_BASELOAD,ATTR_CAPEX,920.0,float,numeric,USD/kW,"{'min': 780.0, 'max': 1100.0}","Utility-scale, moderate resource, 2030 projection"
+REC_001,1.0,2026-05-29,2026-05-29,TECH_SOLAR_PV_UTILITY,SRC_NREL_ATB_2024,,GEO_USA,TIME_2030,CAP_UTILITY,COND_ISO_BASELOAD,ATTR_EFFICIENCY,0.21,float,numeric,fraction,0.01,"Module efficiency (DC), monocrystalline silicon"
+REC_001,1.0,2026-05-29,2026-05-29,TECH_SOLAR_PV_UTILITY,SRC_NREL_ATB_2024,,GEO_USA,TIME_2030,CAP_UTILITY,COND_ISO_BASELOAD,ATTR_LIFETIME,30.0,int,numeric,years,,

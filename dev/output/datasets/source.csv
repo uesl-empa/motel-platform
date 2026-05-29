@@ -1,0 +1,2 @@
+source_id,source_description,source_type,link,access_date,pdf_backup,confidence_level,assessment_method,assessment_date
+SRC_NREL_ATB_2024,NREL Annual Technology Baseline 2024,database,https://atb.nrel.gov/,2024-06-01,,high,modeled,2026-05-29
