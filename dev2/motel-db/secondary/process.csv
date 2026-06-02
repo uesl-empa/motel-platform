@@ -1,0 +1,86 @@
+process_id,process_name,process_description,process_type,process_category,feedstocks,products,main_sector
+proc_00001,Ammonia_HaberBosch,Synthesizing Ammonia from Haber Bosch Process,Conversion,Haber Bosch,,,Ammonia
+proc_00002,biomass_gasification_to_syngas,Biomass gasification to syngas,Conversion,Gasification,"Wood, O2",H2,
+proc_00003,CarbonCapture_Amine,CO2 post combustion capture via Amine washing. Temperature swing process. 2030 reference based on an approx. 150 ktCO2/a plant size. ,Conversion,Carbon Capture,"CO2, amine",,Carbon Capture
+proc_00004,CarbonCapture_CO2Waste_Vent,CO₂ venting from waste-related processes.,Conversion,Carbon Capture,waste,,Carbon Capture
+proc_00005,CarbonCapture_CO2Wood_Vent,CO₂ venting from wood-related processes.,Conversion,Carbon Capture,wood,,Carbon Capture
+proc_00006,CarbonCapture_DacAds,Direct air capture using adsorption technology.,Conversion,Carbon Capture,air,,Carbon Capture
+proc_00007,CarbonCapture_Hpc,CO2 post combustion capture via Hot-Potassium Carbonate cycling. Pressure swing process. 2030 reference based on an approx. 150 ktCO2/a plant size. ,Conversion,Carbon Capture,CO2,,Carbon Capture
+proc_00008,CarbonDioxide_CO2Sys_Vent,Carbon dioxide venting from the CO₂ system.,Conversion,CO2 Venting,CO2,,Carbon Dioxide
+proc_00009,CarbonDioxide_Pipeline,Not in Tech description,Conversion,Carbon Transport,,,Carbon Dioxide
+proc_00010,CarbonDioxide_RoadRail,Not in Tech description,Network,CO2 Transport,,biochar,Carbon Dioxide
+proc_00011,CarbonMonoxide_CO_Vent,Carbon monoxide venting.,Conversion,CO2 Venting,,,Carbon Monoxide
+proc_00012,CarbonMonoxide_ElecRR_CO2_CO,"Reverse water gas shift reaction plant. Mature technology, 2040. ",Conversion,Reverse Water Gas Shift Reaction,,,
+proc_00013,CarbonMonoxide_Rwgs_H2_CO,Reverse water gas shift reaction plant. Emerging technology.,Conversion,Reverse Water Gas Shift Reaction,,,Carbon Monoxide
+proc_00014,co_electrolysis,High temperature co-electrolysis of CO2 and H2O,Conversion,Electrolysis,"CO2, H2O, Electricity, heat","CO, H2O, O2",
+proc_00015,co2_direct_reaction,CO2 reduction at electrode surface,Conversion,Hydrogenation,"CO2, H20, Electricity",CO,
+proc_00016,Elec_Ch4_Ccgt,Methane-fueled CCGT with carbon capture and storage (CCS).,Conversion,Electricity Generation,CH4,,
+proc_00017,Elec_Ch4_CcgtCcs,Methane-fueled CCGT with carbon capture and storage (CCS).,Conversion,Electricity Generation,CH4,,
+proc_00018,Elec_Ch4_Chp,Combined heat and power (CHP) generation using methane (CH₄).,Conversion,Electricity Generation,CH4,"heat, electricity",
+proc_00019,Elec_Ch4_Ocgt,Methane-fueled open cycle gas turbine (OCGT) electricity generation.,Conversion,Electricity Generation,CH4,electricity,
+proc_00020,Elec_El13_El47,Electricity network between El13 and El47,Network,Electricity Transport,,electricity,Electricity
+proc_00021,Elec_El47_El13,Coupled electricity network between El47 and El13.,Network,Electricity Transport,,electricity,Electricity
+proc_00022,Elec_El47_ElBdg,Electricity network connection between El47 and buildings.,Network,Electricity Transport,,electricity,Electricity
+proc_00023,Elec_El47_ElRest,Electricity network connection between El47 and other electricity nodes.,Network,Electricity Transport,,electricity,Electricity
+proc_00024,Elec_ElBdg_El47,Coupled electricity network between buildings and El47.,Network,Electricity Transport,,electricity,Electricity
+proc_00025,Elec_ElRest_El47,Coupled electricity network between other electricity nodes and El47.,Network,Electricity Transport,,electricity,Electricity
+proc_00026,Elec_Fuelcell_El47,Electricity generation via fuel cells at node El47.,Conversion,Fuelcell,,,
+proc_00027,Elec_Fuelcell_ElBdg,Electricity generation via fuel cells in buildings (2030).,Conversion,Fuelcell,,electricity,Electricity
+proc_00028,Elec_FuelcellCh4_El47,Methane-fueled fuel cell electricity generation at El47.,Conversion,Fuelcell,,,
+proc_00029,Elec_FuelcellCh4_ElBdg,Methane-fueled fuel cell electricity generation in buildings (2030).,Conversion,Fuelcell,CH4,heat,
+proc_00030,Elec_Geothermal_Chp,Geothermal-based CHP generation (2040).,Conversion,CHP Generation,heat (geothermal),"heat, electricity","Electricity, Heat"
+proc_00031,Elec_H2_Ccgt,Hydrogen-fueled combined cycle gas turbine (CCGT) electricity generation).,Conversion,Electricity Generation,H2,electricity,Electricity
+proc_00032,Elec_H2_Ocgt,Hydrogen-fueled open cycle gas turbine (OCGT) electricity generation.,Conversion,Electricity Generation,H2,electricity,Electricity
+proc_00033,Elec_Msw_Incinerator,Electricity generation from municipal solid waste (MSW) incineration.,Conversion,Digestion,Municipal solid waste,electricity,Electricity
+proc_00034,Elec_Nuclear_U235_El13,Electricity generation from nuclear power (U235) at node El13.,Conversion,Fission,U235,electricity,Electricity
+proc_00035,Elec_Wood_Chp,Combined heat and power (CHP) generation using wood.,Conversion,CHP Generation,Wood,"heat, electricity","Electricity, Heat"
+proc_00036,electrolysis_water,"Electrolysis, water",Conversion,Electrolysis,"H2O, Electricity",H2,
+proc_00037,Hydro_HydroPumped_Pump,Pumped hydroelectric energy storage (pump mode).,Conversion,Hydropower,H2O,electricity,Electricity
+proc_00038,Hydro_HydroPumped_Turbine,Pumped hydroelectric power generation (turbine mode).,Conversion,Hydropower,H2O,electricity,Electricity
+proc_00039,Hydro_HydroRor_Plant,Run-of-river hydroelectric power plant.,Conversion,Hydropower,H2O,electricity,Electricity
+proc_00040,Hydro_HydroS_Turbine,Hydroelectric power generation from storage reservoirs.,Conversion,Hydropower,H2O,electricity,Electricity
+proc_00041,Hydro_HydroSMustrun_Turbine,Must-run hydroelectric power generation from storage reservoirs.,Conversion,Hydropower,H2O,electricity,Electricity
+proc_00042,Hydrocarbons_FischerTropsch_C12,Hydrocarbon (C12) synthesis via Fischer-Tropsch process.,Conversion,FischerTropsch,,C12,Hydrocarbons
+proc_00043,Hydrocarbons_FischerTropsch_C8,Hydrocarbon (C8) synthesis via Fischer-Tropsch process.,Conversion,FischerTropsch,,C8,Hydrocarbons
+proc_00044,Hydrogen_Electrolysis_El47_H2,"Electrolysis 2030, Alkaline technology is the benchmark ",Conversion,Electrolysis,H2O,,Hydrogen
+proc_00045,Hydrogen_Gasification_Msw_H2,Municipal solid waste gasification to hydrogen,Conversion,Gasification,waste,J2,Hydrogen
+proc_00046,Hydrogen_Gasification_Msw_Syngas,Municipal solid waste gasification to syngas,Conversion,Gasification,waste,"CO, H2",Syngas
+proc_00047,Hydrogen_Gasification_Wood_H2,Woody biomass gasification to hydrogen,Conversion,Gasification,wood,H2,Hydrogen
+proc_00048,Hydrogen_Gasification_Wood_Syngas,Woody biomass gasification to syngas,Conversion,Gasification,wood,"CO, H2",Syngas
+proc_00049,Methane_Digestion_BioWet_Ch4,Wet biomass anaerobic digestion with gas separation,Conversion,Digestion,biomass,CH4,
+proc_00050,Methane_Hydrogenation_CO2_Ch4,Methane synthesis from H2 and CO2 via the thermo catalytic Sabatier reaction.,Conversion,Hydrogenation,"H2, CO2",CH4,Methane
+proc_00051,Methane_Hydrogenation_Syngas_Ch4,Methane synthesis from Syngas via the thermo catalytic CO hydrogenation. ,Conversion,Hydrogenation,,CH4,
+proc_00052,methane_synthesis_archea,Bioelectrochemical CO2 hydrogenation via methanogenic archea,Conversion,Hydrogenation,"H2, CO2","CH4, H2O, heat",
+proc_00053,methane_synthesis_biomass,Biological methaniation ,Conversion,Hydrogenation,"H2, CO2","CH4, H2O, heat",
+proc_00054,methane_synthesis_h2_co2_sabatier,Methane synthesis from H2 and CO2 via the thermo catalytic Sabatier reaction,Conversion,Hydrogenation,"H2, CO2","CH4, H2O, heat",
+proc_00055,methane_synthesis_syngas_sabatier,Methane synthesis from Syngas via the thermo catalytic Sabatier reaction,Conversion,Hydrogenation,"H2, CO","CH4, H2O, heat",
+proc_00056,Methanol_Hydrogenation_H2_MeOH,Methanol sysnthesis from hydrogenation,Conversion,Hydrogenation,,CH4,Methanol
+proc_00057,Methanol_Syngas_MeOH,,Conversion,,,CH4,Methanol
+proc_00058,msw_gasification_to_syngas,Municipal solid waste gasification to syngas,Conversion,Gasification,MSW,H2,
+proc_00059,Pyrolysis_BioWet_CBio,Biochar production via pyrolysis of wet biomass.,Conversion,Pyrolysis,biomass,biochar,Carbon Black
+proc_00060,Pyrolysis_Ch4_CCh4,Not in Tech description,Conversion,Pyrolysis,,,
+proc_00061,Pyrolysis_Wood_CBio,Biochar production via pyrolysis of wood.,Conversion,Pyrolysis,wood,biochar,Carbon Black
+proc_00062,reverse_water_gas_shift_reaction,Reverse water gas shift reaction plant,Conversion,Reverse Water Gas Shift Reaction,"H2, CO2, heat",CO,
+proc_00063,ThBdg_Vent,Ventilation heat loss in buildings.,Conversion,Heat loss,heat,,Thermal
+proc_00064,Thermal_MswPh_ThPh_Waste,Waste-fueled thermal energy generation in power plants.,Conversion,Heat generation,waste,heat,
+proc_00065,Thermal_ThAmb_ThHt,Ambient heat extraction for heating (2030).,Conversion,Heat extraction,heat,heat,Thermal
+proc_00066,Thermal_ThDh_ThBdg,Thermal network connection between district heating and buildings.,Network,Transport,heat,,
+proc_00067,Thermal_ThermalBdg_C12,Hydrocarbon-fueled heating system for buildings.,Conversion,Heating,CHn,heat,Thermal
+proc_00068,Thermal_ThermalBdg_Ch4,Methane-fueled heating system for buildings.,Conversion,Heating,methane,heat,
+proc_00069,Thermal_ThermalBdg_El,Electric heating system for buildings.,Conversion,Heating,electricity,heat,Thermal
+proc_00070,Thermal_ThermalBdg_ElBdg_ThSc,Electric heating system for buildings with thermal storage.,Conversion,Heating,electricity,,Thermal
+proc_00071,Thermal_ThermalBdg_Hp,"Generic heat pump for residential heating, fixed COP 4",Conversion,Heatpump,heat,heat,Thermal
+proc_00072,Thermal_ThermalBdg_HpSc,Coupled heat pump system for buildings.,Conversion,Heatpump,heat,,Thermal
+proc_00073,Thermal_ThermalBdg_Wood,Wood-fueled heating system for buildings.,Conversion,Heating,wood,heat,Thermal
+proc_00074,Thermal_ThermalPh_C12,Hydrocarbon-fueled heating system for thermal power plants.,Conversion,Heat generation,CHn,electricity,
+proc_00075,Thermal_ThermalPh_Ch4,Methane-fueled heating system for thermal power plants.,Conversion,Heat generation,CH4,electricity,
+proc_00076,Thermal_ThermalPh_El,Electric heating system for thermal power plants.,Conversion,Heat generation,electricity,electricity,
+proc_00077,Thermal_ThermalPh_H2,Hydrogen-fueled heating system for thermal power plants (2030).,Conversion,Heat generation,H2,electricity,
+proc_00078,Thermal_ThermalPh_Wood,Wood-fueled heating system for thermal power plants.,Conversion,Heat generation,wood,electricity,
+proc_00079,Thermal_ThHt_ThDh,Thermal network connection between heat sources and district heating.,Network,Heat transport,heat,,
+proc_00080,Thermal_ThLt_ThHt,Low-temperature heat upgrade for district heating.,Conversion,Heat generation,heat,heat,Thermal
+proc_00081,ThHt_Vent,Ventilation heat loss at high-temperature heat nodes.,Conversion,Heat loss,heat,,Thermal
+proc_00082,ThLt_Vent,Ventilation heat loss at low-temperature heat nodes.,Conversion,Heat loss,heat,,Thermal
+proc_00083,ThPh_Vent,Ventilation heat loss at thermal power plants.,Conversion,Heat loss,heat,,Thermal
+proc_00084,wet_biomass_anaerobic_digestion_gas_separation,Wet biomass anaerobic digestion with gas separation,Conversion,Digestion,BioWet,"CH4, CO2",
+proc_00085,Wind_Turbine_Generic,Generic wind turbine electricity generation,Conversion,Wind Turbine,wind,electricity,Electricity

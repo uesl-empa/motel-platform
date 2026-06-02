@@ -2,6 +2,8 @@
 
 This guide explains how to run the overnight MVP for Workflow v2.
 
+For the complete end-to-end explanation, see dev/docs/workflow_v2_full_workflow.md.
+
 ## What is included
 
 - A Python workflow engine for record submission, mapping suggestions, and approval.

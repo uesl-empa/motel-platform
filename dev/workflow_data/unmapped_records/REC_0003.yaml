@@ -1,7 +1,7 @@
 {
-  "record_id": "REC_0001",
-  "temp_id": "TMP_0001",
-  "description": "Rooftop solar photovoltaic system for residential electricity generation in Switzerland with typical capex assumptions.",
+  "record_id": "REC_0003",
+  "temp_id": "TMP_0003",
+  "description": "Residential rooftop solar PV system in Switzerland with typical capex assumptions for 2026.",
   "status": "unmapped",
   "scope": {
     "geographic_scope": "GEO_CH",
@@ -11,7 +11,7 @@
   },
   "sources": [
     {
-      "source_id": "SRC_NREL_ATB_2023",
+      "source_id": "SRC_USER_001",
       "relevance": "primary"
     }
   ],
@@ -19,7 +19,7 @@
   "values": [
     {
       "attribute_id": "ATTR_CAPEX",
-      "value": 980.0,
+      "value": 920.0,
       "value_type": "numeric",
       "unit": "CHF/kW",
       "uncertainty": null,
@@ -36,6 +36,6 @@
     "approved_by": null,
     "approved_at": null
   },
-  "created_at": "2026-05-31T20:48:28.005585",
-  "updated_at": "2026-05-31T20:48:28.005680"
+  "created_at": "2026-06-01T10:50:10.569026",
+  "updated_at": "2026-06-01T10:50:10.569157"
 }

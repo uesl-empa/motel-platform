@@ -1,0 +1,318 @@
+## data create by LLM -> NOT USEABLE, too many incorrect info
+
+technology_name: Autothermal Decentralized Pyrolysis Reactor for Biochar Production
+description: 'A techno-economic analysis of biochar production from residual forestry
+  biomass (e.g., acacia, reed, broom, gorse) using an autothermal decentralized pyrolysis
+  reactor in Central Portugal. The process valorizes low-quality biomass to prevent
+  wildfires, produce biochar, and generate carbon credits. Three business scenarios
+  were analyzed, differing in revenue streams: (1) biochar + carbon credits, (2) forest
+  management + biochar + carbon credits, and (3) forest management + biochar + carbon
+  credits + sale of surplus biomass.'
+technology:
+  _description: Technology attributes
+  technology_type: conversion
+  technology_category: renewable
+  technology_assumption: Assumes use of an autothermal decentralized pyrolysis reactor
+    with a capacity of 250 kg dry biomass/h and a biochar yield of 20%.
+  process_name: Pyrolysis
+  process_type: thermochemical conversion
+  process_category: material valorization
+  process_assumption: "Process occurs at 300\u2013700\xB0C without oxygen. Biochar\
+    \ is used as a soil conditioner, adsorbent, or carbon sink."
+scope:
+  _description: Context of the data
+  geographic_scope_description: Central Portugal
+  temporal_scope_description: "2025\u20132045 (20-year project lifetime)"
+  capacity_scope_description: Decentralized, small-scale (250 kg dry biomass/h, 84
+    t biochar/year)
+  system_boundary_description: Grid-connected, autothermal operation with surplus
+    thermal energy repurposed for biomass drying.
+  scope_assumption: "Assumes biomass properties: 0.08\u20130.11 kg H2O/kg biomass\
+    \ (after drying), 0.75\u20130.80 kg volatile compounds/kg dry biomass, 0.012\u2013\
+    0.022 kg ash/kg dry biomass, 0.18\u20130.23 kg fixed carbon/kg dry biomass."
+sources:
+  _description: List of sources
+  _item:
+  - source_description: Journal of Cleaner Production
+    source_type: article
+    link: https://www.sciencedirect.com/science/article/pii/S0959652625025247
+    access_date: '2026-06-01'
+    assessment_method: literature, modeled, estimated
+    assessment_notes: 'Techno-economic analysis based on BioValChar project (DOI:
+      10.54499/PCIF/GVB/0034/2019).'
+  - source_description: 'BioValChar Project: Sustainable valorization of residual
+      biomass into biochar'
+    source_type: report
+    link: 'DOI: 10.54499/PCIF/GVB/0034/2019'
+    assessment_method: field data, experiments
+    assessment_notes: Pilot-scale autothermal auger reactor data.
+values:
+  _description: List of values with uncertainties
+  _item:
+  - attribute_name: Pyrolysis Reactor Capacity
+    attribute_description: Processing capacity of the pyrolysis reactor.
+    unit: kg dry biomass/h
+    value: 250
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 200
+      upper_value: 300
+      uncertainty_assumption: Based on literature (Sahoo et al., 2019; Kim et al.,
+        2015).
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Biochar Yield
+    attribute_description: Yield of biochar from biomass pyrolysis.
+    unit: kg biochar/kg dry biomass
+    value: 0.2
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 0.18
+      upper_value: 0.22
+      uncertainty_assumption: Pilot-scale reactor data (Tarelho et al., 2025).
+    scenario: Base Case
+  - attribute_name: Carbon Sequestration Potential
+    attribute_description: CO2 sequestration potential per ton of biochar.
+    unit: tCO2/t biochar
+    value: 2.4
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 2.0
+      upper_value: 2.6
+      uncertainty_assumption: Based on Labianca et al. (2024) and Santos et al. (2024).
+    scenario: Base Case
+  - attribute_name: Net Present Value (NPV) - Scenario 1
+    attribute_description: NPV for Scenario 1 (Biochar + Carbon Credits).
+    unit: "\u20AC"
+    value: -1360620
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: -1416362
+      upper_value: -590461
+      uncertainty_assumption: "Sensitivity analysis with \xB120% variation in key\
+        \ parameters."
+    scenario: Pessimistic
+    time_index:
+    - '2025'
+  - attribute_name: Net Present Value (NPV) - Scenario 2
+    attribute_description: NPV for Scenario 2 (Forest Management + Biochar + Carbon
+      Credits).
+    unit: "\u20AC"
+    value: 172426
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: -239000
+      upper_value: 559000
+      uncertainty_assumption: Monte Carlo simulation (1000 iterations, triangular
+        distribution).
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Net Present Value (NPV) - Scenario 3
+    attribute_description: NPV for Scenario 3 (Forest Management + Biochar + Carbon
+      Credits + Surplus Biomass Sale).
+    unit: "\u20AC"
+    value: 685234
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 489000
+      upper_value: 855000
+      uncertainty_assumption: Monte Carlo simulation (1000 iterations, triangular
+        distribution).
+    scenario: Optimistic
+    time_index:
+    - '2025'
+  - attribute_name: Internal Rate of Return (IRR) - Scenario 2
+    attribute_description: IRR for Scenario 2.
+    unit: '%'
+    value: 7
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 6
+      upper_value: 13
+      uncertainty_assumption: Sensitivity analysis.
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Internal Rate of Return (IRR) - Scenario 3
+    attribute_description: IRR for Scenario 3.
+    unit: '%'
+    value: 13
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 10
+      upper_value: 13
+      uncertainty_assumption: Sensitivity analysis.
+    scenario: Optimistic
+    time_index:
+    - '2025'
+  - attribute_name: Payback Period (PP) - Scenario 2
+    attribute_description: Payback Period for Scenario 2.
+    unit: years
+    value: 15
+    value_format: int
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Payback Period (PP) - Scenario 3
+    attribute_description: Payback Period for Scenario 3.
+    unit: years
+    value: 8
+    value_format: int
+    scenario: Optimistic
+    time_index:
+    - '2025'
+  - attribute_name: Pyrolysis Reactor Cost
+    attribute_description: Initial investment cost for the pyrolysis reactor.
+    unit: "\u20AC"
+    value: 400000
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 320000
+      upper_value: 500000
+      uncertainty_assumption: Based on Sahoo et al. (2019) and Kim et al. (2015).
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Total Investment Cost - Scenario 1
+    attribute_description: Total capital investment for Scenario 1.
+    unit: "\u20AC"
+    value: 488800
+    value_format: float
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Total Investment Cost - Scenarios 2 & 3
+    attribute_description: Total capital investment for Scenarios 2 and 3.
+    unit: "\u20AC"
+    value: 528700
+    value_format: float
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Annual Operational Cost - Scenario 1
+    attribute_description: Total annual operational cost for Scenario 1.
+    unit: "\u20AC/year"
+    value: 126221
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 83890
+      upper_value: 191901
+      uncertainty_assumption: Includes labor, utilities, storage, and packaging.
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Annual Operational Cost - Scenarios 2 & 3
+    attribute_description: Total annual operational cost for Scenarios 2 and 3.
+    unit: "\u20AC/year"
+    value: 191901
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 126221
+      upper_value: 250000
+      uncertainty_assumption: Includes labor, fuel, forest maintenance, and storage.
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Biochar Price
+    attribute_description: Base price of biochar.
+    unit: "\u20AC/t"
+    value: 900
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 38
+      upper_value: 6451
+      uncertainty_assumption: Market range (Ahsan et al., 2022; Sahoo et al., 2019;
+        Triana and Ota, 2024).
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Carbon Credit Price
+    attribute_description: Base price of carbon credits.
+    unit: "\u20AC/tCO2eq"
+    value: 85.8
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 0.5
+      upper_value: 191
+      uncertainty_assumption: Market range (Fawzy et al., 2022).
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Forest Maintenance Revenue
+    attribute_description: Revenue from forest maintenance operations.
+    unit: "\u20AC/ha"
+    value: 1000
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 956
+      upper_value: 1070
+      uncertainty_assumption: Monte Carlo simulation (1000 iterations).
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Surplus Biomass Price
+    attribute_description: Price of surplus biomass sold.
+    unit: "\u20AC/t"
+    value: 20
+    value_format: float
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Annual Biochar Production
+    attribute_description: Annual production of biochar.
+    unit: t/year
+    value: 84
+    value_format: float
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Annual Carbon Sequestration
+    attribute_description: Annual CO2 sequestration from biochar.
+    unit: tCO2/year
+    value: 200
+    value_format: float
+    scenario: Base Case
+    time_index:
+    - '2025'
+  - attribute_name: Annual Biomass Processing Capacity
+    attribute_description: Annual biomass processing capacity.
+    unit: t dry biomass/year
+    value: 1200
+    value_format: float
+    uncertainty:
+      uncertainty_type: range
+      lower_value: 40
+      upper_value: 260
+      uncertainty_assumption: Monte Carlo simulation (kg/h basis).
+    scenario: Base Case
+    time_index:
+    - '2025'
+tags:
+  related_project: 'BioValChar (DOI: 10.54499/PCIF/GVB/0034/2019)'
+  tags:
+  - biochar
+  - pyrolysis
+  - residual forestry biomass
+  - wildfire prevention
+  - carbon sequestration
+  - techno-economic analysis
+  - Portugal
+  - circular economy
+  - decentralized
+  - Monte Carlo simulation

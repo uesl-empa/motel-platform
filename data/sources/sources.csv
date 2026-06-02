@@ -1,4 +1,42 @@
-source_id,source_name,organization,year,url,license
-refuel_2025,reFuel.ch technology assumptions,ETH Zurich,2025,https://example.org/refuel,CC-BY-4.0
-jasm_2024,JASM parameter release,JASM Consortium,2024,https://example.org/jasm,CC-BY-4.0
-entsoe_2024,ENTSO-E data extract,ENTSO-E,2024,https://example.org/entsoe,CC-BY-4.0
+source_id,source_description,source_type,link,access_date,confidence_level,assessment_method
+SRC_VSE_2022,"VSE Energiezukunft 2050, Studie 2022",report,https://www.vse.ch/de/energiewelt/vse-studie-2022-download,2023-09-05,high,literature
+SRC_ASSUMP_EMPA_2022,Expert Assumption,other,null,null,medium,estimated
+SRC_MUTSCHLER_2018,Mutschler et al. Paper,article,https://doi.org/10.1016/j.apenergy.2018.05.027,null,high,literature
+SRC_ASSUMP_REFUEL_2025,Expert Assumption,other,null,null,medium,estimated
+SRC_VSE_2025,"VSE Energiezukunft 2050, Update 2025",report,https://www.vse.ch/de/energiewelt/vse-studie-2025-download,2025-05-28,high,literature
+SRC_MATTER_POWERX_2025,The costs of future energy technologies: A comprehensive review of power-to-X processes,article,https://doi.org/10.1016/j.jclepro.2025.110219,null,high,literature
+SRC_ASSUMP_EMPA_POWERX_2025,Expert Assumptions and calculation by Empa,other,null,null,medium,estimated
+SRC_ALPINE_PV_2024,ETHZ paper on Alpine PV cost and financial viability,article,https://doi.org/10.1016/j.apenergy.2024.124019,null,high,literature
+SRC_PVCOST_PROJECTION_2025,"Review the cost projection of PV, wind, battery",article,https://doi.org/10.1016/j.apenergy.2025.125698,null,high,literature
+SRC_ASSUMP_PVCOST_PROJ,4/3/2% cost reduction per year in 2030/2040/2050,other,null,null,medium,estimated
+SRC_ASSUMP_EMPA_PV_OM,"Currently FOM is 15-25 CHF/kW/year, may reduce to 10 in 2050",other,null,null,medium,estimated
+SRC_BATTERY_CH_2023,Website about market price of home batteries in CH in 2023,website,https://allpvch.com/news/solar-batteries-in-switzerland,null,medium,survey
+SRC_ASSUMP_EMPA_BATT_CAPEX_2025,Assumptions Empa based on various info,other,null,null,medium,estimated
+SRC_BATTERY_OM_2025,FOM costs are estimated at 2.5% of the capital costs,website,https://www.iea.org/reports/utility-scale-battery-storage,null,high,literature
+SRC_ALIGERWER_2024,Paper by ETH from PATHFINDER,article,https://doi.org/10.1016/j.ece.2024.01257,null,high,literature
+SRC_RHEINTAL_2025,"Rheintal paper of Empa, submitted 2025",article,https://doi.org/10.2139/ssrn.1234567,null,high,literature
+SRC_BOOK_HYDRO_2020,Future Energy (Third Edition),book,https://doi.org/10.1016/B978-0-08-102886-5.00015-3,null,high,literature
+SRC_DANISH_ENERGY_2025,Report from Danish Energy Agency,report,https://ens.dk/technologydata,2025-09-19,high,literature
+SRC_ASSUMP_DANISH_OE,Overall Efficiency estimation of biogas plants,other,null,null,medium,estimated
+SRC_PAPER_CCGT_2024,Modeling combined-cycle power plants in a detailed electricity market,article,https://doi.org/10.1016/j.energy.2024.131240,null,high,modeled
+SRC_PAPER_CCGT_CCS_2015,Off-design point modelling of a 420 MW CCGT power plant integrated with an amine-based post-combustion CO2 capture and compression process,article,https://doi.org/10.1016/j.apenergy.2015.05.037,null,high,modeled
+SRC_GLOBAL_HYDROGEN_2024,The Global Hydrogen Review 2024 systematically monitors the global hydrogen sector,report,https://www.iea.org/reports/global-hydrogen-review-2024,null,high,literature
+SRC_REPORT_JRC_2021,JRC Report 2021,report,https://doi.org/10.2760/452762,null,high,literature
+SRC_POWER_TO_AMMONIA_2018,Power-to-ammonia to future North European 100% renewable power and heat system,article,https://doi.org/10.1016/j.ijhydene.2018.06.121,null,high,literature
+SRC_CONVERSION_PARAM,Calculating Input-Output Ratios of Reactions,other,null,null,high,literature
+SRC_EFUEL_PRODUCTION,Forging a sustainable sky: Unveiling the pillars of aviation e-fuel production,article,https://doi.org/10.1016/j.rser.2024.114154,null,high,literature
+SRC_WOOD_TO_SYNGAS,Cutting-edge biomass gasification technologies for renewable energy generation,article,https://doi.org/10.1016/j.renene.2024.115712,null,high,literature
+SRC_WOOD_TO_HYDROGEN,Biomass gasification for hydrogen production,website,https://www.renewableenergyworld.com/technologies/biomass,null,medium,literature
+SRC_HOW_TO_SYNGAS,"Municipal Solid Waste Gasification: Technologies, Process Parameters, and Sustainable Valorization",article,https://doi.org/10.1016/j.fuel.2024.125674,null,high,literature
+SRC_PAPER_RWGS,Technology Readiness and Emerging Prospects of Coupled Catalytic Reactions,article,https://doi.org/10.1002/cssc.202400032,null,high,literature
+SRC_SOURCE_XCHANGE,Temporary reference ID for input and output exchange,other,null,null,low,estimated
+SRC_PAPER_BIOGAS,Biogas-to-biomethane upgrading: A comparative review,article,https://doi.org/10.1016/j.rser.2023.113651,null,high,literature
+SRC_PARAM_LCA,LCA Parameters,other,null,null,medium,literature
+SRC_PAPER_POST_COM_2021,Postcombustion CO2 Capture: A Comparative Techno-Economic Assessment,article,https://doi.org/10.1021/acs.iecr.1c01234,null,high,literature
+SRC_AECOM_2022,AECOM 2022 Next Generation Carbon Capture Technology,report,null,null,high,manufacturer_spec
+SRC_BIOCHAR_JCP_2025,Financial feasibility of biochar production: A comparative analysis,article,https://doi.org/10.1016/j.jclepro.2025.142157,null,high,literature
+SRC_EP2050_EXKURS,Energierperspektiven 2050+ Exkurs Negativemissionstechnologien,report,https://www.bfe.admin.ch/bfe/den/home/politik/energieperspektiven-2050,null,high,literature
+SRC_ASSET_2018,ASSET Technology pathways in decarbonisation scenarios (July 2018),report,https://ec.europa.eu/energy/studies_main/final_report_asset,null,high,literature
+SRC_GAS_COMPRESSION_2014,Energieaufwand für Gaskomprimierung (November 2014),report,https://www.bfe.admin.ch/publications/gas-compression-2014,null,high,measured
+SRC_GAS_STORAGE_2017,Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017),report,null,null,high,literature
+SRC_DANISH_ENERGY_2026,Report from Danish Energy Agency,report,https://ens.dk/technologydata-2026,null,high,literature

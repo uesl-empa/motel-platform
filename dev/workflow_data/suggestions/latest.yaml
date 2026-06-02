@@ -1,0 +1,24 @@
+{
+  "suggestions": [
+    {
+      "record_id": "REC_0001",
+      "temp_id": "TMP_0001",
+      "suggested_tech_id": "T_C_Conv_Solar_PV",
+      "suggested_process_id": "P_Electricity_Generation",
+      "confidence": 0.3497,
+      "method": "rule_fuzzy",
+      "rationale": "Top name similarity match: Solar photovoltaic system",
+      "ontology_iri": "motel:T_C_Conv_Solar_PV"
+    },
+    {
+      "record_id": "REC_0002",
+      "temp_id": "TMP_0002",
+      "suggested_tech_id": "T_S_Stor_Battery",
+      "suggested_process_id": "P_Charging",
+      "confidence": 0.386,
+      "method": "rule_fuzzy",
+      "rationale": "Top name similarity match: Battery energy storage",
+      "ontology_iri": "motel:T_S_Stor_Battery"
+    }
+  ]
+}

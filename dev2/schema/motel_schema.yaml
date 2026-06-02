@@ -1,0 +1,248 @@
+## This yaml file is to define the data structure and definition for MOTEL project
+# update date: 2026-06-02
+# LOG:
+#  - [2026-06-02]: add 'balancing' under record
+
+## Main records
+
+unmapped_record:
+    _type: records for a single technology, with all information in free-text format (no foreign keys to controlled vocabulary)
+    technology_name: Common name of the technology (if known, e.g., "Solar PV", "Lithium-ion Battery")
+    description: Free-text description of the technology or process (e.g., "A 5 kW rooftop photovoltaic system in Switzerland with 18% efficiency")    
+    
+    technology:
+        _description: Technology attributes (no foreign keys)
+        technology_type: (optional) Type of technology (e.g., conversion, storage, distribution, consumption)
+        technology_category: (optional) Category of technology (e.g., renewable, non-renewable, synthetic)
+        technology_assumption: (optional) Any specific assumptions about the technology definition (e.g., "using the data from a demo plant in the UK")
+        process_name: (optional) Name of the process (e.g., "Electricity Generation", "Hydro Pumping")
+        process_type: (optional) Type of process (e.g., conversion, storage, distribution)
+        process_category: (optional)Category of process (e.g., power, heat, transport)
+        process_assumption: (optional) Any specific assumptions about the process definition (e.g., "assuming the H2 turbine is similar to the latest gas turbine technology")        
+    scope:
+        _description: Defines the context where this data applies (no foreign keys)
+        geographic_scope_description: Description of the geographic area (e.g., "Switzerland", "European Union", "Global")
+        temporal_scope_description: Description of the time period (e.g., "2025", "2020-2030", "2050 Scenario")
+        capacity_scope_description: Description of the capacity/scale range (e.g., "residential", "utility-scale", "1-10 MW", "100-500 MW")
+        system_boundary_description: Description of operating conditions or system boundaries (e.g., "isolated system", "grid-connected", "baseload operation")
+        scenario: (optional) Scenario or context for this value (e.g., "Optimistic", "Pessimistic", "Base Case")
+        scope_assumption: (optional) Any specific assumptions about the scope definition (e.g., "data from Germany but apply to the whole EU")
+    sources:
+        _description: List of sources for this record (no foreign keys)
+        _item:
+            source_description: Name or description of the source document/database (e.g., "NREL Annual Technology Baseline 2023")
+            source_type: Type of source (e.g., report, database, article, website, book, user_submission, other)
+            link: DOI or URL link to the source document/database (if available)
+            access_date: (optional) Date when the source was accessed (ISO 8601 format -> YYYY-MM-DD)
+            assessment_method: (optional) How data was obtained (e.g., measured, modeled, estimated, survey, manufacturer_spec, literature)
+            assessment_notes: (optional) Any additional notes about the source (e.g., "Page 45, Table 3")
+    values:
+        _description: List of actual values with uncertainties (no foreign keys to Attribute)
+        _item:
+            attribute_name: Name of the attribute (e.g., "Capital Expenditure", "Efficiency", "Lifetime")
+            attribute_description: Description of what this attribute measures (e.g., "Initial investment cost per kW")
+            unit: Unit of measurement (e.g., USD/kW, fraction, MW, years). Use standard units.
+            value: The actual value of the attribute (numeric, text, boolean, array, or dict)
+            value_format: Data format (e.g., int, float, text, boolean, array)
+            uncertainty:
+                _description: The uncertainty associated with this value
+                uncertainty_type: Type of uncertainty (e.g., range, standard deviation, confidence interval)
+                uncertainty_values: Free text description of the uncertainty values (e.g., "± 10%", "0.8 - 0.9", "std dev = 0.05")
+                uncertainty_assumption: Any additional notes about the uncertainty (e.g., standard deviation, confidence level, distribution type)...            
+            time_index: Time periods (if time_dependent=true, e.g., 2025, 2030, 2050)
+    balancing:
+        _description: Information about conversion balances if this record includes conversion relationships
+        inputs:
+            _description: List of input carriers and their shares
+            _item:
+                carrier_name: Name of the input energy/mass carrier (e.g., "Electricity", "Natural Gas")
+                share: Share of this carrier in the total input (e.g., 0.7 means 70% of the input is this carrier)
+                unit: Unit of measurement for the share (e.g., fraction, percentage)
+                # uncertainty: (optional) to be considered...
+            _description: List of output carriers and their shares
+            _item:
+                carrier_name: Name of the output energy/mass carrier (e.g., "Electricity", "Heat")
+                share: Share of this carrier in the total output (e.g., 0.8 means 80% of the output is this carrier)
+                unit: Unit of measurement for the share (e.g., fraction, percentage)
+                # uncertainty: (optional) to be considered...
+        balance_assumption: Any additional notes about this conversion balance (e.g., assumptions, conditions, scenario name)
+    tags: 
+        _description: Tags for categorizing the record
+        related_project: (optional) Related project or dataset name (e.g., "Swiss Energy Transition Study", "NREL ATB 2023")
+        tags: (optional) List of keywords or tags for the record (e.g., ["renewable", "solar", "Swiss", "residential"])
+
+
+mapped_record:
+    _type: records
+    record_id: Unique identifier for this record (e.g., REC_001, REC_002)
+    version:
+        _description: Versioning information for this record
+        version_number: Version number (e.g., 1.0, 1.1)
+        date_created: Date when this version was created (ISO 8601 format -> YYYY-MM-DD)
+        date_modified: Date when this version was last modified (ISO 8601 format -> YYYY-MM-DD)
+    tech_id: Foreign key to Technology entity. Unique identifier for the technology
+    source_id: Foreign key to Source entity. Identifier of the source document/database
+    assumption_id: Foreign key to Assumption entity. Identifier of the assumption set
+    scope:
+        _description: Defines the context where this data applies
+        geographic_scope: Foreign key to GeographicScope. Where this data applies (e.g., GEO_USA, GEO_EU)
+        temporal_scope: Foreign key to TemporalScope. When this data applies (e.g., TIME_2023, TIME_2020_2025)
+        capacity_scope: Foreign key to CapacityScope. Scale/capacity range (e.g., CAP_100_500_MW, CAP_RESIDENTIAL)
+        system_boundary: Foreign key to SystemBoundary. Operating conditions or system boundaries (e.g., COND_ISO_BASELOAD)
+    values:
+        _description: List of actual values with uncertainties. Supports multiple values with different uncertainty estimates for the same technology.
+        _item:
+            attribute_id: Foreign key to Attribute entity. Unique identifier for the attribute (e.g., ATTR_CAPEX, ATTR_EFFICIENCY)
+            value: The actual value of the attribute. Can be numeric, text, boolean, array, or dict.
+            value_format: 'Data format: int, float, or foreign keys to controlled vacabulary'
+            value_type: 'Data type: numeric, text, boolean, array, timeseries, distribution'
+            unit: Unit of measurement (e.g., USD/kW, fraction, MW, years). Use standard units.
+            uncertainty:
+                _description: The uncertainty associated with this value
+                uncertainty_type: Type of uncertainty (e.g., range, standard deviation, confidence interval)
+                upper_value: Upper bound (if uncertainty_type is range or confidence interval)
+                lower_value: Lower bound (if uncertainty_type is range or confidence interval)
+                other_value: Any other format of uncertainty (e.g., standard deviation value, confidence level)
+                uncertainty_assumption: Any additional notes about the uncertainty (e.g., standard deviation, confidence level, distribution type)... 
+            note: Any additional notes about this value (e.g., assumptions, conditions, scenario name)
+    balancing:
+        _description: Information about conversion balances if this record includes conversion relationships
+        inputs:
+            _description: List of input carriers and their shares
+            main_input: The main input carrier for this conversion (e.g., natural gas, electricity, hydrogen), used for balancing calcaulation
+            _item:
+                carrier_name: Name of the input energy/mass carrier (e.g., "Electricity", "Natural Gas")
+                share: Share of this carrier in the total input (e.g., 0.7 means 70% of the input is this carrier)
+                unit: Unit of measurement for the share (e.g., fraction, percentage)
+        outputs:
+            _description: List of output carriers and their shares
+            main_output: The main output carrier for this conversion (e.g., electricity, heat), used to determine the capacity of technology
+            _item:
+                carrier_name: Name of the output energy/mass carrier (e.g., "Electricity", "Heat")
+                share: Share of this carrier in the total output (e.g., 0.8 means 80% of the output is this carrier)
+                unit: Unit of measurement for the share (e.g., fraction, percentage)
+        balance_assumption: Any additional notes about this conversion balance (e.g., assumptions, conditions, scenario name)    
+
+
+
+## Secondary dataset (linked to the main records)            
+
+# Technology [implementation/hardware] refers to the physical assets and infrastructure in the system. In modeling terms, this includes:
+# - Equipment specifications (capacity, efficiency, ramp rates, lifetime)
+# - Capital and operating costs
+# - Technical constraints (minimum load, start-up times, availability)
+# - Physical characteristics (storage capacity, transmission limits)
+# Examples: solar PV panels, gas turbines, battery storage, heat pumps, transmission lines.
+
+technology:
+    _type: secondary
+    tech_id: Unique identifier for the technology
+    technology_name: Common name of the technology
+    technology_description: Brief description of the technology
+    technology_variant: (optional) Specific variant or subtype of the technology (e.g., "Monocrystalline PV", "Lithium Iron Phosphate Battery")
+    main_process: The process_id of the main process associated with this technology (e.g., "Electricity Generation", "Hydrogen Production")
+    main_operation_unit: The main unit or component of the technology (e.g., "PV panel", "Battery cell", "Electrolyzer stack")
+    ontology_iri: Corresponding Ontology IRI identifier, if available
+
+
+# Process [functional/service-oriented] refers to the flows, conversions, and operational sequences. In modeling terms, this includes:
+# - Conversion relationships (fuel → electricity, electricity → heat)
+
+process:
+    _type: supplementary
+    process_id: Unique identifier for the process
+    process_name: Name of the process
+    process_description: Brief description of the process and its role in the system
+    process_type: Type of process. conversion, storage, distribution, consumption, other
+    process_category: Category of process. (e.g., "CO2 Capture", "Hydrogen Production", "Thermal Storage") 
+    main_sector: The main sector this process belongs to (e.g., power, heat, transport, industry)
+    feedstocks: The primary input carrier for this process (e.g., natural gas, electricity, hydrogen)
+    products: List of main products or outputs from this process (e.g., electricity, heat, hydrogen)
+
+
+source:
+    _type: secondary
+    source_id: Unique identifier of source entity. Identifier of the source document/database (e.g., SRC_NREL_ATB_2023)
+    source_name: Name of the source document or database (e.g., "NREL Annual Technology Baseline 2023")
+    source_description: Description of the source document or database
+    source_type:  Type of source -> report, database, article, website, book, other
+    link: (optional) 'DOI or URL link to the source document/database'
+    access_date: (optional) Date when the source was accessed (ISO 8601 format -> YYYY-MM-DD)
+    confidence_level: (optional) Data quality assessment -> high, medium, low
+    assessment_method: (optional) How data was obtained -> measured, modeled, estimated, survey, manufacturer_spec, literature
+    assessment_date: (optional) When this record was created (ISO 8601 format -> YYYY-MM-DD)
+
+
+conversion_balance:
+    _type: secondary
+    balance_id: Unique identifier for the conversion balance record
+    technology_id: Foreign key to the technology this balance applies to
+    process_id: Foreign key to the process this balance applies to
+    carrier_in: The input energy/mass carrier for this conversion (e.g., natural gas, electricity)
+    carrier_out: The output energy/mass carrier for this conversion (e.g., electricity, heat)
+    ratio: The conversion ratio between input and output carriers (e.g., 0.5 means 1 unit of input produces 0.5 units of output)
+    efficiency: The efficiency of the conversion process (e.g., 0.8 means 80% efficient)
+    note: Any additional notes about this conversion balance (e.g., assumptions, conditions, scenario name)
+
+
+## Supplementary dataset (linked to secondary dataset)
+contributor:
+    _type: supplementary
+    contributor_id: Unique identifier for the contributor
+    name: Full name of the contributor
+    affiliation: Organization or institution the contributor is associated with
+    email: Email address of the contributor
+
+review:
+    _type: secondary
+    record_id: Unique identifier for the record
+    first_reviewer: '[Contributor identifier for the first reviewer'
+    second_reviewer: Contributor identifier for the second reviewer
+    first_review_approver: Contributor identifier for the first approver
+    second_review_approver: Contributor identifier for the second approver
+    first_review_approval_status: Approval status for first review (e.g., pending, approved, rejected)
+    second_review_approval_status: Approval status for second review (e.g., pending, approved, rejected)
+    date_created: Date when the record was created
+    date_modified: Date when the record was last modified
+
+
+## Controlled vocabulary 
+attribute:
+    _type: predefined
+    attribute_id: Unique name/identifier of the attribute
+    attribute_name: Common name of the attribute (e.g., Capital Expenditure, Efficiency)
+    attribute_description: Description of what this attribute measures
+    unit: Standard unit for this attribute (e.g., USD/kW, fraction, MW)
+    data_format: Expected data format for this attribute (e.g., int, float, text, boolean, array)
+    ontology_iri: Corresponding Ontology IRI identifier, if available
+    note: Any additional notes about this attribute
+
+carrier:
+    _type: predefined
+    carrier_id: Unique name/identifier of the energy carrier
+    carrier_name: Common name of the energy carrier (e.g., Electricity, Hydrogen, Natural Gas)
+    carrier_description: Description of the energy carrier (e.g., electricity, hydrogen, natural gas)
+    carrier_type: Type of carrier. fuel, electricity, heat, other
+    carrier_category: Category of carrier. renewable, non-renewable, synthetic, other
+    carrier_reference: The reference information for the carrier definition
+    carrier_note: Any additional notes about this carrier
+
+geographic_scope:
+    _type: predefined
+    geographic_scope: Unique name/identifier of the geographic scope
+    geographic_scope_description: Description of the geographic area (e.g., country, region, global)
+
+temporal_scope:
+    _type: predefined
+    temporal_scope: Unique name/identifier of the temporal scope
+    temporal_scope_description: Description of the time period (e.g., specific year, decade, date range)
+
+capacity_scope:
+    _type: predefined
+    capacity_scope: Unique name/identifier of the capacity scope
+    capacity_scope_description: Description of the capacity/scale range (e.g., residential, utility-scale, MW range)
+
+system_boundary:
+    _type: predefined
+    system_boundary: Unique name/identifier of the system boundary
+    system_boundary_description: Description of operating conditions or system boundaries

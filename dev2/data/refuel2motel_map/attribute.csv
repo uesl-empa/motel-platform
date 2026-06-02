@@ -1,0 +1,25 @@
+Raw Attribute,attribute_name,attribute_description,unit,data_format,attribute_note
+overall_efficiency,efficiency_overall,"Ratio of total useful output energy to total input energy.",-,Float,Standard efficiency metric.
+"Input, Output for Overall Efficiency",efficiency_basis,"List of input and output carriers used to calculate overall efficiency.",-,List of Strings,"Defines the carriers for the efficiency calc."
+theoretical_efficiency,efficiency_theoretical,"Maximum thermodynamic efficiency (Carnot limit).",-,Float,Benchmark for performance.
+operating_temperature_c,temp_operating,"Typical operating temperature of the process.",°C,Float,"Critical Fix: Was mapped to discount rate in source."
+min_installation_size,capacity_min,"Minimum viable installation capacity.",kW or kg/h,Float,"Critical Fix: Was mapped to Value Range Check."
+lifetime_yr,lifetime_economic,"Economic lifetime of the asset.",yr,Integer,"Critical Fix: Was mapped to uncertainty rating."
+capex_one_time_eur,capex_fixed,"Fixed capital expenditure (independent of size).",CUR,Float,"Critical Fix: Was mapped to LCA ID."
+capex_power_capacity_eur_per_kw,capex_variable,"Variable capital expenditure per unit of capacity.",CUR/kW,Float,"Critical Fix: Was mapped to LCA unit."
+opex_one_time_eur,opex_fixed,"Fixed operating expenditure (annual).",CUR/yr,Float,"Critical Fix: Was mapped to Embedded Carbon."
+opex_fix_pct_of_capex,opex_fixed_pct,"Fixed OPEX expressed as % of Total CAPEX.",%,Float,"Alternative definition for opex_fixed."
+opex_fix_power_capacity_eur_per_kw_yr,opex_variable,"Variable OPEX per unit of capacity per year.",CUR/kW/yr,Float,"Critical Fix: Was mapped to References."
+opex_energy_eur_per_unit,opex_energy,"Variable OPEX per unit of energy produced.",CUR/MWh,Float,"Correct mapping in source."
+discount_rate_pct,discount_rate,"Discount rate for NPV/LCOE calculations.",%,Float,"Critical Fix: Was mapped to operating temp."
+uncertainty_rating,param_uncertainty,"Qualitative rating of data uncertainty.",-,String or Int,"Critical Fix: Was mapped to lifetime."
+lca_id,lca_dataset_id,"Unique identifier for the LCA dataset.",-,String,"Critical Fix: Was mapped to CAPEX."
+Storage Carrier,storage_carrier,"The physical medium of storage (e.g., 'Li-Ion', 'Water')",-,String,"e.g., 'Li-Ion'"
+Charging Capacity Factor,cha_power_to_energy_ratio,"Ratio of max charge power to energy capacity (e.g., 0.5C)",-,Float,"e.g., 0.5"
+Discharging Capacity Factor,dis_power_to_energy_ratio,"Ratio of max discharge power to energy capacity (e.g., 0.5C)",-,Float,"e.g., 0.5"
+Charging Efficiency,efficiency_charge,"Efficiency of the charging process (e.g., 0.95)",-,Float,"e.g., 0.95"
+Discharging Efficiency,efficiency_discharge,"Efficiency of the discharging process (e.g., 0.95)",-,Float,"e.g., 0.95"
+Minimum SOC,soc_min,"Minimum State of Charge allowed (e.g., 10%)",-,Float,"e.g., 0.1"
+Maximum SOC,soc_max,"Maximum State of Charge allowed (e.g., 90%)",-,Float,"e.g., 0.9"
+Standby Loss,self_discharge_rate,"Energy loss per hour when idle (e.g., 0.1%/hr)",%/hr,Float,"e.g., 0.001"
+Overall Efficiency,efficiency_overall,"Ratio of total useful output energy to total input energy.",-,Float,Standard efficiency metric.

@@ -1,0 +1,96 @@
+tech_id,tech_name,main_operation_unit,technology_description,technology_variant
+tech_00001,Ammonia_HaberBosch,Haber Bosch unit,Ammonia synthesis via Haber Bosch process.,Haber Bosch
+tech_00002,Ammonia_OCGT,OCGT, ,Ammonia fueled
+tech_00003,Amine_Washing_CO2,Amine washing unit,CO2 post combustion capture via Amine washing. Temperature swing process. Reference based on an approx. 150 ktCO2/a plant size. ,Amine washing
+tech_00004,Waste_Venting_CO2,Ventilator,CO2 venting from waste-related processes.,Waste
+tech_00005,Wood_Venting_CO2,Ventilator,CO2 venting from wood-related processes.,Wood
+tech_00006,CarbonCapture_Direct,DAC,Direct air capture using adsorption technology.,Adsorption
+tech_00007,CarbonCapture_PressureSwing,Potassium Carbonate Cycling,CO2 post combustion capture via Hot-Potassium Carbonate cycling. Pressure swing process. Reference based on an approx. 150 ktCO2/a plant size. ,HPC cycling
+tech_00008,CO2_Venting,Ventilator,Carbon dioxide venting from the CO2 system.,CO2 System
+tech_00009,CO2_Pipeline,Pipeline,Carbon Dioxide Pipeline,General
+tech_00010,CO2_Roadrail,"Road, Rail",Not in Tech description,General
+tech_00011,CO_Venting,Venitlator,Carbon monoxide venting.,General
+tech_00012,CO2_RWGS_CO,Electrolyzer, ,Reduction
+tech_00013,H2_CO2_RWGS_CO,RWGS reactor,Reverse water gas shift reaction plant. Emerging technology. ,General
+tech_00014,CH4_CCGT,CCGT,Methane-fueled CCGT,Methane fueled
+tech_00015,CH4_CCGT_CCS,"CCGT, CCS",Methane-fueled CCGT with carbon capture and storage (CCS).,Methane fueled
+tech_00016,CH4_CHP,Heat and power co-generation unit,Combined heat and power (CHP) generation using methane (CH₄).,Methane fueled
+tech_00017,CH4_OCGT,OCGT,Methane-fueled open cycle gas turbine (OCGT) electricity generation.,Methane fueled
+tech_00018,Electricity,Transformer,Not in Tech description,Transmission
+tech_00019,Electricity_Buildings,Grid,Electricity network connection between El47 and buildings.,Distribution
+tech_00020,Electricity_Node47_ToRest,Grid,Electricity network connection between El47 and other electricity nodes.,Distribution
+tech_00021,Coupled_Electricity_Buildings,Grid,Coupled electricity network between buildings and El47.,Distribution
+tech_00022,Coupled_Electricity_Node47_ToRest,Grid,Coupled electricity network between other electricity nodes and El47.,Distribution
+tech_00023,H2_Fuelcell_Buildings,Fuel cell,Electricity generation via fuel cells in buildings.,Hydrogen fueled
+tech_00024,H2_Fuelcell,Fuel cell,Electricity generation via fuel cells at node El47.,Hydrogen fueled
+tech_00025,CH4_Fuelcell,Fuel cell,Methane-fueled fuel cell electricity generation at El47.,Methane fueled
+tech_00026,CH4_Fuelcell_Buildings,Fuel cell,Methane-fueled fuel cell electricity generation in buildings.,Methane fueled
+tech_00027,Geothermal_CHP,Geothermal power plant,Geothermal-based CHP generation.,General
+tech_00028,H2_CCGT,CCGT,Hydrogen-fueled combined cycle gas turbine (CCGT) electricity generation.,Hydrogen fueled
+tech_00029,H2_OCGT,OCGT,Hydrogen-fueled open cycle gas turbine (OCGT) electricity generation.,Hydrogen fueled
+tech_00030,MunicipalSolidWaste_Incinerator_Electricity,Incineration Plant,Electricity generation from municipal solid waste (MSW) incineration.,Waste
+tech_00031,U235_NuclearReactor_Electricity,Nuclear power Plant,Electricity generation from nuclear power (U235) at node El13.,U235
+tech_00032,Wood_CHP,Heat and power co-generation unit,Combined heat and power (CHP) generation using wood.,Wood
+tech_00033,Hydro_Pumped_Pump,Hydropower Plant,Pumped hydroelectric energy storage (pump mode).,Pumped
+tech_00034,Hydro_Pumped_Turbine,Hydropower Plant,Pumped hydroelectric power generation (turbine mode).,Pumped
+tech_00035,Hydro_Run-of-river,Hydropower Plant,Run-of-river hydroelectric power plant.,Run-of-river
+tech_00036,Hydro_Storage_Turbine,Hydropower Plant,Hydroelectric power generation from storage reservoirs.,Storage resevoirs
+tech_00037,Hydro_Storage_Must-run_Turbine,Hydropower Plant,Must-run hydroelectric power generation from storage reservoirs.,Mustrun Turbine
+tech_00038,H2_FischerTropsch_C12,Fischer Tropsch unit,Hydrocarbon (C12) synthesis via Fischer-Tropsch process.,Kerosine
+tech_00039,H2_FischerTropsch_C8,Fischer Tropsch unit,Hydrocarbon (C8) synthesis via Fischer-Tropsch process.,Gasoline
+tech_00040,H2_FischerTroptsch_VSE_C12,Fischer Tropsch unit,Hydrocarbon (C12) synthesis via Fischer-Tropsch process.,Kerosine
+tech_00041,H2_Electrolysis,Electrolyzer,"Electrolysis, Alkaline technology (10 MW) from Danish Energy Reports 2025 is the benchmark ",AEC
+tech_00042,Waste_Waste_Hydrogen,Fluidized Bed Gasifier,Municipal solid waste gasification to hydrogen,Waste
+tech_00043,Waste_Gasification_Syngas,Fluidized Bed Gasifier,Municipal solid waste gasification to syngas,Waste
+tech_00044,Wood_Gasification_Hydrogen,Fluidized Bed Gasifier,Woody biomass gasification to hydrogen,Wood
+tech_00045,Wood_Gasification_Syngas,Fluidized Bed Gasifier,Woody biomass gasification to syngas,Wood
+tech_00046,CH4_Digestion,Anaerobic Digestion plant,Wet biomass anaerobic digestion with gas upgrading,Waste
+tech_00047,CH4_Hydrogenation,Sabatier Reaction unit,Methane synthesis from H2 and CO2 via the thermo catalytic Sabatier reaction.,"H2, CO2"
+tech_00048,Syngas_Hydrogenation_CH4,Sabatier Reaction unit,Methane synthesis from Syngas via the thermo catalytic CO hydrogenation. ,CO
+tech_00049,H2_CO2_Hydrogenation_Methanol,Thermo-catalytic methanol synthesis reactor,Methanol synthesis from CO2 hydrogenation,CO2
+tech_00050,Syngas_Hydrogenation_Methanol,Thermo-catalytic methanol synthesis reactor,Methanol synthesis from Syngas via the thermo catalytic CO hydrogenation,CO
+tech_00051,Coupled_Electricity,Grid,Coupled electricity network between El47 and El13.,Transmission
+tech_00052,BioWet_Pyrolysis_CBio,Pyrolyser,Biochar production via pyrolysis of wet biomass.,Wet Biomass
+tech_00053,Methane_Tech_Description,Pyrolyser,Not in Tech description,Methane
+tech_00054,Wood_Pyrolysis_CBio,Pyrolyser,Biochar production via pyrolysis of wood.,Wood
+tech_00055,PV_Alpine_ETHZ,Photovoltaic Plant,"gound-mounted Alpine PV, from ETHZ study in 2024",Ground-mounted Alpine
+tech_00056,PV_Alpin,Photovoltaic Plant,"Alpine PV, from VSE",Alpine
+tech_00057,PV_Roof_Flat,Photovoltaic Rooftop,"rooftop PV, small scale",Rooftop
+tech_00058,Ventilation_Loss_Buildings,Ventilator,Ventilation heat loss in buildings.,Building
+tech_00059,CSW_Thermal,Waste Incineration,Waste-fueled thermal energy generation in power plants.,Waste
+tech_00060,IndustrialHeatPump,Heat Extractor,Ambient heat extraction for heating.,Ambient
+tech_00061,Oil_Heating_Buildings,Oil Boiler,Hydrocarbon-fueled heating system for buildings.,Building
+tech_00062,CH4_Heating_Buildings,Gas Boiler,Methane-fueled heating system for buildings.,Building
+tech_00063,Electric_Heating_Buildings,Heat Pump,Electric heating system for buildings.,Building
+tech_00064,Electro_Acs,Heat Pump,Electric heating system for buildings with thermal storage.,Building
+tech_00065,Heatpump_Residential,Heat Pump,"Generic heat pump for residential heating, fixed COP 4",Building
+tech_00066,Heatpump_Coupled_Buildings,Heat Pump,Coupled heat pump system for buildings.,Building
+tech_00067,Wood_Heating_Buildings,Furnace,Wood-fueled heating system for buildings.,Building
+tech_00068,Oil_Heating_ThermalPowerPlants,Oil Boiler,Hydrocarbon-fueled heating system for thermal power plants.,Thermal Power Plants
+tech_00069,CH4_Heating_ThermalPowerPlants,Gas Boiler,Methane-fueled heating system for thermal power plants.,Thermal Power Plants
+tech_00070,Electric_Heating_ThermalPowerPlants,Heat Pump,Electric heating system for thermal power plants.,Thermal Power Plants
+tech_00071,H2_Heating_ThermalPowerPlants,Gas Boiler,Hydrogen-fueled heating system for thermal power plants.,Thermal Power Plants
+tech_00072,Wood_Heating_ThermalPowerPlants,Furnace,Wood-fueled heating system for thermal power plants.,Thermal Power Plants
+tech_00073,Thermal_Network_DistrictHeating-Buildings,District Heating Network,Thermal network connection between district heating and buildings.,District Heating
+tech_00074,IndustrialHeatPump,Heat Extractor,Low-temperature heat upgrade for district heating.,District Heating
+tech_00075,Thermal_Network_HeatSource_DistrictHeating,District Heating Network,Thermal network connection between heat sources and district heating.,District Heating
+tech_00076,Ventilation_Loss_HighTemp_HeatNodes,Ventilator,Ventilation heat loss at high-temperature heat nodes.,Losses
+tech_00077,Ventilation_Loss_LowTemp_HeatNodes,Ventilator,Ventilation heat loss at low-temperature heat nodes.,Losses
+tech_00078,Ventilation_Loss_ThermalPowerPlants,Ventilator,Ventilation heat loss at thermal power plants.,Losses
+tech_00079,Wind_Turbine,Wind Turbine,Generic wind turbine electricity generation.,General
+tech_00080,Elec_Battery_ElBdg,Battery,"Electric battery storage at home, 2025", 
+tech_00081,Elec_Battery_El47,Battery,"Electric battery storage at the grid, 2020", 
+tech_00082,Hydro_HydroS_Reservoir,Reservoir,"Hydro reservoir, without pump and generator", 
+tech_00083,Hydro_HydroPumped_Reservoir,Reservoir,"Pumped hydro reservoir, without pump and generator", 
+tech_00084,Thermal_ThermalBdg_ThDhw, ,Hot water storage tank at home, 
+tech_00085,Thermal_Generic_ThDh, ,"Thermal storage for district heating, seasonal storage", 
+tech_00086,Thermal_Generic_ThHt, ,, 
+tech_00087,Hydrogen_Tank_Generic,Tank,, 
+tech_00088,Methane_Tank_Ch4,Tank,, 
+tech_00089,Methane_Grid_Ch4, ,, 
+tech_00090,Methane_Ug_Ch4, ,, 
+tech_00091,CarbonDioxide_Tank,Tank,, 
+tech_00092,CarbonMonoxide_Tank,Tank,, 
+tech_00093,C8_Hydrocarbons_Tank,Tank,, 
+tech_00094,C12_Hydrocarbons_Tank,Tank,, 
+tech_00095,NH3_Tank_Generic,Tank,Tank storage for ammonia, 
