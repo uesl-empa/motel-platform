@@ -1,0 +1,220 @@
+unmapped_record:
+    _description: Staging schema for raw, unstructured data ingestion. All fields capture free-text inputs before data normalization.
+    category: record
+    technology_name: '[string, required] The literal unparsed common name or label of the technology as specified in the raw source material.'
+    technology:
+        _description: Contains raw descriptive properties detailing the engineering, structural, and hardware context of the unmapped record.
+        technology_description: '[string, required] Free-text engineering parameters describing the technical baseline of the asset (e.g., ''5 kW rooftop PV in CH with 18% efficiency'').'
+        technology_type: '[string, optional] The structural archetype classifying how the physical asset interacts with energy streams.'
+        technology_category: '[string, optional] Broad domain or energy paradigm grouping for the hardware (e.g., ''renewable'', ''fossil_fuel'', ''nuclear'', ''synthetic'').'
+        technology_assumption: '[string, optional] Explicit technical constraints, design variations, or baseline modifications assumed by the raw source provider.'
+        process_name: '[string, optional] The raw action-oriented label identifying the conversion or functional service taking place.'
+        process_type: '[string, optional] The engineering classification of the operational flow dynamics.'
+        process_category: '[string, optional] The sector or technical thematic domain the flow processes belong to (e.g., ''power'', ''low_temp_heat'', ''heavy_industry'').'
+        process_assumption: '[string, optional] Documented technical assumptions regarding thermodynamic efficiencies, input/output structures, or conversion limits.'
+    scope:
+        _description: Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
+        geographic_scope_description: '[string, required] Literal unparsed geographic area or region where data was measured or intended (e.g., ''Switzerland'', ''EU27'').'
+        temporal_scope_description: '[string, required] The targeted implementation or performance year/period (e.g., ''2025'', ''2030-2040 baseline'').'
+        capacity_scope_description: '[string, required] The scale boundary or equipment sizing threshold of the recorded asset (e.g., ''residential'', ''utility-scale'', ''10-50 MW'').'
+        system_boundary_description: '[string, required] Operational infrastructure dependencies or network connection states (e.g., ''grid-connected'', ''islanded microgrid'').'
+        scenario: '[string, optional] The specific modeled narrative or sensitivity track path from the source (e.g., ''Net-Zero Trend'', ''Pessimistic Case'').'
+        scope_assumption: '[string, optional] Contextual assumptions regarding spatial or temporal translatability (e.g., ''data modeled for DE but valid for Central Europe'').'
+    sources:
+        _description: '[array, required] Collection of background reference literature, reports, databases, or creator credentials tracking data origins.'
+        items:
+            source_description: '[string, required] Full descriptive reference name or document citation string (e.g., ''NREL Annual Technology Baseline 2023'').'
+            source_type: '[string, required] Structural classification tracking the material medium of the reference asset.'
+            link: '[string, required, format: uri] Digital Object Identifier (DOI) path or fully qualified URL link to the original asset location.'
+            access_date: '[string, optional, format: date] ISO 8601 calendar date tracking when the source material was verified or scraped (YYYY-MM-DD).'
+            assessment_method: '[string, optional] Methodological procedure used by the original creator to establish the baseline parameters.'
+            assessment_notes: '[string, optional] Granular internal context index locations (e.g., ''Page 104, Appendix Table B.2'').'
+    attributes:
+        _description: '[array, required] Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile.'
+        items:
+            attribute_name: '[string, required] Target metric descriptive identifier (e.g., ''Fixed OPEX'', ''Electrical Efficiency'').'
+            attribute_description: '[string, required] Functional explanation defining what the unmapped variable quantifies or restricts.'
+            unit: '[string, required] Literal string representation of engineering or monetary units (e.g., ''EUR/kW/year'', ''fraction'').'
+            value: '[[number, string, boolean, array, dict], required] The actual core data value recorded for the target attribute field.'
+            value_format: '[string, required] Primitive computer science notation describing the data structure format of the value field.'
+            uncertainty:
+                _description: The mathematical or statistical margin of error bounding the reported data point value.
+                uncertainty_type: '[string, required] The statistical framework or representation method used to express the data''s margin of error.'
+                uncertainty_values: '[string, required] The literal string notation detailing error spreads or numeric deviations (e.g., ''Â± 10%'', ''0.8 - 0.9'').'
+                uncertainty_assumption: '[string, optional] Contextual qualitative insights regarding the underlying statistical distribution or confidence boundaries.'
+            time_index:
+                _description: '[array, required] Chronological anchor strings tracking multi-period or profile datasets (e.g., list of target years).'
+                items: string
+    balancing:
+        _description: Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
+        inputs:
+            _description: '[array, required] Array listing incoming resource vectors and their relative share proportions.'
+            items:
+                carrier_name: '[string, required] Literal name of the unmapped input commodity flow (e.g., ''Biomass'', ''Grid Electricity'').'
+                share: '[float, required] Proportional numeric value tracking this specific carrier''s fraction of total cumulative feedstocks.'
+                unit: '[string, required] Measurement reference indicator bounding how the feedstock share value is quantified.'
+        main_input: '[string, required] The designated baseline input carrier used as the denominator anchor for sizing efficiency conversion equations.'
+        outputs:
+            _description: '[array, required] Array listing outgoing resource vectors and their relative share proportions.'
+            items:
+                carrier_name: '[string, required] Literal name of the unmapped output commodity flow (e.g., ''Methanol'', ''Low-Temperature Heat'').'
+                share: '[float, required] Proportional numeric value tracking this specific carrier''s fraction of total output yield.'
+                unit: '[string, required] Measurement reference indicator bounding how the product yield share value is quantified.'
+        main_output: '[string, required] The primary target product carrier used by energy modeling solvers to define overall technology capacity limits.'
+        balance_assumption: '[string, optional] Engineering notes surrounding reference environmental or thermodynamic operating states (e.g., ''LHV basis at 15 degrees C'').'
+    tags:
+        _description: Metadata grouping flags used to sort and locate the record within project directories.
+        related_project: '[string, optional] Name of the overarching study consortium, database cluster, or project framework (e.g., ''SWEET-SURE'').'
+        tags:
+            _description: '[array, optional] Arbitrary categorical tag index strings for filtering (e.g., [''residential'', ''decentralised'']).'
+            items: string
+mapped_record:
+    _description: Validated relational matrix record linking strict foreign keys to controlled vocabularies and normalized entities.
+    category: record
+    record_id: '[string, required] Primary database key uniquely mapping this configuration matrix instance (e.g., ''REC_00001'').'
+    version:
+        _description: Maintains formal audit trail history and deployment lifecycles for tracked parameters.
+        version_number: '[string, required] Semantic version tracking text for schema iteration indexing (e.g., ''2.1.0'').'
+        date_created: '[string, required, format: date] ISO 8601 creation calendar timestamp (YYYY-MM-DD).'
+        date_modified: '[string, required, format: date] ISO 8601 calendar timestamp tracking the most recent attribute update or review patch (YYYY-MM-DD).'
+    tech_id: '[string, required, fk -> technology.tech_id] Relational link tying these data values to a specific validated, concrete physical equipment asset.'
+    source_id: '[string, required, fk -> source.source_id] Relational link tying these values back to an explicitly validated and structured literature profile node.'
+    assumption_id: '[string, optional] Relational link referencing a shared global assumption profile block used across multiple distinct data points.'
+    scope:
+        _description: Structured boundaries restricting model solver access based on spatial and temporal network rules.
+        geographic_scope: '[string, required, fk -> geographic_scope.geographic_scope] Foreign key reference anchoring the boundary to a controlled geographic territory token.'
+        temporal_scope: '[string, required, fk -> temporal_scope.temporal_scope] Foreign key reference anchoring the validity to a specific target model timeframe index node.'
+        capacity_scope: '[string, required, fk -> capacity_scope.capacity_scope] Foreign key reference linking data validity to specific structured capacity bounds.'
+        system_boundary: '[string, required, fk -> system_boundary.system_boundary] Foreign key reference specifying configuration boundaries under a controlled system archetype.'
+    values:
+        _description: '[array, required] Normalized parameter arrays binding attributes to precise mathematical numbers and explicit engineering error bounds.'
+        items:
+            attribute_id: '[string, required, fk -> attribute.attribute_id] Foreign key reference targeting an engineering metric variable within the controlled vocabulary.'
+            value: '[[number, string, boolean, array, dict], required] The computational data payload matching the data schema constraints of the assigned attribute.'
+            value_format: '[string, required] Strict variable typing rules or code compilation path rules used to format downstream array parsers.'
+            value_type: '[string, required] System logic classification determining how downstream solvers treat the parameter matrix entry.'
+            unit: '[string, required] System-wide normalized execution unit string strictly synced with core attribute standard definitions.'
+            uncertainty:
+                _description: Fleshed-out relational boundaries mapping exact low/high limits for stochastic or deterministic sensitivity runs.
+                uncertainty_type: '[string, required] Mathematical formatting context governing how upper, lower, and standard error variables are processed.'
+                upper_value: '[float, optional] The absolute maximum upper bounding value observed under testing thresholds.'
+                lower_value: '[float, optional] The absolute minimum lower bounding value observed under testing thresholds.'
+                other_value: '[string, optional] Alternative notation values or alphanumeric statistical metadata payloads (e.g., confidence step percentages).'
+                uncertainty_assumption: '[string, optional] Relational notation tracking the statistical distribution profiles applied during solver execution.'
+            note: '[string, optional] User-facing comment string highlighting internal computational idiosyncrasies.'
+    balancing:
+        _description: Structured conversion matrix balancing multiple inputs and outputs via controlled system carrier elements.
+        inputs:
+            _description: '[array, required] List matching verified system incoming input resource streams.'
+            items:
+                carrier_id: '[string, required, fk -> carrier.carrier_id] Foreign key referencing a unique energy carrier entity from the controlled vocabulary.'
+                share: '[float, required] Proportional numeric value tracking this specific carrier''s fraction of total cumulative feedstocks.'
+                unit: '[string, required] Measurement reference indicator bounding how the feedstock share value is quantified.'
+        main_input: '[string, required, fk -> carrier.carrier_id] Foreign key establishing the primary commodity vector denominator used for efficiency index evaluations.'
+        outputs:
+            _description: '[array, required] List matching verified system outgoing output resource streams.'
+            items:
+                carrier_id: '[string, required, fk -> carrier.carrier_id] Foreign key referencing a unique energy carrier entity from the controlled vocabulary.'
+                share: '[float, required] Proportional numeric value tracking this specific carrier''s fraction of total output yield.'
+                unit: '[string, required] Measurement reference indicator bounding how the product yield share value is quantified.'
+        main_output: '[string, required, fk -> carrier.carrier_id] Foreign key tracking the primary output commodity used by modeling engines to evaluate capacity scaling size limits.'
+        balance_assumption: '[string, optional] Relational balance remarks referencing specific standardized thermal or pressure states.'
+technology:
+    _description: Defines asset-specific physical infrastructure, operational limits, costs, and hardware profiles.
+    category: secondary
+    tech_id: '[string, required] Unique alphanumerical hardware key acting as the primary key for physical equipment assets (e.g., ''tech_00041'').'
+    technology_name: '[string, required] Standardized machine-readable asset identifier using snake_case (e.g., ''El_Electrolysis_Alkaline'').'
+    technology_description: '[string, required] Engineering narrative defining the technical performance bounds, scope limits, or mechanical configurations of the hardware.'
+    technology_variant: '[string, optional] The hyper-specific architectural subcategory or cell structure of the asset (e.g., ''Anion Exchange Membrane'').'
+    main_process: '[string, required, fk -> process.process_id] Foreign key mapping this physical asset back to the core operational network service node it serves.'
+    main_operation_unit: '[string, required] The localized machinery component where the mechanical transformation occurs (e.g., ''Fuel cell stack'', ''Gas core'').'
+    ontology_iri: '[string, optional, format: uri] Fully resolved link connecting this hardware structure to external semantic web frameworks like OEO or Wikidata.'
+process:
+    _description: Defines functional service pathways, mass balances, and grid conversion topologies independently of physical hardware.
+    category: supplementary
+    process_id: '[string, required] Unique alphanumerical operational link key acting as the primary key for functional pathways (e.g., ''proc_H2_prod'').'
+    process_name: '[string, required] Standardized human-readable label defining the service framework action (e.g., ''Hydrogen Production'').'
+    process_description: '[string, required] Summary outlining the physical, chemical, or thermodynamic conversion pipeline, explaining its placement within the net grid.'
+    process_type: '[string, required] Core energy system framework archetype classifying the physical dynamic of this process.'
+    process_category: '[string, required] Technical operational grouping identifying the engineering discipline classification (e.g., ''Thermochemical Upgrading'').'
+    main_sector: '[string, required] The primary energy system demand vector this flow interfaces with (e.g., ''power'', ''heat'', ''transport'', ''industry'').'
+    feedstocks:
+        _description: '[array, required] Array of controlled vocabulary carrier_ids entering this process pipeline node as raw consumables.'
+        items: string
+    products:
+        _description: '[array, required] Array of controlled vocabulary carrier_ids exiting this process pipeline node as useful commodities or emissions.'
+        items: string
+    technologies:
+        _description: '[array, required, fk -> technology.tech_id] List array of all competing physical infrastructure hardware modules linked to this process node (One-to-Many Architecture).'
+        items: string
+source:
+    _description: Stores historical literature origins, validation criteria, and source citation indices.
+    category: secondary
+    source_id: '[string, required] Unique primary identifier index tracking reference origin profiles (e.g., ''SRC_NREL_ATB_2023'').'
+    source_name: '[string, required] Standard clean citation title of the source document or relational library database.'
+    source_description: '[string, required] Comprehensive breakdown tracking data collection scope, original authors, and reference metadata profiles.'
+    source_type: '[string, required] Classification profile sorting the structural medium of the referencing material.'
+    link: '[string, optional, format: uri] Direct URL or Digital Object Identifier (DOI) web path to the original publication source.'
+    access_date: '[string, optional, format: date] ISO 8601 logging calendar stamp indicating when the source record was retrieved or audited (YYYY-MM-DD).'
+    confidence_level: '[string, optional] Data governance quality score based on source prestige, transparency, and data age parameters.'
+    assessment_method: '[string, optional] Procedural framework tracking how the source data point values were fundamentally calculated.'
+    assessment_date: '[string, optional, format: date] ISO 8601 calendar date logging when the record was formally curated into the MOTEL database structure (YYYY-MM-DD).'
+contributor:
+    _description: Tracks account credentials and institutional profiles of research personnel updating dataset elements.
+    category: supplementary
+    contributor_id: '[string, required] Primary key string identifying a distinct user profile entity within the governance matrix.'
+    name: '[string, required] Full professional legal name of the research contributor.'
+    affiliation: '[string, required] The primary university, corporate entity, or laboratory group representing the user (e.g., ''ETH Zurich'').'
+    email: '[string, required, format: email] Validated active academic or professional communication endpoint address.'
+review:
+    _description: Data quality assurance tracking block monitoring validation status steps across multi-stage review pipelines.
+    category: secondary
+    record_id: '[string, required, fk -> mapped_record.record_id] Foreign key linkage targeting the exact mapped record object undergoing peer-review assessment.'
+    first_reviewer: '[string, required, fk -> contributor.contributor_id] Contributor foreign key locating the designated primary domain-expert auditor.'
+    second_reviewer: '[string, required, fk -> contributor.contributor_id] Contributor foreign key locating the secondary cross-disciplinary verification auditor.'
+    first_review_approver: '[string, required, fk -> contributor.contributor_id] Contributor foreign key locating the senior research authority clearing the entry for release staging.'
+    second_review_approver: '[string, required, fk -> contributor.contributor_id] Contributor foreign key locating the second database administrator clearing the relational matrix entry.'
+    first_review_approval_status: '[string, required] Real-time state flag tracking progress through the initial gatekeeper validation checks.'
+    second_review_approval_status: '[string, required] Real-time state flag tracking progress through the secondary database structural validation checks.'
+    date_created: '[string, required, format: date] ISO 8601 record generation calendar timestamp (YYYY-MM-DD).'
+    date_modified: '[string, required, format: date] ISO 8601 entry modification timestamp monitoring governance change interactions (YYYY-MM-DD).'
+attribute:
+    _description: Controlled registry defining standardized cost, parameter, and capability fields across all models.
+    category: predefined
+    attribute_id: '[string, required] Primary key tracking the immutable metric token variable (e.g., ''ATTR_CAPEX'', ''ATTR_ANNUAL_AVAILABILITY'').'
+    attribute_name: '[string, required] Standard human-readable nomenclature name for display layouts (e.g., ''Capital Expenditure'').'
+    attribute_description: '[string, required] Detailed description defining operational math bounds, accounting lines, and engineering definitions.'
+    unit: '[string, required] The strict target standardized canonical unit mandated for this field across database records (e.g., ''USD/kW'').'
+    data_format: '[string, required] Structural parser instruction flag mapping validation rules for primitive cell entry variables.'
+    ontology_iri: '[string, optional, format: uri] External ontology database URI link matching global terminology networks.'
+    note: '[string, optional] System administration annotations detailing specific boundary conditions or parsing edge cases.'
+carrier:
+    _description: Controlled vocabulary framework registering mass and energy commodities routed through model layouts.
+    category: predefined
+    carrier_id: '[string, required] Primary immutable database key identifying a network commodity node (e.g., ''carrier_H2'', ''carrier_AC_electricity'').'
+    carrier_name: '[string, required] Human-readable label mapping the commodity fluid or vector type (e.g., ''Gaseous Hydrogen'').'
+    carrier_description: '[string, required] Explains standard purity constraints, chemical composition expectations, or infrastructure context bounds.'
+    carrier_type: '[string, required] System classification organizing the resource into primary energy or utility archetypes.'
+    carrier_category: '[string, required] Environmental lifecycle grouping for greenhouse gas accounting track protocols.'
+    carrier_reference: '[string, required] Standard references tracking physical density values, enthalpy baselines, or safety rule document IDs.'
+    carrier_note: '[string, optional] Internal engineering system remarks tracking cross-carrier conversion caveats.'
+geographic_scope:
+    _description: Controlled vocabulary indexing geographic bounds and territory constraints.
+    category: predefined
+    geographic_scope: '[string, required] Primary alphanumerical token key mapping spatial domains (e.g., ''GEO_CHE'', ''GEO_EU27'').'
+    geographic_scope_description: '[string, required] Detailed breakdown of political, grid connection, or regional territory lines encompassed by the token.'
+temporal_scope:
+    _description: Controlled vocabulary indexing target implementation horizons and chronological target phases.
+    category: predefined
+    temporal_scope: '[string, required] Primary key mapping specific chronological execution targets (e.g., ''TIME_2030'', ''TIME_2050_NETZERO'').'
+    temporal_scope_description: '[string, required] Clarifies target baseline steps, multi-year model averages, or specific historical weather year projections.'
+capacity_scope:
+    _description: Controlled vocabulary registry organizing equipment scale boundaries and installation tiers.
+    category: predefined
+    capacity_scope: '[string, required] Primary reference token key classifying asset deployment dimensions (e.g., ''CAP_COMMERCIAL_SCALE'').'
+    capacity_scope_description: '[string, required] Strict numeric range boundaries or qualitative engineering definitions of the installation size tier.'
+system_boundary:
+    _description: Controlled vocabulary registry managing network integration states and baseline dispatch roles.
+    category: predefined
+    system_boundary: '[string, required] Primary reference key mapping operational layout system boundaries (e.g., ''BOUND_STANDALONE_OFFGRID'').'
+    system_boundary_description: '[string, required] Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses.'

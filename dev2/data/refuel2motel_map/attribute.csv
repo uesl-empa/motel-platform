@@ -1,25 +1,26 @@
 Raw Attribute,attribute_name,attribute_description,unit,data_format,attribute_note
-overall_efficiency,efficiency_overall,"Ratio of total useful output energy to total input energy.",-,Float,Standard efficiency metric.
-"Input, Output for Overall Efficiency",efficiency_basis,"List of input and output carriers used to calculate overall efficiency.",-,List of Strings,"Defines the carriers for the efficiency calc."
-theoretical_efficiency,efficiency_theoretical,"Maximum thermodynamic efficiency (Carnot limit).",-,Float,Benchmark for performance.
-operating_temperature_c,temp_operating,"Typical operating temperature of the process.",°C,Float,"Critical Fix: Was mapped to discount rate in source."
-min_installation_size,capacity_min,"Minimum viable installation capacity.",kW or kg/h,Float,"Critical Fix: Was mapped to Value Range Check."
-lifetime_yr,lifetime_economic,"Economic lifetime of the asset.",yr,Integer,"Critical Fix: Was mapped to uncertainty rating."
-capex_one_time_eur,capex_fixed,"Fixed capital expenditure (independent of size).",CUR,Float,"Critical Fix: Was mapped to LCA ID."
-capex_power_capacity_eur_per_kw,capex_variable,"Variable capital expenditure per unit of capacity.",CUR/kW,Float,"Critical Fix: Was mapped to LCA unit."
-opex_one_time_eur,opex_fixed,"Fixed operating expenditure (annual).",CUR/yr,Float,"Critical Fix: Was mapped to Embedded Carbon."
-opex_fix_pct_of_capex,opex_fixed_pct,"Fixed OPEX expressed as % of Total CAPEX.",%,Float,"Alternative definition for opex_fixed."
-opex_fix_power_capacity_eur_per_kw_yr,opex_variable,"Variable OPEX per unit of capacity per year.",CUR/kW/yr,Float,"Critical Fix: Was mapped to References."
-opex_energy_eur_per_unit,opex_energy,"Variable OPEX per unit of energy produced.",CUR/MWh,Float,"Correct mapping in source."
-discount_rate_pct,discount_rate,"Discount rate for NPV/LCOE calculations.",%,Float,"Critical Fix: Was mapped to operating temp."
-uncertainty_rating,param_uncertainty,"Qualitative rating of data uncertainty.",-,String or Int,"Critical Fix: Was mapped to lifetime."
-lca_id,lca_dataset_id,"Unique identifier for the LCA dataset.",-,String,"Critical Fix: Was mapped to CAPEX."
-Storage Carrier,storage_carrier,"The physical medium of storage (e.g., 'Li-Ion', 'Water')",-,String,"e.g., 'Li-Ion'"
-Charging Capacity Factor,cha_power_to_energy_ratio,"Ratio of max charge power to energy capacity (e.g., 0.5C)",-,Float,"e.g., 0.5"
-Discharging Capacity Factor,dis_power_to_energy_ratio,"Ratio of max discharge power to energy capacity (e.g., 0.5C)",-,Float,"e.g., 0.5"
-Charging Efficiency,efficiency_charge,"Efficiency of the charging process (e.g., 0.95)",-,Float,"e.g., 0.95"
-Discharging Efficiency,efficiency_discharge,"Efficiency of the discharging process (e.g., 0.95)",-,Float,"e.g., 0.95"
-Minimum SOC,soc_min,"Minimum State of Charge allowed (e.g., 10%)",-,Float,"e.g., 0.1"
-Maximum SOC,soc_max,"Maximum State of Charge allowed (e.g., 90%)",-,Float,"e.g., 0.9"
-Standby Loss,self_discharge_rate,"Energy loss per hour when idle (e.g., 0.1%/hr)",%/hr,Float,"e.g., 0.001"
-Overall Efficiency,efficiency_overall,"Ratio of total useful output energy to total input energy.",-,Float,Standard efficiency metric.
+technical_efficiency,technical_efficiency,Overall energy conversion efficiency: main output energy / main input energy.,-,Float,Based on kW output capacity / LHV (chemical) energy.
+trl,technology_readiness_level,"Technology Readiness Level on the standard 1–9 scale. For non-mature technologies, TRL values progress across tech_year.",-,Integer,See Nomenclature A-3.
+tech_maturity,tech_maturity,Aggregated maturity classification derived from TRL. Updated per tech_year.,-,String,See Nomenclature A-2.
+reference_unit_size,reference_unit_size,Nameplate capacity on which all specific cost and performance data are based.,CAP,Float,Capacity basis for scaling.
+theoretical_efficiency,theoretical_efficiency,Ratio of the main output's energy content (LHV) to the main input's energy content (LHV) at theoretical maximum.,-,Float,May be blank if not applicable.
+operating_temperature_c,operating_temperature,Typical operating temperature of the process.,°C,Float,Relevant for thermal integration.
+min_installation_size,power_capacity_min,Smallest assumed unit capacity for the technology.,CAP,Float,0 if no minimum constraint.
+lifetime_yr,lifetime_economic,Economic lifetime of the asset.,yr,Integer,Expected operational lifetime.
+capex_one_time,capex_one_time,Fixed capital expenditure (independent of size).,CUR,Float,For project lump sum.
+opex_fix_pct_of_capex,opex_fix_pct_of_capex,Fixed annual operational expenditure expressed as a percentage of total CAPEX.,%,Float,-
+opex_per_capacity_yr,opex_per_capacity_yr,"Fixed annual operational expenditure per unit of installed capacity, excluding fuel costs.",CUR / CAP.yr,Float,-
+opex_per_energy,opex_per_energy,"Variable operational expenditure per unit of energy or mass output, excluding fuel costs.",CUR / CAP.hr,Float,-
+discount_rate_pct,discount_rate_pct,Technology-specific weighted average cost of capital for annualising capital expenditure.,%,Float,> 0
+uncertainty_rating,uncertainty_rating,Flag indicating whether parameter values have been cross-checked against literature ranges.,-,Categorical,See Nomenclature.
+storage_carrier,storage_carrier,"The physical medium of storage (e.g., 'Li-Ion', 'Water').",-,String,Carrier abbreviation. Reference Carrier tab.
+min_installation,storage_capacity_min,Smallest assumed storage capacity.,kWh,Float,> 0
+charging_capacity_factor,charging_capacity_factor,Maximum charging power as fraction of rated storage capacity (C-rate equivalent).,1 / h,Float,0 – 1
+discharging_capacity_factor,discharging_capacity_factor,Maximum discharging power as fraction of rated storage capacity.,1 / h,Float,0 – 1
+charging_efficiency,charging_efficiency,Energy efficiency during charging.,-,Float,0 – 1
+discharging_efficiency,discharging_efficiency,Energy efficiency during discharging.,-,Float,0 – 1
+min_soc,soc_min,Minimum state of charge as fraction of total capacity.,-,Float,0 – 1
+max_soc,soc_max,Maximum state of charge as fraction of total capacity.,-,Float,0 – 1
+standby_loss_per_hour,self_discharge_rate,Fractional energy loss per hour during standby (self-discharge rate).,1 / h,Float,> 0
+capex_per_stor_capacity,capex_per_stor_capacity,Specific capital expenditure per unit of installed storage capacity.,CUR / kWh,Float,Primary scaling parameter (StorTech).
+opex_one_time,opex_one_time,Fixed one-time operational expenditure independent of capacity.,CUR,Float,-

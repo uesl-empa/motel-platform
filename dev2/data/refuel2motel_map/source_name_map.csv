@@ -1,0 +1,42 @@
+previous_source_id,new_source_name
+allgoewer_2024,Allgöwer PATHFNDER Study
+rheintal_2025,Empa Rheintal Study
+biochar_jcp_2025,Journal of Cleaner Production Biochar Study
+book_hydropower_2020,Future Energy Hydropower Framework
+paper_CCGT+CCS_2016,CCGT and CCS Integration Modelling Study
+paper_CCGT_2024,Electricity Market Combined Cycle Modelling Study
+paper_Msw to syngas,Municipal Solid Waste Gasification Review
+paper_PVcostProjection_2025,Renewable Cost Projections Review
+paper_RWGS,RWGS Coupled Catalytic Reactions Study
+paper_alpinePV_2024,ETHZ Alpine PV Viability Study
+paper_biogas,Biogas-to-Biomethane Upgrading Assessment
+paper_e-fuel production,Aviation E-Fuel Production Framework
+paper_mutschler_2018,Mutschler Catalytic Kinetics Study
+paper_müller_PowerX_2025,Müller Power-to-X Costs Review
+paper_wood to syngas,Biomass Gasification Technologies Assessment
+report_power_to_ammonia_2018,Power-to-Ammonia Renewable Systems Report
+report_VSE_2022,VSE Energiezukunft 2050 Study
+report_VSE_2025,VSE Energiezukunft 2050 Update
+web_BatteryCH_2023,Alpvolt Swiss Battery Market Analysis
+web_Battery_OM_2025,NREL ATB Battery Cost Framework
+report_BFE_EP2050plus_CCS_2020,BFE Energieperspektiven 2050 Plus NET and CCS Excursus
+report_ASSET_2018,ASSET Decarbonisation Technology Pathways
+report_gas_compression_2014,OST Gas Compression Energy Evaluation
+report_wood to hydrogen,IEA Bioenergy Hydrogen Production Analysis
+assumption_Empa_2022,Empa Baseline Expert Assumption
+assumption_Empa_2025,Empa Project Expert Assumption
+assumption_refuelWp3_2025,ReFuel Work Package 3 Expert Assumption
+AECOM_2022,AECOM Carbon Capture Technoeconomic Analysis
+paper_Postcom_2021,Post-Combustion Carbon Capture Comparative Assessment
+assumption_Empa_PV_OM,Empa Photovoltaic Operational Cost Assumption
+assumption_Empa_battery_capex_2025,Empa Battery Capital Cost Assumption
+assumption_Empa_danish_energy_OE,Empa Biogas Plant Efficiency Operational Assumption
+assumption_PVcostProjection,Photovoltaic Yearly Cost Reduction Projection
+conversion_parametrization,Reaction Input-Output Stoichiometric Conversion
+parameters_lca,Life Cycle Assessment Parameters Framework
+report_danish_energy_2025,Danish Energy Agency Technology Dataset 2025
+report_danish_energy_2026,Danish Energy Agency Technology Dataset 2026
+report_gas_storage_2017,Swiss Natural Gas Storage Capacity Report
+report_global_hydrogen_review_2024,IEA Global Hydrogen Review
+report_jrc_2021,Joint Research Centre Technical Report
+source_share,Process Input-Output Share Allocation Reference

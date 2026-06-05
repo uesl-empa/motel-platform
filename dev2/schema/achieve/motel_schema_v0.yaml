@@ -8,10 +8,11 @@
 unmapped_record:
     _type: records for a single technology, with all information in free-text format (no foreign keys to controlled vocabulary)
     technology_name: Common name of the technology (if known, e.g., "Solar PV", "Lithium-ion Battery")
-    description: Free-text description of the technology or process (e.g., "A 5 kW rooftop photovoltaic system in Switzerland with 18% efficiency")    
+    
     
     technology:
         _description: Technology attributes (no foreign keys)
+        technology_description: Free-text description of the technology or process (e.g., "A 5 kW rooftop photovoltaic system in Switzerland with 18% efficiency")    
         technology_type: (optional) Type of technology (e.g., conversion, storage, distribution, consumption)
         technology_category: (optional) Category of technology (e.g., renewable, non-renewable, synthetic)
         technology_assumption: (optional) Any specific assumptions about the technology definition (e.g., "using the data from a demo plant in the UK")
@@ -36,7 +37,7 @@ unmapped_record:
             access_date: (optional) Date when the source was accessed (ISO 8601 format -> YYYY-MM-DD)
             assessment_method: (optional) How data was obtained (e.g., measured, modeled, estimated, survey, manufacturer_spec, literature)
             assessment_notes: (optional) Any additional notes about the source (e.g., "Page 45, Table 3")
-    values:
+    attributes:
         _description: List of actual values with uncertainties (no foreign keys to Attribute)
         _item:
             attribute_name: Name of the attribute (e.g., "Capital Expenditure", "Efficiency", "Lifetime")
@@ -58,13 +59,14 @@ unmapped_record:
                 carrier_name: Name of the input energy/mass carrier (e.g., "Electricity", "Natural Gas")
                 share: Share of this carrier in the total input (e.g., 0.7 means 70% of the input is this carrier)
                 unit: Unit of measurement for the share (e.g., fraction, percentage)
-                # uncertainty: (optional) to be considered...
+        main_input: The main input carrier for this conversion (e.g., natural gas, electricity, hydrogen), used for balancing calcaulation
+        outputs:
             _description: List of output carriers and their shares
             _item:
                 carrier_name: Name of the output energy/mass carrier (e.g., "Electricity", "Heat")
                 share: Share of this carrier in the total output (e.g., 0.8 means 80% of the output is this carrier)
                 unit: Unit of measurement for the share (e.g., fraction, percentage)
-                # uncertainty: (optional) to be considered...
+        main_output: The main output carrier for this conversion (e.g., electricity, heat), used to determine the capacity of technology
         balance_assumption: Any additional notes about this conversion balance (e.g., assumptions, conditions, scenario name)
     tags: 
         _description: Tags for categorizing the record
@@ -109,18 +111,18 @@ mapped_record:
         _description: Information about conversion balances if this record includes conversion relationships
         inputs:
             _description: List of input carriers and their shares
-            main_input: The main input carrier for this conversion (e.g., natural gas, electricity, hydrogen), used for balancing calcaulation
             _item:
                 carrier_name: Name of the input energy/mass carrier (e.g., "Electricity", "Natural Gas")
                 share: Share of this carrier in the total input (e.g., 0.7 means 70% of the input is this carrier)
                 unit: Unit of measurement for the share (e.g., fraction, percentage)
+        main_input: The main input carrier for this conversion (e.g., natural gas, electricity, hydrogen), used for balancing calcaulation
         outputs:
             _description: List of output carriers and their shares
-            main_output: The main output carrier for this conversion (e.g., electricity, heat), used to determine the capacity of technology
             _item:
                 carrier_name: Name of the output energy/mass carrier (e.g., "Electricity", "Heat")
                 share: Share of this carrier in the total output (e.g., 0.8 means 80% of the output is this carrier)
                 unit: Unit of measurement for the share (e.g., fraction, percentage)
+        main_output: The main output carrier for this conversion (e.g., electricity, heat), used to determine the capacity of technology
         balance_assumption: Any additional notes about this conversion balance (e.g., assumptions, conditions, scenario name)    
 
 
@@ -171,18 +173,6 @@ source:
     confidence_level: (optional) Data quality assessment -> high, medium, low
     assessment_method: (optional) How data was obtained -> measured, modeled, estimated, survey, manufacturer_spec, literature
     assessment_date: (optional) When this record was created (ISO 8601 format -> YYYY-MM-DD)
-
-
-conversion_balance:
-    _type: secondary
-    balance_id: Unique identifier for the conversion balance record
-    technology_id: Foreign key to the technology this balance applies to
-    process_id: Foreign key to the process this balance applies to
-    carrier_in: The input energy/mass carrier for this conversion (e.g., natural gas, electricity)
-    carrier_out: The output energy/mass carrier for this conversion (e.g., electricity, heat)
-    ratio: The conversion ratio between input and output carriers (e.g., 0.5 means 1 unit of input produces 0.5 units of output)
-    efficiency: The efficiency of the conversion process (e.g., 0.8 means 80% efficient)
-    note: Any additional notes about this conversion balance (e.g., assumptions, conditions, scenario name)
 
 
 ## Supplementary dataset (linked to secondary dataset)

@@ -1,0 +1,58 @@
+tech_id,technology_name,technology_description,technology_variant,main_operation_unit
+tech_00001,NH3_CCGT_El,Ammonia-fueled combined cycle gas turbine (CCGT) electricity generation.,CCGT,Gas turbine
+tech_00002,NH3_OCGT_El,Ammonia-fueled open cycle gas turbine (OCGT) electricity generation.,OCGT,Gas turbine
+tech_00003,CH4_CCGT_El,Methane-fueled CCGT with carbon capture and storage (CCS) (2030).,CCGT,Gas turbine
+tech_00004,CH4_CHP_ElTh,Combined heat and power (CHP) generation using methane (CH₄).,CHP plant,Combined heat & power
+tech_00005,CH4_FuelCell_El,Methane-fueled fuel cell electricity generation at El47 (2030).,SOFC,Fuel cell
+tech_00006,CH4_FuelCell_ElBdg,Methane-fueled fuel cell electricity generation in buildings (2030).,SOFC,Fuel cell
+tech_00007,CH4_OCGT_El,Methane-fueled open cycle gas turbine (OCGT) electricity generation (2030).,OCGT,Gas turbine
+tech_00008,Geothermal_CHP_ElTh,Geothermal-based CHP generation (2040).,Geothermal power plant,Combined heat & power
+tech_00009,H2_CCGT_El,Hydrogen-fueled combined cycle gas turbine (CCGT) electricity generation (2050).,CCGT,Gas turbine
+tech_00010,H2_FuelCell_El,Electricity generation via fuel cells at node El47 (2040).,SOFC,Fuel cell
+tech_00011,H2_FuelCell_ElBdg,Electricity generation via fuel cells in buildings (2030).,SOFC,Fuel cell
+tech_00012,H2_OCGT_El,Hydrogen-fueled open cycle gas turbine (OCGT) electricity generation (2050).,OCGT,Gas turbine
+tech_00013,El_PumpedHydro_Pump,Pumped hydroelectric energy storage (pump mode).,Pumped hydro (pump mode),Hydropower
+tech_00014,Hydro_PumpedTurbine_El,Pumped hydroelectric power generation (turbine mode).,Pumped hydro (turbine mode),Hydropower
+tech_00015,Hydro_RunOfRiver_El,Run-of-river hydroelectric power plant.,Run-of-river plant,Hydropower
+tech_00016,Hydro_Reservoir_El,Hydroelectric power generation from storage reservoirs.,Reservoir plant,Hydropower
+tech_00017,MSW_Incineration_El,Electricity generation from municipal solid waste (MSW) incineration.,Incineration plant,Waste incineration
+tech_00018,Solar_PVAlpine_El,"Ground-mounted Alpine PV, from ETHZ study in 2024",Ground-mounted PV (alpine),Photovoltaic
+tech_00019,Solar_PVRooftop_El,"Rooftop PV, small scale, in 2025",Rooftop PV,Photovoltaic
+tech_00020,U235_Nuclear_El,Electricity generation from nuclear power (U235) at node El13.,Pressurised water reactor,Nuclear fission
+tech_00021,Wind_Turbine_El,Generic wind turbine electricity generation (2020).,Onshore wind turbine,Wind power
+tech_00022,Wood_CHP_ElTh,Combined heat and power (CHP) generation using wood.,Biomass CHP plant,Combined heat & power
+tech_00023,CH4_Boiler_ThBdg,Methane-fueled heating system for buildings.,Gas-fired boiler,Boiler
+tech_00024,CH4_Boiler_ThInd,Methane-fueled heating system for thermal power plants.,Gas-fired boiler,Boiler
+tech_00025,El_Heater_ThBdg,Electric heating system for buildings.,Resistance heater,Electric heater
+tech_00026,El_Heater_ThInd,Electric heating system for thermal power plants.,Resistance heater,Electric heater
+tech_00027,El_AirCon_ThSc,Electric cooling and heating system for buildings with thermal storage.,Air conditioning unit,Heat pump
+tech_00028,H2_Boiler_ThInd,Hydrogen-fueled heating system for thermal power plants (2030).,Hydrogen burner,Boiler
+tech_00029,El_HeatPump_ThBdg,"Generic heat pump for residential heating, fixed COP 4",Air-source heat pump,Heat pump
+tech_00030,El_HeatPump_ThInd,Low-temperature heat upgrade for district heating (2030).,Industrial heat pump,Heat pump
+tech_00031,Oil_Boiler_ThBdg,Hydrocarbon-fueled heating system for buildings.,Oil-fired boiler,Boiler
+tech_00032,Oil_Boiler_ThInd,Hydrocarbon-fueled heating system for thermal power plants.,Oil-fired boiler,Boiler
+tech_00033,Wood_Boiler_ThBdg,Wood-fueled heating system for buildings.,Biomass furnace,Boiler
+tech_00034,Wood_Boiler_ThInd,Wood-fueled heating system for thermal power plants.,Biomass furnace,Boiler
+tech_00035,H2_HaberBosch_NH3,Ammonia synthesis (Haber Bosch process),Haber–Bosch reactor,Chemical synthesis
+tech_00036,BioWet_Digestion_CH4,Wet biomass anaerobic digestion with gas upgrading,Anaerobic digester,Anaerobic digestion
+tech_00037,H2_Sabatier_CH4,Methane synthesis from H2 and CO2 via the thermocatalytic Sabatier reaction.,Sabatier reactor,Catalytic hydrogenation
+tech_00038,CookingOil_HEFA_C12,SAF Production via esterification of used cooking oil and animal fat,HEFA reactor,Hydrotreatment
+tech_00039,H2_CO2Hydro_MeOH,Methanol synthesis from CO2 hydrogenation,Methanol synthesis reactor,Catalytic hydrogenation
+tech_00040,H2_RWGS_CO,"Reverse water gas shift reaction plant. Emerging technology, 2030.",RWGS reactor,Catalytic conversion
+tech_00041,El_Electrolysis_H2,"Electrolysis 2030, Alkaline technology (10 MW) from Danish Energy Reports 2025 is the benchmark",Alkaline electrolyser,Electrolysis
+tech_00042,Syngas_FT_C12,Hydrocarbon (C12) synthesis via Fischer-Tropsch process.,FT reactor,Fischer–Tropsch synthesis
+tech_00043,Syngas_FT_C8,Hydrocarbon (C8) synthesis via Fischer-Tropsch process.,FT reactor,Fischer–Tropsch synthesis
+tech_00044,Syngas_COHydro_CH4,Methane synthesis from Syngas via thermocatalytic CO hydrogenation.,Sabatier reactor,Catalytic hydrogenation
+tech_00045,Syngas_COHydro_MeOH,Methanol synthesis from Syngas via thermocatalytic CO hydrogenation,Methanol synthesis reactor,Catalytic hydrogenation
+tech_00046,MSW_Gasification_Syngas,Municipal solid waste gasification to syngas,Fluidised bed gasifier,Gasification
+tech_00047,MSW_Gasification_H2,Municipal solid waste gasification to hydrogen,Fluidised bed gasifier,Gasification
+tech_00048,Wood_Gasification_H2,Woody biomass gasification to hydrogen,Fluidised bed gasifier,Gasification
+tech_00049,Wood_Gasification_Syngas,Woody biomass gasification to syngas,Fluidised bed gasifier,Gasification
+tech_00050,MeOH_MtJ_C12,Methanol-to-Jet fuel via MtO and oligomerisation. Near-term projection.,MtO + oligomerisation reactor,Hydrotreatment
+tech_00051,El_CoElectrolysis_Syngas,High-temperature co-electrolysis of CO₂ and H₂O to syngas (SOEC). Near-term.,SOEC co-electrolyser,Electrolysis
+tech_00052,CH4_Pyrolysis_H2,Methane pyrolysis (turquoise hydrogen). Thermal decomposition of CH₄ into H₂ and solid carbon. Near-term.,Methane pyrolysis reactor,Pyrolysis
+tech_00053,CO2Flue_AmineScrub_CO2,CO2 post combustion capture via Amine washing. Temperature swing process. 2030 reference based on an approx. 150 ktCO2/a plant size.,Amine absorber,Carbon capture
+tech_00054,BioWet_Pyrolysis_Biochar,Biochar production via pyrolysis of wet biomass.,Pyrolysis reactor,Pyrolysis
+tech_00055,Air_DAC_CO2,Direct air capture using adsorption technology (2030 and 2040).,DAC (sorbent-based),Carbon capture
+tech_00056,CO2Flue_PSA_CO2,CO2 post combustion capture via Hot-Potassium Carbonate cycling. Pressure swing process. 2030 reference based on an approx. 150 ktCO2/a plant size.,Pressure swing adsorption,Carbon capture
+tech_00057,Wood_Pyrolysis_Biochar,Biochar production via pyrolysis of wood.,Pyrolysis reactor,Pyrolysis

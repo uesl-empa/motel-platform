@@ -1,0 +1,58 @@
+previous_technology_name,new_technology_name
+NH3_CCGT_El,Ammonia CCGT Power Generation
+NH3_OCGT_El,Ammonia OCGT Power Generation
+CH4_CCGT_El,Methane CCGT Power Generation
+CH4_CHP_ElTh,Methane CHP Generation
+CH4_FuelCell_El,Methane Fuel Cell Power Generation
+CH4_FuelCell_ElBdg,Methane Fuel Cell Generation in Buildings
+CH4_OCGT_El,Methane OCGT Power Generation
+Geothermal_CHP_ElTh,Geothermal CHP Generation
+H2_CCGT_El,Hydrogen CCGT Power Generation
+H2_FuelCell_El,Hydrogen Fuel Cell Power Generation
+H2_FuelCell_ElBdg,Hydrogen Fuel Cell Generation in Buildings
+H2_OCGT_El,Hydrogen OCGT Power Generation
+El_PumpedHydro_Pump,Pumped Hydro Storage Pump Mode
+Hydro_PumpedTurbine_El,Pumped Hydro Storage Turbine Mode
+Hydro_RunOfRiver_El,Run of River Hydroelectric Generation
+Hydro_Reservoir_El,Reservoir Hydroelectric Generation
+MSW_Incineration_El,Municipal Solid Waste Incineration Power Generation
+Solar_PVAlpine_El,Alpine Solar Photovoltaic Generation
+Solar_PVRooftop_El,Rooftop Solar Photovoltaic Generation
+U235_Nuclear_El,Uranium Nuclear Power Generation
+Wind_Turbine_El,Onshore Wind Turbine Generation
+Wood_CHP_ElTh,Wood Biomass CHP Generation
+CH4_Boiler_ThBdg,Methane Boiler Heating for Buildings
+CH4_Boiler_ThInd,Methane Boiler Heating for Industry
+El_Heater_ThBdg,Electric Resistance Heating for Buildings
+El_Heater_ThInd,Electric Resistance Heating for Industry
+El_AirCon_ThSc,Electric Air Conditioning Heating and Cooling
+H2_Boiler_ThInd,Hydrogen Boiler Heating for Industry
+El_HeatPump_ThBdg,Electric Heat Pump Heating for Buildings
+El_HeatPump_ThInd,Industrial Electric Heat Pump Heating
+Oil_Boiler_ThBdg,Oil Boiler Heating for Buildings
+Oil_Boiler_ThInd,Oil Boiler Heating for Industry
+Wood_Boiler_ThBdg,Wood Boiler Heating for Buildings
+Wood_Boiler_ThInd,Wood Boiler Heating for Industry
+H2_HaberBosch_NH3,Haber Bosch Ammonia Synthesis
+BioWet_Digestion_CH4,Wet Biomass Anaerobic Digestion
+H2_Sabatier_CH4,Sabatier Methanation
+CookingOil_HEFA_C12,HEFA Hydrotreatment for SAF
+H2_CO2Hydro_MeOH,Methanol Synthesis via CO2 Hydrogenation
+H2_RWGS_CO,Reverse Water Gas Shift
+El_Electrolysis_H2,Water Electrolysis via Alkaline Technology
+Syngas_FT_C12,Fischer Tropsch C12 Synthesis
+Syngas_FT_C8,Fischer Tropsch C8 Synthesis
+Syngas_COHydro_CH4,Syngas Methanation
+Syngas_COHydro_MeOH,Syngas to Methanol Synthesis
+MSW_Gasification_Syngas,MSW Gasification to Syngas
+MSW_Gasification_H2,MSW Gasification to Hydrogen
+Wood_Gasification_H2,Wood Gasification to Hydrogen
+Wood_Gasification_Syngas,Wood Gasification to Syngas
+MeOH_MtJ_C12,Methanol to Jet Conversion
+El_CoElectrolysis_Syngas,High Temperature Co Electrolysis
+CH4_Pyrolysis_H2,Methane Pyrolysis
+CO2Flue_AmineScrub_CO2,Post Combustion Amine Carbon Capture
+BioWet_Pyrolysis_Biochar,Wet Biomass Pyrolysis to Biochar
+Air_DAC_CO2,Direct Air Capture
+CO2Flue_PSA_CO2,Post Combustion PSA Carbon Capture
+Wood_Pyrolysis_Biochar,Wood Pyrolysis to Biochar
