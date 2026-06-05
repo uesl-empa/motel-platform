@@ -1,5 +1,5 @@
 previous_source_id,new_source_name
-allgoewer_2024,Allgöwer PATHFNDER Study
+Allgoewer_2024,Allgöwer PATHFNDER Study
 rheintal_2025,Empa Rheintal Study
 biochar_jcp_2025,Journal of Cleaner Production Biochar Study
 book_hydropower_2020,Future Energy Hydropower Framework
@@ -13,7 +13,7 @@ paper_biogas,Biogas-to-Biomethane Upgrading Assessment
 paper_e-fuel production,Aviation E-Fuel Production Framework
 paper_mutschler_2018,Mutschler Catalytic Kinetics Study
 paper_müller_PowerX_2025,Müller Power-to-X Costs Review
-paper_wood to syngas,Biomass Gasification Technologies Assessment
+paper_biomass to syngas,Biomass Gasification Technologies Assessment
 report_power_to_ammonia_2018,Power-to-Ammonia Renewable Systems Report
 report_VSE_2022,VSE Energiezukunft 2050 Study
 report_VSE_2025,VSE Energiezukunft 2050 Update
@@ -25,7 +25,7 @@ report_gas_compression_2014,OST Gas Compression Energy Evaluation
 report_wood to hydrogen,IEA Bioenergy Hydrogen Production Analysis
 assumption_Empa_2022,Empa Baseline Expert Assumption
 assumption_Empa_2025,Empa Project Expert Assumption
-assumption_refuelWp3_2025,ReFuel Work Package 3 Expert Assumption
+assumption_reFuelWP3_2025,ReFuel Work Package 3 Expert Assumption
 AECOM_2022,AECOM Carbon Capture Technoeconomic Analysis
 paper_Postcom_2021,Post-Combustion Carbon Capture Comparative Assessment
 assumption_Empa_PV_OM,Empa Photovoltaic Operational Cost Assumption
