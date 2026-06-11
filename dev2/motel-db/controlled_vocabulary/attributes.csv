@@ -1,0 +1,26 @@
+attribute_id,attribute_name,attribute_description,unit,data_format,note
+ATTR_TECHNICAL_EFFICIENCY,technical_efficiency,Overall energy conversion efficiency: main output energy / main input energy.,-,float,Based on kW output capacity / LHV (chemical) energy.
+ATTR_TECHNOLOGY_READINESS_LEVEL,technology_readiness_level,Technology Readiness Level on the standard 1–9 scale. For non-mature technologies; TRL values progress across tech_year.,-,int,See Nomenclature A-3.
+ATTR_TECH_MATURITY,tech_maturity,Aggregated maturity classification derived from TRL. Updated per tech_year.,-,text,See Nomenclature A-2.
+ATTR_REFERENCE_UNIT_SIZE,reference_unit_size,Nameplate capacity on which all specific cost and performance data are based.,CAP,float,Capacity basis for scaling.
+ATTR_THEORETICAL_EFFICIENCY,theoretical_efficiency,Ratio of the main output's energy content (LHV) to the main input's energy content (LHV) at theoretical maximum.,-,float,May be blank if not applicable.
+ATTR_OPERATING_TEMPERATURE,operating_temperature,Typical operating temperature of the process.,°C,float,Relevant for thermal integration.
+ATTR_POWER_CAPACITY_MIN,power_capacity_min,Smallest assumed unit capacity for the technology.,CAP,float,0 if no minimum constraint.
+ATTR_LIFETIME_ECONOMIC,lifetime_economic,Economic lifetime of the asset.,yr,int,Expected operational lifetime.
+ATTR_CAPEX_ONE_TIME,capex_one_time,Fixed capital expenditure (independent of size).,CUR,float,For project lump sum.
+ATTR_OPEX_FIX_PCT_OF_CAPEX,opex_fix_pct_of_capex,Fixed annual operational expenditure expressed as a percentage of total CAPEX.,%,float,-
+ATTR_OPEX_PER_CAPACITY_YR,opex_per_capacity_yr,Fixed annual operational expenditure per unit of installed capacity; excluding fuel costs.,CUR / CAP.yr,float,-
+ATTR_OPEX_PER_ENERGY,opex_per_energy,Variable operational expenditure per unit of energy or mass output; excluding fuel costs.,CUR / CAP.hr,float,-
+ATTR_DISCOUNT_RATE_PCT,discount_rate_pct,Technology-specific weighted average cost of capital for annualising capital expenditure.,%,float,> 0
+ATTR_UNCERTAINTY_RATING,uncertainty_rating,Flag indicating whether parameter values have been cross-checked against literature ranges.,-,text,See Nomenclature.
+ATTR_STORAGE_CARRIER,storage_carrier,The physical medium of storage (e.g.; 'Li-Ion'; 'Water').,-,text,Carrier abbreviation. Reference Carrier tab.
+ATTR_STORAGE_CAPACITY_MIN,storage_capacity_min,Smallest assumed storage capacity.,kWh,float,> 0
+ATTR_CHARGING_CAPACITY_FACTOR,charging_capacity_factor,Maximum charging power as fraction of rated storage capacity (C-rate equivalent).,1 / h,float,0 – 1
+ATTR_DISCHARGING_CAPACITY_FACTOR,discharging_capacity_factor,Maximum discharging power as fraction of rated storage capacity.,1 / h,float,0 – 1
+ATTR_CHARGING_EFFICIENCY,charging_efficiency,Energy efficiency during charging.,-,float,0 – 1
+ATTR_DISCHARGING_EFFICIENCY,discharging_efficiency,Energy efficiency during discharging.,-,float,0 – 1
+ATTR_SOC_MIN,soc_min,Minimum state of charge as fraction of total capacity.,-,float,0 – 1
+ATTR_SOC_MAX,soc_max,Maximum state of charge as fraction of total capacity.,-,float,0 – 1
+ATTR_SELF_DISCHARGE_RATE,self_discharge_rate,Fractional energy loss per hour during standby (self-discharge rate).,1 / h,float,> 0
+ATTR_CAPEX_PER_STOR_CAPACITY,capex_per_stor_capacity,Specific capital expenditure per unit of installed storage capacity.,CUR / kWh,float,Primary scaling parameter (StorTech).
+ATTR_OPEX_ONE_TIME,opex_one_time,Fixed one-time operational expenditure independent of capacity.,CUR,float,-

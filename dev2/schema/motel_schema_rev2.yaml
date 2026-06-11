@@ -5,14 +5,15 @@
 ##     - [2026-06-02]: Added 'balancing' properties under records to manage conversion relationships
 ##     - [2026-06-02]: Structured Process layer as a One-to-Many umbrella for Technologies
 ##     - [2026-06-04]: Unified all code blocks to a strict 4-space indentation and completed descriptions
+##     - [2026-06-10]: Change from record to entity; make unmapped more flexible!
 ## ==============================================================================
 
 ## ------------------------------------------------------------------------------
-## MAIN RECORDS LAYER
+## MAIN ENTITY LAYER
 ## ------------------------------------------------------------------------------
 
-unmapped_record:
-    category: record
+unmapped_entity:
+    category: entity
     description: Staging schema for raw, unstructured data ingestion. All fields capture free-text inputs before data normalization.
     technology_name:
         type: string
@@ -20,7 +21,7 @@ unmapped_record:
         description: The literal unparsed common name or label of the technology as specified in the raw source material.
     technology:
         type: dict
-        description: Contains raw descriptive properties detailing the engineering, structural, and hardware context of the unmapped record.
+        description: Contains raw descriptive properties detailing the engineering, structural, and hardware context of the unmapped entity.
         properties:
             technology_description:
                 type: string
@@ -81,42 +82,40 @@ unmapped_record:
                 description: Contextual assumptions regarding spatial or temporal translatability (e.g., data modeled for DE but valid for Central Europe).
     sources:
         type: array
-        description: Collection of background reference literature, reports, databases, or creator credentials tracking data origins.
+        description: Loosely structured collection of raw reference citations. Fields are optional free-text — only source_name is expected.
         items:
             type: dict
             properties:
                 source_name:
                     type: string
-                    description: The name of the or document citation string (e.g., NREL Annual Technology Baseline 2023).
+                    description: The name or short citation label of the reference (e.g., "NREL ATB 2023").
                 source_description:
                     type: string
-                    description: Full descriptive reference name or document citation string (e.g., NREL Annual Technology Baseline 2023).
-                source_type:
-                    type: string
-                    enum: [report, database, article, website, book, user_submission, other]
-                    description: Structural classification tracking the material medium of the reference asset.
+                    optional: true
+                    description: Longer citation string, full title, or document reference as found in the raw material.
                 link:
                     type: string
-                    format: uri
-                    description: Digital Object Identifier (DOI) path or fully qualified URL link to the original asset location.
-                access_date:
-                    type: string
-                    format: date
                     optional: true
-                    description: ISO 8601 calendar date tracking when the source material was verified or scraped (YYYY-MM-DD).
+                    description: URL or DOI as recorded — no format validation enforced at this stage.
+                source_type:
+                    type: string
+                    optional: true
+                    description: Free-text medium classification (e.g., "report", "database") — no enum enforced.
                 assessment_method:
                     type: string
-                    enum: [measured, modeled, estimated, survey, manufacturer_spec, literature]
                     optional: true
-                    description: Methodological procedure used by the original creator to establish the baseline parameters.
+                    description: Free-text note on how values were derived (e.g., "modeled", "manufacturer datasheet").
                 assessment_notes:
                     type: string
                     optional: true
-                    description: Granular internal context index locations (e.g., Page 104, Appendix Table B.2).
+                    description: Page numbers, table references, or granular location hints within the source.
                 linked_attribute:
-                    type: list of string
+                    type: array
                     optional: true
-                    description: The specific attribute_name from the attributes array that this source directly supports or references.
+                    description: Free-text list of attribute names this source supports — no foreign key enforcement.
+                    items:
+                        type: string              
+                    
     attributes:
         type: array
         description: Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile.
@@ -133,31 +132,21 @@ unmapped_record:
                     type: string
                     description: Literal string representation of engineering or monetary units (e.g., EUR/kW/year, fraction).
                 value:
-                    type: [number, string, boolean, array, dict]
-                    description: The actual core data value recorded for the target attribute field.
-                value_format:
+                    type: any
+                    description: The raw data value — number, string, range, or array — exactly as found in the source.
+                uncertainty_notes:
                     type: string
-                    enum: [int, float, text, boolean, array]
-                    description: Primitive computer science notation describing the data structure format of the value field.
-                uncertainty:
-                    type: dict
-                    description: The mathematical or statistical margin of error bounding the reported data point value.
-                    properties:
-                        uncertainty_type:
-                            type: string
-                            enum: [range, standard_deviation, confidence_interval, variance]
-                            description: The statistical framework or representation method used to express the data's margin of error.
-                        uncertainty_values:
-                            type: string
-                            description: The literal string notation detailing error spreads or numeric deviations (e.g., ± 10%, 0.8 - 0.9).
-                        uncertainty_assumption:
-                            type: string
-                            optional: true
-                            description: Contextual qualitative insights regarding the underlying statistical distribution or confidence boundaries.
+                    optional: true
+                    description: Free-text description of any stated uncertainty, range, or confidence bounds (e.g., "± 10%", "0.8–0.9 depending on load").
                 time_index:
                     type: array
                     items: string
                     description: Chronological anchor strings tracking multi-period or profile datasets (e.g., list of target years).
+                notes:
+                    type: string
+                    optional: true
+                    description: Any additional raw context, caveats, or parsing flags noted during ingestion.
+
     balancing:
         type: dict
         description: Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
@@ -206,7 +195,7 @@ unmapped_record:
                 description: Engineering notes surrounding reference environmental or thermodynamic operating states (e.g., LHV basis at 15 degrees C).
     tags:
         type: dict
-        description: Metadata grouping flags used to sort and locate the record within project directories.
+        description: Metadata grouping flags used to sort and locate the entity within project directories.
         properties:
             related_project:
                 type: string
@@ -218,10 +207,10 @@ unmapped_record:
                 optional: true
                 description: Arbitrary categorical tag index strings for filtering (e.g., ['residential', 'decentralised']).
 
-mapped_record:
-    category: record
-    description: Validated relational matrix record linking strict foreign keys to controlled vocabularies and normalized entities.
-    record_id:
+linked_entity:
+    category: entity
+    description: Validated relational matrix entity linking strict foreign keys to controlled vocabularies and normalized entities.
+    linked_entity_id:
         type: string
         required: true
         description: Primary database key uniquely mapping this configuration matrix instance (e.g., REC_00001).
@@ -413,7 +402,7 @@ technology:
         description: Fully resolved link connecting this hardware structure to external semantic web frameworks like OEO or Wikidata.
 
 process:
-    category: supplementary
+    category: secondary
     description: Defines functional service pathways, mass balances, and grid conversion topologies independently of physical hardware.
     process_id:
         type: string
@@ -470,7 +459,7 @@ source:
     access_date:
         type: string
         format: date
-        description: ISO 8601 logging calendar stamp indicating when the source record was retrieved or audited (YYYY-MM-DD).
+        description: ISO 8601 logging calendar stamp indicating when the source entity was retrieved or audited (YYYY-MM-DD).
     confidence_level:
         type: string
         enum: [high, medium, low]
@@ -482,7 +471,7 @@ source:
     assessment_date:
         type: string
         format: date
-        description: ISO 8601 calendar date logging when the record was formally curated into the MOTEL database structure (YYYY-MM-DD).
+        description: ISO 8601 calendar date logging when the entity was formally curated into the MOTEL database structure (YYYY-MM-DD).
     note:
         type: string
         description: Internal notes tracking specific data point idiosyncrasies, parsing edge cases, or source reliability caveats.
@@ -511,13 +500,17 @@ contributor:
         description: Validated active academic or professional communication endpoint address.
 
 review:
-    category: secondary
+    category: supplementary
     description: Data quality assurance tracking block monitoring validation status steps across multi-stage review pipelines.
-    record_id:
+    review_id:
         type: string
-        foreign_key: mapped_record.record_id
         required: true
-        description: Foreign key linkage targeting the exact mapped record object undergoing peer-review assessment.
+        description: Primary key uniquely indexing a single evaluation event workflow (e.g., REV_00102).
+    linked_entity_id:
+        type: string
+        foreign_key: linked_entity.linked_entity_id
+        required: true
+        description: Foreign key linkage targeting the exact linked entity object undergoing peer-review assessment.
     first_reviewer:
         type: string
         foreign_key: contributor.contributor_id
@@ -571,7 +564,7 @@ attribute:
         description: Detailed description defining operational math bounds, accounting lines, and engineering definitions.
     unit:
         type: string
-        description: The strict target standardized canonical unit mandated for this field across database records (e.g., USD/kW).
+        description: The strict target standardized canonical unit mandated for this field across database entities (e.g., USD/kW).
     data_format:
         type: string
         enum: [int, float, text, boolean, array]
