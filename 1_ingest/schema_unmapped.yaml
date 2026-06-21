@@ -1,4 +1,7 @@
 ## updated date: 2026-06-21
+# NOTE:
+#  - remove unit and description for attribute, to make it more flexible for ingestion of raw data
+#    the unit could be included in the value field (e.g. 5 kW) or note
 
 $schema: "http://json-schema.org/draft-07/schema#"
 title: UnmappedEntity
@@ -78,7 +81,7 @@ properties:
       properties:
         source_name:
           type: string
-          description: The name or short citation label of the reference (e.g., "NREL ATB 2023").
+          description: The name or short citation label of the reference (e.g., 'NREL ATB 2023').
         source_description:
           type: string
           description: Longer citation string, full title, or document reference as found in the raw material.
@@ -107,21 +110,14 @@ properties:
       type: object
       required:
         - attribute_name
-        - attribute_description
-        - unit
         - value
       properties:
         attribute_name:
           type: string
           description: Target metric descriptive identifier.
-        attribute_description:
-          type: string
-          description: Functional explanation defining what the unmapped variable quantifies or restricts.
-        unit:
-          type: string
-          description: Literal string representation of engineering or monetary units.
         value:
-          description: The raw data value — number, string, range, or array — exactly as found in the source.
+          type: any
+          description: The raw data value — number, string, range, or array — exactly as found in the source. Could including unit (e.g. 5 kW)
         uncertainty_notes:
           type: string
           description: Free-text description of any stated uncertainty, range, or confidence bounds.
@@ -132,14 +128,11 @@ properties:
             type: string
         notes:
           type: string
-          description: Any additional raw context, caveats, or parsing flags noted during ingestion.
+          description: Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW)
 
   balancing:
     type: object
     description: Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
-    required:
-      - main_input
-      - main_output
     properties:
       inputs:
         type: array
@@ -160,7 +153,7 @@ properties:
             unit:
               type: string
               description: Measurement reference indicator bounding how the feedstock share value is quantified.
-              examples: [fraction, percentage]
+              examples: [energy, mass, volume, fraction, percentage]
       main_input:
         type: string
         description: The designated baseline input carrier used as the denominator anchor for sizing efficiency conversion equations.
@@ -183,7 +176,7 @@ properties:
             unit:
               type: string
               description: Measurement reference indicator bounding how the product yield share value is quantified.
-              examples: [fraction, percentage]
+              examples: [energy, mass, volume, fraction, percentage]
       main_output:
         type: string
         description: The primary target product carrier used by energy modeling solvers to define overall technology capacity limits.
@@ -203,3 +196,6 @@ properties:
         description: Arbitrary categorical tag index strings for filtering.
         items:
           type: string
+      other_notes:
+        type: string
+        description: Any additional free-text notes or flags for project-level context.
