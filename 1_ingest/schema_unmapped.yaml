@@ -1,0 +1,205 @@
+## updated date: 2026-06-21
+
+$schema: "http://json-schema.org/draft-07/schema#"
+title: UnmappedEntity
+type: object
+description: Staging schema for raw, unstructured data ingestion. All fields capture free-text inputs before data normalization.
+required:
+  - technology_name
+properties:
+
+  technology_name:
+    type: string
+    description: The literal unparsed common name or label of the technology as specified in the raw source material.
+
+  technology:
+    type: object
+    description: Contains raw descriptive properties detailing the engineering, structural, and hardware context of the unmapped entity.
+    properties:
+      technology_description:
+        type: string
+        description: Free-text engineering parameters describing the technical baseline of the asset.
+      technology_type:
+        type: string
+        description: The structural archetype classifying how the physical asset interacts with energy streams.
+        examples: [conversion, storage, distribution, consumption]
+      technology_category:
+        type: string
+        description: Broad domain or energy paradigm grouping for the hardware.
+        examples: [renewable, fossil_fuel, nuclear, synthetic]
+      technology_assumption:
+        type: string
+        description: Explicit technical constraints, design variations, or baseline modifications assumed by the raw source provider.
+      process_name:
+        type: string
+        description: The raw action-oriented label identifying the conversion or functional service taking place.
+      process_type:
+        type: string
+        description: The engineering classification of the operational flow dynamics.
+        examples: [conversion, storage, distribution, consumption, other]
+      process_category:
+        type: string
+        description: The sector or technical thematic domain the flow processes belong to.
+        examples: [power, low_temp_heat, heavy_industry]
+      process_assumption:
+        type: string
+        description: Documented technical assumptions regarding thermodynamic efficiencies, input/output structures, or conversion limits.
+
+  scope:
+    type: object
+    description: Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
+    properties:
+      geographic_scope_description:
+        type: string
+        description: Literal unparsed geographic area or region where data was measured or intended.
+      temporal_scope_description:
+        type: string
+        description: The targeted implementation or performance year/period.
+      capacity_scope_description:
+        type: string
+        description: The scale boundary or equipment sizing threshold of the recorded asset.
+      system_boundary_description:
+        type: string
+        description: Operational infrastructure dependencies or network connection states.
+      scenario:
+        type: string
+        description: The specific modeled narrative or sensitivity track path from the source.
+      scope_assumption:
+        type: string
+        description: Contextual assumptions regarding spatial or temporal translatability.
+
+  sources:
+    type: array
+    description: Loosely structured collection of raw reference citations. Fields are optional free-text — only source_name is expected.
+    items:
+      type: object
+      required:
+        - source_name
+      properties:
+        source_name:
+          type: string
+          description: The name or short citation label of the reference (e.g., "NREL ATB 2023").
+        source_description:
+          type: string
+          description: Longer citation string, full title, or document reference as found in the raw material.
+        link:
+          type: string
+          description: URL or DOI as recorded — no format validation enforced at this stage.
+        source_type:
+          type: string
+          description: Free-text medium classification — no enum enforced.
+        assessment_method:
+          type: string
+          description: Free-text note on how values were derived.
+        assessment_notes:
+          type: string
+          description: Page numbers, table references, or granular location hints within the source.
+        linked_attribute:
+          type: array
+          description: Free-text list of attribute names this source supports — no foreign key enforcement.
+          items:
+            type: string
+
+  attributes:
+    type: array
+    description: Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile.
+    items:
+      type: object
+      required:
+        - attribute_name
+        - attribute_description
+        - unit
+        - value
+      properties:
+        attribute_name:
+          type: string
+          description: Target metric descriptive identifier.
+        attribute_description:
+          type: string
+          description: Functional explanation defining what the unmapped variable quantifies or restricts.
+        unit:
+          type: string
+          description: Literal string representation of engineering or monetary units.
+        value:
+          description: The raw data value — number, string, range, or array — exactly as found in the source.
+        uncertainty_notes:
+          type: string
+          description: Free-text description of any stated uncertainty, range, or confidence bounds.
+        time_index:
+          type: array
+          description: Chronological anchor strings tracking multi-period or profile datasets.
+          items:
+            type: string
+        notes:
+          type: string
+          description: Any additional raw context, caveats, or parsing flags noted during ingestion.
+
+  balancing:
+    type: object
+    description: Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
+    required:
+      - main_input
+      - main_output
+    properties:
+      inputs:
+        type: array
+        description: Array listing incoming resource vectors and their relative share proportions.
+        items:
+          type: object
+          required:
+            - carrier_name
+            - share
+            - unit
+          properties:
+            carrier_name:
+              type: string
+              description: Literal name of the unmapped input commodity flow.
+            share:
+              type: number
+              description: Proportional numeric value tracking this specific carrier's fraction of total cumulative feedstocks.
+            unit:
+              type: string
+              description: Measurement reference indicator bounding how the feedstock share value is quantified.
+              examples: [fraction, percentage]
+      main_input:
+        type: string
+        description: The designated baseline input carrier used as the denominator anchor for sizing efficiency conversion equations.
+      outputs:
+        type: array
+        description: Array listing outgoing resource vectors and their relative share proportions.
+        items:
+          type: object
+          required:
+            - carrier_name
+            - share
+            - unit
+          properties:
+            carrier_name:
+              type: string
+              description: Literal name of the unmapped output commodity flow.
+            share:
+              type: number
+              description: Proportional numeric value tracking this specific carrier's fraction of total output yield.
+            unit:
+              type: string
+              description: Measurement reference indicator bounding how the product yield share value is quantified.
+              examples: [fraction, percentage]
+      main_output:
+        type: string
+        description: The primary target product carrier used by energy modeling solvers to define overall technology capacity limits.
+      balance_assumption:
+        type: string
+        description: Engineering notes surrounding reference environmental or thermodynamic operating states.
+
+  metadata:
+    type: object
+    description: Metadata grouping flags used to sort and locate the entity within project directories.
+    properties:
+      related_project:
+        type: string
+        description: Name of the overarching study consortium, database cluster, or project framework.
+      tags:
+        type: array
+        description: Arbitrary categorical tag index strings for filtering.
+        items:
+          type: string

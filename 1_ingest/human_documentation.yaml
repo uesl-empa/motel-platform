@@ -1,0 +1,62 @@
+UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All fields capture free-text inputs before data normalization.
+    fields:
+        technology_name (Required): "[String] The literal unparsed common name or label of the technology as specified in the raw source material."
+        technology: # [Object] Contains raw descriptive properties detailing the engineering, structural, and hardware context of the unmapped entity.
+            properties:
+                technology_description: "[String] Free-text engineering parameters describing the technical baseline of the asset."
+                technology_type: "[String] The structural archetype classifying how the physical asset interacts with energy streams. Suggested: ['conversion', 'storage', 'distribution', 'consumption']"
+                technology_category: "[String] Broad domain or energy paradigm grouping for the hardware. Suggested: ['renewable', 'fossil_fuel', 'nuclear', 'synthetic']"
+                technology_assumption: "[String] Explicit technical constraints, design variations, or baseline modifications assumed by the raw source provider."
+                process_name: "[String] The raw action-oriented label identifying the conversion or functional service taking place."
+                process_type: "[String] The engineering classification of the operational flow dynamics. Suggested: ['conversion', 'storage', 'distribution', 'consumption', 'other']"
+                process_category: "[String] The sector or technical thematic domain the flow processes belong to. Suggested: ['power', 'low_temp_heat', 'heavy_industry']"
+                process_assumption: "[String] Documented technical assumptions regarding thermodynamic efficiencies, input/output structures, or conversion limits."
+        scope: # [Object] Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
+            properties:
+                geographic_scope_description: "[String] Literal unparsed geographic area or region where data was measured or intended."
+                temporal_scope_description: "[String] The targeted implementation or performance year/period."
+                capacity_scope_description: "[String] The scale boundary or equipment sizing threshold of the recorded asset."
+                system_boundary_description: "[String] Operational infrastructure dependencies or network connection states."
+                scenario: "[String] The specific modeled narrative or sensitivity track path from the source."
+                scope_assumption: "[String] Contextual assumptions regarding spatial or temporal translatability."
+        sources: # [Array of Objects] Loosely structured collection of raw reference citations. Fields are optional free-text — only source_name is expected.
+            items:
+                properties:
+                    source_name (Required): "[String] The name or short citation label of the reference (e.g., "NREL ATB 2023")."
+                    source_description: "[String] Longer citation string, full title, or document reference as found in the raw material."
+                    link: "[String] URL or DOI as recorded — no format validation enforced at this stage."
+                    source_type: "[String] Free-text medium classification — no enum enforced."
+                    assessment_method: "[String] Free-text note on how values were derived."
+                    assessment_notes: "[String] Page numbers, table references, or granular location hints within the source."
+                    linked_attribute: "[Array of Strings] Free-text list of attribute names this source supports — no foreign key enforcement."
+        attributes: # [Array of Objects] Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile.
+            items:
+                properties:
+                    attribute_name (Required): "[String] Target metric descriptive identifier."
+                    attribute_description (Required): "[String] Functional explanation defining what the unmapped variable quantifies or restricts."
+                    unit (Required): "[String] Literal string representation of engineering or monetary units."
+                    value (Required): "[Any] The raw data value — number, string, range, or array — exactly as found in the source."
+                    uncertainty_notes: "[String] Free-text description of any stated uncertainty, range, or confidence bounds."
+                    time_index: "[Array of Strings] Chronological anchor strings tracking multi-period or profile datasets."
+                    notes: "[String] Any additional raw context, caveats, or parsing flags noted during ingestion."
+        balancing: # [Object] Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
+            properties:
+                inputs: # [Array of Objects] Array listing incoming resource vectors and their relative share proportions.
+                    items:
+                        properties:
+                            carrier_name (Required): "[String] Literal name of the unmapped input commodity flow."
+                            share (Required): "[Number] Proportional numeric value tracking this specific carrier's fraction of total cumulative feedstocks."
+                            unit (Required): "[String] Measurement reference indicator bounding how the feedstock share value is quantified. Suggested: ['fraction', 'percentage']"
+                main_input (Required): "[String] The designated baseline input carrier used as the denominator anchor for sizing efficiency conversion equations."
+                outputs: # [Array of Objects] Array listing outgoing resource vectors and their relative share proportions.
+                    items:
+                        properties:
+                            carrier_name (Required): "[String] Literal name of the unmapped output commodity flow."
+                            share (Required): "[Number] Proportional numeric value tracking this specific carrier's fraction of total output yield."
+                            unit (Required): "[String] Measurement reference indicator bounding how the product yield share value is quantified. Suggested: ['fraction', 'percentage']"
+                main_output (Required): "[String] The primary target product carrier used by energy modeling solvers to define overall technology capacity limits."
+                balance_assumption: "[String] Engineering notes surrounding reference environmental or thermodynamic operating states."
+        metadata: # [Object] Metadata grouping flags used to sort and locate the entity within project directories.
+            properties:
+                related_project: "[String] Name of the overarching study consortium, database cluster, or project framework."
+                tags: "[Array of Strings] Arbitrary categorical tag index strings for filtering."
