@@ -1,3 +1,11 @@
+[to be update!]
+
+1. review the workflow
+2. finish the basic input (with guideline, maybe use LLM for next step)
+3. link with ontology
+4. link with MOTEL webapp!
+
+
 put develop and put ontology here!
 
 challenge:
