@@ -1,0 +1,18 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: CapacityScope
+type: object
+category: predefined
+description: Controlled vocabulary registry organising equipment scale boundaries and installation tiers.
+required:
+  - capacity_scope
+  - capacity_scope_description
+properties:
+  capacity_scope:
+    type: string
+    description: Primary reference token key classifying asset deployment dimensions (e.g., CAP_COMMERCIAL_SCALE).
+  capacity_scope_description:
+    type: string
+    description: Strict numeric range boundaries or qualitative engineering definitions of the installation size tier.
+  note:
+    type: string
+    description: General metadata annotations or database administrative notes regarding this plant sizing or scaling capacity scope entry.

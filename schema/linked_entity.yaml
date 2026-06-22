@@ -1,0 +1,187 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: LinkedEntity
+type: object
+description: Validated relational matrix entity linking strict foreign keys to controlled vocabularies and normalised entities.
+required:
+  - linked_entity_id
+  - tech_id
+  - source_id
+properties:
+  linked_entity_id:
+    type: string
+    description: Primary database key uniquely mapping this configuration matrix instance (e.g., REC_00001).
+  version:
+    type: object
+    description: Maintains formal audit trail history and deployment lifecycles for tracked parameters.
+    required:
+      - version_number
+    properties:
+      version_number:
+        type: string
+        description: Semantic version tracking text for schema iteration indexing (e.g., 2.1.0).
+      date_created:
+        type: string
+        format: date
+        description: ISO 8601 creation calendar timestamp (YYYY-MM-DD).
+      date_modified:
+        type: string
+        format: date
+        description: ISO 8601 calendar timestamp tracking the most recent attribute update or review patch (YYYY-MM-DD).
+  tech_id:
+    type: string
+    foreign_key: technology.tech_id
+    description: Relational link tying these data values to a specific validated, concrete physical equipment asset.
+  sources:
+      type: array
+      description: Array of validated literature sources providing data for this entity, mapping specific attributes to their exact origins.
+      items:
+        type: object
+        required:
+          - source_id
+          - linked_attributes
+        properties:
+          source_id:
+            type: string
+            foreign_key: source.source_id
+            description: Relational link tying these values back to an explicitly validated and structured literature profile node.
+          linked_attributes:
+            type: array
+            description: Array of attribute ID tokens explicitly extracted from this specific reference source document.
+            items:
+              type: string
+              foreign_key: attribute.attribute_id
+              description: Validated token matching a master attribute registration node.
+  assumptions:
+      type: array
+      description: Array of shared global assumption profile blocks, mapping specific attributes to their underlying system or methodology rules.
+      items:
+        type: object
+        required:
+          - assumption_id
+          - linked_attributes
+        properties:
+          assumption_id:
+            type: string
+            description: Relational link referencing a shared global assumption profile block (e.g., ASSUMP_MATURE_MARKET).
+          linked_attributes:
+            type: array
+            description: Array of attribute ID tokens whose calculations or boundaries are governed by this specific assumption.
+            items:
+              type: string
+              foreign_key: attribute.attribute_id
+              description: Validated token matching a master attribute registration node.
+  scope:
+    type: object
+    description: Structured boundaries restricting model solver access based on spatial and temporal network rules.
+    properties:
+      geographic_scope:
+        type: string
+        foreign_key: geographic_scope.geographic_scope
+        description: Foreign key reference anchoring the boundary to a controlled geographic territory token.
+      temporal_scope:
+        type: string
+        foreign_key: temporal_scope.temporal_scope
+        description: Foreign key reference anchoring the validity to a specific target model timeframe index node.
+      capacity_scope:
+        type: string
+        foreign_key: capacity_scope.capacity_scope
+        description: Foreign key reference linking data validity to specific structured capacity bounds.
+      system_boundary:
+        type: string
+        foreign_key: system_boundary.system_boundary
+        description: Foreign key reference specifying configuration boundaries under a controlled system archetype.
+  values:
+    type: array
+    description: Normalised parameter arrays binding attributes to precise mathematical numbers and explicit engineering error bounds.
+    items:
+      type: object
+      properties:
+        attribute_id:
+          type: string
+          foreign_key: attribute.attribute_id
+          description: Foreign key reference targeting an engineering metric variable within the controlled vocabulary.
+        value:
+          type: [number, string, boolean, array, object]
+          description: The computational data payload matching the data schema constraints of the assigned attribute.
+        value_format:
+          type: string
+          description: Strict variable typing rules or code compilation path rules used to format downstream array parsers.
+        value_type:
+          type: string
+          enum: [numeric, text, boolean, array, timeseries, distribution]
+          description: System logic classification determining how downstream solvers treat the parameter matrix entry.
+        unit:
+          type: string
+          description: System-wide normalised execution unit string strictly synced with core attribute standard definitions.
+        uncertainty:
+          type: object
+          description: Fleshed-out relational boundaries mapping exact low/high limits for stochastic or deterministic sensitivity runs.
+          properties:
+            uncertainty_type:
+              type: string
+              enum: [range, standard_deviation, confidence_interval, variance]
+              description: Mathematical formatting context governing how upper, lower, and standard error variables are processed.
+            upper_value:
+              type: number
+              description: The absolute maximum upper bounding value observed under testing thresholds.
+            lower_value:
+              type: number
+              description: The absolute minimum lower bounding value observed under testing thresholds.
+            other_value:
+              type: string
+              description: Alternative notation values or alphanumeric statistical metadata payloads (e.g., confidence step percentages).
+            uncertainty_assumption:
+              type: string
+              description: Relational notation tracking the statistical distribution profiles applied during solver execution.
+        note:
+          type: string
+          description: User-facing comment string highlighting internal computational idiosyncrasies.
+  balancing:
+    type: object
+    description: Structured conversion matrix balancing multiple inputs and outputs via controlled system carrier elements.
+    properties:
+      inputs:
+        type: array
+        description: List matching verified system incoming input resource streams.
+        items:
+          type: object
+          properties:
+            carrier_id:
+              type: string
+              foreign_key: carrier.carrier_id
+              description: Foreign key referencing a unique energy carrier entity from the controlled vocabulary.
+            share:
+              type: number
+              description: Proportional numeric value tracking this specific carrier's fraction of total cumulative feedstocks.
+            unit:
+              type: string
+              enum: [fraction, percentage]
+              description: Measurement reference indicator bounding how the feedstock share value is quantified.
+      main_input:
+        type: string
+        foreign_key: carrier.carrier_id
+        description: Foreign key establishing the primary commodity vector denominator used for efficiency index evaluations.
+      outputs:
+        type: array
+        description: List matching verified system outgoing output resource streams.
+        items:
+          type: object
+          properties:
+            carrier_id:
+              type: string
+              foreign_key: carrier.carrier_id
+              description: Foreign key referencing a unique energy carrier entity from the controlled vocabulary.
+            share:
+              type: number
+              description: Proportional numeric value tracking this specific carrier's fraction of total output yield.
+            unit:
+              type: string
+              enum: [fraction, percentage]
+              description: Measurement reference indicator bounding how the product yield share value is quantified.
+      main_output:
+        type: string
+        foreign_key: carrier.carrier_id
+        description: Foreign key tracking the primary output commodity used by modeling engines to evaluate capacity scaling size limits.
+      balance_assumption:
+        type: string
+        description: Relational balance remarks referencing specific standardised thermal or pressure states.

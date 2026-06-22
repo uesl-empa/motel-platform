@@ -1,0 +1,35 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Carrier
+type: object
+category: predefined
+description: Controlled vocabulary framework registering mass and energy commodities routed through model layouts.
+required:
+  - carrier_id
+  - carrier_name
+  - carrier_description
+  - carrier_type
+  - carrier_category  
+properties:
+  carrier_id:
+    type: string
+    description: Primary immutable database key identifying a network commodity node (e.g., carrier_H2, carrier_AC_electricity).
+  carrier_name:
+    type: string
+    description: Human-readable label mapping the commodity fluid or vector type (e.g., Gaseous Hydrogen).
+  carrier_description:
+    type: string
+    description: Explains standard purity constraints, chemical composition expectations, or infrastructure context bounds.
+  carrier_type:
+    type: string
+    enum: [fuel, electricity, heat, other]
+    description: System classification organising the resource into primary energy or utility archetypes.
+  carrier_category:
+    type: string
+    enum: [renewable, non-renewable, synthetic, other]
+    description: Environmental lifecycle grouping for greenhouse gas accounting track protocols.
+  carrier_reference:
+    type: string
+    description: Standard references tracking physical density values, enthalpy baselines, or safety rule document IDs.
+  note:
+    type: string
+    description: General metadata annotations or database administrative notes regarding this specific commodity vector entry.

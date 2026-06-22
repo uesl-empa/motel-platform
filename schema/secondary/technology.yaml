@@ -1,0 +1,31 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Technology
+type: object
+description: Defines asset-specific physical infrastructure, operational limits, costs, and hardware profiles.
+required:
+  - tech_id
+  - technology_name
+properties:
+  tech_id:
+    type: string
+    description: Unique alphanumerical hardware key acting as the primary key for physical equipment assets (e.g., tech_00041).
+  technology_name:
+    type: string
+    description: Standardised machine-readable asset identifier using snake_case (e.g., El_Electrolysis_Alkaline).
+  technology_description:
+    type: string
+    description: Engineering narrative defining the technical performance bounds, scope limits, or mechanical configurations of the hardware.
+  technology_variant:
+    type: string
+    description: The hyper-specific architectural subcategory or cell structure of the asset (e.g., Anion Exchange Membrane).
+  main_process:
+    type: string
+    foreign_key: process.process_id
+    description: Foreign key (process name) mapping this physical asset back to the core operational network service node it serves.
+  main_operation_unit:
+    type: string
+    description: The localised machinery component where the mechanical transformation occurs (e.g., Fuel cell stack, Gas core).
+  ontology_iri:
+    type: string
+    format: uri
+    description: Fully resolved link connecting this hardware structure to external semantic web frameworks like OEO or Wikidata.
