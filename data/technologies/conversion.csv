@@ -1,3 +1,0 @@
-technology_id,name,capex_chf_per_kw,lifetime_years,efficiency,source_id
-solar_pv_utility,Solar PV Utility,920,30,0.20,refuel_2025
-onshore_wind,Onshore Wind,1450,25,0.42,jasm_2024

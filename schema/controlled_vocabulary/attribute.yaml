@@ -1,0 +1,34 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Attribute
+type: object
+description: Controlled registry defining standardised cost, parameter, and capability fields across all models.
+required:
+  - attribute_id
+  - attribute_name
+  - attribute_description
+  - unit
+  - data_format
+properties:
+  attribute_id:
+    type: string
+    description: Primary key tracking the immutable metric token variable (e.g., ATTR_CAPEX, ATTR_ANNUAL_AVAILABILITY).
+  attribute_name:
+    type: string
+    description: Standard human-readable nomenclature name for display layouts (e.g., Capital Expenditure).
+  attribute_description:
+    type: string
+    description: Detailed description defining operational math bounds, accounting lines, and engineering definitions.
+  unit:
+    type: string
+    description: The strict target standardised canonical unit mandated for this field across database entities (e.g., USD/kW).
+  data_format:
+    type: string
+    enum: [int, float, text, boolean, array]
+    description: Structural parser instruction flag mapping validation rules for primitive cell entry variables.
+  ontology_iri:
+    type: string
+    format: uri
+    description: External ontology database URI link matching global terminology networks.
+  note:
+    type: string
+    description: System administration annotations detailing specific boundary conditions or parsing edge cases.

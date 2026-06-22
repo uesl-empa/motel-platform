@@ -1,0 +1,37 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Process
+type: object
+description: Defines functional service pathways, mass balances, and grid conversion topologies independently of physical hardware.
+required:
+  - process_id
+  - process_name
+properties:
+  process_id:
+    type: string
+    description: Unique alphanumerical operational link key acting as the primary key for functional pathways (e.g., proc_H2_prod).
+  process_name:
+    type: string
+    description: Standardised human-readable label defining the service framework action (e.g., Hydrogen Production).
+  process_description:
+    type: string
+    description: Summary outlining the physical, chemical, or thermodynamic conversion pipeline, explaining its placement within the net grid.
+  process_type:
+    type: string
+    enum: [conversion, storage, distribution, consumption, other]
+    description: Core energy system framework archetype classifying the physical dynamic of this process.
+  process_category:
+    type: string
+    description: Technical operational grouping identifying the engineering discipline classification (e.g., Thermochemical Upgrading).
+  main_sector:
+    type: string
+    description: The primary energy system demand vector this flow interfaces with (e.g., power, heat, transport, industry).
+  feedstocks:
+    type: array
+    items:
+      type: string
+    description: Array of controlled vocabulary carrier_ids entering this process pipeline node as raw consumables.
+  products:
+    type: array
+    items:
+      type: string
+    description: Array of controlled vocabulary carrier_ids exiting this process pipeline node as useful commodities or emissions.

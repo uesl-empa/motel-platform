@@ -1,0 +1,8 @@
+Technology: # Defines asset-specific physical infrastructure, operational limits, costs, and hardware profiles.
+    tech_id: "[Required; String] Unique alphanumerical hardware key acting as the primary key for physical equipment assets (e.g., tech_00041)."
+    technology_name: "[Required; String] Standardised machine-readable asset identifier using snake_case (e.g., El_Electrolysis_Alkaline)."
+    technology_description: "[String] Engineering narrative defining the technical performance bounds, scope limits, or mechanical configurations of the hardware."
+    technology_variant: "[String] The hyper-specific architectural subcategory or cell structure of the asset (e.g., Anion Exchange Membrane)."
+    main_process: "[String] Foreign key (process name) mapping this physical asset back to the core operational network service node it serves."
+    main_operation_unit: "[String] The localised machinery component where the mechanical transformation occurs (e.g., Fuel cell stack, Gas core)."
+    ontology_iri: "[String] Fully resolved link connecting this hardware structure to external semantic web frameworks like OEO or Wikidata."

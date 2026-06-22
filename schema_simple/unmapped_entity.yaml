@@ -23,12 +23,12 @@ UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All field
         source_type: "[String] Free-text medium classification — no enum enforced."
         assessment_method: "[String] Free-text note on how values were derived."
         assessment_notes: "[String] Page numbers, table references, or granular location hints within the source."
-        linked_attribute: "[List of Strings]] Free-text list of attribute names this source supports — no foreign key enforcement."
+        linked_attribute: "[List of Strings] Free-text list of attribute names this source supports — no foreign key enforcement."
     attributes: # [List of Dictionaries] Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile.
         attribute_name: "[Required; String] Target metric descriptive identifier."
         value: "[Required; Any] The raw data value — number, string, range, or array — exactly as found in the source. Could including unit (e.g. 5 kW)"
         uncertainty_notes: "[String] Free-text description of any stated uncertainty, range, or confidence bounds."
-        time_index: "[List of Strings]] Chronological anchor strings tracking multi-period or profile datasets."
+        time_index: "[List of Strings] Chronological anchor strings tracking multi-period or profile datasets."
         notes: "[String] Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW)"
     balancing: # [Dictionary] Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
         inputs: # [List of Dictionaries] Array listing incoming resource vectors and their relative share proportions.
@@ -44,5 +44,5 @@ UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All field
         balance_assumption: "[String] Engineering notes surrounding reference environmental or thermodynamic operating states."
     metadata: # [Dictionary] Metadata grouping flags used to sort and locate the entity within project directories.
         related_project: "[String] Name of the overarching study consortium, database cluster, or project framework."
-        tags: "[List of Strings]] Arbitrary categorical tag index strings for filtering."
+        tags: "[List of Strings] Arbitrary categorical tag index strings for filtering."
         other_notes: "[String] Any additional free-text notes or flags for project-level context."

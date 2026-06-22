@@ -1,0 +1,18 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: SystemBoundary
+type: object
+category: predefined
+description: Controlled vocabulary registry managing network integration states and baseline dispatch roles.
+required:
+  - system_boundary
+  - system_boundary_description
+properties:
+  system_boundary:
+    type: string
+    description: Primary reference key mapping operational layout system boundaries (e.g., BOUND_STANDALONE_OFFGRID).
+  system_boundary_description:
+    type: string
+    description: Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses.
+  note:
+    type: string
+    description: General metadata annotations or database administrative notes regarding this technical system boundary configuration entry.

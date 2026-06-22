@@ -1,0 +1,18 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: TemporalScope
+type: object
+category: predefined
+description: Controlled vocabulary indexing target implementation horizons and chronological target phases.
+required:
+  - temporal_scope
+  - temporal_scope_description
+properties:
+  temporal_scope:
+    type: string
+    description: Primary key mapping specific chronological execution targets (e.g., TIME_2030, TIME_2050_NETZERO).
+  temporal_scope_description:
+    type: string
+    description: Clarifies target baseline steps, multi-year model averages, or specific historical weather year projections.
+  note:
+    type: string
+    description: General metadata annotations or database administrative notes regarding this chronological horizon scope entry.

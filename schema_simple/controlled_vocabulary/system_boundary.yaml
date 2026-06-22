@@ -1,0 +1,4 @@
+SystemBoundary: # Controlled vocabulary registry managing network integration states and baseline dispatch roles.
+    system_boundary: "[Required; String] Primary reference key mapping operational layout system boundaries (e.g., BOUND_STANDALONE_OFFGRID)."
+    system_boundary_description: "[Required; String] Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses."
+    note: "[String] General metadata annotations or database administrative notes regarding this technical system boundary configuration entry."

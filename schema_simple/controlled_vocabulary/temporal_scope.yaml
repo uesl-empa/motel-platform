@@ -1,0 +1,4 @@
+TemporalScope: # Controlled vocabulary indexing target implementation horizons and chronological target phases.
+    temporal_scope: "[Required; String] Primary key mapping specific chronological execution targets (e.g., TIME_2030, TIME_2050_NETZERO)."
+    temporal_scope_description: "[Required; String] Clarifies target baseline steps, multi-year model averages, or specific historical weather year projections."
+    note: "[String] General metadata annotations or database administrative notes regarding this chronological horizon scope entry."

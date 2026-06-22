@@ -1,0 +1,11 @@
+Source: # Stores historical literature origins, validation criteria, and source citation indices.
+    source_id: "[Required; String] Unique primary identifier index tracking reference origin profiles (e.g., SRC_NREL_ATB_2023)."
+    source_name: "[Required; String] Standard clean citation title of the source document or relational library database."
+    source_description: "[String] Comprehensive breakdown tracking data collection scope, original authors, and reference metadata profiles."
+    source_type: "[String] Classification profile sorting the structural medium of the referencing material."
+    link: "[String] Direct URL or Digital Object Identifier (DOI) web path to the original publication source."
+    access_date: "[String] ISO 8601 logging calendar stamp indicating when the source entity was retrieved or audited (YYYY-MM-DD)."
+    confidence_level: "[String] Data governance quality score based on source prestige, transparency, and data age parameters."
+    assessment_method: "[String] Procedural framework tracking how the source data point values were fundamentally calculated."
+    assessment_date: "[String] ISO 8601 calendar date logging when the entity was formally curated into the MOTEL database structure (YYYY-MM-DD)."
+    note: "[String] Internal notes tracking specific data point idiosyncrasies, parsing edge cases, or source reliability caveats."

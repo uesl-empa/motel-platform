@@ -1,0 +1,21 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Contributor
+type: object
+description: Tracks account credentials and institutional profiles of research personnel updating dataset elements.
+required:
+  - contributor_id
+  - name
+properties:
+  contributor_id:
+    type: string
+    description: Primary key string identifying a distinct user profile entity within the governance matrix.
+  name:
+    type: string
+    description: Full professional legal name of the research contributor.
+  affiliation:
+    type: string
+    description: The primary university, corporate entity, or laboratory group representing the user (e.g., ETH Zurich).
+  email:
+    type: string
+    format: email
+    description: Validated active academic or professional communication endpoint address.

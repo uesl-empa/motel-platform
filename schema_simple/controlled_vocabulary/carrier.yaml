@@ -1,0 +1,8 @@
+Carrier: # Controlled vocabulary framework registering mass and energy commodities routed through model layouts.
+    carrier_id: "[Required; String] Primary immutable database key identifying a network commodity node (e.g., carrier_H2, carrier_AC_electricity)."
+    carrier_name: "[Required; String] Human-readable label mapping the commodity fluid or vector type (e.g., Gaseous Hydrogen)."
+    carrier_description: "[Required; String] Explains standard purity constraints, chemical composition expectations, or infrastructure context bounds."
+    carrier_type: "[Required; String] System classification organising the resource into primary energy or utility archetypes."
+    carrier_category: "[Required; String] Environmental lifecycle grouping for greenhouse gas accounting track protocols."
+    carrier_reference: "[String] Standard references tracking physical density values, enthalpy baselines, or safety rule document IDs."
+    note: "[String] General metadata annotations or database administrative notes regarding this specific commodity vector entry."

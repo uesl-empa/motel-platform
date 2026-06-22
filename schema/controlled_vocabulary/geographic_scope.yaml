@@ -1,0 +1,18 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: GeographicScope
+type: object
+category: predefined
+description: Controlled vocabulary indexing geographic bounds and territory constraints.
+required:
+  - geographic_scope
+  - geographic_scope_description
+properties:
+  geographic_scope:
+    type: string
+    description: Primary alphanumerical token key mapping spatial domains (e.g., GEO_CHE, GEO_EU27).
+  geographic_scope_description:
+    type: string
+    description: Detailed breakdown of political, grid connection, or regional territory lines encompassed by the token.
+  note:
+    type: string
+    description: General metadata annotations or database administrative notes regarding this spatial boundary scope entry.

@@ -1,0 +1,9 @@
+Process: # Defines functional service pathways, mass balances, and grid conversion topologies independently of physical hardware.
+    process_id: "[Required; String] Unique alphanumerical operational link key acting as the primary key for functional pathways (e.g., proc_H2_prod)."
+    process_name: "[Required; String] Standardised human-readable label defining the service framework action (e.g., Hydrogen Production)."
+    process_description: "[String] Summary outlining the physical, chemical, or thermodynamic conversion pipeline, explaining its placement within the net grid."
+    process_type: "[String] Core energy system framework archetype classifying the physical dynamic of this process."
+    process_category: "[String] Technical operational grouping identifying the engineering discipline classification (e.g., Thermochemical Upgrading)."
+    main_sector: "[String] The primary energy system demand vector this flow interfaces with (e.g., power, heat, transport, industry)."
+    feedstocks: "[List of Strings] Array of controlled vocabulary carrier_ids entering this process pipeline node as raw consumables."
+    products: "[List of Strings] Array of controlled vocabulary carrier_ids exiting this process pipeline node as useful commodities or emissions."

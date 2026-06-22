@@ -1,0 +1,44 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Source
+type: object
+description: Stores historical literature origins, validation criteria, and source citation indices.
+required:
+  - source_id
+  - source_name
+properties:
+  source_id:
+    type: string
+    description: Unique primary identifier index tracking reference origin profiles (e.g., SRC_NREL_ATB_2023).
+  source_name:
+    type: string
+    description: Standard clean citation title of the source document or relational library database.
+  source_description:
+    type: string
+    description: Comprehensive breakdown tracking data collection scope, original authors, and reference metadata profiles.
+  source_type:
+    type: string
+    enum: [report, database, article, website, book, other]
+    description: Classification profile sorting the structural medium of the referencing material.
+  link:
+    type: string
+    format: uri
+    description: Direct URL or Digital Object Identifier (DOI) web path to the original publication source.
+  access_date:
+    type: string
+    format: date
+    description: ISO 8601 logging calendar stamp indicating when the source entity was retrieved or audited (YYYY-MM-DD).
+  confidence_level:
+    type: string
+    enum: [high, medium, low]
+    description: Data governance quality score based on source prestige, transparency, and data age parameters.
+  assessment_method:
+    type: string
+    enum: [measured, modeled, estimated, survey, manufacturer_spec, literature]
+    description: Procedural framework tracking how the source data point values were fundamentally calculated.
+  assessment_date:
+    type: string
+    format: date
+    description: ISO 8601 calendar date logging when the entity was formally curated into the MOTEL database structure (YYYY-MM-DD).
+  note:
+    type: string
+    description: Internal notes tracking specific data point idiosyncrasies, parsing edge cases, or source reliability caveats.
