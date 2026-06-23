@@ -1,7 +1,7 @@
-source_id,source_name,source_description,source_type,link,access_date,confidence_level,assessment_method,assessment_date,noteSRC_00001,report_power_to_ammonia_2018,Power-to-ammonia in future North European 100 %  renewable power and heat system,
+source_id,source_name,source_description,source_type,link,access_date,confidence_level,assessment_method,assessment_date,note
+SRC_00001,report_power_to_ammonia_2018,Power-to-ammonia in future North European 100 %  renewable power and heat system,
 SRC_00002,conversion_parametrization,Calculating Input Output Ratios of Reactions,
 SRC_00003,report_danish_energy_2025,Report from Danish Energy Agency,
 SRC_00004,paper_CCGT_2024,Modeling combined-cycle power plants in a detailed electricity market,
 SRC_00005,report_VSE_2025,"VSE Energiezukunft 2050, Update 2025",
 SRC_00006,report_VSE_2022,"VSE Energiezukunft 2050, Studie 2022",
-SRC_00006,report_power_to_ammonia_2018,Power-to-ammonia in future North European 100 %  renewable power and heat system,

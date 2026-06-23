@@ -1,4 +1,4 @@
-carrier_id,carrier_name,carrier_description,carrier_type,carrier_category,carrier_reference,noteCAR_00001,NH3,,,
-CAR_00002,El13,,,
-CAR_00003,CH4,,,
-CAR_00003,NH3,,,
+carrier_id,carrier_name,carrier_description,carrier_type,carrier_category,carrier_reference,note
+CAR_00001,NH3,"Ammonia (NH3) is a colorless, pungent gas with a molecular weight of 17.03 g/mol. Standard purity constraints typically require 99.5% minimum purity for industrial applications. It is composed of one nitrogen atom and three hydrogen atoms, and is commonly stored and transported as a liquid under high pressure or low temperature. Infrastructure context requires corrosion-resistant materials due to its reactivity with metals.",other,synthetic
+CAR_00002,El13,Standard electricity transmission with typical voltage levels and purity constraints for grid infrastructure.,electricity,other
+CAR_00003,CH4,"Methane (CH4) is a colorless, odorless gas primarily used as a fuel source. Standard purity constraints typically require 95%+ purity for industrial applications. Infrastructure context includes pipeline transportation, cryogenic storage, and combustion systems.",fuel,non-renewable

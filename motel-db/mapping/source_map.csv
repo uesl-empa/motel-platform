@@ -1,7 +1,7 @@
 source_name,source_id,status
-conversion_parametrization,SRC_00002,pre-existing
-report_danish_energy_2025,SRC_00003,pre-existing
-paper_CCGT_2024,SRC_00004,pre-existing
-report_VSE_2025,SRC_00005,pre-existing
-report_VSE_2022,SRC_00006,pre-existing
-report_power_to_ammonia_2018,SRC_00006,pre-existing
+report_power_to_ammonia_2018,SRC_00001,created
+conversion_parametrization,SRC_00002,created
+report_danish_energy_2025,SRC_00003,created
+paper_CCGT_2024,SRC_00004,created
+report_VSE_2025,SRC_00005,created
+report_VSE_2022,SRC_00006,created

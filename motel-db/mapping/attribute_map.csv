@@ -1,5 +1,5 @@
 attribute_name,attribute_id,status
-trl,ATTR_00013,created
+trl,ATTR_00001,created
 tech_maturity,ATTR_00002,created
 technical_efficiency,ATTR_00003,created
 theoretical_efficiency,ATTR_00004,created
@@ -12,3 +12,5 @@ opex_per_capacity_yr,ATTR_00010,created
 opex_per_energy,ATTR_00011,created
 min_installation_size,ATTR_00012,created
 uncertainty_rating,ATTR_00013,created
+discount_rate_pct,ATTR_00014,created
+reference_unit_size,ATTR_00015,created

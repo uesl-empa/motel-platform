@@ -1,3 +1,3 @@
 process_name,process_id,status
-OCGT,PROC_00002,pre-existing
-CCGT,PROC_00002,pre-existing
+CCGT,PROC_00001,created
+OCGT,PROC_00002,created

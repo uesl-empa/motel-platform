@@ -1,42 +1,4 @@
 tech_id,technology_name,technology_description,technology_variant,main_process,main_operation_unit,ontology_iri
-TECH_00001,NH3_CCGT_El,Conversion,Gas turbine,Ammonia based generation loop,,
+TECH_00001,NH3_CCGT_El,Conversion,Gas turbine,
 TECH_00002,NH3_OCGT_El,Conversion,Gas turbine,
 TECH_00003,CH4_CCGT_El,Conversion,Gas turbine,Methane-fueled CCGT with carbon capture and storage (CCS) (2030).
-TECH_00004,CH4_CHP_ElTh,Conversion,Combined heat & power,Combined heat and power (CHP) generation using methane (CH₄).
-TECH_00005,CH4_FuelCell_El,Conversion,Fuel cell,Methane-fueled fuel cell electricity generation at El47 (2030).
-TECH_00006,CH4_FuelCell_ElBdg,Conversion,Fuel cell,Methane-fueled fuel cell electricity generation in buildings (2030).
-TECH_00007,CH4_OCGT_El,Conversion,Gas turbine,Methane-fueled open cycle gas turbine (OCGT) electricity generation (2030).
-TECH_00008,Geothermal_CHP_ElTh,Conversion,Combined heat & power,Geothermal-based CHP generation (2040).
-TECH_00009,H2_CCGT_El,Conversion,Gas turbine,Hydrogen-fueled combined cycle gas turbine (CCGT) electricity generation (2050).
-TECH_00010,H2_FuelCell_El,Conversion,Fuel cell,Electricity generation via fuel cells at node El47 (2040).
-TECH_00011,H2_FuelCell_ElBdg,Conversion,Fuel cell,Electricity generation via fuel cells in buildings (2030).
-TECH_00012,H2_OCGT_El,Conversion,Gas turbine,Hydrogen-fueled open cycle gas turbine (OCGT) electricity generation (2050).
-TECH_00013,El_PumpedHydro_Pump,Conversion,Hydropower,Pumped hydroelectric energy storage (pump mode).
-TECH_00014,Hydro_PumpedTurbine_El,Conversion,Hydropower,Pumped hydroelectric power generation (turbine mode).
-TECH_00015,Hydro_RunOfRiver_El,Conversion,Hydropower,Run-of-river hydroelectric power plant.
-TECH_00016,Hydro_Reservoir_El,Conversion,Hydropower,Hydroelectric power generation from storage reservoirs.
-TECH_00017,MSW_Incineration_El,Conversion,Waste incineration,Electricity generation from municipal solid waste (MSW) incineration.
-TECH_00018,Solar_PVAlpine_El,Conversion,Photovoltaic,"gound-mounted Alpine PV, from ETHZ study in 2024"
-TECH_00019,Solar_PVRooftop_El,Conversion,Photovoltaic,"rooftop PV, small scale, in 2025"
-TECH_00020,U235_Nuclear_El,Conversion,Nuclear fission,Electricity generation from nuclear power (U235) at node El13.
-TECH_00021,Wind_Turbine_El,Conversion,Wind power,Generic wind turbine electricity generation (2020).
-TECH_00022,Wood_CHP_ElTh,Conversion,Combined heat & power,Combined heat and power (CHP) generation using wood.
-TECH_00023,CH4_Boiler_ThBdg,Conversion,Boiler,Methane-fueled heating system for buildings.
-TECH_00024,CH4_Boiler_ThInd,Conversion,Boiler,Methane-fueled heating system for thermal power plants.
-TECH_00025,El_Heater_ThBdg,Conversion,Electric heater,Electric heating system for buildings.
-TECH_00026,El_Heater_ThInd,Conversion,Electric heater,Electric heating system for thermal power plants.
-TECH_00027,El_AirCon_ThSc,Conversion,Heat pump,Electric heating system for buildings with thermal storage.
-TECH_00028,H2_Boiler_ThInd,Conversion,Boiler,Hydrogen-fueled heating system for thermal power plants (2030).
-TECH_00029,El_HeatPump_ThBdg,Conversion,Heat pump,"Generic heat pump for residential heating, fixed COP 4"
-TECH_00030,El_HeatPump_ThInd,Conversion,Heat pump,Low-temperature heat upgrade for district heating (2030).
-TECH_00031,Oil_Boiler_ThBdg,Conversion,Boiler,Hydrocarbon-fueled heating system for buildings.
-TECH_00032,Oil_Boiler_ThInd,Conversion,Boiler,Hydrocarbon-fueled heating system for thermal power plants.
-TECH_00033,Wood_Boiler_ThBdg,Conversion,Boiler,Wood-fueled heating system for buildings.
-TECH_00034,H2_HaberBosch_NH3,Conversion,Chemical synthesis,Ammonia synthesis (Haber Bosch process)
-TECH_00035,BioWet_Digestion_CH4,Conversion,Anaerobic digestion,Wet biomass anaerobic digestion with gas upgrading
-TECH_00036,H2_Sabatier_CH4,Conversion,Catalytic hydrogenation,Methane synthesis from H2 and CO2 via the thermo catalytic Sabatier reaction.
-TECH_00037,CookingOil_HEFA_C12,Conversion,Hydrotreatment,SAF Production via esterification of used cooking oil and animal fat
-TECH_00038,Wood_Boiler_ThInd,Conversion,Boiler,Wood-fueled heating system for thermal power plants.
-TECH_00039,H2_CO2Hydro_MeOH,Conversion,Catalytic hydrogenation,Methanol synthesis from CO2 hydrogenation
-TECH_00040,H2_RWGS_CO,Conversion,Catalytic conversion,"Reverse water gas shift reaction plant. Emerging technology, 2030. "
-TECH_00041,El_Electrolysis_H2,Conversion,Electrolysis,"Electrolysis 2030, Alkaline technology (10 MW) from Danish Energy Reports 2025 is the benchmark "

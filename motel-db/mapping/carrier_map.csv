@@ -1,4 +1,4 @@
 carrier_name,carrier_id,status
-El13,CAR_00002,pre-existing
-CH4,CAR_00003,pre-existing
-NH3,CAR_00003,pre-existing
+NH3,CAR_00001,created
+El13,CAR_00002,created
+CH4,CAR_00003,created

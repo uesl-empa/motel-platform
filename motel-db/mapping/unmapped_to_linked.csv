@@ -1,4 +1,4 @@
 unmapped_index,technology_name,linked_entity_id,tech_id,process_id,geographic_scope,temporal_scope,capacity_scope,system_boundary,source_ids,date_mapped
-0,NH3_CCGT_El,LE_00001,TECH_00001,PROC_00002,ECA,2050,,Plant ready to operate,"[""SRC_00006"", ""SRC_00002"", ""SRC_00003""]",2026-06-23
-1,NH3_OCGT_El,LE_00002,TECH_00002,PROC_00002,ECA,2050,,Plant ready to operate,"[""SRC_00006"", ""SRC_00002"", ""SRC_00003""]",2026-06-23
-2,CH4_CCGT_El,LE_00003,TECH_00003,PROC_00002,ECA,2050,400000,Plant ready to operate,"[""SRC_00004"", ""SRC_00005"", ""SRC_00006""]",2026-06-23
+0,NH3_CCGT_El,LE_00001,TECH_00001,PROC_00001,ECA,2050,,Plant ready to operate,"[""SRC_00001"", ""SRC_00002"", ""SRC_00003""]",2026-06-23
+1,NH3_OCGT_El,LE_00002,TECH_00002,PROC_00002,ECA,2050,,Plant ready to operate,"[""SRC_00001"", ""SRC_00002"", ""SRC_00003""]",2026-06-23
+2,CH4_CCGT_El,LE_00003,TECH_00003,PROC_00001,ECA,2050,400000,Plant ready to operate,"[""SRC_00004"", ""SRC_00005"", ""SRC_00006""]",2026-06-23

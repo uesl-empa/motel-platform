@@ -1,0 +1,240 @@
+- linked_entity_id: LE_00001
+  tech_id: TECH_00001
+  process_id: PROC_00001
+  scope:
+    geographic_scope: ECA
+    temporal_scope: '2050'
+    capacity_scope: ''
+    system_boundary: Plant ready to operate
+  balancing:
+    inputs:
+    - carrier_id: CAR_00001
+      share: 1.0
+      unit: kWh
+    outputs:
+    - carrier_id: CAR_00002
+      share: 0.58
+      unit: kWh
+  sources:
+  - source_id: SRC_00001
+    linked_attribute_ids:
+    - ''
+    - ATTR_00006
+    - ATTR_00010
+    - ATTR_00011
+    - ATTR_00003
+  - source_id: SRC_00002
+    linked_attribute_ids:
+    - ''
+    - ''
+  - source_id: SRC_00003
+    linked_attribute_ids:
+    - ATTR_00005
+  values:
+  - attribute_id: ATTR_00001
+    attribute_name: trl
+    value: 9
+    time_index: 2050
+  - attribute_id: ATTR_00002
+    attribute_name: tech_maturity
+    value: Mature
+    time_index: 2050
+  - attribute_id: ATTR_00003
+    attribute_name: technical_efficiency
+    value: '0.58'
+    time_index: 2050
+  - attribute_id: ATTR_00004
+    attribute_name: theoretical_efficiency
+    value: na
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: operating_temperature_c
+    value: 0
+    time_index: 2050
+  - attribute_id: ATTR_00006
+    attribute_name: lifetime_yr
+    value: 35
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: capex_one_time
+    value: 0
+    time_index: 2050
+  - attribute_id: ATTR_00008
+    attribute_name: opex_one_time
+    value: 0
+    time_index: 2050
+  - attribute_id: ATTR_00009
+    attribute_name: opex_fix_pct_of_capex
+    value: 2.92
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: opex_per_capacity_yr
+    value: 35
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: opex_per_energy
+    value: 0.002
+    time_index: 2050
+  date_created: '2026-06-23'
+- linked_entity_id: LE_00002
+  tech_id: TECH_00002
+  process_id: PROC_00002
+  scope:
+    geographic_scope: ECA
+    temporal_scope: '2050'
+    capacity_scope: ''
+    system_boundary: Plant ready to operate
+  balancing:
+    inputs:
+    - carrier_id: CAR_00001
+      share: 1.0
+      unit: kWh
+    outputs:
+    - carrier_id: CAR_00002
+      share: 0.4
+      unit: kWh
+  sources:
+  - source_id: SRC_00001
+    linked_attribute_ids:
+    - ''
+    - ATTR_00006
+    - ATTR_00010
+    - ATTR_00011
+    - ATTR_00003
+  - source_id: SRC_00002
+    linked_attribute_ids:
+    - ''
+    - ''
+  - source_id: SRC_00003
+    linked_attribute_ids:
+    - ATTR_00005
+  values:
+  - attribute_id: ATTR_00001
+    attribute_name: trl
+    value: 9
+    time_index: 2050
+  - attribute_id: ATTR_00002
+    attribute_name: tech_maturity
+    value: Mature
+    time_index: 2050
+  - attribute_id: ATTR_00003
+    attribute_name: technical_efficiency
+    value: '0.4'
+    time_index: 2050
+  - attribute_id: ATTR_00004
+    attribute_name: theoretical_efficiency
+    value: na
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: operating_temperature_c
+    value: 0
+    time_index: 2050
+  - attribute_id: ATTR_00006
+    attribute_name: lifetime_yr
+    value: 30
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: capex_one_time
+    value: 0
+    time_index: 2050
+  - attribute_id: ATTR_00008
+    attribute_name: opex_one_time
+    value: 0
+    time_index: 2050
+  - attribute_id: ATTR_00009
+    attribute_name: opex_fix_pct_of_capex
+    value: 2.67
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: opex_per_capacity_yr
+    value: 20
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: opex_per_energy
+    value: 0.002
+    time_index: 2050
+  date_created: '2026-06-23'
+- linked_entity_id: LE_00003
+  tech_id: TECH_00003
+  process_id: PROC_00001
+  scope:
+    geographic_scope: ECA
+    temporal_scope: '2050'
+    capacity_scope: '400000'
+    system_boundary: Plant ready to operate
+  balancing:
+    inputs:
+    - carrier_id: CAR_00003
+      share: 1.0
+      unit: kWh
+    outputs:
+    - carrier_id: CAR_00002
+      share: 0.61
+      unit: kWh
+  sources:
+  - source_id: SRC_00004
+    linked_attribute_ids:
+    - ATTR_00003
+  - source_id: SRC_00005
+    linked_attribute_ids:
+    - ''
+    - ATTR_00010
+    - ATTR_00011
+  - source_id: SRC_00006
+    linked_attribute_ids:
+    - ATTR_00006
+    - ATTR_00003
+  values:
+  - attribute_id: ATTR_00001
+    attribute_name: trl
+    value: 9
+    time_index: 2050
+  - attribute_id: ATTR_00002
+    attribute_name: tech_maturity
+    value: Mature
+    time_index: 2050
+  - attribute_id: ATTR_00003
+    attribute_name: technical_efficiency
+    value: '0.64'
+    time_index: 2050
+  - attribute_id: ATTR_00004
+    attribute_name: theoretical_efficiency
+    value: na
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: operating_temperature_c
+    value: 1500
+    time_index: 2050
+  - attribute_id: ATTR_00012
+    attribute_name: min_installation_size
+    value: 400000
+    time_index: 2050
+  - attribute_id: ATTR_00006
+    attribute_name: lifetime_yr
+    value: 23
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: capex_one_time
+    value: 0
+    time_index: 2050
+  - attribute_id: ATTR_00008
+    attribute_name: opex_one_time
+    value: 0
+    time_index: 2050
+  - attribute_id: ATTR_00009
+    attribute_name: opex_fix_pct_of_capex
+    value: 2.36
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: opex_per_capacity_yr
+    value: 21
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: opex_per_energy
+    value: 0.002
+    time_index: 2050
+  - attribute_id: ATTR_00013
+    attribute_name: uncertainty_rating
+    value: Low
+    time_index: 2050
+  date_created: '2026-06-23'
