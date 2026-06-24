@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860" role="img" aria-labelledby="title desc">
+  <title id="title">MOTEL Workflow Overview</title>
+  <desc id="desc">Flow from external data sources through ingestion, harmonisation, ontology alignment, and outputs for apps and models.</desc>
+  <defs>
+    <style>
+      .title { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #0f3b2b; }
+      .subtitle { font: 500 18px 'Segoe UI', Tahoma, sans-serif; fill: #31594b; }
+      .boxText { font: 600 15px 'Segoe UI', Tahoma, sans-serif; fill: #123326; }
+      .smallText { font: 600 14px 'Segoe UI', Tahoma, sans-serif; fill: #123326; }
+      .line { stroke: #2f7f5b; stroke-width: 2.6; fill: none; marker-end: url(#arrow); }
+      .auxLine { stroke: #417f66; stroke-width: 2.2; fill: none; marker-end: url(#arrow); stroke-dasharray: 5 4; }
+      .core { fill: #e9f7f0; stroke: #2f7f5b; stroke-width: 2; rx: 13; }
+      .support { fill: #f7fbf9; stroke: #74a994; stroke-width: 2; rx: 13; }
+      .output { fill: #eaf3ff; stroke: #4c77a8; stroke-width: 2; rx: 13; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8.2" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2f7f5b" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="860" fill="#f6fbf8" />
+  <rect x="28" y="24" width="1224" height="812" rx="22" fill="#ffffff" stroke="#dcece4" stroke-width="2"/>
+
+  <text class="title" x="56" y="74">MOTEL End-to-End Data Workflow</text>
+  <text class="subtitle" x="56" y="106">From external evidence to harmonised, ontology-ready data for energy system models</text>
+
+  <rect class="core" x="90" y="170" width="170" height="62" rx="13"/>
+  <text class="boxText" x="116" y="208">External Sources</text>
+
+  <rect class="core" x="300" y="170" width="170" height="62" rx="13"/>
+  <text class="boxText" x="330" y="208">Source Register</text>
+
+  <rect class="core" x="510" y="170" width="170" height="62" rx="13"/>
+  <text class="boxText" x="542" y="208">Record Capture</text>
+
+  <rect class="core" x="720" y="170" width="170" height="62" rx="13"/>
+  <text class="boxText" x="748" y="208">Unmapped Data</text>
+
+  <rect class="core" x="930" y="170" width="250" height="62" rx="13"/>
+  <text class="boxText" x="960" y="208">Validation and Deduplication</text>
+
+  <rect class="core" x="960" y="290" width="220" height="62" rx="13"/>
+  <text class="boxText" x="987" y="328">Mapping Suggestions</text>
+
+  <rect class="core" x="960" y="410" width="220" height="62" rx="13"/>
+  <text class="boxText" x="997" y="448">Reviewer Approval</text>
+
+  <rect class="core" x="960" y="530" width="220" height="62" rx="13"/>
+  <text class="boxText" x="997" y="568">Mapped Records</text>
+
+  <rect class="core" x="960" y="650" width="220" height="62" rx="13"/>
+  <text class="boxText" x="991" y="688">Ontology Alignment</text>
+
+  <rect class="support" x="640" y="290" width="220" height="62" rx="13"/>
+  <text class="smallText" x="668" y="328">Technology Catalogs</text>
+
+  <rect class="support" x="640" y="410" width="220" height="62" rx="13"/>
+  <text class="smallText" x="686" y="448">Process Catalogs</text>
+
+  <rect class="support" x="640" y="650" width="220" height="62" rx="13"/>
+  <text class="smallText" x="679" y="688">MOTEL Ontology</text>
+
+  <rect class="output" x="300" y="650" width="250" height="62" rx="13"/>
+  <text class="smallText" x="332" y="688">Backend API and Docs</text>
+
+  <rect class="output" x="300" y="530" width="250" height="62" rx="13"/>
+  <text class="smallText" x="330" y="568">Review and Visual Apps</text>
+
+  <rect class="output" x="80" y="590" width="170" height="94" rx="13"/>
+  <text class="smallText" x="108" y="636">Energy System</text>
+  <text class="smallText" x="137" y="658">Models</text>
+
+  <path class="line" d="M260 201 L300 201"/>
+  <path class="line" d="M470 201 L510 201"/>
+  <path class="line" d="M680 201 L720 201"/>
+  <path class="line" d="M890 201 L930 201"/>
+
+  <path class="line" d="M1055 232 L1055 290"/>
+  <path class="line" d="M1070 352 L1070 410"/>
+  <path class="line" d="M1070 472 L1070 530"/>
+  <path class="line" d="M1070 592 L1070 650"/>
+
+  <path class="line" d="M960 561 L550 561"/>
+  <path class="line" d="M960 681 L550 681"/>
+
+  <path class="line" d="M300 681 L250 681 L250 660"/>
+  <path class="line" d="M300 561 L250 561 L250 622"/>
+
+  <path class="auxLine" d="M860 321 L960 321"/>
+  <path class="auxLine" d="M860 441 L960 441"/>
+  <path class="auxLine" d="M860 681 L960 681"/>
+
+  <text class="subtitle" x="56" y="792">MOTEL helps teams standardize technology data, reduce mapping effort, and publish consistent inputs for modelers and applications.</text>
+</svg>

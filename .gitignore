@@ -26,3 +26,6 @@ Thumbs.db
 site/
 dist/
 build/
+
+
+raw_data/

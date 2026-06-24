@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MOTEL Platform</title>
+    <title>MOTEL | Open Technology Data for Energy Models</title>
     <meta
       name="description"
-      content="MOTEL database: open technology data for energy models."
+      content="MOTEL turns fragmented technology data into harmonised, ontology-ready records for energy system models and data apps."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -14,50 +14,113 @@
     <header class="hero">
       <div class="hero-inner">
         <p class="kicker">MOTEL Platform</p>
-        <h1>Open Technology Data for Energy Models</h1>
+        <h1>Open technology data infrastructure for energy system modeling</h1>
         <p class="subtitle">
-          MOTEL is a structured, ontology-ready technology database and workflow
-          for transparent energy system modeling.
+          MOTEL helps teams collect, harmonise, map, and publish technology
+          data so model inputs are transparent, reusable, and ontology-aligned.
         </p>
         <div class="actions">
-          <a class="btn primary" href="../">Repository</a>
-          <a class="btn" href="../motel-db/">Data Folder</a>
+          <a
+            class="btn primary"
+            href="https://github.com/BartonChenTW/motel-platform"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Repository</a
+          >
+          <a
+            class="btn"
+            href="https://github.com/BartonChenTW/motel-platform/tree/main/motel-db"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Browse Data (CSV)</a
+          >
+          <a
+            class="btn"
+            href="https://github.com/BartonChenTW/motel-platform/blob/main/docs/workflow_diagram.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Workflow Source</a
+          >
         </div>
       </div>
     </header>
 
     <main class="container">
-      <section class="card">
-        <h2>What Is Included</h2>
-        <ul>
-          <li>Technology and process data in CSV tables</li>
-          <li>Controlled vocabularies and mappings</li>
-          <li>RDF export output for graph workflows</li>
-          <li>Notebook-based ingestion and harmonization steps</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Key Folders</h2>
-        <ul>
-          <li><strong>motel-db/</strong>: core tabular dataset</li>
-          <li><strong>schema/</strong>: schema definitions</li>
-          <li><strong>3a_graphdb/</strong>: CSV to TTL conversion</li>
-          <li><strong>1_ingest/</strong> and <strong>2_harmonise/</strong>: data workflow notebooks</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Next Step</h2>
+      <section class="card intro">
+        <h2>What is MOTEL for?</h2>
         <p>
-          A Streamlit reviewer app will be linked here next to support online
-          filtering, search, and quick visual checks of the MOTEL tables.
+          Energy modelers often spend significant time cleaning inconsistent
+          source data. MOTEL provides a structured workflow and schema-first
+          dataset so technology records become easier to compare, validate, and
+          reuse across studies.
         </p>
+      </section>
+
+      <section class="grid-3">
+        <article class="card">
+          <h3>For Data Curators</h3>
+          <p>
+            Capture new records in a consistent format, track provenance, and
+            reduce duplicate manual cleanup.
+          </p>
+        </article>
+        <article class="card">
+          <h3>For Reviewers</h3>
+          <p>
+            Evaluate mapping suggestions, validate harmonised entities, and keep
+            terminology aligned with controlled vocabularies.
+          </p>
+        </article>
+        <article class="card">
+          <h3>For Modelers and App Teams</h3>
+          <p>
+            Consume stable, ontology-ready records for downstream APIs,
+            visualization tools, and energy system model pipelines.
+          </p>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>How MOTEL helps</h2>
+        <ul>
+          <li>Standardizes heterogeneous data sources into shared record structures.</li>
+          <li>Supports harmonisation and mapping against existing MOTEL entities.</li>
+          <li>Creates graph-ready outputs for semantic workflows and interoperability.</li>
+          <li>Improves transparency with explicit schemas, mappings, and source links.</li>
+        </ul>
+      </section>
+
+      <section class="card figure-card">
+        <div class="figure-head">
+          <h2>Workflow Overview</h2>
+          <p>Static figure version for reliable rendering on GitHub Pages.</p>
+        </div>
+        <figure class="workflow-figure">
+          <img
+            src="assets/workflow.svg"
+            alt="MOTEL workflow from external sources to mapped records, ontology alignment, and outputs for apps and energy system models"
+          />
+          <figcaption>
+            External sources are transformed through ingestion, harmonisation,
+            mapping, and ontology alignment before being delivered to review
+            apps, APIs, docs, and model workflows.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="card">
+        <h2>Current Repository Modules</h2>
+        <ul>
+          <li><strong>motel-db/</strong>: core tabular data (controlled vocabulary, mapping, secondary, supplementary)</li>
+          <li><strong>schema/</strong>: validation and data structure definitions</li>
+          <li><strong>1_ingest/</strong> and <strong>2_harmonise/</strong>: ingestion and harmonisation notebooks</li>
+          <li><strong>3a_graphdb/</strong>: CSV to Turtle generation for graph workflows</li>
+        </ul>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Maintained under the MOTEL project.</p>
+      <p>Maintained under the MOTEL project. Updated: 2026-06-24.</p>
     </footer>
   </body>
 </html>
