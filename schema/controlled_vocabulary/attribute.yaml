@@ -14,7 +14,7 @@ properties:
     description: Primary key tracking the immutable metric token variable (e.g., ATTR_CAPEX, ATTR_ANNUAL_AVAILABILITY).
   attribute_name:
     type: string
-    description: Standard human-readable nomenclature name for display layouts (e.g., Capital Expenditure).
+    description: Standard human-readable nomenclature name for display layouts (e.g., Capital Expenditure). Capitalised, no underscores, no unit included.
   attribute_description:
     type: string
     description: Detailed description defining operational math bounds, accounting lines, and engineering definitions.

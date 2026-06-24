@@ -15,7 +15,7 @@ properties:
     description: Primary immutable database key identifying a network commodity node (e.g., carrier_H2, carrier_AC_electricity).
   carrier_name:
     type: string
-    description: Human-readable label mapping the commodity fluid or vector type (e.g., Gaseous Hydrogen).
+    description: Human-readable label mapping the commodity fluid or vector type (e.g., Gaseous Hydrogen). Capitalised, no underscores, no region/country included.
   carrier_description:
     type: string
     description: Explains standard purity constraints, chemical composition expectations, or infrastructure context bounds.

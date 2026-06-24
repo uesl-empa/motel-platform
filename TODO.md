@@ -1,16 +1,5 @@
-[to be update!]
-
-1. review the workflow
-2. finish the basic input (with guideline, maybe use LLM for next step)
-3. link with ontology
-4. link with MOTEL webapp!
-
-
-put develop and put ontology here!
-
-challenge:
- - linked all works together:
- - how to add data to MOTEL is not clear
+1. link with ontology [to be decided]
+2. link with MOTEL webapp! [ongoing]
 
 
 breakdown of the whole database building workflow:

@@ -27,6 +27,13 @@ import yaml
 MODEL = "qwen3:14b"
 
 # ---------------------------------------------------------------------------
+# Global controlled-vocabulary context for all LLM calls.
+# Set this from the notebook before running harmonisation, e.g.:
+#   hh.GLOBAL_CV_CONTEXT = build_cv_context(df_nomenclature, df_carrier)
+# ---------------------------------------------------------------------------
+GLOBAL_CV_CONTEXT = ""
+
+# ---------------------------------------------------------------------------
 # Entity configuration
 # ---------------------------------------------------------------------------
 ENTITY_CONFIG = {
@@ -186,10 +193,14 @@ def llm_fill_fields(row, schema, extra_context=""):
         + (f"Allowed values for enum fields:\n{json.dumps(enum_hints, indent=2)}\n\n" if enum_hints else "")
         + f"Reply ONLY with a JSON object containing the missing fields: {missing}"
     )
+    system_msg = "You are a data entry assistant. Output only valid JSON, no markdown or extra text."
+    if GLOBAL_CV_CONTEXT:
+        system_msg += f"\n\n{GLOBAL_CV_CONTEXT}"
+
     resp = ollama.chat(
         model=MODEL,
         messages=[
-            {"role": "system", "content": "You are a data entry assistant. Output only valid JSON, no markdown or extra text."},
+            {"role": "system", "content": system_msg},
             {"role": "user",   "content": prompt},
         ],
         options={"temperature": 0.0},
