@@ -1,0 +1,126 @@
+:root {
+  --bg: #f6f9f7;
+  --surface: #ffffff;
+  --ink: #12281f;
+  --muted: #415a4f;
+  --brand: #1f7a57;
+  --brand-ink: #ffffff;
+  --ring: #b8d8ca;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% -10%, #e8f4ee 0, transparent 40%),
+    radial-gradient(circle at 90% 10%, #eef8f2 0, transparent 30%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0f3b2b, #1f7a57);
+  color: #f8fffb;
+  padding: 4rem 1rem 3rem;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  opacity: 0.9;
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.subtitle {
+  max-width: 65ch;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+  color: #dff3ea;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.95rem;
+  color: #eafff5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: #f2fff9;
+  color: #11422f;
+  border-color: #f2fff9;
+}
+
+.container {
+  max-width: 900px;
+  margin: 1.25rem auto 2rem;
+  padding: 0 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid #deebe4;
+  border-radius: 0.9rem;
+  padding: 1rem 1.05rem;
+  box-shadow: 0 0 0 3px rgba(184, 216, 202, 0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+ul {
+  margin: 0.6rem 0 0.2rem;
+  padding-left: 1.2rem;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 0.5rem 1rem 1.4rem;
+  font-size: 0.94rem;
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 3.1rem;
+  }
+
+  .card {
+    padding: 0.9rem;
+  }
+}

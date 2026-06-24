@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MOTEL Platform</title>
+    <meta
+      name="description"
+      content="MOTEL database: open technology data for energy models."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="kicker">MOTEL Platform</p>
+        <h1>Open Technology Data for Energy Models</h1>
+        <p class="subtitle">
+          MOTEL is a structured, ontology-ready technology database and workflow
+          for transparent energy system modeling.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="../">Repository</a>
+          <a class="btn" href="../motel-db/">Data Folder</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>What Is Included</h2>
+        <ul>
+          <li>Technology and process data in CSV tables</li>
+          <li>Controlled vocabularies and mappings</li>
+          <li>RDF export output for graph workflows</li>
+          <li>Notebook-based ingestion and harmonization steps</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Key Folders</h2>
+        <ul>
+          <li><strong>motel-db/</strong>: core tabular dataset</li>
+          <li><strong>schema/</strong>: schema definitions</li>
+          <li><strong>3a_graphdb/</strong>: CSV to TTL conversion</li>
+          <li><strong>1_ingest/</strong> and <strong>2_harmonise/</strong>: data workflow notebooks</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Next Step</h2>
+        <p>
+          A Streamlit reviewer app will be linked here next to support online
+          filtering, search, and quick visual checks of the MOTEL tables.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Maintained under the MOTEL project.</p>
+    </footer>
+  </body>
+</html>
