@@ -199,3 +199,19 @@ properties:
       other_notes:
         type: string
         description: Any additional free-text notes or flags for project-level context.
+
+  harmonisation_record:
+    type: object
+    description: Operational tracking fields created and updated by the harmonisation pipeline after ingestion.
+    properties:
+      mapping_status:
+        type: string
+        enum: [to_be_mapped, mapped]
+        description: Lifecycle state set to to_be_mapped during ingestion and changed to mapped after successful harmonisation.
+      linked_entity_id:
+        type: string
+        description: Linked entity identifier assigned after successful harmonisation.
+      date_mapped:
+        type: string
+        format: date
+        description: ISO 8601 date on which harmonisation completed successfully.

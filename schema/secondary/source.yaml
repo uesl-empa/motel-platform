@@ -11,7 +11,8 @@ properties:
     description: Unique primary identifier index tracking reference origin profiles (e.g., SRC_NREL_ATB_2023).
   source_name:
     type: string
-    description: Standard clean citation title of the source document or relational library database.
+    pattern: "^[A-Z0-9][^_]*$"
+    description: Standard capitalised clean citation title without underscores for the source document or relational library database.
   source_description:
     type: string
     description: Comprehensive breakdown tracking data collection scope, original authors, and reference metadata profiles.

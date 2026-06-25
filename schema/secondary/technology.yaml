@@ -11,7 +11,8 @@ properties:
     description: Unique alphanumerical hardware key acting as the primary key for physical equipment assets (e.g., tech_00041).
   technology_name:
     type: string
-    description: Standardised machine-readable asset identifier using snake_case (e.g., El_Electrolysis_Alkaline).
+    pattern: "^[A-Z0-9][^_]*$"
+    description: Standardised capitalised human-readable asset name without underscores (e.g., El Electrolysis Alkaline).
   technology_description:
     type: string
     description: Engineering narrative defining the technical performance bounds, scope limits, or mechanical configurations of the hardware.
