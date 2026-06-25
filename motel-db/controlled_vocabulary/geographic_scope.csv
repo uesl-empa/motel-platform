@@ -1,5 +1,2 @@
 geographic_scope,geographic_scope_description,note
-ECA,ECA,
-RER,RER,
-CH,CH,
-GLO,GLO,
+GEO_ECA,"Europe and Central Asia (ECA), encompassing European Union member states, Switzerland, and Central Asian countries. Grid connection and regulatory contexts reflect European (EU/Switzerland) conditions with extensibility for regional variations.",

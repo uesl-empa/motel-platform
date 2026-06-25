@@ -13,6 +13,7 @@ Covers:
 """
 
 import csv
+import datetime
 import json
 import re
 import shutil
@@ -25,6 +26,8 @@ import yaml
 # Model
 # ---------------------------------------------------------------------------
 MODEL = "qwen3:14b"
+HARMONISATION_VERSION = "1.0.0"
+LOG_DIR = Path("../motel-db/log")
 
 # ---------------------------------------------------------------------------
 # Global controlled-vocabulary context for all LLM calls.
@@ -32,6 +35,44 @@ MODEL = "qwen3:14b"
 #   hh.GLOBAL_CV_CONTEXT = build_cv_context(df_nomenclature, df_carrier)
 # ---------------------------------------------------------------------------
 GLOBAL_CV_CONTEXT = ""
+
+
+def start_harmonisation_log(settings=None, log_dir=LOG_DIR):
+    """Create a timestamped JSON-lines log for one harmonisation run."""
+    started_at = datetime.datetime.now().astimezone()
+    log_dir = Path(log_dir)
+    log_dir.mkdir(parents=True, exist_ok=True)
+    log_path = log_dir / f"harmonisation_{started_at.strftime('%Y%m%d_%H%M%S')}.log"
+    suffix = 1
+    while log_path.exists():
+        log_path = log_dir / (
+            f"harmonisation_{started_at.strftime('%Y%m%d_%H%M%S')}_{suffix:02d}.log"
+        )
+        suffix += 1
+
+    log_harmonisation_event(
+        log_path,
+        "run",
+        "started",
+        harmonisation_version=HARMONISATION_VERSION,
+        llm_model=MODEL,
+        settings=settings or {},
+    )
+    return log_path
+
+
+def log_harmonisation_event(log_path, step, action, **details):
+    """Append one timestamped event to a harmonisation JSON-lines log."""
+    event = {
+        "timestamp": datetime.datetime.now().astimezone().isoformat(timespec="seconds"),
+        "step": step,
+        "action": action,
+        **details,
+    }
+    log_path = Path(log_path)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(event, ensure_ascii=False, default=str) + "\n")
 
 # ---------------------------------------------------------------------------
 # Entity configuration
@@ -79,6 +120,8 @@ LE_PATH = "../motel-db/linked_entity/linked_entity.yaml"
 # sources, balancing, and values are arrays/objects that don't flatten cleanly into columns.
 
 MAPPING_DIR = Path("../motel-db/mapping")
+UNMAPPED_STATUS_PENDING = "to_be_mapped"
+UNMAPPED_STATUS_MAPPED = "mapped"
 
 SUPPLEMENTARY_PATHS = [
     Path("../motel-db/supplementary/contributor.csv"),
@@ -106,6 +149,104 @@ def load_all_schemas(base_dir="../schema/"):
         with open(p, encoding="utf-8") as f:
             schemas[p.name] = yaml.safe_load(f)
     return schemas
+
+
+def load_pending_unmapped(path):
+    """
+    Load a staging YAML file and select entities that still need harmonisation.
+
+    Records created before mapping_status was introduced are treated as pending
+    for backward compatibility.
+
+    Returns:
+        tuple[list[dict], list[dict], list[int]]: Full document, pending records,
+        and their indices in the full document.
+    """
+    path = Path(path)
+    with open(path, encoding="utf-8") as f:
+        all_entities = yaml.safe_load(f) or []
+
+    def get_mapping_status(entity):
+        record = entity.get("harmonisation_record") or {}
+        return record.get(
+            "mapping_status",
+            entity.get("mapping_status", UNMAPPED_STATUS_PENDING),
+        )
+
+    pending_indices = [
+        i for i, entity in enumerate(all_entities)
+        if get_mapping_status(entity) != UNMAPPED_STATUS_MAPPED
+    ]
+    pending_entities = [all_entities[i] for i in pending_indices]
+    return all_entities, pending_entities, pending_indices
+
+
+def mark_unmapped_entities_mapped(
+    path, all_entities, source_indices, linked_entities, date_mapped
+):
+    """
+    Mark successfully harmonised staging records as mapped and save atomically.
+
+    The status file is updated only after the caller has successfully written
+    the linked entities.
+    """
+    if len(source_indices) != len(linked_entities):
+        raise ValueError(
+            "Cannot update mapping status: source and linked entity counts differ"
+        )
+
+    for source_index, linked_entity in zip(source_indices, linked_entities):
+        entity = all_entities[source_index]
+        record = dict(entity.get("harmonisation_record") or {})
+        record["mapping_status"] = UNMAPPED_STATUS_MAPPED
+        record["linked_entity_id"] = linked_entity["linked_entity_id"]
+        record["date_mapped"] = str(date_mapped)
+        entity["harmonisation_record"] = record
+        entity.pop("mapping_status", None)
+        entity.pop("linked_entity_id", None)
+        entity.pop("date_mapped", None)
+
+    path = Path(path)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with open(temporary, "w", encoding="utf-8") as f:
+        yaml.safe_dump(
+            all_entities,
+            f,
+            allow_unicode=True,
+            sort_keys=False,
+            default_flow_style=False,
+        )
+    temporary.replace(path)
+
+
+def mark_all_unmapped_entities_pending(path, all_entities):
+    """
+    Reset all staging records to pending and remove prior harmonisation outputs.
+
+    This is useful when re-running the harmonisation pipeline from scratch on
+    an existing staging YAML that has already been marked as mapped.
+    """
+    for entity in all_entities:
+        record = dict(entity.get("harmonisation_record") or {})
+        record["mapping_status"] = UNMAPPED_STATUS_PENDING
+        record.pop("linked_entity_id", None)
+        record.pop("date_mapped", None)
+        entity["harmonisation_record"] = record
+        entity.pop("mapping_status", None)
+        entity.pop("linked_entity_id", None)
+        entity.pop("date_mapped", None)
+
+    path = Path(path)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with open(temporary, "w", encoding="utf-8") as f:
+        yaml.safe_dump(
+            all_entities,
+            f,
+            allow_unicode=True,
+            sort_keys=False,
+            default_flow_style=False,
+        )
+    temporary.replace(path)
 
 # ---------------------------------------------------------------------------
 # Registry I/O
@@ -160,6 +301,34 @@ def load_attr_registry():
 # ---------------------------------------------------------------------------
 # LLM field filling and schema validation
 # ---------------------------------------------------------------------------
+def _parse_llm_json(response):
+    """Extract one JSON object from an Ollama response."""
+    try:
+        content = response["message"]["content"]
+    except (KeyError, TypeError) as exc:
+        raise ValueError("Ollama response did not contain message content") from exc
+
+    raw = str(content or "").strip()
+    raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL | re.IGNORECASE).strip()
+    raw = re.sub(r"```(?:json)?\s*|```", "", raw, flags=re.IGNORECASE).strip()
+    if not raw:
+        raise ValueError("Ollama returned an empty response")
+
+    decoder = json.JSONDecoder()
+    for start, char in enumerate(raw):
+        if char != "{":
+            continue
+        try:
+            value, _ = decoder.raw_decode(raw[start:])
+        except json.JSONDecodeError:
+            continue
+        if isinstance(value, dict):
+            return value
+
+    preview = raw[:200].replace("\n", " ")
+    raise ValueError(f"Ollama did not return a valid JSON object: {preview!r}")
+
+
 def llm_fill_fields(row, schema, extra_context=""):
     """
     Fill missing required fields in `row` using the LLM and the schema definition.
@@ -197,17 +366,43 @@ def llm_fill_fields(row, schema, extra_context=""):
     if GLOBAL_CV_CONTEXT:
         system_msg += f"\n\n{GLOBAL_CV_CONTEXT}"
 
-    resp = ollama.chat(
-        model=MODEL,
-        messages=[
-            {"role": "system", "content": system_msg},
-            {"role": "user",   "content": prompt},
-        ],
-        options={"temperature": 0.0},
-    )
-    raw = re.sub(r"```(?:json)?|```", "", resp["message"]["content"]).strip()
-    raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
-    filled = json.loads(raw)
+    messages = [
+        {"role": "system", "content": system_msg},
+        {"role": "user",   "content": prompt},
+    ]
+    filled = None
+    for attempt in range(2):
+        resp = ollama.chat(
+            model=MODEL,
+            messages=messages,
+            options={"temperature": 0.0},
+        )
+        try:
+            filled = _parse_llm_json(resp)
+            break
+        except ValueError as exc:
+            if attempt == 0:
+                try:
+                    previous_content = resp["message"]["content"]
+                except (KeyError, TypeError):
+                    previous_content = ""
+                messages.append({
+                    "role": "assistant",
+                    "content": str(previous_content or ""),
+                })
+                messages.append({
+                    "role": "user",
+                    "content": (
+                        "Your previous response was not a valid JSON object. "
+                        f"Return only one JSON object with these fields: {missing}"
+                    ),
+                })
+            else:
+                print(f"  [WARN] LLM field fill skipped after invalid response: {exc}")
+
+    if filled is None:
+        return row
+
     for f in missing:
         if f in filled and filled[f] and not str(row.get(f, "")).strip():
             row[f] = filled[f]
@@ -227,6 +422,98 @@ def validate_row(row, schema, label=""):
     missing = [f for f in required if not str(row.get(f, "")).strip()]
     if missing:
         print(f"  [WARN] {label} — missing required fields after fill: {missing}")
+
+
+def _name_matches_schema_guideline(entity_type, proposed_name):
+    """Apply lightweight checks when the schema uses prose instead of a pattern."""
+    proposed_name = str(proposed_name or "").strip()
+    if not proposed_name:
+        return False, "name is empty"
+    if entity_type in {"attribute", "carrier", "technology", "source"}:
+        if "_" in proposed_name:
+            return False, f"{entity_type} name must not contain underscores"
+        if proposed_name[:1] != proposed_name[:1].upper():
+            return False, f"{entity_type} name must start with a capital letter"
+    return True, ""
+
+
+def llm_name_from_schema(entity_type, candidate, schema, extra_context=""):
+    """Ask the LLM to name an entity using its schema guideline."""
+    if entity_type == "attribute":
+        name_field = "attribute_name"
+    elif entity_type in SCOPE_CONFIG:
+        name_field = entity_type
+    else:
+        cfg = ENTITY_CONFIG[entity_type]
+        name_field = cfg["name_field"]
+    original_name = str(candidate.get(name_field, "")).strip()
+    if not original_name:
+        return original_name
+
+    field_schema = schema.get("properties", {}).get(name_field, {})
+    prompt = (
+        f"Create the canonical {name_field} for this {entity_type} record.\n\n"
+        f"Candidate record:\n{json.dumps(candidate, indent=2)}\n\n"
+        f"Schema guideline for {name_field}:\n"
+        f"{json.dumps(field_schema, indent=2)}\n\n"
+        "Infer a clear, meaningful name from the candidate information. "
+        "Do not merely perform a mechanical character replacement. "
+        f'Reply ONLY with JSON: {{"{name_field}": "<canonical name>"}}'
+    )
+    if extra_context:
+        prompt += f"\n\nAdditional context:\n{extra_context}"
+    messages = [
+        {
+            "role": "system",
+            "content": (
+                "You are a database naming curator. Follow the supplied schema "
+                "exactly and output only valid JSON."
+            ),
+        },
+        {"role": "user", "content": prompt},
+    ]
+    pattern = field_schema.get("pattern")
+
+    for attempt in range(2):
+        response = ollama.chat(
+            model=MODEL,
+            messages=messages,
+            options={"temperature": 0.0},
+        )
+        try:
+            result = _parse_llm_json(response)
+            proposed_name = str(result.get(name_field, "")).strip()
+            if not proposed_name:
+                raise ValueError(f"LLM omitted {name_field}")
+            if pattern and re.fullmatch(pattern, proposed_name) is None:
+                raise ValueError(
+                    f"LLM name {proposed_name!r} does not match schema pattern {pattern!r}"
+                )
+            if not pattern:
+                is_valid, message = _name_matches_schema_guideline(entity_type, proposed_name)
+                if not is_valid:
+                    raise ValueError(message)
+            return proposed_name
+        except ValueError as exc:
+            if attempt == 1:
+                raise ValueError(
+                    f"Could not generate a schema-compliant {name_field} "
+                    f"for {original_name!r}"
+                ) from exc
+            messages.extend([
+                {
+                    "role": "assistant",
+                    "content": str(response.get("message", {}).get("content", "")),
+                },
+                {
+                    "role": "user",
+                    "content": (
+                        f"The proposed name was invalid: {exc}. "
+                        f"Return only a schema-compliant JSON object containing {name_field}."
+                    ),
+                },
+            ])
+
 
 # ---------------------------------------------------------------------------
 # Entity resolver
@@ -249,6 +536,9 @@ def resolve_entity(entity_type, candidate, registry, all_schemas):
     """
     cfg = ENTITY_CONFIG[entity_type]
     id_field, name_field = cfg["id_field"], cfg["name_field"]
+    schema = all_schemas.get(cfg.get("schema_key"), {})
+    candidate = dict(candidate)
+    candidate[name_field] = llm_name_from_schema(entity_type, candidate, schema)
     candidate_name = str(candidate.get(name_field, "")).strip().lower()
 
     for row in registry:
@@ -270,21 +560,21 @@ def resolve_entity(entity_type, candidate, registry, all_schemas):
             ],
             options={"temperature": 0.0},
         )
-        raw = re.sub(r"```(?:json)?|```", "", resp["message"]["content"]).strip()
-        raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
-        decision = json.loads(raw)
+        try:
+            decision = _parse_llm_json(resp)
+        except ValueError as exc:
+            print(f"  [WARN] LLM entity match skipped after invalid response: {exc}")
+            decision = {"match": False}
         if decision.get("match"):
             return decision["id"], "llm"
 
     new_id  = f"{cfg['prefix']}_{len(registry) + 1:05d}"
     new_row = {id_field: new_id, **candidate}
-    schema  = all_schemas.get(cfg.get("schema_key"), {})
     if schema:
         new_row = llm_fill_fields(new_row, schema)
         validate_row(new_row, schema, label=f"{entity_type}:{candidate.get(name_field)}")
     append_row(entity_type, new_row)
     registry.append(new_row)
-    print(f"  + {entity_type}: {new_id}  ({candidate.get(name_field)})")
     return new_id, "created"
 
 # ---------------------------------------------------------------------------
@@ -294,9 +584,10 @@ def ensure_attr(name, registry, notes="", attr_schema=None):
     """
     Return the attribute ID for the given name, creating a new registry entry if needed.
 
-    All schema-required fields start empty so llm_fill_fields can extract them
-    from the notes string (which contains column header, unit/format, allowed
-    values, and description from the source YAML).
+    The attribute_name itself is first standardised by the LLM using the schema
+    guideline. All other schema-required fields start empty so llm_fill_fields
+    can extract them from the notes string (which contains column header,
+    unit/format, allowed values, and description from the source YAML).
 
     Args:
         name (str): Attribute name to look up or create.
@@ -305,24 +596,32 @@ def ensure_attr(name, registry, notes="", attr_schema=None):
         attr_schema (dict | None): JSON Schema for the attribute entity.
 
     Returns:
-        tuple[str, str]: (attribute_id, status) where status is "existing" or "created".
+        tuple[str, str, str]: (attribute_id, canonical_name, status) where
+            status is "existing" or "created".
     """
-    if name in registry:
-        return registry[name], "existing"
+    candidate = {"attribute_name": name}
+    canonical_name = llm_name_from_schema(
+        "attribute",
+        candidate,
+        attr_schema or {},
+        extra_context=notes,
+    )
+    if canonical_name in registry:
+        return registry[canonical_name], canonical_name, "existing"
 
     new_id  = f"ATTR_{len(registry) + 1:05d}"
     new_row = {
         "attribute_id":          new_id,
-        "attribute_name":        name,
+        "attribute_name":        canonical_name,
         "attribute_description": "",
         "unit":                  "",
         "data_format":           "",
     }
     if attr_schema:
         new_row = llm_fill_fields(new_row, attr_schema, extra_context=notes)
-        validate_row(new_row, attr_schema, label=f"attribute:{name}")
+        validate_row(new_row, attr_schema, label=f"attribute:{canonical_name}")
 
-    registry[name] = new_id
+    registry[canonical_name] = new_id
     Path(ATTR_PATH).parent.mkdir(parents=True, exist_ok=True)
     file_exists = Path(ATTR_PATH).exists()
     with open(ATTR_PATH, "a", newline="", encoding="utf-8") as f:
@@ -330,16 +629,17 @@ def ensure_attr(name, registry, notes="", attr_schema=None):
         if not file_exists:
             writer.writeheader()
         writer.writerow({k: new_row.get(k, "") for k in ATTR_COLS})
-    return new_id, "created"
+    return new_id, canonical_name, "created"
 
 
-def ensure_scope(scope_type, value):
+def ensure_scope(scope_type, value, scope_schema=None):
     """
-    Ensure a scope token exists in the corresponding controlled-vocabulary CSV.
+    Ensure a schema-guided scope entry exists in the corresponding CSV.
 
     Args:
         scope_type (str): Key in SCOPE_CONFIG (e.g. "geographic_scope").
-        value (str | None): Scope token to look up or register.
+        value (str | None): Raw scope description or token from staging data.
+        scope_schema (dict | None): JSON Schema for the scope registry entry.
 
     Returns:
         tuple[str | None, str | None]: (scope_token, status) where status is
@@ -347,23 +647,47 @@ def ensure_scope(scope_type, value):
     """
     if not value:
         return None, None
-    token = str(value).strip()
+    raw_value = str(value).strip()
     path  = SCOPE_CONFIG[scope_type]
     Path(path).parent.mkdir(parents=True, exist_ok=True)
+    desc_field = f"{scope_type}_description"
+    candidate = {
+        scope_type: raw_value,
+        desc_field: raw_value,
+    }
+    token = llm_name_from_schema(
+        scope_type,
+        candidate,
+        scope_schema or {},
+        extra_context=raw_value,
+    )
     existing_tokens = set()
     if Path(path).exists():
         with open(path, encoding="utf-8") as f:
             existing_tokens = {r.get(scope_type, "").strip() for r in csv.DictReader(f)}
     if token in existing_tokens:
         return token, "existing"
-    desc_field = f"{scope_type}_description"
     cols       = [scope_type, desc_field, "note"]
+    new_row = {
+        scope_type: token,
+        desc_field: "",
+        "note": "",
+    }
+    if scope_schema:
+        extra_context = (
+            f"Original scope value: {raw_value}\n"
+            f"Generated canonical token: {token}\n"
+            "If the nomenclature context provides a source or classification "
+            "scheme, record it in the note field."
+        )
+        new_row = llm_fill_fields(new_row, scope_schema, extra_context=extra_context)
+        validate_row(new_row, scope_schema, label=f"{scope_type}:{token}")
     file_exists = Path(path).exists()
     with open(path, "a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=cols)
         if not file_exists:
             writer.writeheader()
-        writer.writerow({scope_type: token, desc_field: token, "note": ""})
+        writer.writerow({k: new_row.get(k, "") for k in cols})
     return token, "created"
 
 # ---------------------------------------------------------------------------
@@ -415,7 +739,7 @@ def collect_candidates(unmapped_entities):
 # ---------------------------------------------------------------------------
 # Audit report
 # ---------------------------------------------------------------------------
-def generate_audit(ue, attr_ids, indices=None):
+def generate_audit(ue, attr_ids, indices=None, source_indices=None):
     """
     Build a per-entity audit report by joining the provenance map, entity lookup
     maps, and the original unmapped entity YAML data.
@@ -424,6 +748,8 @@ def generate_audit(ue, attr_ids, indices=None):
         ue (list[dict]): The working slice of unmapped entities.
         attr_ids (dict[str, str]): {attribute_name: attribute_id} resolved in Step 3.
         indices (list[int] | None): Indices to audit; None audits all.
+        source_indices (list[int] | None): Original indices in the staging YAML.
+            When omitted, working-list indices are used.
 
     Returns:
         list[dict]: One report dict per audited entity.
@@ -437,7 +763,10 @@ def generate_audit(ue, attr_ids, indices=None):
         path = MAPPING_DIR / f"{et}_map.csv"
         if path.exists():
             with open(path, encoding="utf-8") as f:
-                c_maps[et] = {r[cfg["name_field"]]: r for r in csv.DictReader(f)}
+                c_maps[et] = {
+                    r.get("original_name", r.get(cfg["name_field"], "")): r
+                    for r in csv.DictReader(f)
+                }
 
     scope_c = {}
     for scope_type in SCOPE_CONFIG:
@@ -446,14 +775,20 @@ def generate_audit(ue, attr_ids, indices=None):
             with open(path, encoding="utf-8") as f:
                 scope_c[scope_type] = {r["original_value"]: r["scope_token"] for r in csv.DictReader(f)}
 
-    targets = indices if indices is not None else list(map_a.keys())
+    if source_indices is None:
+        source_indices = list(range(len(ue)))
+    if len(source_indices) != len(ue):
+        raise ValueError("source_indices must align with the working entity list")
+
+    targets = indices if indices is not None else range(len(ue))
     report  = []
-    for idx in targets:
-        entity = ue[idx]
-        a      = map_a.get(idx, {})
+    for working_index in targets:
+        entity = ue[working_index]
+        source_index = source_indices[working_index]
+        a = map_a.get(source_index, {})
         t      = entity.get("technology", {})
         report.append({
-            "unmapped_index":   idx,
+            "unmapped_index":   source_index,
             "technology_name":  entity.get("technology_name"),
             "linked_entity_id": a.get("linked_entity_id"),
             "resolution": {
@@ -506,14 +841,31 @@ def backup_derived_data(backup_dir="../motel-db/_backup", confirm=True):
     """
     import datetime
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    dest_root = Path(backup_dir) / timestamp
+    backup_root = Path(backup_dir)
+    dest_root = backup_root / timestamp
+    suffix = 1
+    while dest_root.exists():
+        dest_root = backup_root / f"{timestamp}_{suffix:02d}"
+        suffix += 1
+
+    data_root = MAPPING_DIR.parent.resolve()
+
+    def backup_destination(src):
+        """Return src's destination while preserving its path below motel-db."""
+        try:
+            relative_path = src.resolve().relative_to(data_root)
+        except ValueError as exc:
+            raise ValueError(
+                f"Cannot back up {src}: it is outside the data root {data_root}"
+            ) from exc
+        return dest_root / relative_path
 
     flat_paths = [Path(p) for p in FLAT_FILE_SCHEMA_MAP] + SUPPLEMENTARY_PATHS
     backed_up, skipped = [], []
 
     for src in flat_paths:
         if src.exists():
-            dest = dest_root / src
+            dest = backup_destination(src)
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dest)
             backed_up.append(str(src))
@@ -521,7 +873,7 @@ def backup_derived_data(backup_dir="../motel-db/_backup", confirm=True):
             skipped.append(str(src))
 
     if MAPPING_DIR.exists():
-        dest_map = dest_root / MAPPING_DIR
+        dest_map = backup_destination(MAPPING_DIR)
         shutil.copytree(MAPPING_DIR, dest_map)
         backed_up.append(str(MAPPING_DIR) + "/ (directory)")
 

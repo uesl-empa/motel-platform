@@ -1,29 +1,29 @@
-attribute_name,attribute_id,status
-trl,ATTR_00001,created
-tech_maturity,ATTR_00002,created
-technical_efficiency,ATTR_00003,created
-theoretical_efficiency,ATTR_00004,created
-lifetime_yr,ATTR_00005,created
-capex_one_time,ATTR_00006,created
-capex_per_capacity,ATTR_00007,created
-opex_one_time,ATTR_00008,created
-opex_fix_pct_of_capex,ATTR_00009,created
-opex_per_capacity_yr,ATTR_00010,created
-opex_per_energy,ATTR_00011,created
-operating_temperature_c,ATTR_00012,created
-min_installation_size,ATTR_00013,created
-uncertainty_rating,ATTR_00014,created
-discount_rate_pct,ATTR_00015,created
-reference_unit_size,ATTR_00016,created
-storage_carrier,ATTR_00017,created
-min_installation,ATTR_00018,created
-charging_capacity_factor,ATTR_00019,created
-discharging_capacity_factor,ATTR_00020,created
-charging_efficiency,ATTR_00021,created
-discharging_efficiency,ATTR_00022,created
-min_soc,ATTR_00023,created
-max_soc,ATTR_00024,created
-standby_loss_per_hour,ATTR_00025,created
-capex_per_stor_capacity,ATTR_00026,created
-opex_per_stor_capacity_yr,ATTR_00027,created
-embedded_carbon,ATTR_00028,created
+original_name,attribute_name,attribute_id,status
+trl,Technology Readiness Level,ATTR_00001,created
+tech_maturity,Technology Maturity,ATTR_00002,created
+technical_efficiency,Technical Efficiency,ATTR_00003,created
+theoretical_efficiency,Theoretical Efficiency,ATTR_00004,created
+lifetime_yr,Economic Lifetime,ATTR_00005,created
+capex_one_time,Capital Expenditure One Time,ATTR_00006,created
+capex_per_capacity,Capex Per Capacity,ATTR_00007,created
+opex_one_time,One-Time Operational Expenditure,ATTR_00008,created
+opex_fix_pct_of_capex,Fixed Operational Expenditure Percentage Of Capital Expenditure,ATTR_00009,created
+opex_per_capacity_yr,Annual OPEX Per Capacity,ATTR_00010,created
+opex_per_energy,Operational Expenditure Per Energy,ATTR_00011,created
+operating_temperature_c,Operating Temperature,ATTR_00012,created
+min_installation_size,Minimum Installation Size,ATTR_00013,created
+uncertainty_rating,Uncertainty Rating,ATTR_00014,created
+discount_rate_pct,Discount Rate,ATTR_00015,created
+reference_unit_size,Reference Unit Size,ATTR_00016,created
+storage_carrier,Storage Carrier,ATTR_00017,created
+min_installation,Minimum Installation,ATTR_00018,created
+charging_capacity_factor,ChargingCapacityFactor,ATTR_00019,created
+discharging_capacity_factor,Discharging Capacity Factor,ATTR_00020,created
+charging_efficiency,Charging Efficiency,ATTR_00021,created
+discharging_efficiency,Discharging Efficiency,ATTR_00022,created
+min_soc,Minimum SOC,ATTR_00023,created
+max_soc,MaximumSOC,ATTR_00024,created
+standby_loss_per_hour,Standby Loss Per Hour,ATTR_00025,created
+capex_per_stor_capacity,Capital Expenditure Per Storage Capacity,ATTR_00026,created
+opex_per_stor_capacity_yr,Annual Operational Expenditure Per Storage Capacity,ATTR_00027,created
+embedded_carbon,Embedded Carbon,ATTR_00028,created
