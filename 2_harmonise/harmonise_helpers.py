@@ -93,7 +93,18 @@ ENTITY_CONFIG = {
     "source": {
         "path": "../motel-db/secondary/source.csv",
         "id_field": "source_id", "prefix": "SRC", "name_field": "source_name",
-        "cols": ["source_id", "source_name", "source_description", "source_type"],
+        "cols": [
+            "source_id",
+            "source_name",
+            "source_description",
+            "source_type",
+            "link",
+            "access_date",
+            "confidence_level",
+            "assessment_method",
+            "assessment_date",
+            "note",
+        ],
         "schema_key": "source.yaml",
     },
     "carrier": {
@@ -286,6 +297,18 @@ def append_row(entity_type, row):
         writer.writerow({k: row.get(k, "") for k in cfg["cols"]})
 
 
+def save_registry(entity_type, rows):
+    """Rewrite a registry CSV after enriching existing rows with new metadata."""
+    cfg = ENTITY_CONFIG[entity_type]
+    path = Path(cfg["path"])
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=cfg["cols"])
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({k: row.get(k, "") for k in cfg["cols"]})
+
+
 def load_attr_registry():
     """
     Load the attribute registry as a {attribute_name: attribute_id} dict.
@@ -297,6 +320,34 @@ def load_attr_registry():
         return {}
     with open(ATTR_PATH, encoding="utf-8") as f:
         return {r["attribute_name"]: r["attribute_id"] for r in csv.DictReader(f)}
+
+
+def _has_value(value):
+    """Return True when a candidate field carries real content."""
+    if value is None:
+        return False
+    text = str(value).strip()
+    return bool(text) and text.lower() != "nan"
+
+
+def enrich_registry_row(entity_type, row, candidate):
+    """Backfill missing registry fields from a richer candidate record."""
+    changed = False
+    cfg = ENTITY_CONFIG[entity_type]
+    protected = {cfg["id_field"], cfg["name_field"]}
+
+    for key in cfg["cols"]:
+        if key in protected:
+            continue
+        candidate_value = candidate.get(key)
+        if not _has_value(candidate_value):
+            continue
+        if _has_value(row.get(key)):
+            continue
+        row[key] = candidate_value
+        changed = True
+
+    return changed
 
 # ---------------------------------------------------------------------------
 # LLM field filling and schema validation
@@ -327,6 +378,31 @@ def _parse_llm_json(response):
 
     preview = raw[:200].replace("\n", " ")
     raise ValueError(f"Ollama did not return a valid JSON object: {preview!r}")
+
+
+def build_attribute_llm_context(notes):
+    """Add explicit currency guidance for attribute-related LLM calls."""
+    notes = str(notes or "").strip()
+    if not notes:
+        return notes
+
+    currency_match = re.search(
+        r"(?:source\s+currency|currency)\s*:\s*([A-Za-z]{3})",
+        notes,
+        flags=re.IGNORECASE,
+    )
+    if not currency_match:
+        return notes
+
+    currency = currency_match.group(1).upper()
+    guidance = (
+        f"\n\nCurrency guidance:\n"
+        f"- The source currency for this attribute is {currency}.\n"
+        f"- If the unit format contains generic 'Currency', interpret it as {currency}.\n"
+        f"- Preserve {currency} in the canonical unit and description.\n"
+        f"- Do not convert to USD or assume USD unless the source explicitly says so."
+    )
+    return notes + guidance
 
 
 def llm_fill_fields(row, schema, extra_context=""):
@@ -473,6 +549,8 @@ def llm_name_from_schema(entity_type, candidate, schema, extra_context=""):
         {"role": "user", "content": prompt},
     ]
     pattern = field_schema.get("pattern")
+    min_length = field_schema.get("minLength")
+    max_length = field_schema.get("maxLength")
 
     for attempt in range(2):
         response = ollama.chat(
@@ -485,6 +563,14 @@ def llm_name_from_schema(entity_type, candidate, schema, extra_context=""):
             proposed_name = str(result.get(name_field, "")).strip()
             if not proposed_name:
                 raise ValueError(f"LLM omitted {name_field}")
+            if min_length is not None and len(proposed_name) < min_length:
+                raise ValueError(
+                    f"LLM name {proposed_name!r} is shorter than minLength {min_length}"
+                )
+            if max_length is not None and len(proposed_name) > max_length:
+                raise ValueError(
+                    f"LLM name {proposed_name!r} exceeds maxLength {max_length}"
+                )
             if pattern and re.fullmatch(pattern, proposed_name) is None:
                 raise ValueError(
                     f"LLM name {proposed_name!r} does not match schema pattern {pattern!r}"
@@ -543,6 +629,8 @@ def resolve_entity(entity_type, candidate, registry, all_schemas):
 
     for row in registry:
         if str(row.get(name_field, "")).strip().lower() == candidate_name:
+            if enrich_registry_row(entity_type, row, candidate):
+                save_registry(entity_type, registry)
             return row[id_field], "exact"
 
     if registry:
@@ -566,7 +654,13 @@ def resolve_entity(entity_type, candidate, registry, all_schemas):
             print(f"  [WARN] LLM entity match skipped after invalid response: {exc}")
             decision = {"match": False}
         if decision.get("match"):
-            return decision["id"], "llm"
+            match_id = decision["id"]
+            for row in registry:
+                if row.get(id_field) == match_id:
+                    if enrich_registry_row(entity_type, row, candidate):
+                        save_registry(entity_type, registry)
+                    break
+            return match_id, "llm"
 
     new_id  = f"{cfg['prefix']}_{len(registry) + 1:05d}"
     new_row = {id_field: new_id, **candidate}
@@ -599,12 +693,13 @@ def ensure_attr(name, registry, notes="", attr_schema=None):
         tuple[str, str, str]: (attribute_id, canonical_name, status) where
             status is "existing" or "created".
     """
+    attr_context = build_attribute_llm_context(notes)
     candidate = {"attribute_name": name}
     canonical_name = llm_name_from_schema(
         "attribute",
         candidate,
         attr_schema or {},
-        extra_context=notes,
+        extra_context=attr_context,
     )
     if canonical_name in registry:
         return registry[canonical_name], canonical_name, "existing"
@@ -618,7 +713,7 @@ def ensure_attr(name, registry, notes="", attr_schema=None):
         "data_format":           "",
     }
     if attr_schema:
-        new_row = llm_fill_fields(new_row, attr_schema, extra_context=notes)
+        new_row = llm_fill_fields(new_row, attr_schema, extra_context=attr_context)
         validate_row(new_row, attr_schema, label=f"attribute:{canonical_name}")
 
     registry[canonical_name] = new_id
@@ -705,12 +800,18 @@ def collect_candidates(unmapped_entities):
     Returns:
         dict[str, dict]: {entity_type: {name: candidate_dict}}
     """
+    def upsert_candidate(bucket, key, candidate):
+        existing = bucket.setdefault(key, {})
+        for field, value in candidate.items():
+            if _has_value(value) and not _has_value(existing.get(field)):
+                existing[field] = value
+
     candidates = {et: {} for et in ENTITY_CONFIG}
     for e in unmapped_entities:
         t     = e.get("technology", {})
         tname = e.get("technology_name")
         if tname:
-            candidates["technology"].setdefault(tname, {
+            upsert_candidate(candidates["technology"], tname, {
                 "technology_name":        tname,
                 "technology_type":        t.get("technology_type"),
                 "technology_category":    t.get("technology_category"),
@@ -718,7 +819,7 @@ def collect_candidates(unmapped_entities):
             })
         pname = t.get("process_name")
         if pname:
-            candidates["process"].setdefault(pname, {
+            upsert_candidate(candidates["process"], pname, {
                 "process_name":     pname,
                 "process_type":     t.get("process_type"),
                 "process_category": t.get("process_category"),
@@ -726,14 +827,21 @@ def collect_candidates(unmapped_entities):
         for src in e.get("sources", []):
             sname = src.get("source_name")
             if sname:
-                candidates["source"].setdefault(sname, {
+                upsert_candidate(candidates["source"], sname, {
                     "source_name":        sname,
                     "source_description": src.get("source_description"),
+                    "source_type":        src.get("source_type"),
+                    "link":               src.get("link"),
+                    "access_date":        src.get("access_date"),
+                    "confidence_level":   src.get("confidence_level"),
+                    "assessment_method":  src.get("assessment_method"),
+                    "assessment_date":    src.get("assessment_date"),
+                    "note":               src.get("note") or src.get("assessment_notes"),
                 })
         for item in e.get("balancing", {}).get("inputs", []) + e.get("balancing", {}).get("outputs", []):
             cname = item.get("carrier_name")
             if cname:
-                candidates["carrier"].setdefault(cname, {"carrier_name": cname})
+                upsert_candidate(candidates["carrier"], cname, {"carrier_name": cname})
     return candidates
 
 # ---------------------------------------------------------------------------
