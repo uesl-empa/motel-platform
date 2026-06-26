@@ -1,2 +1,8 @@
 original_value,scope_token,status
 400000,CAP_400000,created
+1000,CAP_1000,created
+100000,CAP_100000,created
+800000,CAP_800000,created
+5,CAP_5,created
+500,CAP_500,created
+20000 kg/h,CAP_20000_KG_PER_HOUR,created

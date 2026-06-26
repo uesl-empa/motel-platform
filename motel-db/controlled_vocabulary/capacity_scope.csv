@@ -1,2 +1,8 @@
 capacity_scope,capacity_scope_description,note
-CAP_400000,"Installation size tier for nameplate capacities of 400,000 kW (400 MW).",
+CAP_400000,"Nameplate capacity of 400,000 kW (400 MW) for the installation size tier.",
+CAP_1000,"Installation size tier corresponding to a capacity of 1000 kW, representing a standard or medium-scale deployment for the technology category.",
+CAP_100000,"Capacity tier for installations with a nameplate capacity of 100,000 kW (100 MW) or similar, typically applicable to large-scale industrial or utility-scale systems. Classification follows the nomenclature's capacity normalisation convention (kW-based, EU/Switzerland context).",
+CAP_800000,"Nameplate capacity of 800,000 kW (800 MW) for the installation size tier.",
+CAP_5,"Installation size tier corresponding to original scope value 5, though specific numeric range boundaries or qualitative engineering definitions are not explicitly detailed in the provided nomenclature context.",
+CAP_500,"Installation size tier for systems with a nominal capacity of 500 kW, representing medium-scale deployment in energy conversion technologies.",
+CAP_20000_KG_PER_HOUR,"Installation size tier for capacities exactly equal to 20,000 kg/h",

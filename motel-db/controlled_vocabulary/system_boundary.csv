@@ -1,2 +1,4 @@
 system_boundary,system_boundary_description,note
-BOUND_PLANT_READY_TO_OPERATE,"Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses.",
+BOUND_READY_OPERATIONAL,"Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses.",
+BOUND_COMPLETE_INSTALLATION,"Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses.",
+BOUND_READY_TO_OPERATE,"Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses.",

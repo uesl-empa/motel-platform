@@ -1,2 +1,5 @@
 geographic_scope,geographic_scope_description,note
-GEO_ECA,"Europe and Central Asia (ECA), encompassing the European Union, Switzerland, and Central Asian countries. Regulatory and installation contexts reflect Swiss and European Union conditions, with grid connection infrastructure aligned to European transmission networks. The scope follows the ECA geographic classification defined in the dataset's nomenclature section.",
+GEO_ECA,"Europe and Central Asia (ECA), encompassing European Union member states, Switzerland, and Central Asian countries. Grid connection and regulatory contexts reflect European (EU/Switzerland) conditions with extensibility for regional variations.",
+GEO_RER,"Europe, including Switzerland, with regulatory and installation contexts reflecting European conditions and cost base (ECA). Encompasses the political and grid-connected territories of the European Union and associated regions.",
+GEO_CH,"Switzerland (CH) as defined by ISO 3166-1 alpha-2 country codes. Encompasses federal territory, national grid connection boundaries, and regulatory context under Swiss energy policy frameworks.",
+GEO_GLO,"Global coverage encompassing all political territories and regions worldwide, including all continents and major geopolitical divisions.",

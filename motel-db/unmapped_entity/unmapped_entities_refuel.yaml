@@ -605,7 +605,9 @@
       share: 0.6
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00004
+    date_mapped: '2026-06-26'
 - technology_name: CH4_FuelCell_El
   technology:
     technology_description: Methane-fueled fuel cell electricity generation at El47
@@ -753,7 +755,9 @@
       share: 0.28
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00005
+    date_mapped: '2026-06-26'
 - technology_name: CH4_FuelCell_ElBdg
   technology:
     technology_description: Methane-fueled fuel cell electricity generation in buildings
@@ -902,7 +906,9 @@
       share: 0.43
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00006
+    date_mapped: '2026-06-26'
 - technology_name: CH4_OCGT_El
   technology:
     technology_description: Methane-fueled open cycle gas turbine (OCGT) electricity
@@ -1064,7 +1070,9 @@
       share: 0.42
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00007
+    date_mapped: '2026-06-26'
 - technology_name: Geothermal_CHP_ElTh
   technology:
     technology_description: Geothermal-based CHP generation (2040).
@@ -1212,7 +1220,9 @@
       share: 0.7
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00008
+    date_mapped: '2026-06-26'
 - technology_name: H2_CCGT_El
   technology:
     technology_description: Hydrogen-fueled combined cycle gas turbine (CCGT) electricity
@@ -1380,7 +1390,9 @@
       share: 0.61
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00009
+    date_mapped: '2026-06-26'
 - technology_name: H2_FuelCell_El
   technology:
     technology_description: Electricity generation via fuel cells at node El47 (2040).
@@ -1535,7 +1547,9 @@
       share: 0.26
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00010
+    date_mapped: '2026-06-26'
 - technology_name: H2_FuelCell_El
   technology:
     technology_description: Electricity generation via fuel cells at node El47 (2050).
@@ -1690,7 +1704,9 @@
       share: 0.25
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00011
+    date_mapped: '2026-06-26'
 - technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: Electricity generation via fuel cells in buildings (2030).
@@ -1841,7 +1857,9 @@
       share: 0.42
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00012
+    date_mapped: '2026-06-26'
 - technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: Electricity generation via fuel cells in buildings (2050).
@@ -1992,7 +2010,9 @@
       share: 0.4
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00013
+    date_mapped: '2026-06-26'
 - technology_name: H2_OCGT_El
   technology:
     technology_description: Hydrogen-fueled open cycle gas turbine (OCGT) electricity
@@ -2154,7 +2174,9 @@
       share: 0.42
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00014
+    date_mapped: '2026-06-26'
 - technology_name: El_PumpedHydro_Pump
   technology:
     technology_description: Pumped hydroelectric energy storage (pump mode).
@@ -2306,7 +2328,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00015
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_PumpedTurbine_El
   technology:
     technology_description: Pumped hydroelectric power generation (turbine mode).
@@ -2458,7 +2482,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00016
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_RunOfRiver_El
   technology:
     technology_description: Run-of-river hydroelectric power plant.
@@ -2610,7 +2636,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00017
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_Reservoir_El
   technology:
     technology_description: Hydroelectric power generation from storage reservoirs.
@@ -2762,7 +2790,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00018
+    date_mapped: '2026-06-26'
 - technology_name: MSW_Incineration_El
   technology:
     technology_description: Electricity generation from municipal solid waste (MSW)
@@ -2913,7 +2943,9 @@
       share: 0.3
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00019
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024
@@ -3047,7 +3079,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00020
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
@@ -3182,7 +3216,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00021
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
@@ -3317,7 +3353,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00022
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
@@ -3452,7 +3490,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00023
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2025
@@ -3601,7 +3641,9 @@
       share: 0.17
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00024
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2030
@@ -3750,7 +3792,9 @@
       share: 0.2
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00025
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2040
@@ -3899,7 +3943,9 @@
       share: 0.2
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00026
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2050
@@ -4048,7 +4094,9 @@
       share: 0.2
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00027
+    date_mapped: '2026-06-26'
 - technology_name: U235_Nuclear_El
   technology:
     technology_description: Electricity generation from nuclear power (U235) at node
@@ -4204,7 +4252,9 @@
       share: 0.33
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00028
+    date_mapped: '2026-06-26'
 - technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2020).
@@ -4351,7 +4401,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00029
+    date_mapped: '2026-06-26'
 - technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2030).
@@ -4498,7 +4550,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00030
+    date_mapped: '2026-06-26'
 - technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2040).
@@ -4645,7 +4699,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00031
+    date_mapped: '2026-06-26'
 - technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2050).
@@ -4792,7 +4848,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00032
+    date_mapped: '2026-06-26'
 - technology_name: Wood_CHP_ElTh
   technology:
     technology_description: Combined heat and power (CHP) generation using wood.
@@ -4943,7 +5001,9 @@
       share: 0.6
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00033
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Boiler_ThBdg
   technology:
     technology_description: Methane-fueled heating system for buildings.
@@ -5090,7 +5150,9 @@
       share: 0.93
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00034
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Boiler_ThInd
   technology:
     technology_description: Methane-fueled heating system for thermal power plants.
@@ -5237,7 +5299,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00035
+    date_mapped: '2026-06-26'
 - technology_name: El_Heater_ThBdg
   technology:
     technology_description: Electric heating system for buildings.
@@ -5389,7 +5453,9 @@
       share: 1.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00036
+    date_mapped: '2026-06-26'
 - technology_name: El_Heater_ThInd
   technology:
     technology_description: Electric heating system for thermal power plants.
@@ -5536,7 +5602,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00037
+    date_mapped: '2026-06-26'
 - technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
@@ -5682,7 +5750,9 @@
       share: 2.8
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00038
+    date_mapped: '2026-06-26'
 - technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
@@ -5834,7 +5904,9 @@
       share: 4.2
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00039
+    date_mapped: '2026-06-26'
 - technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
@@ -5986,7 +6058,9 @@
       share: 4.2
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00040
+    date_mapped: '2026-06-26'
 - technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
@@ -6132,7 +6206,9 @@
       share: 4.2
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00041
+    date_mapped: '2026-06-26'
 - technology_name: H2_Boiler_ThInd
   technology:
     technology_description: Hydrogen-fueled heating system for thermal power plants
@@ -6280,7 +6356,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00042
+    date_mapped: '2026-06-26'
 - technology_name: El_HeatPump_ThBdg
   technology:
     technology_description: Generic heat pump for residential heating, fixed COP 4
@@ -6426,7 +6504,9 @@
       share: 4.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00043
+    date_mapped: '2026-06-26'
 - technology_name: El_HeatPump_ThInd
   technology:
     technology_description: Low-temperature heat upgrade for district heating (2030).
@@ -6577,7 +6657,9 @@
       share: 4.0
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00044
+    date_mapped: '2026-06-26'
 - technology_name: Oil_Boiler_ThBdg
   technology:
     technology_description: Hydrocarbon-fueled heating system for buildings.
@@ -6726,7 +6808,9 @@
       share: 0.87
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00045
+    date_mapped: '2026-06-26'
 - technology_name: Oil_Boiler_ThInd
   technology:
     technology_description: Hydrocarbon-fueled heating system for thermal power plants.
@@ -6873,7 +6957,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00046
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Boiler_ThBdg
   technology:
     technology_description: Wood-fueled heating system for buildings.
@@ -7020,7 +7106,9 @@
       share: 0.77
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00047
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Boiler_ThInd
   technology:
     technology_description: Wood-fueled heating system for thermal power plants.
@@ -7167,7 +7255,9 @@
       share: 0.85
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00048
+    date_mapped: '2026-06-26'
 - technology_name: H2_HaberBosch_NH3
   technology:
     technology_description: Ammonia synthesis (Haber Bosch process)
@@ -7320,7 +7410,9 @@
       share: 0.126
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00049
+    date_mapped: '2026-06-26'
 - technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
@@ -7468,7 +7560,9 @@
       share: 0.6325
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00050
+    date_mapped: '2026-06-26'
 - technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
@@ -7616,7 +7710,9 @@
       share: 0.6325
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00051
+    date_mapped: '2026-06-26'
 - technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
@@ -7764,7 +7860,9 @@
       share: 0.6325
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00052
+    date_mapped: '2026-06-26'
 - technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
@@ -7923,7 +8021,9 @@
       share: 0.134
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00053
+    date_mapped: '2026-06-26'
 - technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
@@ -8082,7 +8182,9 @@
       share: 0.134
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00054
+    date_mapped: '2026-06-26'
 - technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
@@ -8241,7 +8343,9 @@
       share: 0.134
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00055
+    date_mapped: '2026-06-26'
 - technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
@@ -8400,7 +8504,9 @@
       share: 0.134
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00056
+    date_mapped: '2026-06-26'
 - technology_name: CookingOil_HEFA_C12
   technology:
     technology_description: SAF Production via esterification of used cooking oil
@@ -8545,7 +8651,9 @@
       share: 0.027
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00057
+    date_mapped: '2026-06-26'
 - technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -8699,7 +8807,9 @@
       share: 0.125
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00058
+    date_mapped: '2026-06-26'
 - technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -8853,7 +8963,9 @@
       share: 0.125
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00059
+    date_mapped: '2026-06-26'
 - technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -9007,7 +9119,9 @@
       share: 0.125
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00060
+    date_mapped: '2026-06-26'
 - technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -9161,7 +9275,9 @@
       share: 0.125
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00061
+    date_mapped: '2026-06-26'
 - technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -9315,7 +9431,9 @@
       share: 0.125
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00062
+    date_mapped: '2026-06-26'
 - technology_name: H2_RWGS_CO
   technology:
     technology_description: 'Reverse water gas shift reaction plant. Emerging technology,
@@ -9481,7 +9599,9 @@
       share: 0.268
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00063
+    date_mapped: '2026-06-26'
 - technology_name: El_Electrolysis_H2
   technology:
     technology_description: 'Electrolysis 2030, Alkaline technology (10 MW) from Danish
@@ -9629,7 +9749,9 @@
       share: 0.63
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00064
+    date_mapped: '2026-06-26'
 - technology_name: El_Electrolysis_H2
   technology:
     technology_description: Electrolysis 2040, Alkaline technology is the benchmark
@@ -9776,7 +9898,9 @@
       share: 0.65
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00065
+    date_mapped: '2026-06-26'
 - technology_name: El_Electrolysis_H2
   technology:
     technology_description: Electrolysis 2050, Alkaline technology is the benchmark
@@ -9923,7 +10047,9 @@
       share: 0.7
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00066
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
@@ -10092,7 +10218,9 @@
       share: 0.129
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00067
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
@@ -10261,7 +10389,9 @@
       share: 0.129
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00068
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
@@ -10430,7 +10560,9 @@
       share: 0.129
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00069
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
@@ -10599,7 +10731,9 @@
       share: 0.129
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00070
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
@@ -10768,7 +10902,9 @@
       share: 0.126
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00071
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
@@ -10937,7 +11073,9 @@
       share: 0.126
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00072
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
@@ -11106,7 +11244,9 @@
       share: 0.126
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00073
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
@@ -11275,7 +11415,9 @@
       share: 0.126
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00074
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
@@ -11441,7 +11583,9 @@
       share: 0.089
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00075
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
@@ -11607,7 +11751,9 @@
       share: 0.089
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00076
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
@@ -11773,7 +11919,9 @@
       share: 0.089
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00077
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
@@ -11939,7 +12087,9 @@
       share: 0.089
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00078
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
@@ -12095,7 +12245,9 @@
       share: 0.265
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00079
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
@@ -12251,7 +12403,9 @@
       share: 0.265
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00080
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
@@ -12407,7 +12561,9 @@
       share: 0.265
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00081
+    date_mapped: '2026-06-26'
 - technology_name: MSW_Gasification_Syngas
   technology:
     technology_description: Municipal solid waste gasification to syngas
@@ -12528,7 +12684,9 @@
       share: null
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00082
+    date_mapped: '2026-06-26'
 - technology_name: MSW_Gasification_H2
   technology:
     technology_description: Municipal solid waste gasification to hydrogen
@@ -12649,7 +12807,9 @@
       share: null
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00083
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Gasification_H2
   technology:
     technology_description: Woody biomass gasification to hydrogen
@@ -12780,7 +12940,9 @@
       share: 0.222
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00084
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Gasification_Syngas
   technology:
     technology_description: Woody biomass gasification to syngas
@@ -12904,7 +13066,9 @@
       share: 0.052
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00085
+    date_mapped: '2026-06-26'
 - technology_name: MeOH_MtJ_C12
   technology:
     technology_description: Methanol-to-Jet fuel via MtO and oligomerisation. Near-term
@@ -12983,7 +13147,9 @@
       share: null
       unit: null
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00086
+    date_mapped: '2026-06-26'
 - technology_name: MeOH_MtJ_C12
   technology:
     technology_description: Methanol-to-Jet fuel via MtO and oligomerisation. Long-term
@@ -13062,7 +13228,9 @@
       share: null
       unit: null
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00087
+    date_mapped: '2026-06-26'
 - technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: High-temperature co-electrolysis of CO₂ and H₂O to syngas
@@ -13147,7 +13315,9 @@
       share: null
       unit: null
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00088
+    date_mapped: '2026-06-26'
 - technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: High-temperature co-electrolysis of CO₂ and H₂O to syngas
@@ -13232,7 +13402,9 @@
       share: null
       unit: null
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00089
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Pyrolysis_H2
   technology:
     technology_description: Methane pyrolysis (turquoise hydrogen). Thermal decomposition
@@ -13311,7 +13483,9 @@
       share: null
       unit: null
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00090
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Pyrolysis_H2
   technology:
     technology_description: Methane pyrolysis (turquoise hydrogen). Thermal decomposition
@@ -13390,7 +13564,9 @@
       share: null
       unit: null
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00091
+    date_mapped: '2026-06-26'
 - technology_name: CO2Flue_AmineScrub_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Amine washing. Temperature
@@ -13539,7 +13715,9 @@
       share: 0.95
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00092
+    date_mapped: '2026-06-26'
 - technology_name: BioWet_Pyrolysis_Biochar
   technology:
     technology_description: Biochar production via pyrolysis of wet biomass.
@@ -13679,7 +13857,9 @@
       share: 0.063
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00093
+    date_mapped: '2026-06-26'
 - technology_name: Air_DAC_CO2
   technology:
     technology_description: Direct air capture using adsorption technology (2030 and
@@ -13812,7 +13992,9 @@
       share: 0.395
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00094
+    date_mapped: '2026-06-26'
 - technology_name: Air_DAC_CO2
   technology:
     technology_description: Direct air capture using adsorption technology (2050).
@@ -13944,7 +14126,9 @@
       share: 0.67
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00095
+    date_mapped: '2026-06-26'
 - technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
@@ -14094,7 +14278,9 @@
       share: 0.95
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00096
+    date_mapped: '2026-06-26'
 - technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
@@ -14244,7 +14430,9 @@
       share: 0.95
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00097
+    date_mapped: '2026-06-26'
 - technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
@@ -14394,7 +14582,9 @@
       share: 0.95
       unit: kg
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00098
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Pyrolysis_Biochar
   technology:
     technology_description: Biochar production via pyrolysis of wood.
@@ -14545,7 +14735,9 @@
       share: 0.18
       unit: kWh
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00099
+    date_mapped: '2026-06-26'
 - technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2025
@@ -14695,7 +14887,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00100
+    date_mapped: '2026-06-26'
 - technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2030
@@ -14843,7 +15037,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00101
+    date_mapped: '2026-06-26'
 - technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2040
@@ -14991,7 +15187,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00102
+    date_mapped: '2026-06-26'
 - technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2050
@@ -15139,7 +15337,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00103
+    date_mapped: '2026-06-26'
 - technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2020
@@ -15290,7 +15490,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00104
+    date_mapped: '2026-06-26'
 - technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2030
@@ -15441,7 +15643,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00105
+    date_mapped: '2026-06-26'
 - technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2040
@@ -15592,7 +15796,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00106
+    date_mapped: '2026-06-26'
 - technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2050
@@ -15743,7 +15949,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00107
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_PumpedReservoir_Hydro
   technology:
     technology_description: Pumped hydro reservoir, without pump and generator
@@ -15889,7 +16097,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00108
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_Reservoir_Hydro
   technology:
     technology_description: Pumped hydro reservoir, without pump and generator
@@ -16035,7 +16245,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00109
+    date_mapped: '2026-06-26'
 - technology_name: Th_HeatStore_Th
   technology:
     technology_description: null
@@ -16172,7 +16384,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00110
+    date_mapped: '2026-06-26'
 - technology_name: Th_HotWaterTank_Th
   technology:
     technology_description: Hot water storage tank at home
@@ -16317,7 +16531,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00111
+    date_mapped: '2026-06-26'
 - technology_name: Th_SeasonalStore_Th
   technology:
     technology_description: Thermal storage for district heating, seasonal storage
@@ -16462,7 +16678,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00112
+    date_mapped: '2026-06-26'
 - technology_name: H2_Tank_H2
   technology:
     technology_description: null
@@ -16607,7 +16825,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00113
+    date_mapped: '2026-06-26'
 - technology_name: CH4_GridStorage_CH4
   technology:
     technology_description: Storaging methane via compressing in the pipelines
@@ -16770,7 +16990,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00114
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Tank_CH4
   technology:
     technology_description: Tank storage for methane (compressed)
@@ -16933,7 +17155,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00115
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Underground_CH4
   technology:
     technology_description: Underground methane storage
@@ -17096,7 +17320,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00116
+    date_mapped: '2026-06-26'
 - technology_name: CO2_Tank_CO2
   technology:
     technology_description: null
@@ -17233,7 +17459,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00117
+    date_mapped: '2026-06-26'
 - technology_name: CO_Tank_CO
   technology:
     technology_description: null
@@ -17370,7 +17598,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00118
+    date_mapped: '2026-06-26'
 - technology_name: C12_Tank_C12
   technology:
     technology_description: null
@@ -17507,7 +17737,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00119
+    date_mapped: '2026-06-26'
 - technology_name: C8_Tank_C8
   technology:
     technology_description: null
@@ -17644,7 +17876,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00120
+    date_mapped: '2026-06-26'
 - technology_name: NH3_Tank_NH3
   technology:
     technology_description: Tank storage for ammonia
@@ -17776,7 +18010,9 @@
     inputs: []
     outputs: []
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00121
+    date_mapped: '2026-06-26'
 - technology_name: Air_DAC_CO2
   technology:
     technology_description: direct air capture system, sorbent-based, 100ktCO2
@@ -17856,7 +18092,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: direct air capture system | lca_location:
       RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00122
+    date_mapped: '2026-06-26'
 - technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: anaerobic digestion plant construction, agricultural
@@ -17936,7 +18174,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: anaerobic digestion plant, agricultural
       | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00123
+    date_mapped: '2026-06-26'
 - technology_name: C12_Tank_C12
   technology:
     technology_description: liquid storage tank production, chemicals, organics
@@ -18024,7 +18264,9 @@
       | lca_location: CH | notes: 4000m3 of storage capacity, 44.1 MJ/kg, 750 kg/m3
       density -> 36750000 kWh of storage capacity rough estimation'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00124
+    date_mapped: '2026-06-26'
 - technology_name: C8_Tank_C8
   technology:
     technology_description: liquid storage tank production, chemicals, organics
@@ -18112,7 +18354,9 @@
       | lca_location: CH | notes: 4000m3 of storage capacity, 44.4 MJ/kg, 700 kg/m3
       density -> 34500000 kWh of storage capacity rough estimation'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00125
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Boiler_ThBdg
   technology:
     technology_description: market for gas boiler
@@ -18184,7 +18428,9 @@
     time_index: 2050
     notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00126
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Boiler_ThInd
   technology:
     technology_description: market for gas boiler
@@ -18256,7 +18502,9 @@
     time_index: 2050
     notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00127
+    date_mapped: '2026-06-26'
 - technology_name: CH4_CCGT_El
   technology:
     technology_description: market for gas power plant, combined cycle, 400MW electrical
@@ -18336,7 +18584,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: gas power plant, combined cycle, 400MW
       electrical | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00128
+    date_mapped: '2026-06-26'
 - technology_name: CH4_CHP_ElTh
   technology:
     technology_description: heat and power co-generation unit construction, 160kW
@@ -18418,7 +18668,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: heat and power co-generation unit,
       160kW electrical, common components for heat+electricity | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00129
+    date_mapped: '2026-06-26'
 - technology_name: CH4_FuelCell_El
   technology:
     technology_description: fuel cell production, solid oxide, 125kW electrical, future
@@ -18498,7 +18750,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: fuel cell, solid oxide, 125kW electrical,
       future | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00130
+    date_mapped: '2026-06-26'
 - technology_name: CH4_FuelCell_ElBdg
   technology:
     technology_description: fuel cell production, solid oxide, 125kW electrical, future
@@ -18578,7 +18832,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: fuel cell, solid oxide, 125kW electrical,
       future | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00131
+    date_mapped: '2026-06-26'
 - technology_name: CH4_GridStorage_CH4
   technology:
     technology_description: pipeline construction, natural gas, high pressure distribution
@@ -18659,7 +18915,9 @@
     notes: 'lca_unit: kgCO2eq/km | ref_product: pipeline, natural gas, high pressure
       distribution network | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00132
+    date_mapped: '2026-06-26'
 - technology_name: CH4_OCGT_El
   technology:
     technology_description: micro gas turbine production, 100kW electrical
@@ -18739,7 +18997,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: micro gas turbine, 100kW electrical
       | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00133
+    date_mapped: '2026-06-26'
 - technology_name: CH4_Tank_CH4
   technology:
     technology_description: fuel tank assembly, compressed natural gas, 200 bar
@@ -18819,7 +19079,9 @@
     notes: 'lca_unit: kgCO2eq/kWh | ref_product: fuel tank, compressed natural gas,
       200 bar | lca_location: RER | notes: for a 154.66 kg tank, of 1074kWh fuel capacity'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00134
+    date_mapped: '2026-06-26'
 - technology_name: CO2Flue_AmineScrub_CO2
   technology:
     technology_description: market for monoethanolamine
@@ -18891,7 +19153,9 @@
     time_index: 2050
     notes: 'lca_unit: kgCO2eq/kg | ref_product: monoethanolamine | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00135
+    date_mapped: '2026-06-26'
 - technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: potassium carbonate production, from potassium hydroxide
@@ -18971,7 +19235,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: potassium carbonate | lca_location:
       GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00136
+    date_mapped: '2026-06-26'
 - technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: market for battery capacity, Li-ion, LFP
@@ -19051,7 +19317,9 @@
     notes: 'lca_unit: kgCO2eq/kWh | ref_product: electricity storage capacity | lca_location:
       GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00137
+    date_mapped: '2026-06-26'
 - technology_name: El_AirCon_ThSc
   technology:
     technology_description: heat pump production, diffusion absorption, 4kW, future
@@ -19131,7 +19399,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: heat pump, diffusion absorption, 4kW,
       future | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00138
+    date_mapped: '2026-06-26'
 - technology_name: El_Battery_El
   technology:
     technology_description: market for battery capacity (MIX scenario)
@@ -19211,7 +19481,9 @@
     notes: 'lca_unit: kgCO2eq/kWh | ref_product: electricity storage capacity | lca_location:
       GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00139
+    date_mapped: '2026-06-26'
 - technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: electrolyzer production, 1MWe, SOEC, Balance of Plant
@@ -19292,7 +19564,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: electrolyzer, 1MWe, SOEC, Balance
       of Plant + 2 * Stack | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00140
+    date_mapped: '2026-06-26'
 - technology_name: El_Electrolysis_H2
   technology:
     technology_description: electrolyzer production, 1MWe, AEC, Balance of Plant +
@@ -19373,7 +19647,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: electrolyzer, 1MWe, AEC, Balance of
       Plant + 2 * Stack | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00141
+    date_mapped: '2026-06-26'
 - technology_name: El_HeatPump_ThBdg
   technology:
     technology_description: heat pump production, 30kW
@@ -19445,7 +19721,9 @@
     time_index: 2050
     notes: 'lca_unit: kgCO2eq/kW | ref_product: heat pump, 30kW | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00142
+    date_mapped: '2026-06-26'
 - technology_name: El_HeatPump_ThInd
   technology:
     technology_description: heat pump production, 30kW
@@ -19517,7 +19795,9 @@
     time_index: 2050
     notes: 'lca_unit: kgCO2eq/kW | ref_product: heat pump, 30kW | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00143
+    date_mapped: '2026-06-26'
 - technology_name: El_Heater_ThBdg
   technology:
     technology_description: auxiliary heating unit production, electric, 5kW
@@ -19597,7 +19877,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: auxiliary heating unit, electric,
       5kW | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00144
+    date_mapped: '2026-06-26'
 - technology_name: El_Heater_ThInd
   technology:
     technology_description: auxiliary heating unit production, electric, 5kW
@@ -19677,7 +19959,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: auxiliary heating unit, electric,
       5kW | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00145
+    date_mapped: '2026-06-26'
 - technology_name: El_PumpedHydro_Pump
   technology:
     technology_description: hydropower plant construction, reservoir, alpine region
@@ -19757,7 +20041,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: hydropower plant, reservoir, alpine
       region | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00146
+    date_mapped: '2026-06-26'
 - technology_name: Geothermal_CHP_ElTh
   technology:
     technology_description: geothermal power plant construction
@@ -19837,7 +20123,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: geothermal power plant, 5.5MWel |
       lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00147
+    date_mapped: '2026-06-26'
 - technology_name: H2_Boiler_ThInd
   technology:
     technology_description: market for gas boiler
@@ -19909,7 +20197,9 @@
     time_index: 2050
     notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00148
+    date_mapped: '2026-06-26'
 - technology_name: H2_CCGT_El
   technology:
     technology_description: auto-thermal reforming-hydrogen GT power plant, 400MWe
@@ -19989,7 +20279,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: auto-thermal reforming-hydrogen GT
       power plant, 400MWe | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00149
+    date_mapped: '2026-06-26'
 - technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: methanol production facility, construction
@@ -20069,7 +20361,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: methanol production facility, construction
       | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00150
+    date_mapped: '2026-06-26'
 - technology_name: H2_FuelCell_El
   technology:
     technology_description: fuel cell production, solid oxide, 125kW electrical, future
@@ -20149,7 +20443,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: fuel cell, solid oxide, 125kW electrical,
       future | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00151
+    date_mapped: '2026-06-26'
 - technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: fuel cell production, solid oxide, 125kW electrical, future
@@ -20229,7 +20525,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: fuel cell, solid oxide, 125kW electrical,
       future | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00152
+    date_mapped: '2026-06-26'
 - technology_name: H2_HaberBosch_NH3
   technology:
     technology_description: ammonia synthesis catalyst production
@@ -20309,7 +20607,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: ammonia synthesis catalyst | lca_location:
       GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00153
+    date_mapped: '2026-06-26'
 - technology_name: H2_OCGT_El
   technology:
     technology_description: micro gas turbine production, 100kW electrical
@@ -20389,7 +20689,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: micro gas turbine, 100kW electrical
       | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00154
+    date_mapped: '2026-06-26'
 - technology_name: H2_RWGS_CO
   technology:
     technology_description: RWGS tank construction
@@ -20469,7 +20771,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: RWGS tank construction | lca_location:
       GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00155
+    date_mapped: '2026-06-26'
 - technology_name: H2_Sabatier_CH4
   technology:
     technology_description: sabatier reaction methanation unit construction
@@ -20549,7 +20853,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: sabatier reaction methanation unit
       | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00156
+    date_mapped: '2026-06-26'
 - technology_name: H2_Tank_H2
   technology:
     technology_description: fuel tank assembly, compressed hydrogen gas, 700bar
@@ -20629,7 +20935,9 @@
     notes: 'lca_unit: kgCO2eq/kWh | ref_product: fuel tank, compressed hydrogen gas,
       700bar | lca_location: RER | notes: for a 117.39 kg tank, of 200 kWh fuel capacity'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00157
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_PumpedReservoir_Hydro
   technology:
     technology_description: hydropower plant construction, reservoir
@@ -20717,7 +21025,9 @@
       CH | notes: Already included in the electricity generation dataset, so not added
       here to avoid double counting.'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00158
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_PumpedTurbine_El
   technology:
     technology_description: hydropower plant construction, reservoir, alpine region
@@ -20797,7 +21107,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: hydropower plant, reservoir, alpine
       region | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00159
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_Reservoir_El
   technology:
     technology_description: hydropower plant construction, reservoir, alpine region
@@ -20877,7 +21189,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: hydropower plant, reservoir, alpine
       region | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00160
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_Reservoir_Hydro
   technology:
     technology_description: hydropower plant construction, reservoir
@@ -20965,7 +21279,9 @@
       CH | notes: Already included in the electricity generation dataset, so not added
       here to avoid double counting.'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00161
+    date_mapped: '2026-06-26'
 - technology_name: Hydro_RunOfRiver_El
   technology:
     technology_description: hydropower plant construction, run-of-river
@@ -21045,7 +21361,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: hydropower plant, run-of-river | lca_location:
       CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00162
+    date_mapped: '2026-06-26'
 - technology_name: MSW_Gasification_H2
   technology:
     technology_description: synthetic gas factory construction
@@ -21125,7 +21443,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: synthetic gas factory | lca_location:
       CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00163
+    date_mapped: '2026-06-26'
 - technology_name: MSW_Gasification_Syngas
   technology:
     technology_description: synthetic gas factory construction
@@ -21205,7 +21525,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: synthetic gas factory | lca_location:
       CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00164
+    date_mapped: '2026-06-26'
 - technology_name: MSW_Incineration_El
   technology:
     technology_description: municipal waste incineration facility construction
@@ -21285,7 +21607,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: municipal waste incineration facility
       | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00165
+    date_mapped: '2026-06-26'
 - technology_name: NH3_CCGT_El
   technology:
     technology_description: market for gas power plant, combined cycle, 400MW electrical
@@ -21365,7 +21689,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: gas power plant, combined cycle, 400MW
       electrical | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00166
+    date_mapped: '2026-06-26'
 - technology_name: NH3_OCGT_El
   technology:
     technology_description: micro gas turbine production, 100kW electrical
@@ -21445,7 +21771,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: micro gas turbine, 100kW electrical
       | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00167
+    date_mapped: '2026-06-26'
 - technology_name: NH3_Tank_NH3
   technology:
     technology_description: liquid storage tank production, chemicals, organics
@@ -21533,7 +21861,9 @@
       | lca_location: CH | notes: 4000m3 of storage capacity, 18.6 MJ/kg, 600 kg/m3
       density -> 12400000 kWh of storage capacity rough estimation'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00168
+    date_mapped: '2026-06-26'
 - technology_name: Oil_Boiler_ThBdg
   technology:
     technology_description: market for gas boiler
@@ -21605,7 +21935,9 @@
     time_index: 2050
     notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00169
+    date_mapped: '2026-06-26'
 - technology_name: Oil_Boiler_ThInd
   technology:
     technology_description: market for gas boiler
@@ -21677,7 +22009,9 @@
     time_index: 2050
     notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00170
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVAlpine_El
   technology:
     technology_description: photovoltaic plant construction, 570kWp, multi-Si, on
@@ -21758,7 +22092,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: photovoltaic plant, 570kWp, multi-Si,
       on open ground | lca_location: GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00171
+    date_mapped: '2026-06-26'
 - technology_name: Solar_PVRooftop_El
   technology:
     technology_description: photovoltaic flat-roof installation, 3kWp, multi-Si, on
@@ -21839,7 +22175,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: photovoltaic flat-roof installation,
       3kWp, multi-Si, on roof | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00172
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: sabatier reaction methanation unit construction
@@ -21919,7 +22257,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: sabatier reaction methanation unit
       | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00173
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: methanol production facility, construction
@@ -21999,7 +22339,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: methanol production facility, construction
       | lca_location: RER'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00174
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C12
   technology:
     technology_description: gas-to-liquid plant construction
@@ -22079,7 +22421,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid plant | lca_location:
       GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00175
+    date_mapped: '2026-06-26'
 - technology_name: Syngas_FT_C8
   technology:
     technology_description: gas-to-liquid plant construction
@@ -22159,7 +22503,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid plant | lca_location:
       GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00176
+    date_mapped: '2026-06-26'
 - technology_name: Th_HeatStore_Th
   technology:
     technology_description: market for thermal storage system, solar tower power plant,
@@ -22240,7 +22586,9 @@
     notes: 'lca_unit: kgCO2eq/kWh | ref_product: thermal storage system, solar tower
       power plant, 20 MW | lca_location: GLO | notes: 440MWh thermal storage capacity'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00177
+    date_mapped: '2026-06-26'
 - technology_name: Th_HotWaterTank_Th
   technology:
     technology_description: hot water tank production, 600l
@@ -22320,7 +22668,9 @@
     notes: 'lca_unit: kgCO2eq/kWh | ref_product: hot water tank, 600l | lca_location:
       CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00178
+    date_mapped: '2026-06-26'
 - technology_name: Th_SeasonalStore_Th
   technology:
     technology_description: heat storage production, 2000l
@@ -22400,7 +22750,9 @@
     notes: 'lca_unit: kgCO2eq/kWh | ref_product: heat storage, 2000l | lca_location:
       CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00179
+    date_mapped: '2026-06-26'
 - technology_name: U235_Nuclear_El
   technology:
     technology_description: nuclear power plant construction, pressure water reactor,
@@ -22481,7 +22833,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: nuclear power plant, pressure water
       reactor, 1000MW | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00180
+    date_mapped: '2026-06-26'
 - technology_name: Wind_Turbine_El
   technology:
     technology_description: wind turbine construction, 2MW, onshore
@@ -22561,7 +22915,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: wind turbine, 2MW, onshore | lca_location:
       GLO'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00181
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Boiler_ThBdg
   technology:
     technology_description: furnace production, wood chips, with silo, 50kW
@@ -22641,7 +22997,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: furnace, wood chips, with silo, 50kW
       | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00182
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Boiler_ThInd
   technology:
     technology_description: furnace production, wood chips, with silo, 50kW
@@ -22721,7 +23079,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: furnace, wood chips, with silo, 50kW
       | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00183
+    date_mapped: '2026-06-26'
 - technology_name: Wood_CHP_ElTh
   technology:
     technology_description: heat and power co-generation unit construction, 1MWel
@@ -22802,7 +23162,9 @@
     notes: 'lca_unit: kgCO2eq/kW | ref_product: heat and power co-generation unit,
       organic Rankine cycle, 1MWe, 6.4 MWth | lca_location: CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00184
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Gasification_H2
   technology:
     technology_description: synthetic gas factory construction
@@ -22882,7 +23244,9 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: synthetic gas factory | lca_location:
       CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00185
+    date_mapped: '2026-06-26'
 - technology_name: Wood_Gasification_Syngas
   technology:
     technology_description: synthetic gas factory construction
@@ -22962,4 +23326,6 @@
     notes: 'lca_unit: kgCO2eq/kg | ref_product: synthetic gas factory | lca_location:
       CH'
   harmonisation_record:
-    mapping_status: to_be_mapped
+    mapping_status: mapped
+    linked_entity_id: LE_00186
+    date_mapped: '2026-06-26'

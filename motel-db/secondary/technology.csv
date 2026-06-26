@@ -1,4 +1,70 @@
 tech_id,technology_name,technology_description,technology_variant,main_process,main_operation_unit,ontology_iri
-TECH_00001,Ammonia CCGT Electrolysis,Conversion,Gas turbine,
-TECH_00002,AmmoniaOpenCycleGasTurbine,Conversion,Gas turbine,
-TECH_00003,CH4 CCGT El,Conversion,Gas turbine,Methane-fueled CCGT with carbon capture and storage (CCS) (2030).
+TECH_00001,Ammonia Combined Cycle Gas Turbine Electrical,Conversion,Gas turbine,"market for gas power plant, combined cycle, 400MW electrical"
+TECH_00002,OCGTGasTurbineElectrical,Conversion,Gas turbine,"micro gas turbine production, 100kW electrical"
+TECH_00003,Methane CCGT with CCS,Conversion,Gas turbine,Methane-fueled CCGT with carbon capture and storage (CCS) (2030).
+TECH_00004,Methane CHP,Conversion,Combined heat & power,Combined heat and power (CHP) generation using methane (CH₄).
+TECH_00005,CH4 Fuel Cell El,Conversion,Fuel cell,Methane-fueled fuel cell electricity generation at El47 (2030).
+TECH_00006,CH4 Open Cycle Gas Turbine Electricity,Conversion,Gas turbine,Methane-fueled open cycle gas turbine (OCGT) electricity generation (2030).
+TECH_00007,Geothermal CHP Generation,Conversion,Combined heat & power,Geothermal-based CHP generation (2040).
+TECH_00008,H2 CCGT El,Conversion,Gas turbine,Hydrogen-fueled combined cycle gas turbine (CCGT) electricity generation (2050).
+TECH_00009,H2 Fuel Cell El,Conversion,Fuel cell,Electricity generation via fuel cells at node El47 (2040).
+TECH_00010,Hydrogen OCGT Electricity,Conversion,Gas turbine,Hydrogen-fueled open cycle gas turbine (OCGT) electricity generation (2050).
+TECH_00011,El Pumped Hydro Pump,Conversion,Hydropower,Pumped hydroelectric energy storage (pump mode).
+TECH_00012,Hydro Pumped Turbine El,Conversion,Hydropower,Pumped hydroelectric power generation (turbine mode).
+TECH_00013,Hydro RunOfRiver El,Conversion,Hydropower,Run-of-river hydroelectric power plant.
+TECH_00014,Hydro Reservoir El,Conversion,Hydropower,Hydroelectric power generation from storage reservoirs.
+TECH_00015,MSW Incineration Electricity,Conversion,Waste incineration,Electricity generation from municipal solid waste (MSW) incineration.
+TECH_00016,Alpine PV Ground Mounted,Conversion,Photovoltaic,"gound-mounted Alpine PV, from ETHZ study in 2024"
+TECH_00017,Solar PV Rooftop El,Conversion,Photovoltaic,"rooftop PV, small scale, in 2025"
+TECH_00018,U235 Nuclear Electricity,Conversion,Nuclear fission,Electricity generation from nuclear power (U235) at node El13.
+TECH_00019,Wind Turbine El,Conversion,Wind power,Generic wind turbine electricity generation (2020).
+TECH_00020,Wood CHP Electrical Thermal,Conversion,Combined heat & power,Combined heat and power (CHP) generation using wood.
+TECH_00021,Methane Boiler Thermal Building,Conversion,Boiler,Methane-fueled heating system for buildings.
+TECH_00022,CH4 Boiler Thermal,Conversion,Boiler,Methane-fueled heating system for thermal power plants.
+TECH_00023,El Heater ThBdg,Conversion,Electric heater,Electric heating system for buildings.
+TECH_00024,El Heater Thermal Industrial,Conversion,Electric heater,Electric heating system for thermal power plants.
+TECH_00025,El Heat Pump Thermal Storage,Conversion,Heat pump,Electric heating system for buildings with thermal storage.
+TECH_00026,Hydrogen Boiler Thermal Power Plant,Conversion,Boiler,Hydrogen-fueled heating system for thermal power plants (2030).
+TECH_00027,El Heat Pump Residential,Conversion,Heat pump,"Generic heat pump for residential heating, fixed COP 4"
+TECH_00028,El Heat Pump ThInd,Conversion,Heat pump,Low-temperature heat upgrade for district heating (2030).
+TECH_00029,Oil Boiler Thermal Building,Conversion,Boiler,Hydrocarbon-fueled heating system for buildings.
+TECH_00030,Oil Boiler Thermal,Conversion,Boiler,Hydrocarbon-fueled heating system for thermal power plants.
+TECH_00031,WoodBoilerThermalBuilding,Conversion,Boiler,Wood-fueled heating system for buildings.
+TECH_00032,Wood Boiler Thermal,Conversion,Boiler,Wood-fueled heating system for thermal power plants.
+TECH_00033,HaberBoschAmmonia,Conversion,Chemical synthesis,Ammonia synthesis (Haber Bosch process)
+TECH_00034,Wet Biomass Anaerobic Digestion Methane,Conversion,Anaerobic digestion,Wet biomass anaerobic digestion with gas upgrading
+TECH_00035,H2 Sabatier CH4,Conversion,Catalytic hydrogenation,Methane synthesis from H2 and CO2 via the thermo catalytic Sabatier reaction.
+TECH_00036,CookingOil HEFA C12,Conversion,Hydrotreatment,SAF Production via esterification of used cooking oil and animal fat
+TECH_00037,CO2 Hydrogenation Methanol Synthesis,Conversion,Catalytic hydrogenation,Methanol synthesis from CO2 hydrogenation
+TECH_00038,Hydrogen Reverse Water Gas Shift Carbon Monoxide,Conversion,Catalytic conversion,"Reverse water gas shift reaction plant. Emerging technology, 2030. "
+TECH_00039,El Electrolysis Alkaline,Conversion,Electrolysis,"Electrolysis 2030, Alkaline technology (10 MW) from Danish Energy Reports 2025 is the benchmark "
+TECH_00040,Syngas FT C12,Conversion,Fischer–Tropsch synthesis,Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
+TECH_00041,Syngas FT C8,Conversion,Fischer–Tropsch synthesis,Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
+TECH_00042,Syngas COHydrogenation Methane,Conversion,Catalytic hydrogenation,Methane synthesis from Syngas via the thermo catalytic CO hydrogenation. 
+TECH_00043,Syngas CO Hydrogenation Methanol,Conversion,Catalytic hydrogenation,Methanol synthesis from Syngas via the thermo catalytic CO hydrogenation
+TECH_00044,MSW Gasification Syngas,Conversion,Gasification,Municipal solid waste gasification to syngas
+TECH_00045,MSWGasificationHydrogen,Conversion,Gasification,Municipal solid waste gasification to hydrogen
+TECH_00046,Wood Gasification H2,Conversion,Gasification,Woody biomass gasification to hydrogen
+TECH_00047,Wood Gasification Syngas,Conversion,Gasification,Woody biomass gasification to syngas
+TECH_00048,MeOH MtJ Hydrotreatment C12,Conversion,Hydrotreatment,Methanol-to-Jet fuel via MtO and oligomerisation. Near-term projection.
+TECH_00049,El CoElectrolysis Syngas,Conversion,Electrolysis,High-temperature co-electrolysis of CO₂ and H₂O to syngas (SOEC). Near-term.
+TECH_00050,Methane Pyrolysis Hydrogen,Conversion,Pyrolysis,Methane pyrolysis (turquoise hydrogen). Thermal decomposition of CH₄ into H₂ and solid carbon. Near-term.
+TECH_00051,AmineScrubbingPostCombustionCO2Capture,Conversion,Carbon capture,CO2 post combustion capture via Amine washing. Temperature swing process. 2030 reference based on an approx. 150 ktCO2/a plant size. 
+TECH_00052,Wet Biomass Pyrolysis Biochar,Conversion,Pyrolysis,Biochar production via pyrolysis of wet biomass.
+TECH_00053,Direct Air Capture CO2,Conversion,Carbon capture,Direct air capture using adsorption technology (2030 and 2040).
+TECH_00054,CO2Flue Pressure Swing Adsorption,Conversion,Carbon capture,CO2 post combustion capture via Hot-Potassium Carbonate cycling. Pressure swing process. 2030 reference based on an approx. 150 ktCO2/a plant size. 
+TECH_00055,Electric Battery Storage Home,Storage,Battery storage,"Electric battery storage at home, 2025"
+TECH_00056,El Battery Storage,Storage,Battery storage,"Electric battery storage at the grid, 2020"
+TECH_00057,Pumped Hydro Reservoir,Storage,Reservoir storage,"Pumped hydro reservoir, without pump and generator"
+TECH_00058,Thermal Storage Solar Tower,Storage,Thermal storage,"market for thermal storage system, solar tower power plant, 20 MW"
+TECH_00059,ThermalStorageTank,Storage,Thermal storage,Hot water storage tank at home
+TECH_00060,Seasonal Thermal Storage,Storage,Thermal storage,"Thermal storage for district heating, seasonal storage"
+TECH_00061,CompressedHydrogenTank700Bar,Storage,Compressed gas storage,"fuel tank assembly, compressed hydrogen gas, 700bar"
+TECH_00062,MethanePipelineStorage,Storage,Pipeline storage,Storaging methane via compressing in the pipelines
+TECH_00063,Compressed Methane Tank,Storage,Compressed gas storage,Tank storage for methane (compressed)
+TECH_00064,Underground Methane Storage,Storage,Underground storage,Underground methane storage
+TECH_00065,CO2 Storage Tank,Storage,Compressed gas storage,
+TECH_00066,COTankCO,Storage,Compressed gas storage,
+TECH_00067,C12 Liquid Storage Tank,Storage,Liquid storage,"liquid storage tank production, chemicals, organics"
+TECH_00068,C8 Storage Tank,Storage,Liquid storage,"liquid storage tank production, chemicals, organics"
+TECH_00069,NH3 Tank Storage,Storage,Liquid storage,Tank storage for ammonia
