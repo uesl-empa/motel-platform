@@ -98,12 +98,12 @@
         <figure class="workflow-figure">
           <img
             src="assets/workflow.svg"
-            alt="MOTEL workflow from external sources to mapped records, ontology alignment, and outputs for apps and energy system models"
+            alt="MOTEL cross-repository workflow showing the current motel-platform data pipeline feeding a separate ontology, knowledge graph, backend API, and frontend web application stack"
           />
           <figcaption>
-            External sources are transformed through ingestion, harmonisation,
-            mapping, and ontology alignment before being delivered to review
-            apps, APIs, docs, and model workflows.
+            The figure shows how `motel-platform` produces structured MOTEL
+            data and how a separate ontology and knowledge-graph repository
+            converts those outputs into TTL, GraphDB, an API, and a web app.
           </figcaption>
         </figure>
       </section>
@@ -114,13 +114,13 @@
           <li><strong>motel-db/</strong>: core tabular data (controlled vocabulary, mapping, secondary, supplementary)</li>
           <li><strong>schema/</strong>: validation and data structure definitions</li>
           <li><strong>1_ingest/</strong> and <strong>2_harmonise/</strong>: ingestion and harmonisation notebooks</li>
-          <li><strong>3a_graphdb/</strong>: CSV to Turtle generation for graph workflows</li>
+          <li><strong>docs/</strong>: static project documentation and workflow figure</li>
         </ul>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Maintained under the MOTEL project. Updated: 2026-06-24.</p>
+      <p>Maintained under the MOTEL project. Updated: 2026-06-26.</p>
     </footer>
   </body>
 </html>
