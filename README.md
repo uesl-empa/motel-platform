@@ -1,69 +1,77 @@
-[to be updated]
-# MOTEL Database (motel-db)
+# MOTEL Platform
 
 [![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-green.svg)](LICENSE)
-[![Data License: CC%20BY%204.0](https://img.shields.io/badge/Data%20License-CC--BY%204.0-blue.svg)](DATA_LICENSE)
+[![Data License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC--BY%204.0-blue.svg)](DATA_LICENSE)
 
-Methodology for Open Technology Data in Energy Models (MOTEL) is an ETH Domain ORD Program project.
+MOTEL (Methodology for Open Technology Data in Energy Models) is an ETH Domain ORD Program project for collecting, harmonising, and publishing technology data for energy system models.
 
-This repository centralizes project components for an open, ontology-ready technology database and workflow for energy system models (ESMs), including documentation, data, ontology, backend/API, and visualization tools.
-
-## Project Links
-
-- Documentation (GitHub Pages): https://YOUR-ORG.github.io/motel-db/
-- Streamlit App: https://YOUR-STREAMLIT-APP-URL.streamlit.app/
-- ETH Domain ORD Program: https://ethrat.ch/en/eth-domain/open-research-data/
+This repository contains the current MOTEL data workflow, schemas, curated database files, and a static documentation site.
 
 ## Repository Structure
 
-Key modules in this repository:
+```text
+.
+├── 1_ingest/         # Source-specific ingestion notebooks and helpers
+├── 2_harmonise/      # Harmonisation notebooks and helper functions
+├── docs/             # Static GitHub Pages site
+├── motel-db/         # Published MOTEL database files
+├── schema/           # Machine-readable YAML schemas
+└── schema_simple/    # Human-readable simplified schema blueprints
+```
 
-- `.github/workflows/`: CI/CD for docs deployment and backend checks.
-- `backend/`: FastAPI backend scaffold.
-- `frontend/`: Placeholder for optional Next.js + TypeScript frontend.
-- `streamlit/`: Streamlit app with sample data visualizations.
-- `data/`: CSV/JSON-LD-ready technology datasets and source metadata.
-- `ontology/`: RDF/OWL ontology assets (Turtle format).
-- `docs/`: MkDocs source files for documentation website.
-- `workflows/`: Data processing scripts and future Renku-compatible workflows.
+## Data Workflow
+
+1. **Ingest** source data into the unmapped entity schema.
+   - Main notebook: `1_ingest/1_data_ingestion.ipynb`
+   - reFuel.ch pipeline: `1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb`
+   - Output: `motel-db/unmapped_entity/unmapped_entities_refuel.yaml`
+
+2. **Harmonise** unmapped entities into controlled vocabularies and linked records.
+   - Main notebook: `2_harmonise/2_data_harmonisation.ipynb`
+   - Helper module: `2_harmonise/harmonise_helpers.py`
+   - Outputs: `motel-db/secondary/`, `motel-db/controlled_vocabulary/`, `motel-db/mapping/`, and `motel-db/linked_entity/`
+
+3. **Publish** curated database files and documentation.
+   - Data: `motel-db/`
+   - Schemas: `schema/`
+   - Website: `docs/index.html`
+
+## Database Layout
+
+- `motel-db/unmapped_entity/`: staging YAML records before harmonisation.
+- `motel-db/linked_entity/`: harmonised linked records.
+- `motel-db/controlled_vocabulary/`: controlled vocabularies such as carriers, attributes, scopes, and boundaries.
+- `motel-db/secondary/`: referenced entities such as technologies, processes, and sources.
+- `motel-db/mapping/`: provenance and mapping tables generated during harmonisation.
+- `motel-db/supplementary/`: contributor and review metadata.
+
+Runtime logs and local backups are intentionally excluded from the public repository.
 
 ## Quick Start
 
-### 1. Documentation (MkDocs)
+Create a Python environment and install the notebook/data dependencies:
 
 ```bash
-pip install mkdocs mkdocs-material
-mkdocs serve --config-file docs/mkdocs.yml
-```
-
-### 2. Backend (FastAPI)
-
-```bash
-cd backend
 python -m venv .venv
-# Windows PowerShell: .venv\Scripts\Activate.ps1
+# Windows PowerShell:
+# .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-uvicorn app.main:app --reload
 ```
 
-Open Swagger UI at http://localhost:8000/docs.
+Open the notebooks in Jupyter, VS Code, or another notebook environment. The harmonisation helper currently uses a local Ollama model (`qwen3:14b`) for LLM-assisted matching and field completion.
 
-### 3. Streamlit App
+## Documentation
 
-```bash
-cd streamlit
-python -m venv .venv
-# Windows PowerShell: .venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-streamlit run app.py
-```
+The static documentation site is in `docs/` and is deployed by GitHub Pages from the `Deploy Docs` workflow. To preview it locally, open `docs/index.html` in a browser.
+
+## Public Release Checklist
+
+- Review source-data licensing before publishing any raw or derived third-party data.
+- Confirm `motel-db/` contains only records intended for public release.
+- Run the repository validation workflow locally or in GitHub Actions before tagging a release.
+- Update `CITATION.cff` with final author, affiliation, DOI, and release metadata when available.
 
 ## Licensing
 
-- Code (backend, app code, workflows): MIT License ([LICENSE](LICENSE))
-- Data and ontology files: CC BY 4.0 ([DATA_LICENSE](DATA_LICENSE))
-
-## Status
-
-This repository currently contains the requested scaffold and starter files.
-Existing backend/frontend/data assets can be moved into their corresponding folders.
+- Code and workflow scripts are released under the MIT License.
+- Data, schemas, documentation, and ontology-ready database files are released under CC BY 4.0 unless otherwise stated.

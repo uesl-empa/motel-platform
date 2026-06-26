@@ -1,23 +1,22 @@
-1. link with ontology [to be decided]
-2. link with MOTEL webapp! [ongoing]
+# Public Release TODO
 
+This file tracks remaining work before the repository is announced publicly.
 
-breakdown of the whole database building workflow:
- - collect data -> a specific template/schema for input data (unmapped)
-    - challenge: convert LLM/reFuel.ch data to unmapped
- - data harmonisation -> based on new (unmapped) and existing data (in the motel-db) to create a mapped data
- - use the mapped data to create knowlege graph (graphDB)
+## Data Quality
 
+- Verify that all `motel-db/` records can be released under compatible source-data licenses.
+- Review generated mapping tables for duplicate records and rerun harmonisation where needed.
+- Confirm attribute names follow the schema naming guidance.
+- Ensure each unmapped entity has a `harmonisation_record.mapping_status`.
+- Record the LLM model and harmonisation settings used for each production run.
 
+## Documentation
 
- [2026-06-23]
- 1. complete the documentation, especially step 2 harmoisation DONE
- 2. run more test for step 2 (all entity, start from beginning)
- 3. how to deal with duplicate date/run? does the script can detect that (seperate process and unprocessed)
+- Add final project contact and citation information.
+- Replace placeholder values in `CITATION.cff` once a DOI or preferred citation is available.
+- Add a short contributor guide if external submissions are expected.
 
+## Future Work
 
- TO FIX:
-  - attribute name does not follow schema definition
-  - mark the status of unmapped_entity: unmapped and mapped
-  - add the process/tech data to ensure the quality of naming
-  - add the note of 'name of LLM' used in the model
+- Link harmonised records to the MOTEL ontology/graph workflow.
+- Connect the curated database to the MOTEL web application.

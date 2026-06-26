@@ -6,6 +6,7 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+.ipynb_checkpoints/
 
 # Node / frontend
 node_modules/
@@ -22,11 +23,20 @@ out/
 .DS_Store
 Thumbs.db
 
+# Agent / local tool state
+.claude/settings.local.json
+.agents/
+
 # Build artifacts
 site/
 dist/
 build/
 
-
+# Local data and runtime artifacts
 raw_data/
-_backup
+_backup/
+bakcup/
+motel-db/_backup/
+motel-db/log/
+*.log
+test.ipynb
