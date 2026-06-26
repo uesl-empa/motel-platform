@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use MOTEL Platform, please cite it using this metadata."
+title: "MOTEL Platform"
+abstract: "Workflow, schemas, and curated database files for open technology data in energy system models."
+type: software
+license: MIT
+authors:
+  - family-names: "MOTEL contributors"
+repository-code: "https://github.com/BartonChenTW/motel-platform"
+date-released: "2026-06-26"
+version: "0.1.0"

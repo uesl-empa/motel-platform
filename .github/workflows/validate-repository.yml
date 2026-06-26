@@ -1,0 +1,49 @@
+name: Validate Repository
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install validation dependencies
+        run: python -m pip install pyyaml
+
+      - name: Check Python syntax
+        run: python -m compileall 1_ingest 2_harmonise
+
+      - name: Validate YAML and CSV files
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+
+          import yaml
+
+          roots = [Path("schema"), Path("schema_simple"), Path("motel-db")]
+
+          for root in roots:
+              for path in root.rglob("*.yaml"):
+                  with path.open(encoding="utf-8") as handle:
+                      yaml.safe_load(handle)
+
+              for path in root.rglob("*.csv"):
+                  with path.open(encoding="utf-8-sig", newline="") as handle:
+                      reader = csv.reader(handle)
+                      next(reader, None)
+                      for _ in reader:
+                          pass
+
+          print("YAML and CSV files are readable.")
+          PY
