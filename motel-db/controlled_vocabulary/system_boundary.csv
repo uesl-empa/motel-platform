@@ -1,4 +1,2 @@
 system_boundary,system_boundary_description,note
 BOUND_PLANT_READY_TO_OPERATE,"Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses.",
-BOUND_COMPLETE_INSTALLATION,"Explicit documentation clarifying grid interface configurations, input dependency cut-offs, and downstream losses.",
-BOUND_PLANT_EXTENSION_READY_TO_OPERATE,"Retrofit or extension at an existing facility (e.g., CO₂ capture at existing point-source emitters). Excludes costs of the host plant. Grid interface configurations include connections to existing infrastructure; input dependencies limited to retrofit-specific inputs. Downstream losses beyond the extension's output boundary are excluded.",

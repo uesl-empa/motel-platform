@@ -2,37 +2,3 @@ original_name,carrier_name,carrier_id,status
 NH3,Ammonia,CAR_00001,created
 El13,El13,CAR_00002,created
 CH4,Gaseous Methane,CAR_00003,created
-El47,El47,CAR_00004,created
-ThHt,Thermal Hydrogen,CAR_00005,created
-ElBdg,Electricity,CAR_00006,created
-ThBdg,Thermal,CAR_00007,created
-ThGround,ThGround,CAR_00008,created
-H2,Gaseous Hydrogen,CAR_00009,created
-HydroPumped,HydroPumped,CAR_00010,created
-HydroRor,Hydrogen,CAR_00011,created
-HydroS,Hydrogen Sulfide,CAR_00012,created
-Msw,Msw,CAR_00013,created
-ElPvAlpin,Electric Photovoltaic,CAR_00014,created
-Sol,Sol,CAR_00015,created
-U235,Uranium-235,CAR_00016,created
-ElWind,Electric Wind,CAR_00017,created
-Wood,Wood,CAR_00018,created
-ThPhII,ThPhII,CAR_00019,created
-ElRest,ElRest,CAR_00020,created
-ThSc,Thermal Storage,CAR_00021,created
-ThLt,Thermal Liquid,CAR_00022,created
-C12,Carbon 12,CAR_00023,created
-N2,Nitrogen,CAR_00024,created
-BioWet,BioWet,CAR_00025,created
-CO2Sys,Carbon Dioxide,CAR_00026,created
-H2O,Water,CAR_00027,created
-CookingOil,Cooking Oil,CAR_00028,created
-MeOH,Methanol,CAR_00029,created
-COSys,COSys,CAR_00030,created
-CO,Carbon Monoxide,CAR_00031,created
-H2Process,Hydrogen,CAR_00011,exact
-C8,Octane,CAR_00032,created
-O2,Oxygen,CAR_00033,created
-CBio,CBio,CAR_00034,created
-CO2Fluegas,CO2 Flue Gas,CAR_00035,created
-CO2,Carbon Dioxide,CAR_00026,exact

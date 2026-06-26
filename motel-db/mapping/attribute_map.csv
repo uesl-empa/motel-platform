@@ -4,12 +4,12 @@ tech_maturity,Technology Maturity,ATTR_00002,created
 technical_efficiency,Technical Efficiency,ATTR_00003,created
 theoretical_efficiency,Theoretical Efficiency,ATTR_00004,created
 lifetime_yr,EconomicLifetime,ATTR_00005,created
-capex_one_time,Capital Expenditure One Time,ATTR_00006,created
-capex_per_capacity,Capital Expenditure Per Capacity,ATTR_00007,created
-opex_one_time,Opex One-Time,ATTR_00008,created
+capex_one_time,Capital Expenditure One-Time,ATTR_00006,created
+capex_per_capacity,Capital Expenditure per Installed Capacity,ATTR_00007,created
+opex_one_time,One-Time Operating Expenditure,ATTR_00008,created
 opex_fix_pct_of_capex,Fixed Operational Expenditure Percentage Of Capital Expenditure,ATTR_00009,created
 opex_per_capacity_yr,Operational Expenditure Per Capacity,ATTR_00010,created
-opex_per_energy,Operating Expenditure Per Energy,ATTR_00011,created
+opex_per_energy,Operating Expenditure per Energy,ATTR_00011,created
 operating_temperature_c,Operating Temperature,ATTR_00012,created
 min_installation_size,Minimum Installation Size,ATTR_00013,created
 uncertainty_rating,Uncertainty Rating,ATTR_00014,created
@@ -24,6 +24,6 @@ discharging_efficiency,Discharging Efficiency,ATTR_00022,created
 min_soc,Minimum State of Charge,ATTR_00023,created
 max_soc,MaximumSoc,ATTR_00024,created
 standby_loss_per_hour,Standby Loss Per Hour,ATTR_00025,created
-capex_per_stor_capacity,Capital Expenditure Per Storage Capacity,ATTR_00026,created
-opex_per_stor_capacity_yr,Annual Operational Expenditure per Storage Capacity,ATTR_00027,created
+capex_per_stor_capacity,Capital Expenditure per Storage Capacity,ATTR_00026,created
+opex_per_stor_capacity_yr,Annual Operational Expenditure Per Storage Capacity,ATTR_00027,created
 embedded_carbon,Embedded Carbon,ATTR_00028,created
