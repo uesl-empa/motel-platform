@@ -17,9 +17,11 @@ import datetime
 import json
 import re
 import shutil
+import time
 from pathlib import Path
 
 import ollama
+import pandas as pd
 import yaml
 
 # ---------------------------------------------------------------------------
@@ -28,6 +30,9 @@ import yaml
 MODEL = "qwen3:14b"
 HARMONISATION_VERSION = "1.0.0"
 LOG_DIR = Path("../motel-db/log")
+DEFAULT_REFUEL_WORKBOOK = Path("../1_ingest/ingestion_space/refuel/raw_data/reFuel_TechDatabase_Clean_2026-06-03.xlsx")
+DEFAULT_UNMAPPED_PATH = Path("../motel-db/unmapped_entity/unmapped_entities_refuel.yaml")
+SCHEMA_DIR = Path("../schema")
 
 # ---------------------------------------------------------------------------
 # Global controlled-vocabulary context for all LLM calls.
@@ -35,6 +40,154 @@ LOG_DIR = Path("../motel-db/log")
 #   hh.GLOBAL_CV_CONTEXT = build_cv_context(df_nomenclature, df_carrier)
 # ---------------------------------------------------------------------------
 GLOBAL_CV_CONTEXT = ""
+
+
+def find_project_root(start: Path | None = None) -> Path:
+    """Find the repository root from any path inside motel-platform."""
+    start = (start or Path.cwd()).resolve()
+    for candidate in [start, *start.parents]:
+        if (candidate / "motel-db").is_dir() and (candidate / "schema").is_dir():
+            return candidate
+    raise FileNotFoundError(
+        "Could not locate the repository root. Start the notebook from inside motel-platform."
+    )
+
+
+def get_harmonisation_paths(project_root: Path | None = None) -> dict[str, Path]:
+    """Return the main repository paths used by the harmonisation workflow."""
+    root = (project_root or find_project_root()).resolve()
+    return {
+        "project_root": root,
+        "schema_dir": root / "schema",
+        "database_dir": root / "motel-db",
+        "unmapped_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
+        "linked_entity_path": root / "motel-db" / "linked_entity" / "linked_entity.yaml",
+        "mapping_dir": root / "motel-db" / "mapping",
+        "refuel_workbook": root / "1_ingest" / "ingestion_space" / "refuel" / "raw_data" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
+        "notebook_path": root / "2_harmonise" / "2_data_harmonisation.ipynb",
+    }
+
+
+def build_cv_context(df_nom, df_car):
+    """Build one shared LLM context string from Nomenclature and Carrier sheets."""
+    lines = ["The following controlled vocabulary definitions apply to all fields in this database."]
+
+    lines.append("\n--- Nomenclature: term definitions used across all controlled vocabulary fields ---")
+    for _, row in df_nom.iterrows():
+        term = row.get("Term / Abbreviation")
+        definition = row.get("Definition")
+        if pd.notna(term) and pd.notna(definition) and str(term).strip():
+            lines.append(f"{term}: {definition}")
+
+    lines.append("\n--- Carrier: valid abbreviations for all carrier fields ---")
+    for _, row in df_car.iterrows():
+        abbr = row.get("Carrier Abbreviation")
+        desc = row.get("Carrier Description")
+        ctype = row.get("Carrier Type")
+        if pd.notna(abbr) and pd.notna(desc) and str(abbr).strip():
+            tag = f" ({ctype})" if pd.notna(ctype) else ""
+            lines.append(f"{abbr}{tag}: {desc}")
+
+    return "\n".join(lines)
+
+
+def load_refuel_cv_context(workbook_path: Path | str = DEFAULT_REFUEL_WORKBOOK) -> str:
+    """Load Nomenclature and Carrier sheets and return the shared LLM context string."""
+    sheets = pd.read_excel(workbook_path, sheet_name=["Nomenclature", "Carrier"])
+    return build_cv_context(sheets["Nomenclature"], sheets["Carrier"])
+
+
+def load_all_csv_data(directory="../motel-db/"):
+    """Recursively load CSV files under motel-db for notebook inspection."""
+    all_csv_data = {}
+    for path in sorted(Path(directory).rglob("*.csv")):
+        try:
+            all_csv_data[path.stem] = pd.read_csv(path)
+        except Exception as exc:
+            print(f"Error reading {path}: {exc}")
+    return all_csv_data
+
+
+def prepare_harmonisation_inputs(
+    unmapped_path,
+    test_limit=None,
+    set_all_unmapped_to_pending=False,
+):
+    """Load staged unmapped entities, optionally reset status, and apply a test slice."""
+    unmapped_path = Path(unmapped_path)
+    if set_all_unmapped_to_pending:
+        all_unmapped_entities, _, _ = load_pending_unmapped(unmapped_path)
+        print("Setting all staged entities to 'to_be_mapped' status...")
+        mark_all_unmapped_entities_pending(unmapped_path, all_unmapped_entities)
+
+    all_unmapped_entities, ue, ue_indices = load_pending_unmapped(unmapped_path)
+    if test_limit is not None:
+        ue = ue[:test_limit]
+        ue_indices = ue_indices[:test_limit]
+
+    return {
+        "all_unmapped_entities": all_unmapped_entities,
+        "ue": ue,
+        "ue_indices": ue_indices,
+    }
+
+
+def start_harmonisation_run(paths, all_schemas, all_unmapped_entities, ue, test_limit=None):
+    """Start timing and logging for one harmonisation notebook run."""
+    harmonisation_started = time.perf_counter()
+    harmonisation_log = start_harmonisation_log(settings={
+        "unmapped_path": str(Path(paths["unmapped_path"]).resolve()),
+        "schema_path": str(Path(paths["schema_dir"]).resolve()),
+        "database_path": str(Path(paths["database_dir"]).resolve()),
+        "linked_entity_path": str(Path(paths["linked_entity_path"]).resolve()),
+        "mapping_path": str(Path(paths["mapping_dir"]).resolve()),
+        "controlled_vocabulary_source": str(Path(paths["refuel_workbook"]).resolve()),
+        "controlled_vocabulary_context_chars": len(GLOBAL_CV_CONTEXT),
+        "loaded_schema_count": len(all_schemas),
+        "entity_registry_paths": {
+            entity_type: str(Path(config["path"]).resolve())
+            for entity_type, config in ENTITY_CONFIG.items()
+        },
+        "llm_model": MODEL,
+        "harmonisation_version": HARMONISATION_VERSION,
+        "test_limit": test_limit,
+        "staged_entities": len(all_unmapped_entities),
+        "entities_selected": len(ue),
+    })
+    return harmonisation_started, harmonisation_log
+
+
+def apply_setup_controls(
+    harmonisation_log,
+    create_motel_db_backup=False,
+    reset_motel_db_outputs=False,
+):
+    """Apply optional backup/reset controls and log the result."""
+    setup_started = time.perf_counter()
+    setup_actions = []
+
+    if create_motel_db_backup:
+        backup_derived_data()
+        setup_actions.append("backup")
+    else:
+        print("Skipping motel-db backup.")
+
+    if reset_motel_db_outputs:
+        reset_derived_data()
+        setup_actions.append("reset")
+    else:
+        print("Skipping motel-db cleanup/reset.")
+
+    log_harmonisation_event(
+        harmonisation_log,
+        "setup",
+        "setup_controls_applied",
+        duration_seconds=round(time.perf_counter() - setup_started, 3),
+        actions=setup_actions,
+        create_motel_db_backup=create_motel_db_backup,
+        reset_motel_db_outputs=reset_motel_db_outputs,
+    )
+    return setup_actions
 
 
 def start_harmonisation_log(settings=None, log_dir=LOG_DIR):
@@ -843,6 +996,450 @@ def collect_candidates(unmapped_entities):
             if cname:
                 upsert_candidate(candidates["carrier"], cname, {"carrier_name": cname})
     return candidates
+
+
+def resolve_entities_step(candidates, all_schemas, harmonisation_log=None):
+    """Resolve technology, process, source, and carrier candidates and write lookup maps."""
+    step_started = time.perf_counter()
+    registries = {et: load_registry(et) for et in ENTITY_CONFIG}
+    resolved_ids = {et: {} for et in ENTITY_CONFIG}
+    resolved_names = {et: {} for et in ENTITY_CONFIG}
+    resolution_status = {et: {} for et in ENTITY_CONFIG}
+    counts_by_type = {}
+    MAPPING_DIR.mkdir(parents=True, exist_ok=True)
+
+    for entity_type, entity_candidates in candidates.items():
+        print(f"\nResolving {entity_type}...")
+        registry = registries[entity_type]
+        name_field = ENTITY_CONFIG[entity_type]["name_field"]
+        counts = {"exact": 0, "llm": 0, "created": 0}
+
+        for name, candidate in entity_candidates.items():
+            rid, status = resolve_entity(entity_type, candidate, registry, all_schemas)
+            resolved_row = next(
+                row for row in registry
+                if row.get(ENTITY_CONFIG[entity_type]["id_field"]) == rid
+            )
+            resolved_ids[entity_type][name] = rid
+            resolved_names[entity_type][name] = resolved_row.get(name_field, "")
+            resolution_status[entity_type][name] = status
+            counts[status] += 1
+            resolved_name = resolved_names[entity_type][name]
+            if status == "created":
+                print(f"  + created: {name!r} -> {resolved_name!r}  [{rid}]")
+            if harmonisation_log:
+                log_harmonisation_event(
+                    harmonisation_log,
+                    "step_2",
+                    "entity_resolved",
+                    entity_type=entity_type,
+                    original_name=name,
+                    resolved_name=resolved_name,
+                    resolved_id=rid,
+                    status=status,
+                )
+
+        mapping_path = MAPPING_DIR / f"{entity_type}_map.csv"
+        id_field = ENTITY_CONFIG[entity_type]["id_field"]
+        with open(mapping_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=["original_name", name_field, id_field, "status"],
+            )
+            writer.writeheader()
+            for original_name, rid in resolved_ids[entity_type].items():
+                writer.writerow({
+                    "original_name": original_name,
+                    name_field: resolved_names[entity_type][original_name],
+                    id_field: rid,
+                    "status": resolution_status[entity_type][original_name],
+                })
+
+        counts_by_type[entity_type] = counts
+        total = sum(counts.values())
+        print(
+            f"  total: {total}  |  exact match: {counts['exact']}  |  "
+            f"LLM match: {counts['llm']}  |  newly created: {counts['created']}"
+        )
+        print(f"  mapping: {mapping_path}")
+        if harmonisation_log:
+            log_harmonisation_event(
+                harmonisation_log,
+                "step_2",
+                "entity_type_completed",
+                entity_type=entity_type,
+                counts=counts,
+                mapping_path=str(mapping_path.resolve()),
+            )
+
+    print("\nLLM resolution complete.")
+    if harmonisation_log:
+        log_harmonisation_event(
+            harmonisation_log,
+            "step_2",
+            "completed",
+            duration_seconds=round(time.perf_counter() - step_started, 3),
+        )
+    return {
+        "registries": registries,
+        "resolved_ids": resolved_ids,
+        "resolved_names": resolved_names,
+        "resolution_status": resolution_status,
+        "counts_by_type": counts_by_type,
+    }
+
+
+def resolve_controlled_vocabulary_step(
+    all_schemas,
+    ue,
+    full_unmapped_path=DEFAULT_UNMAPPED_PATH,
+    rebuild_attribute_registry=True,
+    harmonisation_log=None,
+):
+    """Resolve attributes and scope tokens and optionally rebuild attribute.csv from staged data."""
+    step_started = time.perf_counter()
+    attr_schema = all_schemas.get("attribute.yaml", {})
+
+    if rebuild_attribute_registry:
+        print("Rebuilding attribute.csv from scratch...")
+        Path(ATTR_PATH).unlink(missing_ok=True)
+
+    attr_registry = {}
+    attr_ids = {}
+    attr_names = {}
+    attr_status = {}
+    scope_ids = {}
+    attr_counts = {"existing": 0, "created": 0}
+    scope_counts = {"existing": 0, "created": 0}
+
+    with open(full_unmapped_path, "r", encoding="utf-8") as f:
+        ue_all = yaml.safe_load(f) or []
+
+    for entity in ue_all:
+        for attr in entity.get("attributes", []):
+            name = attr.get("attribute_name")
+            if name and name not in attr_ids:
+                aid, canonical_name, status = ensure_attr(
+                    name,
+                    registry=attr_registry,
+                    notes=attr.get("notes", ""),
+                    attr_schema=attr_schema,
+                )
+                attr_ids[name] = aid
+                attr_names[name] = canonical_name
+                attr_status[name] = status
+                attr_counts[status] += 1
+                if status == "created":
+                    print(f"  + attribute: {name!r} -> {canonical_name!r}  [{aid}]")
+
+    for entity in ue:
+        scope = entity.get("scope", {})
+        for scope_type in SCOPE_CONFIG:
+            value = scope.get(f"{scope_type}_description")
+            key = (scope_type, value)
+            if value and key not in scope_ids:
+                token, status = ensure_scope(
+                    scope_type,
+                    value,
+                    scope_schema=all_schemas.get(f"{scope_type}.yaml", {}),
+                )
+                scope_ids[key] = token
+                if status:
+                    scope_counts[status] += 1
+                    if status == "created":
+                        print(f"  + {scope_type}: {value!r} -> {token!r}")
+
+    print(
+        f"Attributes   — total: {sum(attr_counts.values())}  |  "
+        f"existing: {attr_counts['existing']}  |  created: {attr_counts['created']}"
+    )
+    print(
+        f"Scope tokens — total: {sum(scope_counts.values())}  |  "
+        f"existing: {scope_counts['existing']}  |  created: {scope_counts['created']}"
+    )
+    if harmonisation_log:
+        log_harmonisation_event(
+            harmonisation_log,
+            "step_3",
+            "controlled_vocabulary_resolved",
+            duration_seconds=round(time.perf_counter() - step_started, 3),
+            attribute_counts=attr_counts,
+            scope_counts=scope_counts,
+            attribute_path=str(Path(ATTR_PATH).resolve()),
+        )
+    return {
+        "attr_ids": attr_ids,
+        "attr_names": attr_names,
+        "attr_status": attr_status,
+        "scope_ids": scope_ids,
+        "attr_counts": attr_counts,
+        "scope_counts": scope_counts,
+    }
+
+
+def build_and_save_linked_entities(
+    ue,
+    ue_indices,
+    all_unmapped_entities,
+    unmapped_path,
+    resolved_ids,
+    attr_ids,
+    attr_names,
+    scope_ids,
+    harmonisation_log=None,
+):
+    """Build linked entities, save them, and mark the staged source entities as mapped."""
+    step_started = time.perf_counter()
+    today = str(datetime.date.today())
+    le_path = Path(LE_PATH)
+
+    if le_path.exists():
+        with open(le_path, "r", encoding="utf-8") as f:
+            existing_linked_entities = yaml.safe_load(f) or []
+    else:
+        existing_linked_entities = []
+
+    existing_numbers = [
+        int(le["linked_entity_id"].split("_")[-1])
+        for le in existing_linked_entities
+        if str(le.get("linked_entity_id", "")).startswith("LE_")
+    ]
+    next_linked_number = max(existing_numbers, default=0) + 1
+    linked_entities = []
+
+    for i, entity in enumerate(ue):
+        technology = entity.get("technology", {})
+        scope = entity.get("scope", {})
+        linked_entities.append({
+            "linked_entity_id": f"LE_{next_linked_number + i:05d}",
+            "tech_id": resolved_ids["technology"].get(entity.get("technology_name"), ""),
+            "process_id": resolved_ids["process"].get(technology.get("process_name"), ""),
+            "scope": {
+                "geographic_scope": scope_ids.get(("geographic_scope", scope.get("geographic_scope_description")), ""),
+                "temporal_scope": scope_ids.get(("temporal_scope", scope.get("temporal_scope_description")), ""),
+                "capacity_scope": scope_ids.get(("capacity_scope", scope.get("capacity_scope_description")), ""),
+                "system_boundary": scope_ids.get(("system_boundary", scope.get("system_boundary_description")), ""),
+            },
+            "balancing": {
+                "inputs": [
+                    {
+                        "carrier_id": resolved_ids["carrier"].get(x["carrier_name"], ""),
+                        "share": x.get("share"),
+                        "unit": x.get("unit"),
+                    }
+                    for x in entity.get("balancing", {}).get("inputs", [])
+                    if x.get("carrier_name")
+                ],
+                "outputs": [
+                    {
+                        "carrier_id": resolved_ids["carrier"].get(x["carrier_name"], ""),
+                        "share": x.get("share"),
+                        "unit": x.get("unit"),
+                    }
+                    for x in entity.get("balancing", {}).get("outputs", [])
+                    if x.get("carrier_name")
+                ],
+            },
+            "sources": [
+                {
+                    "source_id": resolved_ids["source"].get(source["source_name"], ""),
+                    "linked_attribute_ids": [
+                        attr_ids.get(attribute_name) or f"[unregistered: {attribute_name}]"
+                        for attribute_name in source.get("linked_attribute", [])
+                    ],
+                }
+                for source in entity.get("sources", [])
+                if source.get("source_name")
+            ],
+            "values": [
+                {
+                    "attribute_id": attr_ids.get(attr["attribute_name"], ""),
+                    "attribute_name": attr_names.get(attr["attribute_name"], attr["attribute_name"]),
+                    "value": attr.get("value"),
+                    "time_index": attr.get("time_index"),
+                }
+                for attr in entity.get("attributes", [])
+                if attr.get("attribute_name")
+            ],
+            "date_created": today,
+        })
+
+    all_linked_entities = existing_linked_entities + linked_entities
+    le_path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_le_path = le_path.with_suffix(le_path.suffix + ".tmp")
+    with open(temporary_le_path, "w", encoding="utf-8") as f:
+        yaml.safe_dump(all_linked_entities, f, allow_unicode=True, sort_keys=False)
+    temporary_le_path.replace(le_path)
+
+    mark_unmapped_entities_mapped(
+        unmapped_path,
+        all_unmapped_entities,
+        ue_indices,
+        linked_entities,
+        today,
+    )
+
+    print(f"Saved {len(linked_entities)} new linked entities -> {LE_PATH}")
+    print(f"Updated mapping status to mapped for {len(linked_entities)} staged entities")
+    for linked_entity in linked_entities:
+        print(
+            f"  {linked_entity['linked_entity_id']}  "
+            f"tech={linked_entity['tech_id']}  "
+            f"process={linked_entity['process_id']}  "
+            f"scope={linked_entity['scope']}"
+        )
+
+    if harmonisation_log:
+        log_harmonisation_event(
+            harmonisation_log,
+            "step_4",
+            "linked_entities_saved",
+            duration_seconds=round(time.perf_counter() - step_started, 3),
+            created_count=len(linked_entities),
+            preserved_count=len(existing_linked_entities),
+            output_path=str(le_path.resolve()),
+            linked_entity_ids=[le["linked_entity_id"] for le in linked_entities],
+        )
+    return {
+        "linked_entities": linked_entities,
+        "existing_linked_entities": existing_linked_entities,
+        "today": today,
+    }
+
+
+def save_mapping_files_step(
+    ue,
+    ue_indices,
+    linked_entities,
+    today,
+    attr_ids,
+    attr_names,
+    attr_status,
+    scope_ids,
+    harmonisation_log=None,
+):
+    """Write provenance, attribute, and scope mapping files for the current run."""
+    step_started = time.perf_counter()
+    MAPPING_DIR.mkdir(parents=True, exist_ok=True)
+
+    map_a_path = MAPPING_DIR / "unmapped_to_linked.csv"
+    map_a_cols = [
+        "unmapped_index", "technology_name",
+        "linked_entity_id", "tech_id", "process_id",
+        "geographic_scope", "temporal_scope", "capacity_scope", "system_boundary",
+        "source_ids", "date_mapped",
+    ]
+
+    with open(map_a_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=map_a_cols)
+        writer.writeheader()
+        for source_index, entity, linked_entity in zip(ue_indices, ue, linked_entities):
+            source_ids = [source["source_id"] for source in linked_entity.get("sources", [])]
+            writer.writerow({
+                "unmapped_index": source_index,
+                "technology_name": entity.get("technology_name", ""),
+                "linked_entity_id": linked_entity["linked_entity_id"],
+                "tech_id": linked_entity["tech_id"],
+                "process_id": linked_entity["process_id"],
+                "geographic_scope": linked_entity["scope"].get("geographic_scope", ""),
+                "temporal_scope": linked_entity["scope"].get("temporal_scope", ""),
+                "capacity_scope": linked_entity["scope"].get("capacity_scope", ""),
+                "system_boundary": linked_entity["scope"].get("system_boundary", ""),
+                "source_ids": json.dumps(source_ids),
+                "date_mapped": today,
+            })
+    print(f"Provenance map: saved {len(linked_entities)} rows -> {map_a_path}")
+
+    attr_path = MAPPING_DIR / "attribute_map.csv"
+    with open(attr_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["original_name", "attribute_name", "attribute_id", "status"],
+        )
+        writer.writeheader()
+        for name, aid in attr_ids.items():
+            writer.writerow({
+                "original_name": name,
+                "attribute_name": attr_names.get(name, name),
+                "attribute_id": aid,
+                "status": attr_status.get(name, "created"),
+            })
+    print(f"Entity lookup map: attribute_map.csv  ({len(attr_ids)} rows)")
+
+    for scope_type in SCOPE_CONFIG:
+        path = MAPPING_DIR / f"{scope_type}_map.csv"
+        scope_entries = {value: token for (st, value), token in scope_ids.items() if st == scope_type}
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=["original_value", "scope_token", "status"])
+            writer.writeheader()
+            for value, token in scope_entries.items():
+                writer.writerow({
+                    "original_value": value,
+                    "scope_token": token,
+                    "status": "created",
+                })
+        print(f"Entity lookup map: {scope_type}_map.csv  ({len(scope_entries)} rows)")
+
+    if harmonisation_log:
+        log_harmonisation_event(
+            harmonisation_log,
+            "step_5",
+            "mapping_files_saved",
+            duration_seconds=round(time.perf_counter() - step_started, 3),
+            provenance_rows=len(linked_entities),
+            provenance_path=str(map_a_path.resolve()),
+            attribute_map_path=str(attr_path.resolve()),
+            entity_mapping_paths={
+                entity_type: str((MAPPING_DIR / f"{entity_type}_map.csv").resolve())
+                for entity_type in ENTITY_CONFIG
+            },
+            scope_mapping_paths={
+                scope_type: str((MAPPING_DIR / f"{scope_type}_map.csv").resolve())
+                for scope_type in SCOPE_CONFIG
+            },
+        )
+    return {
+        "provenance_path": map_a_path,
+        "attribute_map_path": attr_path,
+    }
+
+
+def finish_harmonisation_run(
+    harmonisation_log,
+    harmonisation_started,
+    ue,
+    linked_entities,
+    attr_ids,
+    ue_indices,
+    audit_indices=None,
+):
+    """Generate a short audit report and close out the run log."""
+    audit_indices = audit_indices or [0, 1, 2]
+    audit_results = generate_audit(ue, attr_ids, indices=audit_indices, source_indices=ue_indices)
+
+    print("=== Per-Entity Audit Report ===")
+    print(f"Auditing {len(audit_results)} of {len(ue)} entities.")
+    print("Each entry shows the linked entity ID and how every sub-entity")
+    print("(technology, process, sources, carriers, scope) was resolved.\n")
+    for entry in audit_results:
+        print(json.dumps(entry, indent=2))
+
+    log_harmonisation_event(
+        harmonisation_log,
+        "audit",
+        "completed",
+        audited_indices=audit_indices,
+        audited_count=len(audit_results),
+    )
+    log_harmonisation_event(
+        harmonisation_log,
+        "run",
+        "completed",
+        total_duration_seconds=round(time.perf_counter() - harmonisation_started, 3),
+        mapped_entities=len(linked_entities),
+    )
+    print(f"\nHarmonisation complete. Log saved to: {harmonisation_log}")
+    return audit_results
 
 # ---------------------------------------------------------------------------
 # Audit report
