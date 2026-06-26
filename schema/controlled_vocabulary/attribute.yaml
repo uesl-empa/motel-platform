@@ -20,7 +20,7 @@ properties:
     description: Detailed description defining operational math bounds, accounting lines, and engineering definitions.
   unit:
     type: string
-    description: The strict target standardised canonical unit mandated for this field across database entities (e.g., USD/kW).
+    description: The strict target standardised canonical unit mandated for this field across database entities (e.g., EUR/kW, ratio, years). When source notes specify a currency for generic 'Currency' formats, preserve that stated currency and do not assume USD.
   data_format:
     type: string
     enum: [int, float, text, boolean, array]

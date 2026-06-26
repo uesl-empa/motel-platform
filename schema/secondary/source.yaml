@@ -12,7 +12,9 @@ properties:
   source_name:
     type: string
     pattern: "^[A-Z0-9][^_]*$"
-    description: Standard capitalised clean citation title without underscores for the source document or relational library database.
+    minLength: 4
+    maxLength: 60
+    description: Short canonical citation label without underscores. Keep it concise, ideally using the lead author or organisation plus year, or a short title fragment. Avoid full paper titles, subtitles, repeated descriptive phrases, and unnecessary technical detail.
   source_description:
     type: string
     description: Comprehensive breakdown tracking data collection scope, original authors, and reference metadata profiles.

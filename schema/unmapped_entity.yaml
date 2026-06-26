@@ -73,7 +73,7 @@ properties:
 
   sources:
     type: array
-    description: Loosely structured collection of raw reference citations. Fields are optional free-text — only source_name is expected.
+    description: Only source_name is required; all other fields preserve optional provenance before source harmonisation.
     items:
       type: object
       required:
@@ -81,27 +81,47 @@ properties:
       properties:
         source_name:
           type: string
-          description: The name or short citation label of the reference (e.g., 'NREL ATB 2023').
+          description: Concise source label or citation key. Prefer a short, human-readable name rather than a full title.
         source_description:
           type: string
           description: Longer citation string, full title, or document reference as found in the raw material.
         link:
           type: string
-          description: URL or DOI as recorded — no format validation enforced at this stage.
+          description: URL, DOI, or other resolvable locator as recorded in the raw material.
         source_type:
           type: string
-          description: Free-text medium classification — no enum enforced.
+          description: Free-text medium classification, such as report, dataset, article, standard, website, or expert input.
+        access_date:
+          type: string
+          description: Date when an online source was accessed or checked, preferably ISO 8601 when available.
+        confidence_level:
+          type: string
+          description: Optional source-quality or trust rating carried from the source register when available.
+        assessment_date:
+          type: string
+          description: Optional date when the source or extracted values were assessed by the data curator.
         assessment_method:
           type: string
-          description: Free-text note on how values were derived.
+          description: Short note on how the source was assessed or how values were derived.
         assessment_notes:
           type: string
           description: Page numbers, table references, or granular location hints within the source.
         linked_attribute:
           type: array
-          description: Free-text list of attribute names this source supports — no foreign key enforcement.
+          description: Free-text list of attribute names this source supports; no foreign key enforcement at this stage.
           items:
             type: string
+        additional_info:
+          type: object
+          description: Optional project-specific source metadata not covered by the core fields. Use structured key-value pairs where possible, for example publication_year, authors, publisher_or_journal, pages_or_table, doi, license, source_id_original, dataset_version, scenario, or free-text notes.
+          additionalProperties:
+            type:
+              - string
+              - number
+              - boolean
+              - array
+              - object
+              - "null"
 
   attributes:
     type: array
