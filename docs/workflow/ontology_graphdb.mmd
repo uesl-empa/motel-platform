@@ -1,0 +1,22 @@
+flowchart LR
+    classDef data fill:#eaf3ff,stroke:#4c77a8,stroke-width:2px,color:#14324f;
+    classDef process fill:#e9f7f0,stroke:#2f7f5b,stroke-width:2px,color:#123326;
+    classDef context fill:#fff6de,stroke:#b4871f,stroke-width:2px,color:#5e450a;
+    classDef consumer fill:#f4ecff,stroke:#7a58b5,stroke-width:2px,color:#3b245f;
+
+    subgraph repo_kg[Ontology mapping and knowledge graph creation]
+        direction LR
+
+        inputs[(<b>Harmonised datasets</b><br/><i>registries, mappings, linked entities</i>)]:::data
+        ontology[[<b>Ontology</b><br/><i>shared concepts and relationships</i>]]:::context
+
+        inputs --> ontology_integration[<b>Ontology mapping</b><br/><i>match entities to shared concepts</i>]:::process
+        ontology -.-> ontology_integration
+
+        ontology_integration --> graph_data[(<b>Graph-ready data</b><br/><i>connected entities with metadata</i>)]:::data
+
+        graph_data --> graph_build[<b>Knowledge graph creation</b><br/><i>build a searchable connected dataset</i>]:::process
+        graph_build --> graph_database[(<b>Knowledge graph</b><br/><i>searchable technology knowledge base</i>)]:::data
+
+        graph_database --> app_layer([<b>Search and exploration tools</b><br/><i>search, browse, and export</i>]):::consumer
+    end

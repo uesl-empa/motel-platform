@@ -1,0 +1,35 @@
+flowchart LR
+    classDef data fill:#eaf3ff,stroke:#4c77a8,stroke-width:2px,color:#14324f;
+    classDef process fill:#e9f7f0,stroke:#2f7f5b,stroke-width:2px,color:#123326;
+    classDef context fill:#fff6de,stroke:#b4871f,stroke-width:2px,color:#5e450a;
+    classDef consumer fill:#f4ecff,stroke:#7a58b5,stroke-width:2px,color:#3b245f;
+
+    subgraph repo_platform[Data ingestion and harmonisation]
+        direction LR
+
+        src[(<b>Raw source data</b><br/><i>spreadsheets, reports, manual review</i>)]:::data
+            --> ingest[<b>Ingestion</b><br/><i>extract entities from source files</i>]:::process
+
+        ingest_schema[[<b>Ingestion schema</b><br/><i>expected fields and structure</i>]]:::context
+            -.-> ingest
+
+        ingest --> unmapped[(<b>Unmapped entities</b><br/><i>source entities before harmonisation</i>)]:::data
+
+        unmapped --> harmonise[<b>Harmonisation</b><br/><i>standardise names and identifiers</i>]:::process
+
+        harm_context[[<b>Harmonisation context</b><br/><i>registries, mappings, quality checks</i>]]:::context
+            -.-> harmonise
+
+        subgraph harmonised_group[Harmonised datasets]
+            direction TB
+            registries[(<b>Registries</b><br/><i>controlled vocabularies and reference lists</i>)]:::data
+            linked[(<b>Linked entities</b><br/><i>harmonised entities with links</i>)]:::data
+            mappings[(<b>Mappings</b><br/><i>links between source and harmonised entities</i>)]:::data
+            registries ~~~ linked
+            linked ~~~ mappings
+        end
+
+        harmonise --> registries
+        harmonise --> mappings
+        harmonise --> linked
+    end

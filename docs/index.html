@@ -11,113 +11,314 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="hero">
-      <div class="hero-inner">
-        <p class="kicker">MOTEL Platform</p>
-        <h1>Open technology data infrastructure for energy system modeling</h1>
-        <p class="subtitle">
-          MOTEL helps teams collect, harmonise, map, and publish technology
-          data so model inputs are transparent, reusable, and ontology-aligned.
-        </p>
-        <div class="actions">
-          <a
-            class="btn primary"
-            href="https://github.com/BartonChenTW/motel-platform"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Repository</a
-          >
-          <a
-            class="btn"
-            href="https://github.com/BartonChenTW/motel-platform/tree/main/motel-db"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Browse Data (CSV)</a
-          >
-          <a
-            class="btn"
-            href="https://github.com/BartonChenTW/motel-platform/blob/main/docs/workflow_diagram.ipynb"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Workflow Source</a
-          >
+    <div class="docs-shell">
+      <aside class="sidebar" aria-label="Documentation navigation">
+        <div class="sidebar-inner">
+          <a class="brand" href="#overview">
+            <span class="brand-title">MOTEL Platform</span>
+            <span class="brand-subtitle">Documentation</span>
+          </a>
+
+          <nav class="toc">
+            <a href="#overview">Overview</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#methodology">Methodology</a>
+            <a href="#repository">Repository structure</a>
+            <a href="#demo">Demo workflow</a>
+            <a href="#example">Example record</a>
+            <a href="#ontology">Ontology and graph</a>
+            <a href="#webapp">Webapp</a>
+            <a href="#run">How to run</a>
+            <a href="#outputs">Outputs</a>
+            <a href="#status">Status</a>
+            <a href="#acknowledgement">Acknowledgement</a>
+          </nav>
+
+          <div class="sidebar-actions">
+            <a
+              href="https://github.com/BartonChenTW/motel-platform"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Repository</a
+            >
+            <a
+              href="https://github.com/BartonChenTW/motel-platform/tree/main/motel-db"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Browse data</a
+            >
+            <a
+              href="https://github.com/BartonChenTW/motel-platform/blob/main/docs/workflow.mmd"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Workflow source</a
+            >
+          </div>
         </div>
-      </div>
-    </header>
+      </aside>
 
-    <main class="container">
-      <section class="card intro">
-        <h2>What is MOTEL for?</h2>
-        <p>
-          Energy modelers often spend significant time cleaning inconsistent
-          source data. MOTEL provides a structured workflow and schema-first
-          dataset so technology records become easier to compare, validate, and
-          reuse across studies.
-        </p>
-      </section>
-
-      <section class="grid-3">
-        <article class="card">
-          <h3>For Data Curators</h3>
-          <p>
-            Capture new records in a consistent format, track provenance, and
-            reduce duplicate manual cleanup.
+      <main class="content">
+        <header class="doc-hero" id="overview">
+          <p class="kicker">MOTEL Platform</p>
+          <h1>Methodology for Open Technology Data in Energy Models</h1>
+          <p class="subtitle">
+            MOTEL provides a reproducible workflow for preparing, harmonising,
+            documenting, and reusing technology data in energy system models,
+            while creating a clean handoff into ontology, graph database, API,
+            and web application layers.
           </p>
-        </article>
-        <article class="card">
-          <h3>For Reviewers</h3>
+          <div class="actions">
+            <a class="btn primary" href="methodology.html">Full methodology</a>
+            <a
+              class="btn"
+              href="https://github.com/BartonChenTW/motel-platform"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub repository</a
+            >
+          </div>
+        </header>
+
+        <section class="doc-section">
+          <h2>What is MOTEL for?</h2>
           <p>
-            Evaluate mapping suggestions, validate harmonised entities, and keep
-            terminology aligned with controlled vocabularies.
+            Energy system models rely on many technology assumptions such as
+            CAPEX, efficiency, lifetime, emissions factors, and carrier
+            relations. Those assumptions are often buried in spreadsheets or
+            model-specific files, which makes them hard to trace, compare, and
+            reuse. MOTEL addresses that by introducing a structured workflow for
+            turning raw technology information into harmonised, provenance-aware,
+            and ontology-ready data.
           </p>
-        </article>
-        <article class="card">
-          <h3>For Modelers and App Teams</h3>
+
+          <div class="summary-grid">
+            <article class="mini-card">
+              <h3>Traceable parameters</h3>
+              <p>
+                Technology values stay connected to source references,
+                assumptions, and harmonisation history.
+              </p>
+            </article>
+            <article class="mini-card">
+              <h3>Reusable structures</h3>
+              <p>
+                Shared schemas, controlled vocabularies, and linked entities make
+                the data easier to compare across studies and tools.
+              </p>
+            </article>
+            <article class="mini-card">
+              <h3>Ontology-aware handoff</h3>
+              <p>
+                Structured MOTEL outputs can feed a downstream ontology, GraphDB,
+                backend API, and web interface.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="doc-section" id="workflow">
+          <h2>Workflow</h2>
           <p>
-            Consume stable, ontology-ready records for downstream APIs,
-            visualization tools, and energy system model pipelines.
+            The MOTEL workflow connects data preparation with semantic
+            representation and model-ready export.
           </p>
-        </article>
-      </section>
+          <ul>
+            <li>Traceable technology parameters</li>
+            <li>Clear source documentation</li>
+            <li>Ontology-supported interoperability</li>
+            <li>Reusable data structures</li>
+            <li>Reproducible data preparation workflow</li>
+            <li>Model-ready export as a downstream goal</li>
+          </ul>
 
-      <section class="card">
-        <h2>How MOTEL helps</h2>
-        <ul>
-          <li>Standardizes heterogeneous data sources into shared record structures.</li>
-          <li>Supports harmonisation and mapping against existing MOTEL entities.</li>
-          <li>Creates graph-ready outputs for semantic workflows and interoperability.</li>
-          <li>Improves transparency with explicit schemas, mappings, and source links.</li>
-        </ul>
-      </section>
+          <figure class="workflow-figure">
+            <img
+              class="workflow-image"
+              src="assets/workflow.svg"
+              alt="MOTEL cross-repository workflow showing the current motel-platform data pipeline feeding structured outputs into a downstream ontology, graph database, API, and web application stack"
+            />
+            <figcaption>
+              `motel-platform` produces structured MOTEL data. A separate
+              ontology and knowledge-graph repository converts those outputs
+              into TTL, GraphDB, an API, and a web app.
+            </figcaption>
+          </figure>
+        </section>
 
-      <section class="card figure-card">
-        <div class="figure-head">
-          <h2>Workflow Overview</h2>
-          <p>Static figure version for reliable rendering on GitHub Pages.</p>
-        </div>
-        <figure class="workflow-figure">
-          <img
-            src="assets/workflow.svg"
-            alt="MOTEL cross-repository workflow showing the current motel-platform data pipeline feeding a separate ontology, knowledge graph, backend API, and frontend web application stack"
-          />
-          <figcaption>
-            The figure shows how `motel-platform` produces structured MOTEL
-            data and how a separate ontology and knowledge-graph repository
-            converts those outputs into TTL, GraphDB, an API, and a web app.
-          </figcaption>
-        </figure>
-      </section>
+        <section class="doc-section" id="methodology">
+          <h2>Methodology</h2>
+          <ol class="step-list">
+            <li><strong>Data ingestion:</strong> raw or semi-structured technology data is collected and stored as unmapped records.</li>
+            <li><strong>Harmonisation:</strong> staged records are transformed into a consistent MOTEL data structure.</li>
+            <li><strong>Entity linking:</strong> technologies, parameters, carriers, scopes, and sources are represented through linked records and registries.</li>
+            <li><strong>Ontology mapping:</strong> harmonised MOTEL outputs can be connected to ontology classes and properties in a downstream repository.</li>
+            <li><strong>Application and export:</strong> the graph database, backend API, and webapp support exploration and future model-ready export workflows.</li>
+          </ol>
+          <p class="section-links">
+            <a href="methodology.html">Read the full methodology</a>
+          </p>
+        </section>
 
-      <section class="card">
-        <h2>Current Repository Modules</h2>
-        <ul>
-          <li><strong>motel-db/</strong>: core tabular data (controlled vocabulary, mapping, secondary, supplementary)</li>
-          <li><strong>schema/</strong>: validation and data structure definitions</li>
-          <li><strong>1_ingest/</strong> and <strong>2_harmonise/</strong>: ingestion and harmonisation notebooks</li>
-          <li><strong>docs/</strong>: static project documentation and workflow figure</li>
-        </ul>
-      </section>
-    </main>
+        <section class="doc-section" id="repository">
+          <h2>Repository Structure</h2>
+          <p>
+            The current repository focuses on the implemented data-preparation
+            core. A second repository carries the ontology, GraphDB, backend, and
+            frontend stack.
+          </p>
+          <pre class="repo-tree"><code>motel-platform/
+|-- 1_ingest/         source-specific ingestion notebooks and helpers
+|-- 2_harmonise/      harmonisation notebooks and helper functions
+|-- motel-db/         unmapped data, registries, mappings, and linked outputs
+|-- schema/           machine-readable data schemas
+|-- schema_simple/    human-readable schema blueprints
+`-- docs/             GitHub Pages documentation and workflow figures</code></pre>
+        </section>
+
+        <section class="doc-section" id="demo">
+          <h2>Demo Workflow</h2>
+          <p>
+            The current public repository demonstrates how a selected set of
+            technologies can be ingested, harmonised, linked to structured MOTEL
+            entities, and prepared for downstream ontology and graph workflows.
+          </p>
+          <ul>
+            <li>Step 1 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/1_data_ingestion.ipynb" target="_blank" rel="noopener noreferrer">generic ingestion notebook</a></li>
+            <li>Worked ingestion example: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb" target="_blank" rel="noopener noreferrer">reFuel.ch pipeline</a></li>
+            <li>Step 2 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/2_harmonise/2_data_harmonisation.ipynb" target="_blank" rel="noopener noreferrer">harmonisation notebook</a></li>
+            <li>Published staged and harmonised data: <a href="https://github.com/BartonChenTW/motel-platform/tree/main/motel-db" target="_blank" rel="noopener noreferrer">motel-db/</a></li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="example">
+          <h2>Example Technology Record</h2>
+          <p>
+            A harmonised MOTEL record can connect a technology, its parameters,
+            units, source references, and ontology-ready identifiers in one
+            inspectable structure.
+          </p>
+          <pre class="example-block"><code>technology:
+  id: heat_pump
+  label: Heat pump
+  type: EnergyConverter
+  parameters:
+    - id: heat_pump_capex
+      label: CAPEX
+      value: 1200
+      unit: CHF/kW
+      source_id: SRC_001
+      ontology_class: dici_onto:CAPEX
+    - id: heat_pump_lifetime
+      label: Lifetime
+      value: 25
+      unit: years
+      source_id: SRC_001
+      ontology_class: dici_onto:Lifetime</code></pre>
+        </section>
+
+        <section class="doc-section" id="ontology">
+          <h2>Ontology and Graph Database Layer</h2>
+          <p>
+            The downstream MOTEL ontology repository turns harmonised MOTEL data
+            into ontology-based TTL files, loads them into GraphDB, serves them
+            through a backend API, and exposes them in a web interface for
+            exploration.
+          </p>
+          <pre class="example-block"><code>Heat pump
+-> hasAttribute
+-> CAPEX
+-> hasValue
+-> 1200 CHF/kW
+-> wasDerivedFrom
+-> Source record</code></pre>
+        </section>
+
+        <section class="doc-section" id="webapp">
+          <h2>Webapp and Model Builder</h2>
+          <p>
+            In the separate downstream stack, the MOTEL webapp is intended to let
+            users browse technologies, inspect parameters and provenance, adapt
+            selected values, and export model-ready configuration files.
+          </p>
+          <ul>
+            <li>Technology selection</li>
+            <li>Parameter table</li>
+            <li>Source and provenance display</li>
+            <li>Editable or customisable values</li>
+            <li>YAML export</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="run">
+          <h2>How to Run</h2>
+          <p>
+            This repository can be explored locally with the notebook-based
+            ingestion and harmonisation workflow. The downstream ontology, KG,
+            backend, and frontend stack runs from a separate repository.
+          </p>
+          <pre class="example-block"><code>git clone https://github.com/BartonChenTW/motel-platform
+cd motel-platform
+python -m venv .venv
+# Windows PowerShell:
+# .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt</code></pre>
+          <p>Then open the Step 1 and Step 2 notebooks locally in Jupyter or VS Code:</p>
+          <ul>
+            <li><code>1_ingest/1_data_ingestion.ipynb</code></li>
+            <li><code>2_harmonise/2_data_harmonisation.ipynb</code></li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="outputs">
+          <h2>Outputs and Deliverables</h2>
+          <ul>
+            <li>A documented methodology for technology data harmonisation</li>
+            <li>A structured technology data model</li>
+            <li>A demonstration technology database</li>
+            <li>Controlled vocabularies, secondary registries, and mapping tables</li>
+            <li>Linked-entity target structures</li>
+            <li>A workflow handoff into ontology, graph, API, and web-app layers</li>
+            <li>Documentation and training material</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="status">
+          <h2>Status and Limitations</h2>
+          <div class="grid-2">
+            <div>
+              <h3>Current Status</h3>
+              <ul>
+                <li>Data ingestion and harmonisation workflow implemented</li>
+                <li>Unmapped and linked data structures defined</li>
+                <li>Controlled vocabularies and mapping tables generated</li>
+                <li>Workflow handoff to ontology and graph layers documented</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Current Limitations</h3>
+              <ul>
+                <li>The public repo currently demonstrates a selected set of technologies</li>
+                <li>Ontology mapping, GraphDB, backend, and frontend are in a separate repository</li>
+                <li>Model-ready YAML export is a downstream target, not a full feature of this repo alone</li>
+                <li>Additional validation and richer export formats remain future work</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="acknowledgement">
+          <h2>Acknowledgement</h2>
+          <p>
+            This project was supported by the Open Research Data Program of the
+            ETH Board.
+          </p>
+          <p>
+            Developed by Empa Urban Energy Systems Lab in collaboration with ETH
+            Energy Science Center.
+          </p>
+        </section>
+      </main>
+    </div>
 
     <footer class="footer">
       <p>Maintained under the MOTEL project. Updated: 2026-06-26.</p>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MOTEL Methodology</title>
+    <meta
+      name="description"
+      content="Readable web version of the MOTEL methodology documentation."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="docs-shell">
+      <aside class="sidebar" aria-label="Methodology navigation">
+        <div class="sidebar-inner">
+          <a class="brand" href="index.html#overview">
+            <span class="brand-title">MOTEL Platform</span>
+            <span class="brand-subtitle">Methodology</span>
+          </a>
+
+          <nav class="toc" id="methodology-toc">
+            <a href="#top">Top</a><a href="#1-purpose">1. Purpose</a><a href="#2-overall-workflow">2. Overall workflow</a><a href="#3-data-ingestion-and-harmonisation">3. Data ingestion and harmonisation</a><a href="#data-ingestion" class="toc-subitem">Data ingestion</a><a href="#unmapped-versus-linked-entities" class="toc-subitem">Unmapped versus linked entities</a><a href="#4-motel-data-structure">4. MOTEL data structure</a><a href="#5-ontology-mapping">5. Ontology mapping</a><a href="#6-graph-database-construction">6. Graph database construction</a><a href="#7-backend-and-frontend-workflow">7. Backend and frontend workflow</a><a href="#8-export-to-model-ready-input">8. Export to model-ready input</a><a href="#9-ord-and-fair-contribution">9. ORD and FAIR contribution</a><a href="#10-current-limitations-and-future-work">10. Current limitations and future work</a>
+          </nav>
+
+          <div class="sidebar-actions">
+            <a href="index.html">Back to homepage</a>
+            <a href="workflow.mmd">Workflow source</a>
+            <a href="methodology.md">Markdown source</a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="doc-hero" id="top">
+          <p class="kicker">MOTEL Platform</p>
+          <h1>MOTEL Methodology</h1>
+          <p class="subtitle">
+            A browser-friendly view of the methodology document, with
+            <code>docs/methodology.md</code> kept as the source of truth.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="index.html">Back to homepage</a>
+            <a class="btn" href="methodology.md">View Markdown source</a>
+          </div>
+        </header>
+
+        <article class="doc-section markdown-body" id="methodology-body">
+<h1 id="motel-methodology">MOTEL Methodology</h1>
+<h2 id="1-purpose">1. Purpose</h2>
+<p>MOTEL (Methodology for Open Technology Data in Energy Models) provides a workflow for turning heterogeneous technology data into structured records that can be reviewed, harmonised, and reused in energy system modelling. In the current repository, the implemented core is the ingestion of source data into an <code>unmapped</code> staging format and the harmonisation of those staged records into a MOTEL database structure with controlled vocabularies, secondary entities, mapping tables, and a <code>linked_entity</code> schema.</p>
+<p>The repository already includes machine-readable schemas in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/unmapped_entity.yaml">schema/unmapped_entity.yaml</a>, <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/linked_entity.yaml">schema/linked_entity.yaml</a>, and the supporting entity schemas under <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/secondary/source.yaml">schema/secondary</a> and <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/controlled_vocabulary/attribute.yaml">schema/controlled_vocabulary</a>. The current implementation does not yet include a populated ontology-linked graph database, backend API, or web application in the public tree. Those parts should therefore be treated as future work rather than current capabilities.</p>
+<h2 id="2-overall-workflow">2. Overall workflow</h2>
+<p>The intended end-to-end MOTEL workflow can be described as:</p>
+<pre><code class="language-text">raw technology data
+    -&gt; unmapped YAML records
+    -&gt; harmonised MOTEL entities and vocabularies
+    -&gt; linked entity records and mapping tables
+    -&gt; ontology / graph export (future work in current repo)
+    -&gt; backend query layer (future work in current repo)
+    -&gt; frontend inspection and export tools (future work in current repo)</code></pre>
+<p>In the current repository snapshot, the implemented steps are:</p>
+<ol><li>Collect or receive raw technology data.</li><li>Store unresolved records as <code>unmapped</code> data.</li><li>Harmonise data into the MOTEL database structure.</li><li>Create referenced entities and mapping tables for technologies, processes, sources, carriers, attributes, and scopes.</li><li>Define, but do not yet fully populate, a <code>linked_entity</code> target structure.</li></ol>
+<p>Current limitation: Steps involving ontology class/property mapping, graph database construction, backend querying, frontend interaction, and model-ready export are described in project materials but are not implemented as executable code in the present public repository. The <code>3_graphdb/</code> directory exists but is empty, and no backend or frontend application code is present in the current tree.</p>
+<h2 id="3-data-ingestion-and-harmonisation">3. Data ingestion and harmonisation</h2>
+<h3 id="data-ingestion">Data ingestion</h3>
+<p>The primary ingestion method implemented in MOTEL is schema-first staging into the <code>unmapped</code> format. For a new project or external user, the intended starting point is not the reFuel.ch notebook itself, but the generic <code>unmapped</code> contract defined in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/unmapped_entity.yaml">schema/unmapped_entity.yaml</a> and explained in simplified form in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema_simple/unmapped_entity.yaml">schema_simple/unmapped_entity.yaml</a>. The introductory notebook <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/1_data_ingestion.ipynb">1_ingest/1_data_ingestion.ipynb</a> serves as the current guide to that structure.</p>
+<p>In practice, a new contributor can work as follows:</p>
+<ol><li>Collect raw technology information from spreadsheets, reports, databases, or manual review.</li><li>Map each raw record into the <code>unmapped</code> schema with at least a <code>technology_name</code>, optional technology and scope descriptions, source references, attributes, balancing information, and metadata.</li><li>Save those records as YAML in the <code>unmapped</code> structure.</li><li>Run the harmonisation workflow to resolve free-text names into MOTEL registries and controlled vocabularies.</li></ol>
+<p>This staging can be done manually or with project-specific transformation code:</p>
+<ul><li>Manual route: a user can prepare YAML directly against <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/unmapped_entity.yaml">schema/unmapped_entity.yaml</a>.</li><li>Scripted route: a project can create its own ingestion notebook or helper script, following the pattern used in the existing reFuel.ch example.</li><li>LLM-supported route: in the current repository, LLM support is implemented mainly in harmonisation rather than in generic ingestion. The harmonisation helper in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/2_harmonise/harmonise_helpers.py">2_harmonise/harmonise_helpers.py</a> uses a local Ollama model to help standardise names, fill required fields, and match records against existing registries after the <code>unmapped</code> YAML has been created.</li></ul>
+<p>The main implemented project-specific example is the reFuel.ch workflow in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb">1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb</a>, supported by <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/ingestion_space/refuel/ingestion_helper.py">1_ingest/ingestion_space/refuel/ingestion_helper.py</a>. This example reads an Excel workbook with multiple sheets, including <code>ConvTech</code>, <code>StorTech</code>, <code>EmbeddedCarbon</code>, and <code>Reference</code>, transforms those records into the <code>unmapped</code> schema, and writes sheet-level exports such as:</p>
+<ul><li><a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/ingestion_space/refuel/unmapped_entities_refuel_convtech.yaml">1_ingest/ingestion_space/refuel/unmapped_entities_refuel_convtech.yaml</a></li><li><a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/ingestion_space/refuel/unmapped_entities_refuel_stortech.yaml">1_ingest/ingestion_space/refuel/unmapped_entities_refuel_stortech.yaml</a></li><li><a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/ingestion_space/refuel/unmapped_entities_refuel_embeddedcarbon.yaml">1_ingest/ingestion_space/refuel/unmapped_entities_refuel_embeddedcarbon.yaml</a></li></ul>
+<p>The same notebook then publishes a combined staging file to <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/unmapped_entity/unmapped_entities_refuel.yaml">motel-db/unmapped_entity/unmapped_entities_refuel.yaml</a>.</p>
+<p>This reFuel.ch notebook should therefore be read as a worked example of how a project-specific adapter can populate the generic MOTEL staging format, not as the only allowed ingestion route.</p>
+<p>Current supported input format:</p>
+<ul><li>Excel workbook input through the reFuel.ch notebook workflow.</li></ul>
+<p>Current limitation:</p>
+<ul><li>No general-purpose CSV, JSON, API, or form-based ingestion pipeline is implemented in the current public tree.</li><li>Ingestion is notebook-driven rather than packaged as a reusable command-line tool or service.</li></ul>
+<h3 id="unmapped-versus-linked-entities">Unmapped versus linked entities</h3>
+<p><code>unmapped</code> data is the raw staging format. It keeps source-oriented names, free-text scope descriptions, flexible attribute payloads, and source references before they are matched to MOTEL registries. This contract is defined in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/unmapped_entity.yaml">schema/unmapped_entity.yaml</a>.</p>
+<p><code>linked_entity</code> is the target relational structure for harmonised records. It is defined in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/linked_entity.yaml">schema/linked_entity.yaml</a> and is intended to reference standardised technologies, attributes, carriers, scopes, and sources through foreign-key style identifiers.</p>
+<p>In practice, the harmonisation step currently writes:</p>
+<ul><li>controlled vocabularies under <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/controlled_vocabulary/attribute.csv">motel-db/controlled_vocabulary</a></li><li>referenced secondary entities under <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/secondary/source.csv">motel-db/secondary</a></li><li>provenance and crosswalk tables under <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/mapping/source_map.csv">motel-db/mapping</a></li></ul>
+<p>The harmonisation notebook is <a href="https://github.com/BartonChenTW/motel-platform/blob/main/2_harmonise/2_data_harmonisation.ipynb">2_harmonise/2_data_harmonisation.ipynb</a>, and its main logic lives in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/2_harmonise/harmonise_helpers.py">2_harmonise/harmonise_helpers.py</a>.</p>
+<p>Current limitation:</p>
+<ul><li>The current <code>linked_entity</code> output file at <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/linked_entity/linked_entity.yaml">motel-db/linked_entity/linked_entity.yaml</a> is empty in this repository snapshot, even though the schema and notebook logic for producing linked entities exist.</li></ul>
+<h2 id="4-motel-data-structure">4. MOTEL data structure</h2>
+<p>The implemented data model in this repository is split across schemas and CSV/YAML registries.</p>
+<p>Main entities currently represented:</p>
+<ul><li><code>technology</code>: standardised technology registry in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/secondary/technology.yaml">schema/secondary/technology.yaml</a> and <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/secondary/technology.csv">motel-db/secondary/technology.csv</a></li><li><code>process</code>: standardised process registry in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/secondary/process.yaml">schema/secondary/process.yaml</a></li><li><code>source</code>: standardised reference registry in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/secondary/source.yaml">schema/secondary/source.yaml</a> and <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/secondary/source.csv">motel-db/secondary/source.csv</a></li><li><code>attribute</code>: controlled parameter vocabulary in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/controlled_vocabulary/attribute.yaml">schema/controlled_vocabulary/attribute.yaml</a> and <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/controlled_vocabulary/attribute.csv">motel-db/controlled_vocabulary/attribute.csv</a></li><li><code>carrier</code>: controlled carrier vocabulary in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/controlled_vocabulary/carrier.yaml">schema/controlled_vocabulary/carrier.yaml</a></li><li>scope vocabularies: <code>geographic_scope</code>, <code>temporal_scope</code>, <code>capacity_scope</code>, <code>system_boundary</code></li><li><code>linked_entity</code>: harmonised record structure in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/linked_entity.yaml">schema/linked_entity.yaml</a></li></ul>
+<p>Minimum fields for a technology in the current schema:</p>
+<ul><li><code>tech_id</code></li><li><code>technology_name</code></li></ul>
+<p>Additional currently defined fields include <code>technology_description</code>, <code>technology_variant</code>, <code>main_process</code>, <code>main_operation_unit</code>, and <code>ontology_iri</code>.</p>
+<p>Minimum fields for an attribute in the current schema:</p>
+<ul><li><code>attribute_id</code></li><li><code>attribute_name</code></li><li><code>attribute_description</code></li><li><code>unit</code></li><li><code>data_format</code></li></ul>
+<p>Additional currently defined fields include <code>ontology_iri</code> and <code>note</code>.</p>
+<p>The <code>unmapped</code> record structure is broader and includes:</p>
+<ul><li><code>technology_name</code></li><li>nested <code>technology</code></li><li>nested <code>scope</code></li><li><code>sources</code></li><li><code>attributes</code></li><li><code>balancing</code></li><li><code>metadata</code></li><li><code>harmonisation_record</code></li></ul>
+<p>This makes <code>unmapped</code> suitable for preserving source-level context before standardisation.</p>
+<h2 id="5-ontology-mapping">5. Ontology mapping</h2>
+<p>The current repository shows ontology intent mainly through schema fields rather than through a completed ontology mapping workflow. In particular, the <code>technology</code> and <code>attribute</code> schemas both include an <code>ontology_iri</code> field:</p>
+<ul><li><a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/secondary/technology.yaml">schema/secondary/technology.yaml</a></li><li><a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/controlled_vocabulary/attribute.yaml">schema/controlled_vocabulary/attribute.yaml</a></li></ul>
+<p>This indicates that MOTEL entities are designed to carry resolvable ontology links. However, no ontology files such as <code>.ttl</code>, <code>.owl</code>, or mapping configuration files are present in the current public repository snapshot, and no executable ontology transformation script is present under <code>3_graphdb/</code>.</p>
+<p>The current mapping tables in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/mapping/source_map.csv">motel-db/mapping</a> support harmonisation traceability rather than ontology conversion. For example:</p>
+<table><thead><tr><th>MOTEL field/entity</th><th>Ontology class/property</th><th>Purpose</th></tr></thead><tbody><tr><td><code>technology.ontology_iri</code></td><td>external ontology IRI</td><td>placeholder field for linking a technology to an ontology concept</td></tr><tr><td><code>attribute.ontology_iri</code></td><td>external ontology IRI</td><td>placeholder field for linking an attribute to an ontology concept</td></tr><tr><td><code>linked_entity.tech_id</code></td><td><code>technology.tech_id</code> foreign-key style reference</td><td>connects a harmonised record to a standard technology entity</td></tr><tr><td><code>linked_entity.values[].attribute_id</code></td><td><code>attribute.attribute_id</code> foreign-key style reference</td><td>connects a harmonised value to a standard attribute definition</td></tr></tbody></table>
+<p>Current limitation:</p>
+<ul><li>No repository-local ontology vocabulary files were found.</li><li>No implemented mapping from MOTEL fields to RDF predicates or OWL classes was found.</li><li>Ontology linkage is currently a schema provision, not a completed export workflow.</li></ul>
+<h2 id="6-graph-database-construction">6. Graph database construction</h2>
+<p>The current repository does not contain an implemented graph database build pipeline. The folder <a href="https://github.com/BartonChenTW/motel-platform/tree/main/3_graphdb">3_graphdb</a> exists but is empty. No RDF, Turtle, SPARQL, GraphDB, or Neo4j configuration files were found in the active tree.</p>
+<p>What is implemented today is the relational precondition for graph construction:</p>
+<ul><li>harmonised entities in <code>motel-db/secondary/</code></li><li>controlled vocabularies in <code>motel-db/controlled_vocabulary/</code></li><li>source mappings in <code>motel-db/mapping/</code></li><li>linked-entity schema in <code>schema/linked_entity.yaml</code></li></ul>
+<p>If a graph layer is added later, the likely relationship pattern would be:</p>
+<pre><code class="language-text">technology -&gt; has parameter -&gt; attribute
+attribute -&gt; has value/unit/source -&gt; value record
+technology/attribute -&gt; maps to ontology IRI
+source -&gt; provides provenance for parameter values</code></pre>
+<p>Current limitation:</p>
+<ul><li>No implemented graph construction script exists in the current public tree.</li><li>No serialized RDF or graph database export artifact is present.</li></ul>
+<h2 id="7-backend-and-frontend-workflow">7. Backend and frontend workflow</h2>
+<p>No backend API or frontend application code is present in the current public repository snapshot. The repository contains a static documentation site in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/docs/index.html">docs/index.html</a>, but no service code for querying or editing the MOTEL database.</p>
+<p>Therefore, the following workflow is not yet implemented in code in this tree:</p>
+<ol><li>Open a webapp.</li><li>Browse or select technologies.</li><li>Inspect parameters and provenance through an API.</li><li>Edit or customise values through the interface.</li><li>Export model-ready configuration from the interface.</li></ol>
+<p>Current limitation:</p>
+<ul><li>No backend endpoints exist in the active repository.</li><li>No frontend pages or components exist beyond static documentation.</li><li>No implemented browser-based editor or query UI was found.</li></ul>
+<h2 id="8-export-to-model-ready-input">8. Export to model-ready input</h2>
+<p>The implemented export in the current repository is YAML export for staging data rather than model-ready solver configuration export.</p>
+<p>Implemented exports:</p>
+<ul><li>per-sheet unmapped YAML exports in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb">1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb</a></li><li>consolidated staging export to <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/unmapped_entity/unmapped_entities_refuel.yaml">motel-db/unmapped_entity/unmapped_entities_refuel.yaml</a></li><li>harmonised CSV registries under <code>motel-db/secondary/</code>, <code>motel-db/controlled_vocabulary/</code>, and <code>motel-db/mapping/</code></li></ul>
+<p>The current export preserves, depending on the stage:</p>
+<ul><li>technology name</li><li>raw or harmonised parameter names</li><li>values</li><li>units</li><li>source references and linked attributes</li><li>harmonisation mappings</li><li>selected provenance metadata</li></ul>
+<p>Current limitation:</p>
+<ul><li>No implemented export to model-specific YAML, TOML, JSON, or solver configuration files was found.</li><li>No API-based export function exists in the current public tree.</li><li>No graph-enriched export is implemented.</li></ul>
+<h2 id="9-ord-and-fair-contribution">9. ORD and FAIR contribution</h2>
+<p>The implemented workflow already contributes to ORD and FAIR goals in several concrete ways.</p>
+<p>First, it improves traceability by preserving raw source references in <code>unmapped</code> records and by generating explicit mapping tables such as <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/mapping/source_map.csv">motel-db/mapping/source_map.csv</a>. Second, it makes assumptions more visible by storing scope descriptions, notes, and source-linked attributes before and during harmonisation. Third, it creates reusable structured data through explicit YAML schemas and CSV registries rather than leaving technology assumptions only in spreadsheets.</p>
+<p>The workflow also supports reproducibility because the transformation from spreadsheet input to staging YAML and then to harmonised registries is encoded in notebooks and helper scripts rather than being entirely manual. Finally, the presence of <code>ontology_iri</code> fields in the schemas establishes a concrete interoperability path, even though the ontology export layer is not yet implemented in this repository snapshot.</p>
+<h2 id="10-current-limitations-and-future-work">10. Current limitations and future work</h2>
+<ul><li>Current limitation: only the reFuel.ch ingestion workflow is implemented as a full example.</li><li>Current limitation: ingestion and harmonisation are notebook-driven rather than packaged as stable command-line or service workflows.</li><li>Current limitation: the <code>linked_entity</code> schema is defined, but the checked-in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/linked_entity/linked_entity.yaml">motel-db/linked_entity/linked_entity.yaml</a> is currently empty.</li><li>Current limitation: ontology mapping is only partial. Schema fields such as <code>ontology_iri</code> exist, but no ontology files or mapping scripts are present in the active repository.</li><li>Current limitation: graph database construction is not implemented in the current <code>3_graphdb/</code> tree.</li><li>Current limitation: no backend API or frontend application is present in the public repository snapshot.</li><li>Current limitation: no model-ready export beyond YAML staging files and harmonised CSV registries is implemented.</li><li>Future work: add a formal ontology vocabulary and explicit field-to-predicate mappings.</li><li>Future work: implement graph export and query infrastructure.</li><li>Future work: add a backend service and frontend interface for inspection, editing, and export.</li><li>Future work: broaden ingestion beyond the current notebook example and add stronger automated validation.</li></ul>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
