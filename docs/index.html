@@ -115,8 +115,9 @@
             <article class="mini-card">
               <h3>Ontology-aware handoff</h3>
               <p>
-                Structured MOTEL outputs can feed a downstream ontology, GraphDB,
-                backend API, and web interface.
+                Structured MOTEL outputs are mapped in this repository into
+                ontology-ready TTL that can feed downstream GraphDB, backend
+                API, and web interface layers.
               </p>
             </article>
           </div>
@@ -127,7 +128,8 @@
           <p>
             The MOTEL workflow is easier to read as two connected stages: the
             current `motel-platform` ingestion and harmonisation pipeline, then
-            the downstream ontology and knowledge-graph layer.
+            the ontology mapping in this repository followed by the downstream
+            knowledge-graph layer.
           </p>
           <ul>
             <li>Traceable technology parameters</li>
@@ -162,8 +164,9 @@
                 alt="Diagram showing harmonised datasets entering ontology mapping, graph-ready data preparation, knowledge graph creation, and search or exploration tools"
               />
               <figcaption>
-                Those harmonised outputs can then feed ontology mapping,
-                knowledge-graph creation, and future search or export tools.
+                Those harmonised outputs are converted here into ontology-ready
+                TTL, which can then feed downstream knowledge-graph creation
+                and future search or export tools.
               </figcaption>
             </figure>
           </div>
@@ -205,7 +208,7 @@
             <li><strong>Data ingestion:</strong> raw or semi-structured technology data is collected and stored as unmapped records.</li>
             <li><strong>Harmonisation:</strong> staged records are transformed into a consistent MOTEL data structure.</li>
             <li><strong>Entity linking:</strong> technologies, parameters, carriers, scopes, and sources are represented through linked records and registries.</li>
-            <li><strong>Ontology mapping:</strong> harmonised MOTEL outputs can be connected to ontology classes and properties in a downstream repository.</li>
+            <li><strong>Ontology mapping:</strong> harmonised MOTEL outputs are converted in this repository into ontology-ready TTL linked to ontology classes and properties.</li>
             <li><strong>Application and export:</strong> the graph database, backend API, and webapp support exploration and future model-ready export workflows.</li>
           </ol>
           <p class="section-links">
@@ -240,7 +243,8 @@
           <p>
             The current public repository demonstrates how a selected set of
             technologies can be ingested, harmonised, linked to structured MOTEL
-            entities, and prepared for downstream ontology and graph workflows.
+            entities, converted into ontology-ready TTL, and prepared for
+            downstream graph workflows.
           </p>
           <ul>
             <li>Step 1 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/1_data_ingestion.ipynb" target="_blank" rel="noopener noreferrer">generic ingestion notebook</a></li>
@@ -376,7 +380,7 @@ pip install -r requirements.txt</code></pre>
                 <li>Data ingestion and harmonisation workflow implemented</li>
                 <li>Unmapped and linked data structures defined</li>
                 <li>Controlled vocabularies and mapping tables generated</li>
-                <li>Workflow handoff to ontology and graph layers documented</li>
+                <li>Ontology-mapping workflow and graph-layer handoff documented</li>
               </ul>
             </div>
             <div>
@@ -398,9 +402,29 @@ pip install -r requirements.txt</code></pre>
             ETH Board.
           </p>
           <p>
-            Developed by Empa Urban Energy Systems Lab in collaboration with ETH
-            Energy Science Center.
+            Developed by
+            <a
+              href="https://www.empa.ch/web/s313"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Empa Urban Energy Systems Lab</a
+            >
+            in collaboration with ETH Energy Science Center.
           </p>
+          <div class="logo-strip" aria-label="Project partner logos">
+            <figure class="logo-card">
+              <img src="assets/empa_logo.png" alt="Empa logo" />
+            </figure>
+            <figure class="logo-card">
+              <img src="assets/ETHZ.png" alt="ETH Zurich logo" />
+            </figure>
+            <figure class="logo-card">
+              <img
+                src="assets/ETHZ_ESC.png"
+                alt="ETH Energy Science Center logo"
+              />
+            </figure>
+          </div>
         </section>
       </main>
     </div>
