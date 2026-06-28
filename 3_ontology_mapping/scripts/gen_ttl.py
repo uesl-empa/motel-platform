@@ -1,7 +1,7 @@
 """Command-line entrypoint for motel-db TTL generation.
 
 This script is a thin wrapper around ``generator_core.py``.
-Use it when you want to regenerate ``3_ontology_mapping/from_motel_db/cls_atr_motel.ttl``
+Use it when you want to regenerate ``3_ontology_mapping/output_ttl/cls_atr_motel.ttl``
 without running the notebook.
 
 The notebook ``ttl_creation_from_motel_db.ipynb`` should use the same shared

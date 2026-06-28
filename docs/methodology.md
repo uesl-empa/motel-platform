@@ -52,11 +52,11 @@ This staging can be done manually or with project-specific transformation code:
 - Scripted route: a project can create its own ingestion notebook or helper script, following the pattern used in the existing reFuel.ch example.
 - LLM-supported route: in the current repository, LLM support is implemented mainly in harmonisation rather than in generic ingestion. The harmonisation helper in [2_harmonise/harmonise_helpers.py](/E:/Barton/repositories/motel-platform/2_harmonise/harmonise_helpers.py) uses a local Ollama model to help standardise names, fill required fields, and match records against existing registries after the `unmapped` YAML has been created.
 
-The main implemented project-specific example is the reFuel.ch workflow in [1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb](/E:/Barton/repositories/motel-platform/1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb), supported by [1_ingest/ingestion_space/refuel/ingestion_helper.py](/E:/Barton/repositories/motel-platform/1_ingest/ingestion_space/refuel/ingestion_helper.py). This example reads an Excel workbook with multiple sheets, including `ConvTech`, `StorTech`, `EmbeddedCarbon`, and `Reference`, transforms those records into the `unmapped` schema, and writes sheet-level exports such as:
+The main implemented project-specific example is the reFuel.ch workflow in [1_ingest/examples/refuel/ingestion_pipeline.ipynb](/E:/Barton/repositories/motel-platform/1_ingest/examples/refuel/ingestion_pipeline.ipynb), supported by [1_ingest/examples/refuel/scripts/ingestion_helper.py](/E:/Barton/repositories/motel-platform/1_ingest/examples/refuel/scripts/ingestion_helper.py). This example reads an Excel workbook with multiple sheets, including `ConvTech`, `StorTech`, `EmbeddedCarbon`, and `Reference`, transforms those records into the `unmapped` schema, and writes sheet-level exports such as:
 
-- [1_ingest/ingestion_space/refuel/unmapped_entities_refuel_convtech.yaml](/E:/Barton/repositories/motel-platform/1_ingest/ingestion_space/refuel/unmapped_entities_refuel_convtech.yaml)
-- [1_ingest/ingestion_space/refuel/unmapped_entities_refuel_stortech.yaml](/E:/Barton/repositories/motel-platform/1_ingest/ingestion_space/refuel/unmapped_entities_refuel_stortech.yaml)
-- [1_ingest/ingestion_space/refuel/unmapped_entities_refuel_embeddedcarbon.yaml](/E:/Barton/repositories/motel-platform/1_ingest/ingestion_space/refuel/unmapped_entities_refuel_embeddedcarbon.yaml)
+- [1_ingest/examples/refuel/output/unmapped_entities_refuel_convtech.yaml](/E:/Barton/repositories/motel-platform/1_ingest/examples/refuel/output/unmapped_entities_refuel_convtech.yaml)
+- [1_ingest/examples/refuel/output/unmapped_entities_refuel_stortech.yaml](/E:/Barton/repositories/motel-platform/1_ingest/examples/refuel/output/unmapped_entities_refuel_stortech.yaml)
+- [1_ingest/examples/refuel/output/unmapped_entities_refuel_embeddedcarbon.yaml](/E:/Barton/repositories/motel-platform/1_ingest/examples/refuel/output/unmapped_entities_refuel_embeddedcarbon.yaml)
 
 The same notebook then publishes a combined staging file to [motel-db/unmapped_entity/unmapped_entities_refuel.yaml](/E:/Barton/repositories/motel-platform/motel-db/unmapped_entity/unmapped_entities_refuel.yaml).
 
@@ -208,7 +208,7 @@ The implemented export in the current repository is YAML export for staging data
 
 Implemented exports:
 
-- per-sheet unmapped YAML exports in [1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb](/E:/Barton/repositories/motel-platform/1_ingest/ingestion_space/refuel/ingestion_pipeline.ipynb)
+- per-sheet unmapped YAML exports in [1_ingest/examples/refuel/ingestion_pipeline.ipynb](/E:/Barton/repositories/motel-platform/1_ingest/examples/refuel/ingestion_pipeline.ipynb)
 - consolidated staging export to [motel-db/unmapped_entity/unmapped_entities_refuel.yaml](/E:/Barton/repositories/motel-platform/motel-db/unmapped_entity/unmapped_entities_refuel.yaml)
 - harmonised CSV registries under `motel-db/secondary/`, `motel-db/controlled_vocabulary/`, and `motel-db/mapping/`
 

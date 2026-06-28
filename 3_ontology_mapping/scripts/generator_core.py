@@ -33,7 +33,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parents[1]
 DEFAULT_MOTEL_DB_PATH = REPO_ROOT / "motel-db"
-DEFAULT_OUTPUT_TTL = SCRIPT_DIR / "cls_atr_motel.ttl"
+DEFAULT_OUTPUT_TTL = REPO_ROOT / "3_ontology_mapping" / "output_ttl" / "cls_atr_motel.ttl"
 
 # Base web path used when this file creates new MOTEL item IDs.
 PROJECT_BASE = "https://digicities.info/proj/MOTEL"
@@ -111,6 +111,7 @@ ATTRIBUTE_NAME_ALIASES = {
     "opex one-time": "opex_one_time",
     "fixed operational expenditure percentage of capital expenditure": "opex_fix_pct_of_capex",
     "annual opex per capacity": "opex_per_capacity_yr",
+    "annual operational expenditure per installed capacity": "opex_per_capacity_yr",
     "operational expenditure per capacity": "opex_per_capacity_yr",
     "operating expenditure per energy": "opex_per_energy",
     "operational expenditure per energy": "opex_per_energy",

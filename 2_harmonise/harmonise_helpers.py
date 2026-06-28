@@ -30,7 +30,7 @@ import yaml
 MODEL = "qwen3:14b"
 HARMONISATION_VERSION = "1.0.0"
 LOG_DIR = Path("../motel-db/log")
-DEFAULT_REFUEL_WORKBOOK = Path("../1_ingest/ingestion_space/refuel/raw_data/reFuel_TechDatabase_Clean_2026-06-03.xlsx")
+DEFAULT_REFUEL_WORKBOOK = Path("../1_ingest/examples/refuel/input/reFuel_TechDatabase_Clean_2026-06-03.xlsx")
 DEFAULT_UNMAPPED_PATH = Path("../motel-db/unmapped_entity/unmapped_entities_refuel.yaml")
 SCHEMA_DIR = Path("../schema")
 
@@ -63,7 +63,7 @@ def get_harmonisation_paths(project_root: Path | None = None) -> dict[str, Path]
         "unmapped_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
         "linked_entity_path": root / "motel-db" / "linked_entity" / "linked_entity.yaml",
         "mapping_dir": root / "motel-db" / "mapping",
-        "refuel_workbook": root / "1_ingest" / "ingestion_space" / "refuel" / "raw_data" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
+        "refuel_workbook": root / "1_ingest" / "examples" / "refuel" / "input" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
         "notebook_path": root / "2_harmonise" / "2_data_harmonisation.ipynb",
     }
 
