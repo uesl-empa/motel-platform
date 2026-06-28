@@ -44,6 +44,8 @@ From the repository root:
 
 This reads the current `motel-db/` content and writes the generated TTL to `3_ontology_mapping/output_ttl/cls_atr_motel.ttl`.
 
+Import note: `3_ontology_mapping/output_ttl/cls_atr_motel.ttl` is the Step 3 handoff artifact and should be used as the input file in the `motel_ontology` repository.
+
 ## Step Boundary
 
 - `1_ingest/` creates staged unmapped records.
