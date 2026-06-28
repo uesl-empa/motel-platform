@@ -4,7 +4,7 @@
 
 MOTEL (Methodology for Open Technology Data in Energy Models) provides a workflow for turning heterogeneous technology data into structured records that can be reviewed, harmonised, and reused in energy system modelling. In the current repository, the implemented core is the ingestion of source data into an `unmapped` staging format and the harmonisation of those staged records into a MOTEL database structure with controlled vocabularies, secondary entities, mapping tables, and a `linked_entity` schema.
 
-The repository already includes machine-readable schemas in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml), [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml), and the supporting entity schemas under [schema/secondary](/E:/Barton/repositories/motel-platform/schema/secondary/source.yaml) and [schema/controlled_vocabulary](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml). The current implementation does not yet include a populated ontology-linked graph database, backend API, or web application in the public tree. Those parts should therefore be treated as future work rather than current capabilities.
+The repository already includes machine-readable schemas in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml), [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml), and the supporting entity schemas under [schema/secondary](/E:/Barton/repositories/motel-platform/schema/secondary/source.yaml) and [schema/controlled_vocabulary](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml). The current implementation does not yet include a populated ontology-linked graph database, backend API, or web application in the public tree. Those downstream pieces now live in the separate public repository [BartonChenTW/motel-webapp](https://github.com/BartonChenTW/motel-webapp), so they should be treated as adjacent work rather than capabilities implemented directly in this repository.
 
 ## 2. Overall workflow
 
@@ -186,7 +186,7 @@ Current limitation:
 
 ## 7. Backend and frontend workflow
 
-No backend API or frontend application code is present in the current public repository snapshot. The repository contains a static documentation site in [docs/index.html](/E:/Barton/repositories/motel-platform/docs/index.html), but no service code for querying or editing the MOTEL database.
+No backend API or frontend application code is present in the current public repository snapshot. The repository contains a static documentation site in [docs/index.html](/E:/Barton/repositories/motel-platform/docs/index.html), but no service code for querying or editing the MOTEL database. That application-facing layer is maintained in the separate public repository [BartonChenTW/motel-webapp](https://github.com/BartonChenTW/motel-webapp).
 
 Therefore, the following workflow is not yet implemented in code in this tree:
 
@@ -243,7 +243,7 @@ The workflow also supports reproducibility because the transformation from sprea
 - Current limitation: the `linked_entity` schema is defined, but the checked-in [motel-db/linked_entity/linked_entity.yaml](/E:/Barton/repositories/motel-platform/motel-db/linked_entity/linked_entity.yaml) is currently empty.
 - Current limitation: ontology mapping is only partial. Schema fields such as `ontology_iri` exist, but no ontology files or mapping scripts are present in the active repository.
 - Current limitation: graph database construction is not implemented in the current `3_graphdb/` tree.
-- Current limitation: no backend API or frontend application is present in the public repository snapshot.
+- Current limitation: no backend API or frontend application is present in the public repository snapshot; those components are maintained in [BartonChenTW/motel-webapp](https://github.com/BartonChenTW/motel-webapp).
 - Current limitation: no model-ready export beyond YAML staging files and harmonised CSV registries is implemented.
 - Future work: add a formal ontology vocabulary and explicit field-to-predicate mappings.
 - Future work: implement graph export and query infrastructure.
