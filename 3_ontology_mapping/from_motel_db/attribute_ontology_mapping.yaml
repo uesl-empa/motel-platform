@@ -1,0 +1,173 @@
+Technology Readiness Level:
+  ontology_class: TRL
+  category_class: PhysicalAttribute
+  unit_label: "—"
+  qudt_unit: null
+  currency: null
+  dtype: int
+  backend_field: trl
+
+Technology Maturity:
+  ontology_class: tech_maturity
+  category_class: CategoricalAttribute
+  unit_label: null
+  qudt_unit: null
+  currency: null
+  dtype: text
+
+Technical Efficiency:
+  ontology_class: technical_efficiency
+  category_class: PhysicalAttribute
+  unit_label: unitless
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+
+Theoretical Efficiency:
+  ontology_class: theoretical_efficiency
+  category_class: PhysicalAttribute
+  unit_label: unitless
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+
+Operating Temperature:
+  ontology_class: operating_temperature_c
+  category_class: PhysicalAttribute
+  unit_label: "°C"
+  qudt_unit: http://qudt.org/vocab/unit/DEG_C
+  currency: null
+  dtype: decimal
+
+Economic Lifetime:
+  ontology_class: Lifetime
+  category_class: PhysicalAttribute
+  unit_label: years
+  qudt_unit: http://qudt.org/vocab/unit/YR
+  currency: null
+  dtype: decimal
+  backend_field: lifetime
+
+Capital Expenditure One Time:
+  ontology_class: CAPEXOneTime
+  category_class: SimpleCostAttribute
+  unit_label: null
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: capex
+
+One-Time Operational Expenditure:
+  ontology_class: OPEXOneTime
+  category_class: SimpleCostAttribute
+  unit_label: null
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: opex
+
+Fixed Operational Expenditure Percentage Of Capital Expenditure:
+  ontology_class: opex_fix_pct_of_capex
+  category_class: PhysicalAttribute
+  unit_label: "%"
+  qudt_unit: http://qudt.org/vocab/unit/PERCENT
+  currency: null
+  dtype: decimal
+
+Annual OPEX Per Capacity:
+  ontology_class: OPEXPerCapacity
+  category_class: UnitBasedCostAttribute
+  unit_label: EUR/kW/yr
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: opex_cap
+  backend_alias_of: OPEX_CAP
+
+Operational Expenditure Per Energy:
+  ontology_class: OPEXPerEnergy
+  category_class: UnitBasedCostAttribute
+  unit_label: EUR/kWh
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: opex_energy
+
+Minimum Installation Size:
+  ontology_class: min_installation_size
+  category_class: PhysicalAttribute
+  unit_label: kW
+  qudt_unit: http://qudt.org/vocab/unit/KiloW
+  currency: null
+  dtype: decimal
+
+Uncertainty Rating:
+  ontology_class: uncertainty_rating
+  category_class: CategoricalAttribute
+  unit_label: null
+  qudt_unit: null
+  currency: null
+  dtype: text
+
+Discount Rate:
+  ontology_class: InterestRate
+  category_class: PhysicalAttribute
+  unit_label: "%"
+  qudt_unit: http://qudt.org/vocab/unit/PERCENT
+  currency: null
+  dtype: decimal
+  backend_field: interest_rate
+
+Capex Per Capacity:
+  ontology_class: CAPEXPerCapacity
+  category_class: UnitBasedCostAttribute
+  unit_label: EUR/kW
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: capex_per_rated_power
+
+Capital Expenditure Per Capacity:
+  ontology_class: CAPEXPerCapacity
+  category_class: UnitBasedCostAttribute
+  unit_label: EUR/kW
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: capex_per_rated_power
+
+Opex One-Time:
+  ontology_class: OPEXOneTime
+  category_class: SimpleCostAttribute
+  unit_label: null
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: opex
+
+Operational Expenditure Per Capacity:
+  ontology_class: OPEXPerCapacity
+  category_class: UnitBasedCostAttribute
+  unit_label: EUR/kW/yr
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: opex_cap
+  backend_alias_of: OPEX_CAP
+
+Operating Expenditure Per Energy:
+  ontology_class: OPEXPerEnergy
+  category_class: UnitBasedCostAttribute
+  unit_label: EUR/kWh
+  qudt_unit: null
+  currency: null
+  dtype: decimal
+  backend_field: opex_energy
+
+Reference Unit Size:
+  ontology_class: reference_unit_size
+  category_class: PhysicalAttribute
+  unit_label: MW
+  qudt_unit: http://qudt.org/vocab/unit/MegaW
+  currency: null
+  dtype: decimal
