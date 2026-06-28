@@ -2,3 +2,4 @@ jupyter
 ollama
 pandas
 pyyaml
+rdflib
