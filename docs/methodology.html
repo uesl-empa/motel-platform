@@ -25,7 +25,8 @@
 
           <div class="sidebar-actions">
             <a href="index.html">Back to homepage</a>
-            <a href="workflow.mmd">Workflow source</a>
+            <a href="workflow/ingest_harmonise.mmd">Stage 1 source</a>
+            <a href="workflow/ontology_graphdb.mmd">Stage 2 source</a>
             <a href="methodology.md">Markdown source</a>
           </div>
         </div>
@@ -59,6 +60,7 @@
     -&gt; ontology / graph export (future work in current repo)
     -&gt; backend query layer (future work in current repo)
     -&gt; frontend inspection and export tools (future work in current repo)</code></pre>
+<figure class="diagram-figure"><img src="assets/ingest_harmonise.svg" alt="Diagram of the MOTEL ingestion and harmonisation workflow" /><figcaption>Stage 1 shows the implemented motel-platform workflow from raw source data through ingestion, harmonisation, registries, mappings, and linked entities.</figcaption></figure>
 <p>In the current repository snapshot, the implemented steps are:</p>
 <ol><li>Collect or receive raw technology data.</li><li>Store unresolved records as <code>unmapped</code> data.</li><li>Harmonise data into the MOTEL database structure.</li><li>Create referenced entities and mapping tables for technologies, processes, sources, carriers, attributes, and scopes.</li><li>Define, but do not yet fully populate, a <code>linked_entity</code> target structure.</li></ol>
 <p>Current limitation: Steps involving ontology class/property mapping, graph database construction, backend querying, frontend interaction, and model-ready export are described in project materials but are not implemented as executable code in the present public repository. The <code>3_graphdb/</code> directory exists but is empty, and no backend or frontend application code is present in the current tree.</p>
@@ -102,6 +104,7 @@
 <p>The current repository shows ontology intent mainly through schema fields rather than through a completed ontology mapping workflow. In particular, the <code>technology</code> and <code>attribute</code> schemas both include an <code>ontology_iri</code> field:</p>
 <ul><li><a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/secondary/technology.yaml">schema/secondary/technology.yaml</a></li><li><a href="https://github.com/BartonChenTW/motel-platform/blob/main/schema/controlled_vocabulary/attribute.yaml">schema/controlled_vocabulary/attribute.yaml</a></li></ul>
 <p>This indicates that MOTEL entities are designed to carry resolvable ontology links. However, no ontology files such as <code>.ttl</code>, <code>.owl</code>, or mapping configuration files are present in the current public repository snapshot, and no executable ontology transformation script is present under <code>3_graphdb/</code>.</p>
+<figure class="diagram-figure"><img src="assets/ontology_graphdb.svg" alt="Diagram of the MOTEL ontology and graph workflow" /><figcaption>Stage 2 shows the downstream path from harmonised MOTEL datasets into ontology mapping, graph-ready data, knowledge graph creation, and search or exploration tools.</figcaption></figure>
 <p>The current mapping tables in <a href="https://github.com/BartonChenTW/motel-platform/blob/main/motel-db/mapping/source_map.csv">motel-db/mapping</a> support harmonisation traceability rather than ontology conversion. For example:</p>
 <table><thead><tr><th>MOTEL field/entity</th><th>Ontology class/property</th><th>Purpose</th></tr></thead><tbody><tr><td><code>technology.ontology_iri</code></td><td>external ontology IRI</td><td>placeholder field for linking a technology to an ontology concept</td></tr><tr><td><code>attribute.ontology_iri</code></td><td>external ontology IRI</td><td>placeholder field for linking an attribute to an ontology concept</td></tr><tr><td><code>linked_entity.tech_id</code></td><td><code>technology.tech_id</code> foreign-key style reference</td><td>connects a harmonised record to a standard technology entity</td></tr><tr><td><code>linked_entity.values[].attribute_id</code></td><td><code>attribute.attribute_id</code> foreign-key style reference</td><td>connects a harmonised value to a standard attribute definition</td></tr></tbody></table>
 <p>Current limitation:</p>

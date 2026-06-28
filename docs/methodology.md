@@ -20,6 +20,8 @@ raw technology data
     -> frontend inspection and export tools (future work in current repo)
 ```
 
+![Diagram of the MOTEL ingestion and harmonisation workflow](assets/ingest_harmonise.svg "Stage 1 shows the implemented motel-platform workflow from raw source data through ingestion, harmonisation, registries, mappings, and linked entities.")
+
 In the current repository snapshot, the implemented steps are:
 
 1. Collect or receive raw technology data.
@@ -139,6 +141,8 @@ The current repository shows ontology intent mainly through schema fields rather
 - [schema/controlled_vocabulary/attribute.yaml](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml)
 
 This indicates that MOTEL entities are designed to carry resolvable ontology links. However, no ontology files such as `.ttl`, `.owl`, or mapping configuration files are present in the current public repository snapshot, and no executable ontology transformation script is present under `3_graphdb/`.
+
+![Diagram of the MOTEL ontology and graph workflow](assets/ontology_graphdb.svg "Stage 2 shows the downstream path from harmonised MOTEL datasets into ontology mapping, graph-ready data, knowledge graph creation, and search or exploration tools.")
 
 The current mapping tables in [motel-db/mapping](/E:/Barton/repositories/motel-platform/motel-db/mapping/source_map.csv) support harmonisation traceability rather than ontology conversion. For example:
 

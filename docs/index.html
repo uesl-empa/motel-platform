@@ -48,10 +48,10 @@
               >Browse data</a
             >
             <a
-              href="https://github.com/BartonChenTW/motel-platform/blob/main/docs/workflow.mmd"
+              href="https://github.com/BartonChenTW/motel-platform/tree/main/docs/workflow"
               target="_blank"
               rel="noopener noreferrer"
-              >Workflow source</a
+              >Workflow diagrams</a
             >
           </div>
         </div>
@@ -119,8 +119,9 @@
         <section class="doc-section" id="workflow">
           <h2>Workflow</h2>
           <p>
-            The MOTEL workflow connects data preparation with semantic
-            representation and model-ready export.
+            The MOTEL workflow is easier to read as two connected stages: the
+            current `motel-platform` ingestion and harmonisation pipeline, then
+            the downstream ontology and knowledge-graph layer.
           </p>
           <ul>
             <li>Traceable technology parameters</li>
@@ -131,18 +132,65 @@
             <li>Model-ready export as a downstream goal</li>
           </ul>
 
-          <figure class="workflow-figure">
-            <img
-              class="workflow-image"
-              src="assets/workflow.svg"
-              alt="MOTEL cross-repository workflow showing the current motel-platform data pipeline feeding structured outputs into a downstream ontology, graph database, API, and web application stack"
-            />
-            <figcaption>
-              `motel-platform` produces structured MOTEL data. A separate
-              ontology and knowledge-graph repository converts those outputs
-              into TTL, GraphDB, an API, and a web app.
-            </figcaption>
-          </figure>
+          <div class="workflow-grid">
+            <figure class="workflow-figure">
+              <div class="workflow-label">Stage 1</div>
+              <h3>Ingestion and harmonisation</h3>
+              <img
+                class="workflow-image"
+                src="assets/ingest_harmonise.svg"
+                alt="Diagram showing raw source data flowing through ingestion into unmapped entities, then harmonisation into registries, linked entities, and mappings"
+              />
+              <figcaption>
+                The implemented core of this repository turns heterogeneous
+                source material into harmonised MOTEL datasets.
+              </figcaption>
+            </figure>
+
+            <figure class="workflow-figure">
+              <div class="workflow-label">Stage 2</div>
+              <h3>Ontology and knowledge graph</h3>
+              <img
+                class="workflow-image"
+                src="assets/ontology_graphdb.svg"
+                alt="Diagram showing harmonised datasets entering ontology mapping, graph-ready data preparation, knowledge graph creation, and search or exploration tools"
+              />
+              <figcaption>
+                Those harmonised outputs can then feed ontology mapping,
+                knowledge-graph creation, and future search or export tools.
+              </figcaption>
+            </figure>
+          </div>
+
+          <p class="workflow-links">
+            <a
+              href="https://github.com/BartonChenTW/motel-platform/blob/main/docs/workflow/ingest_harmonise.mmd"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Stage 1 source</a
+            >
+            <a
+              href="https://github.com/BartonChenTW/motel-platform/blob/main/docs/workflow/ontology_graphdb.mmd"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Stage 2 source</a
+            >
+          </p>
+
+          <p>
+            Because the workflow is defined through explicit schemas and
+            controlled vocabularies, it does not depend only on project-specific
+            data transformation scripts. The same structure also makes the
+            process suitable for LLM-assisted acceleration.
+          </p>
+          <p>
+            In this repository, a local Ollama model
+            (<code>qwen3:14b</code>) is used during harmonisation to help
+            standardise entity names, semantically match staged records to
+            existing registries when exact matches are missing, fill required
+            schema fields for new entries, and create or normalise attribute and
+            scope vocabulary entries.
+          </p>
         </section>
 
         <section class="doc-section" id="methodology">

@@ -34,12 +34,20 @@ def render_inline(text: str) -> str:
         return f"@@PLACEHOLDER{len(placeholders) - 1}@@"
 
     text = re.sub(
+        r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"([^\"]+)\")?\)",
+        lambda m: stash(
+            f'<img src="{html.escape(m.group(2), quote=True)}" '
+            f'alt="{html.escape(m.group(1), quote=True)}" />'
+        ),
+        text,
+    )
+    text = re.sub(
         r"`([^`]+)`",
         lambda m: stash(f"<code>{html.escape(m.group(1))}</code>"),
         text,
     )
     text = re.sub(
-        r"\[([^\]]+)\]\(([^)]+)\)",
+        r"(?<!\!)\[([^\]]+)\]\(([^)]+)\)",
         lambda m: stash(
             f'<a href="{html.escape(rewrite_repo_link(m.group(2)), quote=True)}">'
             f"{html.escape(m.group(1))}</a>"
@@ -167,6 +175,22 @@ def render_markdown(markdown: str) -> tuple[str, list[tuple[int, str, str]]]:
             )
             continue
 
+        image_match = re.fullmatch(
+            r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"([^\"]+)\")?\)", stripped
+        )
+        if image_match:
+            alt_text, src, caption = image_match.groups()
+            figure = [
+                '<figure class="diagram-figure">',
+                f'<img src="{html.escape(src, quote=True)}" alt="{html.escape(alt_text, quote=True)}" />',
+            ]
+            if caption:
+                figure.append(f"<figcaption>{render_inline(caption)}</figcaption>")
+            figure.append("</figure>")
+            blocks.append("".join(figure))
+            i += 1
+            continue
+
         paragraph_lines = [stripped]
         i += 1
         while i < len(lines):
@@ -224,7 +248,8 @@ def build_html(body_html: str, toc: list[tuple[int, str, str]]) -> str:
 
           <div class="sidebar-actions">
             <a href="index.html">Back to homepage</a>
-            <a href="workflow.mmd">Workflow source</a>
+            <a href="workflow/ingest_harmonise.mmd">Stage 1 source</a>
+            <a href="workflow/ontology_graphdb.mmd">Stage 2 source</a>
             <a href="methodology.md">Markdown source</a>
           </div>
         </div>
