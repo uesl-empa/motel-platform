@@ -87,12 +87,39 @@ ATTR_CONFIG = {
     "capex_per_capacity": {"class": "CAPEXPerCapacity", "category": "UnitBasedCostAttribute", "dtype": "decimal"},
     "opex_one_time": {"class": "OPEX", "category": "SimpleCostAttribute", "dtype": "decimal"},
     "opex_fix_pct_of_capex": {"class": "opex_fix_pct_of_capex", "category": "PhysicalAttribute", "dtype": "decimal"},
-    "opex_per_capacity_yr": {"class": "OPEX_power", "category": "UnitBasedCostAttribute", "dtype": "decimal"},
+    "opex_per_capacity_yr": {
+        "class": "OPEXPerCapacity",
+        "uri_segment": "OPEX_power",
+        "category": "UnitBasedCostAttribute",
+        "dtype": "decimal",
+    },
     "opex_per_energy": {"class": "OPEX_energy", "category": "UnitBasedCostAttribute", "dtype": "decimal"},
     "min_installation_size": {"class": "min_installation_size", "category": "PhysicalAttribute", "dtype": "decimal"},
     "uncertainty_rating": {"class": "uncertainty_rating", "category": "CategoricalAttribute", "dtype": "text"},
     "discount_rate_pct": {"class": "InterestRate", "category": "PhysicalAttribute", "dtype": "decimal"},
     "reference_unit_size": {"class": "reference_unit_size", "category": "PhysicalAttribute", "dtype": "decimal"},
+}
+
+CAPACITY_BASIS_QUANTITY_KIND_BY_UNIT = {
+    "kw": "qudt:Power",
+    "mw": "qudt:Power",
+    "kwh": "qudt:Energy",
+    "mwh": "qudt:Energy",
+    "kg/h": "qudt:MassFlowRate",
+    "t/h": "qudt:MassFlowRate",
+    "m3": "qudt:Volume",
+    "m3/h": "qudt:VolumeFlowRate",
+}
+
+CAPACITY_BASIS_QUDT_UNIT_BY_UNIT = {
+    "kw": "http://qudt.org/vocab/unit/KiloW",
+    "mw": "http://qudt.org/vocab/unit/MegaW",
+    "kwh": "http://qudt.org/vocab/unit/KiloW-HR",
+    "mwh": "http://qudt.org/vocab/unit/MegaW-HR",
+    "kg/h": "http://qudt.org/vocab/unit/KiloGM-PER-HR",
+    "t/h": "http://qudt.org/vocab/unit/TON_Metric-PER-HR",
+    "m3": "http://qudt.org/vocab/unit/M3",
+    "m3/h": "http://qudt.org/vocab/unit/M3-PER-HR",
 }
 
 # Different source spellings that should all be treated as the same attribute name.
@@ -226,6 +253,59 @@ def infer_qudt_unit_from_unit_label(unit_label: str | None) -> str | None:
     return ATTRIBUTE_QUDT_BY_UNIT_LABEL.get(unit_label)
 
 
+def normalize_capacity_basis_unit_label(unit_label: str | None) -> str | None:
+    """Normalize a denominator unit label so we can derive capacity basis metadata."""
+    if not unit_label:
+        return None
+    text = str(unit_label).strip()
+    if not text:
+        return None
+    normalized = text.lower()
+    normalized = normalized.replace(" ", "")
+    normalized = normalized.replace("³", "3")
+    normalized = normalized.replace("^3", "3")
+    normalized = normalized.replace("m³", "m3")
+    return normalized
+
+
+def extract_capacity_basis_from_unit_label(unit_label: str | None) -> dict[str, str] | None:
+    """Parse a cost unit label like `EUR/kW/yr` into a machine-readable capacity basis."""
+    if not unit_label or "/" not in unit_label:
+        return None
+
+    parts = [part.strip() for part in str(unit_label).split("/") if str(part).strip()]
+    if len(parts) < 2:
+        return None
+
+    currency_tokens = {"eur", "usd", "chf", "gbp"}
+    if parts[0].lower() in currency_tokens:
+        parts = parts[1:]
+    if not parts:
+        return None
+
+    trailing_time_tokens = {"yr", "year", "years", "a", "annum", "annual"}
+    if len(parts) > 1 and parts[-1].lower() in trailing_time_tokens:
+        parts = parts[:-1]
+    if not parts:
+        return None
+
+    basis_label = "/".join(parts)
+    basis_key = normalize_capacity_basis_unit_label(basis_label)
+    if not basis_key:
+        return None
+
+    qudt_unit = CAPACITY_BASIS_QUDT_UNIT_BY_UNIT.get(basis_key)
+    quantity_kind = CAPACITY_BASIS_QUANTITY_KIND_BY_UNIT.get(basis_key)
+    if not qudt_unit or not quantity_kind:
+        return None
+
+    return {
+        "unit_label": basis_label,
+        "qudt_unit": qudt_unit,
+        "quantity_kind": quantity_kind,
+    }
+
+
 def normalize_balancing_entries(entity: dict, direction: str) -> list[dict[str, object]]:
     """Turn the balancing data into one simple flow list format."""
     balancing = entity.get("balancing", {}) or {}
@@ -278,6 +358,11 @@ def inst_uri(label: str) -> str:
 def attr_uri(label: str, attribute_class: str) -> str:
     """Build the ID for one attribute attached to a technology item."""
     return f"{inst_uri(label)}/{attribute_class}"
+
+
+def attr_instance_uri(label: str, cfg: dict[str, str]) -> str:
+    """Build the ID for one attribute while allowing stable URIs across class renames."""
+    return attr_uri(label, cfg.get("uri_segment", cfg["class"]))
 
 
 def carrier_uri(name: str) -> str:
@@ -508,7 +593,7 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
         if temporal:
             all_attrs.append(u(attr_uri(label, "Introduced")))
         for _, _, _, cfg in valid_attrs:
-            all_attrs.append(u(attr_uri(label, cfg["class"])))
+            all_attrs.append(u(attr_instance_uri(label, cfg)))
         if all_attrs:
             po.append(("dici_onto:hasAttribute", ", ".join(all_attrs)))
 
@@ -536,6 +621,12 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
             # Add standard unit and currency IDs when we can recognize the unit label.
             currency = infer_currency_from_unit_label(unit_label)
             qudt_unit = infer_qudt_unit_from_unit_label(unit_label)
+            capacity_basis = None
+            if cfg["class"] in {"CAPEXPerCapacity", "OPEXPerCapacity"}:
+                capacity_basis = extract_capacity_basis_from_unit_label(unit_label)
+                if capacity_basis:
+                    qudt_unit = capacity_basis["qudt_unit"]
+            attr_subject = attr_instance_uri(label, cfg)
             po_attr = [
                 ("a", f"dici_onto:{cfg['class']}"),
                 ("a", f"dici_onto:{cfg['category']}"),
@@ -547,12 +638,27 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                 po_attr.append(("qudt:unit", u(qudt_unit)))
             if currency:
                 po_attr.append(("dici_onto:currency", u(currency)))
+            if capacity_basis:
+                basis_uri = f"{attr_subject}/capacity-basis"
+                po_attr.append(("dici_onto:hasCapacityBasis", u(basis_uri)))
             for source_id in attr_sources.get(attr_id, []):
                 source = source_by_id.get(source_id, {})
                 source_name = source.get("source_name")
                 if source_name:
                     po_attr.append(("prov:wasDerivedFrom", u(reference_uri(source_name))))
-            blocks.append(tb(u(attr_uri(label, cfg["class"])), po_attr))
+            blocks.append(tb(u(attr_subject), po_attr))
+            if capacity_basis:
+                blocks.append(
+                    tb(
+                        u(f"{attr_subject}/capacity-basis"),
+                        [
+                            ("a", "dici_onto:CapacityBasis"),
+                            ("dici_onto:hasBasisQuantityKind", capacity_basis["quantity_kind"]),
+                            ("dici_onto:hasBasisUnit", u(capacity_basis["qudt_unit"])),
+                            ("dici_onto:hasUnitLabel", f'"{esc(capacity_basis["unit_label"])}"^^xsd:string'),
+                        ],
+                    )
+                )
 
         for is_input, flow_list in ((True, inputs), (False, outputs)):
             direction_abbr = "in" if is_input else "out"
