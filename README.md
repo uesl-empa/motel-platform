@@ -35,7 +35,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Outputs: `motel-db/secondary/`, `motel-db/controlled_vocabulary/`, `motel-db/mapping/`, and `motel-db/linked_entity/`
 
 3. **Ontology mapping** converts harmonised MOTEL outputs into ontology-ready TTL.
-   - Main notebook: `3_ontology_mapping/ttl_creation_from_motel_db.ipynb`
+   - Main notebook: `3_ontology_mapping/3_ontology_mapping.ipynb`
    - Helper module: `3_ontology_mapping/scripts/generator_core.py`
    - CLI entrypoint: `3_ontology_mapping/scripts/gen_ttl.py`
    - Mapping config: `3_ontology_mapping/config/attribute_ontology_mapping.yaml`
