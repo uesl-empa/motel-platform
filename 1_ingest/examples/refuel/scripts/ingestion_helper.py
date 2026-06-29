@@ -98,7 +98,7 @@ def find_project_root(start: Path | None = None) -> Path:
     """Find the repository root from any path inside motel-platform."""
     start = (start or Path.cwd()).resolve()
     for candidate in [start, *start.parents]:
-        if (candidate / "motel-db").is_dir() and (candidate / "schema_simple").is_dir():
+        if (candidate / "motel-db").is_dir() and (candidate / "schema_human").is_dir():
             return candidate
     raise FileNotFoundError(
         "Could not locate the repository root. Start the notebook from inside motel-platform."
@@ -114,7 +114,7 @@ def get_refuel_paths(project_root: Path | None = None) -> dict[str, Path]:
         "example_dir": example_dir,
         "notebook_path": example_dir / "ingestion_pipeline.ipynb",
         "workbook_path": example_dir / "input" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
-        "schema_path": root / "schema_simple" / "unmapped_entity.yaml",
+        "schema_path": root / "schema_human" / "unmapped_entity.yaml",
         "staging_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
         "convtech_output": example_dir / "output" / "unmapped_entities_refuel_convtech.yaml",
         "stortech_output": example_dir / "output" / "unmapped_entities_refuel_stortech.yaml",

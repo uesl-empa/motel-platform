@@ -1,0 +1,4 @@
+CapacityScope: # Controlled vocabulary registry organising equipment scale boundaries and installation tiers.
+    capacity_scope: "[Required; String] Primary reference token key classifying asset deployment dimensions (e.g., CAP_COMMERCIAL_SCALE)."
+    capacity_scope_description: "[Required; String] Strict numeric range boundaries or qualitative engineering definitions of the installation size tier."
+    note: "[String] General metadata annotations or database administrative notes regarding this plant sizing or scaling capacity scope entry."

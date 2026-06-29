@@ -25,7 +25,7 @@ This folder is Step 1 of the MOTEL workflow. It converts raw source data into th
 
 - Input schema:
   - `../schema/unmapped_entity.yaml`
-  - `../schema_simple/unmapped_entity.yaml`
+  - `../schema_human/unmapped_entity.yaml`
 - Input source example:
   - `examples/refuel/input/reFuel_TechDatabase_Clean_2026-06-03.xlsx`
 - Process notebooks and scripts:
