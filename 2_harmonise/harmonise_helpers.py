@@ -255,7 +255,7 @@ ENTITY_CONFIG = {
             "access_date",
             "confidence_level",
             "assessment_method",
-            "assessment_date",
+            "reference_year",
             "note",
         ],
         "schema_key": "source.yaml",
@@ -988,7 +988,7 @@ def collect_candidates(unmapped_entities):
                     "access_date":        src.get("access_date"),
                     "confidence_level":   src.get("confidence_level"),
                     "assessment_method":  src.get("assessment_method"),
-                    "assessment_date":    src.get("assessment_date"),
+                    "reference_year":     src.get("reference_year"),
                     "note":               src.get("note") or src.get("assessment_notes"),
                 })
         for item in e.get("balancing", {}).get("inputs", []) + e.get("balancing", {}).get("outputs", []):

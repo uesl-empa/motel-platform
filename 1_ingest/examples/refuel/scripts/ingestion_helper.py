@@ -170,7 +170,7 @@ def build_unmapped_source(ref_row, linked_attrs):
         "access_date": first_present(ref_row, "access_date"),
         "confidence_level": first_present(ref_row, "confidence_level"),
         "assessment_method": first_present(ref_row, "assessment_method"),
-        "assessment_date": first_present(ref_row, "assessment_date"),
+        "reference_year": first_present(ref_row, "reference_year", "publication_year", "year", "assessment_year"),
         "assessment_notes": first_present(ref_row, "comments", "assessment_notes", "note"),
         "linked_attribute": sorted(linked_attrs),
     }

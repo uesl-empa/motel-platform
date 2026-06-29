@@ -7,5 +7,5 @@ Source: # Stores historical literature origins, validation criteria, and source 
     access_date: "[String] ISO 8601 logging calendar stamp indicating when the source entity was retrieved or audited (YYYY-MM-DD)."
     confidence_level: "[String] Data governance quality score based on source prestige, transparency, and data age parameters."
     assessment_method: "[String] Procedural framework tracking how the source data point values were fundamentally calculated."
-    assessment_date: "[String] ISO 8601 calendar date logging when the entity was formally curated into the MOTEL database structure (YYYY-MM-DD)."
+    reference_year: "[Integer] Four-digit publication or release year of the referenced source material (for example, 2025)."
     note: "[String] Internal notes tracking specific data point idiosyncrasies, parsing edge cases, or source reliability caveats."

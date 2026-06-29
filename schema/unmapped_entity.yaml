@@ -97,9 +97,11 @@ properties:
         confidence_level:
           type: string
           description: Optional source-quality or trust rating carried from the source register when available.
-        assessment_date:
-          type: string
-          description: Optional date when the source or extracted values were assessed by the data curator.
+        reference_year:
+          type:
+            - integer
+            - string
+          description: Optional publication or release year for the source material, ideally as a four-digit year.
         assessment_method:
           type: string
           description: Short note on how the source was assessed or how values were derived.

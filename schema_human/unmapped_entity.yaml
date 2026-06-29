@@ -23,7 +23,7 @@ UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All field
         source_type: "[String] Free-text medium classification, such as report, dataset, article, standard, website, or expert input."
         access_date: "[String] Date when an online source was accessed or checked, preferably ISO 8601 when available."
         confidence_level: "[String] Optional source-quality or trust rating carried from the source register when available."
-        assessment_date: "[String] Optional date when the source or extracted values were assessed by the data curator."
+        reference_year: "[Integer/String] Optional publication or release year for the source material, ideally as a four-digit year."
         assessment_method: "[String] Short note on how the source was assessed or how values were derived."
         assessment_notes: "[String] Page numbers, table references, or granular location hints within the source."
         linked_attribute: "[List of Strings] Free-text list of attribute names this source supports; no foreign key enforcement at this stage."
