@@ -31,7 +31,7 @@ In the current repository snapshot, the implemented steps are:
 5. Define, but do not yet fully populate, a `linked_entity` target structure.
 
 Current limitation:
-Steps involving ontology class/property mapping, graph database construction, backend querying, frontend interaction, and model-ready export are described in project materials but are not implemented as executable code in the present public repository. The `3_graphdb/` directory exists but is empty, and no backend or frontend application code is present in the current tree.
+Graph database construction, backend querying, frontend interaction, and model-ready export are still downstream work rather than implemented end-to-end features in the present public repository. The current tree does include an implemented ontology-mapping step under `3_ontology_mapping/`, but no backend or frontend application code is present here.
 
 ## 3. Data ingestion and harmonisation
 
@@ -135,12 +135,12 @@ This makes `unmapped` suitable for preserving source-level context before standa
 
 ## 5. Ontology mapping
 
-The current repository shows ontology intent mainly through schema fields rather than through a completed ontology mapping workflow. In particular, the `technology` and `attribute` schemas both include an `ontology_iri` field:
+The current repository includes an implemented ontology-mapping workflow as well as ontology-aware schema fields. In particular, the `technology` and `attribute` schemas both include an `ontology_iri` field:
 
 - [schema/secondary/technology.yaml](/E:/Barton/repositories/motel-platform/schema/secondary/technology.yaml)
 - [schema/controlled_vocabulary/attribute.yaml](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml)
 
-This indicates that MOTEL entities are designed to carry resolvable ontology links. However, no ontology files such as `.ttl`, `.owl`, or mapping configuration files are present in the current public repository snapshot, and no executable ontology transformation script is present under `3_graphdb/`.
+This indicates that MOTEL entities are designed to carry resolvable ontology links. The public repository now includes ontology mapping assets under [3_ontology_mapping](/E:/Barton/repositories/motel-platform/3_ontology_mapping), including the notebook [3_ontology_mapping/3_ontology_mapping.ipynb](/E:/Barton/repositories/motel-platform/3_ontology_mapping/3_ontology_mapping.ipynb), mapping config [3_ontology_mapping/config/attribute_ontology_mapping.yaml](/E:/Barton/repositories/motel-platform/3_ontology_mapping/config/attribute_ontology_mapping.yaml), generator script [3_ontology_mapping/scripts/gen_ttl.py](/E:/Barton/repositories/motel-platform/3_ontology_mapping/scripts/gen_ttl.py), and published TTL output [3_ontology_mapping/output_ttl/cls_atr_motel.ttl](/E:/Barton/repositories/motel-platform/3_ontology_mapping/output_ttl/cls_atr_motel.ttl).
 
 ![Diagram of the MOTEL ontology and graph workflow](assets/ontology_graphdb.svg "Stage 2 shows the downstream path from harmonised MOTEL datasets into ontology mapping, graph-ready data, knowledge graph creation, and search or exploration tools.")
 
@@ -155,13 +155,13 @@ The current mapping tables in [motel-db/mapping](/E:/Barton/repositories/motel-p
 
 Current limitation:
 
-- No repository-local ontology vocabulary files were found.
-- No implemented mapping from MOTEL fields to RDF predicates or OWL classes was found.
-- Ontology linkage is currently a schema provision, not a completed export workflow.
+- The repository includes ontology-ready TTL generation, but it does not yet document a full repository-local ontology vocabulary package such as a complete `.owl` or `.ttl` ontology source tree.
+- The public docs still describe the mapping outcome at a high level rather than fully enumerating field-to-predicate mappings.
+- Ontology export is implemented, while GraphDB loading and application-layer use remain downstream work.
 
 ## 6. Graph database construction
 
-The current repository does not contain an implemented graph database build pipeline. The folder [3_graphdb](/E:/Barton/repositories/motel-platform/3_graphdb) exists but is empty. No RDF, Turtle, SPARQL, GraphDB, or Neo4j configuration files were found in the active tree.
+The current repository does not contain an implemented graph database build pipeline. What it does contain is the upstream ontology-mapping stage in [3_ontology_mapping](/E:/Barton/repositories/motel-platform/3_ontology_mapping), which generates ontology-ready TTL from harmonised MOTEL data. No GraphDB loading, SPARQL service, or Neo4j configuration files were found in the active tree.
 
 What is implemented today is the relational precondition for graph construction:
 
@@ -186,7 +186,7 @@ Current limitation:
 
 ## 7. Backend and frontend workflow
 
-No backend API or frontend application code is present in the current public repository snapshot. The repository contains a static documentation site in [docs/index.html](/E:/Barton/repositories/motel-platform/docs/index.html), but no service code for querying or editing the MOTEL database.
+No backend API or frontend application code is present in the current public repository snapshot. The repository contains a static documentation site in [docs/index.html](/E:/Barton/repositories/motel-platform/docs/index.html), but no service code for querying or editing the MOTEL database. That application-facing layer is maintained in the separate public repository [BartonChenTW/motel-webapp](https://github.com/BartonChenTW/motel-webapp).
 
 Therefore, the following workflow is not yet implemented in code in this tree:
 
@@ -241,9 +241,9 @@ The workflow also supports reproducibility because the transformation from sprea
 - Current limitation: only the reFuel.ch ingestion workflow is implemented as a full example.
 - Current limitation: ingestion and harmonisation are notebook-driven rather than packaged as stable command-line or service workflows.
 - Current limitation: the `linked_entity` schema is defined, but the checked-in [motel-db/linked_entity/linked_entity.yaml](/E:/Barton/repositories/motel-platform/motel-db/linked_entity/linked_entity.yaml) is currently empty.
-- Current limitation: ontology mapping is only partial. Schema fields such as `ontology_iri` exist, but no ontology files or mapping scripts are present in the active repository.
-- Current limitation: graph database construction is not implemented in the current `3_graphdb/` tree.
-- Current limitation: no backend API or frontend application is present in the public repository snapshot.
+- Current limitation: ontology mapping is implemented in `3_ontology_mapping/`, but the public documentation still leaves some mapping details and ontology packaging implicit.
+- Current limitation: graph database construction is not implemented in the current public repository.
+- Current limitation: no backend API or frontend application is present in the public repository snapshot; those components are maintained in [BartonChenTW/motel-webapp](https://github.com/BartonChenTW/motel-webapp).
 - Current limitation: no model-ready export beyond YAML staging files and harmonised CSV registries is implemented.
 - Future work: add a formal ontology vocabulary and explicit field-to-predicate mappings.
 - Future work: implement graph export and query infrastructure.

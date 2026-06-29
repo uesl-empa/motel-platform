@@ -42,6 +42,12 @@
               >Repository</a
             >
             <a
+              href="https://github.com/BartonChenTW/motel-webapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Webapp repo</a
+            >
+            <a
               href="https://github.com/BartonChenTW/motel-platform/tree/main/motel-db"
               target="_blank"
               rel="noopener noreferrer"
@@ -213,14 +219,19 @@
         <section class="doc-section" id="repository">
           <h2>Repository Structure</h2>
           <p>
-            This repository contains the implemented data-preparation core and
-            the Step 3 ontology-mapping workflow. A second repository carries
-            the later GraphDB, backend, and frontend stack.
+            The current repository focuses on the implemented data-preparation
+            core. A second repository,
+            <a
+              href="https://github.com/BartonChenTW/motel-webapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BartonChenTW/motel-webapp</a
+            >, carries the ontology, GraphDB, backend, and frontend stack.
           </p>
           <pre class="repo-tree"><code>motel-platform/
 |-- 1_ingest/         source-specific ingestion notebooks and helpers
 |-- 2_harmonise/      harmonisation notebooks and helper functions
-|-- 3_ontology_mapping/ ontology-ready TTL generation from harmonised MOTEL data
+|-- 3_ontology_mapping/ ontology-ready TTL generation scripts and outputs
 |-- motel-db/         unmapped data, registries, mappings, and linked outputs
 |-- schema/           machine-readable data schemas
 |-- schema_simple/    human-readable schema blueprints
@@ -239,7 +250,9 @@
             <li>Step 1 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/1_data_ingestion.ipynb" target="_blank" rel="noopener noreferrer">generic ingestion notebook</a></li>
             <li>Worked ingestion example: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/examples/refuel/ingestion_pipeline.ipynb" target="_blank" rel="noopener noreferrer">reFuel.ch pipeline</a></li>
             <li>Step 2 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/2_harmonise/2_data_harmonisation.ipynb" target="_blank" rel="noopener noreferrer">harmonisation notebook</a></li>
+            <li>Step 3 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/3_ontology_mapping/3_ontology_mapping.ipynb" target="_blank" rel="noopener noreferrer">ontology mapping notebook</a></li>
             <li>Published staged and harmonised data: <a href="https://github.com/BartonChenTW/motel-platform/tree/main/motel-db" target="_blank" rel="noopener noreferrer">motel-db/</a></li>
+            <li>Ontology-ready TTL output: <a href="https://github.com/BartonChenTW/motel-platform/tree/main/3_ontology_mapping/output_ttl" target="_blank" rel="noopener noreferrer">3_ontology_mapping/output_ttl/</a></li>
           </ul>
         </section>
 
@@ -272,11 +285,16 @@
         <section class="doc-section" id="ontology">
           <h2>Ontology and Graph Database Layer</h2>
           <p>
-            In this repository, the ontology-mapping workflow turns harmonised
-            MOTEL data into ontology-ready TTL files. A downstream MOTEL
-            ontology repository can then load those files into GraphDB, serve
-            them through a backend API, and expose them in a web interface for
-            exploration.
+            The downstream MOTEL repository
+            <a
+              href="https://github.com/BartonChenTW/motel-webapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BartonChenTW/motel-webapp</a
+            >
+            turns harmonised MOTEL data into ontology-based TTL files, loads
+            them into GraphDB, serves them through a backend API, and exposes
+            them in a web interface for exploration.
           </p>
           <pre class="example-block"><code>Heat pump
 -> hasAttribute
@@ -290,9 +308,15 @@
         <section class="doc-section" id="webapp">
           <h2>Webapp and Model Builder</h2>
           <p>
-            In the separate downstream stack, the MOTEL webapp is intended to let
-            users browse technologies, inspect parameters and provenance, adapt
-            selected values, and export model-ready configuration files.
+            In the separate downstream stack hosted at
+            <a
+              href="https://github.com/BartonChenTW/motel-webapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BartonChenTW/motel-webapp</a
+            >, the MOTEL webapp is intended to let users browse technologies,
+            inspect parameters and provenance, adapt selected values, and export
+            model-ready configuration files.
           </p>
           <ul>
             <li>Technology selection</li>
@@ -307,9 +331,14 @@
           <h2>How to Run</h2>
           <p>
             This repository can be explored locally with the notebook-based
-            ingestion, harmonisation, and ontology-mapping workflow. The
-            downstream GraphDB, backend, and frontend stack runs from a
-            separate repository.
+            ingestion and harmonisation workflow. The downstream ontology, KG,
+            backend, and frontend stack runs from the separate repository
+            <a
+              href="https://github.com/BartonChenTW/motel-webapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BartonChenTW/motel-webapp</a
+            >.
           </p>
           <pre class="example-block"><code>git clone https://github.com/BartonChenTW/motel-platform
 cd motel-platform
@@ -321,7 +350,12 @@ pip install -r requirements.txt</code></pre>
           <ul>
             <li><code>1_ingest/1_data_ingestion.ipynb</code></li>
             <li><code>2_harmonise/2_data_harmonisation.ipynb</code></li>
+            <li><code>3_ontology_mapping/3_ontology_mapping.ipynb</code></li>
           </ul>
+          <p>
+            Or run the ontology mapping step directly after harmonisation:
+          </p>
+          <pre class="example-block"><code>.\.venv\Scripts\python.exe 3_ontology_mapping\scripts\gen_ttl.py</code></pre>
         </section>
 
         <section class="doc-section" id="outputs">
@@ -353,7 +387,7 @@ pip install -r requirements.txt</code></pre>
               <h3>Current Limitations</h3>
               <ul>
                 <li>The public repo currently demonstrates a selected set of technologies</li>
-                <li>GraphDB, backend, and frontend are in a separate repository</li>
+                <li>Ontology mapping, GraphDB, backend, and frontend are in the separate repository <a href="https://github.com/BartonChenTW/motel-webapp" target="_blank" rel="noopener noreferrer">BartonChenTW/motel-webapp</a></li>
                 <li>Model-ready YAML export is a downstream target, not a full feature of this repo alone</li>
                 <li>Additional validation and richer export formats remain future work</li>
               </ul>

@@ -5,7 +5,7 @@
 
 MOTEL (Methodology for Open Technology Data in Energy Models) is an ETH Domain ORD Program project for collecting, harmonising, and publishing technology data for energy system models.
 
-This repository contains the current MOTEL data workflow, schemas, curated database files, ontology-mapping scripts, and a static documentation site.
+This repository contains the current MOTEL data workflow, schemas, curated database files, ontology-mapping scripts, and a static documentation site. The separate public downstream application stack lives in [`BartonChenTW/motel-webapp`](https://github.com/BartonChenTW/motel-webapp).
 
 ## Repository Structure
 
@@ -35,7 +35,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Outputs: `motel-db/secondary/`, `motel-db/controlled_vocabulary/`, `motel-db/mapping/`, and `motel-db/linked_entity/`
 
 3. **Ontology mapping** converts harmonised MOTEL outputs into ontology-ready TTL.
-   - Main notebook: `3_ontology_mapping/ttl_creation_from_motel_db.ipynb`
+   - Main notebook: `3_ontology_mapping/3_ontology_mapping.ipynb`
    - Helper module: `3_ontology_mapping/scripts/generator_core.py`
    - CLI entrypoint: `3_ontology_mapping/scripts/gen_ttl.py`
    - Mapping config: `3_ontology_mapping/config/attribute_ontology_mapping.yaml`
@@ -45,6 +45,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Data: `motel-db/`
    - Schemas: `schema/`
    - Website: `docs/index.html`
+   - Public docs: `https://bartonchentw.github.io/motel-platform/`
 
 ## Database Layout
 
@@ -78,7 +79,11 @@ To generate the ontology-ready TTL from the harmonised MOTEL database:
 
 ## Documentation
 
-The static documentation site is in `docs/` and is deployed by GitHub Pages from the `Deploy Docs` workflow. To preview it locally, open `docs/index.html` in a browser.
+The static documentation site is in `docs/` and is deployed by GitHub Pages from the `Deploy Docs` workflow.
+
+- GitHub Pages: https://bartonchentw.github.io/motel-platform/
+- Local entrypoint: `docs/index.html`
+- Downstream webapp repository: https://github.com/BartonChenTW/motel-webapp
 
 ## Public Release Checklist
 
