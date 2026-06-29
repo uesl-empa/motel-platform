@@ -1,0 +1,5 @@
+Contributor: # Tracks account credentials and institutional profiles of research personnel updating dataset elements.
+    contributor_id: "[Required; String] Primary key string identifying a distinct user profile entity within the governance matrix."
+    name: "[Required; String] Full professional legal name of the research contributor."
+    affiliation: "[String] The primary university, corporate entity, or laboratory group representing the user (e.g., ETH Zurich)."
+    email: "[String] Validated active academic or professional communication endpoint address."

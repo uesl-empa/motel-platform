@@ -1,0 +1,11 @@
+Review: # Data quality assurance tracking block monitoring validation status steps across multi-stage review pipelines.
+    review_id: "[Required; String] Primary key uniquely indexing a single evaluation event workflow (e.g., REV_00102)."
+    linked_entity_id: "[Required; String] Foreign key linkage targeting the exact linked entity object undergoing peer-review assessment."
+    first_reviewer: "[String] Contributor foreign key locating the designated primary domain-expert auditor."
+    second_reviewer: "[String] Contributor foreign key locating the secondary cross-disciplinary verification auditor."
+    first_review_approver: "[String] Contributor foreign key locating the senior research authority clearing the entry for release staging."
+    second_review_approver: "[String] Contributor foreign key locating the second database administrator clearing the relational matrix entry."
+    first_review_approval_status: "[String] Real-time state flag tracking progress through the initial gatekeeper validation checks."
+    second_review_approval_status: "[String] Real-time state flag tracking progress through the secondary database structural validation checks."
+    date_created: "[String] ISO 8601 record generation calendar timestamp (YYYY-MM-DD)."
+    date_modified: "[String] ISO 8601 entry modification timestamp monitoring governance change interactions (YYYY-MM-DD)."

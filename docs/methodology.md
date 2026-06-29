@@ -4,7 +4,7 @@
 
 MOTEL (Methodology for Open Technology Data in Energy Models) provides a workflow for turning heterogeneous technology data into structured records that can be reviewed, harmonised, and reused in energy system modelling. In the current repository, the implemented core is the ingestion of source data into an `unmapped` staging format and the harmonisation of those staged records into a MOTEL database structure with controlled vocabularies, secondary entities, mapping tables, and a `linked_entity` schema.
 
-The repository already includes machine-readable schemas in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml), [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml), and the supporting entity schemas under [schema/secondary](/E:/Barton/repositories/motel-platform/schema/secondary/source.yaml) and [schema/controlled_vocabulary](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml). The current implementation does not yet include a populated ontology-linked graph database, backend API, or web application in the public tree. Those parts should therefore be treated as future work rather than current capabilities.
+The repository already includes machine-readable schemas in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml), [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml), and the supporting entity schemas under [schema/secondary](/E:/Barton/repositories/motel-platform/schema/secondary/source.yaml) and [schema/controlled_vocabulary](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml). It also includes human-readable blueprints under [schema_human/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/unmapped_entity.yaml) and [schema_human/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/linked_entity.yaml). The current implementation does not yet include a populated ontology-linked graph database, backend API, or web application in the public tree. Those parts should therefore be treated as future work rather than current capabilities.
 
 ## 2. Overall workflow
 
@@ -37,7 +37,7 @@ Steps involving ontology class/property mapping, graph database construction, ba
 
 ### Data ingestion
 
-The primary ingestion method implemented in MOTEL is schema-first staging into the `unmapped` format. For a new project or external user, the intended starting point is not the reFuel.ch notebook itself, but the generic `unmapped` contract defined in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml) and explained in simplified form in [schema_simple/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema_simple/unmapped_entity.yaml). The introductory notebook [1_ingest/1_data_ingestion.ipynb](/E:/Barton/repositories/motel-platform/1_ingest/1_data_ingestion.ipynb) serves as the current guide to that structure.
+The primary ingestion method implemented in MOTEL is schema-first staging into the `unmapped` format. For a new project or external user, the intended starting point is not the reFuel.ch notebook itself, but the generic `unmapped` contract defined in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml) and explained in human-readable form in [schema_human/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/unmapped_entity.yaml). The introductory notebook [1_ingest/1_data_ingestion.ipynb](/E:/Barton/repositories/motel-platform/1_ingest/1_data_ingestion.ipynb) serves as the current guide to that structure.
 
 In practice, a new contributor can work as follows:
 
@@ -75,7 +75,7 @@ Current limitation:
 
 `unmapped` data is the raw staging format. It keeps source-oriented names, free-text scope descriptions, flexible attribute payloads, and source references before they are matched to MOTEL registries. This contract is defined in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml).
 
-`linked_entity` is the target relational structure for harmonised records. It is defined in [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml) and is intended to reference standardised technologies, attributes, carriers, scopes, and sources through foreign-key style identifiers.
+`linked_entity` is the target relational structure for harmonised records. It is defined in [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml) and explained in a human-readable form in [schema_human/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/linked_entity.yaml). It is intended to reference standardised technologies, attributes, carriers, scopes, and sources through foreign-key style identifiers.
 
 In practice, the harmonisation step currently writes:
 

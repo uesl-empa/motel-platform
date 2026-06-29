@@ -1,0 +1,4 @@
+GeographicScope: # Controlled vocabulary indexing geographic bounds and territory constraints.
+    geographic_scope: "[Required; String] Primary alphanumerical token key mapping spatial domains (e.g., GEO_CHE, GEO_EU27)."
+    geographic_scope_description: "[Required; String] Detailed breakdown of political, grid connection, or regional territory lines encompassed by the token."
+    note: "[String] General metadata annotations or database administrative notes regarding this spatial boundary scope entry."

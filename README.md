@@ -17,7 +17,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
 |-- docs/                static GitHub Pages site
 |-- motel-db/            published MOTEL database files
 |-- schema/              machine-readable YAML schemas
-`-- schema_simple/       human-readable simplified schema blueprints
+`-- schema_human/        human-readable schema blueprints mirroring `schema/`
 ```
 
 ## Data Workflow
