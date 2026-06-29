@@ -39,6 +39,8 @@ Instead:
 
 This means `motel-db/` is both the published MOTEL database state and the shared output boundary between Step 2 and Step 3.
 
+It is also the main data product explored in `../4_data_explore/4_data_exploration.ipynb`.
+
 ## Extra Runtime Files
 
 When enabled from the notebook, Step 2 may also create:
