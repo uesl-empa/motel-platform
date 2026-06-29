@@ -14,6 +14,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
 |-- 1_ingest/            source-specific ingestion notebooks and helpers
 |-- 2_harmonise/         harmonisation notebooks and helper functions
 |-- 3_ontology_mapping/  ontology-ready TTL generation from harmonised MOTEL data
+|-- 4_data_explore/      notebook-first exploration of the published MOTEL data product
 |-- docs/                static GitHub Pages site
 |-- motel-db/            published MOTEL database files
 |-- schema/              machine-readable YAML schemas
@@ -41,7 +42,13 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Mapping config: `3_ontology_mapping/config/attribute_ontology_mapping.yaml`
    - Output: `3_ontology_mapping/output_ttl/cls_atr_motel.ttl`
 
-4. **Publish** curated database files and documentation.
+4. **Explore** the published MOTEL data product.
+   - Main notebook: `4_data_explore/4_data_exploration.ipynb`
+   - Folder guide: `4_data_explore/README.md`
+   - Input: `motel-db/`
+   - Output: interactive inspection, filtering, and ad hoc analysis
+
+5. **Publish** curated database files and documentation.
    - Data: `motel-db/`
    - Schemas: `schema/`
    - Website: `docs/index.html`
