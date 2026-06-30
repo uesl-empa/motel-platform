@@ -112,6 +112,7 @@ def get_refuel_paths(project_root: Path | None = None) -> dict[str, Path]:
     return {
         "project_root": root,
         "example_dir": example_dir,
+        "notebook_dir": example_dir,
         "notebook_path": example_dir / "ingestion_pipeline.ipynb",
         "workbook_path": example_dir / "input" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
         "schema_path": root / "schema_human" / "unmapped_entity.yaml",
@@ -490,7 +491,7 @@ def add_attributes_to_record(
             'value': clean(row[attr]),
             'uncertainty_notes': None,
             'time_index': clean(row.get('tech_year', None)),
-            'notes': notes
+            'attribute_notes': notes
         }
         attributes.append(attr)
 
@@ -520,6 +521,27 @@ def build_balancing_entries(carriers, shares, units):
         })
 
     return entries
+
+
+def build_process_notes(row: pd.Series) -> str | None:
+    """Build free-text process notes from available source-row context."""
+    parts = []
+
+    technology_description = clean(row.get("description"))
+    if technology_description:
+        parts.append(f"Technology description: {technology_description}")
+
+    input_carriers = split_csv(row.get("carriers_in"))
+    if input_carriers:
+        parts.append(f"Input carriers: {', '.join(input_carriers)}")
+
+    output_carriers = split_csv(row.get("carriers_out"))
+    if output_carriers:
+        parts.append(f"Output carriers: {', '.join(output_carriers)}")
+
+    if not parts:
+        return None
+    return " | ".join(parts)
 
 def to_balance_list(items, carrier_lookup: dict[str, str] | None = None):
     """Normalize balancing items to list of dicts with carrier_name/share/unit."""
@@ -585,7 +607,7 @@ def add_balancing_to_record(
     output_shares = split_csv_float(row.get("ratios_out"))
     output_units = split_csv(row.get("units_out_ratios"))
 
-    ue["balancing"] = {}
+    ue["balancing"] = {"balancing_notes": None}
 
     ue["balancing"]["inputs"] = to_balance_list(
         build_balancing_entries(
@@ -628,11 +650,11 @@ def refuel2unmapped(
             "technology_description": clean(row.get("description")),
             "technology_type": clean(row.get("tech_type")),
             "technology_category": clean(row.get("technology_class")),
-            "technology_assumption": None,
+            "technology_notes": None,
             "process_name": clean(row.get("unit_operation")),
             "process_type": None,
             "process_category": clean(row.get("tech_category")),
-            "process_notes": None,
+            "process_notes": build_process_notes(row),
         },
         "scope": {
             "geographic_scope_description": clean(row.get("cost_base")),
@@ -643,7 +665,7 @@ def refuel2unmapped(
             ),
             "capacity_scope_description": clean(row.get("min_installation_size")),
             "system_boundary_description": clean(row.get("tech_boundary")),
-            "scope_assumption": clean(row.get("tech_maturity")),
+            "scope_notes": clean(row.get("tech_maturity")),
         },
         "metadata": {
             "related_project": "reFuel.ch",
@@ -678,18 +700,18 @@ def embeddedcarbon2unmapped(row: pd.Series) -> dict:
             "technology_description": clean(row.get("lca_activity")),
             "technology_type": clean(row.get("tech_type")),
             "technology_category": None,
-            "technology_assumption": None,
+            "technology_notes": None,
             "process_name": clean(row.get("ref_product")),
             "process_type": None,
             "process_category": None,
-            "process_notes": None,
+            "process_notes": build_process_notes(row),
         },
         "scope": {
             "geographic_scope_description": clean(row.get("lca_location")),
             "temporal_scope_description": None,
             "capacity_scope_description": None,
             "system_boundary_description": None,
-            "scope_assumption": None,
+            "scope_notes": None,
         },
         "sources": [],
         "balancing": {"inputs": [], "outputs": []},
@@ -706,7 +728,7 @@ def embeddedcarbon2unmapped(row: pd.Series) -> dict:
     notes_base = (
         f"lca_unit: {lca_unit}"
         f" | ref_product: {clean(row.get('ref_product'))}"
-        f" | lca_location: {clean(row.get('lca_location'))}"
+        f" | lca_activity: {clean(row.get('lca_activity'))}"
     )
     if not is_nan(row.get("notes")):
         notes_base += f" | notes: {row.get('notes')}"
@@ -723,7 +745,7 @@ def embeddedcarbon2unmapped(row: pd.Series) -> dict:
                     "value": value,
                     "uncertainty_notes": f"climate scenario: {scenario_key}",
                     "time_index": year,
-                    "notes": notes_base,
+                    "attribute_notes": notes_base,
                 }
             )
 

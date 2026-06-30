@@ -7,7 +7,7 @@
     process_name: Li-ion battery (residential)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric battery storage at home, 2025'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -181,7 +181,7 @@
     process_name: Li-ion battery (residential)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric battery storage at home, 2030'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -353,7 +353,7 @@
     process_name: Li-ion battery (residential)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric battery storage at home, 2040'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -525,7 +525,7 @@
     process_name: Li-ion battery (residential)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric battery storage at home, 2050'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -697,7 +697,8 @@
     process_name: Li-ion battery (grid-scale)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric battery storage at the grid,
+      2020'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -872,7 +873,8 @@
     process_name: Li-ion battery (grid-scale)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric battery storage at the grid,
+      2030'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -1047,7 +1049,8 @@
     process_name: Li-ion battery (grid-scale)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric battery storage at the grid,
+      2040'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -1222,7 +1225,8 @@
     process_name: Li-ion battery (grid-scale)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric battery storage at the grid,
+      2050'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -1397,7 +1401,8 @@
     process_name: Pumped hydro reservoir
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Pumped hydro reservoir, without pump and
+      generator'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -1567,7 +1572,8 @@
     process_name: Hydro reservoir
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Pumped hydro reservoir, without pump and
+      generator'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -1737,7 +1743,7 @@
     process_name: High-temperature heat storage
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: null
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -1898,7 +1904,7 @@
     process_name: Hot water tank (residential)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hot water storage tank at home'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -2067,7 +2073,8 @@
     process_name: Seasonal thermal storage
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Thermal storage for district heating,
+      seasonal storage'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -2236,7 +2243,7 @@
     process_name: Compressed H₂ tank
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: null
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -2405,7 +2412,8 @@
     process_name: Pipeline linepack
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Storaging methane via compressing in the
+      pipelines'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -2592,7 +2600,7 @@
     process_name: Compressed CH₄ tank
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Tank storage for methane (compressed)'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -2779,7 +2787,7 @@
     process_name: Underground gas storage
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Underground methane storage'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -2966,7 +2974,7 @@
     process_name: Compressed CO₂ tank
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: null
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -3127,7 +3135,7 @@
     process_name: Compressed CO tank
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: null
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -3288,7 +3296,7 @@
     process_name: Liquid fuel tank (diesel/kerosene)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: null
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -3449,7 +3457,7 @@
     process_name: Liquid fuel tank (gasoline)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: null
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -3610,7 +3618,7 @@
     process_name: Ammonia storage tank
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Tank storage for ammonia'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'

@@ -7,7 +7,7 @@
     process_name: CCGT
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Input carriers: NH3 | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -178,7 +178,7 @@
     process_name: OCGT
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Input carriers: NH3 | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -350,7 +350,8 @@
     process_name: CCGT
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane-fueled CCGT with carbon capture
+      and storage (CCS) (2030). | Input carriers: CH4 | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -547,7 +548,8 @@
     process_name: CHP plant
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Combined heat and power (CHP) generation
+      using methane (CH₄). | Input carriers: CH4 | Output carriers: El47, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -739,7 +741,8 @@
     process_name: SOFC
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane-fueled fuel cell electricity generation
+      at El47 (2030). | Input carriers: CH4 | Output carriers: El47, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -921,7 +924,8 @@
     process_name: SOFC
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane-fueled fuel cell electricity generation
+      in buildings (2030). | Input carriers: CH4 | Output carriers: ElBdg, ThBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -1105,7 +1109,9 @@
     process_name: OCGT
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane-fueled open cycle gas turbine
+      (OCGT) electricity generation (2030). | Input carriers: CH4 | Output carriers:
+      El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -1299,7 +1305,8 @@
     process_name: Geothermal power plant
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Geothermal-based CHP generation (2040).
+      | Input carriers: ThGround | Output carriers: El47, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -1482,7 +1489,9 @@
     process_name: CCGT
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrogen-fueled combined cycle gas turbine
+      (CCGT) electricity generation (2050). | Input carriers: H2 | Output carriers:
+      El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -1682,7 +1691,8 @@
     process_name: SOFC
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electricity generation via fuel cells
+      at node El47 (2040). | Input carriers: H2 | Output carriers: El47, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -1871,7 +1881,8 @@
     process_name: SOFC
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electricity generation via fuel cells
+      at node El47 (2050). | Input carriers: H2 | Output carriers: El47, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -2060,7 +2071,8 @@
     process_name: SOFC
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electricity generation via fuel cells
+      in buildings (2030). | Input carriers: H2 | Output carriers: ElBdg, ThBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -2246,7 +2258,8 @@
     process_name: SOFC
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electricity generation via fuel cells
+      in buildings (2050). | Input carriers: H2 | Output carriers: ElBdg, ThBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -2433,7 +2446,9 @@
     process_name: OCGT
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrogen-fueled open cycle gas turbine
+      (OCGT) electricity generation (2050). | Input carriers: H2 | Output carriers:
+      El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -2627,7 +2642,8 @@
     process_name: Pumped hydro (pump mode)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Pumped hydroelectric energy storage (pump
+      mode). | Input carriers: El13 | Output carriers: HydroPumped'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -2812,7 +2828,8 @@
     process_name: Pumped hydro (turbine mode)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Pumped hydroelectric power generation
+      (turbine mode). | Input carriers: HydroPumped | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -2997,7 +3014,8 @@
     process_name: Run-of-river plant
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Run-of-river hydroelectric power plant.
+      | Input carriers: HydroRor | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -3182,7 +3200,8 @@
     process_name: Reservoir plant
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydroelectric power generation from storage
+      reservoirs. | Input carriers: HydroS | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -3368,7 +3387,9 @@
     process_name: Incineration plant
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electricity generation from municipal
+      solid waste (MSW) incineration. | Input carriers: Msw | Output carriers: El13,
+      ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -3552,7 +3573,8 @@
     process_name: Ground-mounted PV (alpine)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: gound-mounted Alpine PV, from ETHZ study
+      in 2024 | Input carriers: ElPvAlpin | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -3721,7 +3743,8 @@
     process_name: Ground-mounted PV (alpine)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: gound-mounted Alpine PV, from ETHZ study
+      in 2024, project to 2030 | Input carriers: ElPvAlpin | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -3890,7 +3913,8 @@
     process_name: Ground-mounted PV (alpine)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: gound-mounted Alpine PV, from ETHZ study
+      in 2024, project to 2040 | Input carriers: ElPvAlpin | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -4059,7 +4083,8 @@
     process_name: Ground-mounted PV (alpine)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: gound-mounted Alpine PV, from ETHZ study
+      in 2024, project to 2050 | Input carriers: ElPvAlpin | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -4227,7 +4252,8 @@
     process_name: Rooftop PV
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: rooftop PV, small scale, in 2025 | Input
+      carriers: Sol | Output carriers: ElBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -4412,7 +4438,8 @@
     process_name: Rooftop PV
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: rooftop PV, small scale, in 2030 | Input
+      carriers: Sol | Output carriers: ElBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -4597,7 +4624,8 @@
     process_name: Rooftop PV
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: rooftop PV, small scale, in 2040 | Input
+      carriers: Sol | Output carriers: ElBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -4782,7 +4810,8 @@
     process_name: Rooftop PV
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: rooftop PV, small scale, in 2050 | Input
+      carriers: Sol | Output carriers: ElBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -4968,7 +4997,8 @@
     process_name: Pressurised water reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electricity generation from nuclear power
+      (U235) at node El13. | Input carriers: U235 | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -5158,7 +5188,8 @@
     process_name: Onshore wind turbine
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Generic wind turbine electricity generation
+      (2020). | Input carriers: ElWind | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -5338,7 +5369,8 @@
     process_name: Onshore wind turbine
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Generic wind turbine electricity generation
+      (2030). | Input carriers: ElWind | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -5518,7 +5550,8 @@
     process_name: Onshore wind turbine
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Generic wind turbine electricity generation
+      (2040). | Input carriers: ElWind | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -5698,7 +5731,8 @@
     process_name: Onshore wind turbine
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Generic wind turbine electricity generation
+      (2050). | Input carriers: ElWind | Output carriers: El13'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -5878,7 +5912,8 @@
     process_name: Biomass CHP plant
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Combined heat and power (CHP) generation
+      using wood. | Input carriers: Wood | Output carriers: El47, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -6063,7 +6098,8 @@
     process_name: Gas-fired boiler
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane-fueled heating system for buildings.
+      | Input carriers: CH4 | Output carriers: ThBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -6243,7 +6279,8 @@
     process_name: Gas-fired boiler
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane-fueled heating system for thermal
+      power plants. | Input carriers: CH4 | Output carriers: ThPhII'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -6422,7 +6459,8 @@
     process_name: Resistance heater
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric heating system for buildings.
+      | Input carriers: ElBdg | Output carriers: ThBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -6607,7 +6645,8 @@
     process_name: Resistance heater
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric heating system for thermal power
+      plants. | Input carriers: ElRest | Output carriers: ThPhII'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -6787,7 +6826,8 @@
     process_name: Air conditioning unit
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric heating system for buildings
+      with thermal storage. | Input carriers: ElBdg | Output carriers: ThSc'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -6966,7 +7006,8 @@
     process_name: Air conditioning unit
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric heating system for buildings
+      with thermal storage. | Input carriers: ElBdg | Output carriers: ThSc'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -7151,7 +7192,8 @@
     process_name: Air conditioning unit
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric heating system for buildings
+      with thermal storage. | Input carriers: ElBdg | Output carriers: ThSc'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -7336,7 +7378,8 @@
     process_name: Air conditioning unit
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electric heating system for buildings
+      with thermal storage. | Input carriers: ElBdg | Output carriers: ThSc'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -7516,7 +7559,8 @@
     process_name: Hydrogen burner
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrogen-fueled heating system for thermal
+      power plants (2030). | Input carriers: H2 | Output carriers: ThPhII'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -7695,7 +7739,8 @@
     process_name: Air-source heat pump
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Generic heat pump for residential heating,
+      fixed COP 4 | Input carriers: ElBdg | Output carriers: ThBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -7874,7 +7919,8 @@
     process_name: Industrial heat pump
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Low-temperature heat upgrade for district
+      heating (2030). | Input carriers: ElRest, ThLt | Output carriers: ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -8057,7 +8103,8 @@
     process_name: Oil-fired boiler
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon-fueled heating system for
+      buildings. | Input carriers: C12 | Output carriers: ThBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -8240,7 +8287,8 @@
     process_name: Oil-fired boiler
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon-fueled heating system for
+      thermal power plants. | Input carriers: C12 | Output carriers: ThPhII'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -8420,7 +8468,8 @@
     process_name: Biomass furnace
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Wood-fueled heating system for buildings.
+      | Input carriers: Wood | Output carriers: ThBdg'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -8600,7 +8649,8 @@
     process_name: Biomass furnace
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Wood-fueled heating system for thermal
+      power plants. | Input carriers: Wood | Output carriers: ThPhII'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -8779,7 +8829,8 @@
     process_name: Haber–Bosch reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Ammonia synthesis (Haber Bosch process)
+      | Input carriers: H2, N2 | Output carriers: NH3, ThPhII'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -8964,7 +9015,8 @@
     process_name: Anaerobic digester
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Wet biomass anaerobic digestion with gas
+      upgrading | Input carriers: BioWet, H2 | Output carriers: CH4'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -9144,7 +9196,8 @@
     process_name: Anaerobic digester
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Wet biomass anaerobic digestion with gas
+      upgrading | Input carriers: BioWet, H2 | Output carriers: CH4'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -9324,7 +9377,8 @@
     process_name: Anaerobic digester
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Wet biomass anaerobic digestion with gas
+      upgrading | Input carriers: BioWet, H2 | Output carriers: CH4'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -9505,7 +9559,9 @@
     process_name: Sabatier reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane synthesis from H2 and CO2 via
+      the thermo catalytic Sabatier reaction. | Input carriers: H2, CO2Sys | Output
+      carriers: CH4, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -9702,7 +9758,9 @@
     process_name: Sabatier reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane synthesis from H2 and CO2 via
+      the thermo catalytic Sabatier reaction. | Input carriers: H2, CO2Sys | Output
+      carriers: CH4, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -9899,7 +9957,9 @@
     process_name: Sabatier reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane synthesis from H2 and CO2 via
+      the thermo catalytic Sabatier reaction. | Input carriers: H2, CO2Sys | Output
+      carriers: CH4, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -10096,7 +10156,9 @@
     process_name: Sabatier reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane synthesis from H2 and CO2 via
+      the thermo catalytic Sabatier reaction. | Input carriers: H2, CO2Sys | Output
+      carriers: CH4, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -10293,7 +10355,9 @@
     process_name: HEFA reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: SAF Production via esterification of used
+      cooking oil and animal fat | Input carriers: CookingOil, H2, El47, CH4 | Output
+      carriers: C12, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -10476,7 +10540,8 @@
     process_name: Methanol synthesis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol synthesis from CO2 hydrogenation
+      | Input carriers: H2, CO2Sys | Output carriers: MeOH, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -10663,7 +10728,8 @@
     process_name: Methanol synthesis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol synthesis from CO2 hydrogenation
+      | Input carriers: H2, CO2Sys | Output carriers: MeOH, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -10850,7 +10916,8 @@
     process_name: Methanol synthesis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol synthesis from CO2 hydrogenation
+      | Input carriers: H2, CO2Sys | Output carriers: MeOH, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -10871,6 +10938,13 @@
       review of power-to-X processes'
     source_type: other
     link: https://doi.org/10.1016/j.jcou.2025.103019
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - technical_efficiency
+  - source_name: linear_interpolation_2030_2050
+    source_description: linear interpolate the values between 2020 and 2050
     linked_attribute:
     - capex_per_capacity
     - lifetime_yr
@@ -11037,7 +11111,8 @@
     process_name: Methanol synthesis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol synthesis from CO2 hydrogenation
+      | Input carriers: H2, COSys | Output carriers: MeOH, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -11224,7 +11299,8 @@
     process_name: Methanol synthesis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol synthesis from CO2 hydrogenation
+      | Input carriers: H2, CO2Sys | Output carriers: MeOH, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -11412,7 +11488,9 @@
     process_name: RWGS reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Reverse water gas shift reaction plant.
+      Emerging technology, 2030.  | Input carriers: H2, CO2Sys, ThPhII | Output carriers:
+      CO, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -11613,7 +11691,9 @@
     process_name: Alkaline electrolyser
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electrolysis 2030, Alkaline technology
+      (10 MW) from Danish Energy Reports 2025 is the benchmark  | Input carriers:
+      El47 | Output carriers: H2'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -11795,7 +11875,8 @@
     process_name: Alkaline electrolyser
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electrolysis 2040, Alkaline technology
+      is the benchmark | Input carriers: El47 | Output carriers: H2'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -11977,7 +12058,8 @@
     process_name: Alkaline electrolyser
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Electrolysis 2050, Alkaline technology
+      is the benchmark | Input carriers: El47 | Output carriers: H2'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -12159,7 +12241,8 @@
     process_name: FT reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon (C12) synthesis via Fischer-Tropsch
+      process. | Input carriers: H2Process, CO | Output carriers: C12, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -12363,7 +12446,8 @@
     process_name: FT reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon (C12) synthesis via Fischer-Tropsch
+      process. | Input carriers: H2Process, CO | Output carriers: C12, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -12567,7 +12651,8 @@
     process_name: FT reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon (C12) synthesis via Fischer-Tropsch
+      process. | Input carriers: H2Process, CO | Output carriers: C12, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -12771,7 +12856,8 @@
     process_name: FT reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon (C12) synthesis via Fischer-Tropsch
+      process. | Input carriers: H2Process, CO | Output carriers: C12, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -12975,7 +13061,8 @@
     process_name: FT reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon (C8) synthesis via Fischer-Tropsch
+      process. | Input carriers: H2Process, CO | Output carriers: C8, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -13179,7 +13266,8 @@
     process_name: FT reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon (C8) synthesis via Fischer-Tropsch
+      process. | Input carriers: H2Process, CO | Output carriers: C8, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -13383,7 +13471,8 @@
     process_name: FT reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon (C8) synthesis via Fischer-Tropsch
+      process. | Input carriers: H2Process, CO | Output carriers: C8, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -13587,7 +13676,8 @@
     process_name: FT reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Hydrocarbon (C8) synthesis via Fischer-Tropsch
+      process. | Input carriers: H2Process, CO | Output carriers: C8, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -13792,7 +13882,9 @@
     process_name: Sabatier reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane synthesis from Syngas via the
+      thermo catalytic CO hydrogenation.  | Input carriers: H2Process, CO | Output
+      carriers: CH4, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -13996,7 +14088,9 @@
     process_name: Sabatier reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane synthesis from Syngas via the
+      thermo catalytic CO hydrogenation.  | Input carriers: H2Process, CO | Output
+      carriers: CH4, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -14200,7 +14294,9 @@
     process_name: Sabatier reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane synthesis from Syngas via the
+      thermo catalytic CO hydrogenation.  | Input carriers: H2Process, CO | Output
+      carriers: CH4, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -14404,7 +14500,9 @@
     process_name: Sabatier reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane synthesis from Syngas via the
+      thermo catalytic CO hydrogenation.  | Input carriers: H2Process, CO | Output
+      carriers: CH4, ThHt, H2O'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -14608,7 +14706,9 @@
     process_name: Methanol synthesis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol synthesis from Syngas via the
+      thermo catalytic CO hydrogenation | Input carriers: H2Process, CO | Output carriers:
+      MeOH, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -14799,7 +14899,9 @@
     process_name: Methanol synthesis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol synthesis from Syngas via the
+      thermo catalytic CO hydrogenation | Input carriers: H2Process, CO | Output carriers:
+      MeOH, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -14990,7 +15092,9 @@
     process_name: Methanol synthesis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol synthesis from Syngas via the
+      thermo catalytic CO hydrogenation | Input carriers: H2Process, CO | Output carriers:
+      MeOH, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -15180,7 +15284,8 @@
     process_name: Fluidised bed gasifier
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Municipal solid waste gasification to
+      syngas | Input carriers: Msw, O2 | Output carriers: H2, CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -15333,7 +15438,8 @@
     process_name: Fluidised bed gasifier
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Municipal solid waste gasification to
+      hydrogen | Input carriers: Msw, ThHt | Output carriers: H2, CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -15486,7 +15592,8 @@
     process_name: Fluidised bed gasifier
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Woody biomass gasification to hydrogen
+      | Input carriers: Wood, O2, ThHt | Output carriers: H2Process, CO'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -15650,7 +15757,8 @@
     process_name: Fluidised bed gasifier
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Woody biomass gasification to syngas |
+      Input carriers: Wood, O2 | Output carriers: H2Process, CO, CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -15809,7 +15917,8 @@
     process_name: MtO + oligomerisation reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol-to-Jet fuel via MtO and oligomerisation.
+      Near-term projection. | Input carriers: MeOH, El47 | Output carriers: C12, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -15908,7 +16017,8 @@
     process_name: MtO + oligomerisation reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methanol-to-Jet fuel via MtO and oligomerisation.
+      Long-term projection. | Input carriers: MeOH, El47 | Output carriers: C12, ThHt'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -16007,7 +16117,9 @@
     process_name: SOEC co-electrolyser
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: High-temperature co-electrolysis of CO₂
+      and H₂O to syngas (SOEC). Near-term. | Input carriers: El47, CO2Sys, ThPhII
+      | Output carriers: H2Process, CO, O2'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -16115,7 +16227,9 @@
     process_name: SOEC co-electrolyser
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: High-temperature co-electrolysis of CO₂
+      and H₂O to syngas (SOEC). Long-term. | Input carriers: El47, CO2Sys, ThPhII
+      | Output carriers: H2Process, CO, O2'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -16223,7 +16337,9 @@
     process_name: Methane pyrolysis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane pyrolysis (turquoise hydrogen).
+      Thermal decomposition of CH₄ into H₂ and solid carbon. Near-term. | Input carriers:
+      CH4, El47 | Output carriers: H2, CBio'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -16322,7 +16438,9 @@
     process_name: Methane pyrolysis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Methane pyrolysis (turquoise hydrogen).
+      Thermal decomposition of CH₄ into H₂ and solid carbon. Long-term. | Input carriers:
+      CH4, El47 | Output carriers: H2, CBio'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -16421,7 +16539,9 @@
     process_name: Amine absorber
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: CO2 post combustion capture via Amine
+      washing. Temperature swing process. 2030 reference based on an approx. 150 ktCO2/a
+      plant size.  | Input carriers: CO2Fluegas, El13, ThHt | Output carriers: CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -16607,7 +16727,8 @@
     process_name: Pyrolysis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Biochar production via pyrolysis of wet
+      biomass. | Input carriers: BioWet | Output carriers: CBio'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
@@ -16783,7 +16904,8 @@
     process_name: DAC (sorbent-based)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Direct air capture using adsorption technology
+      (2030 and 2040). | Input carriers: ThHt, El47 | Output carriers: CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -16949,7 +17071,8 @@
     process_name: DAC (sorbent-based)
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Direct air capture using adsorption technology
+      (2050). | Input carriers: ThHt, El47 | Output carriers: CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -17117,7 +17240,10 @@
     process_name: Pressure swing adsorption
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: CO2 post combustion capture via Hot-Potassium
+      Carbonate cycling. Pressure swing process. 2030 reference based on an approx.
+      150 ktCO2/a plant size.  | Input carriers: CO2Fluegas, El13, ThHt | Output carriers:
+      CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2030'
@@ -17305,7 +17431,10 @@
     process_name: Pressure swing adsorption
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: CO2 post combustion capture via Hot-Potassium
+      Carbonate cycling. Pressure swing process. 2030 reference based on an approx.
+      150 ktCO2/a plant size.  | Input carriers: CO2Fluegas, El13, ThHt | Output carriers:
+      CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2040'
@@ -17493,7 +17622,10 @@
     process_name: Pressure swing adsorption
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: CO2 post combustion capture via Hot-Potassium
+      Carbonate cycling. Pressure swing process. 2050 reference based on an approx.
+      150 ktCO2/a plant size.  | Input carriers: CO2, El13, ThHt | Output carriers:
+      CO2Sys'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2050'
@@ -17678,7 +17810,8 @@
     process_name: Pyrolysis reactor
     process_type: null
     process_category: null
-    process_assumption: null
+    process_notes: 'Technology description: Biochar production via pyrolysis of wood.
+      | Input carriers: Wood | Output carriers: CBio, ThPhII'
   scope:
     geographic_scope_description: ECA
     temporal_scope_description: '2025'
