@@ -6,7 +6,9 @@ This folder is Step 4 of the MOTEL workflow. It provides a lightweight, notebook
 
 ```text
 4_data_explore/
-|-- 4_data_exploration.ipynb   starter notebook for querying and inspecting MOTEL data
+|-- 4_data_exploration.ipynb   main demo notebook focused on usage and operations
+|-- config.py                  notebook paths and default demo parameters
+|-- exploration_utils.py       reusable loading, lookup, flattening, and query helpers
 `-- README.md                  folder guide
 ```
 
@@ -21,6 +23,8 @@ This folder is Step 4 of the MOTEL workflow. It provides a lightweight, notebook
   - `../motel-db/linked_entity_human/linked_entity.yaml`
 - Process notebook:
   - `4_data_exploration.ipynb` is the main exploration notebook for filtering, searching, and understanding the published MOTEL records
+  - `config.py` keeps paths and demo defaults separate from the notebook
+  - `exploration_utils.py` keeps reusable data preparation and query logic separate from the notebook
 - Typical outputs:
   - in-notebook tables and summaries
   - exploratory plots or pivot tables

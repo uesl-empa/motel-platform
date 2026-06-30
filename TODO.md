@@ -17,8 +17,9 @@ This file tracks remaining work before the repository is announced publicly.
 - Add a short contributor guide if external submissions are expected.
 
 ## Future Work
-
-- Link harmonised records to the MOTEL ontology/graph workflow.
-- Connect the curated database to the MOTEL web application.
 - add mathmatical equations in the secondary datasets or a property of attributes [this was mentioned in the MOTEL proposal but do not address in the project duration]
-- more guidelines needed to be added to classify technology and process, now the process.csv only has name but no other info.
+
+
+## TODO
+- [] more guidelines needed to be added to classify technology and process, now the process.csv only has name but no other info.
+- [] check the whole workflow again, after assessment_date was change to reference_year (link to ontology!?)
