@@ -37,11 +37,13 @@ UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All field
     balancing: # [Dictionary] Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
         inputs: # [List of Dictionaries] Array listing incoming resource vectors and their relative share proportions.
             carrier_name: "[Required; String] Literal name of the unmapped input commodity flow."
+            carrier_notes: "[String] Additional free-text context for the carrier, which may include description, carrier type, purity, phase, usage assumptions, or other source-specific notes."
             share: "[Required; Number] Proportional numeric value tracking this specific carrier's fraction of total cumulative feedstocks."
             unit: "[Required; String] Measurement reference indicator bounding how the feedstock share value is quantified. Suggested: ['energy', 'mass', 'volume', 'fraction', 'percentage']"
         main_input: "[String] The designated baseline input carrier used as the denominator anchor for sizing efficiency conversion equations."
         outputs: # [List of Dictionaries] Array listing outgoing resource vectors and their relative share proportions.
             carrier_name: "[Required; String] Literal name of the unmapped output commodity flow."
+            carrier_notes: "[String] Additional free-text context for the carrier, which may include description, carrier type, purity, phase, usage assumptions, or other source-specific notes."
             share: "[Required; Number] Proportional numeric value tracking this specific carrier's fraction of total output yield."
             unit: "[Required; String] Measurement reference indicator bounding how the product yield share value is quantified. Suggested: ['energy', 'mass', 'volume', 'fraction', 'percentage']"
         main_output: "[String] The primary target product carrier used by energy modeling solvers to define overall technology capacity limits."
