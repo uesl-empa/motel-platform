@@ -45,6 +45,14 @@ ATTRIBUTE_NAMES = [
     "opex_per_stor_capacity_yr",
 ]
 
+SCOPE_METADATA_NAMES = [
+    "cost_base",
+    "tech_year",
+    "min_installation_size",
+    "tech_boundary",
+    "tech_maturity",
+]
+
 STANDARD_SHEETS = ["ConvTech", "StorTech"]
 EMBEDDEDCARBON_SCENARIOS = {
     "ssp2_ndc": ["ssp2_ndc_2025", "ssp2_ndc_2030", "ssp2_ndc_2040", "ssp2_ndc_2050"],
@@ -136,6 +144,14 @@ def first_present(mapping, *keys):
             continue
         return text
     return None
+
+
+def is_placeholder_text(value) -> bool:
+    """Treat common workbook placeholder tokens as missing text."""
+    if value is None:
+        return True
+    text = str(value).strip().lower()
+    return text in {"", "n/a", "na", "nan", "-", "—"}
 
 
 def normalize_source_type(raw_type):
@@ -256,6 +272,18 @@ def load_attribute_data(
     return df_attr[["Column Header", "Unit / Format", "Allowed Values", "Description", "Note"]].copy()
 
 
+def load_scope_metadata_data(
+    workbook: dict[str, pd.DataFrame],
+    variable_names: list[str] | None = None,
+) -> pd.DataFrame:
+    """Extract metadata rows for scope-related raw fields."""
+    variable_names = variable_names or SCOPE_METADATA_NAMES
+    df_meta = workbook["Metadata"].copy()
+    df_meta = df_meta[df_meta["Variable Name"].isin(variable_names)].reset_index(drop=True)
+    df_meta = df_meta.set_index("Variable Name")
+    return df_meta[["Column Header", "Unit / Format", "Allowed Values", "Description", "Note"]].copy()
+
+
 def load_nomenclature_data(workbook: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """Extract the Nomenclature sheet used to expand controlled-vocabulary notes."""
     df_nom = workbook["Nomenclature"].copy()
@@ -273,6 +301,7 @@ def build_ingestion_context(workbook: dict[str, pd.DataFrame]) -> dict[str, pd.D
     return {
         "df_ref": load_reference_data(workbook),
         "df_attr": load_attribute_data(workbook),
+        "df_scope_meta": load_scope_metadata_data(workbook),
         "df_nom": load_nomenclature_data(workbook),
         "df_carrier": load_carrier_data(workbook),
     }
@@ -385,14 +414,17 @@ def format_nomenclature_entry(row: pd.Series) -> str | None:
     """Format one nomenclature row into compact explanatory text."""
     parts = []
     definition = first_present(row, "Definition", "Description")
+    entry_type = first_present(row, "Type")
     allowed = first_present(row, "Allowed Values / Range")
     reference = first_present(row, "Reference / Note", "Note")
 
-    if definition:
+    if definition and not is_placeholder_text(definition):
         parts.append(definition)
-    if allowed:
+    if entry_type and not is_placeholder_text(entry_type):
+        parts.append(f"Type: {entry_type}")
+    if allowed and not is_placeholder_text(allowed):
         parts.append(f"Allowed Values / Range: {allowed}")
-    if reference:
+    if reference and not is_placeholder_text(reference):
         parts.append(f"Note: {reference}")
 
     if not parts:
@@ -449,7 +481,41 @@ def get_attr_note(row: pd.Series) -> str:
     return ", ".join(parts)
 
 
-def append_note(parts: list[str], label: str, value, section_name: str, nomenclature_lookup: dict[str, dict[str, str]]) -> None:
+def build_scope_metadata_notes(df_scope_meta: pd.DataFrame | None, variable_names: list[str]) -> str | None:
+    """Build metadata-derived note text for scope-related fields."""
+    if df_scope_meta is None or df_scope_meta.empty:
+        return None
+
+    label_lookup = {
+        "cost_base": "geographic_scope_description",
+        "tech_year": "temporal_scope_description",
+        "min_installation_size": "capacity_scope_description",
+        "tech_boundary": "system_boundary_description",
+        "tech_maturity": "scope_notes",
+    }
+    parts = []
+    for variable_name in variable_names:
+        if variable_name not in df_scope_meta.index:
+            continue
+        note = get_attr_note(df_scope_meta.loc[variable_name])
+        if note:
+            property_name = label_lookup.get(variable_name, variable_name)
+            metadata_label = df_scope_meta.loc[variable_name].get("Column Header") or variable_name
+            parts.append(f"{property_name} = {metadata_label} metadata: {note}")
+
+    if not parts:
+        return None
+    return " | ".join(parts)
+
+
+def append_note(
+    parts: list[str],
+    property_name: str,
+    label: str,
+    value,
+    section_name: str,
+    nomenclature_lookup: dict[str, dict[str, str]],
+) -> None:
     """Append a field-specific nomenclature explanation when available."""
     cleaned = clean(value)
     if cleaned is None:
@@ -458,9 +524,35 @@ def append_note(parts: list[str], label: str, value, section_name: str, nomencla
     section_lookup = nomenclature_lookup.get(section_name.lower(), {})
     explanation = section_lookup.get(str(cleaned).strip().lower())
     if explanation:
-        parts.append(f"{label} {cleaned}: {explanation}")
+        parts.append(f"{property_name} = {label} {cleaned}: {explanation}")
     else:
-        parts.append(f"{label}: {cleaned}")
+        parts.append(f"{property_name} = {label}: {cleaned}")
+
+
+def append_location_note(parts: list[str], property_name: str, value, nomenclature_lookup: dict[str, dict[str, str]]) -> None:
+    """Append location context using a more natural phrasing."""
+    cleaned = clean(value)
+    if cleaned is None:
+        return
+
+    section_lookup = nomenclature_lookup.get("location", {})
+    explanation = section_lookup.get(str(cleaned).strip().lower())
+    if not explanation:
+        parts.append(f"{property_name} = {cleaned}")
+        return
+
+    segments = [segment.strip() for segment in explanation.split(" | ") if segment.strip()]
+    if not segments:
+        parts.append(f"{property_name} = {cleaned}")
+        return
+
+    note_text = f"{cleaned}: {segments[0]}"
+    for segment in segments[1:]:
+        if segment.startswith("Note: "):
+            note_text += f"; based on {segment[len('Note: '):]}"
+        else:
+            note_text += f" | {segment}"
+    parts.append(f"{property_name} = {note_text}")
 
 
 def append_raw_explanation(parts: list[str], value, section_name: str, nomenclature_lookup: dict[str, dict[str, str]]) -> None:
@@ -477,8 +569,24 @@ def append_raw_explanation(parts: list[str], value, section_name: str, nomenclat
         parts.append(str(cleaned))
 
 
+def format_capacity_scope_description(value) -> str | None:
+    """Attach the default kW unit to numeric minimum-installation scope values."""
+    cleaned = clean(value)
+    if cleaned is None:
+        return None
+
+    if isinstance(cleaned, float) and cleaned.is_integer():
+        cleaned = int(cleaned)
+
+    text = str(cleaned).strip()
+    if any(char.isalpha() for char in text):
+        return text
+    return f"{text} kW"
+
+
 def build_object_notes(
     row: pd.Series,
+    df_scope_meta: pd.DataFrame | None = None,
     nomenclature_lookup: dict[str, dict[str, str]] | None = None,
 ) -> tuple[str | None, str | None]:
     """Build field-specific technology and scope notes from nomenclature lookups."""
@@ -488,20 +596,21 @@ def build_object_notes(
 
     append_note(
         technology_parts,
+        "technology_category",
         "Technology class",
         row.get("technology_class"),
         "technology_class",
         nomenclature_lookup,
     )
-    append_note(
+    append_location_note(
         scope_parts,
-        "Location code",
+        "geographic_scope_description",
         row.get("cost_base"),
-        "location",
         nomenclature_lookup,
     )
     append_note(
         scope_parts,
+        "system_boundary_description",
         "System boundary",
         row.get("tech_boundary"),
         "tech_boundary",
@@ -513,6 +622,13 @@ def build_object_notes(
     #     "tech_maturity",
     #     nomenclature_lookup,
     # )
+
+    scope_metadata_notes = build_scope_metadata_notes(
+        df_scope_meta,
+        ["cost_base", "tech_year", "min_installation_size", "tech_boundary", "tech_maturity"],
+    )
+    if scope_metadata_notes:
+        scope_parts.append(scope_metadata_notes)
 
     technology_notes = " | ".join(technology_parts) if technology_parts else None
     scope_notes = " | ".join(scope_parts) if scope_parts else None
@@ -706,12 +822,14 @@ def refuel2unmapped(
     row: pd.Series,
     df_ref: pd.DataFrame,
     df_attr: pd.DataFrame,
+    df_scope_meta: pd.DataFrame | None = None,
     nomenclature_lookup: dict[str, dict[str, str]] | None = None,
     carrier_lookup: dict[str, str] | None = None,
 ) -> dict:
     """Convert one ConvTech or StorTech row into an unmapped entity."""
     technology_notes, scope_notes = build_object_notes(
         row,
+        df_scope_meta=df_scope_meta,
         nomenclature_lookup=nomenclature_lookup,
     )
     record = {
@@ -733,7 +851,7 @@ def refuel2unmapped(
                 if not is_nan(row.get("tech_year"))
                 else None
             ),
-            "capacity_scope_description": clean(row.get("min_installation_size")),
+            "capacity_scope_description": format_capacity_scope_description(row.get("min_installation_size")),
             "system_boundary_description": clean(row.get("tech_boundary")),
             "scope_notes": scope_notes,
         },
@@ -829,6 +947,7 @@ def process_standard_sheet(
     df_attr: pd.DataFrame,
     df_nom: pd.DataFrame,
     df_carrier: pd.DataFrame,
+    df_scope_meta: pd.DataFrame | None = None,
     sample_limit: int | None = None,
 ) -> list[dict]:
     """Convert one standard technology sheet into unmapped entities."""
@@ -841,6 +960,7 @@ def process_standard_sheet(
             df_sheet.loc[index],
             df_ref,
             df_attr,
+            df_scope_meta,
             nomenclature_lookup=nomenclature_lookup,
             carrier_lookup=carrier_lookup,
         )
@@ -890,6 +1010,7 @@ def run_refuel_pipeline(
     df_attr: pd.DataFrame,
     df_nom: pd.DataFrame,
     df_carrier: pd.DataFrame,
+    df_scope_meta: pd.DataFrame | None = None,
     sample_limit: int | None = None,
 ) -> dict[str, list[dict]]:
     """Run all three sheet conversions and return entities grouped by sheet."""
@@ -902,6 +1023,7 @@ def run_refuel_pipeline(
             df_attr,
             df_nom,
             df_carrier,
+            df_scope_meta,
             sample_limit=sample_limit,
         )
     sheet_entities["EmbeddedCarbon"] = process_embeddedcarbon_sheet(

@@ -3,8 +3,8 @@
     technology_description: Electric battery storage at home, 2025
     technology_type: Storage
     technology_category: Battery storage
-    technology_notes: 'Technology class Battery storage: Electrochemical energy storage
-      (e.g., Li-ion batteries)'
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
     process_name: Li-ion battery (residential)
     process_type: null
     process_category: null
@@ -14,10 +14,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -156,8 +174,8 @@
     technology_description: Electric battery storage at home, 2030
     technology_type: Storage
     technology_category: Battery storage
-    technology_notes: 'Technology class Battery storage: Electrochemical energy storage
-      (e.g., Li-ion batteries)'
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
     process_name: Li-ion battery (residential)
     process_type: null
     process_category: null
@@ -167,10 +185,28 @@
     temporal_scope_description: '2030'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -307,8 +343,8 @@
     technology_description: Electric battery storage at home, 2040
     technology_type: Storage
     technology_category: Battery storage
-    technology_notes: 'Technology class Battery storage: Electrochemical energy storage
-      (e.g., Li-ion batteries)'
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
     process_name: Li-ion battery (residential)
     process_type: null
     process_category: null
@@ -318,10 +354,28 @@
     temporal_scope_description: '2040'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -458,8 +512,8 @@
     technology_description: Electric battery storage at home, 2050
     technology_type: Storage
     technology_category: Battery storage
-    technology_notes: 'Technology class Battery storage: Electrochemical energy storage
-      (e.g., Li-ion batteries)'
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
     process_name: Li-ion battery (residential)
     process_type: null
     process_category: null
@@ -469,10 +523,28 @@
     temporal_scope_description: '2050'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -609,8 +681,8 @@
     technology_description: Electric battery storage at the grid, 2020
     technology_type: Storage
     technology_category: Battery storage
-    technology_notes: 'Technology class Battery storage: Electrochemical energy storage
-      (e.g., Li-ion batteries)'
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
     process_name: Li-ion battery (grid-scale)
     process_type: null
     process_category: null
@@ -621,10 +693,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -764,8 +854,8 @@
     technology_description: Electric battery storage at the grid, 2030
     technology_type: Storage
     technology_category: Battery storage
-    technology_notes: 'Technology class Battery storage: Electrochemical energy storage
-      (e.g., Li-ion batteries)'
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
     process_name: Li-ion battery (grid-scale)
     process_type: null
     process_category: null
@@ -776,10 +866,28 @@
     temporal_scope_description: '2030'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -919,8 +1027,8 @@
     technology_description: Electric battery storage at the grid, 2040
     technology_type: Storage
     technology_category: Battery storage
-    technology_notes: 'Technology class Battery storage: Electrochemical energy storage
-      (e.g., Li-ion batteries)'
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
     process_name: Li-ion battery (grid-scale)
     process_type: null
     process_category: null
@@ -931,10 +1039,28 @@
     temporal_scope_description: '2040'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -1074,8 +1200,8 @@
     technology_description: Electric battery storage at the grid, 2050
     technology_type: Storage
     technology_category: Battery storage
-    technology_notes: 'Technology class Battery storage: Electrochemical energy storage
-      (e.g., Li-ion batteries)'
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
     process_name: Li-ion battery (grid-scale)
     process_type: null
     process_category: null
@@ -1086,10 +1212,28 @@
     temporal_scope_description: '2050'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -1229,8 +1373,8 @@
     technology_description: Pumped hydro reservoir, without pump and generator
     technology_type: Storage
     technology_category: Reservoir storage
-    technology_notes: 'Technology class Reservoir storage: Large-scale gravitational
-      water storage (hydro reservoirs).'
+    technology_notes: 'technology_category = Technology class Reservoir storage: Large-scale
+      gravitational water storage (hydro reservoirs).'
     process_name: Pumped hydro reservoir
     process_type: null
     process_category: null
@@ -1241,10 +1385,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -1379,8 +1541,8 @@
     technology_description: Pumped hydro reservoir, without pump and generator
     technology_type: Storage
     technology_category: Reservoir storage
-    technology_notes: 'Technology class Reservoir storage: Large-scale gravitational
-      water storage (hydro reservoirs).'
+    technology_notes: 'technology_category = Technology class Reservoir storage: Large-scale
+      gravitational water storage (hydro reservoirs).'
     process_name: Hydro reservoir
     process_type: null
     process_category: null
@@ -1391,10 +1553,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -1529,8 +1709,8 @@
     technology_description: null
     technology_type: Storage
     technology_category: Thermal storage
-    technology_notes: 'Technology class Thermal storage: Sensible or latent heat storage
-      (hot water tanks, seasonal storage)'
+    technology_notes: 'technology_category = Technology class Thermal storage: Sensible
+      or latent heat storage (hot water tanks, seasonal storage)'
     process_name: High-temperature heat storage
     process_type: null
     process_category: null
@@ -1540,10 +1720,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -1669,8 +1867,8 @@
     technology_description: Hot water storage tank at home
     technology_type: Storage
     technology_category: Thermal storage
-    technology_notes: 'Technology class Thermal storage: Sensible or latent heat storage
-      (hot water tanks, seasonal storage)'
+    technology_notes: 'technology_category = Technology class Thermal storage: Sensible
+      or latent heat storage (hot water tanks, seasonal storage)'
     process_name: Hot water tank (residential)
     process_type: null
     process_category: null
@@ -1680,10 +1878,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -1817,8 +2033,8 @@
     technology_description: Thermal storage for district heating, seasonal storage
     technology_type: Storage
     technology_category: Thermal storage
-    technology_notes: 'Technology class Thermal storage: Sensible or latent heat storage
-      (hot water tanks, seasonal storage)'
+    technology_notes: 'technology_category = Technology class Thermal storage: Sensible
+      or latent heat storage (hot water tanks, seasonal storage)'
     process_name: Seasonal thermal storage
     process_type: null
     process_category: null
@@ -1829,10 +2045,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -1966,8 +2200,8 @@
     technology_description: null
     technology_type: Storage
     technology_category: Compressed gas storage
-    technology_notes: 'Technology class Compressed gas storage: Pressurised tank storage
-      for gases (H₂, CH₄, CO₂, CO)'
+    technology_notes: 'technology_category = Technology class Compressed gas storage:
+      Pressurised tank storage for gases (H₂, CH₄, CO₂, CO)'
     process_name: Compressed H₂ tank
     process_type: null
     process_category: null
@@ -1977,10 +2211,28 @@
     temporal_scope_description: '2030'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -2114,8 +2366,8 @@
     technology_description: Storaging methane via compressing in the pipelines
     technology_type: Storage
     technology_category: Pipeline storage
-    technology_notes: 'Technology class Pipeline storage: Gas storage via compression
-      in existing pipeline infrastructure (linepack)'
+    technology_notes: 'technology_category = Technology class Pipeline storage: Gas
+      storage via compression in existing pipeline infrastructure (linepack)'
     process_name: Pipeline linepack
     process_type: null
     process_category: null
@@ -2126,10 +2378,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -2281,8 +2551,8 @@
     technology_description: Tank storage for methane (compressed)
     technology_type: Storage
     technology_category: Compressed gas storage
-    technology_notes: 'Technology class Compressed gas storage: Pressurised tank storage
-      for gases (H₂, CH₄, CO₂, CO)'
+    technology_notes: 'technology_category = Technology class Compressed gas storage:
+      Pressurised tank storage for gases (H₂, CH₄, CO₂, CO)'
     process_name: Compressed CH₄ tank
     process_type: null
     process_category: null
@@ -2292,10 +2562,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -2447,8 +2735,8 @@
     technology_description: Underground methane storage
     technology_type: Storage
     technology_category: Underground storage
-    technology_notes: 'Technology class Underground storage: Subsurface geological
-      storage for gases (salt caverns, depleted reservoirs)'
+    technology_notes: 'technology_category = Technology class Underground storage:
+      Subsurface geological storage for gases (salt caverns, depleted reservoirs)'
     process_name: Underground gas storage
     process_type: null
     process_category: null
@@ -2458,10 +2746,28 @@
     temporal_scope_description: '2030'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -2613,8 +2919,8 @@
     technology_description: null
     technology_type: Storage
     technology_category: Compressed gas storage
-    technology_notes: 'Technology class Compressed gas storage: Pressurised tank storage
-      for gases (H₂, CH₄, CO₂, CO)'
+    technology_notes: 'technology_category = Technology class Compressed gas storage:
+      Pressurised tank storage for gases (H₂, CH₄, CO₂, CO)'
     process_name: Compressed CO₂ tank
     process_type: null
     process_category: null
@@ -2624,10 +2930,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -2753,8 +3077,8 @@
     technology_description: null
     technology_type: Storage
     technology_category: Compressed gas storage
-    technology_notes: 'Technology class Compressed gas storage: Pressurised tank storage
-      for gases (H₂, CH₄, CO₂, CO)'
+    technology_notes: 'technology_category = Technology class Compressed gas storage:
+      Pressurised tank storage for gases (H₂, CH₄, CO₂, CO)'
     process_name: Compressed CO tank
     process_type: null
     process_category: null
@@ -2764,10 +3088,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -2893,8 +3235,8 @@
     technology_description: null
     technology_type: Storage
     technology_category: Liquid storage
-    technology_notes: 'Technology class Liquid storage: Tank storage for liquid fuels
-      and chemicals (C8, C12, NH₃)'
+    technology_notes: 'technology_category = Technology class Liquid storage: Tank
+      storage for liquid fuels and chemicals (C8, C12, NH₃)'
     process_name: Liquid fuel tank (diesel/kerosene)
     process_type: null
     process_category: null
@@ -2904,10 +3246,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -3033,8 +3393,8 @@
     technology_description: null
     technology_type: Storage
     technology_category: Liquid storage
-    technology_notes: 'Technology class Liquid storage: Tank storage for liquid fuels
-      and chemicals (C8, C12, NH₃)'
+    technology_notes: 'technology_category = Technology class Liquid storage: Tank
+      storage for liquid fuels and chemicals (C8, C12, NH₃)'
     process_name: Liquid fuel tank (gasoline)
     process_type: null
     process_category: null
@@ -3044,10 +3404,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
@@ -3173,8 +3551,8 @@
     technology_description: Tank storage for ammonia
     technology_type: Storage
     technology_category: Liquid storage
-    technology_notes: 'Technology class Liquid storage: Tank storage for liquid fuels
-      and chemicals (C8, C12, NH₃)'
+    technology_notes: 'technology_category = Technology class Liquid storage: Tank
+      storage for liquid fuels and chemicals (C8, C12, NH₃)'
     process_name: Ammonia storage tank
     process_type: null
     process_category: null
@@ -3184,10 +3562,28 @@
     temporal_scope_description: '2025'
     capacity_scope_description: null
     system_boundary_description: Plant ready to operate
-    scope_notes: 'Location code ECA: Europe and Central Asia | Note: World Bank regional
-      classification | System boundary Plant ready to operate: Default boundary. Equipment,
-      installation, and essential auxiliary systems required for operation. Excludes
-      external grid reinforcement and land acquisition.'
+    scope_notes: 'geographic_scope_description = ECA: Europe and Central Asia; based
+      on World Bank regional classification | system_boundary_description = System
+      boundary Plant ready to operate: Default boundary. Equipment, installation,
+      and essential auxiliary systems required for operation. Excludes external grid
+      reinforcement and land acquisition. | geographic_scope_description = Cost Base
+      metadata: Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values:
+      ECA (default), Description: Geographic region on which cost parameters are based.
+      Default is ECA (Europe). Supports future multi-region extension., Note: Designed
+      for multi-region extension | temporal_scope_description = Technology Year metadata:
+      Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025,
+      2030, 2040, 2050}, Description: Projection year for which the techno-economic
+      parameters are reported., Note: Time-invariant techs use 2025 | capacity_scope_description
+      = Minimum Installation Size metadata: Column Header: Minimum Installation Size,
+      Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed
+      unit capacity for the technology., Note: 0 if no minimum constraint | system_boundary_description
+      = Technology Boundary metadata: Column Header: Technology Boundary, Unit / Format:
+      —, Allowed Values: See Nomenclature 4.3, Description: System boundary for CAPEX.
+      ''Plant ready to operate'' (default), ''Complete installation'', or ''Plant
+      extension ready to operate''. | scope_notes = Technology Maturity metadata:
+      Column Header: Technology Maturity, Unit / Format: —, Allowed Values: {Prototype,
+      Emerging, Mature}, Description: Aggregated maturity classification derived from
+      TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   metadata:
     related_project: reFuel.ch
     tags:
