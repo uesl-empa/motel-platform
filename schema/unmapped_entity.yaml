@@ -44,9 +44,9 @@ properties:
         type: string
         description: The sector or technical thematic domain the flow processes belong to.
         examples: [power, low_temp_heat, heavy_industry]
-      process_assumption:
+      process_notes:
         type: string
-        description: Documented technical assumptions regarding thermodynamic efficiencies, input/output structures, or conversion limits.
+        description: Free-text process context, which may include assumptions, thermodynamic constraints, input/output structures, conversion limits, definitions, or other source-specific notes.
 
   scope:
     type: object
