@@ -487,11 +487,10 @@ def build_scope_metadata_notes(df_scope_meta: pd.DataFrame | None, variable_name
         return None
 
     label_lookup = {
-        "cost_base": "geographic_scope_description",
-        "tech_year": "temporal_scope_description",
-        "min_installation_size": "capacity_scope_description",
-        "tech_boundary": "system_boundary_description",
-        "tech_maturity": "scope_notes",
+        "cost_base": "geographic_scope",
+        "tech_year": "temporal_scope",
+        "min_installation_size": "capacity_scope",
+        "tech_boundary": "system_boundary",
     }
     parts = []
     for variable_name in variable_names:
@@ -501,58 +500,55 @@ def build_scope_metadata_notes(df_scope_meta: pd.DataFrame | None, variable_name
         if note:
             property_name = label_lookup.get(variable_name, variable_name)
             metadata_label = df_scope_meta.loc[variable_name].get("Column Header") or variable_name
-            parts.append(f"{property_name} = {metadata_label} metadata: {note}")
+            parts.append(f"{property_name} metadata: {metadata_label}; {note}")
 
     if not parts:
         return None
     return " | ".join(parts)
 
 
-def append_note(
-    parts: list[str],
-    property_name: str,
-    label: str,
-    value,
-    section_name: str,
-    nomenclature_lookup: dict[str, dict[str, str]],
-) -> None:
-    """Append a field-specific nomenclature explanation when available."""
+def get_note_segments(explanation: str) -> list[str]:
+    """Split nomenclature explanation text into compact segments."""
+    return [segment.strip() for segment in str(explanation).split(" | ") if segment.strip()]
+
+
+def get_location_description(value, nomenclature_lookup: dict[str, dict[str, str]]) -> str | None:
+    """Return a semantic location description without repeating the raw token."""
     cleaned = clean(value)
     if cleaned is None:
-        return
-
-    section_lookup = nomenclature_lookup.get(section_name.lower(), {})
-    explanation = section_lookup.get(str(cleaned).strip().lower())
-    if explanation:
-        parts.append(f"{property_name} = {label} {cleaned}: {explanation}")
-    else:
-        parts.append(f"{property_name} = {label}: {cleaned}")
-
-
-def append_location_note(parts: list[str], property_name: str, value, nomenclature_lookup: dict[str, dict[str, str]]) -> None:
-    """Append location context using a more natural phrasing."""
-    cleaned = clean(value)
-    if cleaned is None:
-        return
+        return None
 
     section_lookup = nomenclature_lookup.get("location", {})
     explanation = section_lookup.get(str(cleaned).strip().lower())
     if not explanation:
-        parts.append(f"{property_name} = {cleaned}")
-        return
+        return None
 
-    segments = [segment.strip() for segment in explanation.split(" | ") if segment.strip()]
+    segments = get_note_segments(explanation)
     if not segments:
-        parts.append(f"{property_name} = {cleaned}")
-        return
+        return None
 
-    note_text = f"{cleaned}: {segments[0]}"
+    description = segments[0]
     for segment in segments[1:]:
         if segment.startswith("Note: "):
-            note_text += f"; based on {segment[len('Note: '):]}"
-        else:
-            note_text += f" | {segment}"
-    parts.append(f"{property_name} = {note_text}")
+            description += f"; based on {segment[len('Note: '):]}"
+    return description
+
+
+def get_boundary_description(value, section_name: str, nomenclature_lookup: dict[str, dict[str, str]]) -> str | None:
+    """Return a semantic boundary description without repeating the raw value."""
+    cleaned = clean(value)
+    if cleaned is None:
+        return None
+
+    section_lookup = nomenclature_lookup.get(section_name.lower(), {})
+    explanation = section_lookup.get(str(cleaned).strip().lower())
+    if not explanation:
+        return None
+
+    segments = get_note_segments(explanation)
+    if not segments:
+        return None
+    return segments[0]
 
 
 def append_raw_explanation(parts: list[str], value, section_name: str, nomenclature_lookup: dict[str, dict[str, str]]) -> None:
@@ -589,50 +585,27 @@ def build_object_notes(
     df_scope_meta: pd.DataFrame | None = None,
     nomenclature_lookup: dict[str, dict[str, str]] | None = None,
 ) -> tuple[str | None, str | None]:
-    """Build field-specific technology and scope notes from nomenclature lookups."""
+    """Build technology notes plus metadata-only scope notes."""
     nomenclature_lookup = nomenclature_lookup or {}
     technology_parts = []
-    scope_parts = []
-
-    append_note(
-        technology_parts,
-        "technology_category",
-        "Technology class",
-        row.get("technology_class"),
-        "technology_class",
-        nomenclature_lookup,
-    )
-    append_location_note(
-        scope_parts,
-        "geographic_scope_description",
-        row.get("cost_base"),
-        nomenclature_lookup,
-    )
-    append_note(
-        scope_parts,
-        "system_boundary_description",
-        "System boundary",
-        row.get("tech_boundary"),
-        "tech_boundary",
-        nomenclature_lookup,
-    )
-    # append_raw_explanation(
-    #     scope_parts,
-    #     row.get("tech_maturity"),
-    #     "tech_maturity",
-    #     nomenclature_lookup,
-    # )
+    cleaned_class = clean(row.get("technology_class"))
+    if cleaned_class is not None:
+        section_lookup = nomenclature_lookup.get("technology_class", {})
+        explanation = section_lookup.get(str(cleaned_class).strip().lower())
+        if explanation:
+            technology_parts.append(
+                f"technology_category = Technology class {cleaned_class}: {explanation}"
+            )
+        else:
+            technology_parts.append(f"technology_category = Technology class: {cleaned_class}")
 
     scope_metadata_notes = build_scope_metadata_notes(
         df_scope_meta,
-        ["cost_base", "tech_year", "min_installation_size", "tech_boundary", "tech_maturity"],
+        ["cost_base", "tech_year", "min_installation_size", "tech_boundary"],
     )
-    if scope_metadata_notes:
-        scope_parts.append(scope_metadata_notes)
 
     technology_notes = " | ".join(technology_parts) if technology_parts else None
-    scope_notes = " | ".join(scope_parts) if scope_parts else None
-    return technology_notes, scope_notes
+    return technology_notes, scope_metadata_notes
 
 
 def add_attributes_to_record(
@@ -832,6 +805,14 @@ def refuel2unmapped(
         df_scope_meta=df_scope_meta,
         nomenclature_lookup=nomenclature_lookup,
     )
+    geographic_scope = clean(row.get("cost_base"))
+    temporal_scope = (
+        str(row.get("tech_year"))
+        if not is_nan(row.get("tech_year"))
+        else None
+    )
+    capacity_scope = format_capacity_scope_description(row.get("min_installation_size"))
+    system_boundary = clean(row.get("tech_boundary"))
     record = {
         "technology_name": row.get("tech_id", ""),
         "technology": {
@@ -845,14 +826,21 @@ def refuel2unmapped(
             "process_notes": build_process_notes(row),
         },
         "scope": {
-            "geographic_scope_description": clean(row.get("cost_base")),
-            "temporal_scope_description": (
-                str(row.get("tech_year"))
-                if not is_nan(row.get("tech_year"))
-                else None
+            "geographic_scope": geographic_scope,
+            "geographic_scope_description": get_location_description(
+                geographic_scope,
+                nomenclature_lookup or {},
             ),
-            "capacity_scope_description": format_capacity_scope_description(row.get("min_installation_size")),
-            "system_boundary_description": clean(row.get("tech_boundary")),
+            "temporal_scope": temporal_scope,
+            "temporal_scope_description": None,
+            "capacity_scope": capacity_scope,
+            "capacity_scope_description": None,
+            "system_boundary": system_boundary,
+            "system_boundary_description": get_boundary_description(
+                system_boundary,
+                "tech_boundary",
+                nomenclature_lookup or {},
+            ),
             "scope_notes": scope_notes,
         },
         "metadata": {
@@ -894,9 +882,13 @@ def embeddedcarbon2unmapped(row: pd.Series) -> dict:
             "process_notes": None,
         },
         "scope": {
-            "geographic_scope_description": clean(row.get("lca_location")),
+            "geographic_scope": clean(row.get("lca_location")),
+            "geographic_scope_description": None,
+            "temporal_scope": None,
             "temporal_scope_description": None,
+            "capacity_scope": None,
             "capacity_scope_description": None,
+            "system_boundary": None,
             "system_boundary_description": None,
             "scope_notes": None,
         },

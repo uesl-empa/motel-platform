@@ -9,9 +9,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -87,9 +91,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -165,9 +173,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -259,9 +271,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -353,9 +369,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -431,9 +451,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -509,9 +533,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -595,9 +623,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -689,9 +721,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -775,9 +811,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -861,9 +901,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -947,9 +991,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1025,9 +1073,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1111,9 +1163,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1189,9 +1245,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1267,9 +1327,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1345,9 +1409,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1431,9 +1499,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1509,9 +1581,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1595,9 +1671,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1681,9 +1761,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1759,9 +1843,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1837,9 +1925,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1915,9 +2007,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -1993,9 +2089,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2079,9 +2179,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2157,9 +2261,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2235,9 +2343,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2321,9 +2433,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2399,9 +2515,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2485,9 +2605,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2571,9 +2695,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2649,9 +2777,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2727,9 +2859,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2805,9 +2941,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2883,9 +3023,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -2969,9 +3113,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3055,9 +3203,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3141,9 +3293,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3227,9 +3383,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3313,9 +3473,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3391,9 +3555,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3469,9 +3637,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3547,9 +3719,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3625,9 +3801,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3711,9 +3891,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3789,9 +3973,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3883,9 +4071,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -3961,9 +4153,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4039,9 +4235,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4125,9 +4325,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4211,9 +4415,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4289,9 +4497,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: RER
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4367,9 +4579,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4445,9 +4661,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4523,9 +4743,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4609,9 +4833,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4687,9 +4915,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4765,9 +4997,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4851,9 +5087,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: GLO
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -4929,9 +5169,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -5007,9 +5251,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -5085,9 +5333,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -5171,9 +5423,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
@@ -5249,9 +5505,13 @@
     process_category: null
     process_notes: null
   scope:
-    geographic_scope_description: CH
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
     temporal_scope_description: null
+    capacity_scope: null
     capacity_scope_description: null
+    system_boundary: null
     system_boundary_description: null
     scope_notes: null
   sources: []
