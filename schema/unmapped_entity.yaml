@@ -1,7 +1,7 @@
 ## updated date: 2026-06-21
 # NOTE:
 #  - remove unit and description for attribute, to make it more flexible for ingestion of raw data
-#    the unit could be included in the value field (e.g. 5 kW) or note
+#    the unit could be included in the value field (e.g. 5 kW) or notes
 
 $schema: "http://json-schema.org/draft-07/schema#"
 title: UnmappedEntity
@@ -30,9 +30,9 @@ properties:
         type: string
         description: Broad domain or energy paradigm grouping for the hardware.
         examples: [renewable, fossil_fuel, nuclear, synthetic]
-      technology_assumption:
+      technology_notes:
         type: string
-        description: Explicit technical constraints, design variations, or baseline modifications assumed by the raw source provider.
+        description: Free-text technology context, including explicit technical constraints, design variations, baseline modifications, or other source-specific notes.
       process_name:
         type: string
         description: The raw action-oriented label identifying the conversion or functional service taking place.
@@ -67,9 +67,9 @@ properties:
       scenario:
         type: string
         description: The specific modeled narrative or sensitivity track path from the source.
-      scope_assumption:
+      scope_notes:
         type: string
-        description: Contextual assumptions regarding spatial or temporal translatability.
+        description: Free-text scope context, including spatial or temporal assumptions, translatability caveats, or other source-specific notes.
 
   sources:
     type: array
@@ -140,7 +140,7 @@ properties:
           description: Chronological anchor strings tracking multi-period or profile datasets.
           items:
             type: string
-        notes:
+        attribute_notes:
           type: string
           description: Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW)
 
@@ -200,9 +200,9 @@ properties:
       main_output:
         type: string
         description: The primary target product carrier used by energy modeling solvers to define overall technology capacity limits.
-      balance_assumption:
+      balancing_notes:
         type: string
-        description: Engineering notes surrounding reference environmental or thermodynamic operating states.
+        description: Free-text balancing context, including engineering assumptions, reference environmental or thermodynamic operating states, or other source-specific notes.
 
   metadata:
     type: object
