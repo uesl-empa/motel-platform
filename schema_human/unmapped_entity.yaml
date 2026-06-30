@@ -8,7 +8,7 @@ UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All field
         process_name: "[String] The raw action-oriented label identifying the conversion or functional service taking place."
         process_type: "[String] The engineering classification of the operational flow dynamics. Suggested: ['conversion', 'storage', 'distribution', 'consumption', 'other']"
         process_category: "[String] The sector or technical thematic domain the flow processes belong to. Suggested: ['power', 'low_temp_heat', 'heavy_industry']"
-        process_assumption: "[String] Documented technical assumptions regarding thermodynamic efficiencies, input/output structures, or conversion limits."
+        process_notes: "[String] Free-text process context, which may include assumptions, thermodynamic constraints, input/output structures, conversion limits, definitions, or other source-specific notes."
     scope: # [Dictionary] Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
         geographic_scope_description: "[String] Literal unparsed geographic area or region where data was measured or intended."
         temporal_scope_description: "[String] The targeted implementation or performance year/period."

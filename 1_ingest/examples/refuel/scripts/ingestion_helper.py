@@ -632,7 +632,7 @@ def refuel2unmapped(
             "process_name": clean(row.get("unit_operation")),
             "process_type": None,
             "process_category": clean(row.get("tech_category")),
-            "process_assumption": None,
+            "process_notes": None,
         },
         "scope": {
             "geographic_scope_description": clean(row.get("cost_base")),
@@ -682,7 +682,7 @@ def embeddedcarbon2unmapped(row: pd.Series) -> dict:
             "process_name": clean(row.get("ref_product")),
             "process_type": None,
             "process_category": None,
-            "process_assumption": None,
+            "process_notes": None,
         },
         "scope": {
             "geographic_scope_description": clean(row.get("lca_location")),
