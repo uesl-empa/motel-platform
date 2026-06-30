@@ -25,9 +25,9 @@ UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All field
         confidence_level: "[String] Optional source-quality or trust rating carried from the source register when available."
         reference_year: "[Integer/String] Optional publication or release year for the source material, ideally as a four-digit year."
         assessment_method: "[String] Short note on how the source was assessed or how values were derived."
-        assessment_notes: "[String] Page numbers, table references, or granular location hints within the source."
+        source_locator: "[String] Page numbers, table references, section names, sheet names, or other location hints showing where the evidence can be found within the source."
         linked_attribute: "[List of Strings] Free-text list of attribute names this source supports; no foreign key enforcement at this stage."
-        additional_info: "[Dictionary] Optional project-specific source metadata not covered by the core fields. Use structured key-value pairs where possible, for example publication_year, authors, publisher_or_journal, pages_or_table, doi, license, source_id_original, dataset_version, scenario, or free-text notes."
+        source_notes: "[String] Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields."
     attributes: # [List of Dictionaries] Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile.
         attribute_name: "[Required; String] Target metric descriptive identifier."
         value: "[Required; Any] The raw data value — number, string, range, or array — exactly as found in the source. Could including unit (e.g. 5 kW)"

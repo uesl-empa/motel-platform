@@ -105,25 +105,17 @@ properties:
         assessment_method:
           type: string
           description: Short note on how the source was assessed or how values were derived.
-        assessment_notes:
+        source_locator:
           type: string
-          description: Page numbers, table references, or granular location hints within the source.
+          description: Page numbers, table references, section names, sheet names, or other location hints showing where the evidence can be found within the source.
         linked_attribute:
           type: array
           description: Free-text list of attribute names this source supports; no foreign key enforcement at this stage.
           items:
             type: string
-        additional_info:
-          type: object
-          description: Optional project-specific source metadata not covered by the core fields. Use structured key-value pairs where possible, for example publication_year, authors, publisher_or_journal, pages_or_table, doi, license, source_id_original, dataset_version, scenario, or free-text notes.
-          additionalProperties:
-            type:
-              - string
-              - number
-              - boolean
-              - array
-              - object
-              - "null"
+        source_notes:
+          type: string
+          description: Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields.
 
   attributes:
     type: array
