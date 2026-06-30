@@ -52,24 +52,36 @@ properties:
     type: object
     description: Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
     properties:
+      geographic_scope:
+        type: string
+        description: Literal raw geographic scope value from the source, such as a region code or label.
       geographic_scope_description:
         type: string
-        description: Literal unparsed geographic area or region where data was measured or intended.
+        description: Human-readable explanation of the geographic scope value, including semantic meaning or classification context.
+      temporal_scope:
+        type: string
+        description: Literal raw year, period, or time-horizon value from the source.
       temporal_scope_description:
         type: string
-        description: The targeted implementation or performance year/period.
+        description: Human-readable explanation of the temporal scope value when extra context is needed.
+      capacity_scope:
+        type: string
+        description: Literal raw capacity or size-threshold value from the source.
       capacity_scope_description:
         type: string
-        description: The scale boundary or equipment sizing threshold of the recorded asset.
+        description: Human-readable explanation of the capacity scope value when extra context is needed.
+      system_boundary:
+        type: string
+        description: Literal raw system-boundary label from the source.
       system_boundary_description:
         type: string
-        description: Operational infrastructure dependencies or network connection states.
+        description: Human-readable explanation of the system-boundary value, including inclusion rules and exclusions.
       scenario:
         type: string
         description: The specific modeled narrative or sensitivity track path from the source.
       scope_notes:
         type: string
-        description: Free-text scope context, including spatial or temporal assumptions, translatability caveats, or other source-specific notes.
+        description: Free-text metadata or provenance notes for scope fields, such as source column details or parsing caveats.
 
   sources:
     type: array
