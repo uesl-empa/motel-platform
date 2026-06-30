@@ -381,14 +381,36 @@ def add_sources_to_record(record: dict, source_text: str, df_ref: pd.DataFrame) 
 
 ## --- functions to get attributes
 
-def build_nomenclature_lookup(df_nom: pd.DataFrame) -> dict[str, str]:
-    """Create a case-insensitive lookup of nomenclature term -> definition."""
-    lookup = {}
+def format_nomenclature_entry(row: pd.Series) -> str | None:
+    """Format one nomenclature row into compact explanatory text."""
+    parts = []
+    definition = first_present(row, "Definition", "Description")
+    allowed = first_present(row, "Allowed Values / Range")
+    reference = first_present(row, "Reference / Note", "Note")
+
+    if definition:
+        parts.append(definition)
+    if allowed:
+        parts.append(f"Allowed Values / Range: {allowed}")
+    if reference:
+        parts.append(f"Note: {reference}")
+
+    if not parts:
+        return None
+    return " | ".join(parts)
+
+
+def build_nomenclature_lookup(df_nom: pd.DataFrame) -> dict[str, dict[str, str]]:
+    """Create a case-insensitive lookup of section -> term -> explanatory text."""
+    lookup: dict[str, dict[str, str]] = {}
     for _, row in df_nom.iterrows():
+        section = first_present(row, "Section")
         term = first_present(row, "Term / Abbreviation", "Term", "Abbreviation")
-        definition = first_present(row, "Definition", "Description")
-        if term and definition:
-            lookup[str(term).strip().lower()] = str(definition).strip()
+        formatted = format_nomenclature_entry(row)
+        if not section or not term or not formatted:
+            continue
+
+        lookup.setdefault(str(section).strip().lower(), {})[str(term).strip().lower()] = formatted
     return lookup
 
 
@@ -416,47 +438,91 @@ def build_carrier_lookup(df_carrier: pd.DataFrame) -> dict[str, str]:
     return lookup
 
 
-def build_nomenclature_context(text, nomenclature_lookup: dict[str, str]) -> str:
-    """Attach relevant nomenclature definitions referenced by the metadata note text."""
-    text = str(text or "")
-    if not text.strip() or not nomenclature_lookup:
-        return ""
-
-    matches = []
-    lowered = text.lower()
-    for term, definition in nomenclature_lookup.items():
-        if len(term) < 3:
-            continue
-        if term in lowered:
-            matches.append(f"{term}: {definition}")
-
-    if not matches and "nomenclature" not in lowered:
-        return ""
-
-    if not matches:
-        return " | CV context: source note refers to the Nomenclature sheet."
-
-    return " | CV context: " + " ; ".join(dict.fromkeys(matches))
-
-
-def get_attr_note(row: pd.Series, nomenclature_lookup: dict[str, str] | None = None) -> str:
-    """Extract a structured attribute note and expand any nomenclature references."""
+def get_attr_note(row: pd.Series) -> str:
+    """Extract a structured attribute note from metadata without generic CV expansion."""
     parts = []
     for key in ["Column Header", "Unit / Format", "Allowed Values", "Description", "Note"]:
         value = clean(row.get(key))
         if value is not None:
             parts.append(f"{key}: {value}")
 
-    note = ", ".join(parts)
-    note += build_nomenclature_context(note, nomenclature_lookup or {})
-    return note
+    return ", ".join(parts)
+
+
+def append_note(parts: list[str], label: str, value, section_name: str, nomenclature_lookup: dict[str, dict[str, str]]) -> None:
+    """Append a field-specific nomenclature explanation when available."""
+    cleaned = clean(value)
+    if cleaned is None:
+        return
+
+    section_lookup = nomenclature_lookup.get(section_name.lower(), {})
+    explanation = section_lookup.get(str(cleaned).strip().lower())
+    if explanation:
+        parts.append(f"{label} {cleaned}: {explanation}")
+    else:
+        parts.append(f"{label}: {cleaned}")
+
+
+def append_raw_explanation(parts: list[str], value, section_name: str, nomenclature_lookup: dict[str, dict[str, str]]) -> None:
+    """Append only the nomenclature explanation for a value, without repeating a label."""
+    cleaned = clean(value)
+    if cleaned is None:
+        return
+
+    section_lookup = nomenclature_lookup.get(section_name.lower(), {})
+    explanation = section_lookup.get(str(cleaned).strip().lower())
+    if explanation:
+        parts.append(explanation)
+    else:
+        parts.append(str(cleaned))
+
+
+def build_object_notes(
+    row: pd.Series,
+    nomenclature_lookup: dict[str, dict[str, str]] | None = None,
+) -> tuple[str | None, str | None]:
+    """Build field-specific technology and scope notes from nomenclature lookups."""
+    nomenclature_lookup = nomenclature_lookup or {}
+    technology_parts = []
+    scope_parts = []
+
+    append_note(
+        technology_parts,
+        "Technology class",
+        row.get("technology_class"),
+        "technology_class",
+        nomenclature_lookup,
+    )
+    append_note(
+        scope_parts,
+        "Location code",
+        row.get("cost_base"),
+        "location",
+        nomenclature_lookup,
+    )
+    append_note(
+        scope_parts,
+        "System boundary",
+        row.get("tech_boundary"),
+        "tech_boundary",
+        nomenclature_lookup,
+    )
+    # append_raw_explanation(
+    #     scope_parts,
+    #     row.get("tech_maturity"),
+    #     "tech_maturity",
+    #     nomenclature_lookup,
+    # )
+
+    technology_notes = " | ".join(technology_parts) if technology_parts else None
+    scope_notes = " | ".join(scope_parts) if scope_parts else None
+    return technology_notes, scope_notes
 
 
 def add_attributes_to_record(
     ue: dict,
     row: pd.Series,
     df_attr: pd.DataFrame,
-    nomenclature_lookup: dict[str, str] | None = None,
 ) -> dict:
     """
     Extracts attribute-related fields from a DataFrame row and adds them to the unmapped_record.
@@ -479,7 +545,7 @@ def add_attributes_to_record(
             continue  # Skip if the attribute value is NaN
 
         attr_row = df_attr.loc[attr]
-        notes = get_attr_note(attr_row, nomenclature_lookup=nomenclature_lookup)
+        notes = get_attr_note(attr_row)
         unit_spec = str(attr_row.get('Unit / Format', ''))
         if currency and 'Currency' in unit_spec:
             notes += (
@@ -640,17 +706,21 @@ def refuel2unmapped(
     row: pd.Series,
     df_ref: pd.DataFrame,
     df_attr: pd.DataFrame,
-    nomenclature_lookup: dict[str, str] | None = None,
+    nomenclature_lookup: dict[str, dict[str, str]] | None = None,
     carrier_lookup: dict[str, str] | None = None,
 ) -> dict:
     """Convert one ConvTech or StorTech row into an unmapped entity."""
+    technology_notes, scope_notes = build_object_notes(
+        row,
+        nomenclature_lookup=nomenclature_lookup,
+    )
     record = {
         "technology_name": row.get("tech_id", ""),
         "technology": {
             "technology_description": clean(row.get("description")),
             "technology_type": clean(row.get("tech_type")),
             "technology_category": clean(row.get("technology_class")),
-            "technology_notes": None,
+            "technology_notes": technology_notes,
             "process_name": clean(row.get("unit_operation")),
             "process_type": None,
             "process_category": clean(row.get("tech_category")),
@@ -665,7 +735,7 @@ def refuel2unmapped(
             ),
             "capacity_scope_description": clean(row.get("min_installation_size")),
             "system_boundary_description": clean(row.get("tech_boundary")),
-            "scope_notes": clean(row.get("tech_maturity")),
+            "scope_notes": scope_notes,
         },
         "metadata": {
             "related_project": "reFuel.ch",
@@ -682,7 +752,6 @@ def refuel2unmapped(
         record,
         row,
         df_attr,
-        nomenclature_lookup=nomenclature_lookup,
     )
     record = add_balancing_to_record(
         record,
