@@ -766,14 +766,14 @@ def embeddedcarbon2unmapped(row: pd.Series) -> dict:
     record = {
         "technology_name": row.get("tech_id", ""),
         "technology": {
-            "technology_description": clean(row.get("lca_activity")),
+            "technology_description": None,
             "technology_type": clean(row.get("tech_type")),
             "technology_category": None,
             "technology_notes": None,
-            "process_name": clean(row.get("ref_product")),
+            "process_name": None,
             "process_type": None,
             "process_category": None,
-            "process_notes": build_process_notes(row),
+            "process_notes": None,
         },
         "scope": {
             "geographic_scope_description": clean(row.get("lca_location")),

@@ -1,10 +1,10 @@
 - technology_name: Air_DAC_CO2
   technology:
-    technology_description: direct air capture system, sorbent-based, 100ktCO2
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: direct air capture system
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -78,11 +78,11 @@
       | lca_activity: direct air capture system, sorbent-based, 100ktCO2'
 - technology_name: BioWet_Digestion_CH4
   technology:
-    technology_description: anaerobic digestion plant construction, agricultural
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: anaerobic digestion plant, agricultural
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -156,11 +156,11 @@
       agricultural | lca_activity: anaerobic digestion plant construction, agricultural'
 - technology_name: C12_Tank_C12
   technology:
-    technology_description: liquid storage tank production, chemicals, organics
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: liquid storage tank, chemicals, organics
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -250,11 +250,11 @@
       kWh of storage capacity rough estimation'
 - technology_name: C8_Tank_C8
   technology:
-    technology_description: liquid storage tank production, chemicals, organics
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: liquid storage tank, chemicals, organics
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -344,11 +344,11 @@
       kWh of storage capacity rough estimation'
 - technology_name: CH4_Boiler_ThBdg
   technology:
-    technology_description: market for gas boiler
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas boiler
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -422,11 +422,11 @@
       market for gas boiler'
 - technology_name: CH4_Boiler_ThInd
   technology:
-    technology_description: market for gas boiler
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas boiler
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -500,11 +500,11 @@
       market for gas boiler'
 - technology_name: CH4_CCGT_El
   technology:
-    technology_description: market for gas power plant, combined cycle, 400MW electrical
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas power plant, combined cycle, 400MW electrical
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -586,13 +586,11 @@
       cycle, 400MW electrical'
 - technology_name: CH4_CHP_ElTh
   technology:
-    technology_description: heat and power co-generation unit construction, 160kW
-      electrical, common components for heat+electricity
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: heat and power co-generation unit, 160kW electrical, common components
-      for heat+electricity
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -682,11 +680,11 @@
       for heat+electricity'
 - technology_name: CH4_FuelCell_El
   technology:
-    technology_description: fuel cell production, solid oxide, 125kW electrical, future
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: fuel cell, solid oxide, 125kW electrical, future
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -768,11 +766,11 @@
       125kW electrical, future'
 - technology_name: CH4_FuelCell_ElBdg
   technology:
-    technology_description: fuel cell production, solid oxide, 125kW electrical, future
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: fuel cell, solid oxide, 125kW electrical, future
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -854,12 +852,11 @@
       125kW electrical, future'
 - technology_name: CH4_GridStorage_CH4
   technology:
-    technology_description: pipeline construction, natural gas, high pressure distribution
-      network
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: pipeline, natural gas, high pressure distribution network
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -941,11 +938,11 @@
       gas, high pressure distribution network'
 - technology_name: CH4_OCGT_El
   technology:
-    technology_description: micro gas turbine production, 100kW electrical
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: micro gas turbine, 100kW electrical
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1019,11 +1016,11 @@
       electrical | lca_activity: micro gas turbine production, 100kW electrical'
 - technology_name: CH4_Tank_CH4
   technology:
-    technology_description: fuel tank assembly, compressed natural gas, 200 bar
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: fuel tank, compressed natural gas, 200 bar
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1105,11 +1102,11 @@
       bar | notes: for a 154.66 kg tank, of 1074kWh fuel capacity'
 - technology_name: CO2Flue_AmineScrub_CO2
   technology:
-    technology_description: market for monoethanolamine
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: monoethanolamine
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1183,11 +1180,11 @@
       market for monoethanolamine'
 - technology_name: CO2Flue_PSA_CO2
   technology:
-    technology_description: potassium carbonate production, from potassium hydroxide
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: potassium carbonate
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1261,11 +1258,11 @@
       potassium carbonate production, from potassium hydroxide'
 - technology_name: ElBdg_Battery_ElBdg
   technology:
-    technology_description: market for battery capacity, Li-ion, LFP
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: electricity storage capacity
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1339,11 +1336,11 @@
       | lca_activity: market for battery capacity, Li-ion, LFP'
 - technology_name: El_AirCon_ThSc
   technology:
-    technology_description: heat pump production, diffusion absorption, 4kW, future
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: heat pump, diffusion absorption, 4kW, future
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1425,11 +1422,11 @@
       future'
 - technology_name: El_Battery_El
   technology:
-    technology_description: market for battery capacity (MIX scenario)
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: electricity storage capacity
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1503,12 +1500,11 @@
       | lca_activity: market for battery capacity (MIX scenario)'
 - technology_name: El_CoElectrolysis_Syngas
   technology:
-    technology_description: electrolyzer production, 1MWe, SOEC, Balance of Plant
-      + 2 * Stack
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: electrolyzer, 1MWe, SOEC, Balance of Plant + 2 * Stack
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1590,12 +1586,11 @@
       SOEC, Balance of Plant + 2 * Stack'
 - technology_name: El_Electrolysis_H2
   technology:
-    technology_description: electrolyzer production, 1MWe, AEC, Balance of Plant +
-      2 * Stack
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: electrolyzer, 1MWe, AEC, Balance of Plant + 2 * Stack
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1677,11 +1672,11 @@
       AEC, Balance of Plant + 2 * Stack'
 - technology_name: El_HeatPump_ThBdg
   technology:
-    technology_description: heat pump production, 30kW
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: heat pump, 30kW
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1755,11 +1750,11 @@
       heat pump production, 30kW'
 - technology_name: El_HeatPump_ThInd
   technology:
-    technology_description: heat pump production, 30kW
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: heat pump, 30kW
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1833,11 +1828,11 @@
       heat pump production, 30kW'
 - technology_name: El_Heater_ThBdg
   technology:
-    technology_description: auxiliary heating unit production, electric, 5kW
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: auxiliary heating unit, electric, 5kW
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1911,11 +1906,11 @@
       electric, 5kW | lca_activity: auxiliary heating unit production, electric, 5kW'
 - technology_name: El_Heater_ThInd
   technology:
-    technology_description: auxiliary heating unit production, electric, 5kW
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: auxiliary heating unit, electric, 5kW
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -1989,11 +1984,11 @@
       electric, 5kW | lca_activity: auxiliary heating unit production, electric, 5kW'
 - technology_name: El_PumpedHydro_Pump
   technology:
-    technology_description: hydropower plant construction, reservoir, alpine region
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: hydropower plant, reservoir, alpine region
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2075,11 +2070,11 @@
       region'
 - technology_name: Geothermal_CHP_ElTh
   technology:
-    technology_description: geothermal power plant construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: geothermal power plant, 5.5MWel
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2153,11 +2148,11 @@
       5.5MWel | lca_activity: geothermal power plant construction'
 - technology_name: H2_Boiler_ThInd
   technology:
-    technology_description: market for gas boiler
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas boiler
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2231,11 +2226,11 @@
       market for gas boiler'
 - technology_name: H2_CCGT_El
   technology:
-    technology_description: auto-thermal reforming-hydrogen GT power plant, 400MWe
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: auto-thermal reforming-hydrogen GT power plant, 400MWe
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2317,11 +2312,11 @@
       plant, 400MWe'
 - technology_name: H2_CO2Hydro_MeOH
   technology:
-    technology_description: methanol production facility, construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: methanol production facility, construction
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2395,11 +2390,11 @@
       construction | lca_activity: methanol production facility, construction'
 - technology_name: H2_FuelCell_El
   technology:
-    technology_description: fuel cell production, solid oxide, 125kW electrical, future
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: fuel cell, solid oxide, 125kW electrical, future
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2481,11 +2476,11 @@
       125kW electrical, future'
 - technology_name: H2_FuelCell_ElBdg
   technology:
-    technology_description: fuel cell production, solid oxide, 125kW electrical, future
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: fuel cell, solid oxide, 125kW electrical, future
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2567,11 +2562,11 @@
       125kW electrical, future'
 - technology_name: H2_HaberBosch_NH3
   technology:
-    technology_description: ammonia synthesis catalyst production
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: ammonia synthesis catalyst
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2645,11 +2640,11 @@
       | lca_activity: ammonia synthesis catalyst production'
 - technology_name: H2_OCGT_El
   technology:
-    technology_description: micro gas turbine production, 100kW electrical
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: micro gas turbine, 100kW electrical
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2723,11 +2718,11 @@
       electrical | lca_activity: micro gas turbine production, 100kW electrical'
 - technology_name: H2_RWGS_CO
   technology:
-    technology_description: RWGS tank construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: RWGS tank construction
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2801,11 +2796,11 @@
       lca_activity: RWGS tank construction'
 - technology_name: H2_Sabatier_CH4
   technology:
-    technology_description: sabatier reaction methanation unit construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: sabatier reaction methanation unit
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2879,11 +2874,11 @@
       unit | lca_activity: sabatier reaction methanation unit construction'
 - technology_name: H2_Tank_H2
   technology:
-    technology_description: fuel tank assembly, compressed hydrogen gas, 700bar
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: fuel tank, compressed hydrogen gas, 700bar
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -2965,11 +2960,11 @@
       | notes: for a 117.39 kg tank, of 200 kWh fuel capacity'
 - technology_name: Hydro_PumpedReservoir_Hydro
   technology:
-    technology_description: hydropower plant construction, reservoir
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: hydropower plant, reservoir
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3051,11 +3046,11 @@
       in the electricity generation dataset, so not added here to avoid double counting.'
 - technology_name: Hydro_PumpedTurbine_El
   technology:
-    technology_description: hydropower plant construction, reservoir, alpine region
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: hydropower plant, reservoir, alpine region
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3137,11 +3132,11 @@
       region'
 - technology_name: Hydro_Reservoir_El
   technology:
-    technology_description: hydropower plant construction, reservoir, alpine region
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: hydropower plant, reservoir, alpine region
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3223,11 +3218,11 @@
       region'
 - technology_name: Hydro_Reservoir_Hydro
   technology:
-    technology_description: hydropower plant construction, reservoir
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: hydropower plant, reservoir
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3309,11 +3304,11 @@
       in the electricity generation dataset, so not added here to avoid double counting.'
 - technology_name: Hydro_RunOfRiver_El
   technology:
-    technology_description: hydropower plant construction, run-of-river
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: hydropower plant, run-of-river
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3387,11 +3382,11 @@
       | lca_activity: hydropower plant construction, run-of-river'
 - technology_name: MSW_Gasification_H2
   technology:
-    technology_description: synthetic gas factory construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: synthetic gas factory
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3465,11 +3460,11 @@
       lca_activity: synthetic gas factory construction'
 - technology_name: MSW_Gasification_Syngas
   technology:
-    technology_description: synthetic gas factory construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: synthetic gas factory
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3543,11 +3538,11 @@
       lca_activity: synthetic gas factory construction'
 - technology_name: MSW_Incineration_El
   technology:
-    technology_description: municipal waste incineration facility construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: municipal waste incineration facility
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3621,11 +3616,11 @@
       facility | lca_activity: municipal waste incineration facility construction'
 - technology_name: NH3_CCGT_El
   technology:
-    technology_description: market for gas power plant, combined cycle, 400MW electrical
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas power plant, combined cycle, 400MW electrical
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3707,11 +3702,11 @@
       cycle, 400MW electrical'
 - technology_name: NH3_OCGT_El
   technology:
-    technology_description: micro gas turbine production, 100kW electrical
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: micro gas turbine, 100kW electrical
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3785,11 +3780,11 @@
       electrical | lca_activity: micro gas turbine production, 100kW electrical'
 - technology_name: NH3_Tank_NH3
   technology:
-    technology_description: liquid storage tank production, chemicals, organics
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: liquid storage tank, chemicals, organics
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3879,11 +3874,11 @@
       kWh of storage capacity rough estimation'
 - technology_name: Oil_Boiler_ThBdg
   technology:
-    technology_description: market for gas boiler
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas boiler
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -3957,11 +3952,11 @@
       market for gas boiler'
 - technology_name: Oil_Boiler_ThInd
   technology:
-    technology_description: market for gas boiler
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas boiler
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4035,12 +4030,11 @@
       market for gas boiler'
 - technology_name: Solar_PVAlpine_El
   technology:
-    technology_description: photovoltaic plant construction, 570kWp, multi-Si, on
-      open ground
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: photovoltaic plant, 570kWp, multi-Si, on open ground
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4122,12 +4116,11 @@
       multi-Si, on open ground'
 - technology_name: Solar_PVRooftop_El
   technology:
-    technology_description: photovoltaic flat-roof installation, 3kWp, multi-Si, on
-      roof
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: photovoltaic flat-roof installation, 3kWp, multi-Si, on roof
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4209,11 +4202,11 @@
       3kWp, multi-Si, on roof'
 - technology_name: Syngas_COHydro_CH4
   technology:
-    technology_description: sabatier reaction methanation unit construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: sabatier reaction methanation unit
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4287,11 +4280,11 @@
       unit | lca_activity: sabatier reaction methanation unit construction'
 - technology_name: Syngas_COHydro_MeOH
   technology:
-    technology_description: methanol production facility, construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: methanol production facility, construction
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4365,11 +4358,11 @@
       construction | lca_activity: methanol production facility, construction'
 - technology_name: Syngas_FT_C12
   technology:
-    technology_description: gas-to-liquid plant construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas-to-liquid plant
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4443,11 +4436,11 @@
       gas-to-liquid plant construction'
 - technology_name: Syngas_FT_C8
   technology:
-    technology_description: gas-to-liquid plant construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: gas-to-liquid plant
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4521,12 +4514,11 @@
       gas-to-liquid plant construction'
 - technology_name: Th_HeatStore_Th
   technology:
-    technology_description: market for thermal storage system, solar tower power plant,
-      20 MW
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: thermal storage system, solar tower power plant, 20 MW
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4608,11 +4600,11 @@
       solar tower power plant, 20 MW | notes: 440MWh thermal storage capacity'
 - technology_name: Th_HotWaterTank_Th
   technology:
-    technology_description: hot water tank production, 600l
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: hot water tank, 600l
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4686,11 +4678,11 @@
       lca_activity: hot water tank production, 600l'
 - technology_name: Th_SeasonalStore_Th
   technology:
-    technology_description: heat storage production, 2000l
+    technology_description: null
     technology_type: Storage
     technology_category: null
     technology_notes: null
-    process_name: heat storage, 2000l
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4764,12 +4756,11 @@
       heat storage production, 2000l'
 - technology_name: U235_Nuclear_El
   technology:
-    technology_description: nuclear power plant construction, pressure water reactor,
-      1000MW
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: nuclear power plant, pressure water reactor, 1000MW
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4851,11 +4842,11 @@
       water reactor, 1000MW'
 - technology_name: Wind_Turbine_El
   technology:
-    technology_description: wind turbine construction, 2MW, onshore
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: wind turbine, 2MW, onshore
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -4929,11 +4920,11 @@
       | lca_activity: wind turbine construction, 2MW, onshore'
 - technology_name: Wood_Boiler_ThBdg
   technology:
-    technology_description: furnace production, wood chips, with silo, 50kW
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: furnace, wood chips, with silo, 50kW
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -5007,11 +4998,11 @@
       silo, 50kW | lca_activity: furnace production, wood chips, with silo, 50kW'
 - technology_name: Wood_Boiler_ThInd
   technology:
-    technology_description: furnace production, wood chips, with silo, 50kW
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: furnace, wood chips, with silo, 50kW
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -5085,12 +5076,11 @@
       silo, 50kW | lca_activity: furnace production, wood chips, with silo, 50kW'
 - technology_name: Wood_CHP_ElTh
   technology:
-    technology_description: heat and power co-generation unit construction, 1MWel
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: heat and power co-generation unit, organic Rankine cycle, 1MWe,
-      6.4 MWth
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -5172,11 +5162,11 @@
       unit construction, 1MWel'
 - technology_name: Wood_Gasification_H2
   technology:
-    technology_description: synthetic gas factory construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: synthetic gas factory
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
@@ -5250,11 +5240,11 @@
       lca_activity: synthetic gas factory construction'
 - technology_name: Wood_Gasification_Syngas
   technology:
-    technology_description: synthetic gas factory construction
+    technology_description: null
     technology_type: Conversion
     technology_category: null
     technology_notes: null
-    process_name: synthetic gas factory
+    process_name: null
     process_type: null
     process_category: null
     process_notes: null
