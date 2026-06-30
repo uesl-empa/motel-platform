@@ -161,6 +161,9 @@ properties:
             carrier_name:
               type: string
               description: Literal name of the unmapped input commodity flow.
+            carrier_notes:
+              type: string
+              description: Additional free-text context for the carrier, which may include description, carrier type, purity, phase, usage assumptions, or other source-specific notes.
             share:
               type: number
               description: Proportional numeric value tracking this specific carrier's fraction of total cumulative feedstocks.
@@ -184,6 +187,9 @@ properties:
             carrier_name:
               type: string
               description: Literal name of the unmapped output commodity flow.
+            carrier_notes:
+              type: string
+              description: Additional free-text context for the carrier, which may include description, carrier type, purity, phase, usage assumptions, or other source-specific notes.
             share:
               type: number
               description: Proportional numeric value tracking this specific carrier's fraction of total output yield.

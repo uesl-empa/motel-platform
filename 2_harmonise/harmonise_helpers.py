@@ -21,7 +21,6 @@ import time
 from pathlib import Path
 
 import ollama
-import pandas as pd
 import yaml
 
 # ---------------------------------------------------------------------------
@@ -30,16 +29,8 @@ import yaml
 MODEL = "qwen3:14b"
 HARMONISATION_VERSION = "1.0.0"
 LOG_DIR = Path("../motel-db/log")
-DEFAULT_REFUEL_WORKBOOK = Path("../1_ingest/examples/refuel/input/reFuel_TechDatabase_Clean_2026-06-03.xlsx")
 DEFAULT_UNMAPPED_PATH = Path("../motel-db/unmapped_entity/unmapped_entities_refuel.yaml")
 SCHEMA_DIR = Path("../schema")
-
-# ---------------------------------------------------------------------------
-# Global controlled-vocabulary context for all LLM calls.
-# Set this from the notebook before running harmonisation, e.g.:
-#   hh.GLOBAL_CV_CONTEXT = build_cv_context(df_nomenclature, df_carrier)
-# ---------------------------------------------------------------------------
-GLOBAL_CV_CONTEXT = ""
 
 
 def find_project_root(start: Path | None = None) -> Path:
@@ -63,38 +54,8 @@ def get_harmonisation_paths(project_root: Path | None = None) -> dict[str, Path]
         "unmapped_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
         "linked_entity_path": root / "motel-db" / "linked_entity" / "linked_entity.yaml",
         "mapping_dir": root / "motel-db" / "mapping",
-        "refuel_workbook": root / "1_ingest" / "examples" / "refuel" / "input" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
         "notebook_path": root / "2_harmonise" / "2_data_harmonisation.ipynb",
     }
-
-
-def build_cv_context(df_nom, df_car):
-    """Build one shared LLM context string from Nomenclature and Carrier sheets."""
-    lines = ["The following controlled vocabulary definitions apply to all fields in this database."]
-
-    lines.append("\n--- Nomenclature: term definitions used across all controlled vocabulary fields ---")
-    for _, row in df_nom.iterrows():
-        term = row.get("Term / Abbreviation")
-        definition = row.get("Definition")
-        if pd.notna(term) and pd.notna(definition) and str(term).strip():
-            lines.append(f"{term}: {definition}")
-
-    lines.append("\n--- Carrier: valid abbreviations for all carrier fields ---")
-    for _, row in df_car.iterrows():
-        abbr = row.get("Carrier Abbreviation")
-        desc = row.get("Carrier Description")
-        ctype = row.get("Carrier Type")
-        if pd.notna(abbr) and pd.notna(desc) and str(abbr).strip():
-            tag = f" ({ctype})" if pd.notna(ctype) else ""
-            lines.append(f"{abbr}{tag}: {desc}")
-
-    return "\n".join(lines)
-
-
-def load_refuel_cv_context(workbook_path: Path | str = DEFAULT_REFUEL_WORKBOOK) -> str:
-    """Load Nomenclature and Carrier sheets and return the shared LLM context string."""
-    sheets = pd.read_excel(workbook_path, sheet_name=["Nomenclature", "Carrier"])
-    return build_cv_context(sheets["Nomenclature"], sheets["Carrier"])
 
 
 def load_all_csv_data(directory="../motel-db/"):
@@ -141,8 +102,6 @@ def start_harmonisation_run(paths, all_schemas, all_unmapped_entities, ue, test_
         "database_path": str(Path(paths["database_dir"]).resolve()),
         "linked_entity_path": str(Path(paths["linked_entity_path"]).resolve()),
         "mapping_path": str(Path(paths["mapping_dir"]).resolve()),
-        "controlled_vocabulary_source": str(Path(paths["refuel_workbook"]).resolve()),
-        "controlled_vocabulary_context_chars": len(GLOBAL_CV_CONTEXT),
         "loaded_schema_count": len(all_schemas),
         "entity_registry_paths": {
             entity_type: str(Path(config["path"]).resolve())
@@ -592,9 +551,6 @@ def llm_fill_fields(row, schema, extra_context=""):
         + f"Reply ONLY with a JSON object containing the missing fields: {missing}"
     )
     system_msg = "You are a data entry assistant. Output only valid JSON, no markdown or extra text."
-    if GLOBAL_CV_CONTEXT:
-        system_msg += f"\n\n{GLOBAL_CV_CONTEXT}"
-
     messages = [
         {"role": "system", "content": system_msg},
         {"role": "user",   "content": prompt},
@@ -989,7 +945,7 @@ def collect_candidates(unmapped_entities):
                     "confidence_level":   src.get("confidence_level"),
                     "assessment_method":  src.get("assessment_method"),
                     "reference_year":     src.get("reference_year"),
-                    "note":               src.get("note") or src.get("assessment_notes"),
+                    "note":               src.get("note") or src.get("source_notes") or src.get("source_locator"),
                 })
         for item in e.get("balancing", {}).get("inputs", []) + e.get("balancing", {}).get("outputs", []):
             cname = item.get("carrier_name")
