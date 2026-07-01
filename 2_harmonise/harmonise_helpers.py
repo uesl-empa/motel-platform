@@ -1582,7 +1582,7 @@ def build_and_save_linked_entities(
             "sources": [
                 {
                     "source_id": resolved_ids["source"].get(source["source_name"], ""),
-                    "linked_attribute_ids": [
+                    "linked_attributes": [
                         attr_ids.get(attribute_name) or f"[unregistered: {attribute_name}]"
                         for attribute_name in source.get("linked_attribute", [])
                     ],

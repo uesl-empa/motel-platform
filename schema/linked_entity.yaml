@@ -5,7 +5,7 @@ description: Validated relational matrix entity linking strict foreign keys to c
 required:
   - linked_entity_id
   - tech_id
-  - source_id
+  - sources
 properties:
   linked_entity_id:
     type: string
