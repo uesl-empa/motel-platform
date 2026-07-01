@@ -21,7 +21,6 @@ import time
 from pathlib import Path
 
 import ollama
-import pandas as pd
 import yaml
 
 # ---------------------------------------------------------------------------
@@ -30,16 +29,8 @@ import yaml
 MODEL = "qwen3:14b"
 HARMONISATION_VERSION = "1.0.0"
 LOG_DIR = Path("../motel-db/log")
-DEFAULT_REFUEL_WORKBOOK = Path("../1_ingest/examples/refuel/input/reFuel_TechDatabase_Clean_2026-06-03.xlsx")
 DEFAULT_UNMAPPED_PATH = Path("../motel-db/unmapped_entity/unmapped_entities_refuel.yaml")
 SCHEMA_DIR = Path("../schema")
-
-# ---------------------------------------------------------------------------
-# Global controlled-vocabulary context for all LLM calls.
-# Set this from the notebook before running harmonisation, e.g.:
-#   hh.GLOBAL_CV_CONTEXT = build_cv_context(df_nomenclature, df_carrier)
-# ---------------------------------------------------------------------------
-GLOBAL_CV_CONTEXT = ""
 
 
 def find_project_root(start: Path | None = None) -> Path:
@@ -63,38 +54,8 @@ def get_harmonisation_paths(project_root: Path | None = None) -> dict[str, Path]
         "unmapped_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
         "linked_entity_path": root / "motel-db" / "linked_entity" / "linked_entity.yaml",
         "mapping_dir": root / "motel-db" / "mapping",
-        "refuel_workbook": root / "1_ingest" / "examples" / "refuel" / "input" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
         "notebook_path": root / "2_harmonise" / "2_data_harmonisation.ipynb",
     }
-
-
-def build_cv_context(df_nom, df_car):
-    """Build one shared LLM context string from Nomenclature and Carrier sheets."""
-    lines = ["The following controlled vocabulary definitions apply to all fields in this database."]
-
-    lines.append("\n--- Nomenclature: term definitions used across all controlled vocabulary fields ---")
-    for _, row in df_nom.iterrows():
-        term = row.get("Term / Abbreviation")
-        definition = row.get("Definition")
-        if pd.notna(term) and pd.notna(definition) and str(term).strip():
-            lines.append(f"{term}: {definition}")
-
-    lines.append("\n--- Carrier: valid abbreviations for all carrier fields ---")
-    for _, row in df_car.iterrows():
-        abbr = row.get("Carrier Abbreviation")
-        desc = row.get("Carrier Description")
-        ctype = row.get("Carrier Type")
-        if pd.notna(abbr) and pd.notna(desc) and str(abbr).strip():
-            tag = f" ({ctype})" if pd.notna(ctype) else ""
-            lines.append(f"{abbr}{tag}: {desc}")
-
-    return "\n".join(lines)
-
-
-def load_refuel_cv_context(workbook_path: Path | str = DEFAULT_REFUEL_WORKBOOK) -> str:
-    """Load Nomenclature and Carrier sheets and return the shared LLM context string."""
-    sheets = pd.read_excel(workbook_path, sheet_name=["Nomenclature", "Carrier"])
-    return build_cv_context(sheets["Nomenclature"], sheets["Carrier"])
 
 
 def load_all_csv_data(directory="../motel-db/"):
@@ -141,8 +102,6 @@ def start_harmonisation_run(paths, all_schemas, all_unmapped_entities, ue, test_
         "database_path": str(Path(paths["database_dir"]).resolve()),
         "linked_entity_path": str(Path(paths["linked_entity_path"]).resolve()),
         "mapping_path": str(Path(paths["mapping_dir"]).resolve()),
-        "controlled_vocabulary_source": str(Path(paths["refuel_workbook"]).resolve()),
-        "controlled_vocabulary_context_chars": len(GLOBAL_CV_CONTEXT),
         "loaded_schema_count": len(all_schemas),
         "entity_registry_paths": {
             entity_type: str(Path(config["path"]).resolve())
@@ -234,13 +193,30 @@ ENTITY_CONFIG = {
     "technology": {
         "path": "../motel-db/secondary/technology.csv",
         "id_field": "tech_id", "prefix": "TECH", "name_field": "technology_name",
-        "cols": ["tech_id", "technology_name", "technology_type", "technology_category", "technology_description"],
+        "cols": [
+            "tech_id",
+            "technology_name",
+            "technology_description",
+            "technology_variant",
+            "main_process",
+            "main_operation_unit",
+            "ontology_iri",
+        ],
         "schema_key": "technology.yaml",
     },
     "process": {
         "path": "../motel-db/secondary/process.csv",
         "id_field": "process_id", "prefix": "PROC", "name_field": "process_name",
-        "cols": ["process_id", "process_name", "process_type", "process_category", "process_description"],
+        "cols": [
+            "process_id",
+            "process_name",
+            "process_description",
+            "process_type",
+            "process_category",
+            "main_sector",
+            "feedstocks",
+            "products",
+        ],
         "schema_key": "process.yaml",
     },
     "source": {
@@ -255,7 +231,7 @@ ENTITY_CONFIG = {
             "access_date",
             "confidence_level",
             "assessment_method",
-            "assessment_date",
+            "reference_year",
             "note",
         ],
         "schema_key": "source.yaml",
@@ -267,6 +243,15 @@ ENTITY_CONFIG = {
         "schema_key": "carrier.yaml",
     },
 }
+
+PROCESS_LLM_FIELDS = [
+    "process_description",
+    "process_type",
+    "process_category",
+    "main_sector",
+    "feedstocks",
+    "products",
+]
 
 SCOPE_CONFIG = {
     "geographic_scope": "../motel-db/controlled_vocabulary/geographic_scope.csv",
@@ -558,7 +543,133 @@ def build_attribute_llm_context(notes):
     return notes + guidance
 
 
-def llm_fill_fields(row, schema, extra_context=""):
+def build_process_llm_context(candidate):
+    """Assemble rich context for process-field inference."""
+    parts = []
+
+    original_name = candidate.get("process_original_name")
+    if _has_value(original_name):
+        parts.append(f"Original process name: {original_name}")
+
+    process_notes = candidate.get("process_notes")
+    if _has_value(process_notes):
+        parts.append(f"Process notes: {process_notes}")
+
+    technology_description = candidate.get("technology_description")
+    if _has_value(technology_description):
+        parts.append(f"Related technology description: {technology_description}")
+
+    technology_category = candidate.get("technology_category")
+    if _has_value(technology_category):
+        parts.append(f"Related technology category: {technology_category}")
+
+    raw_inputs = candidate.get("raw_input_carriers")
+    if raw_inputs:
+        parts.append(
+            "Inputs from unmapped balancing data: "
+            + ", ".join(str(x) for x in raw_inputs if _has_value(x))
+        )
+
+    raw_outputs = candidate.get("raw_output_carriers")
+    if raw_outputs:
+        parts.append(
+            "Outputs from unmapped balancing data: "
+            + ", ".join(str(x) for x in raw_outputs if _has_value(x))
+        )
+
+    parts.append(
+        "When filling feedstocks and products, use the raw carrier names from the unmapped balancing data."
+    )
+    parts.append(
+        "Do not invent carrier IDs at this stage; preserve human-readable carrier names."
+    )
+    return "\n".join(parts)
+
+
+def build_technology_llm_context(candidate):
+    """Assemble technology description and note context for field inference."""
+    parts = []
+
+    technology_description = candidate.get("technology_description")
+    if _has_value(technology_description):
+        parts.append(f"Technology description: {technology_description}")
+
+    technology_notes = candidate.get("technology_notes")
+    if _has_value(technology_notes):
+        parts.append(f"Technology notes: {technology_notes}")
+
+    technology_type = candidate.get("technology_type")
+    if _has_value(technology_type):
+        parts.append(f"Technology type: {technology_type}")
+
+    technology_category = candidate.get("technology_category")
+    if _has_value(technology_category):
+        parts.append(f"Technology category: {technology_category}")
+
+    process_name = candidate.get("process_name")
+    if _has_value(process_name):
+        parts.append(f"Related process name: {process_name}")
+
+    parts.append(
+        "Use the technology description as the primary source for technology_description."
+    )
+    parts.append(
+        "Use the notes as supportive context when inferring variant, operation unit, or other missing fields."
+    )
+    return "\n".join(parts)
+
+
+def build_carrier_llm_context(candidate):
+    """Assemble carrier notes and usage context for carrier-field inference."""
+    parts = []
+
+    carrier_notes = candidate.get("note") or candidate.get("carrier_notes")
+    if _has_value(carrier_notes):
+        parts.append(f"Carrier notes: {carrier_notes}")
+
+    raw_roles = candidate.get("carrier_roles")
+    if raw_roles:
+        parts.append(
+            "Observed carrier roles in balancing data: "
+            + ", ".join(str(x) for x in raw_roles if _has_value(x))
+        )
+
+    parts.append(
+        "Use the carrier notes to infer carrier_description, carrier_type, and carrier_category."
+    )
+    parts.append(
+        "Prefer the source wording when the notes explicitly describe the carrier."
+    )
+    return "\n".join(parts)
+
+
+def build_source_llm_context(candidate):
+    """Assemble source notes and locator context for source-field inference."""
+    parts = []
+
+    source_description = candidate.get("source_description")
+    if _has_value(source_description):
+        parts.append(f"Source description: {source_description}")
+
+    source_note = candidate.get("note")
+    if _has_value(source_note):
+        parts.append(f"Source notes: {source_note}")
+
+    source_type = candidate.get("source_type")
+    if _has_value(source_type):
+        parts.append(f"Source type: {source_type}")
+
+    link = candidate.get("link")
+    if _has_value(link):
+        parts.append(f"Source link: {link}")
+
+    parts.append(
+        "Use the source notes as general supporting context for source_description, source_type, and note."
+    )
+    return "\n".join(parts)
+
+
+def llm_fill_fields(row, schema, extra_context="", target_fields=None):
     """
     Fill missing required fields in `row` using the LLM and the schema definition.
 
@@ -574,8 +685,9 @@ def llm_fill_fields(row, schema, extra_context=""):
     Returns:
         dict: The row with missing required fields populated where possible.
     """
-    required = schema.get("required", [])
-    missing = [f for f in required if not str(row.get(f, "")).strip()]
+    if target_fields is None:
+        target_fields = schema.get("required", [])
+    missing = [f for f in target_fields if not str(row.get(f, "")).strip()]
     if not missing:
         return row
 
@@ -592,9 +704,6 @@ def llm_fill_fields(row, schema, extra_context=""):
         + f"Reply ONLY with a JSON object containing the missing fields: {missing}"
     )
     system_msg = "You are a data entry assistant. Output only valid JSON, no markdown or extra text."
-    if GLOBAL_CV_CONTEXT:
-        system_msg += f"\n\n{GLOBAL_CV_CONTEXT}"
-
     messages = [
         {"role": "system", "content": system_msg},
         {"role": "user",   "content": prompt},
@@ -757,7 +866,7 @@ def llm_name_from_schema(entity_type, candidate, schema, extra_context=""):
 # ---------------------------------------------------------------------------
 # Entity resolver
 # ---------------------------------------------------------------------------
-def resolve_entity(entity_type, candidate, registry, all_schemas):
+def resolve_entity(entity_type, candidate, registry, all_schemas, skip_llm_match=False):
     """
     Resolve a candidate entity against the registry: exact match → LLM match → create.
 
@@ -769,6 +878,8 @@ def resolve_entity(entity_type, candidate, registry, all_schemas):
         candidate (dict): Candidate entity fields.
         registry (list[dict]): In-memory registry rows; mutated when a new row is created.
         all_schemas (dict): Loaded schema definitions keyed by filename.
+        skip_llm_match (bool): When True, bypass semantic LLM matching and fall
+            through to creation if no exact name match exists.
 
     Returns:
         tuple[str, str]: (resolved_id, status) where status is "exact", "llm", or "created".
@@ -778,6 +889,57 @@ def resolve_entity(entity_type, candidate, registry, all_schemas):
     schema = all_schemas.get(cfg.get("schema_key"), {})
     candidate = dict(candidate)
     candidate[name_field] = llm_name_from_schema(entity_type, candidate, schema)
+    entity_context = ""
+    if entity_type == "technology":
+        entity_context = build_technology_llm_context(candidate)
+    elif entity_type == "process":
+        entity_context = build_process_llm_context(candidate)
+    elif entity_type == "carrier":
+        entity_context = build_carrier_llm_context(candidate)
+    elif entity_type == "source":
+        entity_context = build_source_llm_context(candidate)
+
+    if entity_type == "technology" and schema:
+        candidate = llm_fill_fields(
+            candidate,
+            schema,
+            extra_context=entity_context,
+            target_fields=[
+                "technology_description",
+                "technology_variant",
+                "main_operation_unit",
+            ],
+        )
+    if entity_type == "process" and schema:
+        candidate = llm_fill_fields(
+            candidate,
+            schema,
+            extra_context=entity_context,
+            target_fields=PROCESS_LLM_FIELDS,
+        )
+    if entity_type == "carrier" and schema:
+        candidate = llm_fill_fields(
+            candidate,
+            schema,
+            extra_context=entity_context,
+            target_fields=["carrier_description", "carrier_type", "carrier_category"],
+        )
+    if entity_type == "source" and schema:
+        candidate = llm_fill_fields(
+            candidate,
+            schema,
+            extra_context=entity_context,
+            target_fields=[
+                "source_description",
+                "source_type",
+                "link",
+                "access_date",
+                "confidence_level",
+                "assessment_method",
+                "reference_year",
+                "note",
+            ],
+        )
     candidate_name = str(candidate.get(name_field, "")).strip().lower()
 
     for row in registry:
@@ -786,7 +948,7 @@ def resolve_entity(entity_type, candidate, registry, all_schemas):
                 save_registry(entity_type, registry)
             return row[id_field], "exact"
 
-    if registry:
+    if registry and not skip_llm_match:
         prompt = (
             f"Registry:\n{json.dumps(registry, indent=2)}\n\n"
             f"Candidate:\n{json.dumps(candidate, indent=2)}\n\n"
@@ -816,9 +978,14 @@ def resolve_entity(entity_type, candidate, registry, all_schemas):
             return match_id, "llm"
 
     new_id  = f"{cfg['prefix']}_{len(registry) + 1:05d}"
-    new_row = {id_field: new_id, **candidate}
+    new_row = {id_field: new_id}
+    for key in cfg["cols"]:
+        if key == id_field:
+            continue
+        if key in candidate:
+            new_row[key] = candidate[key]
     if schema:
-        new_row = llm_fill_fields(new_row, schema)
+        new_row = llm_fill_fields(new_row, schema, extra_context=entity_context)
         validate_row(new_row, schema, label=f"{entity_type}:{candidate.get(name_field)}")
     append_row(entity_type, new_row)
     registry.append(new_row)
@@ -880,7 +1047,7 @@ def ensure_attr(name, registry, notes="", attr_schema=None):
     return new_id, canonical_name, "created"
 
 
-def ensure_scope(scope_type, value, scope_schema=None):
+def ensure_scope(scope_type, value, scope_schema=None, description_seed="", extra_context=""):
     """
     Ensure a schema-guided scope entry exists in the corresponding CSV.
 
@@ -888,6 +1055,8 @@ def ensure_scope(scope_type, value, scope_schema=None):
         scope_type (str): Key in SCOPE_CONFIG (e.g. "geographic_scope").
         value (str | None): Raw scope description or token from staging data.
         scope_schema (dict | None): JSON Schema for the scope registry entry.
+        description_seed (str): Preferred semantic description for this scope value.
+        extra_context (str): Additional field-specific context for this scope value.
 
     Returns:
         tuple[str | None, str | None]: (scope_token, status) where status is
@@ -899,15 +1068,16 @@ def ensure_scope(scope_type, value, scope_schema=None):
     path  = SCOPE_CONFIG[scope_type]
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     desc_field = f"{scope_type}_description"
+    seeded_description = description_seed or raw_value
     candidate = {
         scope_type: raw_value,
-        desc_field: raw_value,
+        desc_field: seeded_description,
     }
     token = llm_name_from_schema(
         scope_type,
         candidate,
         scope_schema or {},
-        extra_context=raw_value,
+        extra_context="\n".join(part for part in [raw_value, extra_context] if part),
     )
     existing_tokens = set()
     if Path(path).exists():
@@ -918,17 +1088,21 @@ def ensure_scope(scope_type, value, scope_schema=None):
     cols       = [scope_type, desc_field, "note"]
     new_row = {
         scope_type: token,
-        desc_field: "",
-        "note": "",
+        desc_field: seeded_description,
+        "note": extra_context or "",
     }
     if scope_schema:
-        extra_context = (
+        fill_context = (
             f"Original scope value: {raw_value}\n"
             f"Generated canonical token: {token}\n"
+            f"Pre-filled {desc_field}: {new_row.get(desc_field, '')}\n"
             "If the nomenclature context provides a source or classification "
-            "scheme, record it in the note field."
+            "scheme, keep it in the description when it helps define the scope, "
+            "and record supporting provenance in the note field."
         )
-        new_row = llm_fill_fields(new_row, scope_schema, extra_context=extra_context)
+        if extra_context:
+            fill_context += f"\nAdditional context:\n{extra_context}"
+        new_row = llm_fill_fields(new_row, scope_schema, extra_context=fill_context)
         validate_row(new_row, scope_schema, label=f"{scope_type}:{token}")
     file_exists = Path(path).exists()
     with open(path, "a", newline="", encoding="utf-8") as f:
@@ -937,6 +1111,30 @@ def ensure_scope(scope_type, value, scope_schema=None):
             writer.writeheader()
         writer.writerow({k: new_row.get(k, "") for k in cols})
     return token, "created"
+
+
+def get_scope_value(scope: dict, scope_type: str):
+    """Return the canonical token if present, otherwise fall back to the raw description."""
+    return scope.get(scope_type) or scope.get(f"{scope_type}_description")
+
+
+def get_scope_note_context(scope: dict, scope_type: str) -> str:
+    """Extract field-specific metadata note fragments for one scope property."""
+    scope_notes = scope.get("scope_notes")
+    if not scope_notes:
+        return ""
+
+    property_name = scope_type
+    parts = []
+    for segment in str(scope_notes).split(" | "):
+        segment = segment.strip()
+        if segment.startswith(f"{property_name} metadata:"):
+            parts.append(segment)
+    return " | ".join(parts)
+
+def get_scope_description_context(scope: dict, scope_type: str) -> str:
+    """Return the semantic description stored for one scope field."""
+    return str(scope.get(f"{scope_type}_description") or "").strip()
 
 # ---------------------------------------------------------------------------
 # Candidate collection
@@ -956,6 +1154,17 @@ def collect_candidates(unmapped_entities):
     def upsert_candidate(bucket, key, candidate):
         existing = bucket.setdefault(key, {})
         for field, value in candidate.items():
+            if isinstance(value, list):
+                merged = []
+                for item in existing.get(field, []):
+                    if item not in merged:
+                        merged.append(item)
+                for item in value:
+                    if item not in merged:
+                        merged.append(item)
+                if merged:
+                    existing[field] = merged
+                continue
             if _has_value(value) and not _has_value(existing.get(field)):
                 existing[field] = value
 
@@ -969,13 +1178,32 @@ def collect_candidates(unmapped_entities):
                 "technology_type":        t.get("technology_type"),
                 "technology_category":    t.get("technology_category"),
                 "technology_description": t.get("technology_description"),
+                "technology_notes":       t.get("technology_notes"),
+                "process_name":           t.get("process_name"),
             })
         pname = t.get("process_name")
         if pname:
+            balancing = e.get("balancing", {})
+            raw_inputs = [
+                item.get("carrier_name")
+                for item in balancing.get("inputs", [])
+                if _has_value(item.get("carrier_name"))
+            ]
+            raw_outputs = [
+                item.get("carrier_name")
+                for item in balancing.get("outputs", [])
+                if _has_value(item.get("carrier_name"))
+            ]
             upsert_candidate(candidates["process"], pname, {
-                "process_name":     pname,
-                "process_type":     t.get("process_type"),
-                "process_category": t.get("process_category"),
+                "process_name":         pname,
+                "process_original_name": t.get("process_name"),
+                "process_type":         t.get("process_type"),
+                "process_category":     t.get("process_category"),
+                "process_notes":        t.get("process_notes"),
+                "technology_description": t.get("technology_description"),
+                "technology_category":  t.get("technology_category"),
+                "raw_input_carriers":   raw_inputs,
+                "raw_output_carriers":  raw_outputs,
             })
         for src in e.get("sources", []):
             sname = src.get("source_name")
@@ -988,13 +1216,29 @@ def collect_candidates(unmapped_entities):
                     "access_date":        src.get("access_date"),
                     "confidence_level":   src.get("confidence_level"),
                     "assessment_method":  src.get("assessment_method"),
-                    "assessment_date":    src.get("assessment_date"),
-                    "note":               src.get("note") or src.get("assessment_notes"),
+                    "reference_year":     src.get("reference_year"),
+                    "note":               " | ".join(
+                        str(value).strip()
+                        for value in [
+                            src.get("note"),
+                            src.get("source_notes"),
+                            src.get("source_locator"),
+                        ]
+                        if _has_value(value)
+                    ),
                 })
-        for item in e.get("balancing", {}).get("inputs", []) + e.get("balancing", {}).get("outputs", []):
-            cname = item.get("carrier_name")
-            if cname:
-                upsert_candidate(candidates["carrier"], cname, {"carrier_name": cname})
+        for role, items in (
+            ("input", e.get("balancing", {}).get("inputs", [])),
+            ("output", e.get("balancing", {}).get("outputs", [])),
+        ):
+            for item in items:
+                cname = item.get("carrier_name")
+                if cname:
+                    upsert_candidate(candidates["carrier"], cname, {
+                        "carrier_name": cname,
+                        "note": item.get("carrier_notes"),
+                        "carrier_roles": [role],
+                    })
     return candidates
 
 
@@ -1003,6 +1247,7 @@ def resolve_entities_step(candidates, all_schemas, harmonisation_log=None):
     step_started = time.perf_counter()
     registries = {et: load_registry(et) for et in ENTITY_CONFIG}
     resolved_ids = {et: {} for et in ENTITY_CONFIG}
+    resolved_ids["technology_process"] = {}
     resolved_names = {et: {} for et in ENTITY_CONFIG}
     resolution_status = {et: {} for et in ENTITY_CONFIG}
     counts_by_type = {}
@@ -1013,9 +1258,24 @@ def resolve_entities_step(candidates, all_schemas, harmonisation_log=None):
         registry = registries[entity_type]
         name_field = ENTITY_CONFIG[entity_type]["name_field"]
         counts = {"exact": 0, "llm": 0, "created": 0}
+        total_candidates = len(entity_candidates)
+        if entity_type == "process":
+            for status in resolution_status["process"].values():
+                counts[status] += 1
 
-        for name, candidate in entity_candidates.items():
-            rid, status = resolve_entity(entity_type, candidate, registry, all_schemas)
+        for index, (name, candidate) in enumerate(entity_candidates.items(), start=1):
+            if entity_type == "process" and name in resolved_ids["process"]:
+                continue
+
+            skip_llm_match = False
+            print(f"  [{index}/{total_candidates}] resolving {entity_type}: {name!r}")
+            rid, status = resolve_entity(
+                entity_type,
+                candidate,
+                registry,
+                all_schemas,
+                skip_llm_match=skip_llm_match,
+            )
             resolved_row = next(
                 row for row in registry
                 if row.get(ENTITY_CONFIG[entity_type]["id_field"]) == rid
@@ -1024,6 +1284,60 @@ def resolve_entities_step(candidates, all_schemas, harmonisation_log=None):
             resolved_names[entity_type][name] = resolved_row.get(name_field, "")
             resolution_status[entity_type][name] = status
             counts[status] += 1
+            if entity_type == "technology":
+                process_name = candidate.get("process_name")
+                if process_name:
+                    process_candidate = candidates.get("process", {}).get(process_name)
+                    if process_candidate and process_name not in resolved_ids["process"]:
+                        process_total = len(candidates.get("process", {}))
+                        process_index = list(candidates.get("process", {}).keys()).index(process_name) + 1
+                        print(
+                            f"    -> [{process_index}/{process_total}] resolving linked process for "
+                            f"technology {name!r}: {process_name!r}"
+                        )
+                        process_rid, process_status = resolve_entity(
+                            "process",
+                            process_candidate,
+                            registries["process"],
+                            all_schemas,
+                            skip_llm_match=(status == "created"),
+                        )
+                        process_row = next(
+                            row for row in registries["process"]
+                            if row.get(ENTITY_CONFIG["process"]["id_field"]) == process_rid
+                        )
+                        resolved_ids["process"][process_name] = process_rid
+                        resolved_names["process"][process_name] = process_row.get(
+                            ENTITY_CONFIG["process"]["name_field"],
+                            "",
+                        )
+                        resolution_status["process"][process_name] = process_status
+                        if harmonisation_log:
+                            log_harmonisation_event(
+                                harmonisation_log,
+                                "step_2",
+                                "entity_resolved",
+                                entity_type="process",
+                                original_name=process_name,
+                                resolved_name=resolved_names["process"][process_name],
+                                resolved_id=process_rid,
+                                status=process_status,
+                                skip_llm_match=(status == "created"),
+                                resolved_via="technology",
+                                technology_name=name,
+                            )
+                    resolved_ids["technology_process"][name] = resolved_ids["process"].get(
+                        process_name,
+                        "",
+                    )
+                    technology_row = next(
+                        row for row in registries["technology"]
+                        if row.get(ENTITY_CONFIG["technology"]["id_field"]) == rid
+                    )
+                    main_process_id = resolved_ids["technology_process"][name]
+                    if main_process_id and technology_row.get("main_process") != main_process_id:
+                        technology_row["main_process"] = main_process_id
+                        save_registry("technology", registries["technology"])
             resolved_name = resolved_names[entity_type][name]
             if status == "created":
                 print(f"  + created: {name!r} -> {resolved_name!r}  [{rid}]")
@@ -1037,6 +1351,7 @@ def resolve_entities_step(candidates, all_schemas, harmonisation_log=None):
                     resolved_name=resolved_name,
                     resolved_id=rid,
                     status=status,
+                    skip_llm_match=skip_llm_match,
                 )
 
         mapping_path = MAPPING_DIR / f"{entity_type}_map.csv"
@@ -1115,39 +1430,59 @@ def resolve_controlled_vocabulary_step(
     with open(full_unmapped_path, "r", encoding="utf-8") as f:
         ue_all = yaml.safe_load(f) or []
 
+    unique_attributes = []
+    seen_attribute_names = set()
     for entity in ue_all:
         for attr in entity.get("attributes", []):
             name = attr.get("attribute_name")
-            if name and name not in attr_ids:
-                aid, canonical_name, status = ensure_attr(
-                    name,
-                    registry=attr_registry,
-                    notes=attr.get("notes", ""),
-                    attr_schema=attr_schema,
-                )
-                attr_ids[name] = aid
-                attr_names[name] = canonical_name
-                attr_status[name] = status
-                attr_counts[status] += 1
-                if status == "created":
-                    print(f"  + attribute: {name!r} -> {canonical_name!r}  [{aid}]")
+            if name and name not in seen_attribute_names:
+                unique_attributes.append((name, attr))
+                seen_attribute_names.add(name)
 
+    print(f"Resolving attributes ({len(unique_attributes)} unique values)...")
+    for index, (name, attr) in enumerate(unique_attributes, start=1):
+        print(f"  [{index}/{len(unique_attributes)}] resolving attribute: {name!r}")
+        aid, canonical_name, status = ensure_attr(
+            name,
+            registry=attr_registry,
+            notes=attr.get("attribute_notes") or attr.get("notes", ""),
+            attr_schema=attr_schema,
+        )
+        attr_ids[name] = aid
+        attr_names[name] = canonical_name
+        attr_status[name] = status
+        attr_counts[status] += 1
+        if status == "created":
+            print(f"  + attribute: {name!r} -> {canonical_name!r}  [{aid}]")
+
+    unique_scopes = []
+    seen_scope_keys = set()
     for entity in ue:
         scope = entity.get("scope", {})
         for scope_type in SCOPE_CONFIG:
-            value = scope.get(f"{scope_type}_description")
-            key = (scope_type, value)
-            if value and key not in scope_ids:
-                token, status = ensure_scope(
-                    scope_type,
-                    value,
-                    scope_schema=all_schemas.get(f"{scope_type}.yaml", {}),
-                )
-                scope_ids[key] = token
-                if status:
-                    scope_counts[status] += 1
-                    if status == "created":
-                        print(f"  + {scope_type}: {value!r} -> {token!r}")
+            value = get_scope_value(scope, scope_type)
+            description = get_scope_description_context(scope, scope_type)
+            context = get_scope_note_context(scope, scope_type)
+            key = (scope_type, value, description, context)
+            if value and key not in seen_scope_keys:
+                unique_scopes.append(key)
+                seen_scope_keys.add(key)
+
+    print(f"Resolving scope tokens ({len(unique_scopes)} unique values)...")
+    for index, (scope_type, value, description, context) in enumerate(unique_scopes, start=1):
+        print(f"  [{index}/{len(unique_scopes)}] resolving {scope_type}: {value!r}")
+        token, status = ensure_scope(
+            scope_type,
+            value,
+            scope_schema=all_schemas.get(f"{scope_type}.yaml", {}),
+            description_seed=description,
+            extra_context=context,
+        )
+        scope_ids[(scope_type, value)] = token
+        if status:
+            scope_counts[status] += 1
+            if status == "created":
+                print(f"  + {scope_type}: {value!r} -> {token!r}")
 
     print(
         f"Attributes   — total: {sum(attr_counts.values())}  |  "
@@ -1210,15 +1545,19 @@ def build_and_save_linked_entities(
     for i, entity in enumerate(ue):
         technology = entity.get("technology", {})
         scope = entity.get("scope", {})
+        technology_name = entity.get("technology_name")
         linked_entities.append({
             "linked_entity_id": f"LE_{next_linked_number + i:05d}",
-            "tech_id": resolved_ids["technology"].get(entity.get("technology_name"), ""),
-            "process_id": resolved_ids["process"].get(technology.get("process_name"), ""),
+            "tech_id": resolved_ids["technology"].get(technology_name, ""),
+            "process_id": (
+                resolved_ids.get("technology_process", {}).get(technology_name, "")
+                or resolved_ids["process"].get(technology.get("process_name"), "")
+            ),
             "scope": {
-                "geographic_scope": scope_ids.get(("geographic_scope", scope.get("geographic_scope_description")), ""),
-                "temporal_scope": scope_ids.get(("temporal_scope", scope.get("temporal_scope_description")), ""),
-                "capacity_scope": scope_ids.get(("capacity_scope", scope.get("capacity_scope_description")), ""),
-                "system_boundary": scope_ids.get(("system_boundary", scope.get("system_boundary_description")), ""),
+                "geographic_scope": scope.get("geographic_scope") or scope_ids.get(("geographic_scope", get_scope_value(scope, "geographic_scope")), ""),
+                "temporal_scope": scope.get("temporal_scope") or scope_ids.get(("temporal_scope", get_scope_value(scope, "temporal_scope")), ""),
+                "capacity_scope": scope.get("capacity_scope") or scope_ids.get(("capacity_scope", get_scope_value(scope, "capacity_scope")), ""),
+                "system_boundary": scope.get("system_boundary") or scope_ids.get(("system_boundary", get_scope_value(scope, "system_boundary")), ""),
             },
             "balancing": {
                 "inputs": [
@@ -1243,7 +1582,7 @@ def build_and_save_linked_entities(
             "sources": [
                 {
                     "source_id": resolved_ids["source"].get(source["source_name"], ""),
-                    "linked_attribute_ids": [
+                    "linked_attributes": [
                         attr_ids.get(attribute_name) or f"[unregistered: {attribute_name}]"
                         for attribute_name in source.get("linked_attribute", [])
                     ],

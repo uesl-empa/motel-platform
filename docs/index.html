@@ -116,8 +116,8 @@
               <h3>Ontology-aware handoff</h3>
               <p>
                 Structured MOTEL outputs are mapped in this repository into
-                ontology-ready TTL that can feed downstream GraphDB, backend
-                API, and web interface layers.
+                ontology-ready TTL that can feed downstream graph, API,
+                and web interface layers.
               </p>
             </article>
           </div>
@@ -209,7 +209,8 @@
             <li><strong>Harmonisation:</strong> staged records are transformed into a consistent MOTEL data structure.</li>
             <li><strong>Entity linking:</strong> technologies, parameters, carriers, scopes, and sources are represented through linked records and registries.</li>
             <li><strong>Ontology mapping:</strong> harmonised MOTEL outputs are converted in this repository into ontology-ready TTL linked to ontology classes and properties.</li>
-            <li><strong>Application and export:</strong> the graph database, backend API, and webapp support exploration and future model-ready export workflows.</li>
+            <li><strong>Data exploration:</strong> published MOTEL datasets can be queried and inspected through a notebook-first exploration layer in this repository.</li>
+            <li><strong>Application and export:</strong> the graph database, backend API, and webapp support broader exploration and future model-ready export workflows.</li>
           </ol>
           <p class="section-links">
             <a href="methodology.html">Read the full methodology</a>
@@ -219,22 +220,24 @@
         <section class="doc-section" id="repository">
           <h2>Repository Structure</h2>
           <p>
-            The current repository focuses on the implemented data-preparation
-            core. A second repository,
+            The current repository focuses on ingestion, harmonisation,
+            ontology mapping, and documentation. A second repository,
             <a
               href="https://github.com/BartonChenTW/motel-webapp"
               target="_blank"
               rel="noopener noreferrer"
               >BartonChenTW/motel-webapp</a
-            >, carries the ontology, GraphDB, backend, and frontend stack.
+            >, carries the downstream application stack, including backend,
+            graph-serving, and frontend layers.
           </p>
           <pre class="repo-tree"><code>motel-platform/
 |-- 1_ingest/         source-specific ingestion notebooks and helpers
 |-- 2_harmonise/      harmonisation notebooks and helper functions
 |-- 3_ontology_mapping/ ontology-ready TTL generation scripts and outputs
+|-- 4_data_explore/   notebook-first exploration of published MOTEL data
 |-- motel-db/         unmapped data, registries, mappings, and linked outputs
 |-- schema/           machine-readable data schemas
-|-- schema_simple/    human-readable schema blueprints
+|-- schema_human/     human-readable schema blueprints
 `-- docs/             GitHub Pages documentation and workflow figures</code></pre>
         </section>
 
@@ -251,6 +254,7 @@
             <li>Worked ingestion example: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/1_ingest/examples/refuel/ingestion_pipeline.ipynb" target="_blank" rel="noopener noreferrer">reFuel.ch pipeline</a></li>
             <li>Step 2 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/2_harmonise/2_data_harmonisation.ipynb" target="_blank" rel="noopener noreferrer">harmonisation notebook</a></li>
             <li>Step 3 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/3_ontology_mapping/3_ontology_mapping.ipynb" target="_blank" rel="noopener noreferrer">ontology mapping notebook</a></li>
+            <li>Step 4 guide: <a href="https://github.com/BartonChenTW/motel-platform/blob/main/4_data_explore/4_data_exploration.ipynb" target="_blank" rel="noopener noreferrer">data exploration notebook</a></li>
             <li>Published staged and harmonised data: <a href="https://github.com/BartonChenTW/motel-platform/tree/main/motel-db" target="_blank" rel="noopener noreferrer">motel-db/</a></li>
             <li>Ontology-ready TTL output: <a href="https://github.com/BartonChenTW/motel-platform/tree/main/3_ontology_mapping/output_ttl" target="_blank" rel="noopener noreferrer">3_ontology_mapping/output_ttl/</a></li>
           </ul>
@@ -346,11 +350,12 @@ python -m venv .venv
 # Windows PowerShell:
 # .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt</code></pre>
-          <p>Then open the Step 1 and Step 2 notebooks locally in Jupyter or VS Code:</p>
+          <p>Then open the workflow notebooks locally in Jupyter or VS Code:</p>
           <ul>
             <li><code>1_ingest/1_data_ingestion.ipynb</code></li>
             <li><code>2_harmonise/2_data_harmonisation.ipynb</code></li>
             <li><code>3_ontology_mapping/3_ontology_mapping.ipynb</code></li>
+            <li><code>4_data_explore/4_data_exploration.ipynb</code></li>
           </ul>
           <p>
             Or run the ontology mapping step directly after harmonisation:
@@ -381,6 +386,7 @@ pip install -r requirements.txt</code></pre>
                 <li>Unmapped and linked data structures defined</li>
                 <li>Controlled vocabularies and mapping tables generated</li>
                 <li>Ontology-mapping workflow and graph-layer handoff documented</li>
+                <li>Notebook-first exploration entrypoint added for published MOTEL data</li>
               </ul>
             </div>
             <div>

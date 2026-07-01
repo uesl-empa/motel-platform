@@ -350,19 +350,27 @@ def classify_carrier(carrier_row: dict[str, str]) -> tuple[str, str]:
     return ("Material", "MaterialFlow")
 
 
-def inst_uri(label: str) -> str:
+def process_ontology_base(process_type: object) -> str:
+    """Map a motel-db process type to the ontology base class."""
+    normalized = str(process_type or "").strip().lower()
+    if normalized == "storage":
+        return "EnergyStorage"
+    return "EnergyConverter"
+
+
+def inst_uri(label: str, base_class: str = "EnergyConverter") -> str:
     """Build the ID for one technology item in the MOTEL output."""
-    return f"{PROJECT_BASE}/EnergyConverter/{label}"
+    return f"{PROJECT_BASE}/{safe_uri(base_class)}/{label}"
 
 
-def attr_uri(label: str, attribute_class: str) -> str:
+def attr_uri(label: str, attribute_class: str, base_class: str = "EnergyConverter") -> str:
     """Build the ID for one attribute attached to a technology item."""
-    return f"{inst_uri(label)}/{attribute_class}"
+    return f"{inst_uri(label, base_class=base_class)}/{attribute_class}"
 
 
-def attr_instance_uri(label: str, cfg: dict[str, str]) -> str:
+def attr_instance_uri(label: str, cfg: dict[str, str], base_class: str = "EnergyConverter") -> str:
     """Build the ID for one attribute while allowing stable URIs across class renames."""
-    return attr_uri(label, cfg.get("uri_segment", cfg["class"]))
+    return attr_uri(label, cfg.get("uri_segment", cfg["class"]), base_class=base_class)
 
 
 def carrier_uri(name: str) -> str:
@@ -424,12 +432,14 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
         linked_entities = yaml.safe_load(file)
 
     technologies = read_csv(db / "secondary" / "technology.csv")
+    processes = read_csv(db / "secondary" / "process.csv")
     sources = read_csv(db / "secondary" / "source.csv")
     carriers = read_csv(db / "controlled_vocabulary" / "carrier.csv")
     attributes = read_csv(db / "controlled_vocabulary" / "attribute.csv")
     unmapped_map = read_csv(db / "mapping" / "unmapped_to_linked.csv")
 
     tech_by_id = {t["tech_id"]: t for t in technologies}
+    process_by_id = {p["process_id"]: p for p in processes}
     source_by_id = {s["source_id"]: s for s in sources}
     carrier_by_id = {c["carrier_id"]: c for c in carriers}
     attribute_by_id = {a["attribute_id"]: a for a in attributes}
@@ -511,39 +521,45 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
     proc_cls = {}
     for entity in tech_entities:
         tech = tech_by_id.get(entity["tech_id"], {})
-        variant = (tech.get("technology_variant") or "").strip()
-        if variant:
-            proc_cls[variant] = cn(variant)
-    for variant, cname in sorted(proc_cls.items()):
+        technology_name = (tech.get("technology_name") or "").strip()
+        process = process_by_id.get(tech.get("main_process", ""), {})
+        base_class = process_ontology_base(process.get("process_type"))
+        if technology_name:
+            proc_cls[technology_name] = (cn(technology_name), base_class)
+    for technology_name, (cname, base_class) in sorted(proc_cls.items()):
         blocks.append(
             tb(
                 f"dici_onto:{cname}",
                 [
                     ("a", "owl:Class"),
-                    ("rdfs:subClassOf", "dici_onto:EnergyConverter"),
-                    ("rdfs:label", f'"{esc(variant)}"^^xsd:string'),
+                    ("rdfs:subClassOf", f"dici_onto:{base_class}"),
+                    ("rdfs:label", f'"{esc(technology_name)}"^^xsd:string'),
                 ],
             )
         )
 
-    blocks.append("\n# --- EnergyConverter instances ---")
+    blocks.append("\n# --- Technology instances ---")
     tech_instance_labels_by_key: dict[tuple[str, str], list[str]] = {}
+    tech_instance_base_class_by_label: dict[str, str] = {}
     for entity in tech_entities:
         le_id = entity["linked_entity_id"]
         tech = tech_by_id.get(entity["tech_id"], {})
+        process = process_by_id.get(tech.get("main_process", ""), {})
         label = le_instance_label[le_id]
         tname = le_tech_name.get(le_id, tech.get("technology_name", le_id))
         scope = entity.get("scope", {})
         temporal = normalize_scope_value(scope.get("temporal_scope", ""))
         geo = (scope.get("geographic_scope") or "").strip()
-        variant = (tech.get("technology_variant") or "").strip()
-        type_cls = cn(variant) if variant else "EnergyConverter"
+        technology_name = (tech.get("technology_name") or "").strip()
+        base_class = process_ontology_base(process.get("process_type"))
+        type_cls = cn(technology_name) if technology_name else "EnergyConverter"
         desc = (tech.get("main_process") or tech.get("technology_description") or "").strip()
 
         attr_sources: dict[str, list[str]] = {}
         for source_entry in entity.get("sources", []):
             source_id = source_entry.get("source_id", "")
-            for attr_id in source_entry.get("linked_attribute_ids", []):
+            linked_attributes = source_entry.get("linked_attributes", source_entry.get("linked_attribute_ids", []))
+            for attr_id in linked_attributes:
                 # Skip placeholder IDs so we only write real source links.
                 if not str(attr_id).startswith("[unregistered"):
                     attr_sources.setdefault(attr_id, []).append(source_id)
@@ -591,20 +607,23 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
 
         all_attrs = []
         if temporal:
-            all_attrs.append(u(attr_uri(label, "Introduced")))
+            all_attrs.append(u(attr_uri(label, "Introduced", base_class=base_class)))
         for _, _, _, cfg in valid_attrs:
-            all_attrs.append(u(attr_instance_uri(label, cfg)))
+            all_attrs.append(u(attr_instance_uri(label, cfg, base_class=base_class)))
         if all_attrs:
             po.append(("dici_onto:hasAttribute", ", ".join(all_attrs)))
 
-        blocks.append(tb(u(inst_uri(label)), po))
+        blocks.append(tb(u(inst_uri(label, base_class=base_class)), po))
+        tech_instance_base_class_by_label[label] = base_class
         if temporal:
-            tech_instance_labels_by_key.setdefault((entity["tech_id"], temporal), []).append(label)
+            labels_for_key = tech_instance_labels_by_key.setdefault((entity["tech_id"], temporal), [])
+            if label not in labels_for_key:
+                labels_for_key.append(label)
 
         if temporal:
             blocks.append(
                 tb(
-                    u(attr_uri(label, "Introduced")),
+                    u(attr_uri(label, "Introduced", base_class=base_class)),
                     [
                         ("a", "dici_onto:Introduced"),
                         ("a", "dici_onto:EventAttribute"),
@@ -626,7 +645,7 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                 capacity_basis = extract_capacity_basis_from_unit_label(unit_label)
                 if capacity_basis:
                     qudt_unit = capacity_basis["qudt_unit"]
-            attr_subject = attr_instance_uri(label, cfg)
+            attr_subject = attr_instance_uri(label, cfg, base_class=base_class)
             po_attr = [
                 ("a", f"dici_onto:{cfg['class']}"),
                 ("a", f"dici_onto:{cfg['category']}"),
@@ -689,7 +708,7 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                 flow_po = [
                     ("a", f"dici_onto:{flow_class}"),
                     ("dici_onto:contains", u(carrier_uri(carrier_name))),
-                    (f"dici_onto:{conv_predicate}", u(inst_uri(label))),
+                    (f"dici_onto:{conv_predicate}", u(inst_uri(label, base_class=base_class))),
                 ]
                 if attr_links:
                     flow_po.append(("dici_onto:hasAttribute", ", ".join(attr_links)))
@@ -725,6 +744,8 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
 
     blocks.append("\n# --- Embedded carbon instances ---")
 
+    emitted_embedded_carbon_subjects: set[str] = set()
+
     for entity in embedded_carbon_entities:
         # Export embedded carbon as separate items linked to the matching technology and year.
         tech_id = entity["tech_id"]
@@ -759,6 +780,9 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                 output_unit = "kgCO2eq/kg" if re.search(r"_(CO2|H2|NH3|CH4|MeOH|Syngas|C8|C12|Biochar)_", target_label) else "kgCO2eq/kW"
                 ec_label = f"{target_label}_LCA"
                 ec_subject = embedded_carbon_uri(ec_label)
+                if ec_subject in emitted_embedded_carbon_subjects:
+                    continue
+                emitted_embedded_carbon_subjects.add(ec_subject)
                 lca_unit_subject = f"{ec_subject}/LCA_unit"
                 ndc_subject = f"{ec_subject}/ssp2_NDC"
                 pk_subject = f"{ec_subject}/ssp2_PkBudg1000"
@@ -770,24 +794,20 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                     ec_po.append(("dici_onto:locatedIn", u(location_uri(geo))))
                 ec_po.extend(
                     [
-                        ("dici_onto:linksComponent", u(inst_uri(target_label))),
+                        ("dici_onto:linksComponent", u(inst_uri(
+                            target_label,
+                            base_class=tech_instance_base_class_by_label.get(target_label, "EnergyConverter"),
+                        ))),
                         (
                             "dici_onto:hasAttribute",
                             ", ".join([u(lca_unit_subject), u(ndc_subject), u(pk_subject)]),
                         ),
+                        ("dici_onto:hasEmbeddedCarbonLCA_unitAttribute", u(lca_unit_subject)),
+                        ("dici_onto:hasEmbeddedCarbonssp2_NDCAttribute", u(ndc_subject)),
+                        ("dici_onto:hasEmbeddedCarbonssp2_PkBudg1000Attribute", u(pk_subject)),
                     ]
                 )
                 blocks.append(tb(u(ec_subject), ec_po))
-                blocks.append(
-                    tb(
-                        u(ec_subject),
-                        [
-                            ("dici_onto:hasEmbeddedCarbonLCA_unitAttribute", u(lca_unit_subject)),
-                            ("dici_onto:hasEmbeddedCarbonssp2_NDCAttribute", u(ndc_subject)),
-                            ("dici_onto:hasEmbeddedCarbonssp2_PkBudg1000Attribute", u(pk_subject)),
-                        ],
-                    )
-                )
                 blocks.append(
                     tb(
                         u(lca_unit_subject),

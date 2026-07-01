@@ -38,10 +38,10 @@ properties:
     type: string
     enum: [measured, modeled, estimated, survey, manufacturer_spec, literature]
     description: Procedural framework tracking how the source data point values were fundamentally calculated.
-  assessment_date:
-    type: string
-    format: date
-    description: ISO 8601 calendar date logging when the entity was formally curated into the MOTEL database structure (YYYY-MM-DD).
+  reference_year:
+    type: integer
+    minimum: 0
+    description: Four-digit publication or release year of the referenced source material (for example, 2025).
   note:
     type: string
     description: Internal notes tracking specific data point idiosyncrasies, parsing edge cases, or source reliability caveats.

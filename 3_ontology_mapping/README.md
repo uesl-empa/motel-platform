@@ -51,3 +51,4 @@ Import note: the ontology-mapping workflow itself is included in this repository
 - `1_ingest/` creates staged unmapped records.
 - `2_harmonise/` creates harmonised MOTEL entities, vocabularies, mappings, and linked entities.
 - `3_ontology_mapping/` converts those harmonised MOTEL outputs into ontology-ready TTL.
+- `4_data_explore/` provides a notebook-first entrypoint for inspecting and querying the published MOTEL data product.

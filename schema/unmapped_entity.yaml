@@ -1,7 +1,7 @@
 ## updated date: 2026-06-21
 # NOTE:
 #  - remove unit and description for attribute, to make it more flexible for ingestion of raw data
-#    the unit could be included in the value field (e.g. 5 kW) or note
+#    the unit could be included in the value field (e.g. 5 kW) or notes
 
 $schema: "http://json-schema.org/draft-07/schema#"
 title: UnmappedEntity
@@ -30,9 +30,9 @@ properties:
         type: string
         description: Broad domain or energy paradigm grouping for the hardware.
         examples: [renewable, fossil_fuel, nuclear, synthetic]
-      technology_assumption:
+      technology_notes:
         type: string
-        description: Explicit technical constraints, design variations, or baseline modifications assumed by the raw source provider.
+        description: Free-text technology context, including explicit technical constraints, design variations, baseline modifications, or other source-specific notes.
       process_name:
         type: string
         description: The raw action-oriented label identifying the conversion or functional service taking place.
@@ -44,32 +44,44 @@ properties:
         type: string
         description: The sector or technical thematic domain the flow processes belong to.
         examples: [power, low_temp_heat, heavy_industry]
-      process_assumption:
+      process_notes:
         type: string
-        description: Documented technical assumptions regarding thermodynamic efficiencies, input/output structures, or conversion limits.
+        description: Free-text process context, which may include assumptions, thermodynamic constraints, input/output structures, conversion limits, definitions, or other source-specific notes.
 
   scope:
     type: object
     description: Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
     properties:
+      geographic_scope:
+        type: string
+        description: Literal raw geographic scope value from the source, such as a region code or label.
       geographic_scope_description:
         type: string
-        description: Literal unparsed geographic area or region where data was measured or intended.
+        description: Human-readable explanation of the geographic scope value, including semantic meaning or classification context.
+      temporal_scope:
+        type: string
+        description: Literal raw year, period, or time-horizon value from the source.
       temporal_scope_description:
         type: string
-        description: The targeted implementation or performance year/period.
+        description: Human-readable explanation of the temporal scope value when extra context is needed.
+      capacity_scope:
+        type: string
+        description: Literal raw capacity or size-threshold value from the source.
       capacity_scope_description:
         type: string
-        description: The scale boundary or equipment sizing threshold of the recorded asset.
+        description: Human-readable explanation of the capacity scope value when extra context is needed.
+      system_boundary:
+        type: string
+        description: Literal raw system-boundary label from the source.
       system_boundary_description:
         type: string
-        description: Operational infrastructure dependencies or network connection states.
+        description: Human-readable explanation of the system-boundary value, including inclusion rules and exclusions.
       scenario:
         type: string
         description: The specific modeled narrative or sensitivity track path from the source.
-      scope_assumption:
+      scope_notes:
         type: string
-        description: Contextual assumptions regarding spatial or temporal translatability.
+        description: Free-text metadata or provenance notes for scope fields, such as source column details or parsing caveats.
 
   sources:
     type: array
@@ -97,31 +109,25 @@ properties:
         confidence_level:
           type: string
           description: Optional source-quality or trust rating carried from the source register when available.
-        assessment_date:
-          type: string
-          description: Optional date when the source or extracted values were assessed by the data curator.
+        reference_year:
+          type:
+            - integer
+            - string
+          description: Optional publication or release year for the source material, ideally as a four-digit year.
         assessment_method:
           type: string
           description: Short note on how the source was assessed or how values were derived.
-        assessment_notes:
+        source_locator:
           type: string
-          description: Page numbers, table references, or granular location hints within the source.
+          description: Page numbers, table references, section names, sheet names, or other location hints showing where the evidence can be found within the source.
         linked_attribute:
           type: array
           description: Free-text list of attribute names this source supports; no foreign key enforcement at this stage.
           items:
             type: string
-        additional_info:
-          type: object
-          description: Optional project-specific source metadata not covered by the core fields. Use structured key-value pairs where possible, for example publication_year, authors, publisher_or_journal, pages_or_table, doi, license, source_id_original, dataset_version, scenario, or free-text notes.
-          additionalProperties:
-            type:
-              - string
-              - number
-              - boolean
-              - array
-              - object
-              - "null"
+        source_notes:
+          type: string
+          description: Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields.
 
   attributes:
     type: array
@@ -146,7 +152,7 @@ properties:
           description: Chronological anchor strings tracking multi-period or profile datasets.
           items:
             type: string
-        notes:
+        attribute_notes:
           type: string
           description: Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW)
 
@@ -167,6 +173,9 @@ properties:
             carrier_name:
               type: string
               description: Literal name of the unmapped input commodity flow.
+            carrier_notes:
+              type: string
+              description: Additional free-text context for the carrier, which may include description, carrier type, purity, phase, usage assumptions, or other source-specific notes.
             share:
               type: number
               description: Proportional numeric value tracking this specific carrier's fraction of total cumulative feedstocks.
@@ -190,6 +199,9 @@ properties:
             carrier_name:
               type: string
               description: Literal name of the unmapped output commodity flow.
+            carrier_notes:
+              type: string
+              description: Additional free-text context for the carrier, which may include description, carrier type, purity, phase, usage assumptions, or other source-specific notes.
             share:
               type: number
               description: Proportional numeric value tracking this specific carrier's fraction of total output yield.
@@ -200,9 +212,9 @@ properties:
       main_output:
         type: string
         description: The primary target product carrier used by energy modeling solvers to define overall technology capacity limits.
-      balance_assumption:
+      balancing_notes:
         type: string
-        description: Engineering notes surrounding reference environmental or thermodynamic operating states.
+        description: Free-text balancing context, including engineering assumptions, reference environmental or thermodynamic operating states, or other source-specific notes.
 
   metadata:
     type: object
