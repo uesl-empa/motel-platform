@@ -1,0 +1,125 @@
+technology_name: Direct Air Carbon Capture and Storage (DACCS) - Belfer Center 2023 cost, scale and funding benchmark
+technology:
+  technology_description: Direct air carbon capture and storage technology removing CO2 from ambient air and storing it permanently;
+    raw staging record for DACCS techno-economic review before harmonisation.
+  technology_type: conversion
+  technology_category: carbon_dioxide_removal
+  technology_notes: Record focuses on net-removal cost ranges, scale-up requirements and policy/funding caveats from the Belfer
+    Center report.
+  process_name: Direct air carbon capture and storage of atmospheric CO2
+  process_type: conversion
+  process_category: carbon_dioxide_removal
+  process_notes: DACCS process includes capture of atmospheric CO2 and permanent storage. Detailed engineering balances are
+    not extracted at this staging step.
+scope:
+  geographic_scope: global_or_literature_generic
+  geographic_scope_description: Global / technology-generic literature benchmark; not tied to one model region at ingestion
+    stage.
+  temporal_scope: 2030_to_2050s_projection
+  temporal_scope_description: Toward 2030 early full-scale deployment; 2050s large-scale deployment outlook; before-2060 gigatonne-scale
+    scenario.
+  capacity_scope: early_full_scale_to_gigatonne_scale
+  capacity_scope_description: Early full-scale plants toward 2030; ambitious deployment scenario reaching hundreds of MtCO2/year
+    and potentially 1 GtCO2/year before 2060.
+  system_boundary: daccs_net_removal_with_storage
+  system_boundary_description: DACCS net CO2 removal boundary including storage; values are not capture-only cost parameters.
+  scenario: DACCS cost, scale and funding outlook under successful large-scale deployment
+  scope_notes: Use for central/conservative net-removal benchmark and system-scale caveats, not for capture-only CAPEX/OPEX
+    without further mapping.
+sources:
+- source_name: Belfer_Center_2023_DACCS
+  source_description: 'Al Juaied and Whitmore. Prospects for Direct Air Carbon Capture and Storage: Costs, Scale and Funding.
+    Belfer Center for Science and International Affairs, Harvard Kennedy School, 2023.'
+  link: https://www.belfercenter.org/publication/prospects-direct-air-carbon-capture-and-storage-costs-scale-and-funding
+  source_type: report
+  access_date: '2026-07-01'
+  confidence_level: medium_to_high_for_benchmark; review_required_for_model_adoption
+  reference_year: 2023
+  assessment_method: Manual extraction from Belfer Center report summary and DAC review email; retained as raw staging values
+    before harmonisation.
+  source_locator: Report summary / executive discussion on costs, scale and funding
+  linked_attribute:
+  - deployment_state
+  - early_full_scale_2030_net_removal_cost
+  - large_scale_2050s_net_removal_cost
+  - aspirational_cost_target_assessment
+  - ambitious_2050_deployment_level
+  - gigatonne_scale_timing
+  - low_carbon_energy_requirement_for_1Gt_DACCS
+  - policy_support_requirement
+  source_notes: Mentioned in the DAC review email as a benchmark expecting early full-scale plants around 400-1000 USD/t net
+    CO2 toward 2030 and 2050 costs around 200-400 USD/t if large-scale deployment succeeds.
+attributes:
+- attribute_name: deployment_state
+  value: No commercial-scale DACCS plants are currently operating, but several projects are expected to begin operation by
+    2030
+  time_index:
+  - '2023'
+  - '2030'
+  attribute_notes: Deployment status statement from report context; time-sensitive and should be checked before reuse.
+- attribute_name: early_full_scale_2030_net_removal_cost
+  value: around 400-1000 USD/tCO2 toward 2030
+  uncertainty_notes: Expected range for early full-scale plants; high uncertainty.
+  time_index:
+  - '2030'
+  attribute_notes: Unit included in value. Net CO2 removal cost, not capture-only.
+- attribute_name: large_scale_2050s_net_removal_cost
+  value: around 200-400 USD/tCO2 in the 2050s if large-scale deployment is successful
+  uncertainty_notes: Conditional on successful large-scale deployment; lower end depends on favourable early costs and rollout.
+  time_index:
+  - 2050s
+  attribute_notes: Unit included in value. Conditional net-removal cost range.
+- attribute_name: aspirational_cost_target_assessment
+  value: 100 USD/tCO2 DACCS costs seem unlikely even in the longer term
+  attribute_notes: Useful as a warning against using very low DACCS cost values as a central case.
+- attribute_name: ambitious_2050_deployment_level
+  value: about 400 MtCO2/year removed by 2050 in an ambitious deployment scenario
+  time_index:
+  - '2050'
+  attribute_notes: Scenario-scale context, not a single-technology cost input.
+- attribute_name: gigatonne_scale_timing
+  value: reaches 1 GtCO2/year removals before 2060 in the ambitious deployment scenario
+  time_index:
+  - before 2060
+  attribute_notes: Scenario-scale context, not a single-technology cost input.
+- attribute_name: low_carbon_energy_requirement_for_1Gt_DACCS
+  value: 1400-4200 TWh/year low-carbon energy for 1 GtCO2/year DACCS
+  attribute_notes: Energy requirement is stated for gigatonne-scale DACCS deployment; useful as a system-boundary caveat.
+- attribute_name: policy_support_requirement
+  value: Strong long-term policy support, capital subsidies, contractual payments or tax credits are likely needed for early
+    deployment and cost reduction
+  attribute_notes: Policy condition should be retained when deriving model scenario assumptions.
+balancing:
+  inputs:
+  - carrier_name: ambient air
+    carrier_notes: Dilute atmospheric air used as CO2 source; no quantified air-flow ratio extracted at this staging step.
+    share: 1.0
+    unit: fraction
+  main_input: ambient air
+  outputs:
+  - carrier_name: CO2 captured / removed
+    carrier_notes: CO2 separated from ambient air; storage or net-removal boundary depends on the source-specific DAC, DACS,
+      or DACCS definition.
+    share: 1.0
+    unit: fraction
+  main_output: CO2 captured / removed
+  balancing_notes: The source frames DACCS as net CO2 removal with storage. Detailed process conversion ratios are not extracted
+    at this staging step.
+metadata:
+  related_project: MOTEL / SWEET reFuel TechDB review
+  tags:
+  - DAC
+  - DACS
+  - DACCS
+  - carbon_dioxide_removal
+  - technology_cost_review
+  - MOTEL
+  - reFuel_TechDB
+  - reference_8
+  - Belfer2023
+  - DACCS_cost_scale_funding
+  - net_removal_cost
+  other_notes: 'Created as a single UnmappedEntity YAML object following the latest schema supplied by the user. Units are
+    kept inside value or attribute_notes, not as separate attribute fields. Source tag: Belfer_Center_2023.'
+harmonisation_record:
+  mapping_status: to_be_mapped

@@ -1,0 +1,122 @@
+technology_name: Direct Air Capture (DAC) - Sievert, Schmidt and Steffen 2024 cost projection benchmark
+technology:
+  technology_description: Technology family for capturing CO2 directly from ambient air; the source compares solid-filter,
+    aqueous potassium hydroxide, and calcium-oxide-from-limestone DAC pathways.
+  technology_type: conversion
+  technology_category: carbon_dioxide_removal
+  technology_notes: 'Raw staging entity created from reference 2 in the DAC email: ScienceDirect/Joule publication recommended
+    for DAC review.'
+  process_name: Direct capture of CO2 from ambient air
+  process_type: conversion
+  process_category: carbon_dioxide_removal
+  process_notes: CO2 is separated from ambient air using different DAC process routes. The extracted summary does not provide
+    full process balance, CAPEX, OPEX, heat demand, or electricity demand values.
+scope:
+  geographic_scope: global_or_literature_generic
+  geographic_scope_description: Global / technology-generic literature benchmark; not tied to one model region at ingestion
+    stage.
+  temporal_scope: 2050_projection
+  temporal_scope_description: 2050 cost projection
+  capacity_scope: future_mature_or_large_scale_projection
+  capacity_scope_description: Future mature / large-scale technology cost projection; exact plant size not harmonised in this
+    staging record.
+  system_boundary: dac_capture_or_removal_cost_projection
+  system_boundary_description: DAC cost projection based on technology-inherent characteristics and component-level cost estimation.
+    Downstream storage, transport, MRV, and net-removal boundary are not explicitly quantified in this staging record.
+  scenario: 2050 projected DAC cost benchmark
+  scope_notes: Use as a review benchmark for DAC cost assumptions. Check the primary Joule article before harmonisation.
+sources:
+- source_name: Sievert_Schmidt_Steffen_2024_Joule_DAC
+  source_description: Katrin Sievert, Tobias S. Schmidt, and Bjarne Steffen, Considering technology characteristics to project
+    future costs of direct air capture, Joule 8(4), 979-999, 2024.
+  link: https://doi.org/10.1016/j.joule.2024.02.005
+  source_type: journal article
+  access_date: '2026-07-01'
+  confidence_level: medium_for_staging; review_required_for_model_adoption
+  reference_year: 2024
+  assessment_method: Manual extraction from DAC review email and accessible article/news summaries; retained as raw staging
+    values before harmonisation.
+  source_locator: Joule article DOI 10.1016/j.joule.2024.02.005; DAC review email reference 2 ScienceDirect link.
+  linked_attribute:
+  - projected_2050_cost_solid_filter_DAC
+  - projected_2050_cost_aqueous_KOH_DAC
+  - projected_2050_cost_CaO_limestone_DAC
+  - technology_routes_assessed
+  - expert_assessment_sample_size
+  - cost_projection_method
+  source_notes: The DAC email identified this ScienceDirect/Joule publication as the reference to consider for DAC. Extracted
+    values are benchmark cost ranges, not direct CAPEX/OPEX model input parameters.
+attributes:
+- attribute_name: projected_2050_cost_solid_filter_DAC
+  value: 280-580 USD/tCO2 by 2050
+  uncertainty_notes: Reported as a range; reflects uncertainty in future DAC cost projection.
+  time_index:
+  - '2050'
+  attribute_notes: Unit included in value. Often associated with solid-filter / solid-sorbent DAC routes such as Climeworks-type
+    systems.
+- attribute_name: projected_2050_cost_aqueous_KOH_DAC
+  value: 230-540 USD/tCO2 by 2050
+  uncertainty_notes: Reported as a range; reflects uncertainty in future DAC cost projection.
+  time_index:
+  - '2050'
+  attribute_notes: Unit included in value. Refers to aqueous potassium hydroxide DAC route.
+- attribute_name: projected_2050_cost_CaO_limestone_DAC
+  value: 230-835 USD/tCO2 by 2050
+  uncertainty_notes: Reported as a range; this pathway has the widest extracted cost range.
+  time_index:
+  - '2050'
+  attribute_notes: Unit included in value. Refers to calcium oxide / limestone DAC route.
+- attribute_name: technology_routes_assessed
+  value:
+  - solid-filter DAC
+  - aqueous potassium hydroxide DAC
+  - calcium oxide / limestone DAC
+  uncertainty_notes: Route labels are not harmonised technology classes.
+  time_index:
+  - '2050'
+  attribute_notes: Route labels are raw strings during ingestion.
+- attribute_name: expert_assessment_sample_size
+  value: 30 industry experts
+  uncertainty_notes: Check primary article for exact role of the expert assessment.
+  time_index: []
+  attribute_notes: Methodological attribute, not a technology performance parameter.
+- attribute_name: cost_projection_method
+  value: Component-level cost projection based on technology-inherent characteristics, including design complexity, standardisation
+    potential, mature components, integration costs, energy costs, and operation costs.
+  uncertainty_notes: Methodological description; not a numeric parameter.
+  time_index: []
+  attribute_notes: Useful for provenance and later source-quality assessment.
+balancing:
+  inputs:
+  - carrier_name: ambient air
+    carrier_notes: Dilute atmospheric air used as CO2 source; no quantified air-flow ratio extracted at this staging step.
+    share: 1.0
+    unit: fraction
+  main_input: ambient air
+  outputs:
+  - carrier_name: CO2 captured / removed
+    carrier_notes: CO2 separated from ambient air; storage or net-removal boundary depends on the source-specific DAC, DACS,
+      or DACCS definition.
+    share: 1.0
+    unit: fraction
+  main_output: CO2 captured / removed
+  balancing_notes: No quantitative mass or energy balance was extracted. Do not derive efficiency, heat demand, electricity
+    demand, or capture-rate parameters from this record without checking the primary article.
+metadata:
+  related_project: MOTEL / SWEET reFuel TechDB review
+  tags:
+  - DAC
+  - DACS
+  - DACCS
+  - carbon_dioxide_removal
+  - technology_cost_review
+  - MOTEL
+  - reFuel_TechDB
+  - reference_2
+  - Sievert2024
+  - Joule
+  - 2050_cost_projection
+  other_notes: 'Created as a single UnmappedEntity YAML object following the latest schema supplied by the user. Units are
+    kept inside value or attribute_notes, not as separate attribute fields. Source tag: Sievert_Schmidt_Steffen_2024.'
+harmonisation_record:
+  mapping_status: to_be_mapped

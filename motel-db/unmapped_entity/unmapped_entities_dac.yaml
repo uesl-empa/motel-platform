@@ -1,0 +1,553 @@
+- technology_name: Direct Air Carbon Capture and Storage (DACCS) - Belfer Center 2023
+    cost, scale and funding benchmark
+  technology:
+    technology_description: Direct air carbon capture and storage technology removing
+      CO2 from ambient air and storing it permanently; raw staging record for DACCS
+      techno-economic review before harmonisation.
+    technology_type: conversion
+    technology_category: carbon_dioxide_removal
+    technology_notes: Record focuses on net-removal cost ranges, scale-up requirements
+      and policy/funding caveats from the Belfer Center report.
+    process_name: Direct air carbon capture and storage of atmospheric CO2
+    process_type: conversion
+    process_category: carbon_dioxide_removal
+    process_notes: DACCS process includes capture of atmospheric CO2 and permanent
+      storage. Detailed engineering balances are not extracted at this staging step.
+  scope:
+    geographic_scope: global_or_literature_generic
+    geographic_scope_description: Global / technology-generic literature benchmark;
+      not tied to one model region at ingestion stage.
+    temporal_scope: 2030_to_2050s_projection
+    temporal_scope_description: Toward 2030 early full-scale deployment; 2050s large-scale
+      deployment outlook; before-2060 gigatonne-scale scenario.
+    capacity_scope: early_full_scale_to_gigatonne_scale
+    capacity_scope_description: Early full-scale plants toward 2030; ambitious deployment
+      scenario reaching hundreds of MtCO2/year and potentially 1 GtCO2/year before
+      2060.
+    system_boundary: daccs_net_removal_with_storage
+    system_boundary_description: DACCS net CO2 removal boundary including storage;
+      values are not capture-only cost parameters.
+    scenario: DACCS cost, scale and funding outlook under successful large-scale deployment
+    scope_notes: Use for central/conservative net-removal benchmark and system-scale
+      caveats, not for capture-only CAPEX/OPEX without further mapping.
+  sources:
+  - source_name: Belfer_Center_2023_DACCS
+    source_description: 'Al Juaied and Whitmore. Prospects for Direct Air Carbon Capture
+      and Storage: Costs, Scale and Funding. Belfer Center for Science and International
+      Affairs, Harvard Kennedy School, 2023.'
+    link: https://www.belfercenter.org/publication/prospects-direct-air-carbon-capture-and-storage-costs-scale-and-funding
+    source_type: report
+    access_date: '2026-07-01'
+    confidence_level: medium_to_high_for_benchmark; review_required_for_model_adoption
+    reference_year: 2023
+    assessment_method: Manual extraction from Belfer Center report summary and DAC
+      review email; retained as raw staging values before harmonisation.
+    source_locator: Report summary / executive discussion on costs, scale and funding
+    linked_attribute:
+    - deployment_state
+    - early_full_scale_2030_net_removal_cost
+    - large_scale_2050s_net_removal_cost
+    - aspirational_cost_target_assessment
+    - ambitious_2050_deployment_level
+    - gigatonne_scale_timing
+    - low_carbon_energy_requirement_for_1Gt_DACCS
+    - policy_support_requirement
+    source_notes: Mentioned in the DAC review email as a benchmark expecting early
+      full-scale plants around 400-1000 USD/t net CO2 toward 2030 and 2050 costs around
+      200-400 USD/t if large-scale deployment succeeds.
+  attributes:
+  - attribute_name: deployment_state
+    value: No commercial-scale DACCS plants are currently operating, but several projects
+      are expected to begin operation by 2030
+    time_index:
+    - '2023'
+    - '2030'
+    attribute_notes: Deployment status statement from report context; time-sensitive
+      and should be checked before reuse.
+  - attribute_name: early_full_scale_2030_net_removal_cost
+    value: around 400-1000 USD/tCO2 toward 2030
+    uncertainty_notes: Expected range for early full-scale plants; high uncertainty.
+    time_index:
+    - '2030'
+    attribute_notes: Unit included in value. Net CO2 removal cost, not capture-only.
+  - attribute_name: large_scale_2050s_net_removal_cost
+    value: around 200-400 USD/tCO2 in the 2050s if large-scale deployment is successful
+    uncertainty_notes: Conditional on successful large-scale deployment; lower end
+      depends on favourable early costs and rollout.
+    time_index:
+    - 2050s
+    attribute_notes: Unit included in value. Conditional net-removal cost range.
+  - attribute_name: aspirational_cost_target_assessment
+    value: 100 USD/tCO2 DACCS costs seem unlikely even in the longer term
+    attribute_notes: Useful as a warning against using very low DACCS cost values
+      as a central case.
+  - attribute_name: ambitious_2050_deployment_level
+    value: about 400 MtCO2/year removed by 2050 in an ambitious deployment scenario
+    time_index:
+    - '2050'
+    attribute_notes: Scenario-scale context, not a single-technology cost input.
+  - attribute_name: gigatonne_scale_timing
+    value: reaches 1 GtCO2/year removals before 2060 in the ambitious deployment scenario
+    time_index:
+    - before 2060
+    attribute_notes: Scenario-scale context, not a single-technology cost input.
+  - attribute_name: low_carbon_energy_requirement_for_1Gt_DACCS
+    value: 1400-4200 TWh/year low-carbon energy for 1 GtCO2/year DACCS
+    attribute_notes: Energy requirement is stated for gigatonne-scale DACCS deployment;
+      useful as a system-boundary caveat.
+  - attribute_name: policy_support_requirement
+    value: Strong long-term policy support, capital subsidies, contractual payments
+      or tax credits are likely needed for early deployment and cost reduction
+    attribute_notes: Policy condition should be retained when deriving model scenario
+      assumptions.
+  balancing:
+    inputs:
+    - carrier_name: ambient air
+      carrier_notes: Dilute atmospheric air used as CO2 source; no quantified air-flow
+        ratio extracted at this staging step.
+      share: 1.0
+      unit: fraction
+    main_input: ambient air
+    outputs:
+    - carrier_name: CO2 captured / removed
+      carrier_notes: CO2 separated from ambient air; storage or net-removal boundary
+        depends on the source-specific DAC, DACS, or DACCS definition.
+      share: 1.0
+      unit: fraction
+    main_output: CO2 captured / removed
+    balancing_notes: The source frames DACCS as net CO2 removal with storage. Detailed
+      process conversion ratios are not extracted at this staging step.
+  metadata:
+    related_project: MOTEL / SWEET reFuel TechDB review
+    tags:
+    - DAC
+    - DACS
+    - DACCS
+    - carbon_dioxide_removal
+    - technology_cost_review
+    - MOTEL
+    - reFuel_TechDB
+    - reference_8
+    - Belfer2023
+    - DACCS_cost_scale_funding
+    - net_removal_cost
+    other_notes: 'Created as a single UnmappedEntity YAML object following the latest
+      schema supplied by the user. Units are kept inside value or attribute_notes,
+      not as separate attribute fields. Source tag: Belfer_Center_2023.'
+  harmonisation_record:
+    mapping_status: to_be_mapped
+- technology_name: Direct Air Capture (DAC) - National Academies 2019 solid sorbent
+    and solvent DAC benchmarks
+  technology:
+    technology_description: Direct air capture technology removing CO2 from ambient
+      air; raw staging record for DAC techno-economic review before harmonisation.
+    technology_type: conversion
+    technology_category: carbon_dioxide_removal
+    technology_notes: Record covers direct air capture benchmarks from the National
+      Academies negative emissions technologies report, especially solid sorbent DAC
+      cost and energy-source caveats.
+    process_name: Direct air capture of atmospheric CO2
+    process_type: conversion
+    process_category: carbon_dioxide_removal
+    process_notes: Raw process description kept broad at ingestion stage; source-specific
+      DAC and possible storage/net-removal implications are preserved in scope and
+      attribute notes.
+  scope:
+    geographic_scope: global_or_literature_generic
+    geographic_scope_description: Global / technology-generic literature benchmark;
+      not tied to one model region at ingestion stage.
+    temporal_scope: 2019_report_benchmark
+    temporal_scope_description: 2019 report perspective; includes current/near-term
+      benchmark statements and potential future large-scale values from report analysis.
+    capacity_scope: one_MtCO2_per_year_reference_and_literature_benchmark
+    capacity_scope_description: Includes a 1 MtCO2/year reference plant scale for
+      some solid sorbent DAC analysis; other cost statements are broad literature
+      benchmarks.
+    system_boundary: dac_capture_and_energy_source_emissions_caveat
+    system_boundary_description: DAC capture cost and net-removal implications depending
+      on energy source; report discusses capture, energy-source emissions and sequestration
+      context.
+    scenario: National Academies negative emissions technology benchmark for DAC
+    scope_notes: Report year is 2019; values are useful as a benchmark but should
+      be reviewed before applying to 2050 TechDB central assumptions.
+  sources:
+  - source_name: National_Academies_2019_NETs_DAC_Chapter
+    source_description: 'National Academies of Sciences, Engineering, and Medicine.
+      Negative Emissions Technologies and Reliable Sequestration: A Research Agenda.
+      Chapter 5: Direct Air Capture. Washington, DC: The National Academies Press,
+      2019. DOI: 10.17226/25259.'
+    link: https://doi.org/10.17226/25259
+    source_type: report
+    access_date: '2026-07-01'
+    confidence_level: high_for_source_metadata; review_required_for_model_adoption
+    reference_year: 2019
+    assessment_method: Manual extraction from National Academies chapter text and
+      summary lines; retained as raw staging values before harmonisation.
+    source_locator: Chapter 5 Direct Air Capture; Table 5.8 and surrounding discussion;
+      summary chapter
+    linked_attribute:
+    - deployed_air_capture_cost_statement
+    - solid_sorbent_middle_range_capture_cost
+    - designed_DAC_process_cost_range
+    - first_generation_commercial_plant_capture_cost
+    - unoptimized_process_cost
+    - large_scale_promising_scenario_cost_potential
+    - reference_plant_scale
+    - adsorbent_cost_driver
+    - solid_sorbent_DAC_emissions_solar_solar_mid_range
+    - solid_sorbent_DAC_emissions_natural_gas_natural_gas_mid_range
+    source_notes: Mentioned in the DAC review email as a benchmark for DAC costs around
+      100-600 USD/tCO2 and current commercial values around 600 USD/tCO2.
+  attributes:
+  - attribute_name: deployed_air_capture_cost_statement
+    value: substantially above 100 USD/tCO2, as high as 600 USD/tCO2
+    uncertainty_notes: Summary-level statement for deployed air capture costs.
+    attribute_notes: Unit included in value. Useful as a near/current benchmark caveat.
+  - attribute_name: solid_sorbent_middle_range_capture_cost
+    value: 88-228 USD/tCO2 for a generic solid sorbent direct air capture system
+    uncertainty_notes: Middle range of more realistic scenarios in the committee analysis.
+    attribute_notes: Unit included in value. Source context should be checked before
+      using as a central model value.
+  - attribute_name: designed_DAC_process_cost_range
+    value: 100-600 USD/tCO2 for DAC systems using physically realistic process parameters
+      designed for direct air capture
+    uncertainty_notes: Broad range; not a single central value.
+    attribute_notes: Unit included in value. Broad range for realistic DAC process
+      parameters.
+  - attribute_name: first_generation_commercial_plant_capture_cost
+    value: about 600 USD/tCO2 for Climeworks first-generation commercial plant
+    attribute_notes: Reported by Climeworks according to the National Academies chapter;
+      keep as reported benchmark, not as harmonised market price.
+  - attribute_name: unoptimized_process_cost
+    value: at least 1000 USD/tCO2 for processes not specifically optimized for DAC
+    attribute_notes: Unit included in value. Source compares poor/unoptimized designs
+      to earlier estimates.
+  - attribute_name: large_scale_promising_scenario_cost_potential
+    value: close to 100 USD/tCO2 for large-scale processes over 1 MtCO2/year using
+      known materials and gas-solid contactors in most promising scenarios; no such
+      large-scale continuously operating installation existed at the time
+    uncertainty_notes: Optimistic large-scale scenario value; not demonstrated at
+      report time.
+    attribute_notes: Unit included in value. Important caveat against treating this
+      lower bound as demonstrated.
+  - attribute_name: reference_plant_scale
+    value: 1 MtCO2/year CO2 captured or removed
+    attribute_notes: Scale used in National Academies analysis tables for solid sorbent
+      DAC.
+  - attribute_name: adsorbent_cost_driver
+    value: Adsorbent CAPEX dominates overall cost; adsorbent cost and lifetime are
+      important cost-reduction levers
+    attribute_notes: Extracted from committee sensitivity discussion.
+  - attribute_name: solid_sorbent_DAC_emissions_solar_solar_mid_range
+    value: 0.0084-0.018 MtCO2/year emissions for a 1 MtCO2/year solid sorbent DAC
+      system using solar desorption heat and solar electricity for fans/pumps
+    attribute_notes: Unit retained in value. Mid-range from Table 5.8; shows energy-source
+      dependence of net removal.
+  - attribute_name: solid_sorbent_DAC_emissions_natural_gas_natural_gas_mid_range
+    value: 0.29-0.44 MtCO2/year emissions for a 1 MtCO2/year solid sorbent DAC system
+      using natural gas for desorption heat and natural gas electricity for fans/pumps
+    attribute_notes: Unit retained in value. Mid-range from Table 5.8; shows energy-source
+      dependence of net removal.
+  balancing:
+    inputs:
+    - carrier_name: ambient air
+      carrier_notes: Dilute atmospheric air used as CO2 source; no quantified air-flow
+        ratio extracted at this staging step.
+      share: 1.0
+      unit: fraction
+    main_input: ambient air
+    outputs:
+    - carrier_name: CO2 captured / removed
+      carrier_notes: CO2 separated from ambient air; storage or net-removal boundary
+        depends on the source-specific DAC, DACS, or DACCS definition.
+      share: 1.0
+      unit: fraction
+    main_output: CO2 captured / removed
+    balancing_notes: The report analyses DAC capture and net-removal implications
+      for different energy sources; exact material and energy balances are not harmonised
+      here.
+  metadata:
+    related_project: MOTEL / SWEET reFuel TechDB review
+    tags:
+    - DAC
+    - DACS
+    - DACCS
+    - carbon_dioxide_removal
+    - technology_cost_review
+    - MOTEL
+    - reFuel_TechDB
+    - reference_9
+    - NationalAcademies2019
+    - NETs
+    - DAC_chapter
+    - solid_sorbent_DAC
+    other_notes: 'Created as a single UnmappedEntity YAML object following the latest
+      schema supplied by the user. Units are kept inside value or attribute_notes,
+      not as separate attribute fields. Source tag: National_Academies_2019.'
+  harmonisation_record:
+    mapping_status: to_be_mapped
+- technology_name: Direct Air Capture (DAC) - Sievert, Schmidt and Steffen 2024 cost
+    projection benchmark
+  technology:
+    technology_description: Technology family for capturing CO2 directly from ambient
+      air; the source compares solid-filter, aqueous potassium hydroxide, and calcium-oxide-from-limestone
+      DAC pathways.
+    technology_type: conversion
+    technology_category: carbon_dioxide_removal
+    technology_notes: 'Raw staging entity created from reference 2 in the DAC email:
+      ScienceDirect/Joule publication recommended for DAC review.'
+    process_name: Direct capture of CO2 from ambient air
+    process_type: conversion
+    process_category: carbon_dioxide_removal
+    process_notes: CO2 is separated from ambient air using different DAC process routes.
+      The extracted summary does not provide full process balance, CAPEX, OPEX, heat
+      demand, or electricity demand values.
+  scope:
+    geographic_scope: global_or_literature_generic
+    geographic_scope_description: Global / technology-generic literature benchmark;
+      not tied to one model region at ingestion stage.
+    temporal_scope: 2050_projection
+    temporal_scope_description: 2050 cost projection
+    capacity_scope: future_mature_or_large_scale_projection
+    capacity_scope_description: Future mature / large-scale technology cost projection;
+      exact plant size not harmonised in this staging record.
+    system_boundary: dac_capture_or_removal_cost_projection
+    system_boundary_description: DAC cost projection based on technology-inherent
+      characteristics and component-level cost estimation. Downstream storage, transport,
+      MRV, and net-removal boundary are not explicitly quantified in this staging
+      record.
+    scenario: 2050 projected DAC cost benchmark
+    scope_notes: Use as a review benchmark for DAC cost assumptions. Check the primary
+      Joule article before harmonisation.
+  sources:
+  - source_name: Sievert_Schmidt_Steffen_2024_Joule_DAC
+    source_description: Katrin Sievert, Tobias S. Schmidt, and Bjarne Steffen, Considering
+      technology characteristics to project future costs of direct air capture, Joule
+      8(4), 979-999, 2024.
+    link: https://doi.org/10.1016/j.joule.2024.02.005
+    source_type: journal article
+    access_date: '2026-07-01'
+    confidence_level: medium_for_staging; review_required_for_model_adoption
+    reference_year: 2024
+    assessment_method: Manual extraction from DAC review email and accessible article/news
+      summaries; retained as raw staging values before harmonisation.
+    source_locator: Joule article DOI 10.1016/j.joule.2024.02.005; DAC review email
+      reference 2 ScienceDirect link.
+    linked_attribute:
+    - projected_2050_cost_solid_filter_DAC
+    - projected_2050_cost_aqueous_KOH_DAC
+    - projected_2050_cost_CaO_limestone_DAC
+    - technology_routes_assessed
+    - expert_assessment_sample_size
+    - cost_projection_method
+    source_notes: The DAC email identified this ScienceDirect/Joule publication as
+      the reference to consider for DAC. Extracted values are benchmark cost ranges,
+      not direct CAPEX/OPEX model input parameters.
+  attributes:
+  - attribute_name: projected_2050_cost_solid_filter_DAC
+    value: 280-580 USD/tCO2 by 2050
+    uncertainty_notes: Reported as a range; reflects uncertainty in future DAC cost
+      projection.
+    time_index:
+    - '2050'
+    attribute_notes: Unit included in value. Often associated with solid-filter /
+      solid-sorbent DAC routes such as Climeworks-type systems.
+  - attribute_name: projected_2050_cost_aqueous_KOH_DAC
+    value: 230-540 USD/tCO2 by 2050
+    uncertainty_notes: Reported as a range; reflects uncertainty in future DAC cost
+      projection.
+    time_index:
+    - '2050'
+    attribute_notes: Unit included in value. Refers to aqueous potassium hydroxide
+      DAC route.
+  - attribute_name: projected_2050_cost_CaO_limestone_DAC
+    value: 230-835 USD/tCO2 by 2050
+    uncertainty_notes: Reported as a range; this pathway has the widest extracted
+      cost range.
+    time_index:
+    - '2050'
+    attribute_notes: Unit included in value. Refers to calcium oxide / limestone DAC
+      route.
+  - attribute_name: technology_routes_assessed
+    value:
+    - solid-filter DAC
+    - aqueous potassium hydroxide DAC
+    - calcium oxide / limestone DAC
+    uncertainty_notes: Route labels are not harmonised technology classes.
+    time_index:
+    - '2050'
+    attribute_notes: Route labels are raw strings during ingestion.
+  - attribute_name: expert_assessment_sample_size
+    value: 30 industry experts
+    uncertainty_notes: Check primary article for exact role of the expert assessment.
+    time_index: []
+    attribute_notes: Methodological attribute, not a technology performance parameter.
+  - attribute_name: cost_projection_method
+    value: Component-level cost projection based on technology-inherent characteristics,
+      including design complexity, standardisation potential, mature components, integration
+      costs, energy costs, and operation costs.
+    uncertainty_notes: Methodological description; not a numeric parameter.
+    time_index: []
+    attribute_notes: Useful for provenance and later source-quality assessment.
+  balancing:
+    inputs:
+    - carrier_name: ambient air
+      carrier_notes: Dilute atmospheric air used as CO2 source; no quantified air-flow
+        ratio extracted at this staging step.
+      share: 1.0
+      unit: fraction
+    main_input: ambient air
+    outputs:
+    - carrier_name: CO2 captured / removed
+      carrier_notes: CO2 separated from ambient air; storage or net-removal boundary
+        depends on the source-specific DAC, DACS, or DACCS definition.
+      share: 1.0
+      unit: fraction
+    main_output: CO2 captured / removed
+    balancing_notes: No quantitative mass or energy balance was extracted. Do not
+      derive efficiency, heat demand, electricity demand, or capture-rate parameters
+      from this record without checking the primary article.
+  metadata:
+    related_project: MOTEL / SWEET reFuel TechDB review
+    tags:
+    - DAC
+    - DACS
+    - DACCS
+    - carbon_dioxide_removal
+    - technology_cost_review
+    - MOTEL
+    - reFuel_TechDB
+    - reference_2
+    - Sievert2024
+    - Joule
+    - 2050_cost_projection
+    other_notes: 'Created as a single UnmappedEntity YAML object following the latest
+      schema supplied by the user. Units are kept inside value or attribute_notes,
+      not as separate attribute fields. Source tag: Sievert_Schmidt_Steffen_2024.'
+  harmonisation_record:
+    mapping_status: to_be_mapped
+- technology_name: Direct Air Capture and Storage (DACS) - Young et al. 2023 cost
+    trajectory benchmark
+  technology:
+    technology_description: Direct air capture technology removing CO2 from ambient
+      air; raw staging record for DAC techno-economic review before harmonisation.
+    technology_type: conversion
+    technology_category: carbon_dioxide_removal
+    technology_notes: DACS refers to direct air capture coupled with permanent CO2
+      storage; record focuses on cost trajectories and policy-deployment caveats.
+    process_name: Direct air capture and storage of atmospheric CO2
+    process_type: conversion
+    process_category: carbon_dioxide_removal
+    process_notes: Raw process description kept broad at ingestion stage; source-specific
+      DACS system boundary is preserved in scope and attribute notes.
+  scope:
+    geographic_scope: global_or_literature_generic
+    geographic_scope_description: Global / technology-generic literature benchmark;
+      not tied to one model region at ingestion stage.
+    temporal_scope: 2050_projection
+    temporal_scope_description: Includes 2050 cost plateau outlook and deployment-dependent
+      cost trajectory discussion.
+    capacity_scope: deployment_dependent_scale_up
+    capacity_scope_description: Source-specific strategic/aggressive deployment assumptions;
+      exact plant sizes are not harmonised in this staging record.
+    system_boundary: dacs_with_storage_cost_trajectory
+    system_boundary_description: Direct air capture and storage (DACS) cost trajectory;
+      source discusses plant-level DACS technologies and policy support needs.
+    scenario: Strategic/aggressive DACS deployment with cost reduction by 2050
+    scope_notes: 2050 values depend on deployment strategy and policy support; not
+      a simple technology central cost without scenario context.
+  sources:
+  - source_name: Young_et_al_2023_One_Earth_DACS
+    source_description: Young, John; McQueen, Noah; Charalambous, Charithea; Foteinis,
+      Spyros; Hawrot, Olivia; Ojeda, Manuel; Pilorgé, Hélène; Andresen, John; Psarras,
+      Peter; Renforth, Phil; Garcia, Susana; van der Spek, Mijndert. The cost of direct
+      air capture and storage can be reduced via strategic deployment but is unlikely
+      to fall below stated cost targets. One Earth 6(7), 2023.
+    link: https://doi.org/10.1016/j.oneear.2023.06.004
+    source_type: journal article
+    access_date: '2026-07-01'
+    confidence_level: high_for_source_metadata; review_required_for_model_adoption
+    reference_year: 2023
+    assessment_method: Manual extraction from official OSTI bibliographic record and
+      abstract; retained as raw staging values before harmonisation.
+    source_locator: OSTI record 2424630; abstract and citation metadata
+    linked_attribute:
+    - assessed_technology_scope
+    - cost_projection_method
+    - projected_2050_DACS_cost_plateau
+    - cost_reduction_driver
+    - policy_support_requirement
+    - cost_target_comparison
+    source_notes: Mentioned in the DAC review email as a critical reference for checking
+      overly optimistic 2050 DAC assumptions.
+  attributes:
+  - attribute_name: assessed_technology_scope
+    value: Four DACS technologies
+    attribute_notes: Source describes plant-level cost trajectories for four direct
+      air capture and storage technologies.
+  - attribute_name: cost_projection_method
+    value: Bottom-up engineering-economic model together with top-down technological
+      learning projections
+    attribute_notes: Method used to calculate plant-level cost trajectories.
+  - attribute_name: projected_2050_DACS_cost_plateau
+    value: around 100-600 USD/tCO2 by 2050
+    uncertainty_notes: Reported as a broad cost plateau range under deployment assumptions.
+    time_index:
+    - '2050'
+    attribute_notes: Unit included in value. This is a DACS cost plateau range, not
+      a harmonised model input cost.
+  - attribute_name: cost_reduction_driver
+    value: mainly capital cost reduction through aggressive deployment
+    time_index:
+    - '2050'
+    attribute_notes: Deployment-driven learning / scale-up caveat should be retained
+      in modelling assumptions.
+  - attribute_name: policy_support_requirement
+    value: Strong project-catered policy support required to create market opportunities,
+      accelerate DACS scale-up and lower costs further
+    attribute_notes: Policy condition should be retained when deriving model scenario
+      assumptions.
+  - attribute_name: cost_target_comparison
+    value: Costs may plateau around 100-600 USD/tCO2 by 2050 but still exceed optimistic
+      targets such as 100 USD/tCO2
+    uncertainty_notes: Comparison statement depends on policy targets and scenario
+      framing.
+    time_index:
+    - '2050'
+    attribute_notes: Useful as a warning against using 100 USD/tCO2 as a central value.
+  balancing:
+    inputs:
+    - carrier_name: ambient air
+      carrier_notes: Dilute atmospheric air used as CO2 source; no quantified air-flow
+        ratio extracted at this staging step.
+      share: 1.0
+      unit: fraction
+    main_input: ambient air
+    outputs:
+    - carrier_name: CO2 captured / removed
+      carrier_notes: CO2 separated from ambient air; storage or net-removal boundary
+        depends on the source-specific DAC, DACS, or DACCS definition.
+      share: 1.0
+      unit: fraction
+    main_output: CO2 captured / removed
+    balancing_notes: The source frames DACS as direct air capture with storage; detailed
+      process conversion ratios are not extracted at this staging step.
+  metadata:
+    related_project: MOTEL / SWEET reFuel TechDB review
+    tags:
+    - DAC
+    - DACS
+    - DACCS
+    - carbon_dioxide_removal
+    - technology_cost_review
+    - MOTEL
+    - reFuel_TechDB
+    - reference_6
+    - Young2023
+    - OneEarth
+    - DACS_cost_trajectory
+    other_notes: 'Created as a single UnmappedEntity YAML object following the latest
+      schema supplied by the user. Units are kept inside value or attribute_notes,
+      not as separate attribute fields. Source tag: Young_et_al_2023.'
+  harmonisation_record:
+    mapping_status: to_be_mapped

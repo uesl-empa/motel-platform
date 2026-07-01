@@ -1,0 +1,112 @@
+technology_name: Direct Air Capture and Storage (DACS) - Young et al. 2023 cost trajectory benchmark
+technology:
+  technology_description: Direct air capture technology removing CO2 from ambient air; raw staging record for DAC techno-economic
+    review before harmonisation.
+  technology_type: conversion
+  technology_category: carbon_dioxide_removal
+  technology_notes: DACS refers to direct air capture coupled with permanent CO2 storage; record focuses on cost trajectories
+    and policy-deployment caveats.
+  process_name: Direct air capture and storage of atmospheric CO2
+  process_type: conversion
+  process_category: carbon_dioxide_removal
+  process_notes: Raw process description kept broad at ingestion stage; source-specific DACS system boundary is preserved
+    in scope and attribute notes.
+scope:
+  geographic_scope: global_or_literature_generic
+  geographic_scope_description: Global / technology-generic literature benchmark; not tied to one model region at ingestion
+    stage.
+  temporal_scope: 2050_projection
+  temporal_scope_description: Includes 2050 cost plateau outlook and deployment-dependent cost trajectory discussion.
+  capacity_scope: deployment_dependent_scale_up
+  capacity_scope_description: Source-specific strategic/aggressive deployment assumptions; exact plant sizes are not harmonised
+    in this staging record.
+  system_boundary: dacs_with_storage_cost_trajectory
+  system_boundary_description: Direct air capture and storage (DACS) cost trajectory; source discusses plant-level DACS technologies
+    and policy support needs.
+  scenario: Strategic/aggressive DACS deployment with cost reduction by 2050
+  scope_notes: 2050 values depend on deployment strategy and policy support; not a simple technology central cost without
+    scenario context.
+sources:
+- source_name: Young_et_al_2023_One_Earth_DACS
+  source_description: Young, John; McQueen, Noah; Charalambous, Charithea; Foteinis, Spyros; Hawrot, Olivia; Ojeda, Manuel;
+    Pilorgé, Hélène; Andresen, John; Psarras, Peter; Renforth, Phil; Garcia, Susana; van der Spek, Mijndert. The cost of direct
+    air capture and storage can be reduced via strategic deployment but is unlikely to fall below stated cost targets. One
+    Earth 6(7), 2023.
+  link: https://doi.org/10.1016/j.oneear.2023.06.004
+  source_type: journal article
+  access_date: '2026-07-01'
+  confidence_level: high_for_source_metadata; review_required_for_model_adoption
+  reference_year: 2023
+  assessment_method: Manual extraction from official OSTI bibliographic record and abstract; retained as raw staging values
+    before harmonisation.
+  source_locator: OSTI record 2424630; abstract and citation metadata
+  linked_attribute:
+  - assessed_technology_scope
+  - cost_projection_method
+  - projected_2050_DACS_cost_plateau
+  - cost_reduction_driver
+  - policy_support_requirement
+  - cost_target_comparison
+  source_notes: Mentioned in the DAC review email as a critical reference for checking overly optimistic 2050 DAC assumptions.
+attributes:
+- attribute_name: assessed_technology_scope
+  value: Four DACS technologies
+  attribute_notes: Source describes plant-level cost trajectories for four direct air capture and storage technologies.
+- attribute_name: cost_projection_method
+  value: Bottom-up engineering-economic model together with top-down technological learning projections
+  attribute_notes: Method used to calculate plant-level cost trajectories.
+- attribute_name: projected_2050_DACS_cost_plateau
+  value: around 100-600 USD/tCO2 by 2050
+  uncertainty_notes: Reported as a broad cost plateau range under deployment assumptions.
+  time_index:
+  - '2050'
+  attribute_notes: Unit included in value. This is a DACS cost plateau range, not a harmonised model input cost.
+- attribute_name: cost_reduction_driver
+  value: mainly capital cost reduction through aggressive deployment
+  time_index:
+  - '2050'
+  attribute_notes: Deployment-driven learning / scale-up caveat should be retained in modelling assumptions.
+- attribute_name: policy_support_requirement
+  value: Strong project-catered policy support required to create market opportunities, accelerate DACS scale-up and lower
+    costs further
+  attribute_notes: Policy condition should be retained when deriving model scenario assumptions.
+- attribute_name: cost_target_comparison
+  value: Costs may plateau around 100-600 USD/tCO2 by 2050 but still exceed optimistic targets such as 100 USD/tCO2
+  uncertainty_notes: Comparison statement depends on policy targets and scenario framing.
+  time_index:
+  - '2050'
+  attribute_notes: Useful as a warning against using 100 USD/tCO2 as a central value.
+balancing:
+  inputs:
+  - carrier_name: ambient air
+    carrier_notes: Dilute atmospheric air used as CO2 source; no quantified air-flow ratio extracted at this staging step.
+    share: 1.0
+    unit: fraction
+  main_input: ambient air
+  outputs:
+  - carrier_name: CO2 captured / removed
+    carrier_notes: CO2 separated from ambient air; storage or net-removal boundary depends on the source-specific DAC, DACS,
+      or DACCS definition.
+    share: 1.0
+    unit: fraction
+  main_output: CO2 captured / removed
+  balancing_notes: The source frames DACS as direct air capture with storage; detailed process conversion ratios are not extracted
+    at this staging step.
+metadata:
+  related_project: MOTEL / SWEET reFuel TechDB review
+  tags:
+  - DAC
+  - DACS
+  - DACCS
+  - carbon_dioxide_removal
+  - technology_cost_review
+  - MOTEL
+  - reFuel_TechDB
+  - reference_6
+  - Young2023
+  - OneEarth
+  - DACS_cost_trajectory
+  other_notes: 'Created as a single UnmappedEntity YAML object following the latest schema supplied by the user. Units are
+    kept inside value or attribute_notes, not as separate attribute fields. Source tag: Young_et_al_2023.'
+harmonisation_record:
+  mapping_status: to_be_mapped
