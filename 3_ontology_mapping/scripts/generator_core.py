@@ -616,7 +616,9 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
         blocks.append(tb(u(inst_uri(label, base_class=base_class)), po))
         tech_instance_base_class_by_label[label] = base_class
         if temporal:
-            tech_instance_labels_by_key.setdefault((entity["tech_id"], temporal), []).append(label)
+            labels_for_key = tech_instance_labels_by_key.setdefault((entity["tech_id"], temporal), [])
+            if label not in labels_for_key:
+                labels_for_key.append(label)
 
         if temporal:
             blocks.append(
@@ -742,6 +744,8 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
 
     blocks.append("\n# --- Embedded carbon instances ---")
 
+    emitted_embedded_carbon_subjects: set[str] = set()
+
     for entity in embedded_carbon_entities:
         # Export embedded carbon as separate items linked to the matching technology and year.
         tech_id = entity["tech_id"]
@@ -776,6 +780,9 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                 output_unit = "kgCO2eq/kg" if re.search(r"_(CO2|H2|NH3|CH4|MeOH|Syngas|C8|C12|Biochar)_", target_label) else "kgCO2eq/kW"
                 ec_label = f"{target_label}_LCA"
                 ec_subject = embedded_carbon_uri(ec_label)
+                if ec_subject in emitted_embedded_carbon_subjects:
+                    continue
+                emitted_embedded_carbon_subjects.add(ec_subject)
                 lca_unit_subject = f"{ec_subject}/LCA_unit"
                 ndc_subject = f"{ec_subject}/ssp2_NDC"
                 pk_subject = f"{ec_subject}/ssp2_PkBudg1000"
@@ -795,19 +802,12 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                             "dici_onto:hasAttribute",
                             ", ".join([u(lca_unit_subject), u(ndc_subject), u(pk_subject)]),
                         ),
+                        ("dici_onto:hasEmbeddedCarbonLCA_unitAttribute", u(lca_unit_subject)),
+                        ("dici_onto:hasEmbeddedCarbonssp2_NDCAttribute", u(ndc_subject)),
+                        ("dici_onto:hasEmbeddedCarbonssp2_PkBudg1000Attribute", u(pk_subject)),
                     ]
                 )
                 blocks.append(tb(u(ec_subject), ec_po))
-                blocks.append(
-                    tb(
-                        u(ec_subject),
-                        [
-                            ("dici_onto:hasEmbeddedCarbonLCA_unitAttribute", u(lca_unit_subject)),
-                            ("dici_onto:hasEmbeddedCarbonssp2_NDCAttribute", u(ndc_subject)),
-                            ("dici_onto:hasEmbeddedCarbonssp2_PkBudg1000Attribute", u(pk_subject)),
-                        ],
-                    )
-                )
                 blocks.append(
                     tb(
                         u(lca_unit_subject),
