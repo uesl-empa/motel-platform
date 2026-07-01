@@ -28,7 +28,7 @@ In the current repository snapshot, the implemented steps are:
 2. Store unresolved records as `unmapped` data.
 3. Harmonise data into the MOTEL database structure.
 4. Create referenced entities and mapping tables for technologies, processes, sources, carriers, attributes, and scopes.
-5. Define, but do not yet fully populate, a `linked_entity` target structure.
+5. Create populated `linked_entity` records that link harmonised technologies, sources, scopes, carriers, and attributes.
 
 Current limitation:
 Graph database construction, backend querying, frontend interaction, and model-ready export are still downstream work rather than implemented end-to-end features in the present public repository. The current tree does include an implemented ontology-mapping step under `3_ontology_mapping/`, but no backend or frontend application code is present here.
@@ -42,7 +42,7 @@ The primary ingestion method implemented in MOTEL is schema-first staging into t
 In practice, a new contributor can work as follows:
 
 1. Collect raw technology information from spreadsheets, reports, databases, or manual review.
-2. Map each raw record into the `unmapped` schema with at least a `technology_name`, optional technology and scope descriptions, source references, attributes, balancing information, and metadata.
+2. Map each raw record into the `unmapped` schema with at least a `technology_name`, source references, attributes, balancing information, and metadata, while storing raw scope values plus paired scope descriptions where relevant.
 3. Save those records as YAML in the `unmapped` structure.
 4. Run the harmonisation workflow to resolve free-text names into MOTEL registries and controlled vocabularies.
 
@@ -73,7 +73,7 @@ Current limitation:
 
 ### Unmapped versus linked entities
 
-`unmapped` data is the raw staging format. It keeps source-oriented names, free-text scope descriptions, flexible attribute payloads, and source references before they are matched to MOTEL registries. This contract is defined in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml).
+`unmapped` data is the raw staging format. It keeps source-oriented names, raw scope values paired with human-readable scope descriptions, flexible attribute payloads, and source references before they are matched to MOTEL registries. This contract is defined in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml).
 
 `linked_entity` is the target relational structure for harmonised records. It is defined in [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml) and explained in a human-readable form in [schema_human/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/linked_entity.yaml). It is intended to reference standardised technologies, attributes, carriers, scopes, and sources through foreign-key style identifiers.
 
@@ -87,7 +87,7 @@ The harmonisation notebook is [2_harmonise/2_data_harmonisation.ipynb](/E:/Barto
 
 Current limitation:
 
-- The current `linked_entity` output file at [motel-db/linked_entity/linked_entity.yaml](/E:/Barton/repositories/motel-platform/motel-db/linked_entity/linked_entity.yaml) is empty in this repository snapshot, even though the schema and notebook logic for producing linked entities exist.
+- The linked-entity structure is implemented and populated, but some field names and schema details are still being aligned as the workflow evolves.
 
 ## 4. MOTEL data structure
 
@@ -232,7 +232,7 @@ Current limitation:
 
 The implemented workflow already contributes to ORD and FAIR goals in several concrete ways.
 
-First, it improves traceability by preserving raw source references in `unmapped` records and by generating explicit mapping tables such as [motel-db/mapping/source_map.csv](/E:/Barton/repositories/motel-platform/motel-db/mapping/source_map.csv). Second, it makes assumptions more visible by storing scope descriptions, notes, and source-linked attributes before and during harmonisation. Third, it creates reusable structured data through explicit YAML schemas and CSV registries rather than leaving technology assumptions only in spreadsheets.
+First, it improves traceability by preserving raw source references in `unmapped` records and by generating explicit mapping tables such as [motel-db/mapping/source_map.csv](/E:/Barton/repositories/motel-platform/motel-db/mapping/source_map.csv). Second, it makes assumptions more visible by storing raw scope values, semantic scope descriptions, metadata notes, and source-linked attributes before and during harmonisation. Third, it creates reusable structured data through explicit YAML schemas and CSV registries rather than leaving technology assumptions only in spreadsheets.
 
 The workflow also supports reproducibility because the transformation from spreadsheet input to staging YAML and then to harmonised registries is encoded in notebooks and helper scripts rather than being entirely manual. Finally, the presence of `ontology_iri` fields in the schemas establishes a concrete interoperability path, even though the ontology export layer is not yet implemented in this repository snapshot.
 
@@ -240,7 +240,7 @@ The workflow also supports reproducibility because the transformation from sprea
 
 - Current limitation: only the reFuel.ch ingestion workflow is implemented as a full example.
 - Current limitation: ingestion and harmonisation are notebook-driven rather than packaged as stable command-line or service workflows.
-- Current limitation: the `linked_entity` schema is defined, but the checked-in [motel-db/linked_entity/linked_entity.yaml](/E:/Barton/repositories/motel-platform/motel-db/linked_entity/linked_entity.yaml) is currently empty.
+- Current limitation: the `linked_entity` output is populated, but parts of the schema and downstream documentation still need alignment with the latest field names and workflow behavior.
 - Current limitation: ontology mapping is implemented in `3_ontology_mapping/`, but the public documentation still leaves some mapping details and ontology packaging implicit.
 - Current limitation: graph database construction is not implemented in the current public repository.
 - Current limitation: no backend API or frontend application is present in the public repository snapshot; those components are maintained in [BartonChenTW/motel-webapp](https://github.com/BartonChenTW/motel-webapp).

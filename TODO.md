@@ -10,16 +10,15 @@ This file tracks remaining work before the repository is announced publicly.
 - Ensure each unmapped entity has a `harmonisation_record.mapping_status`.
 - Record the LLM model and harmonisation settings used for each production run.
 
-## Documentation
 
-- Add final project contact and citation information.
-- Replace placeholder values in `CITATION.cff` once a DOI or preferred citation is available.
-- Add a short contributor guide if external submissions are expected.
+## TODO
+
+- [] check the whole workflow again, after assessment_date was change to reference_year (link to ontology!?)
+- [] the harmonisation process seem not working with non-empty datasets in motel-db
+- [] in source, the LLM cannot identify which one is journal paper
+
+## DONE
+- [x] more guidelines needed to be added to classify technology and process, now the process.csv only has name but no other info.
 
 ## Future Work
 - add mathmatical equations in the secondary datasets or a property of attributes [this was mentioned in the MOTEL proposal but do not address in the project duration]
-
-
-## TODO
-- [] more guidelines needed to be added to classify technology and process, now the process.csv only has name but no other info.
-- [] check the whole workflow again, after assessment_date was change to reference_year (link to ontology!?)

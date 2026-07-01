@@ -116,8 +116,8 @@
               <h3>Ontology-aware handoff</h3>
               <p>
                 Structured MOTEL outputs are mapped in this repository into
-                ontology-ready TTL that can feed downstream GraphDB, backend
-                API, and web interface layers.
+                ontology-ready TTL that can feed downstream graph, API,
+                and web interface layers.
               </p>
             </article>
           </div>
@@ -220,14 +220,15 @@
         <section class="doc-section" id="repository">
           <h2>Repository Structure</h2>
           <p>
-            The current repository focuses on the implemented data-preparation
-            core. A second repository,
+            The current repository focuses on ingestion, harmonisation,
+            ontology mapping, and documentation. A second repository,
             <a
               href="https://github.com/BartonChenTW/motel-webapp"
               target="_blank"
               rel="noopener noreferrer"
               >BartonChenTW/motel-webapp</a
-            >, carries the ontology, GraphDB, backend, and frontend stack.
+            >, carries the downstream application stack, including backend,
+            graph-serving, and frontend layers.
           </p>
           <pre class="repo-tree"><code>motel-platform/
 |-- 1_ingest/         source-specific ingestion notebooks and helpers
