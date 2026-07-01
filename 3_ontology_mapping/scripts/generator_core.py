@@ -558,7 +558,8 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
         attr_sources: dict[str, list[str]] = {}
         for source_entry in entity.get("sources", []):
             source_id = source_entry.get("source_id", "")
-            for attr_id in source_entry.get("linked_attribute_ids", []):
+            linked_attributes = source_entry.get("linked_attributes", source_entry.get("linked_attribute_ids", []))
+            for attr_id in linked_attributes:
                 # Skip placeholder IDs so we only write real source links.
                 if not str(attr_id).startswith("[unregistered"):
                     attr_sources.setdefault(attr_id, []).append(source_id)
