@@ -16,6 +16,7 @@ linear_interpolation_2020_2050,LinearInterpolation20202050,SRC_00014,created
 paper_biogas,BiogasUpgrading2020,SRC_00015,created
 paper_müller_PowerX_2025,MüllerPowerX2025,SRC_00016,created
 report_danish_energy_2026,DanishEnergy2026,SRC_00017,created
+linear_interpolation_2030_2050,LinearInterpolation20202050,SRC_00014,exact
 paper_RWGS,CoupledCatalyticReactions2024,SRC_00018,created
 Allgoewer_2024,ETH2024,SRC_00019,created
 paper_mutschler_2018,Mutschler2018,SRC_00020,created

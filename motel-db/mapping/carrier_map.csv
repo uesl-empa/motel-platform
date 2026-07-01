@@ -1,38 +1,38 @@
 original_name,carrier_name,carrier_id,status
 NH3,Ammonia,CAR_00001,created
-El13,El13,CAR_00002,created
-CH4,Gaseous Methane,CAR_00003,created
-El47,El47,CAR_00004,created
-ThHt,Thermohydrogen,CAR_00005,created
-ElBdg,Electricity,CAR_00006,created
-ThBdg,ThermalBridge,CAR_00007,created
-ThGround,ThGround,CAR_00008,created
+El13,Grid Electricity Level 1-3,CAR_00002,created
+CH4,Methane,CAR_00003,created
+El47,Grid Electricity,CAR_00004,created
+ThHt,High-Temperature Heat,CAR_00005,created
+ElBdg,Electricity in Buildings,CAR_00006,created
+ThBdg,Thermal Energy in Buildings,CAR_00007,created
+ThGround,Geothermal Heat,CAR_00008,created
 H2,Hydrogen,CAR_00009,created
-HydroPumped,Hydrogen,CAR_00009,exact
-HydroRor,Hydrogen,CAR_00009,exact
-HydroS,Hydrogen,CAR_00009,exact
-Msw,Marine Water,CAR_00010,created
-ElPvAlpin,ElPvAlpin,CAR_00011,created
-Sol,Sol,CAR_00012,created
-U235,Uranium 235,CAR_00013,created
-ElWind,Electric Wind,CAR_00014,created
-Wood,Wood,CAR_00015,created
-ThPhII,Thermal Phenyl II,CAR_00016,created
-ElRest,ElRest,CAR_00017,created
-ThSc,Thermal Storage,CAR_00018,created
-ThLt,Thermal Liquid,CAR_00019,created
-C12,Carbon-12,CAR_00020,created
-N2,Nitrogen,CAR_00021,created
-BioWet,Biological Fluid,CAR_00022,created
-CO2Sys,Carbon Dioxide,CAR_00023,created
-H2O,Water,CAR_00024,created
-CookingOil,Cooking Oil,CAR_00025,created
-MeOH,Methanol,CAR_00026,created
-COSys,COSys,CAR_00027,created
-CO,COSys,CAR_00027,llm
-H2Process,Hydrogen,CAR_00009,exact
-C8,Octane,CAR_00028,created
-O2,Oxygen,CAR_00029,created
-CBio,CBio,CAR_00030,created
-CO2Fluegas,CO2 Flue Gas,CAR_00031,created
-CO2,Carbon Dioxide,CAR_00023,exact
+HydroPumped,Pumped Hydro,CAR_00010,created
+HydroRor,Run-of-River Hydro,CAR_00011,created
+HydroS,Hydro Storage,CAR_00012,created
+Msw,Municipal Solid Waste,CAR_00013,created
+ElPvAlpin,Photovoltaic Electricity,CAR_00014,created
+Sol,Solar Irradiation,CAR_00015,created
+U235,Uranium-235,CAR_00016,created
+ElWind,Wind Electricity,CAR_00017,created
+Wood,Energy Wood,CAR_00018,created
+ThPhII,High-Temperature Heat,CAR_00005,llm
+ElRest,Electricity in Buildings,CAR_00006,llm
+ThSc,Space Cooling Energy,CAR_00019,created
+ThLt,Low Temperature Heat,CAR_00020,created
+C12,Hydrocarbon C12,CAR_00021,created
+N2,Nitrogen,CAR_00022,created
+BioWet,Wet Biomass,CAR_00023,created
+CO2Sys,Carbon Dioxide,CAR_00024,created
+H2O,Water,CAR_00025,created
+CookingOil,Cooking Oil,CAR_00026,created
+MeOH,Methanol,CAR_00027,created
+COSys,Carbon Monoxide,CAR_00028,created
+CO,Carbon Monoxide,CAR_00028,exact
+H2Process,Gaseous Hydrogen,CAR_00029,created
+C8,C8 Hydrocarbons,CAR_00030,created
+O2,Oxygen,CAR_00031,created
+CBio,Biochar,CAR_00032,created
+CO2Fluegas,CO2 Flue Gas,CAR_00033,created
+CO2,Carbon Dioxide,CAR_00024,exact

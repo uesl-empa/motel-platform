@@ -1,96 +1,56 @@
 original_name,process_name,process_id,status
-CCGT,Combined Cycle Gas Turbine,PROC_00001,created
-OCGT,Open Cycle Gas Turbine,PROC_00002,created
-CHP plant,Combined Heat and Power,PROC_00003,created
-SOFC,Electricity Generation via Solid Oxide Fuel Cell,PROC_00004,created
-Geothermal power plant,Geothermal Power Production,PROC_00005,created
-Pumped hydro (pump mode),Pumped Hydro Storage (Pump Mode),PROC_00006,created
+CCGT,Methane-Fueled CCGT with CCS Electricity Generation,PROC_00001,created
+OCGT,Methane-Fueled Open Cycle Gas Turbine Electricity Generation,PROC_00002,created
+CHP plant,Combined Heat and Power (CHP) Generation using Methane,PROC_00003,created
+SOFC,Methane-Fueled Fuel Cell Electricity and Heat Generation,PROC_00004,created
+Geothermal power plant,Geothermal CHP Generation,PROC_00005,created
+Pumped hydro (pump mode),Pumped Hydro Storage,PROC_00006,created
 Pumped hydro (turbine mode),Pumped Hydro Power Generation,PROC_00007,created
 Run-of-river plant,Run-of-river Hydroelectric Power Generation,PROC_00008,created
-Reservoir plant,Reservoir Plant Operation,PROC_00009,created
-Incineration plant,Incineration,PROC_00010,created
-Ground-mounted PV (alpine),Ground-mounted PV,PROC_00011,created
-Rooftop PV,Rooftop PV Installation,PROC_00012,created
-Pressurised water reactor,Pressurized Water Reactor,PROC_00013,created
-Onshore wind turbine,Onshore Wind Power Generation,PROC_00014,created
-Biomass CHP plant,Biomass CHP Plant,PROC_00015,created
-Gas-fired boiler,Gas-Fired Heat Generation,PROC_00016,created
-Resistance heater,Resistance Heating,PROC_00017,created
-Air conditioning unit,Air Conditioning Unit Installation,PROC_00018,created
-Hydrogen burner,Hydrogen Combustion,PROC_00019,created
-Air-source heat pump,Air-Source Heat Pump,PROC_00020,created
-Industrial heat pump,Industrial Heat Pump,PROC_00021,created
-Oil-fired boiler,Oil-Fired Boiler Operation,PROC_00022,created
-Biomass furnace,Biomass Combustion,PROC_00023,created
-Haber–Bosch reactor,Ammonia Production,PROC_00024,created
-Anaerobic digester,Anaerobic Digestion,PROC_00025,created
-Sabatier reactor,Sabatier Process,PROC_00026,created
-HEFA reactor,Hydroprocessed Esters and Fatty Acids (HEFA) Production,PROC_00027,created
-Methanol synthesis reactor,Methanol Production,PROC_00028,created
-RWGS reactor,Reverse Water-Gas Shift Reaction,PROC_00029,created
-Alkaline electrolyser,Alkaline Electrolysis,PROC_00030,created
-FT reactor,Fischer-Tropsch Process,PROC_00031,created
-Fluidised bed gasifier,Fluidized Bed Gasification,PROC_00032,created
-MtO + oligomerisation reactor,MtO Oligomerisation,PROC_00033,created
-SOEC co-electrolyser,Hydrogen Production via Solid Oxide Electrolysis,PROC_00034,created
+Reservoir plant,Hydroelectric Reservoir Plant,PROC_00009,created
+Incineration plant,Electricity Generation from Municipal Solid Waste Incineration,PROC_00010,created
+Ground-mounted PV (alpine),Alpine Ground-Mounted Photovoltaic,PROC_00011,created
+Rooftop PV,Rooftop Photovoltaic,PROC_00012,created
+Pressurised water reactor,Electricity Generation via Nuclear Fission,PROC_00013,created
+Onshore wind turbine,Onshore Wind Electricity Generation,PROC_00014,created
+Biomass CHP plant,Biomass Combined Heat and Power Plant,PROC_00015,created
+Gas-fired boiler,Methane-Fired Boiler,PROC_00016,created
+Resistance heater,Electric Heating System for Buildings,PROC_00017,created
+Air conditioning unit,Electric Heat Pump with Thermal Storage for Building Heating,PROC_00018,created
+Hydrogen burner,Hydrogen-Fueled Boiler,PROC_00019,created
+Air-source heat pump,Residential Air-source Heat Pump Operation,PROC_00020,created
+Industrial heat pump,Low-Temperature Heat Upgrade for District Heating,PROC_00021,created
+Oil-fired boiler,Building Heating via Oil-Fired Boiler,PROC_00022,created
+Biomass furnace,Biomass-Fueled Boiler for Building Heating,PROC_00023,created
+Haber–Bosch reactor,Ammonia Synthesis (Haber–Bosch Process),PROC_00024,created
+Anaerobic digester,Anaerobic Digestion with Gas Upgrading,PROC_00025,created
+Sabatier reactor,Sabatier Reactor,PROC_00026,created
+HEFA reactor,SAF Production via Hydrotreatment of Used Cooking Oil and Animal Fat,PROC_00027,created
+Methanol synthesis reactor,Methanol Synthesis,PROC_00028,created
+RWGS reactor,Reverse Water Gas Shift,PROC_00029,created
+Alkaline electrolyser,Hydrogen Production via Alkaline Electrolysis,PROC_00030,created
+FT reactor,Fischer-Tropsch Hydrocarbon Synthesis,PROC_00031,created
+Fluidised bed gasifier,Municipal Solid Waste Gasification to Syngas,PROC_00032,created
+MtO + oligomerisation reactor,Methanol-to-Jet Fuel Production via MtO and Oligomerisation,PROC_00033,created
+SOEC co-electrolyser,High-Temperature Co-Electrolysis of CO₂ and H₂O to Syngas,PROC_00034,created
 Methane pyrolysis reactor,Methane Pyrolysis,PROC_00035,created
-Amine absorber,Gas Sweetening,PROC_00036,created
-Pyrolysis reactor,Pyrolysis Process,PROC_00037,created
-DAC (sorbent-based),DAC (sorbent-based),PROC_00038,created
-Pressure swing adsorption,Pressure Swing Adsorption,PROC_00039,created
-Li-ion battery (residential),Residential Li-ion Battery Service,PROC_00040,created
-Li-ion battery (grid-scale),Grid-Scale Li-ion Battery,PROC_00041,created
-Pumped hydro reservoir,Pumped Hydro Storage,PROC_00042,created
-Hydro reservoir,Hydro Reservoir Management,PROC_00043,created
+Amine absorber,CO2 Post-Combustion Capture via Amine Absorption,PROC_00036,created
+Pyrolysis reactor,Biochar Production via Pyrolysis,PROC_00037,created
+DAC (sorbent-based),Direct Air Capture via Adsorption,PROC_00038,created
+Pressure swing adsorption,CO2 Post-Combustion Capture via Pressure Swing Adsorption,PROC_00039,created
+Li-ion battery (residential),Residential Li-ion Battery Storage,PROC_00040,created
+Li-ion battery (grid-scale),Li-ion Battery (Grid-Scale),PROC_00041,created
+Pumped hydro reservoir,Pumped Hydro Reservoir Storage,PROC_00042,created
+Hydro reservoir,Hydro Reservoir Storage,PROC_00043,created
 High-temperature heat storage,High-Temperature Heat Storage,PROC_00044,created
-Hot water tank (residential),Hot Water Heating,PROC_00045,created
+Hot water tank (residential),Residential Hot Water Storage Tank,PROC_00045,created
 Seasonal thermal storage,Seasonal Thermal Storage,PROC_00046,created
-Compressed H₂ tank,Hydrogen Compression,PROC_00047,created
-Pipeline linepack,Pipeline Linepack Management,PROC_00048,created
-Compressed CH₄ tank,Methane Compression,PROC_00049,created
-Underground gas storage,Underground Gas Storage,PROC_00050,created
-Compressed CO₂ tank,CO₂ Compression,PROC_00051,created
-Compressed CO tank,Carbon Monoxide Compression,PROC_00052,created
+Compressed H₂ tank,Compressed Hydrogen Storage,PROC_00047,created
+Pipeline linepack,Pipeline Linepack Storage,PROC_00048,created
+Compressed CH₄ tank,Compressed Methane Storage,PROC_00049,created
+Underground gas storage,Underground Methane Storage,PROC_00050,created
+Compressed CO₂ tank,Compressed CO₂ Storage,PROC_00051,created
+Compressed CO tank,Compressed CO Storage,PROC_00052,created
 Liquid fuel tank (diesel/kerosene),Liquid Fuel Storage (Diesel/Kerosene),PROC_00053,created
 Liquid fuel tank (gasoline),Gasoline Storage,PROC_00054,created
 Ammonia storage tank,Ammonia Storage,PROC_00055,created
-direct air capture system,DAC (sorbent-based),PROC_00038,llm
-"anaerobic digestion plant, agricultural",Agricultural Anaerobic Digestion,PROC_00056,created
-"liquid storage tank, chemicals, organics",Liquid Storage for Organic Chemicals,PROC_00057,created
-gas boiler,Gas Boiler Operation,PROC_00058,created
-"gas power plant, combined cycle, 400MW electrical",Combined Cycle Gas Power Plant,PROC_00059,created
-"heat and power co-generation unit, 160kW electrical, common components for heat+electricity",Combined Heat and Power Generation,PROC_00060,created
-"fuel cell, solid oxide, 125kW electrical, future",Electricity Generation via Solid Oxide Fuel Cell,PROC_00004,llm
-"pipeline, natural gas, high pressure distribution network",Natural Gas High Pressure Distribution,PROC_00061,created
-"micro gas turbine, 100kW electrical",Electricity Generation,PROC_00062,created
-"fuel tank, compressed natural gas, 200 bar",Storage of Compressed Natural Gas,PROC_00063,created
-monoethanolamine,Monoethanolamine Production,PROC_00064,created
-potassium carbonate,Potassium Carbonate Production,PROC_00065,created
-electricity storage capacity,Electricity Storage,PROC_00066,created
-"heat pump, diffusion absorption, 4kW, future",Diffusion Absorption Heat Pump,PROC_00067,created
-"electrolyzer, 1MWe, SOEC, Balance of Plant + 2 * Stack",Hydrogen Production via Solid Oxide Electrolysis,PROC_00034,llm
-"electrolyzer, 1MWe, AEC, Balance of Plant + 2 * Stack",Hydrogen Production via Electrolysis,PROC_00068,created
-"heat pump, 30kW",Heat Pump,PROC_00069,created
-"auxiliary heating unit, electric, 5kW",Electric Auxiliary Heating,PROC_00070,created
-"hydropower plant, reservoir, alpine region",Reservoir Plant Operation,PROC_00009,llm
-"geothermal power plant, 5.5MWel",Geothermal Power Generation,PROC_00071,created
-"auto-thermal reforming-hydrogen GT power plant, 400MWe",Auto-thermal Reforming for Hydrogen Production,PROC_00072,created
-"methanol production facility, construction",Methanol Production Facility Construction,PROC_00073,created
-ammonia synthesis catalyst,Catalytic Ammonia Synthesis,PROC_00074,created
-RWGS tank construction,Reverse Water-Gas Shift Tank Construction,PROC_00075,created
-sabatier reaction methanation unit,Sabatier Process,PROC_00026,llm
-"fuel tank, compressed hydrogen gas, 700bar",Hydrogen Storage,PROC_00076,created
-"hydropower plant, reservoir",Reservoir Hydropower Generation,PROC_00077,created
-"hydropower plant, run-of-river",Run-of-river Hydroelectric Power Generation,PROC_00008,llm
-synthetic gas factory,Synthetic Gas Production,PROC_00078,created
-municipal waste incineration facility,Municipal Waste Incineration,PROC_00079,created
-"photovoltaic plant, 570kWp, multi-Si, on open ground",Photovoltaic Power Generation,PROC_00080,created
-"photovoltaic flat-roof installation, 3kWp, multi-Si, on roof",Rooftop PV Installation,PROC_00012,llm
-gas-to-liquid plant,Fischer-Tropsch Process,PROC_00031,llm
-"thermal storage system, solar tower power plant, 20 MW",Solar Tower Thermal Storage System,PROC_00081,created
-"hot water tank, 600l",Hot Water Heating,PROC_00045,exact
-"heat storage, 2000l",High-Temperature Heat Storage,PROC_00044,llm
-"nuclear power plant, pressure water reactor, 1000MW",Nuclear Power Generation,PROC_00082,created
-"wind turbine, 2MW, onshore",Onshore Wind Power Generation,PROC_00014,llm
-"furnace, wood chips, with silo, 50kW",Thermal Processing of Wood Chips,PROC_00083,created
-"heat and power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth",Organic Rankine Cycle Co-generation,PROC_00084,created

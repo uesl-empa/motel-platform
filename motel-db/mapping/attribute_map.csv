@@ -21,9 +21,9 @@ charging_capacity_factor,ChargingCapacityFactor,ATTR_00019,created
 discharging_capacity_factor,Discharging Capacity Factor,ATTR_00020,created
 charging_efficiency,Charging Efficiency,ATTR_00021,created
 discharging_efficiency,Discharging Efficiency,ATTR_00022,created
-min_soc,Minimum SOC,ATTR_00023,created
-max_soc,MaximumSOC,ATTR_00024,created
+min_soc,Minimum Soc,ATTR_00023,created
+max_soc,Maximum Soc,ATTR_00024,created
 standby_loss_per_hour,Standby Loss Per Hour,ATTR_00025,created
 capex_per_stor_capacity,Capital Expenditure per Storage Capacity,ATTR_00026,created
-opex_per_stor_capacity_yr,Annual Operational Expenditure Per Storage Capacity,ATTR_00027,created
+opex_per_stor_capacity_yr,Operational Expenditure Per Storage Capacity,ATTR_00027,created
 embedded_carbon,Embedded Carbon,ATTR_00028,created

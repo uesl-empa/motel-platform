@@ -1,4 +1,4 @@
 original_value,scope_token,status
-Plant ready to operate,BOUND_READY_OPERATIONAL,created
+Plant ready to operate,BOUND_PLANT_READY_TO_OPERATE,created
 Complete installation,BOUND_COMPLETE_INSTALLATION,created
-Plant extension ready to operate,BOUND_READY_TO_OPERATE,created
+Plant extension ready to operate,BOUND_PLANT_EXTENSION_READY_TO_OPERATE,created

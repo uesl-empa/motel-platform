@@ -1,74 +1,74 @@
 original_name,technology_name,tech_id,status
-NH3_CCGT_El,Ammonia Combined Cycle Gas Turbine Electrical,TECH_00001,created
-NH3_OCGT_El,OCGTGasTurbineElectrical,TECH_00002,created
-CH4_CCGT_El,Methane CCGT with CCS,TECH_00003,created
+NH3_CCGT_El,NH3 CCGT El,TECH_00001,created
+NH3_OCGT_El,AmmoniaOCGT,TECH_00002,created
+CH4_CCGT_El,CH4 CCGT CCS,TECH_00003,created
 CH4_CHP_ElTh,Methane CHP,TECH_00004,created
 CH4_FuelCell_El,CH4 Fuel Cell El,TECH_00005,created
 CH4_FuelCell_ElBdg,CH4 Fuel Cell El,TECH_00005,llm
-CH4_OCGT_El,CH4 Open Cycle Gas Turbine Electricity,TECH_00006,created
-Geothermal_CHP_ElTh,Geothermal CHP Generation,TECH_00007,created
-H2_CCGT_El,H2 CCGT El,TECH_00008,created
-H2_FuelCell_El,H2 Fuel Cell El,TECH_00009,created
-H2_FuelCell_ElBdg,H2 Fuel Cell El,TECH_00009,llm
-H2_OCGT_El,Hydrogen OCGT Electricity,TECH_00010,created
-El_PumpedHydro_Pump,El Pumped Hydro Pump,TECH_00011,created
-Hydro_PumpedTurbine_El,Hydro Pumped Turbine El,TECH_00012,created
-Hydro_RunOfRiver_El,Hydro RunOfRiver El,TECH_00013,created
-Hydro_Reservoir_El,Hydro Reservoir El,TECH_00014,created
-MSW_Incineration_El,MSW Incineration Electricity,TECH_00015,created
-Solar_PVAlpine_El,Alpine PV Ground Mounted,TECH_00016,created
-Solar_PVRooftop_El,Solar PV Rooftop El,TECH_00017,created
-U235_Nuclear_El,U235 Nuclear Electricity,TECH_00018,created
-Wind_Turbine_El,Wind Turbine El,TECH_00019,created
-Wood_CHP_ElTh,Wood CHP Electrical Thermal,TECH_00020,created
-CH4_Boiler_ThBdg,Methane Boiler Thermal Building,TECH_00021,created
-CH4_Boiler_ThInd,CH4 Boiler Thermal,TECH_00022,created
-El_Heater_ThBdg,El Heater ThBdg,TECH_00023,created
-El_Heater_ThInd,El Heater Thermal Industrial,TECH_00024,created
-El_AirCon_ThSc,El Heat Pump Thermal Storage,TECH_00025,created
-H2_Boiler_ThInd,Hydrogen Boiler Thermal Power Plant,TECH_00026,created
-El_HeatPump_ThBdg,El Heat Pump Residential,TECH_00027,created
-El_HeatPump_ThInd,El Heat Pump ThInd,TECH_00028,created
-Oil_Boiler_ThBdg,Oil Boiler Thermal Building,TECH_00029,created
-Oil_Boiler_ThInd,Oil Boiler Thermal,TECH_00030,created
-Wood_Boiler_ThBdg,WoodBoilerThermalBuilding,TECH_00031,created
-Wood_Boiler_ThInd,Wood Boiler Thermal,TECH_00032,created
-H2_HaberBosch_NH3,HaberBoschAmmonia,TECH_00033,created
-BioWet_Digestion_CH4,Wet Biomass Anaerobic Digestion Methane,TECH_00034,created
-H2_Sabatier_CH4,H2 Sabatier CH4,TECH_00035,created
-CookingOil_HEFA_C12,CookingOil HEFA C12,TECH_00036,created
-H2_CO2Hydro_MeOH,CO2 Hydrogenation Methanol Synthesis,TECH_00037,created
-H2_RWGS_CO,Hydrogen Reverse Water Gas Shift Carbon Monoxide,TECH_00038,created
-El_Electrolysis_H2,El Electrolysis Alkaline,TECH_00039,created
-Syngas_FT_C12,Syngas FT C12,TECH_00040,created
-Syngas_FT_C8,Syngas FT C8,TECH_00041,created
-Syngas_COHydro_CH4,Syngas COHydrogenation Methane,TECH_00042,created
-Syngas_COHydro_MeOH,Syngas CO Hydrogenation Methanol,TECH_00043,created
-MSW_Gasification_Syngas,MSW Gasification Syngas,TECH_00044,created
-MSW_Gasification_H2,MSWGasificationHydrogen,TECH_00045,created
-Wood_Gasification_H2,Wood Gasification H2,TECH_00046,created
-Wood_Gasification_Syngas,Wood Gasification Syngas,TECH_00047,created
-MeOH_MtJ_C12,MeOH MtJ Hydrotreatment C12,TECH_00048,created
-El_CoElectrolysis_Syngas,El CoElectrolysis Syngas,TECH_00049,created
-CH4_Pyrolysis_H2,Methane Pyrolysis Hydrogen,TECH_00050,created
-CO2Flue_AmineScrub_CO2,AmineScrubbingPostCombustionCO2Capture,TECH_00051,created
-BioWet_Pyrolysis_Biochar,Wet Biomass Pyrolysis Biochar,TECH_00052,created
-Air_DAC_CO2,Direct Air Capture CO2,TECH_00053,created
-CO2Flue_PSA_CO2,CO2Flue Pressure Swing Adsorption,TECH_00054,created
-Wood_Pyrolysis_Biochar,Wet Biomass Pyrolysis Biochar,TECH_00052,llm
-ElBdg_Battery_ElBdg,Electric Battery Storage Home,TECH_00055,created
-El_Battery_El,El Battery Storage,TECH_00056,created
-Hydro_PumpedReservoir_Hydro,Pumped Hydro Reservoir,TECH_00057,created
-Hydro_Reservoir_Hydro,Pumped Hydro Reservoir,TECH_00057,llm
-Th_HeatStore_Th,Thermal Storage Solar Tower,TECH_00058,created
-Th_HotWaterTank_Th,ThermalStorageTank,TECH_00059,created
-Th_SeasonalStore_Th,Seasonal Thermal Storage,TECH_00060,created
-H2_Tank_H2,CompressedHydrogenTank700Bar,TECH_00061,created
-CH4_GridStorage_CH4,MethanePipelineStorage,TECH_00062,created
-CH4_Tank_CH4,Compressed Methane Tank,TECH_00063,created
-CH4_Underground_CH4,Underground Methane Storage,TECH_00064,created
-CO2_Tank_CO2,CO2 Storage Tank,TECH_00065,created
-CO_Tank_CO,COTankCO,TECH_00066,created
-C12_Tank_C12,C12 Liquid Storage Tank,TECH_00067,created
-C8_Tank_C8,C8 Storage Tank,TECH_00068,created
-NH3_Tank_NH3,NH3 Tank Storage,TECH_00069,created
+CH4_OCGT_El,CH4 OCGT Electricity,TECH_00006,created
+Geothermal_CHP_ElTh,Geothermal CHP Electricity and Heat,TECH_00007,created
+H2_CCGT_El,H2 CCGT Electricity,TECH_00008,created
+H2_FuelCell_El,El Fuel Cell SOFC,TECH_00009,created
+H2_FuelCell_ElBdg,H2 Fuel Cell El Building,TECH_00010,created
+H2_OCGT_El,H2 OCGT El,TECH_00011,created
+El_PumpedHydro_Pump,El Pumped Hydro Pump,TECH_00012,created
+Hydro_PumpedTurbine_El,Hydro Pumped Turbine El,TECH_00013,created
+Hydro_RunOfRiver_El,Hydro RunOfRiver Conversion,TECH_00014,created
+Hydro_Reservoir_El,HydroReservoirElectricity,TECH_00015,created
+MSW_Incineration_El,MSW Incineration Electricity,TECH_00016,created
+Solar_PVAlpine_El,PV Alpine Ground Mounted,TECH_00017,created
+Solar_PVRooftop_El,El Rooftop PV,TECH_00018,created
+U235_Nuclear_El,U235 Nuclear Electricity,TECH_00019,created
+Wind_Turbine_El,Wind Turbine El,TECH_00020,created
+Wood_CHP_ElTh,Wood CHP,TECH_00021,created
+CH4_Boiler_ThBdg,GasFiredBoilerBuilding,TECH_00022,created
+CH4_Boiler_ThInd,GasFiredBoilerBuilding,TECH_00022,llm
+El_Heater_ThBdg,Electric Resistance Heater,TECH_00023,created
+El_Heater_ThInd,Electric Resistance Heater,TECH_00023,llm
+El_AirCon_ThSc,El Heat Pump Thermal Storage,TECH_00024,created
+H2_Boiler_ThInd,H2 Boiler Thermal Power Plant,TECH_00025,created
+El_HeatPump_ThBdg,El Air-Source Heat Pump,TECH_00026,created
+El_HeatPump_ThInd,El Heat Pump Industrial,TECH_00027,created
+Oil_Boiler_ThBdg,Oil Fired Boiler Building,TECH_00028,created
+Oil_Boiler_ThInd,Oil Fired Boiler Building,TECH_00028,llm
+Wood_Boiler_ThBdg,WoodFueledBoiler,TECH_00029,created
+Wood_Boiler_ThInd,Wood Boiler Thermal,TECH_00030,created
+H2_HaberBosch_NH3,HaberBoschAmmoniaSynthesis,TECH_00031,created
+BioWet_Digestion_CH4,WetAnaerobicDigestionCH4,TECH_00032,created
+H2_Sabatier_CH4,H2 Sabatier CH4,TECH_00033,created
+CookingOil_HEFA_C12,Cooking Oil HEFA Hydrotreatment,TECH_00034,created
+H2_CO2Hydro_MeOH,CO2 Hydrogenation to Methanol,TECH_00035,created
+H2_RWGS_CO,H2 RWGS CO,TECH_00036,created
+El_Electrolysis_H2,El Electrolysis Alkaline,TECH_00037,created
+Syngas_FT_C12,SyngasFTC12,TECH_00038,created
+Syngas_FT_C8,Syngas Fischer-Tropsch C8,TECH_00039,created
+Syngas_COHydro_CH4,Syngas CO Hydrogenation Methane,TECH_00040,created
+Syngas_COHydro_MeOH,SyngasCatalyticHydrogenationToMethanol,TECH_00041,created
+MSW_Gasification_Syngas,MSW Gasification Syngas,TECH_00042,created
+MSW_Gasification_H2,MSW Gasification H2,TECH_00043,created
+Wood_Gasification_H2,Wood Gasification Hydrogen,TECH_00044,created
+Wood_Gasification_Syngas,WoodyBiomassGasificationSyngas,TECH_00045,created
+MeOH_MtJ_C12,MethanolToJetHydrotreatmentC12,TECH_00046,created
+El_CoElectrolysis_Syngas,El CoElectrolysis Syngas,TECH_00047,created
+CH4_Pyrolysis_H2,Methane Pyrolysis Hydrogen,TECH_00048,created
+CO2Flue_AmineScrub_CO2,CO2 Flue Gas Amine Scrubbing,TECH_00049,created
+BioWet_Pyrolysis_Biochar,WetBiomassPyrolysisBiochar,TECH_00050,created
+Air_DAC_CO2,DirectAirCaptureCO2,TECH_00051,created
+CO2Flue_PSA_CO2,FlueGasCO2PSA,TECH_00052,created
+Wood_Pyrolysis_Biochar,WetBiomassPyrolysisBiochar,TECH_00050,llm
+ElBdg_Battery_ElBdg,El Battery Storage Li-ion Residential,TECH_00053,created
+El_Battery_El,El Battery Storage Li-ion Residential,TECH_00053,llm
+Hydro_PumpedReservoir_Hydro,Pumped Hydro Reservoir,TECH_00054,created
+Hydro_Reservoir_Hydro,Pumped Hydro Reservoir,TECH_00054,llm
+Th_HeatStore_Th,High Temperature Heat Storage,TECH_00055,created
+Th_HotWaterTank_Th,Residential Hot Water Tank,TECH_00056,created
+Th_SeasonalStore_Th,Seasonal Thermal Storage,TECH_00057,created
+H2_Tank_H2,Compressed H2 Tank,TECH_00058,created
+CH4_GridStorage_CH4,CH4PipelineLinepackStorage,TECH_00059,created
+CH4_Tank_CH4,Compressed Methane Tank,TECH_00060,created
+CH4_Underground_CH4,UndergroundMethaneStorage,TECH_00061,created
+CO2_Tank_CO2,Compressed CO2 Tank,TECH_00062,created
+CO_Tank_CO,Compressed CO Tank,TECH_00063,created
+C12_Tank_C12,C12 Liquid Fuel Tank,TECH_00064,created
+C8_Tank_C8,C8Tank,TECH_00065,created
+NH3_Tank_NH3,Ammonia Storage Tank,TECH_00066,created

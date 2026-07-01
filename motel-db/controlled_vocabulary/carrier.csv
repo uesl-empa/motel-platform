@@ -1,32 +1,34 @@
 carrier_id,carrier_name,carrier_description,carrier_type,carrier_category,carrier_reference,note
-CAR_00001,Ammonia,"Ammonia (NH₃) is a nitrogen-hydrogen compound typically produced via the Haber-Bosch process. For energy applications, it requires high purity (>99.5%) to minimize corrosion and operational risks. Infrastructure demands include pressurized storage, specialized piping, and handling precautions due to its reactive and toxic properties.",fuel,synthetic
-CAR_00002,El13,"High-voltage transmission electricity (380–220 kV) used in the electrical grid, meeting standard purity and composition requirements for grid-level distribution.",electricity,other
-CAR_00003,Gaseous Methane,Primarily composed of CH4 with typical purity levels suitable for pipeline transportation and combustion applications. Infrastructure compatibility includes natural gas networks and storage systems.,fuel,non-renewable
-CAR_00004,El47,"Grid-level electricity distributed at medium voltage levels 4–7 (1–36 kV), typically serving industrial and commercial consumers. Subject to standard grid quality specifications and infrastructure constraints.",electricity,other
-CAR_00005,Thermohydrogen,"Thermohydrogen refers to hydrogen produced or utilized in thermal processes, typically requiring high purity (99.9%+) to prevent catalyst poisoning in industrial applications. Chemical composition is primarily H₂ with trace impurities (e.g., CO, CO₂) depending on production method (reforming, electrolysis). Infrastructure context includes use in high-temperature industrial heating, chemical synthesis, and fuel cell systems.",fuel,synthetic
-CAR_00006,Electricity,"Electricity is a secondary energy carrier, typically generated from primary energy sources (renewable or non-renewable) and distributed through electrical grids. Purity is not applicable; infrastructure context includes transmission and distribution systems.",electricity,other
-CAR_00007,ThermalBridge,"ThermalBridge refers to a medium or system designed for heat transfer applications, typically requiring standard purity levels and chemical stability to ensure efficient performance in industrial or building thermal systems.",heat,other
-CAR_00008,ThGround,"Geothermal heat from underground reservoirs, typically accessed via wells and used for low to high-temperature applications. Infrastructure includes heat exchangers and drilling equipment. Purity constraints are minimal as it's a natural resource, but chemical composition may vary by location.",heat,renewable
-CAR_00009,Hydrogen,"Hydrogen is typically produced via electrolysis, steam methane reforming, or other processes. Standard purity constraints range from 99.9% to 99.999% depending on application. It is stored and transported as compressed gas or liquid, requiring specialized infrastructure to prevent leakage and ensure safety.",fuel,synthetic
-CAR_00010,Marine Water,"Marine water typically refers to seawater with salinity levels between 3.5% and 4.5% by weight, requiring desalination or treatment for use in industrial processes, power plant cooling systems, or closed-loop thermal applications. Purity constraints depend on end-use (e.g., potable water vs. process water).",other,other
-CAR_00011,ElPvAlpin,"Electricity generated from photovoltaic installations in alpine regions, accounting for specific infrastructure constraints such as high-altitude mounting, snow coverage, and temperature variations affecting panel efficiency.",electricity,renewable
-CAR_00012,Sol,Solar irradiation resource specifically designated for rooftop photovoltaic applications. No chemical purity constraints; infrastructure context assumes standard PV panel integration on building rooftops.,electricity,renewable
-CAR_00013,Uranium 235,"Enriched uranium-235 (typically 3-5% enrichment for reactor fuel, higher for specialized applications) with isotopic purity constraints for nuclear fission chain reactions. Requires enrichment from natural uranium (0.711% U-235) through gas centrifuge or gaseous diffusion processes. Infrastructure context includes nuclear reactor fuel cycles and associated waste management protocols.",fuel,non-renewable
-CAR_00014,Electric Wind,"Electricity generated from wind turbines, with standard grid quality and no specific chemical composition constraints. Infrastructure context includes wind farms and transmission networks.",electricity,renewable
-CAR_00015,Wood,"Wood fuel typically has a moisture content below 20% for efficient combustion, with a lower heating value around 10-12 MJ/kg. Commonly used in biomass boilers and combined heat and power systems.",fuel,renewable
-CAR_00016,Thermal Phenyl II,"High-temperature thermal carrier used in industrial processes, typically requiring high purity to prevent corrosion in equipment. Composed primarily of inorganic compounds, with specific chemical composition constraints to ensure compatibility with high-temperature infrastructure.",heat,non-renewable
-CAR_00017,ElRest,"Electricity used in non-residential settings (e.g., commercial, industrial) with standard grid quality expectations and infrastructure constraints for behind-the-meter applications.",electricity,other
-CAR_00018,Thermal Storage,"Thermal storage refers to the storage of heat energy using materials such as molten salts or phase-change materials. It is not a fuel but a method of storing thermal energy for later use, commonly used in industrial processes and power generation.",heat,other
-CAR_00019,Thermal Liquid,"Typically composed of mineral oils or synthetic glycols, requiring high thermal stability and low viscosity. Purity standards ensure minimal degradation and compatibility with piping materials in industrial heating systems.",heat,synthetic
-CAR_00020,Carbon-12,"High-purity Carbon-12, typically used in scientific measurements and not part of standard energy infrastructure. Composed of 12 nucleons per atom, stable isotope of carbon.",other,other
-CAR_00021,Nitrogen,"Industrial-grade nitrogen with standard purity constraints (typically 99.5%+ purity for most applications). Commonly used as an inert gas in manufacturing, storage, and process cooling. Infrastructure context includes bulk storage and distribution as compressed gas.",other,other
-CAR_00022,Biological Fluid,"A naturally occurring fluid derived from biological sources, with variable chemical composition depending on origin. Typically requires specialized handling and processing infrastructure due to its organic nature and potential for biological degradation.",other,renewable
-CAR_00023,Carbon Dioxide,"Typically 99.9% purity for industrial applications. Acts as a greenhouse gas (GHG) with 100-year global warming potential (GWP-100) of 1. Direct infrastructure context includes pipeline transportation, geological storage, and carbon capture systems.",other,other
-CAR_00024,Water,Standard potable water with typical purity constraints for general use in energy systems and industrial processes. May require treatment for specific applications.,other,other
-CAR_00025,Cooking Oil,"Typically refined vegetable oil with standardized viscosity, sulfur content, and impurity levels for combustion applications. Infrastructure requires compatible storage and handling systems for liquid fuel use.",fuel,renewable
-CAR_00026,Methanol,"Methanol (CH3OH) is typically produced at 99.9% purity for energy applications. It functions as a liquid fuel in internal combustion engines, direct methanol fuel cells, and chemical feedstock. Infrastructure compatibility requires corrosion-resistant materials due to its solvent properties.",fuel,synthetic
-CAR_00027,COSys,"Carbon monoxide (CO) as a resource within the energy system, typically requiring high purity for industrial or chemical synthesis applications. Infrastructure context includes pipeline transport and storage systems compatible with CO handling.",other,other
-CAR_00028,Octane,"A hydrocarbon compound used as a measure of fuel octane rating in internal combustion engines. Typically derived from petroleum, with standard purity constraints for use in gasoline blends.",fuel,non-renewable
-CAR_00029,Oxygen,"Oxygen is typically supplied at high purity levels (99.5%+) for industrial, medical, and metallurgical applications. Infrastructure includes cryogenic storage, gas cylinders, and pipeline distribution systems.",other,other
-CAR_00030,CBio,"Biochar derived from biomass pyrolysis, typically with high carbon content and low moisture, used for soil amendment or carbon sequestration. Standard purity and chemical composition vary based on feedstock and pyrolysis conditions.",other,renewable
-CAR_00031,CO2 Flue Gas,"CO2 Flue Gas typically contains impurities such as nitrogen, oxygen, and particulate matter, with CO2 concentration varying based on the combustion process. It is a waste stream from industrial and power generation facilities.",other,other
+CAR_00001,Ammonia,Ammonia,fuel,synthetic
+CAR_00002,Grid Electricity Level 1-3,Grid-level electricity with voltage levels 1–3 (380–220 kV),electricity,other
+CAR_00003,Methane,generic,fuel,non-renewable
+CAR_00004,Grid Electricity,"Grid-level electricity, levels 4–7 (1–36 kV)",electricity,other
+CAR_00005,High-Temperature Heat,High-temperature heat,heat,other
+CAR_00006,Electricity in Buildings,Behind-the-meter electricity in buildings,electricity,other
+CAR_00007,Thermal Energy in Buildings,Thermal energy in buildings (space heating + DHW),heat,other
+CAR_00008,Geothermal Heat,Geothermal heat,heat,renewable
+CAR_00009,Hydrogen,Hydrogen (generic),fuel,other
+CAR_00010,Pumped Hydro,Pumped hydro storage,electricity,renewable
+CAR_00011,Run-of-River Hydro,Run-of-river hydro,electricity,renewable
+CAR_00012,Hydro Storage,Hydro storage (reservoir),other,renewable
+CAR_00013,Municipal Solid Waste,Municipal solid waste,fuel,other
+CAR_00014,Photovoltaic Electricity,Electricity from alpine PV installations,electricity,renewable
+CAR_00015,Solar Irradiation,Solar irradiation used for rooftop photovoltaic systems,other,renewable
+CAR_00016,Uranium-235,Nuclear fuel (uranium-235),fuel,non-renewable
+CAR_00017,Wind Electricity,Electricity from wind turbines,electricity,renewable
+CAR_00018,Energy Wood,Energy wood (generic),fuel,renewable
+CAR_00019,Space Cooling Energy,Space cooling,other,other
+CAR_00020,Low Temperature Heat,Low-temperature heat,heat,other
+CAR_00021,Hydrocarbon C12,C₁₂ hydrocarbons representing diesel,fuel,non-renewable
+CAR_00022,Nitrogen,Nitrogen,other,other
+CAR_00023,Wet Biomass,"Wet biomass, such as sewage sludge and food waste, typically characterized by high moisture content and organic material.",fuel,renewable
+CAR_00024,Carbon Dioxide,CO₂ as a resource within the energy system,other,other
+CAR_00025,Water,Water,other,other
+CAR_00026,Cooking Oil,Cooking oil,fuel,renewable
+CAR_00027,Methanol,Methanol,fuel,other
+CAR_00028,Carbon Monoxide,CO as a resource within the energy system,other,synthetic
+CAR_00029,Gaseous Hydrogen,Process hydrogen (mixed with CO in syngas streams),fuel,synthetic
+CAR_00030,C8 Hydrocarbons,C₈ hydrocarbons (representing gasoline),fuel,non-renewable
+CAR_00031,Oxygen,Oxygen,other,other
+CAR_00032,Biochar,Biochar (carbon from biomass pyrolysis),other,renewable
+CAR_00033,CO2 Flue Gas,CO₂ from flue gas (generic point source),other,non-renewable

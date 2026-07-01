@@ -1,5 +1,5 @@
 temporal_scope,temporal_scope_description,note
-TIME_2050,"Projection for the year 2050 under the REMIND SSP2 pathway, representing a future baseline scenario with climate mitigation targets. Aligns with the dataset's defined projection years (2025–2050) and time-invariant technology parameters.",
-TIME_2030,Projection year 2030 as per the dataset's techno-economic parameters (2025–2050),
-TIME_2040,Projection year 2040 as defined in the dataset's scope (2025–2050).,
-TIME_2025,"Baseline year for techno-economic parameters (2025), as defined in the dataset's projection year framework (2025–2050). Represents the starting point for future scenario extrapolations under SSP2 pathways.",
+TIME_2050,2050,"temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection year for which the techno-economic parameters are reported., Note: Time-invariant techs use 2025"
+TIME_2030,2030,"temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection year for which the techno-economic parameters are reported., Note: Time-invariant techs use 2025"
+TIME_2040,2040,"temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection year for which the techno-economic parameters are reported., Note: Time-invariant techs use 2025"
+TIME_2025,2025,"temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection year for which the techno-economic parameters are reported., Note: Time-invariant techs use 2025"

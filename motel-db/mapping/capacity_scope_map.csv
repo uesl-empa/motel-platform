@@ -1,8 +1,8 @@
 original_value,scope_token,status
-400000,CAP_400000,created
-1000,CAP_1000,created
-100000,CAP_100000,created
-800000,CAP_800000,created
-5,CAP_5,created
-500,CAP_500,created
-20000 kg/h,CAP_20000_KG_PER_HOUR,created
+400000 kW,CAP_400000KW,created
+1000 kW,CAP_MIN_INSTALL_SIZE,created
+100000 kW,CAP_MIN_INSTALL_SIZE,created
+800000 kW,CAP_MIN_INSTALL_SIZE,created
+5 kW,CAP_MIN_INSTALL_SIZE,created
+500 kW,CAP_MIN_INSTALL_SIZE,created
+20000 kg/h,CAP_MIN_INSTALL_SIZE_20000KG_H,created

@@ -1,85 +1,56 @@
 process_id,process_name,process_description,process_type,process_category,main_sector,feedstocks,products
-PROC_00001,Combined Cycle Gas Turbine,,,
-PROC_00002,Open Cycle Gas Turbine,,,
-PROC_00003,Combined Heat and Power,,,
-PROC_00004,Electricity Generation via Solid Oxide Fuel Cell,,,
-PROC_00005,Geothermal Power Production,,,
-PROC_00006,Pumped Hydro Storage (Pump Mode),,,
-PROC_00007,Pumped Hydro Power Generation,,,
-PROC_00008,Run-of-river Hydroelectric Power Generation,,,
-PROC_00009,Reservoir Plant Operation,,,
-PROC_00010,Incineration,,,
-PROC_00011,Ground-mounted PV,,,
-PROC_00012,Rooftop PV Installation,,,
-PROC_00013,Pressurized Water Reactor,,,
-PROC_00014,Onshore Wind Power Generation,,,
-PROC_00015,Biomass CHP Plant,,,
-PROC_00016,Gas-Fired Heat Generation,,,
-PROC_00017,Resistance Heating,,,
-PROC_00018,Air Conditioning Unit Installation,,,
-PROC_00019,Hydrogen Combustion,,,
-PROC_00020,Air-Source Heat Pump,,,
-PROC_00021,Industrial Heat Pump,,,
-PROC_00022,Oil-Fired Boiler Operation,,,
-PROC_00023,Biomass Combustion,,,
-PROC_00024,Ammonia Production,,,
-PROC_00025,Anaerobic Digestion,,,
-PROC_00026,Sabatier Process,,,
-PROC_00027,Hydroprocessed Esters and Fatty Acids (HEFA) Production,,,
-PROC_00028,Methanol Production,,,
-PROC_00029,Reverse Water-Gas Shift Reaction,,,
-PROC_00030,Alkaline Electrolysis,,,
-PROC_00031,Fischer-Tropsch Process,,,
-PROC_00032,Fluidized Bed Gasification,,,
-PROC_00033,MtO Oligomerisation,,,
-PROC_00034,Hydrogen Production via Solid Oxide Electrolysis,,,
-PROC_00035,Methane Pyrolysis,,,
-PROC_00036,Gas Sweetening,,,
-PROC_00037,Pyrolysis Process,,,
-PROC_00038,DAC (sorbent-based),,,
-PROC_00039,Pressure Swing Adsorption,,,
-PROC_00040,Residential Li-ion Battery Service,,,
-PROC_00041,Grid-Scale Li-ion Battery,,,
-PROC_00042,Pumped Hydro Storage,,,
-PROC_00043,Hydro Reservoir Management,,,
-PROC_00044,High-Temperature Heat Storage,,,
-PROC_00045,Hot Water Heating,,,
-PROC_00046,Seasonal Thermal Storage,,,
-PROC_00047,Hydrogen Compression,,,
-PROC_00048,Pipeline Linepack Management,,,
-PROC_00049,Methane Compression,,,
-PROC_00050,Underground Gas Storage,,,
-PROC_00051,CO₂ Compression,,,
-PROC_00052,Carbon Monoxide Compression,,,
-PROC_00053,Liquid Fuel Storage (Diesel/Kerosene),,,
-PROC_00054,Gasoline Storage,,,
-PROC_00055,Ammonia Storage,,,
-PROC_00056,Agricultural Anaerobic Digestion,,,
-PROC_00057,Liquid Storage for Organic Chemicals,,,
-PROC_00058,Gas Boiler Operation,,,
-PROC_00059,Combined Cycle Gas Power Plant,,,
-PROC_00060,Combined Heat and Power Generation,,,
-PROC_00061,Natural Gas High Pressure Distribution,,,
-PROC_00062,Electricity Generation,,,
-PROC_00063,Storage of Compressed Natural Gas,,,
-PROC_00064,Monoethanolamine Production,,,
-PROC_00065,Potassium Carbonate Production,,,
-PROC_00066,Electricity Storage,,,
-PROC_00067,Diffusion Absorption Heat Pump,,,
-PROC_00068,Hydrogen Production via Electrolysis,,,
-PROC_00069,Heat Pump,,,
-PROC_00070,Electric Auxiliary Heating,,,
-PROC_00071,Geothermal Power Generation,,,
-PROC_00072,Auto-thermal Reforming for Hydrogen Production,,,
-PROC_00073,Methanol Production Facility Construction,,,
-PROC_00074,Catalytic Ammonia Synthesis,,,
-PROC_00075,Reverse Water-Gas Shift Tank Construction,,,
-PROC_00076,Hydrogen Storage,,,
-PROC_00077,Reservoir Hydropower Generation,,,
-PROC_00078,Synthetic Gas Production,,,
-PROC_00079,Municipal Waste Incineration,,,
-PROC_00080,Photovoltaic Power Generation,,,
-PROC_00081,Solar Tower Thermal Storage System,,,
-PROC_00082,Nuclear Power Generation,,,
-PROC_00083,Thermal Processing of Wood Chips,,,
-PROC_00084,Organic Rankine Cycle Co-generation,,,
+PROC_00001,Methane-Fueled CCGT with CCS Electricity Generation,"A methane-fueled combined cycle gas turbine (CCGT) system with carbon capture and storage (CCS) that converts natural gas (CH4) and hydrogen (H2) into electricity (El13), utilizing ammonia (NH3) as a potential hydrogen carrier or auxiliary fuel. The process includes combustion, power generation, and CO2 capture for storage, positioning it within the power sector's net grid as a low-carbon electricity generation method.",conversion,Thermochemical Conversion,power,"['NH3', 'CH4', 'H2']",['El13']
+PROC_00002,Methane-Fueled Open Cycle Gas Turbine Electricity Generation,"Methane-fueled open cycle gas turbine (OCGT) electricity generation converts chemical energy from methane (CH4), ammonia (NH3), and hydrogen (H2) into electrical energy (El13) through combustion and thermodynamic expansion, serving as a baseload power generation technology within the net grid.",conversion,Power Generation,power,"['NH3', 'CH4', 'H2']",['El13']
+PROC_00003,Combined Heat and Power (CHP) Generation using Methane,"A process that converts methane (CH4) into electricity (El47) and thermal energy (ThHt) through combined heat and power generation. This process is integrated into the energy grid to provide simultaneous electrical and thermal outputs, enhancing overall energy efficiency.",conversion,Thermal Power Generation,power,['CH4'],"['El47', 'ThHt']"
+PROC_00004,Methane-Fueled Fuel Cell Electricity and Heat Generation,"A methane-fueled solid oxide fuel cell (SOFC) converts natural gas (CH4) and hydrogen (H2) into electricity (El47), heat (ThHt), building electricity (ElBdg), and building heat (ThBdg). This process is integrated into the energy grid to provide decentralized power and thermal energy solutions for industrial and residential applications.",conversion,Fuel Cell Technology,Power,"['CH4', 'H2']","['El47', 'ThHt', 'ElBdg', 'ThBdg']"
+PROC_00005,Geothermal CHP Generation,Geothermal-based combined heat and power generation converts geothermal heat from underground (ThGround) into electricity (El47) and useful heat (ThHt). This process is integrated into the energy grid to supply both power and thermal energy demands.,conversion,Combined Heat and Power Systems,power,['ThGround'],"['El47', 'ThHt']"
+PROC_00006,Pumped Hydro Storage,"Pumped hydroelectric energy storage (pump mode) involves using electrical energy to pump water from a lower reservoir to an upper reservoir, storing potential energy which can be converted back to electrical energy when needed. This process is integrated into the grid to manage energy supply and demand imbalances.",storage,Energy Storage Systems,power,['El13'],['HydroPumped']
+PROC_00007,Pumped Hydro Power Generation,"A process that generates electricity by releasing water stored in an upper reservoir through turbines, converting potential energy into electrical energy. It is part of the grid's energy storage and generation system.",conversion,Power Generation,power,['HydroPumped'],['El13']
+PROC_00008,Run-of-river Hydroelectric Power Generation,"A run-of-river hydroelectric power plant harnesses the kinetic energy of flowing water from a river without the need for a large dam. The process converts this energy into electrical power, which is then integrated into the regional power grid. This method minimizes environmental disruption while providing a renewable and sustainable energy source.",conversion,Hydropower Generation,power,['HydroRor'],['El13']
+PROC_00009,Hydroelectric Reservoir Plant,"Converts the potential energy of water stored in reservoirs into electrical energy through turbines and generators, integrating into the power grid as a renewable energy source.",conversion,Hydropower,power,['HydroS'],['El13']
+PROC_00010,Electricity Generation from Municipal Solid Waste Incineration,"The process involves incinerating municipal solid waste to generate electricity and thermal energy, integrating into the energy grid as a waste-to-energy solution.",conversion,Thermochemical Upgrading,power,['Msw'],"['El13', 'ThHt']"
+PROC_00011,Alpine Ground-Mounted Photovoltaic,"A ground-mounted photovoltaic system designed for alpine regions, converting solar energy into electrical energy. Based on the ETHZ study from 2024, this technology utilizes solar panels to generate electricity, contributing to renewable energy production in mountainous areas.",conversion,Renewable Energy Technology,power,['ElPvAlpin'],['El13']
+PROC_00012,Rooftop Photovoltaic,"A photovoltaic system that converts solar energy into electricity for building use, operating at a small scale and integrated into the power grid in 2025.",conversion,Renewable Energy Conversion,power,['Sol'],['ElBdg']
+PROC_00013,Electricity Generation via Nuclear Fission,"A thermodynamic process where nuclear fission of U235 generates heat, which is used to produce steam and drive turbines, converting nuclear energy into electricity within the power grid.",conversion,Nuclear Fission Energy Conversion,power,['U235'],['El13']
+PROC_00014,Onshore Wind Electricity Generation,"Converts wind energy into electricity using onshore wind turbines, feeding into the power grid as a renewable energy source.",conversion,Wind Power Generation,power,['ElWind'],['El13']
+PROC_00015,Biomass Combined Heat and Power Plant,"A process that converts wood into electricity and heat through combined heat and power generation, integrating into the energy grid for efficient resource utilization.",conversion,Thermochemical Upgrading,power,['Wood'],"['El47', 'ThHt']"
+PROC_00016,Methane-Fired Boiler,"Thermodynamic conversion of methane (CH4) into thermal energy for building heating, producing thermal building (ThBdg) and thermal process heat II (ThPhII) as outputs.",conversion,Thermochemical Upgrading,heat,['CH4'],"['ThBdg', 'ThPhII']"
+PROC_00017,Electric Heating System for Buildings,"Converts electrical energy into thermal energy for building heating applications, utilizing resistance heating technology. Operates within the building sector to provide direct heat output.",conversion,Thermal Conversion,heat,"['ElBdg', 'ElRest']","['ThBdg', 'ThPhII']"
+PROC_00018,Electric Heat Pump with Thermal Storage for Building Heating,"Converts electrical energy from buildings into thermal energy, which is stored for later use in building heating applications. Integrated within the building energy system to provide efficient heating solutions.",conversion,Thermal Energy Conversion,heat,['ElBdg'],['ThSc']
+PROC_00019,Hydrogen-Fueled Boiler,"A hydrogen-fueled heating system that converts hydrogen into thermal power for use in thermal power plants, integrated into the energy grid to provide heat and power.",conversion,Thermal Power Generation,Power,['H2'],['ThPhII']
+PROC_00020,Residential Air-source Heat Pump Operation,"Converts electrical energy into thermal energy for residential heating applications using a fixed coefficient of performance (COP) of 4, typically involving vapor-compression cycles to transfer heat from the ambient air to a building's thermal system.",conversion,Thermal Conversion,heat,['ElBdg'],['ThBdg']
+PROC_00021,Low-Temperature Heat Upgrade for District Heating,"A thermodynamic conversion process that upgrades low-temperature thermal energy (ThLt) and electrical energy (ElRest) into high-temperature thermal energy (ThHt) for integration into district heating networks, enabling efficient heat distribution within the energy system.",conversion,Thermal Upgrading,heat,"['ElRest', 'ThLt']",['ThHt']
+PROC_00022,Building Heating via Oil-Fired Boiler,"Converts hydrocarbon fuel (C12) into thermal energy (ThBdg) for building heating, integrated within the building's thermal distribution network.",conversion,Thermal Conversion,heat,['C12'],"['ThBdg', 'ThPhII']"
+PROC_00023,Biomass-Fueled Boiler for Building Heating,"A thermodynamic conversion process where wood is combusted to generate thermal energy for building heating, integrated into the heating grid.",conversion,Thermal Conversion,Heat,['Wood'],"['ThBdg', 'ThPhII']"
+PROC_00024,Ammonia Synthesis (Haber–Bosch Process),"The Haber–Bosch process synthesizes ammonia (NH3) from hydrogen (H2) and nitrogen (N2) gases under high pressure and temperature, catalyzed by iron-based catalysts. It is a cornerstone of industrial chemical production, primarily used in fertilizer manufacturing.",conversion,Thermochemical Upgrading,industry,"['H2', 'N2']","['NH3', 'ThPhII']"
+PROC_00025,Anaerobic Digestion with Gas Upgrading,"This process involves the anaerobic digestion of wet biomass, coupled with gas upgrading technology, to convert organic materials and hydrogen into methane. It serves as a renewable energy production method, integrating waste management with energy generation.",conversion,Anaerobic Digestion,Power,"['BioWet', 'H2']",['CH4']
+PROC_00026,Sabatier Reactor,"The Sabatier Reactor facilitates the thermo-catalytic conversion of hydrogen (H2) and carbon dioxide (CO2) into methane (CH4) and water (H2O), utilizing a catalytic hydrogenation process. This process is integral to carbon capture and utilization systems, converting greenhouse gases into usable hydrocarbon fuels.",conversion,Thermochemical Upgrading,industry,"['H2', 'CO2Sys', 'H2Process', 'CO']","['CH4', 'ThHt', 'H2O']"
+PROC_00027,SAF Production via Hydrotreatment of Used Cooking Oil and Animal Fat,"This process involves the hydrotreatment of used cooking oil and animal fat to produce sustainable aviation fuel (SAF). It converts raw feedstocks like CookingOil and animal fats into hydrocarbon-based fuels (C12, ThHt) using hydrogen (H2), electricity (El47), and methane (CH4) as auxiliary inputs. The process is integrated into the energy grid as a thermochemical upgrading pathway for waste-to-fuel conversion.",conversion,Thermochemical Upgrading,transport,"['CookingOil', 'H2', 'El47', 'CH4']","['C12', 'ThHt']"
+PROC_00028,Methanol Synthesis,"A process that converts carbon dioxide and hydrogen into methanol through catalytic hydrogenation, serving as a key step in carbon capture and utilization within the industrial energy system.",conversion,Thermochemical Upgrading,industry,"['H2', 'CO2Sys', 'COSys', 'H2Process', 'CO']","['MeOH', 'ThHt']"
+PROC_00029,Reverse Water Gas Shift,"The Reverse Water Gas Shift process converts hydrogen and carbon dioxide into carbon monoxide and water through a catalytic reaction, facilitating carbon capture and utilization in industrial applications.",conversion,Catalytic conversion,industry,"['H2', 'CO2Sys', 'ThPhII']","['CO', 'H2O']"
+PROC_00030,Hydrogen Production via Alkaline Electrolysis,"Produces hydrogen through alkaline electrolysis, converting electrical energy into hydrogen gas. Integrated into the energy grid for hydrogen generation.",conversion,Electrolysis,power,['El47'],['H2']
+PROC_00031,Fischer-Tropsch Hydrocarbon Synthesis,"The Fischer-Tropsch process converts syngas (a mixture of hydrogen and carbon monoxide) into liquid hydrocarbons, such as C12, through a series of chemical reactions. This process is a key component of synthetic fuel production and is integrated into the energy system for hydrocarbon synthesis and thermal energy generation.",conversion,Thermochemical Upgrading,transport,"['H2Process', 'CO']","['C12', 'ThHt', 'H2O', 'C8']"
+PROC_00032,Municipal Solid Waste Gasification to Syngas,"Conversion of municipal solid waste (MSW) into syngas through gasification in a fluidised bed reactor, utilizing oxygen and thermal heat. The process produces hydrogen (H2), carbon dioxide (CO2), and other byproducts such as carbon monoxide (CO).",conversion,Thermochemical Upgrading,power,"['Msw', 'O2', 'ThHt', 'Wood']","['H2', 'CO2Sys', 'H2Process', 'CO']"
+PROC_00033,Methanol-to-Jet Fuel Production via MtO and Oligomerisation,"A conversion process that transforms methanol (MeOH) and El47 into C12 and ThHt through methanol-to-olefins (MtO) followed by oligomerisation, producing jet fuel precursors. Integrated within the net grid as a core conversion pathway for sustainable aviation fuel production.",conversion,Thermochemical Upgrading,transport,"['MeOH', 'El47']","['C12', 'ThHt']"
+PROC_00034,High-Temperature Co-Electrolysis of CO₂ and H₂O to Syngas,"High-temperature co-electrolysis converts CO₂ and H₂O into syngas (CO and H₂) using electrical and thermal energy. This process operates as a core conversion node within the energy system, enabling hydrogen and carbon monoxide production for industrial and fuel applications.",conversion,Thermochemical Upgrading,industry,"['El47', 'CO2Sys', 'ThPhII']","['H2Process', 'CO', 'O2']"
+PROC_00035,Methane Pyrolysis,"Thermal decomposition of methane (CH4) and El47 into hydrogen (H2) and solid carbon (CBio), producing turquoise hydrogen. This process is part of the near-term technology roadmap for hydrogen production.",conversion,Thermochemical Upgrading,power,"['CH4', 'El47']","['H2', 'CBio']"
+PROC_00036,CO2 Post-Combustion Capture via Amine Absorption,"This process involves the capture of CO2 from flue gas using amine absorption, a temperature swing process. It is part of post-combustion carbon capture technologies, typically applied in power generation sectors to reduce CO2 emissions. The reference is based on a plant size of approximately 150 ktCO2 per year.",conversion,Carbon Capture Technologies,power,"['CO2Fluegas', 'El13', 'ThHt']",['CO2Sys']
+PROC_00037,Biochar Production via Pyrolysis,"Thermal decomposition of wet biomass in an oxygen-limited environment to produce biochar, syngas, and other byproducts. This process is part of the thermochemical upgrading pathway, contributing to carbon sequestration and waste-to-resource conversion within the energy system.",conversion,Thermochemical Upgrading,industry,"['BioWet', 'Wood']","['CBio', 'ThPhII']"
+PROC_00038,Direct Air Capture via Adsorption,"A process that captures CO2 directly from the air using adsorption technology, intended for deployment in 2030 and 2040. It involves the use of thermal and electrical inputs to facilitate the adsorption and desorption cycles, resulting in concentrated CO2 output.",conversion,Carbon Capture,Energy,"['ThHt', 'El47']",['CO2Sys']
+PROC_00039,CO2 Post-Combustion Capture via Pressure Swing Adsorption,"A pressure swing adsorption process utilizing Hot-Potassium Carbonate cycling to capture CO2 from flue gas, typically integrated into power or industrial systems for post-combustion carbon capture. The process is referenced for a 150 ktCO2/a plant size in 2030.",conversion,Carbon Capture Technologies,power,"['CO2Fluegas', 'El13', 'ThHt', 'CO2']",['CO2Sys']
+PROC_00040,Residential Li-ion Battery Storage,"A residential Li-ion battery storage system converts electrical energy from the grid into chemical energy stored in the battery, and vice versa, enabling energy storage and discharge for household use. It operates within the residential sector, interfacing with the local power grid to manage energy demand and supply.",storage,Energy Storage Systems,residential,['electricity'],['electricity']
+PROC_00041,Li-ion Battery (Grid-Scale),"A grid-scale Li-ion battery system that converts electrical energy into stored chemical energy for later use, facilitating energy storage and discharge within the power grid.",storage,Energy Storage Systems,power,['electricity'],['electricity']
+PROC_00042,Pumped Hydro Reservoir Storage,"Pumped hydro reservoir storage involves using the potential energy of water stored in an upper reservoir to generate electricity when needed, and pumping water back to the upper reservoir during periods of low demand. It is part of the grid's energy storage system.",storage,Energy Storage Systems,power,['water'],['water']
+PROC_00043,Hydro Reservoir Storage,"A process that stores energy by utilizing the potential energy of water in a reservoir, typically involving the movement of water between two reservoirs at different elevations, without the inclusion of pumps or generators.",storage,Reservoir Storage,power,,
+PROC_00044,High-Temperature Heat Storage,"High-Temperature Heat Storage involves the capture and retention of thermal energy at elevated temperatures, typically utilizing materials with high heat capacity such as molten salts. This process plays a critical role in balancing energy supply and demand within the power grid by storing excess heat generated during periods of low demand and releasing it during peak demand periods. It is integral to enhancing grid stability and integrating renewable energy sources.",storage,Thermal Storage,power,['heat'],['heat']
+PROC_00045,Residential Hot Water Storage Tank,"A thermal storage system that stores energy in the form of hot water for residential use, providing hot water on demand as part of the home heating system.",storage,Thermal Storage,heat,['electricity'],['hot water']
+PROC_00046,Seasonal Thermal Storage,"Stores thermal energy seasonally to provide heat for district heating systems, facilitating energy conservation during periods of low demand and releasing it when needed.",storage,Thermal Storage,heat,['heat'],['heat']
+PROC_00047,Compressed Hydrogen Storage,"Involves the compression of hydrogen gas into a storage tank, enabling efficient storage and subsequent retrieval for use in energy systems. This process is integral to the energy grid by providing a means to store excess renewable energy in the form of compressed hydrogen, which can be transported and utilized when needed.",storage,Energy Storage Systems,transport,['Hydrogen'],['Compressed Hydrogen']
+PROC_00048,Pipeline Linepack Storage,"Storing methane by compressing it within pipeline infrastructure, utilizing the pipeline's capacity to hold compressed gas as a form of storage. This process is integrated into the gas transmission network, allowing for temporary storage and regulation of gas supply within the energy grid.",storage,Pipeline Storage,power,['methane'],['methane']
+PROC_00049,Compressed Methane Storage,"A process involving the storage of compressed methane in tanks, serving as part of the energy storage infrastructure within the net grid.",storage,Compressed Gas Storage,power,['Methane'],['Compressed Methane']
+PROC_00050,Underground Methane Storage,"Underground methane storage involves injecting methane into underground geological formations for long-term storage, allowing for later extraction and use. This process is part of the energy system's storage infrastructure, facilitating the management of natural gas supply and demand.",storage,Underground Storage,power,['methane'],['methane']
+PROC_00051,Compressed CO₂ Storage,"A storage process involving the compression and containment of CO₂ in a tank, facilitating long-term storage as part of carbon capture and storage systems within the energy grid.",storage,Compressed Gas Storage,industry,['CO₂'],['Compressed CO₂']
+PROC_00052,Compressed CO Storage,"Involves the compression and storage of carbon monoxide gas in tanks, facilitating its temporary storage within the energy system. This process is integral to carbon capture and storage systems, enabling the secure containment of CO for later use or disposal.",storage,Gas Storage Engineering,Industry,['CO'],['Compressed CO']
+PROC_00053,Liquid Fuel Storage (Diesel/Kerosene),"A process involving the storage of liquid fuels such as diesel and kerosene, facilitating their containment and management within the energy system. This process is integral to the distribution and supply chain of liquid fuels in the transport sector.",storage,Storage Engineering,transport,"['diesel', 'kerosene']","['diesel', 'kerosene']"
+PROC_00054,Gasoline Storage,"Involves the storage of gasoline in liquid form within tanks, maintaining its stability and availability for transportation use. This process is part of the liquid fuel storage infrastructure, ensuring supply chain reliability.",storage,Fuel Storage,transport,['gasoline'],['gasoline']
+PROC_00055,Ammonia Storage,"Storage of ammonia in liquid form within specialized tanks, facilitating its use as a raw material or energy carrier in industrial applications.",storage,Liquid Storage,industry,['ammonia'],['ammonia']

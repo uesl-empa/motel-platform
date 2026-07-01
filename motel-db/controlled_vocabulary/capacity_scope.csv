@@ -1,8 +1,4 @@
 capacity_scope,capacity_scope_description,note
-CAP_400000,"Nameplate capacity of 400,000 kW (400 MW) for the installation size tier.",
-CAP_1000,"Installation size tier corresponding to a capacity of 1000 kW, representing a standard or medium-scale deployment for the technology category.",
-CAP_100000,"Capacity tier for installations with a nameplate capacity of 100,000 kW (100 MW) or similar, typically applicable to large-scale industrial or utility-scale systems. Classification follows the nomenclature's capacity normalisation convention (kW-based, EU/Switzerland context).",
-CAP_800000,"Nameplate capacity of 800,000 kW (800 MW) for the installation size tier.",
-CAP_5,"Installation size tier corresponding to original scope value 5, though specific numeric range boundaries or qualitative engineering definitions are not explicitly detailed in the provided nomenclature context.",
-CAP_500,"Installation size tier for systems with a nominal capacity of 500 kW, representing medium-scale deployment in energy conversion technologies.",
-CAP_20000_KG_PER_HOUR,"Installation size tier for capacities exactly equal to 20,000 kg/h",
+CAP_400000KW,400000 kW,"capacity_scope metadata: Minimum Installation Size; Column Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed unit capacity for the technology., Note: 0 if no minimum constraint"
+CAP_MIN_INSTALL_SIZE,1000 kW,"capacity_scope metadata: Minimum Installation Size; Column Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed unit capacity for the technology., Note: 0 if no minimum constraint"
+CAP_MIN_INSTALL_SIZE_20000KG_H,20000 kg/h,"capacity_scope metadata: Minimum Installation Size; Column Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed unit capacity for the technology., Note: 0 if no minimum constraint"
