@@ -92,6 +92,20 @@ The static documentation site is in `docs/` and is deployed by GitHub Pages from
 - Local entrypoint: `docs/index.html`
 - Downstream webapp repository: https://github.com/BartonChenTW/motel-webapp
 
+## Contributors and Acknowledgement
+
+MOTEL is a collaborative project. We gratefully acknowledge the following contributors:
+
+| Name | Role | Email |
+| ---- | ---- | ----- |
+| Yi-Chung Chen | Method and platform development | yi-chung.chen@empa.ch |
+| Dennis Beermann | Method and platform development | dennis.beermann@empa.ch |
+| Tycho Noah Frei | Web app development | tycho214@gmail.com |
+| James Allan | Ontology integration | james.allan@empa.ch |
+| Francesco Albisetti | Data integration and test | francesco.albisetti@empa.ch |
+
+Special thanks to the reFuel.ch project for important input to the platform and workflow, especially Robin Mutschler (Robin.Mutschler@empa.ch), Arash Ebneali Samani (Arash.EbnealiSamani@empa.ch), and Arijit Alip Upadhyay (Arijit.Upadhyay@empa.ch).
+
 ## Public Release Checklist
 
 - Review source-data licensing before publishing any raw or derived third-party data.
