@@ -19,6 +19,13 @@ def lookup_label(identifier, lookup):
     return lookup.get(identifier, identifier)
 
 
+def first_present(mapping, *keys, default=None):
+    for key in keys:
+        if key in mapping:
+            return mapping[key]
+    return default
+
+
 def extract_year(value):
     if value is None:
         return pd.NA
@@ -60,6 +67,18 @@ def load_lookup_tables(mapping_dir, vocab_dir):
             "system_boundary",
             "system_boundary_description",
         ),
+    }
+
+
+def load_exploration_context(linked_entity_path, mapping_dir, vocab_dir):
+    linked_entities = read_yaml(linked_entity_path)
+    lookups = load_lookup_tables(mapping_dir, vocab_dir)
+    tables = build_analysis_tables(linked_entities, lookups)
+    return {
+        "linked_entities": linked_entities,
+        "lookups": lookups,
+        "tables": tables,
+        **tables,
     }
 
 
@@ -169,7 +188,12 @@ def build_analysis_tables(linked_entities, lookups):
         for source in sources:
             source_id = source.get("source_id")
             source_name = lookup_label(source_id, lookups["source_lookup"])
-            linked_attribute_ids = source.get("linked_attribute_ids", [])
+            linked_attribute_ids = first_present(
+                source,
+                "linked_attributes",
+                "linked_attribute_ids",
+                default=[],
+            )
 
             source_rows.append(
                 {
@@ -236,6 +260,23 @@ def build_overview_df(entities_df, values_df, sources_df, carriers_df):
     )
 
 
+def preview_entities(entities_df, limit=10):
+    return entities_df[
+        [
+            "linked_entity_id",
+            "tech_id",
+            "tech_name",
+            "process_id",
+            "process_name",
+            "reference_year",
+            "input_carriers",
+            "output_carriers",
+            "source_count",
+            "value_count",
+        ]
+    ].head(limit)
+
+
 def filter_entities_by_keywords(entities_df, keywords):
     pattern = "|".join(re.escape(keyword) for keyword in keywords)
     return entities_df[
@@ -274,6 +315,30 @@ def select_attribute_values(values_df, linked_entity_ids, attribute_name):
     ].sort_values(["tech_name", "reference_year"])
 
 
+def prepare_technology_analysis(
+    entities_df,
+    values_df,
+    sources_df,
+    keywords,
+    attribute_name,
+):
+    selected_entities = filter_entities_by_keywords(entities_df, keywords)
+    linked_entity_ids = selected_entities["linked_entity_id"]
+
+    return {
+        "selected_entities": selected_entities,
+        "selected_source_summary": summarize_sources_for_entities(sources_df, linked_entity_ids),
+        "selected_attribute_summary": summarize_attributes_for_entities(
+            values_df, linked_entity_ids
+        ),
+        "selected_attribute_values": select_attribute_values(
+            values_df,
+            linked_entity_ids,
+            attribute_name,
+        ),
+    }
+
+
 def filter_source_attributes_by_keywords(source_attributes_df, keywords):
     pattern = "|".join(re.escape(keyword) for keyword in keywords)
     return source_attributes_df[
@@ -303,6 +368,20 @@ def top_attribute_types_by_source(selected_source_attributes, top_n=8):
     return top_attribute_types.groupby("source_name").head(top_n)
 
 
+def prepare_source_analysis(source_attributes_df, source_keywords):
+    selected_source_attributes = filter_source_attributes_by_keywords(
+        source_attributes_df,
+        source_keywords,
+    )
+    return {
+        "selected_source_attributes": selected_source_attributes,
+        "source_attribute_summary": summarize_source_attribute_coverage(
+            selected_source_attributes
+        ),
+        "top_attribute_types": top_attribute_types_by_source(selected_source_attributes),
+    }
+
+
 def filter_carriers_by_query(carriers_df, carrier_query):
     return carriers_df[
         carriers_df["carrier_name"].astype(str).str.contains(carrier_query, case=False, na=False)
@@ -319,3 +398,11 @@ def summarize_technologies_by_carrier(matched_carriers):
         )
         .sort_values(["direction", "tech_name"])
     )
+
+
+def prepare_carrier_analysis(carriers_df, carrier_query):
+    matched_carriers = filter_carriers_by_query(carriers_df, carrier_query)
+    return {
+        "matched_carriers": matched_carriers,
+        "technology_by_carrier": summarize_technologies_by_carrier(matched_carriers),
+    }
