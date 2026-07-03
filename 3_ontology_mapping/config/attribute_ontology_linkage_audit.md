@@ -1,56 +1,48 @@
-# Attribute ontology linkage audit
+# Attribute Ontology Mapping Notes
 
-This file is a lightweight tracking sheet for motel-db attribute harmonisation.
+This folder now separates machine-readable runtime config from human-readable support notes.
 
-Use it to answer:
+## Runtime files
 
-- which source attributes are mapped
-- which ontology class each source attribute uses
-- where that ontology class is defined
-- whether backend compatibility is already wired
-- what still needs review
+- `attribute_ontology_mapping.yaml`
+  Canonical attribute-to-ontology mapping used by `scripts/generator_core.py`.
+- `unit_mappings.yaml`
+  Unit, flow, capacity-basis, and energy-carrier config used by `scripts/generator_core.py`.
 
-## Current mapped attributes
+## Support file
 
-| Source attribute name | Ontology class | Category class | Defined in | Backend field | Backend-compatible | Notes / review status |
-|---|---|---|---|---|---|---|
-| Technology Readiness Level | `TRL` | `PhysicalAttribute` | `motel_project.ttl` | `trl` | Yes | Existing ontology class reused |
-| Technology Maturity | `tech_maturity` | `CategoricalAttribute` | `motel_project_ext.ttl` |  | Partial | New extension class |
-| Technical Efficiency | `technical_efficiency` | `PhysicalAttribute` | `motel_project_ext.ttl` |  | Partial | New extension class |
-| Theoretical Efficiency | `theoretical_efficiency` | `PhysicalAttribute` | `motel_project_ext.ttl` |  | Partial | New extension class |
-| Operating Temperature | `operating_temperature_c` | `PhysicalAttribute` | `motel_project_ext.ttl` |  | Partial | New extension class |
-| Economic Lifetime | `Lifetime` | `PhysicalAttribute` | `motel_project.ttl` | `lifetime` | Yes | Existing ontology class reused |
-| Capital Expenditure One Time | `CAPEXOneTime` | `SimpleCostAttribute` | `motel_project_ext.ttl` | `capex` | Yes | Backend alias added |
-| One-Time Operational Expenditure | `OPEXOneTime` | `SimpleCostAttribute` | `motel_project_ext.ttl` | `opex` | Yes | Backend alias added |
-| Fixed Operational Expenditure Percentage Of Capital Expenditure | `opex_fix_pct_of_capex` | `PhysicalAttribute` | `motel_project_ext.ttl` |  | Partial | New extension class |
-| Annual OPEX Per Capacity | `OPEXPerCapacity` | `UnitBasedCostAttribute` | `motel_project_ext.ttl` | `opex_cap` | Yes | Backend alias added |
-| Operational Expenditure Per Energy | `OPEXPerEnergy` | `UnitBasedCostAttribute` | `motel_project_ext.ttl` | `opex_energy` | Yes | Backend alias added |
-| Minimum Installation Size | `min_installation_size` | `PhysicalAttribute` | `motel_project_ext.ttl` |  | Partial | New extension class |
-| Uncertainty Rating | `uncertainty_rating` | `CategoricalAttribute` | `motel_project_ext.ttl` |  | Partial | New extension class |
-| Discount Rate | `InterestRate` | `PhysicalAttribute` | `motel_project.ttl` | `interest_rate` | Yes | Existing ontology class reused |
-| Capex Per Capacity | `CAPEXPerCapacity` | `UnitBasedCostAttribute` | `motel_project_ext.ttl` | `capex_per_rated_power` | Yes | Backend alias added |
-| Reference Unit Size | `reference_unit_size` | `PhysicalAttribute` | `motel_project_ext.ttl` |  | Partial | New extension class |
+- `attribute_ontology_linkage_audit.md`
+  Lightweight review notes, maintenance reminders, and context for future updates.
 
-## Status meanings
+## What to check when mappings change
 
-| Status | Meaning |
-|---|---|
-| Yes | Ontology mapping exists and backend compatibility is already wired |
-| Partial | Ontology mapping/class exists, but backend logic may not yet use it directly in all places |
-| No | Not harmonised yet |
+- Every attribute in `motel-db/controlled_vocabulary/attribute.csv` that should be exported has an entry in `attribute_ontology_mapping.yaml`.
+- Each entry defines `ontology_class`, `category_class`, and `dtype`.
+- Alias spellings in YAML match the source names seen in `linked_entity.yaml`.
+- Any new unit labels are covered in `unit_mappings.yaml`.
+- Cost-per-capacity units still resolve to a valid capacity basis.
 
-## Still to check regularly
+## Current mapped attribute keys
 
-- Any attributes present in `attribute.csv` but missing from `attribute_ontology_mapping.yaml`
-- Any ontology classes used in the YAML but not defined in `motel_project.ttl` or `motel_project_ext.ttl`
-- Any mapped attributes that still do not appear correctly in the frontend
-- Any duplicate frontend rows caused by multiple references rather than ontology mapping
+- `trl`
+- `tech_maturity`
+- `technical_efficiency`
+- `theoretical_efficiency`
+- `operating_temperature_c`
+- `lifetime_yr`
+- `capex_one_time`
+- `capex_per_capacity`
+- `opex_one_time`
+- `opex_fix_pct_of_capex`
+- `opex_per_capacity_yr`
+- `opex_per_energy`
+- `min_installation_size`
+- `uncertainty_rating`
+- `discount_rate_pct`
+- `reference_unit_size`
 
-## Source files involved
+## Maintenance guidance
 
-- Source availability: [attribute.csv](C:/Repositories/motel-platform/motel-db) outside this repo
-- Harmonisation: [attribute_ontology_mapping.yaml](/C:/Repositories/motel_ontology/app/ttl_creation/from_motel_db/attribute_ontology_mapping.yaml)
-- Ontology base: [motel_project.ttl](/C:/Repositories/motel_ontology/app/data/00_ontology/extensions/motel_project.ttl)
-- Ontology extension: [motel_project_ext.ttl](/C:/Repositories/motel_ontology/app/data/00_ontology/extensions/motel_project_ext.ttl)
-- Generated instance data: [cls_atr_motel.ttl](/C:/Repositories/motel_ontology/app/data/01_classes_and_attributes/cls_atr_motel.ttl)
-- Backend field mapping: [technology_attributes.py](/C:/Repositories/motel_ontology/backend/src/constants/technology_attributes.py)
+- Prefer changing YAML when the update is a mapping-data change.
+- Prefer changing `generator_core.py` when the update is parsing, validation, URI generation, or TTL-generation logic.
+- Keep the notebook high-level; it should call shared functions rather than embed mapping logic.
