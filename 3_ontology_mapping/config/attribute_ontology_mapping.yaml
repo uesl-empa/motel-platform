@@ -1,173 +1,119 @@
-Technology Readiness Level:
-  ontology_class: TRL
-  category_class: PhysicalAttribute
-  unit_label: "—"
-  qudt_unit: null
-  currency: null
-  dtype: int
-  backend_field: trl
+attributes:
+  trl:
+    ontology_class: TRL
+    category_class: SimpleValueAttribute
+    dtype: int
+    aliases:
+      - Technology Readiness Level
 
-Technology Maturity:
-  ontology_class: tech_maturity
-  category_class: CategoricalAttribute
-  unit_label: null
-  qudt_unit: null
-  currency: null
-  dtype: text
+  tech_maturity:
+    ontology_class: tech_maturity
+    category_class: CategoricalAttribute
+    dtype: text
+    aliases:
+      - Technology Maturity
 
-Technical Efficiency:
-  ontology_class: technical_efficiency
-  category_class: PhysicalAttribute
-  unit_label: unitless
-  qudt_unit: null
-  currency: null
-  dtype: decimal
+  technical_efficiency:
+    ontology_class: technical_efficiency
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Technical Efficiency
 
-Theoretical Efficiency:
-  ontology_class: theoretical_efficiency
-  category_class: PhysicalAttribute
-  unit_label: unitless
-  qudt_unit: null
-  currency: null
-  dtype: decimal
+  theoretical_efficiency:
+    ontology_class: theoretical_efficiency
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Theoretical Efficiency
 
-Operating Temperature:
-  ontology_class: operating_temperature_c
-  category_class: PhysicalAttribute
-  unit_label: "°C"
-  qudt_unit: http://qudt.org/vocab/unit/DEG_C
-  currency: null
-  dtype: decimal
+  operating_temperature_c:
+    ontology_class: operating_temperature_c
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Operating Temperature
 
-Economic Lifetime:
-  ontology_class: Lifetime
-  category_class: PhysicalAttribute
-  unit_label: years
-  qudt_unit: http://qudt.org/vocab/unit/YR
-  currency: null
-  dtype: decimal
-  backend_field: lifetime
+  lifetime_yr:
+    ontology_class: Lifetime
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Economic Lifetime
+      - EconomicLifetime
 
-Capital Expenditure One Time:
-  ontology_class: CAPEXOneTime
-  category_class: SimpleCostAttribute
-  unit_label: null
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: capex
+  capex_one_time:
+    ontology_class: CAPEX
+    category_class: SimpleCostAttribute
+    dtype: decimal
+    aliases:
+      - Capital Expenditure One Time
 
-One-Time Operational Expenditure:
-  ontology_class: OPEXOneTime
-  category_class: SimpleCostAttribute
-  unit_label: null
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: opex
+  capex_per_capacity:
+    ontology_class: CAPEXPerCapacity
+    category_class: UnitBasedCostAttribute
+    dtype: decimal
+    aliases:
+      - Capital Expenditure Per Capacity
+      - Capex Per Capacity
 
-Fixed Operational Expenditure Percentage Of Capital Expenditure:
-  ontology_class: opex_fix_pct_of_capex
-  category_class: PhysicalAttribute
-  unit_label: "%"
-  qudt_unit: http://qudt.org/vocab/unit/PERCENT
-  currency: null
-  dtype: decimal
+  opex_one_time:
+    ontology_class: OPEX
+    category_class: SimpleCostAttribute
+    dtype: decimal
+    aliases:
+      - One-Time Operational Expenditure
+      - Opex One-Time
 
-Annual OPEX Per Capacity:
-  ontology_class: OPEXPerCapacity
-  category_class: UnitBasedCostAttribute
-  unit_label: EUR/kW/yr
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: opex_cap
-  backend_alias_of: OPEX_CAP
+  opex_fix_pct_of_capex:
+    ontology_class: opex_fix_pct_of_capex
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Fixed Operational Expenditure Percentage Of Capital Expenditure
 
-Operational Expenditure Per Energy:
-  ontology_class: OPEXPerEnergy
-  category_class: UnitBasedCostAttribute
-  unit_label: EUR/kWh
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: opex_energy
+  opex_per_capacity_yr:
+    ontology_class: OPEXPerCapacity
+    uri_segment: OPEX_power
+    category_class: UnitBasedCostAttribute
+    dtype: decimal
+    aliases:
+      - Annual OPEX Per Capacity
+      - Annual Operational Expenditure Per Installed Capacity
+      - Operational Expenditure Per Capacity
 
-Minimum Installation Size:
-  ontology_class: min_installation_size
-  category_class: PhysicalAttribute
-  unit_label: kW
-  qudt_unit: http://qudt.org/vocab/unit/KiloW
-  currency: null
-  dtype: decimal
+  opex_per_energy:
+    ontology_class: OPEX_energy
+    category_class: UnitBasedCostAttribute
+    dtype: decimal
+    aliases:
+      - Operational Expenditure Per Energy
+      - Operating Expenditure Per Energy
 
-Uncertainty Rating:
-  ontology_class: uncertainty_rating
-  category_class: CategoricalAttribute
-  unit_label: null
-  qudt_unit: null
-  currency: null
-  dtype: text
+  min_installation_size:
+    ontology_class: min_installation_size
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Minimum Installation Size
 
-Discount Rate:
-  ontology_class: InterestRate
-  category_class: PhysicalAttribute
-  unit_label: "%"
-  qudt_unit: http://qudt.org/vocab/unit/PERCENT
-  currency: null
-  dtype: decimal
-  backend_field: interest_rate
+  uncertainty_rating:
+    ontology_class: uncertainty_rating
+    category_class: CategoricalAttribute
+    dtype: text
+    aliases:
+      - Uncertainty Rating
 
-Capex Per Capacity:
-  ontology_class: CAPEXPerCapacity
-  category_class: UnitBasedCostAttribute
-  unit_label: EUR/kW
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: capex_per_rated_power
+  discount_rate_pct:
+    ontology_class: InterestRate
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Discount Rate
 
-Capital Expenditure Per Capacity:
-  ontology_class: CAPEXPerCapacity
-  category_class: UnitBasedCostAttribute
-  unit_label: EUR/kW
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: capex_per_rated_power
-
-Opex One-Time:
-  ontology_class: OPEXOneTime
-  category_class: SimpleCostAttribute
-  unit_label: null
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: opex
-
-Operational Expenditure Per Capacity:
-  ontology_class: OPEXPerCapacity
-  category_class: UnitBasedCostAttribute
-  unit_label: EUR/kW/yr
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: opex_cap
-  backend_alias_of: OPEX_CAP
-
-Operating Expenditure Per Energy:
-  ontology_class: OPEXPerEnergy
-  category_class: UnitBasedCostAttribute
-  unit_label: EUR/kWh
-  qudt_unit: null
-  currency: null
-  dtype: decimal
-  backend_field: opex_energy
-
-Reference Unit Size:
-  ontology_class: reference_unit_size
-  category_class: PhysicalAttribute
-  unit_label: MW
-  qudt_unit: http://qudt.org/vocab/unit/MegaW
-  currency: null
-  dtype: decimal
+  reference_unit_size:
+    ontology_class: reference_unit_size
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Reference Unit Size

@@ -6,10 +6,11 @@ This folder is the Step 3 handoff from harmonised MOTEL database files to ontolo
 
 ```text
 3_ontology_mapping/
-|-- ttl_creation_from_motel_db.ipynb   notebook walkthrough for Step 3
+|-- 3_ontology_mapping.ipynb           high-level notebook workspace for Step 3
 |-- README.md                          folder guide
-|-- config/                            ontology-mapping inputs and audit notes
+|-- config/                            YAML runtime config plus support notes
 |   |-- attribute_ontology_mapping.yaml
+|   |-- unit_mappings.yaml
 |   `-- attribute_ontology_linkage_audit.md
 |-- scripts/                           executable Step 3 processing logic
 |   |-- gen_ttl.py
@@ -27,10 +28,11 @@ This folder is the Step 3 handoff from harmonised MOTEL database files to ontolo
   - `../motel-db/mapping/unmapped_to_linked.csv`
 - Input mapping config:
   - `config/attribute_ontology_mapping.yaml`
+  - `config/unit_mappings.yaml`
 - Process scripts:
-  - `scripts/generator_core.py` is the shared Step 3 generation logic
+  - `scripts/generator_core.py` is the shared Step 3 generation logic and YAML config loader
   - `scripts/gen_ttl.py` is the command-line entrypoint
-  - `ttl_creation_from_motel_db.ipynb` is the notebook-facing workflow
+  - `3_ontology_mapping.ipynb` is the notebook-facing workspace
 - Output artifact:
   - `output_ttl/cls_atr_motel.ttl`
 
@@ -43,6 +45,8 @@ From the repository root:
 ```
 
 This reads the current `motel-db/` content and writes the generated TTL to `3_ontology_mapping/output_ttl/cls_atr_motel.ttl`.
+
+The runtime mapping data now lives in `config/*.yaml`, while `generator_core.py` keeps the parsing, validation, URI generation, and TTL export logic.
 
 Import note: the ontology-mapping workflow itself is included in this repository. The generated file `3_ontology_mapping/output_ttl/cls_atr_motel.ttl` is the Step 3 handoff artifact and should be used as the input file in the `motel_ontology` repository.
 
