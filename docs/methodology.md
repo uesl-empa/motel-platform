@@ -186,7 +186,7 @@ Current limitation:
 
 ## 7. Backend and frontend workflow
 
-No backend API or frontend application code is present in the current public repository snapshot. The repository contains a static documentation site in [docs/index.html](/E:/Barton/repositories/motel-platform/docs/index.html), but no service code for querying or editing the MOTEL database. That application-facing layer is maintained in the separate public repository [BartonChenTW/motel-webapp](https://github.com/BartonChenTW/motel-webapp).
+No backend API or frontend application code is present in the current public repository snapshot. The repository contains a static documentation site in [docs/index.html](/E:/Barton/repositories/motel-platform/docs/index.html), but no service code for querying or editing the MOTEL database. That application-facing layer is maintained in the separate public repository [uesl-empa/motel-webapp](https://github.com/uesl-empa/motel-webapp).
 
 Therefore, the following workflow is not yet implemented in code in this tree:
 
@@ -243,7 +243,7 @@ The workflow also supports reproducibility because the transformation from sprea
 - Current limitation: the `linked_entity` output is populated, but parts of the schema and downstream documentation still need alignment with the latest field names and workflow behavior.
 - Current limitation: ontology mapping is implemented in `3_ontology_mapping/`, but the public documentation still leaves some mapping details and ontology packaging implicit.
 - Current limitation: graph database construction is not implemented in the current public repository.
-- Current limitation: no backend API or frontend application is present in the public repository snapshot; those components are maintained in [BartonChenTW/motel-webapp](https://github.com/BartonChenTW/motel-webapp).
+- Current limitation: no backend API or frontend application is present in the public repository snapshot; those components are maintained in [uesl-empa/motel-webapp](https://github.com/uesl-empa/motel-webapp).
 - Current limitation: no model-ready export beyond YAML staging files and harmonised CSV registries is implemented.
 - Future work: add a formal ontology vocabulary and explicit field-to-predicate mappings.
 - Future work: implement graph export and query infrastructure.

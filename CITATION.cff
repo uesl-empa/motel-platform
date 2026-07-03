@@ -6,6 +6,6 @@ type: software
 license: MIT
 authors:
   - family-names: "MOTEL contributors"
-repository-code: "https://github.com/BartonChenTW/motel-platform"
+repository-code: "https://github.com/uesl-empa/motel-platform"
 date-released: "2026-06-26"
 version: "0.1.0"
