@@ -1,5 +1,15 @@
-jupyter
-ollama
-pandas
-pyyaml
-rdflib
+# MOTEL platform runtime dependencies
+# Compatible with Python 3.13 on PyPI as of 2026-07-02.
+#
+# Note for Renku:
+# - `ollama` installs the Python client used by `2_harmonise/`.
+# - The harmonisation notebook still needs a reachable Ollama service and model
+#   (for example `qwen3:14b`), which standard Renku sessions usually do not provide.
+
+jupyter==1.1.1
+ollama==0.6.2
+openpyxl==3.1.5
+pandas==3.0.3
+plotly==6.8.0
+PyYAML==6.0.3
+rdflib==7.6.0
