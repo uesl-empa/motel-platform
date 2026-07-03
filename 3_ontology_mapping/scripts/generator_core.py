@@ -3,7 +3,7 @@ Core TTL generator for motel-db -> MOTEL ontology export.
 
 This module contains the real generation logic used by both:
 - `gen_ttl.py` for command-line generation
-- `ttl_creation_from_motel_db.ipynb` for notebook-based generation
+- `3_ontology_mapping.ipynb` for notebook-based generation
 
 What this file does:
 - reads motel-db source files (`linked_entity.yaml` and supporting CSV tables)
@@ -34,6 +34,9 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parents[1]
 DEFAULT_MOTEL_DB_PATH = REPO_ROOT / "motel-db"
 DEFAULT_OUTPUT_TTL = REPO_ROOT / "3_ontology_mapping" / "output_ttl" / "cls_atr_motel.ttl"
+DEFAULT_CONFIG_DIR = REPO_ROOT / "3_ontology_mapping" / "config"
+DEFAULT_ATTRIBUTE_MAPPING_CONFIG = DEFAULT_CONFIG_DIR / "attribute_ontology_mapping.yaml"
+DEFAULT_UNIT_MAPPING_CONFIG = DEFAULT_CONFIG_DIR / "unit_mappings.yaml"
 
 # Base web path used when this file creates new MOTEL item IDs.
 PROJECT_BASE = "https://digicities.info/proj/MOTEL"
@@ -48,110 +51,6 @@ _QUDT = {
 }
 _USD = "http://qudt.org/vocab/currency/USD"
 _EUR = "http://qudt.org/vocab/currency/EUR"
-
-# Map simple unit labels from motel-db to standard unit IDs.
-# This is used for regular technology values like lifetime, temperature, and size.
-ATTRIBUTE_QUDT_BY_UNIT_LABEL = {
-    "YR": _QUDT["year"],
-    "dimensionless": None,
-    "%": _QUDT["pct"],
-    "°C": _QUDT["degC"],
-    "kW": _QUDT["kW"],
-    "MW": _QUDT["MW"],
-}
-
-# Separate unit lookup for input/output flows.
-# Flow units come from a different part of motel-db, so they need their own mapping table.
-FLOW_UNIT_BY_LABEL = {
-    "kwh": ("http://qudt.org/vocab/unit/KiloW-HR", "KiloW-HR"),
-    "kwhr": ("http://qudt.org/vocab/unit/KiloW-HR", "KiloW-HR"),
-    "kg": ("http://qudt.org/vocab/unit/KiloGM", "KiloGM"),
-    "t": ("http://qudt.org/vocab/unit/TON_Metric", "TON_Metric"),
-    "ton": ("http://qudt.org/vocab/unit/TON_Metric", "TON_Metric"),
-    "tonne": ("http://qudt.org/vocab/unit/TON_Metric", "TON_Metric"),
-}
-
-# Main mapping from cleaned-up motel-db attribute names to Digicities attribute types.
-# Each entry says:
-# - which Digicities attribute name to use
-# - what kind of attribute it is
-# - what data type to store for the value
-ATTR_CONFIG = {
-    "trl": {"class": "TRL", "category": "SimpleValueAttribute", "dtype": "int"},
-    "tech_maturity": {"class": "tech_maturity", "category": "CategoricalAttribute", "dtype": "text"},
-    "technical_efficiency": {"class": "technical_efficiency", "category": "PhysicalAttribute", "dtype": "decimal"},
-    "theoretical_efficiency": {"class": "theoretical_efficiency", "category": "PhysicalAttribute", "dtype": "decimal"},
-    "operating_temperature_c": {"class": "operating_temperature_c", "category": "PhysicalAttribute", "dtype": "decimal"},
-    "lifetime_yr": {"class": "Lifetime", "category": "PhysicalAttribute", "dtype": "decimal"},
-    "capex_one_time": {"class": "CAPEX", "category": "SimpleCostAttribute", "dtype": "decimal"},
-    "capex_per_capacity": {"class": "CAPEXPerCapacity", "category": "UnitBasedCostAttribute", "dtype": "decimal"},
-    "opex_one_time": {"class": "OPEX", "category": "SimpleCostAttribute", "dtype": "decimal"},
-    "opex_fix_pct_of_capex": {"class": "opex_fix_pct_of_capex", "category": "PhysicalAttribute", "dtype": "decimal"},
-    "opex_per_capacity_yr": {
-        "class": "OPEXPerCapacity",
-        "uri_segment": "OPEX_power",
-        "category": "UnitBasedCostAttribute",
-        "dtype": "decimal",
-    },
-    "opex_per_energy": {"class": "OPEX_energy", "category": "UnitBasedCostAttribute", "dtype": "decimal"},
-    "min_installation_size": {"class": "min_installation_size", "category": "PhysicalAttribute", "dtype": "decimal"},
-    "uncertainty_rating": {"class": "uncertainty_rating", "category": "CategoricalAttribute", "dtype": "text"},
-    "discount_rate_pct": {"class": "InterestRate", "category": "PhysicalAttribute", "dtype": "decimal"},
-    "reference_unit_size": {"class": "reference_unit_size", "category": "PhysicalAttribute", "dtype": "decimal"},
-}
-
-CAPACITY_BASIS_QUANTITY_KIND_BY_UNIT = {
-    "kw": "qudt:Power",
-    "mw": "qudt:Power",
-    "kwh": "qudt:Energy",
-    "mwh": "qudt:Energy",
-    "kg/h": "qudt:MassFlowRate",
-    "t/h": "qudt:MassFlowRate",
-    "m3": "qudt:Volume",
-    "m3/h": "qudt:VolumeFlowRate",
-}
-
-CAPACITY_BASIS_QUDT_UNIT_BY_UNIT = {
-    "kw": "http://qudt.org/vocab/unit/KiloW",
-    "mw": "http://qudt.org/vocab/unit/MegaW",
-    "kwh": "http://qudt.org/vocab/unit/KiloW-HR",
-    "mwh": "http://qudt.org/vocab/unit/MegaW-HR",
-    "kg/h": "http://qudt.org/vocab/unit/KiloGM-PER-HR",
-    "t/h": "http://qudt.org/vocab/unit/TON_Metric-PER-HR",
-    "m3": "http://qudt.org/vocab/unit/M3",
-    "m3/h": "http://qudt.org/vocab/unit/M3-PER-HR",
-}
-
-# Different source spellings that should all be treated as the same attribute name.
-# This step only cleans up names before we look them up in ATTR_CONFIG.
-ATTRIBUTE_NAME_ALIASES = {
-    "technology readiness level": "trl",
-    "technology maturity": "tech_maturity",
-    "technical efficiency": "technical_efficiency",
-    "theoretical efficiency": "theoretical_efficiency",
-    "operating temperature": "operating_temperature_c",
-    "economiclifetime": "lifetime_yr",
-    "economic lifetime": "lifetime_yr",
-    "capital expenditure one time": "capex_one_time",
-    "capital expenditure per capacity": "capex_per_capacity",
-    "one-time operational expenditure": "opex_one_time",
-    "opex one-time": "opex_one_time",
-    "fixed operational expenditure percentage of capital expenditure": "opex_fix_pct_of_capex",
-    "annual opex per capacity": "opex_per_capacity_yr",
-    "annual operational expenditure per installed capacity": "opex_per_capacity_yr",
-    "operational expenditure per capacity": "opex_per_capacity_yr",
-    "operating expenditure per energy": "opex_per_energy",
-    "operational expenditure per energy": "opex_per_energy",
-    "minimum installation size": "min_installation_size",
-    "uncertainty rating": "uncertainty_rating",
-    "discount rate": "discount_rate_pct",
-    "reference unit size": "reference_unit_size",
-}
-
-# Carrier types that should be exported as `EnergyCarrier`.
-# Everything else is treated as `Material`.
-ENERGY_CARRIER_TYPES = {"electricity", "fuel", "heat"}
-
 # Special marker used to tell apart embedded-carbon rows from normal technology rows.
 # This is due to the web app design (the embedded carbon of a tech is shown in a seperated table)
 EMBEDDED_CARBON_ATTR_ID = "ATTR_00028"
@@ -171,6 +70,137 @@ PREFIXES = """@prefix dici_onto: <https://digicities.info/ontology#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <https://schema.org/> .
 """
+
+
+def read_yaml(path: Path) -> object:
+    """Read one YAML file from disk."""
+    with open(path, encoding="utf-8") as file:
+        return yaml.safe_load(file)
+
+
+def _require_mapping_entry(entry: object, *, path: Path, key: str) -> dict[str, object]:
+    """Validate that one config node is a mapping."""
+    if not isinstance(entry, dict):
+        raise ValueError(f"{path}: entry '{key}' must be a mapping")
+    return entry
+
+
+def load_runtime_config(
+    attribute_mapping_path: Path | str = DEFAULT_ATTRIBUTE_MAPPING_CONFIG,
+    unit_mapping_path: Path | str = DEFAULT_UNIT_MAPPING_CONFIG,
+) -> dict[str, object]:
+    """Load and validate the YAML-backed mapping config used by the generator."""
+    attr_path = Path(attribute_mapping_path)
+    unit_path = Path(unit_mapping_path)
+    attr_data = read_yaml(attr_path)
+    unit_data = read_yaml(unit_path)
+
+    if not isinstance(attr_data, dict) or "attributes" not in attr_data:
+        raise ValueError(f"{attr_path}: expected top-level 'attributes' mapping")
+    if not isinstance(unit_data, dict):
+        raise ValueError(f"{unit_path}: expected a top-level mapping")
+
+    attr_section = _require_mapping_entry(attr_data["attributes"], path=attr_path, key="attributes")
+    attr_config: dict[str, dict[str, str]] = {}
+    attr_aliases: dict[str, str] = {}
+    for attr_key, raw_cfg in attr_section.items():
+        if not isinstance(attr_key, str) or not attr_key.strip():
+            raise ValueError(f"{attr_path}: attribute keys must be non-empty strings")
+        cfg = _require_mapping_entry(raw_cfg, path=attr_path, key=attr_key)
+        canonical_key = attr_key.strip()
+        ontology_class = str(cfg.get("ontology_class", "")).strip()
+        category_class = str(cfg.get("category_class", "")).strip()
+        dtype = str(cfg.get("dtype", "")).strip()
+        if not ontology_class or not category_class or not dtype:
+            raise ValueError(
+                f"{attr_path}: attribute '{canonical_key}' must define ontology_class, category_class, and dtype"
+            )
+        normalized_cfg = {
+            "class": ontology_class,
+            "category": category_class,
+            "dtype": dtype,
+        }
+        uri_segment = str(cfg.get("uri_segment", "")).strip()
+        if uri_segment:
+            normalized_cfg["uri_segment"] = uri_segment
+        attr_config[canonical_key] = normalized_cfg
+
+        aliases = cfg.get("aliases", [])
+        if aliases is None:
+            aliases = []
+        if not isinstance(aliases, list):
+            raise ValueError(f"{attr_path}: attribute '{canonical_key}' aliases must be a list")
+
+        alias_candidates = [canonical_key, *aliases]
+        for alias in alias_candidates:
+            alias_text = str(alias).strip().lower()
+            if not alias_text:
+                continue
+            existing = attr_aliases.get(alias_text)
+            if existing and existing != canonical_key:
+                raise ValueError(
+                    f"{attr_path}: alias '{alias}' is assigned to both '{existing}' and '{canonical_key}'"
+                )
+            attr_aliases[alias_text] = canonical_key
+
+    attribute_qudt_by_unit_label = _require_mapping_entry(
+        unit_data.get("attribute_qudt_by_unit_label"), path=unit_path, key="attribute_qudt_by_unit_label"
+    )
+    flow_units_raw = _require_mapping_entry(unit_data.get("flow_units"), path=unit_path, key="flow_units")
+    flow_unit_by_label: dict[str, tuple[str | None, str]] = {}
+    for unit_label, raw_cfg in flow_units_raw.items():
+        cfg = _require_mapping_entry(raw_cfg, path=unit_path, key=f"flow_units.{unit_label}")
+        normalized_label = str(unit_label).strip().lower()
+        output_label = str(cfg.get("unit_label", "")).strip()
+        if not normalized_label or not output_label:
+            raise ValueError(f"{unit_path}: flow_units entries must define a non-empty key and unit_label")
+        qudt_unit_raw = cfg.get("qudt_unit")
+        qudt_unit = None if qudt_unit_raw is None else str(qudt_unit_raw).strip() or None
+        flow_unit_by_label[normalized_label] = (qudt_unit, output_label)
+
+    capacity_basis_raw = _require_mapping_entry(unit_data.get("capacity_basis"), path=unit_path, key="capacity_basis")
+    capacity_basis_qudt_unit_by_unit: dict[str, str] = {}
+    capacity_basis_quantity_kind_by_unit: dict[str, str] = {}
+    for basis_label, raw_cfg in capacity_basis_raw.items():
+        cfg = _require_mapping_entry(raw_cfg, path=unit_path, key=f"capacity_basis.{basis_label}")
+        normalized_label = str(basis_label).strip().lower()
+        qudt_unit = str(cfg.get("qudt_unit", "")).strip()
+        quantity_kind = str(cfg.get("quantity_kind", "")).strip()
+        if not normalized_label or not qudt_unit or not quantity_kind:
+            raise ValueError(
+                f"{unit_path}: capacity_basis entries must define non-empty qudt_unit and quantity_kind"
+            )
+        capacity_basis_qudt_unit_by_unit[normalized_label] = qudt_unit
+        capacity_basis_quantity_kind_by_unit[normalized_label] = quantity_kind
+
+    energy_carrier_types_raw = unit_data.get("energy_carrier_types", [])
+    if not isinstance(energy_carrier_types_raw, list):
+        raise ValueError(f"{unit_path}: energy_carrier_types must be a list")
+    energy_carrier_types = {str(item).strip().lower() for item in energy_carrier_types_raw if str(item).strip()}
+
+    return {
+        "attribute_config": attr_config,
+        "attribute_aliases": attr_aliases,
+        "attribute_qudt_by_unit_label": attribute_qudt_by_unit_label,
+        "flow_unit_by_label": flow_unit_by_label,
+        "capacity_basis_qudt_unit_by_unit": capacity_basis_qudt_unit_by_unit,
+        "capacity_basis_quantity_kind_by_unit": capacity_basis_quantity_kind_by_unit,
+        "energy_carrier_types": energy_carrier_types,
+        "config_paths": {
+            "attribute_mapping": attr_path,
+            "unit_mapping": unit_path,
+        },
+    }
+
+
+RUNTIME_CONFIG = load_runtime_config()
+ATTR_CONFIG = RUNTIME_CONFIG["attribute_config"]
+ATTRIBUTE_NAME_ALIASES = RUNTIME_CONFIG["attribute_aliases"]
+ATTRIBUTE_QUDT_BY_UNIT_LABEL = RUNTIME_CONFIG["attribute_qudt_by_unit_label"]
+FLOW_UNIT_BY_LABEL = RUNTIME_CONFIG["flow_unit_by_label"]
+CAPACITY_BASIS_QUDT_UNIT_BY_UNIT = RUNTIME_CONFIG["capacity_basis_qudt_unit_by_unit"]
+CAPACITY_BASIS_QUANTITY_KIND_BY_UNIT = RUNTIME_CONFIG["capacity_basis_quantity_kind_by_unit"]
+ENERGY_CARRIER_TYPES = RUNTIME_CONFIG["energy_carrier_types"]
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -223,13 +253,13 @@ def normalize_attribute_name(name: object) -> str:
 def normalize_attribute_unit_label(unit: object) -> str | None:
     """Clean up a unit label before we map it to a standard unit or currency."""
     text = str(unit or "").strip()
-    if not text or text in {"—", "-", "nan"}:
+    if not text or text in {"-", "nan", "??", "???", "?", "?"}:
         return None
 
     lowered = text.lower()
     if lowered == "years":
         return "YR"
-    if lowered == "ratio":
+    if lowered in {"ratio", "unitless"}:
         return "dimensionless"
     return text
 
@@ -428,8 +458,7 @@ def fv(raw: object, dtype: str) -> str:
 def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
     """Read motel-db files and build the main TTL text plus stats and warnings."""
     db = Path(path_motel_db)
-    with open(db / "linked_entity" / "linked_entity.yaml", encoding="utf-8") as file:
-        linked_entities = yaml.safe_load(file)
+    linked_entities = read_yaml(db / "linked_entity" / "linked_entity.yaml")
 
     technologies = read_csv(db / "secondary" / "technology.csv")
     processes = read_csv(db / "secondary" / "process.csv")
@@ -858,6 +887,7 @@ def build_ttl_output(
         "stats": stats,
         "warnings": warnings,
         "output_ttl": Path(output_ttl),
+        "config_paths": RUNTIME_CONFIG["config_paths"],
     }
 
 

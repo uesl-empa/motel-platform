@@ -1,0 +1,60 @@
+attribute_qudt_by_unit_label:
+  YR: http://qudt.org/vocab/unit/YR
+  dimensionless: null
+  "%": http://qudt.org/vocab/unit/PERCENT
+  "°C": http://qudt.org/vocab/unit/DEG_C
+  "Â°C": http://qudt.org/vocab/unit/DEG_C
+  "�C": http://qudt.org/vocab/unit/DEG_C
+  kW: http://qudt.org/vocab/unit/KiloW
+  MW: http://qudt.org/vocab/unit/MegaW
+
+flow_units:
+  kwh:
+    qudt_unit: http://qudt.org/vocab/unit/KiloW-HR
+    unit_label: KiloW-HR
+  kwhr:
+    qudt_unit: http://qudt.org/vocab/unit/KiloW-HR
+    unit_label: KiloW-HR
+  kg:
+    qudt_unit: http://qudt.org/vocab/unit/KiloGM
+    unit_label: KiloGM
+  t:
+    qudt_unit: http://qudt.org/vocab/unit/TON_Metric
+    unit_label: TON_Metric
+  ton:
+    qudt_unit: http://qudt.org/vocab/unit/TON_Metric
+    unit_label: TON_Metric
+  tonne:
+    qudt_unit: http://qudt.org/vocab/unit/TON_Metric
+    unit_label: TON_Metric
+
+capacity_basis:
+  kw:
+    qudt_unit: http://qudt.org/vocab/unit/KiloW
+    quantity_kind: qudt:Power
+  mw:
+    qudt_unit: http://qudt.org/vocab/unit/MegaW
+    quantity_kind: qudt:Power
+  kwh:
+    qudt_unit: http://qudt.org/vocab/unit/KiloW-HR
+    quantity_kind: qudt:Energy
+  mwh:
+    qudt_unit: http://qudt.org/vocab/unit/MegaW-HR
+    quantity_kind: qudt:Energy
+  kg/h:
+    qudt_unit: http://qudt.org/vocab/unit/KiloGM-PER-HR
+    quantity_kind: qudt:MassFlowRate
+  t/h:
+    qudt_unit: http://qudt.org/vocab/unit/TON_Metric-PER-HR
+    quantity_kind: qudt:MassFlowRate
+  m3:
+    qudt_unit: http://qudt.org/vocab/unit/M3
+    quantity_kind: qudt:Volume
+  m3/h:
+    qudt_unit: http://qudt.org/vocab/unit/M3-PER-HR
+    quantity_kind: qudt:VolumeFlowRate
+
+energy_carrier_types:
+  - electricity
+  - fuel
+  - heat
