@@ -5,7 +5,7 @@
 
 MOTEL (Methodology for Open Technology Data in Energy Models) is an ETH Domain ORD Program project for collecting, harmonising, and publishing technology data for energy system models.
 
-This repository contains the current MOTEL data workflow, schemas, curated database files, ontology-mapping scripts, and a static documentation site. The separate public downstream application stack lives in [`BartonChenTW/motel-webapp`](https://github.com/BartonChenTW/motel-webapp).
+This repository contains the current MOTEL data workflow, schemas, curated database files, ontology-mapping scripts, and a static documentation site. The separate public downstream application stack lives in [`uesl-empa/motel-webapp`](https://github.com/uesl-empa/motel-webapp).
 
 ## Repository Structure
 
@@ -48,12 +48,6 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Input: `motel-db/`
    - Output: interactive inspection, filtering, and ad hoc analysis
 
-5. **Publish** curated database files and documentation.
-   - Data: `motel-db/`
-   - Schemas: `schema/`
-   - Website: `docs/index.html`
-   - Public docs: `https://bartonchentw.github.io/motel-platform/`
-
 ## Database Layout
 
 - `motel-db/unmapped_entity/`: staging YAML records before harmonisation.
@@ -88,9 +82,9 @@ To generate the ontology-ready TTL from the harmonised MOTEL database:
 
 The static documentation site is in `docs/` and is deployed by GitHub Pages from the `Deploy Docs` workflow.
 
-- GitHub Pages: https://bartonchentw.github.io/motel-platform/
+- GitHub Pages: https://uesl-empa.github.io/motel-platform/
 - Local entrypoint: `docs/index.html`
-- Downstream webapp repository: https://github.com/BartonChenTW/motel-webapp
+- Downstream webapp repository: https://github.com/uesl-empa/motel-webapp
 
 ## Contributors and Acknowledgement
 

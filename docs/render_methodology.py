@@ -9,7 +9,7 @@ DOCS_DIR = Path(__file__).resolve().parent
 SOURCE_MD = DOCS_DIR / "methodology.md"
 OUTPUT_HTML = DOCS_DIR / "methodology.html"
 REPO_ROOT = "/E:/Barton/repositories/motel-platform/"
-REPO_URL = "https://github.com/BartonChenTW/motel-platform"
+REPO_URL = "https://github.com/uesl-empa/motel-platform"
 
 
 def slugify(text: str) -> str:
