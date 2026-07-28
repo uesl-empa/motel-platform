@@ -50,6 +50,8 @@ The runtime mapping data now lives in `config/*.yaml`, while `generator_core.py`
 
 Import note: the ontology-mapping workflow itself is included in this repository. The generated file `3_ontology_mapping/output_ttl/cls_atr_motel.ttl` is the Step 3 handoff artifact and should be used as the input file in the `motel_ontology` repository.
 
+The `dici_onto:` classes and properties referenced by this TTL output are defined in the [DigiCities ontology](https://github.com/uesl-empa/digicities-ontology).
+
 ## Step Boundary
 
 - `1_ingest/` creates staged unmapped records.
