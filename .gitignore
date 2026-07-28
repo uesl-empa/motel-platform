@@ -34,9 +34,11 @@ build/
 
 # Local data and runtime artifacts
 raw_data/
-_backup/
-bakcup/
+
+backup/
 motel-db/_backup/
 motel-db/log/
 *.log
 test.ipynb
+
+reFuel_TechDatabase_Clean_2026-06-03.xlsx

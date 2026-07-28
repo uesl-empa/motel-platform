@@ -41,6 +41,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - CLI entrypoint: `3_ontology_mapping/scripts/gen_ttl.py`
    - Mapping config: `3_ontology_mapping/config/attribute_ontology_mapping.yaml`
    - Output: `3_ontology_mapping/output_ttl/cls_atr_motel.ttl`
+   - Ontology definitions: [`uesl-empa/digicities-ontology`](https://github.com/uesl-empa/digicities-ontology)
 
 4. **Explore** the published MOTEL data product.
    - Main notebook: `4_data_explore/4_data_exploration.ipynb`
