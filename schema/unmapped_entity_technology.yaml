@@ -54,10 +54,10 @@ properties:
     properties:
       geographic_scope:
         type: string
-        description: Literal raw geographic scope value from the source, such as a region code or label.
+        description: Literal raw geographic scope value from the source, such as a region code, market zone, or country label.
       geographic_scope_description:
         type: string
-        description: Human-readable explanation of the geographic scope value, including semantic meaning or classification context.
+        description: Human-readable explanation of the geographic scope value, including its semantic meaning, classification context, or market-zone reading.
       temporal_scope:
         type: string
         description: Literal raw year, period, or time-horizon value from the source.
@@ -66,19 +66,19 @@ properties:
         description: Human-readable explanation of the temporal scope value when extra context is needed.
       capacity_scope:
         type: string
-        description: Literal raw capacity or size-threshold value from the source.
+        description: Literal raw capacity, size-threshold, consumption band, or volume tier the value applies to, such as a minimum installation size or a household consumption band for a tariff.
       capacity_scope_description:
         type: string
-        description: Human-readable explanation of the capacity scope value when extra context is needed.
+        description: Human-readable explanation of the capacity, consumption band, or volume tier value when extra context is needed.
       system_boundary:
         type: string
-        description: Literal raw system-boundary label from the source.
+        description: Literal raw system- or accounting-boundary label from the source, such as the equipment included in a cost figure, the life-cycle stage covered by an emission factor, or the cost components included in a price.
       system_boundary_description:
         type: string
-        description: Human-readable explanation of the system-boundary value, including inclusion rules and exclusions.
+        description: Human-readable explanation of the boundary value, including inclusion rules and exclusions, for example plant ready to operate versus complete installation, combustion only versus cradle-to-gate, or taxes and levies included versus excluded.
       scenario:
         type: string
-        description: The specific modeled narrative or sensitivity track path from the source.
+        description: The specific modelled narrative, price track, or sensitivity path from the source.
       scope_notes:
         type: string
         description: Free-text metadata or provenance notes for scope fields, such as source column details or parsing caveats.
@@ -131,7 +131,7 @@ properties:
 
   attributes:
     type: array
-    description: Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile.
+    description: Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile. A metric reported for several periods contributes one entry per period.
     items:
       type: object
       required:
@@ -143,7 +143,7 @@ properties:
           description: Target metric descriptive identifier.
         value:
           type: any
-          description: The raw data value — number, string, range, or array — exactly as found in the source. Could including unit (e.g. 5 kW)
+          description: The raw data value, number, string, or range, exactly as found in the source. May include the unit (e.g. 5 kW, 0.21 EUR/kWh). One value per attribute entry; a multi-period series becomes one entry per period, each with its own time_index.
         uncertainty_notes:
           type: string
           description: Free-text description of any stated uncertainty, range, or confidence bounds.
@@ -152,7 +152,7 @@ properties:
           description: Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here.
         attribute_notes:
           type: string
-          description: Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW)
+          description: Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW, Unit EUR/kWh).
 
   balancing:
     type: object
