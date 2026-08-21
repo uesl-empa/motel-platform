@@ -8,13 +8,13 @@ UnmappedEntityCarrier: # Staging schema for raw, unstructured carrier-level mode
     data_category: "[String] Coarse grouping of what this record describes about the carrier, used for filtering and for downstream model wiring. Suggested: ['price', 'emission_intensity', 'availability', 'resource_potential', 'demand', 'other']"
     scope: # [Dictionary] Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
         geographic_scope: "[String] Literal raw geographic scope value from the source, such as a region code, market zone, or country label."
-        geographic_scope_description: "[String] Human-readable explanation of the geographic scope value, including market-zone or grid-node meaning."
+        geographic_scope_description: "[String] Human-readable explanation of the geographic scope value, including its semantic meaning, classification context, or market-zone reading."
         temporal_scope: "[String] Literal raw year, period, or time-horizon value from the source."
         temporal_scope_description: "[String] Human-readable explanation of the temporal scope value when extra context is needed."
-        capacity_scope: "[String] Literal raw consumption band, contract size, or volume tier the value applies to, such as a household consumption band for a tariff."
-        capacity_scope_description: "[String] Human-readable explanation of the consumption band or volume tier when extra context is needed."
-        system_boundary: "[String] Literal raw accounting-boundary label from the source, such as the life-cycle stage covered by an emission factor or the cost components included in a price."
-        system_boundary_description: "[String] Human-readable explanation of the boundary value, including inclusion rules and exclusions, for example combustion only versus cradle-to-gate, or taxes and levies included versus excluded."
+        capacity_scope: "[String] Literal raw capacity, size-threshold, consumption band, or volume tier the value applies to, such as a minimum installation size or a household consumption band for a tariff."
+        capacity_scope_description: "[String] Human-readable explanation of the capacity, consumption band, or volume tier value when extra context is needed."
+        system_boundary: "[String] Literal raw system- or accounting-boundary label from the source, such as the equipment included in a cost figure, the life-cycle stage covered by an emission factor, or the cost components included in a price."
+        system_boundary_description: "[String] Human-readable explanation of the boundary value, including inclusion rules and exclusions, for example plant ready to operate versus complete installation, combustion only versus cradle-to-gate, or taxes and levies included versus excluded."
         scenario: "[String] The specific modelled narrative, price track, or sensitivity path from the source."
         scope_notes: "[String] Free-text metadata or provenance notes for scope fields, such as source column details or parsing caveats."
     sources: # [List of Dictionaries] Only source_name is required; all other fields preserve optional provenance before source harmonisation.
@@ -30,11 +30,11 @@ UnmappedEntityCarrier: # Staging schema for raw, unstructured carrier-level mode
         linked_attribute: "[List of Strings] Free-text list of attribute names this source supports; no foreign key enforcement at this stage."
         source_notes: "[String] Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields."
     attributes: # [List of Dictionaries] Array of carrier-level metrics populated directly from the unstructured raw intake profile, such as price, emission intensity, or annual availability. A metric reported for several periods contributes one entry per period.
-        attribute_name: "[Required; String] Target metric descriptive identifier, for example Carrier Price or Carrier Emission Intensity."
-        value: "[Required; Any] The raw data value, number, string, or range, exactly as found in the source. May include the unit (e.g. 0.21 EUR/kWh). One value per attribute entry; a multi-period series becomes one entry per period, each with its own time_index."
+        attribute_name: "[Required; String] Target metric descriptive identifier."
+        value: "[Required; Any] The raw data value, number, string, or range, exactly as found in the source. May include the unit (e.g. 5 kW, 0.21 EUR/kWh). One value per attribute entry; a multi-period series becomes one entry per period, each with its own time_index."
         uncertainty_notes: "[String] Free-text description of any stated uncertainty, range, or confidence bounds."
         time_index: "[String] Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here."
-        attribute_notes: "[String] Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit EUR/kWh)."
+        attribute_notes: "[String] Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW, Unit EUR/kWh)."
     metadata: # [Dictionary] Metadata grouping flags used to sort and locate the entity within project directories.
         related_project: "[String] Name of the overarching study consortium, database cluster, or project framework."
         tags: "[List of Strings] Arbitrary categorical tag index strings for filtering."

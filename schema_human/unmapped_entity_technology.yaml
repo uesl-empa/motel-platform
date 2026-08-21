@@ -10,15 +10,15 @@ UnmappedEntityTechnology: # Staging schema for raw, unstructured data ingestion.
         process_category: "[String] The sector or technical thematic domain the flow processes belong to. Suggested: ['power', 'low_temp_heat', 'heavy_industry']"
         process_notes: "[String] Free-text process context, which may include assumptions, thermodynamic constraints, input/output structures, conversion limits, definitions, or other source-specific notes."
     scope: # [Dictionary] Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
-        geographic_scope: "[String] Literal raw geographic scope value from the source, such as a region code or label."
-        geographic_scope_description: "[String] Human-readable explanation of the geographic scope value, including semantic meaning or classification context."
+        geographic_scope: "[String] Literal raw geographic scope value from the source, such as a region code, market zone, or country label."
+        geographic_scope_description: "[String] Human-readable explanation of the geographic scope value, including its semantic meaning, classification context, or market-zone reading."
         temporal_scope: "[String] Literal raw year, period, or time-horizon value from the source."
         temporal_scope_description: "[String] Human-readable explanation of the temporal scope value when extra context is needed."
-        capacity_scope: "[String] Literal raw capacity or size-threshold value from the source."
-        capacity_scope_description: "[String] Human-readable explanation of the capacity scope value when extra context is needed."
-        system_boundary: "[String] Literal raw system-boundary label from the source."
-        system_boundary_description: "[String] Human-readable explanation of the system-boundary value, including inclusion rules and exclusions."
-        scenario: "[String] The specific modeled narrative or sensitivity track path from the source."
+        capacity_scope: "[String] Literal raw capacity, size-threshold, consumption band, or volume tier the value applies to, such as a minimum installation size or a household consumption band for a tariff."
+        capacity_scope_description: "[String] Human-readable explanation of the capacity, consumption band, or volume tier value when extra context is needed."
+        system_boundary: "[String] Literal raw system- or accounting-boundary label from the source, such as the equipment included in a cost figure, the life-cycle stage covered by an emission factor, or the cost components included in a price."
+        system_boundary_description: "[String] Human-readable explanation of the boundary value, including inclusion rules and exclusions, for example plant ready to operate versus complete installation, combustion only versus cradle-to-gate, or taxes and levies included versus excluded."
+        scenario: "[String] The specific modelled narrative, price track, or sensitivity path from the source."
         scope_notes: "[String] Free-text metadata or provenance notes for scope fields, such as source column details or parsing caveats."
     sources: # [List of Dictionaries] Only source_name is required; all other fields preserve optional provenance before source harmonisation.
         source_name: "[Required; String] Concise source label or citation key. Prefer a short, human-readable name rather than a full title."
@@ -32,12 +32,12 @@ UnmappedEntityTechnology: # Staging schema for raw, unstructured data ingestion.
         source_locator: "[String] Page numbers, table references, section names, sheet names, or other location hints showing where the evidence can be found within the source."
         linked_attribute: "[List of Strings] Free-text list of attribute names this source supports; no foreign key enforcement at this stage."
         source_notes: "[String] Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields."
-    attributes: # [List of Dictionaries] Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile.
+    attributes: # [List of Dictionaries] Array of technical, financial, or operational metrics populated directly from the unstructured raw intake profile. A metric reported for several periods contributes one entry per period.
         attribute_name: "[Required; String] Target metric descriptive identifier."
-        value: "[Required; Any] The raw data value — number, string, range, or array — exactly as found in the source. Could including unit (e.g. 5 kW)"
+        value: "[Required; Any] The raw data value, number, string, or range, exactly as found in the source. May include the unit (e.g. 5 kW, 0.21 EUR/kWh). One value per attribute entry; a multi-period series becomes one entry per period, each with its own time_index."
         uncertainty_notes: "[String] Free-text description of any stated uncertainty, range, or confidence bounds."
         time_index: "[String] Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here."
-        attribute_notes: "[String] Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW)"
+        attribute_notes: "[String] Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW, Unit EUR/kWh)."
     balancing: # [Dictionary] Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
         inputs: # [List of Dictionaries] Array listing incoming resource vectors and their relative share proportions.
             carrier_name: "[Required; String] Literal name of the unmapped input commodity flow."

@@ -37,7 +37,7 @@ properties:
     description: Coarse grouping classifying what this record states about the carrier, used for filtering and for wiring the record into a model.
   sources:
     type: array
-    description: Array of validated literature sources providing data for this record, mapping specific attributes to their exact origins.
+    description: Array of validated literature sources providing data for this entity, mapping specific attributes to their exact origins.
     items:
       type: object
       required:
@@ -66,7 +66,7 @@ properties:
       properties:
         assumption_id:
           type: string
-          description: Relational link referencing a shared global assumption profile block (e.g., ASSUMP_TAXES_EXCLUDED).
+          description: Relational link referencing a shared global assumption profile block (e.g., ASSUMP_MATURE_MARKET, ASSUMP_TAXES_EXCLUDED).
         linked_attributes:
           type: array
           description: Array of attribute ID tokens whose calculations or boundaries are governed by this specific assumption.
@@ -89,11 +89,11 @@ properties:
       capacity_scope:
         type: string
         foreign_key: capacity_scope.capacity_scope
-        description: Foreign key reference linking validity to a controlled consumption band, contract size, or volume tier.
+        description: Foreign key reference linking validity to controlled capacity bounds, a consumption band, or a volume tier.
       system_boundary:
         type: string
         foreign_key: system_boundary.system_boundary
-        description: Foreign key reference specifying the accounting boundary, such as the life-cycle stage covered by an emission factor or the cost components included in a price.
+        description: Foreign key reference specifying the system or accounting boundary, such as the equipment included in a cost figure or the life-cycle stage covered by an emission factor.
       scenario:
         type: string
         description: The modelled narrative, price track, or sensitivity path this record belongs to.
