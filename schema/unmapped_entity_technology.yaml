@@ -4,7 +4,7 @@
 #    the unit could be included in the value field (e.g. 5 kW) or notes
 
 $schema: "http://json-schema.org/draft-07/schema#"
-title: UnmappedEntity
+title: UnmappedEntityTechnology
 type: object
 description: Staging schema for raw, unstructured data ingestion. All fields capture free-text inputs before data normalization.
 required:

@@ -16,6 +16,7 @@ This folder is Step 4 of the MOTEL workflow. It provides a lightweight, notebook
 
 - Input data:
   - `../motel-db/linked_entity/linked_entity.yaml`
+  - `../motel-db/linked_carrier_data/linked_carrier_data.yaml`
   - `../motel-db/secondary/*.csv`
   - `../motel-db/controlled_vocabulary/*.csv`
   - `../motel-db/mapping/*.csv`
@@ -36,6 +37,11 @@ This folder is Step 4 of the MOTEL workflow. It provides a lightweight, notebook
 - Which technologies or processes are available for a target year or scope?
 - Which sources support the values attached to a linked entity?
 - How do the machine-readable and human-readable linked-entity views differ?
+- What price or carbon intensity is recorded for a carrier in a target region and year, and under which system boundary?
+
+## Carrier-Bound Data
+
+`load_carrier_data(config.LINKED_CARRIER_DATA_PATH, config.VOCAB_DIR)` returns a tidy table with one row per value observation, expanding multi-period series so each `time_index` entry becomes its own row with a parsed `year`. `filter_carrier_data`, `summarize_carrier_data`, and `prepare_carrier_data_analysis` narrow and summarise it by carrier, `data_category`, or attribute. A missing or empty carrier data file yields an empty table rather than an error.
 
 ## Important Boundary
 

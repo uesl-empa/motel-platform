@@ -23,6 +23,7 @@ This folder is the Step 3 handoff from harmonised MOTEL database files to ontolo
 
 - Input data:
   - `../motel-db/linked_entity/linked_entity.yaml`
+  - `../motel-db/linked_carrier_data/linked_carrier_data.yaml` (optional; skipped when absent or empty)
   - `../motel-db/secondary/*.csv`
   - `../motel-db/controlled_vocabulary/*.csv`
   - `../motel-db/mapping/unmapped_to_linked.csv`
@@ -51,6 +52,24 @@ The runtime mapping data now lives in `config/*.yaml`, while `generator_core.py`
 Import note: the ontology-mapping workflow itself is included in this repository. The generated file `3_ontology_mapping/output_ttl/cls_atr_motel.ttl` is the Step 3 handoff artifact and should be used as the input file in the `motel_ontology` repository.
 
 The `dici_onto:` classes and properties referenced by this TTL output are defined in the [DigiCities ontology](https://github.com/uesl-empa/digicities-ontology).
+
+## Carrier-Bound Records
+
+Carrier data records from `motel-db/linked_carrier_data/` are exported alongside technology records. Each becomes a carrier instance scoped by region and year:
+
+```text
+<.../EnergyCarrier/Grid_Electricity_CH_2030>
+    a dici_onto:EnergyCarrier ;
+    dici_onto:occursDuring <.../2030> ;
+    dici_onto:locatedIn <.../CH> ;
+    dici_onto:hasAttribute <.../Grid_Electricity_CH_2030/CarrierPrice> .
+```
+
+A record holding a time series expands into one scoped instance per `time_index` entry, so a price or intensity trajectory becomes one instance per year. Where two records would claim the same instance (for example a wholesale and a retail price for the same carrier, region, and year), the `linked_carrier_data_id` is appended to keep the URIs distinct — the same rule the technology track uses for colliding instance labels.
+
+The ontology class names for these attributes (`CarrierPrice`, `CarrierEmissionIntensity`, `CarrierAnnualAvailability`) are declared under the carrier-bound section of `config/attribute_ontology_mapping.yaml`. They are **MOTEL placeholders pending alignment with the DigiCities ontology**; change them in that config once the ontology defines its own carrier-data terms. No other code change is needed.
+
+An empty or absent `linked_carrier_data.yaml` leaves the TTL output byte-identical to a run without the carrier-bound track.
 
 ## Step Boundary
 

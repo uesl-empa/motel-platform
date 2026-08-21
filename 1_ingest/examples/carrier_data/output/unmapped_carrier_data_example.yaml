@@ -1,0 +1,123 @@
+# Worked example of the carrier-bound staging format.
+#
+# Schema: ../../../../schema/unmapped_entity_carrier.yaml
+#         ../../../../schema_human/unmapped_entity_carrier.yaml
+#
+# IMPORTANT: every number below is an illustrative placeholder invented to show
+# the record structure. None of it is measured, cited, or fit for modelling. It
+# exists so the Step 2 carrier data pipeline can be exercised end to end without
+# a real source attached. Replace the whole file before publishing anything.
+
+- carrier_name: Grid Electricity
+  carrier:
+    carrier_description: Grid-level electricity, levels 4-7 (1-36 kV)
+    carrier_type: electricity
+    carrier_category: other
+    carrier_notes: Matches the existing MOTEL carrier CAR_00004.
+  data_category: price
+  scope:
+    geographic_scope: GEO_CH
+    geographic_scope_description: Switzerland
+    temporal_scope: TIME_2030
+    temporal_scope_description: 2030 projection year
+    capacity_scope: Household consumption band 4500 kWh per year
+    capacity_scope_description: Standard household reference consumption band used for tariff reporting.
+    system_boundary: Retail tariff including grid fees, taxes, and levies
+    system_boundary_description: End-user tariff covering energy, grid usage, taxes, and levies. Excludes behind-the-meter self-consumption.
+    scenario: Illustrative baseline
+    scope_notes: All scope values in this example are placeholders.
+  sources:
+    - source_name: MotelCarrierDataExample
+      source_description: Synthetic placeholder source used only to demonstrate the carrier data staging format.
+      source_type: other
+      confidence_level: low
+      assessment_method: estimated
+      reference_year: 2026
+      source_locator: unmapped_carrier_data_example.yaml
+      linked_attribute:
+        - Carrier Price
+      source_notes: Not a real publication. Do not cite.
+  attributes:
+    - attribute_name: Carrier Price
+      value: 0.21
+      uncertainty_notes: Illustrative placeholder; no uncertainty was assessed.
+      attribute_notes: Unit EUR/kWh. Price paid by the consumer per unit of delivered energy.
+  metadata:
+    related_project: MOTEL
+    tags: [example, carrier_data, placeholder]
+    other_notes: Illustrative record; replace before publication.
+  harmonisation_record:
+    mapping_status: to_be_mapped
+
+- carrier_name: Grid Electricity
+  carrier:
+    carrier_description: Grid-level electricity, levels 4-7 (1-36 kV)
+    carrier_type: electricity
+    carrier_category: other
+  data_category: emission_intensity
+  scope:
+    geographic_scope: GEO_CH
+    geographic_scope_description: Switzerland
+    temporal_scope: TIME_2030
+    temporal_scope_description: Series anchored on the 2030 projection year
+    system_boundary: Cradle-to-gate life cycle
+    system_boundary_description: Life-cycle greenhouse gas emissions from fuel extraction to delivery at the grid connection point. Excludes end-use conversion losses.
+    scenario: Illustrative baseline
+    scope_notes: All scope values in this example are placeholders.
+  sources:
+    - source_name: MotelCarrierDataExample
+      source_description: Synthetic placeholder source used only to demonstrate the carrier data staging format.
+      source_type: other
+      confidence_level: low
+      assessment_method: estimated
+      reference_year: 2026
+      linked_attribute:
+        - Carrier Emission Intensity
+      source_notes: Not a real publication. Do not cite.
+  attributes:
+    - attribute_name: Carrier Emission Intensity
+      value: [128.0, 96.0, 61.0, 24.0]
+      time_index: ["2025", "2030", "2040", "2050"]
+      uncertainty_notes: Illustrative placeholder; no uncertainty was assessed.
+      attribute_notes: Unit gCO2eq/kWh. Life-cycle greenhouse gas intensity of delivered electricity, one value per time_index entry.
+  metadata:
+    related_project: MOTEL
+    tags: [example, carrier_data, placeholder]
+    other_notes: Illustrative record; replace before publication.
+  harmonisation_record:
+    mapping_status: to_be_mapped
+
+- carrier_name: Energy Wood
+  carrier:
+    carrier_description: Energy wood (generic)
+    carrier_type: fuel
+    carrier_category: renewable
+  data_category: availability
+  scope:
+    geographic_scope: GEO_CH
+    geographic_scope_description: Switzerland
+    temporal_scope: TIME_2050
+    temporal_scope_description: 2050 projection year
+    system_boundary: Domestically harvested sustainable potential
+    system_boundary_description: Annual domestic harvest considered sustainable. Excludes imports and existing non-energy uses.
+    scenario: Illustrative baseline
+  sources:
+    - source_name: MotelCarrierDataExample
+      source_description: Synthetic placeholder source used only to demonstrate the carrier data staging format.
+      source_type: other
+      confidence_level: low
+      assessment_method: estimated
+      reference_year: 2026
+      linked_attribute:
+        - Carrier Annual Availability
+      source_notes: Not a real publication. Do not cite.
+  attributes:
+    - attribute_name: Carrier Annual Availability
+      value: 14.5
+      attribute_notes: Unit TWh/yr. Upper bound on the energy that may be drawn from this carrier within the scope in one year.
+  metadata:
+    related_project: MOTEL
+    tags: [example, carrier_data, placeholder]
+    other_notes: Illustrative record; replace before publication.
+  harmonisation_record:
+    mapping_status: to_be_mapped

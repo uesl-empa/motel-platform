@@ -1,11 +1,11 @@
-LinkedEntity: # Validated relational matrix entity linking strict foreign keys to controlled vocabularies and normalised entities.
+LinkedEntityTechnology: # Validated relational matrix entity linking strict foreign keys to controlled vocabularies and normalised entities.
     linked_entity_id: "[Required; String] Primary database key uniquely mapping this configuration matrix instance (e.g., REC_00001)."
     version: # [Dictionary] Maintains formal audit trail history and deployment lifecycles for tracked parameters.
         version_number: "[Required; String] Semantic version tracking text for schema iteration indexing (e.g., 2.1.0)."
         date_created: "[String] ISO 8601 creation calendar timestamp (YYYY-MM-DD)."
         date_modified: "[String] ISO 8601 calendar timestamp tracking the most recent attribute update or review patch (YYYY-MM-DD)."
     tech_id: "[Required; String] Relational link tying these data values to a specific validated, concrete physical equipment asset."
-    sources: # [List of Dictionaries] Array of validated literature sources providing data for this entity, mapping specific attributes to their exact origins.
+    sources: # [Required; List of Dictionaries] Array of validated literature sources providing data for this entity, mapping specific attributes to their exact origins.
         source_id: "[Required; String] Relational link tying these values back to an explicitly validated and structured literature profile node."
         linked_attributes: "[Required; List of Strings] Array of attribute ID tokens explicitly extracted from this specific reference source document."
     assumptions: # [List of Dictionaries] Array of shared global assumption profile blocks, mapping specific attributes to their underlying system or methodology rules.

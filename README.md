@@ -28,12 +28,14 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Folder guide: `1_ingest/README.md`
    - reFuel.ch example: `1_ingest/examples/refuel/ingestion_pipeline.ipynb`
    - Helper script: `1_ingest/examples/refuel/scripts/ingestion_helper.py`
+   - Carrier data example: `1_ingest/examples/carrier_data/README.md`
    - Output: `motel-db/unmapped_entity/unmapped_entities_refuel.yaml`
 
 2. **Harmonise** unmapped entities into controlled vocabularies and linked records.
    - Main notebook: `2_harmonise/2_data_harmonisation.ipynb`
    - Helper module: `2_harmonise/harmonise_helpers.py`
-   - Outputs: `motel-db/secondary/`, `motel-db/controlled_vocabulary/`, `motel-db/mapping/`, and `motel-db/linked_entity/`
+   - Carrier data helper module: `2_harmonise/carrier_data_helpers.py`
+   - Outputs: `motel-db/secondary/`, `motel-db/controlled_vocabulary/`, `motel-db/mapping/`, `motel-db/linked_entity/`, and `motel-db/linked_carrier_data/`
 
 3. **Ontology mapping** converts harmonised MOTEL outputs into ontology-ready TTL.
    - Main notebook: `3_ontology_mapping/3_ontology_mapping.ipynb`
@@ -49,10 +51,30 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Input: `motel-db/`
    - Output: interactive inspection, filtering, and ad hoc analysis
 
+## Two Data Tracks
+
+MOTEL records two kinds of modelling data, using the same registries and the same harmonisation lifecycle for both.
+
+| | Technology-bound track | Carrier-bound track |
+| --- | --- | --- |
+| Answers | What does this piece of hardware cost and how does it perform? | What does this energy carrier cost and how clean is it? |
+| Examples | CAPEX, efficiency, lifetime, embedded carbon | energy price, carbon intensity, resource availability |
+| Anchored to | `tech_id` | `carrier_id` |
+| Staging schema | `schema/unmapped_entity_technology.yaml` | `schema/unmapped_entity_carrier.yaml` |
+| Harmonised schema | `schema/linked_entity_technology.yaml` | `schema/linked_entity_carrier.yaml` |
+| Harmonisation module | `2_harmonise/harmonise_helpers.py` | `2_harmonise/carrier_data_helpers.py` |
+| Published output | `motel-db/linked_entity/` | `motel-db/linked_carrier_data/` |
+
+A price for grid electricity in a given region and year applies to every technology that consumes that carrier, so it belongs to the carrier rather than to any one consumer. Both tracks resolve against the same carrier, source, attribute, and scope vocabularies; the `applies_to` column in `attribute.csv` marks which side a metric belongs to.
+
+The carrier-bound pipeline runs either with LLM-assisted matching (`use_llm=True`, needs Ollama) or with deterministic exact-match resolution (`use_llm=False`, no model required). See `1_ingest/examples/carrier_data/README.md` for a worked example.
+
 ## Database Layout
 
 - `motel-db/unmapped_entity/`: staging YAML records before harmonisation.
 - `motel-db/linked_entity/`: harmonised linked records.
+- `motel-db/unmapped_carrier_data/`: staging YAML records for carrier-bound modelling data.
+- `motel-db/linked_carrier_data/`: harmonised carrier-bound records such as prices and emission intensities.
 - `motel-db/controlled_vocabulary/`: controlled vocabularies such as carriers, attributes, scopes, and boundaries.
 - `motel-db/secondary/`: referenced entities such as technologies, processes, and sources.
 - `motel-db/mapping/`: provenance and mapping tables generated during harmonisation.

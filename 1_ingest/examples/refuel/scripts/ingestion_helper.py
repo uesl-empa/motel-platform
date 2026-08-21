@@ -123,7 +123,7 @@ def get_refuel_paths(project_root: Path | None = None) -> dict[str, Path]:
         "notebook_dir": example_dir,
         "notebook_path": example_dir / "ingestion_pipeline.ipynb",
         "workbook_path": example_dir / "input" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
-        "schema_path": root / "schema_human" / "unmapped_entity.yaml",
+        "schema_path": root / "schema_human" / "unmapped_entity_technology.yaml",
         "staging_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
         "convtech_output": example_dir / "output" / "unmapped_entities_refuel_convtech.yaml",
         "stortech_output": example_dir / "output" / "unmapped_entities_refuel_stortech.yaml",
