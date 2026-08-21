@@ -1,0 +1,184 @@
+## updated date: 2026-08-21
+# NOTE:
+#  - Carrier-bound counterpart of unmapped_entity_technology.yaml.
+#    That schema stages data that belongs to a piece of hardware (a technology);
+#    this schema stages data that belongs to an energy carrier itself, such as
+#    energy prices, carbon/emission intensities, availability, or resource potential.
+#  - Same free-text philosophy as unmapped_entity: the unit may live in the value
+#    field (e.g. 0.21 EUR/kWh) or in attribute_notes.
+
+$schema: "http://json-schema.org/draft-07/schema#"
+title: UnmappedEntityCarrier
+type: object
+description: Staging schema for raw, unstructured carrier-level modelling data such as energy prices, emission intensities, and availability, captured before normalisation.
+required:
+  - carrier_name
+properties:
+
+  carrier_name:
+    type: string
+    description: The literal unparsed name or label of the energy carrier or commodity as specified in the raw source material.
+
+  carrier:
+    type: object
+    description: Contains raw descriptive properties detailing the physical and market context of the unmapped carrier.
+    properties:
+      carrier_description:
+        type: string
+        description: Free-text description of the carrier, including purity, phase, voltage level, or infrastructure context as stated in the source.
+      carrier_type:
+        type: string
+        description: The raw classification of the commodity archetype as given by the source.
+        examples: [fuel, electricity, heat, other]
+      carrier_category:
+        type: string
+        description: Environmental lifecycle grouping for the commodity as given by the source.
+        examples: [renewable, non-renewable, synthetic, other]
+      carrier_notes:
+        type: string
+        description: Free-text carrier context, including reference states, heating-value conventions, grid level, or other source-specific notes.
+
+  data_category:
+    type: string
+    description: Coarse grouping of what this record describes about the carrier, used for filtering and for downstream model wiring.
+    examples: [price, emission_intensity, availability, resource_potential, demand, other]
+
+  scope:
+    type: object
+    description: Defines the specific contextual boundaries where the unmapped raw data point remains operationally valid.
+    properties:
+      geographic_scope:
+        type: string
+        description: Literal raw geographic scope value from the source, such as a region code, market zone, or country label.
+      geographic_scope_description:
+        type: string
+        description: Human-readable explanation of the geographic scope value, including market-zone or grid-node meaning.
+      temporal_scope:
+        type: string
+        description: Literal raw year, period, or time-horizon value from the source.
+      temporal_scope_description:
+        type: string
+        description: Human-readable explanation of the temporal scope value when extra context is needed.
+      capacity_scope:
+        type: string
+        description: Literal raw consumption band, contract size, or volume tier the value applies to, such as a household consumption band for a tariff.
+      capacity_scope_description:
+        type: string
+        description: Human-readable explanation of the consumption band or volume tier when extra context is needed.
+      system_boundary:
+        type: string
+        description: Literal raw accounting-boundary label from the source, such as the life-cycle stage covered by an emission factor or the cost components included in a price.
+      system_boundary_description:
+        type: string
+        description: Human-readable explanation of the boundary value, including inclusion rules and exclusions, for example combustion only versus cradle-to-gate, or taxes and levies included versus excluded.
+      scenario:
+        type: string
+        description: The specific modelled narrative, price track, or sensitivity path from the source.
+      scope_notes:
+        type: string
+        description: Free-text metadata or provenance notes for scope fields, such as source column details or parsing caveats.
+
+  sources:
+    type: array
+    description: Only source_name is required; all other fields preserve optional provenance before source harmonisation.
+    items:
+      type: object
+      required:
+        - source_name
+      properties:
+        source_name:
+          type: string
+          description: Concise source label or citation key. Prefer a short, human-readable name rather than a full title.
+        source_description:
+          type: string
+          description: Longer citation string, full title, or document reference as found in the raw material.
+        link:
+          type: string
+          description: URL, DOI, or other resolvable locator as recorded in the raw material.
+        source_type:
+          type: string
+          description: Free-text medium classification, such as report, dataset, article, standard, website, or expert input.
+        access_date:
+          type: string
+          description: Date when an online source was accessed or checked, preferably ISO 8601 when available.
+        confidence_level:
+          type: string
+          description: Optional source-quality or trust rating carried from the source register when available.
+        reference_year:
+          type:
+            - integer
+            - string
+          description: Optional publication or release year for the source material, ideally as a four-digit year.
+        assessment_method:
+          type: string
+          description: Short note on how the source was assessed or how values were derived.
+        source_locator:
+          type: string
+          description: Page numbers, table references, section names, sheet names, or other location hints showing where the evidence can be found within the source.
+        linked_attribute:
+          type: array
+          description: Free-text list of attribute names this source supports; no foreign key enforcement at this stage.
+          items:
+            type: string
+        source_notes:
+          type: string
+          description: Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields.
+
+  attributes:
+    type: array
+    description: Array of carrier-level metrics populated directly from the unstructured raw intake profile, such as price, emission intensity, or annual availability.
+    items:
+      type: object
+      required:
+        - attribute_name
+        - value
+      properties:
+        attribute_name:
+          type: string
+          description: Target metric descriptive identifier, for example Carrier Price or Carrier Emission Intensity.
+        value:
+          type: any
+          description: The raw data value, number, string, range, or array, exactly as found in the source. May include the unit (e.g. 0.21 EUR/kWh). Use an array together with time_index for profiles or multi-period series.
+        uncertainty_notes:
+          type: string
+          description: Free-text description of any stated uncertainty, range, or confidence bounds.
+        time_index:
+          type: array
+          description: Chronological anchor strings tracking multi-period or profile datasets, aligned element-wise with value when value is an array.
+          items:
+            type: string
+        attribute_notes:
+          type: string
+          description: Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit EUR/kWh).
+
+  metadata:
+    type: object
+    description: Metadata grouping flags used to sort and locate the entity within project directories.
+    properties:
+      related_project:
+        type: string
+        description: Name of the overarching study consortium, database cluster, or project framework.
+      tags:
+        type: array
+        description: Arbitrary categorical tag index strings for filtering.
+        items:
+          type: string
+      other_notes:
+        type: string
+        description: Any additional free-text notes or flags for project-level context.
+
+  harmonisation_record:
+    type: object
+    description: Operational tracking fields created and updated by the harmonisation pipeline after ingestion.
+    properties:
+      mapping_status:
+        type: string
+        enum: [to_be_mapped, mapped]
+        description: Lifecycle state set to to_be_mapped during ingestion and changed to mapped after successful harmonisation.
+      linked_carrier_data_id:
+        type: string
+        description: Linked carrier data identifier assigned after successful harmonisation.
+      date_mapped:
+        type: string
+        format: date
+        description: ISO 8601 date on which harmonisation completed successfully.

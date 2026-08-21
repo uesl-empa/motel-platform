@@ -29,6 +29,10 @@ properties:
     type: string
     format: uri
     description: External ontology database URI link matching global terminology networks.
+  applies_to:
+    type: string
+    enum: [technology, carrier, both]
+    description: Subject class this metric describes. Use technology for hardware-bound metrics recorded in linked_entity, carrier for commodity-bound metrics recorded in linked_carrier_data (prices, emission intensities, availability), and both when the same metric is used on either side.
   note:
     type: string
     description: System administration annotations detailing specific boundary conditions or parsing edge cases.

@@ -31,7 +31,7 @@ jobs:
 
           import yaml
 
-          roots = [Path("schema"), Path("schema_simple"), Path("motel-db")]
+          roots = [Path("schema"), Path("schema_human"), Path("motel-db")]
 
           for root in roots:
               for path in root.rglob("*.yaml"):

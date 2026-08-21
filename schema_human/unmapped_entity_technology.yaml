@@ -1,4 +1,4 @@
-UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All fields capture free-text inputs before data normalization.
+UnmappedEntityTechnology: # Staging schema for raw, unstructured data ingestion. All fields capture free-text inputs before data normalization.
     technology_name: "[Required; String] The literal unparsed common name or label of the technology as specified in the raw source material."
     technology: # [Dictionary] Contains raw descriptive properties detailing the engineering, structural, and hardware context of the unmapped entity.
         technology_description: "[String] Free-text engineering parameters describing the technical baseline of the asset."

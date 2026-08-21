@@ -1,5 +1,5 @@
 $schema: "http://json-schema.org/draft-07/schema#"
-title: LinkedEntity
+title: LinkedEntityTechnology
 type: object
 description: Validated relational matrix entity linking strict foreign keys to controlled vocabularies and normalised entities.
 required:
