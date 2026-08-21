@@ -22,7 +22,7 @@ LinkedEntityCarrier: # Validated carrier-bound record linking strict foreign key
         attribute_id: "[String] Foreign key reference targeting a metric variable within the attribute controlled vocabulary."
         attribute_name: "[String] Canonical attribute name carried alongside the ID so the record stays readable without a vocabulary join."
         value: "[Number/String/Boolean/List/Dictionary] The computational data payload matching the data schema constraints of the assigned attribute."
-        time_index: "[List of Strings] Chronological anchors aligned element-wise with value when value holds a multi-period series or profile."
+        time_index: "[String] Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here."
         value_format: "[String] Strict variable typing rules or code compilation path rules used to format downstream array parsers."
         value_type: "[String] System logic classification determining how downstream solvers treat the parameter matrix entry."
         unit: "[String] System-wide normalised execution unit string strictly synced with core attribute standard definitions."

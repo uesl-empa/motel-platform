@@ -460,9 +460,11 @@ def load_carrier_data(linked_carrier_data_path, vocab_dir):
         for entry in record.get("values", []) or []:
             attribute_id = entry.get("attribute_id")
             unit = entry.get("unit") or lookup_label(attribute_id, unit_lookup)
-            value = entry.get("value")
-            time_index = entry.get("time_index") or []
-            base = {
+            # time_index is a scalar per entry, so a multi-period series already
+            # arrives as one entry per period; fall back to the record's scope
+            # when an entry states no period of its own.
+            period = entry.get("time_index") or scope.get("temporal_scope")
+            value_rows.append({
                 **common,
                 "attribute_id": attribute_id,
                 "attribute_name": entry.get("attribute_name")
@@ -470,15 +472,10 @@ def load_carrier_data(linked_carrier_data_path, vocab_dir):
                 "unit": unit,
                 "value_type": entry.get("value_type"),
                 "note": entry.get("note"),
-            }
-            if isinstance(value, list) and time_index and len(value) == len(time_index):
-                for period, single_value in zip(time_index, value):
-                    value_rows.append({**base, "period": period,
-                                       "year": extract_year(period), "value": single_value})
-            else:
-                period = scope.get("temporal_scope")
-                value_rows.append({**base, "period": period,
-                                   "year": extract_year(period), "value": value})
+                "period": period,
+                "year": extract_year(period),
+                "value": entry.get("value"),
+            })
 
         for source in record.get("sources", []) or []:
             for attribute_id in source.get("linked_attributes", []) or []:

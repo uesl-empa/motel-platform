@@ -907,7 +907,8 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
 
     # A carrier data record states something about a carrier in one region and one
     # year, so it becomes a scoped carrier instance carrying the attribute nodes.
-    # A record holding a time series expands into one instance per time_index entry.
+    # time_index is a scalar per value entry, so a record reporting several periods
+    # groups into one scoped instance per period.
     carrier_data_expansions: list[dict[str, object]] = []
     for record in carrier_data_records:
         record_id = record.get("linked_carrier_data_id", "<unknown>")
@@ -933,26 +934,17 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                 value_entry.get("unit") or attribute_by_id.get(attr_id, {}).get("unit")
             )
             raw = value_entry.get("value")
-            time_index = value_entry.get("time_index") or []
             if isinstance(raw, list):
-                if not time_index:
-                    warnings.append(
-                        f"{record_id}: attribute '{attr_id}' holds a series without a time_index"
-                    )
-                    continue
-                if len(time_index) != len(raw):
-                    warnings.append(
-                        f"{record_id}: attribute '{attr_id}' has {len(raw)} values "
-                        f"but {len(time_index)} time_index entries"
-                    )
-                    continue
-                pairs = list(zip([normalize_scope_value(year) for year in time_index], raw))
-            else:
-                pairs = [(record_year, raw)]
-            for year, single_value in pairs:
-                if single_value is None or str(single_value).strip().lower() in ("", "na", "nan"):
-                    continue
-                values_by_year.setdefault(year, []).append((attr_id, single_value, cfg, unit_label))
+                warnings.append(
+                    f"{record_id}: attribute '{attr_id}' packs a series into one value; "
+                    "split it into one entry per period"
+                )
+                continue
+            if raw is None or str(raw).strip().lower() in ("", "na", "nan"):
+                continue
+            # Fall back to the record's temporal scope when the entry states no period.
+            year = normalize_scope_value(value_entry.get("time_index", "")) or record_year
+            values_by_year.setdefault(year, []).append((attr_id, raw, cfg, unit_label))
 
         attr_sources: dict[str, list[str]] = {}
         for source_entry in record.get("sources", []) or []:

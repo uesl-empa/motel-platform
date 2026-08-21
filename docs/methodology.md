@@ -111,7 +111,7 @@ The two tracks deliberately share everything except their anchor. Carrier data r
 
 Scope carries more weight on the carrier side, because carrier values are only comparable within a stated boundary. `system_boundary` separates a retail tariff from a wholesale price and a combustion-only emission factor from a cradle-to-gate one; `capacity_scope` carries the consumption band or contract size a tariff refers to; `scenario` separates competing price tracks for the same year. A `data_category` field (`price`, `emission_intensity`, `availability`, `resource_potential`, `demand`, `other`) gives downstream consumers a coarse grouping without having to interpret attribute names.
 
-Multi-period series are held in a single record: `value` carries the list and `time_index` the matching period labels, so a price or intensity trajectory stays one provenance-bearing record rather than one record per year.
+Multi-period series follow the same convention as the technology track: `time_index` is a scalar, so a price or intensity trajectory contributes one attribute entry per period, all within a single record that carries the shared scope and provenance once.
 
 The carrier data pipeline can run in two modes. With `use_llm=True` it reuses the same semantic matching applied to technology records and needs a reachable Ollama service. With `use_llm=False` it resolves names by exact match against the existing registries and creates deterministic entries otherwise, which suits the already-clean labels typical of statistical-agency data and allows the step to run without a model.
 

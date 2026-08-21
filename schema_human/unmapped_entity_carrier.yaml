@@ -29,11 +29,11 @@ UnmappedEntityCarrier: # Staging schema for raw, unstructured carrier-level mode
         source_locator: "[String] Page numbers, table references, section names, sheet names, or other location hints showing where the evidence can be found within the source."
         linked_attribute: "[List of Strings] Free-text list of attribute names this source supports; no foreign key enforcement at this stage."
         source_notes: "[String] Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields."
-    attributes: # [List of Dictionaries] Array of carrier-level metrics populated directly from the unstructured raw intake profile, such as price, emission intensity, or annual availability.
+    attributes: # [List of Dictionaries] Array of carrier-level metrics populated directly from the unstructured raw intake profile, such as price, emission intensity, or annual availability. A metric reported for several periods contributes one entry per period.
         attribute_name: "[Required; String] Target metric descriptive identifier, for example Carrier Price or Carrier Emission Intensity."
-        value: "[Required; Any] The raw data value, number, string, range, or array, exactly as found in the source. May include the unit (e.g. 0.21 EUR/kWh). Use an array together with time_index for profiles or multi-period series."
+        value: "[Required; Any] The raw data value, number, string, or range, exactly as found in the source. May include the unit (e.g. 0.21 EUR/kWh). One value per attribute entry; a multi-period series becomes one entry per period, each with its own time_index."
         uncertainty_notes: "[String] Free-text description of any stated uncertainty, range, or confidence bounds."
-        time_index: "[List of Strings] Chronological anchor strings tracking multi-period or profile datasets, aligned element-wise with value when value is an array."
+        time_index: "[String] Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here."
         attribute_notes: "[String] Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit EUR/kWh)."
     metadata: # [Dictionary] Metadata grouping flags used to sort and locate the entity within project directories.
         related_project: "[String] Name of the overarching study consortium, database cluster, or project framework."

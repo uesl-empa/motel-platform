@@ -48,7 +48,7 @@ print(cdh.validate_linked_carrier_data() or "no problems found")
 
 The run appends to `linked_carrier_data.yaml`, marks the staging records mapped, and writes `mapping/unmapped_to_linked_carrier_data.csv` and `mapping/carrier_data_attribute_map.csv`. These are separate files from the technology-track maps, so neither run overwrites the other's provenance.
 
-`validate_linked_carrier_data()` checks required fields, foreign keys into every registry, the `data_category` enum, and that each series has one `time_index` entry per value.
+`validate_linked_carrier_data()` checks required fields, foreign keys into every registry, the `data_category` enum, and that no entry packs a series into a single value instead of using one entry per period.
 
 Both tracks share one attribute vocabulary. The `applies_to` column in `attribute.csv` records whether a metric describes a `technology`, a `carrier`, or `both`.
 
