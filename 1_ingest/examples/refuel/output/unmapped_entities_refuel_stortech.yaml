@@ -60,92 +60,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: ElBdg
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 0.75
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 0.75
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.95
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 20
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 1000
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -153,14 +153,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 25
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -228,92 +228,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: ElBdg
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 0.75
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 0.75
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.95
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 25
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 650
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -321,14 +321,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 16.25
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -396,92 +396,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: ElBdg
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 0.88
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 0.88
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.95
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 30
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 550
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -489,14 +489,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 13.75
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -564,92 +564,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: ElBdg
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.95
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 30
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 500
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -657,14 +657,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 12.5
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -736,92 +736,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: El47
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.95
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 20
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 800
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -829,14 +829,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 20
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -908,92 +908,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: El47
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.95
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 25
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 460
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -1001,14 +1001,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 11.5
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -1080,92 +1080,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: El47
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.95
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 30
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 400
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -1173,14 +1173,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 10
     uncertainty_notes: null
-    time_index: 2040
+    time_index: '2040'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -1252,92 +1252,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: El47
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.949
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.95
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 30
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 350
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -1345,14 +1345,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 8.75
     uncertainty_notes: null
-    time_index: 2050
+    time_index: '2050'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -1419,92 +1419,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: HydroPumped
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.99999
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 80
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 0.3
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -1512,14 +1512,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.003
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -1586,92 +1586,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: HydroS
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.99999
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0.17
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 0.9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 80
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 0.3
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -1679,14 +1679,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.003
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -1743,92 +1743,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: ThHt
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.99
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.99
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0.000158053
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 3
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -1836,14 +1836,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.026
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -1908,92 +1908,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: ThDhw
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.99
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.99
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0.00971305
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 60
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -2001,14 +2001,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.6
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -2074,92 +2074,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: ThPhII
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.99
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.99
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0.000158053
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 3
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -2167,14 +2167,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.026
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -2239,92 +2239,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: H2
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 300000
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.938
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.938
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 30
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 7
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -2332,14 +2332,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.13
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -2423,92 +2423,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: CH4
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.96
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.96
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 6
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 0.06
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -2516,14 +2516,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -2606,92 +2606,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: CH4
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 700000
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.95
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.95
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 6
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -2699,14 +2699,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.06
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -2789,92 +2789,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: CH4
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 150000000
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 0.975
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 0.975
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 50
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 0.039
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -2882,14 +2882,14 @@
   - attribute_name: opex_one_time
     value: 30000000
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.0008
     uncertainty_notes: null
-    time_index: 2030
+    time_index: '2030'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -2946,92 +2946,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: CO2Sys
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 700000
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 6
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -3039,14 +3039,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.06
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -3103,92 +3103,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: CO
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 700000
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 6
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -3196,14 +3196,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.06
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -3260,92 +3260,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: C12
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 700000
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 6
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -3353,14 +3353,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.06
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -3417,92 +3417,92 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: C8
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: min_installation
     value: 700000
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
       Values: ≥ 0, Description: Smallest assumed storage capacity.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 40
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 6
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -3510,14 +3510,14 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 0.06
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
       expenditure per unit of storage capacity. | source currency: EUR'
@@ -3582,86 +3582,86 @@
   - attribute_name: trl
     value: 9
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
       Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
       TRL values progress across tech_year., Note: See Nomenclature 4.2'
   - attribute_name: tech_maturity
     value: Mature
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
       Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
       derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
   - attribute_name: storage_carrier
     value: NH3
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
       Carrier abbreviation, Description: The energy or material carrier being stored.
       References Carrier tab.'
   - attribute_name: charging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
       storage capacity (C-rate equivalent).'
   - attribute_name: discharging_capacity_factor
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
       Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
       storage capacity.'
   - attribute_name: charging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during charging.'
   - attribute_name: discharging_efficiency
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
       Values: 0–1, Description: Energy efficiency during discharging.'
   - attribute_name: min_soc
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Minimum state of charge as fraction of total capacity.'
   - attribute_name: max_soc
     value: 1
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
       0–1, Description: Maximum state of charge as fraction of total capacity.'
   - attribute_name: standby_loss_per_hour
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
       Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
       (self-discharge rate)., Note: 0 for negligible loss'
   - attribute_name: lifetime_yr
     value: 30
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
       Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
       installed capacity., Note: Per-project lump sum | source currency: EUR'
   - attribute_name: capex_per_stor_capacity
     value: 0.174
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
       [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
       per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
@@ -3669,7 +3669,7 @@
   - attribute_name: opex_one_time
     value: 0
     uncertainty_notes: null
-    time_index: 2025
+    time_index: '2025'
     attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
       Values: ≥ 0, Description: Fixed one-time operational expenditure independent
       of capacity. | source currency: EUR'

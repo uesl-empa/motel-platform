@@ -59,23 +59,19 @@
   - attribute_name: deployment_state
     value: No commercial-scale DACCS plants are currently operating, but several projects
       are expected to begin operation by 2030
-    time_index:
-    - '2023'
-    - '2030'
+    time_index: '2023, 2030'
     attribute_notes: Deployment status statement from report context; time-sensitive
       and should be checked before reuse.
   - attribute_name: early_full_scale_2030_net_removal_cost
     value: around 400-1000 USD/tCO2 toward 2030
     uncertainty_notes: Expected range for early full-scale plants; high uncertainty.
-    time_index:
-    - '2030'
+    time_index: '2030'
     attribute_notes: Unit included in value. Net CO2 removal cost, not capture-only.
   - attribute_name: large_scale_2050s_net_removal_cost
     value: around 200-400 USD/tCO2 in the 2050s if large-scale deployment is successful
     uncertainty_notes: Conditional on successful large-scale deployment; lower end
       depends on favourable early costs and rollout.
-    time_index:
-    - 2050s
+    time_index: 2050s
     attribute_notes: Unit included in value. Conditional net-removal cost range.
   - attribute_name: aspirational_cost_target_assessment
     value: 100 USD/tCO2 DACCS costs seem unlikely even in the longer term
@@ -83,13 +79,11 @@
       as a central case.
   - attribute_name: ambitious_2050_deployment_level
     value: about 400 MtCO2/year removed by 2050 in an ambitious deployment scenario
-    time_index:
-    - '2050'
+    time_index: '2050'
     attribute_notes: Scenario-scale context, not a single-technology cost input.
   - attribute_name: gigatonne_scale_timing
     value: reaches 1 GtCO2/year removals before 2060 in the ambitious deployment scenario
-    time_index:
-    - before 2060
+    time_index: before 2060
     attribute_notes: Scenario-scale context, not a single-technology cost input.
   - attribute_name: low_carbon_energy_requirement_for_1Gt_DACCS
     value: 1400-4200 TWh/year low-carbon energy for 1 GtCO2/year DACCS
@@ -348,24 +342,21 @@
     value: 280-580 USD/tCO2 by 2050
     uncertainty_notes: Reported as a range; reflects uncertainty in future DAC cost
       projection.
-    time_index:
-    - '2050'
+    time_index: '2050'
     attribute_notes: Unit included in value. Often associated with solid-filter /
       solid-sorbent DAC routes such as Climeworks-type systems.
   - attribute_name: projected_2050_cost_aqueous_KOH_DAC
     value: 230-540 USD/tCO2 by 2050
     uncertainty_notes: Reported as a range; reflects uncertainty in future DAC cost
       projection.
-    time_index:
-    - '2050'
+    time_index: '2050'
     attribute_notes: Unit included in value. Refers to aqueous potassium hydroxide
       DAC route.
   - attribute_name: projected_2050_cost_CaO_limestone_DAC
     value: 230-835 USD/tCO2 by 2050
     uncertainty_notes: Reported as a range; this pathway has the widest extracted
       cost range.
-    time_index:
-    - '2050'
+    time_index: '2050'
     attribute_notes: Unit included in value. Refers to calcium oxide / limestone DAC
       route.
   - attribute_name: technology_routes_assessed
@@ -374,20 +365,19 @@
     - aqueous potassium hydroxide DAC
     - calcium oxide / limestone DAC
     uncertainty_notes: Route labels are not harmonised technology classes.
-    time_index:
-    - '2050'
+    time_index: '2050'
     attribute_notes: Route labels are raw strings during ingestion.
   - attribute_name: expert_assessment_sample_size
     value: 30 industry experts
     uncertainty_notes: Check primary article for exact role of the expert assessment.
-    time_index: []
+    time_index: null
     attribute_notes: Methodological attribute, not a technology performance parameter.
   - attribute_name: cost_projection_method
     value: Component-level cost projection based on technology-inherent characteristics,
       including design complexity, standardisation potential, mature components, integration
       costs, energy costs, and operation costs.
     uncertainty_notes: Methodological description; not a numeric parameter.
-    time_index: []
+    time_index: null
     attribute_notes: Useful for provenance and later source-quality assessment.
   balancing:
     inputs:
@@ -492,14 +482,12 @@
   - attribute_name: projected_2050_DACS_cost_plateau
     value: around 100-600 USD/tCO2 by 2050
     uncertainty_notes: Reported as a broad cost plateau range under deployment assumptions.
-    time_index:
-    - '2050'
+    time_index: '2050'
     attribute_notes: Unit included in value. This is a DACS cost plateau range, not
       a harmonised model input cost.
   - attribute_name: cost_reduction_driver
     value: mainly capital cost reduction through aggressive deployment
-    time_index:
-    - '2050'
+    time_index: '2050'
     attribute_notes: Deployment-driven learning / scale-up caveat should be retained
       in modelling assumptions.
   - attribute_name: policy_support_requirement
@@ -512,8 +500,7 @@
       targets such as 100 USD/tCO2
     uncertainty_notes: Comparison statement depends on policy targets and scenario
       framing.
-    time_index:
-    - '2050'
+    time_index: '2050'
     attribute_notes: Useful as a warning against using 100 USD/tCO2 as a central value.
   balancing:
     inputs:
