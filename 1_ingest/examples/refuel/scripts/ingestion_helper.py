@@ -641,11 +641,12 @@ def add_attributes_to_record(
                 f" | source currency: {currency}"
             )
 
+        tech_year = clean(row.get('tech_year', None))
         attr = {
             'attribute_name': attr,
             'value': clean(row[attr]),
             'uncertainty_notes': None,
-            'time_index': clean(row.get('tech_year', None)),
+            'time_index': None if tech_year is None else str(tech_year),
             'attribute_notes': notes
         }
         attributes.append(attr)
@@ -923,7 +924,7 @@ def embeddedcarbon2unmapped(row: pd.Series) -> dict:
                     "attribute_name": "embedded_carbon",
                     "value": value,
                     "uncertainty_notes": f"climate scenario: {scenario_key}",
-                    "time_index": year,
+                    "time_index": str(year),
                     "attribute_notes": notes_base,
                 }
             )

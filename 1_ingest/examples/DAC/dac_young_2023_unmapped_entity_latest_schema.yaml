@@ -58,13 +58,11 @@ attributes:
 - attribute_name: projected_2050_DACS_cost_plateau
   value: around 100-600 USD/tCO2 by 2050
   uncertainty_notes: Reported as a broad cost plateau range under deployment assumptions.
-  time_index:
-  - '2050'
+  time_index: '2050'
   attribute_notes: Unit included in value. This is a DACS cost plateau range, not a harmonised model input cost.
 - attribute_name: cost_reduction_driver
   value: mainly capital cost reduction through aggressive deployment
-  time_index:
-  - '2050'
+  time_index: '2050'
   attribute_notes: Deployment-driven learning / scale-up caveat should be retained in modelling assumptions.
 - attribute_name: policy_support_requirement
   value: Strong project-catered policy support required to create market opportunities, accelerate DACS scale-up and lower
@@ -73,8 +71,7 @@ attributes:
 - attribute_name: cost_target_comparison
   value: Costs may plateau around 100-600 USD/tCO2 by 2050 but still exceed optimistic targets such as 100 USD/tCO2
   uncertainty_notes: Comparison statement depends on policy targets and scenario framing.
-  time_index:
-  - '2050'
+  time_index: '2050'
   attribute_notes: Useful as a warning against using 100 USD/tCO2 as a central value.
 balancing:
   inputs:

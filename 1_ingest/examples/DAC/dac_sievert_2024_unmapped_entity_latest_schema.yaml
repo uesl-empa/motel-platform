@@ -50,21 +50,18 @@ attributes:
 - attribute_name: projected_2050_cost_solid_filter_DAC
   value: 280-580 USD/tCO2 by 2050
   uncertainty_notes: Reported as a range; reflects uncertainty in future DAC cost projection.
-  time_index:
-  - '2050'
+  time_index: '2050'
   attribute_notes: Unit included in value. Often associated with solid-filter / solid-sorbent DAC routes such as Climeworks-type
     systems.
 - attribute_name: projected_2050_cost_aqueous_KOH_DAC
   value: 230-540 USD/tCO2 by 2050
   uncertainty_notes: Reported as a range; reflects uncertainty in future DAC cost projection.
-  time_index:
-  - '2050'
+  time_index: '2050'
   attribute_notes: Unit included in value. Refers to aqueous potassium hydroxide DAC route.
 - attribute_name: projected_2050_cost_CaO_limestone_DAC
   value: 230-835 USD/tCO2 by 2050
   uncertainty_notes: Reported as a range; this pathway has the widest extracted cost range.
-  time_index:
-  - '2050'
+  time_index: '2050'
   attribute_notes: Unit included in value. Refers to calcium oxide / limestone DAC route.
 - attribute_name: technology_routes_assessed
   value:
@@ -72,19 +69,18 @@ attributes:
   - aqueous potassium hydroxide DAC
   - calcium oxide / limestone DAC
   uncertainty_notes: Route labels are not harmonised technology classes.
-  time_index:
-  - '2050'
+  time_index: '2050'
   attribute_notes: Route labels are raw strings during ingestion.
 - attribute_name: expert_assessment_sample_size
   value: 30 industry experts
   uncertainty_notes: Check primary article for exact role of the expert assessment.
-  time_index: []
+  time_index: null
   attribute_notes: Methodological attribute, not a technology performance parameter.
 - attribute_name: cost_projection_method
   value: Component-level cost projection based on technology-inherent characteristics, including design complexity, standardisation
     potential, mature components, integration costs, energy costs, and operation costs.
   uncertainty_notes: Methodological description; not a numeric parameter.
-  time_index: []
+  time_index: null
   attribute_notes: Useful for provenance and later source-quality assessment.
 balancing:
   inputs:
