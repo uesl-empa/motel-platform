@@ -36,7 +36,7 @@ UnmappedEntity: # Staging schema for raw, unstructured data ingestion. All field
         attribute_name: "[Required; String] Target metric descriptive identifier."
         value: "[Required; Any] The raw data value — number, string, range, or array — exactly as found in the source. Could including unit (e.g. 5 kW)"
         uncertainty_notes: "[String] Free-text description of any stated uncertainty, range, or confidence bounds."
-        time_index: "[List of Strings] Chronological anchor strings tracking multi-period or profile datasets."
+        time_index: "[String] Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here."
         attribute_notes: "[String] Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit kW)"
     balancing: # [Dictionary] Defines the raw conversion ratios and multi-carrier mass or energy balances for multi-input/multi-output processes.
         inputs: # [List of Dictionaries] Array listing incoming resource vectors and their relative share proportions.
