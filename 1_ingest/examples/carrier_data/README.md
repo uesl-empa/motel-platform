@@ -39,7 +39,7 @@ Each staging record answers: *which carrier, what kind of statement, under which
 | `data_category` | Coarse grouping: `price`, `emission_intensity`, `availability`, `resource_potential`, `demand`, `other`. |
 | `scope` | Where and when the value holds, plus the accounting boundary and consumption band. |
 | `sources` | Provenance, resolved against `secondary/source.csv`. Identical in shape to the technology track. |
-| `attributes` | The values themselves. Use `value` plus `time_index` for a multi-period series. |
+| `attributes` | The values themselves. `time_index` is a scalar, so a multi-period series is one entry per period. |
 
 Scope carries more weight here than on the technology side, because carrier values are only comparable within a stated boundary:
 

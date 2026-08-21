@@ -41,7 +41,7 @@ This folder is Step 4 of the MOTEL workflow. It provides a lightweight, notebook
 
 ## Carrier-Bound Data
 
-`load_carrier_data(config.LINKED_CARRIER_DATA_PATH, config.VOCAB_DIR)` returns a tidy table with one row per value observation, expanding multi-period series so each `time_index` entry becomes its own row with a parsed `year`. `filter_carrier_data`, `summarize_carrier_data`, and `prepare_carrier_data_analysis` narrow and summarise it by carrier, `data_category`, or attribute. A missing or empty carrier data file yields an empty table rather than an error.
+`load_carrier_data(config.LINKED_CARRIER_DATA_PATH, config.VOCAB_DIR)` returns a tidy table with one row per value observation, with a `year` parsed from each entry's scalar `time_index`. `filter_carrier_data`, `summarize_carrier_data`, and `prepare_carrier_data_analysis` narrow and summarise it by carrier, `data_category`, or attribute. A missing or empty carrier data file yields an empty table rather than an error.
 
 ## Important Boundary
 

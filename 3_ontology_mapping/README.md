@@ -65,7 +65,7 @@ Carrier data records from `motel-db/linked_carrier_data/` are exported alongside
     dici_onto:hasAttribute <.../Grid_Electricity_CH_2030/CarrierPrice> .
 ```
 
-A record holding a time series expands into one scoped instance per `time_index` entry, so a price or intensity trajectory becomes one instance per year. Where two records would claim the same instance (for example a wholesale and a retail price for the same carrier, region, and year), the `linked_carrier_data_id` is appended to keep the URIs distinct — the same rule the technology track uses for colliding instance labels.
+Values are grouped by their scalar `time_index`, so a record reporting several periods becomes one scoped instance per period. Where two records would claim the same instance (for example a wholesale and a retail price for the same carrier, region, and year), the `linked_carrier_data_id` is appended to keep the URIs distinct — the same rule the technology track uses for colliding instance labels.
 
 The ontology class names for these attributes (`CarrierPrice`, `CarrierEmissionIntensity`, `CarrierAnnualAvailability`) are declared under the carrier-bound section of `config/attribute_ontology_mapping.yaml`. They are **MOTEL placeholders pending alignment with the DigiCities ontology**; change them in that config once the ontology defines its own carrier-data terms. No other code change is needed.
 

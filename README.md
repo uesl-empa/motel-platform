@@ -67,7 +67,7 @@ MOTEL records two kinds of modelling data, using the same registries and the sam
 
 A price for grid electricity in a given region and year applies to every technology that consumes that carrier, so it belongs to the carrier rather than to any one consumer. Both tracks resolve against the same carrier, source, attribute, and scope vocabularies; the `applies_to` column in `attribute.csv` marks which side a metric belongs to.
 
-The carrier-bound pipeline runs either with LLM-assisted matching (`use_llm=True`, needs Ollama) or with deterministic exact-match resolution (`use_llm=False`, no model required). See `1_ingest/examples/carrier_data/README.md` for a worked example.
+Following the same convention as the technology track, `time_index` is a scalar: a multi-period series is one attribute entry per period. The carrier-bound pipeline runs either with LLM-assisted matching (`use_llm=True`, needs Ollama) or with deterministic exact-match resolution (`use_llm=False`, no model required). See `1_ingest/examples/carrier_data/README.md` for a worked example.
 
 ## Database Layout
 

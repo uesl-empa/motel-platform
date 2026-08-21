@@ -126,7 +126,7 @@ properties:
 
   attributes:
     type: array
-    description: Array of carrier-level metrics populated directly from the unstructured raw intake profile, such as price, emission intensity, or annual availability.
+    description: Array of carrier-level metrics populated directly from the unstructured raw intake profile, such as price, emission intensity, or annual availability. A metric reported for several periods contributes one entry per period.
     items:
       type: object
       required:
@@ -138,15 +138,13 @@ properties:
           description: Target metric descriptive identifier, for example Carrier Price or Carrier Emission Intensity.
         value:
           type: any
-          description: The raw data value, number, string, range, or array, exactly as found in the source. May include the unit (e.g. 0.21 EUR/kWh). Use an array together with time_index for profiles or multi-period series.
+          description: The raw data value, number, string, or range, exactly as found in the source. May include the unit (e.g. 0.21 EUR/kWh). One value per attribute entry; a multi-period series becomes one entry per period, each with its own time_index.
         uncertainty_notes:
           type: string
           description: Free-text description of any stated uncertainty, range, or confidence bounds.
         time_index:
-          type: array
-          description: Chronological anchor strings tracking multi-period or profile datasets, aligned element-wise with value when value is an array.
-          items:
-            type: string
+          type: string
+          description: Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here.
         attribute_notes:
           type: string
           description: Any additional raw context, caveats, or parsing flags noted during ingestion. The unit could be defined here (e.g. Unit EUR/kWh).

@@ -135,10 +135,15 @@ def _next_free_id(prefix, taken, width=5):
     return f"{prefix}_{number:0{width}d}"
 
 
-def _infer_value_type(value, time_index):
-    """Classify a staged value so downstream solvers know how to read it."""
+def _infer_value_type(value):
+    """
+    Classify a staged value so downstream solvers know how to read it.
+
+    time_index is a scalar, so one attribute entry always holds one value; a
+    multi-period series arrives as one entry per period.
+    """
     if isinstance(value, (list, tuple)):
-        return "timeseries" if time_index else "array"
+        return "array"
     if isinstance(value, bool):
         return "boolean"
     if isinstance(value, (int, float)):
@@ -623,7 +628,7 @@ def build_and_save_linked_carrier_data(
                 "attribute_id": attribute_id,
                 "attribute_name": attr_names.get(attribute_name, attribute_name),
                 "value": value,
-                "value_type": _infer_value_type(value, time_index),
+                "value_type": _infer_value_type(value),
                 "unit": attr_units.get(attribute_id, ""),
             }
             if time_index:
@@ -981,12 +986,15 @@ def validate_linked_carrier_data(
                 problems.append(f"{record_id}: value without attribute_id")
             elif attribute_ids and attribute_id not in attribute_ids:
                 problems.append(f"{record_id}: unknown attribute_id {attribute_id!r}")
-            value = entry.get("value")
-            time_index = entry.get("time_index")
-            if isinstance(value, list) and time_index and len(value) != len(time_index):
+            if isinstance(entry.get("time_index"), list):
                 problems.append(
-                    f"{record_id}: attribute {attribute_id} has {len(value)} values "
-                    f"but {len(time_index)} time_index entries"
+                    f"{record_id}: attribute {attribute_id} has a list time_index; "
+                    "use one entry per period with a scalar time_index"
+                )
+            if isinstance(entry.get("value"), list):
+                problems.append(
+                    f"{record_id}: attribute {attribute_id} packs a series into one value; "
+                    "split it into one entry per period"
                 )
 
     return problems

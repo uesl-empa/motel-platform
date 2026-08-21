@@ -114,10 +114,8 @@ properties:
           type: [number, string, boolean, array, object]
           description: The computational data payload matching the data schema constraints of the assigned attribute.
         time_index:
-          type: array
-          description: Chronological anchors aligned element-wise with value when value holds a multi-period series or profile.
-          items:
-            type: string
+          type: string
+          description: Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here.
         value_format:
           type: string
           description: Strict variable typing rules or code compilation path rules used to format downstream array parsers.

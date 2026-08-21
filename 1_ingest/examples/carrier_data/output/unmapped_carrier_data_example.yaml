@@ -74,12 +74,28 @@
       linked_attribute:
         - Carrier Emission Intensity
       source_notes: Not a real publication. Do not cite.
+  # time_index is a scalar, so a trajectory is one attribute entry per period.
   attributes:
     - attribute_name: Carrier Emission Intensity
-      value: [128.0, 96.0, 61.0, 24.0]
-      time_index: ["2025", "2030", "2040", "2050"]
+      value: 128.0
+      time_index: "2025"
       uncertainty_notes: Illustrative placeholder; no uncertainty was assessed.
-      attribute_notes: Unit gCO2eq/kWh. Life-cycle greenhouse gas intensity of delivered electricity, one value per time_index entry.
+      attribute_notes: Unit gCO2eq/kWh. Life-cycle greenhouse gas intensity of delivered electricity.
+    - attribute_name: Carrier Emission Intensity
+      value: 96.0
+      time_index: "2030"
+      uncertainty_notes: Illustrative placeholder; no uncertainty was assessed.
+      attribute_notes: Unit gCO2eq/kWh. Life-cycle greenhouse gas intensity of delivered electricity.
+    - attribute_name: Carrier Emission Intensity
+      value: 61.0
+      time_index: "2040"
+      uncertainty_notes: Illustrative placeholder; no uncertainty was assessed.
+      attribute_notes: Unit gCO2eq/kWh. Life-cycle greenhouse gas intensity of delivered electricity.
+    - attribute_name: Carrier Emission Intensity
+      value: 24.0
+      time_index: "2050"
+      uncertainty_notes: Illustrative placeholder; no uncertainty was assessed.
+      attribute_notes: Unit gCO2eq/kWh. Life-cycle greenhouse gas intensity of delivered electricity.
   metadata:
     related_project: MOTEL
     tags: [example, carrier_data, placeholder]
