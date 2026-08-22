@@ -23,16 +23,26 @@ Blocking before the carrier version can be published:
   emission factors under a licence that permits redistribution. Note that
   ecoinvent-derived factors are **not** redistributable; check KBOB, BFE, and
   Swissgrid terms before ingesting.
-- [] agree the ontology terms with @james.allan. `CarrierPrice`,
-  `CarrierEmissionIntensity`, and `CarrierAnnualAvailability` are MOTEL
-  placeholders declared in `3_ontology_mapping/config/attribute_ontology_mapping.yaml`;
-  they do not exist in `digicities-ontology`. Publishing TTL with them mints
-  terms into the `dici_onto:` namespace that the ontology does not define.
-  Changing them is config-only, no code change.
-- [] confirm how DigiCities wants carrier-level data modelled. The current
-  export attaches attributes to a carrier instance typed `EnergyCarrier` and
-  scoped by region and year, because that pattern invents no new predicates.
-  Whether that is the intended shape is an open ontology question.
+- [] reuse `dici_onto:hasEnergyCarrierEnergyCostAttribute` for carrier price
+  instead of minting `CarrierPrice`. It already exists in core, under
+  `hasEnergyCarrierAttribute` -> `hasComponentAttribute`. Checked against
+  `digicities-ontology` core on 2026-08-23.
+- [] mint `CarrierEmissionIntensity` properly. Core has **no** emission, carbon,
+  intensity, or GWP term of any kind, so this one genuinely has to be created.
+  Same for a carrier availability term; core has a `Resource` /
+  `ResourceAttribute` branch (`RenewableResource`, `NonRenewableResource`) that
+  may fit better than a carrier attribute.
+- [] consider `CustomPhysicalRatioAttribute` as the category class for both
+  price (EUR/kWh) and intensity (gCO2eq/kWh). It exists in core and is defined
+  for exactly this shape: a unit that is a ratio of two QUDT units, carried as
+  a string in `hasUnitLabel` with no `qudt:unit` IRI emitted.
+- [] carrier-level modelling shape is confirmed OK: `EnergyCarrier` is a
+  subclass of `Component`, and components carry attributes through
+  `hasAttribute` / `hasComponentAttribute`, so attaching scoped attributes to a
+  carrier instance is structurally valid. Still open: whether a price or
+  intensity trajectory should stay one scoped instance per year, or use the core
+  `FutureTimeSeries` class with `hasFutureTimeSeries`, which is defined for
+  forecast and scenario projections.
 - [] replace `1_ingest/examples/carrier_data/output/unmapped_carrier_data_example.yaml`
   or clearly gate it. Every number in it is an invented placeholder.
 
@@ -59,6 +69,23 @@ Worth doing, not blocking:
 ## TODO
 
 - [] check the whole workflow again, after assessment_date was change to reference_year (link to ontology!?)
+- [] publish a MOTEL ontology extension file. `digicities-ontology` expects
+      minted terms to be declared in a workspace `ontology/extensions/*.ttl`
+      using the shared `dici_onto:` namespace, validated with
+      `tools/validate_extension.py` (it checks that parents are declared, that
+      labels and comments are present, and that no core term is redefined).
+      MOTEL declares nothing today, yet the generated TTL uses 19 minted
+      attribute classes (TRL, CAPEX, CAPEXPerCapacity, Lifetime, OPEX,
+      InterestRate, the 3 carrier ones, ...) plus `EmbeddedCarbon`,
+      `CapacityBasis`, `ConversionFactor`, `Introduced`, `IsMainInput`,
+      `IsMainOutput`, `LCA_unit`, `ssp2_NDC`, `ssp2_PkBudg1000`, `Year`, and
+      four `has...` predicates. Minting is the sanctioned workflow; leaving the
+      terms undeclared is the gap.
+- [] MOTEL emits `dici_onto:hasAttributeValue` for every attribute type, but
+      `docs/attribute-types.md` in the ontology specifies `qudt:value` for
+      `PhysicalAttribute`, `hasCategoricalValue` for `CategoricalAttribute`, and
+      `hasTemporalValue` for `EventAttribute`. Only `SimpleValueAttribute`
+      matches today. Affects the whole technology track, not just carrier.
 - [] the harmonisation process seem not working with non-empty datasets in motel-db
       — this affects a carrier run against a populated database too
 - [] in source, the LLM cannot identify which one is journal paper
