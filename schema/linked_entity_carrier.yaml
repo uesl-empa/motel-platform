@@ -1,4 +1,5 @@
 $schema: "http://json-schema.org/draft-07/schema#"
+schema_version: "0.2.0"
 title: LinkedEntityCarrier
 type: object
 description: Validated carrier-bound record linking strict foreign keys to controlled vocabularies, used for modelling data that belongs to an energy carrier rather than to a technology, such as energy prices and emission intensities.

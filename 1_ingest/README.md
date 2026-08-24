@@ -56,6 +56,18 @@ Step 1 produces one of two staging formats depending on what the value describes
 
 Use the carrier-bound format whenever the value would otherwise have to be copied onto every technology that touches the carrier. See `examples/carrier_data/README.md`.
 
+## Validating What You Produce
+
+Before handing staging records to Step 2, check them:
+
+```bash
+python ../tools/validate_unmapped.py ../motel-db/unmapped_entity/
+```
+
+The schema is auto-detected per record from its anchor field (`technology_name`
+or `carrier_name`). Set `schema_version` on each record to pin the contract it
+was written against; the validator warns when it is missing or disagrees.
+
 ## Step Boundary
 
 - Step 1 creates `unmapped` staging records from raw source material.

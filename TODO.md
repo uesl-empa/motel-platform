@@ -26,23 +26,11 @@ Two consequences worth keeping in mind:
       `motel-db/unmapped_carrier_data/`. Staging records reproduce source numbers,
       notes, and locators nearly verbatim, so they are more exposed than a
       harmonised derivative. Top blocker, independent of everything else here.
-- [] write a validator for staged records. Stage 1 is now the MUST and has **no
-      enforcement at all** — `validate_row` checks registry rows during
-      harmonisation, and `validate_linked_carrier_data` covers only the linked
-      carrier side. A contributor can today submit staging YAML with a misspelled
-      key, a missing `source_name`, or a list `time_index` and nothing catches it.
-      Cover both `unmapped_entity_technology` and `unmapped_entity_carrier`, and
-      wire it into `.github/workflows/validate-repository.yml`.
 - [] merge `feat/carrier-data-track`. The renamed schemas
       (`unmapped_entity_technology`, `unmapped_entity_carrier`,
       `linked_entity_technology`, `linked_entity_carrier`) exist only on that
       branch. Any downstream repo written against them is pinned to an unmerged
       branch until this lands.
-- [] give the schemas a version and a pinning story. There is no `schema_version`
-      field and no git tag; `CITATION.cff` says 0.1.0 and nothing references it.
-      Once a second repository ingests against these schemas, "follow the latest
-      schema" stops being a well-defined instruction. Tag a release, or add a
-      version field the ingestion side can assert on.
 - [] state in the README what a staging-only release does and does not promise.
 - [] replace `1_ingest/examples/carrier_data/output/unmapped_carrier_data_example.yaml`
       or clearly gate it. Every number in it is an invented placeholder.
@@ -160,6 +148,12 @@ blocks a staging-first release.
       which the harmoniser has always written but the schema never described
 - [x] check the carrier ontology terms against digicities-ontology core, and
       correct the assumption that minting terms was itself the problem
+- [x] tag v0.1.0 on the pre-carrier state, declare `schema_version` in every
+      schema and staging record, and bump this release to 0.2.0
+- [x] build `tools/validate_unmapped.py` and wire it into CI. First run found
+      three schema-vs-reality mismatches: `metadata.other_notes` is written as a
+      list, and `balancing` share/unit were required but legitimately absent in
+      64 records
 
 ## Future Work
 
