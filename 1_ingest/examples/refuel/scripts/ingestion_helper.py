@@ -123,7 +123,7 @@ def get_refuel_paths(project_root: Path | None = None) -> dict[str, Path]:
         "notebook_dir": example_dir,
         "notebook_path": example_dir / "ingestion_pipeline.ipynb",
         "workbook_path": example_dir / "input" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
-        "schema_path": root / "schema_human" / "unmapped_entity.yaml",
+        "schema_path": root / "schema_human" / "unmapped_entity_technology.yaml",
         "staging_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
         "convtech_output": example_dir / "output" / "unmapped_entities_refuel_convtech.yaml",
         "stortech_output": example_dir / "output" / "unmapped_entities_refuel_stortech.yaml",
@@ -153,6 +153,13 @@ def is_placeholder_text(value) -> bool:
     text = str(value).strip().lower()
     return text in {"", "n/a", "na", "nan", "-", "—"}
 
+
+SCHEMA_VERSION = "0.2.0"
+"""MOTEL schema release these records are authored against.
+
+Stamped onto every generated record so a consumer can tell which contract the
+file follows. Bump it together with the schemas in ``schema/``.
+"""
 
 def normalize_source_type(raw_type):
     """Map source-medium labels to the source schema enum."""
@@ -815,6 +822,7 @@ def refuel2unmapped(
     capacity_scope = format_capacity_scope_description(row.get("min_installation_size"))
     system_boundary = clean(row.get("tech_boundary"))
     record = {
+        "schema_version": SCHEMA_VERSION,
         "technology_name": row.get("tech_id", ""),
         "technology": {
             "technology_description": clean(row.get("description")),
@@ -871,6 +879,7 @@ def refuel2unmapped(
 def embeddedcarbon2unmapped(row: pd.Series) -> dict:
     """Convert one EmbeddedCarbon row into an unmapped entity."""
     record = {
+        "schema_version": SCHEMA_VERSION,
         "technology_name": row.get("tech_id", ""),
         "technology": {
             "technology_description": None,

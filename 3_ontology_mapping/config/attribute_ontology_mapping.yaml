@@ -117,3 +117,46 @@ attributes:
     dtype: decimal
     aliases:
       - Reference Unit Size
+
+  # --- Carrier-bound attributes -------------------------------------------
+  # These describe an energy carrier rather than a technology and arrive from
+  # motel-db/linked_carrier_data/.
+  #
+  # Checked against uesl-empa/digicities-ontology core on 2026-08-23:
+  #  - none of the three ontology_class names below exist in core, but neither
+  #    do any of the 16 technology attribute classes above. Minting terms in the
+  #    shared dici_onto: namespace is the sanctioned workflow (see
+  #    docs/CORE_EVOLUTION.md); what MOTEL still owes is an
+  #    ontology/extensions/*.ttl declaring them. See TODO.md.
+  #  - core DOES define hasEnergyCarrierEnergyCostAttribute, so carrier_price
+  #    should reuse it rather than mint CarrierPrice.
+  #  - core has no emission, carbon, or intensity term at all, so
+  #    CarrierEmissionIntensity genuinely has to be minted.
+  #  - CustomPhysicalRatioAttribute may suit EUR/kWh and gCO2eq/kWh better than
+  #    the category classes used below.
+  carrier_price:
+    ontology_class: CarrierPrice
+    category_class: UnitBasedCostAttribute
+    dtype: decimal
+    aliases:
+      - Carrier Price
+      - Energy Carrier Price
+      - Energy Price
+
+  carrier_emission_intensity:
+    ontology_class: CarrierEmissionIntensity
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Carrier Emission Intensity
+      - Carrier Carbon Intensity
+      - Carbon Intensity
+      - Emission Factor
+
+  carrier_annual_availability:
+    ontology_class: CarrierAnnualAvailability
+    category_class: PhysicalAttribute
+    dtype: decimal
+    aliases:
+      - Carrier Annual Availability
+      - Annual Availability

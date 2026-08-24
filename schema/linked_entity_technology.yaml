@@ -1,5 +1,6 @@
 $schema: "http://json-schema.org/draft-07/schema#"
-title: LinkedEntity
+schema_version: "0.2.0"
+title: LinkedEntityTechnology
 type: object
 description: Validated relational matrix entity linking strict foreign keys to controlled vocabularies and normalised entities.
 required:
@@ -62,7 +63,7 @@ properties:
         properties:
           assumption_id:
             type: string
-            description: Relational link referencing a shared global assumption profile block (e.g., ASSUMP_MATURE_MARKET).
+            description: Relational link referencing a shared global assumption profile block (e.g., ASSUMP_MATURE_MARKET, ASSUMP_TAXES_EXCLUDED).
           linked_attributes:
             type: array
             description: Array of attribute ID tokens whose calculations or boundaries are governed by this specific assumption.
@@ -72,12 +73,12 @@ properties:
               description: Validated token matching a master attribute registration node.
   scope:
     type: object
-    description: Structured boundaries restricting model solver access based on spatial and temporal network rules.
+    description: Structured boundaries restricting model solver access based on spatial, temporal, volume, and accounting rules.
     properties:
       geographic_scope:
         type: string
         foreign_key: geographic_scope.geographic_scope
-        description: Foreign key reference anchoring the boundary to a controlled geographic territory token.
+        description: Foreign key reference anchoring the value to a controlled geographic territory or market zone token.
       temporal_scope:
         type: string
         foreign_key: temporal_scope.temporal_scope
@@ -85,11 +86,11 @@ properties:
       capacity_scope:
         type: string
         foreign_key: capacity_scope.capacity_scope
-        description: Foreign key reference linking data validity to specific structured capacity bounds.
+        description: Foreign key reference linking validity to controlled capacity bounds, a consumption band, or a volume tier.
       system_boundary:
         type: string
         foreign_key: system_boundary.system_boundary
-        description: Foreign key reference specifying configuration boundaries under a controlled system archetype.
+        description: Foreign key reference specifying the system or accounting boundary, such as the equipment included in a cost figure or the life-cycle stage covered by an emission factor.
   values:
     type: array
     description: Normalised parameter arrays binding attributes to precise mathematical numbers and explicit engineering error bounds.
@@ -99,10 +100,16 @@ properties:
         attribute_id:
           type: string
           foreign_key: attribute.attribute_id
-          description: Foreign key reference targeting an engineering metric variable within the controlled vocabulary.
+          description: Foreign key reference targeting a metric variable within the attribute controlled vocabulary.
+        attribute_name:
+          type: string
+          description: Canonical attribute name carried alongside the ID so the record stays readable without a vocabulary join.
         value:
           type: [number, string, boolean, array, object]
           description: The computational data payload matching the data schema constraints of the assigned attribute.
+        time_index:
+          type: string
+          description: Chronological anchor string for this value, e.g. a single year. For a series across multiple periods, use one attribute entry per period rather than combining years here.
         value_format:
           type: string
           description: Strict variable typing rules or code compilation path rules used to format downstream array parsers.

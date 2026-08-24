@@ -428,6 +428,11 @@ def embedded_carbon_uri(label: str) -> str:
     return f"{PROJECT_BASE}/EmbeddedCarbon/{safe_uri(label)}"
 
 
+def carrier_data_uri(label: str, carrier_class: str = "EnergyCarrier") -> str:
+    """Build the ID for one carrier observed in a specific region and year."""
+    return f"{PROJECT_BASE}/{safe_uri(carrier_class)}/{safe_uri(label)}"
+
+
 def tb(subject: str, po_pairs: list[tuple[str, str]]) -> str:
     """Build one Turtle text block from one subject and its fields."""
     if not po_pairs:
@@ -459,6 +464,11 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
     """Read motel-db files and build the main TTL text plus stats and warnings."""
     db = Path(path_motel_db)
     linked_entities = read_yaml(db / "linked_entity" / "linked_entity.yaml")
+    # Carrier-bound records (prices, emission intensities, availability). The file
+    # is optional so databases predating the carrier data track still generate.
+    carrier_data_path = db / "linked_carrier_data" / "linked_carrier_data.yaml"
+    carrier_data_records = read_yaml(carrier_data_path) if carrier_data_path.exists() else []
+    carrier_data_records = carrier_data_records or []
 
     technologies = read_csv(db / "secondary" / "technology.csv")
     processes = read_csv(db / "secondary" / "process.csv")
@@ -545,6 +555,29 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                         ],
                     )
                 )
+
+    # Carriers that only carry price or intensity data still need a base instance.
+    for record in carrier_data_records:
+        carrier_id = str(record.get("carrier_id", "")).strip()
+        if not carrier_id or carrier_id in seen_carriers:
+            continue
+        seen_carriers.add(carrier_id)
+        carrier = carrier_by_id.get(carrier_id)
+        if not carrier:
+            warnings.append(
+                f"{record.get('linked_carrier_data_id', '<unknown>')}: unknown carrier_id '{carrier_id}'"
+            )
+            continue
+        carrier_class, _ = classify_carrier(carrier)
+        blocks.append(
+            tb(
+                u(carrier_uri(carrier["carrier_name"])),
+                [
+                    ("a", f"dici_onto:{carrier_class}"),
+                    ("rdfs:label", f'"{esc(carrier["carrier_name"])}"'),
+                ],
+            )
+        )
 
     blocks.append("\n# --- Process class hierarchy ---")
     proc_cls = {}
@@ -868,6 +901,120 @@ def build_ttl_content(path_motel_db: Path) -> tuple[str, Counter, list[str]]:
                     )
                 )
                 stats["embedded_carbon"] += 1
+
+    if carrier_data_records:
+        blocks.append("\n# --- Carrier data instances ---")
+
+    # A carrier data record states something about a carrier in one region and one
+    # year, so it becomes a scoped carrier instance carrying the attribute nodes.
+    # time_index is a scalar per value entry, so a record reporting several periods
+    # groups into one scoped instance per period.
+    carrier_data_expansions: list[dict[str, object]] = []
+    for record in carrier_data_records:
+        record_id = record.get("linked_carrier_data_id", "<unknown>")
+        carrier = carrier_by_id.get(str(record.get("carrier_id", "")).strip())
+        if not carrier:
+            # Already reported while emitting base carrier instances.
+            continue
+        scope = record.get("scope", {}) or {}
+        geo = normalize_scope_value(scope.get("geographic_scope", ""))
+        record_year = normalize_scope_value(scope.get("temporal_scope", ""))
+
+        values_by_year: dict[str, list[tuple[str, object, dict[str, str], str | None]]] = {}
+        for value_entry in record.get("values", []) or []:
+            attr_name = normalize_attribute_name(value_entry.get("attribute_name", ""))
+            attr_id = str(value_entry.get("attribute_id", "")).strip()
+            if attr_name not in ATTR_CONFIG:
+                warnings.append(
+                    f"{record_id}: unmapped carrier attribute '{value_entry.get('attribute_name', '')}'"
+                )
+                continue
+            cfg = ATTR_CONFIG[attr_name]
+            unit_label = normalize_attribute_unit_label(
+                value_entry.get("unit") or attribute_by_id.get(attr_id, {}).get("unit")
+            )
+            raw = value_entry.get("value")
+            if isinstance(raw, list):
+                warnings.append(
+                    f"{record_id}: attribute '{attr_id}' packs a series into one value; "
+                    "split it into one entry per period"
+                )
+                continue
+            if raw is None or str(raw).strip().lower() in ("", "na", "nan"):
+                continue
+            # Fall back to the record's temporal scope when the entry states no period.
+            year = normalize_scope_value(value_entry.get("time_index", "")) or record_year
+            values_by_year.setdefault(year, []).append((attr_id, raw, cfg, unit_label))
+
+        attr_sources: dict[str, list[str]] = {}
+        for source_entry in record.get("sources", []) or []:
+            source_id = source_entry.get("source_id", "")
+            for attr_id in source_entry.get("linked_attributes", []) or []:
+                if not str(attr_id).startswith("[unregistered"):
+                    attr_sources.setdefault(attr_id, []).append(source_id)
+
+        for year, entries in sorted(values_by_year.items()):
+            base = "_".join(part for part in [carrier["carrier_name"], geo, year] if part)
+            carrier_data_expansions.append({
+                "record_id": record_id,
+                "carrier": carrier,
+                "geo": geo,
+                "year": year,
+                "base": base,
+                "entries": entries,
+                "attr_sources": attr_sources,
+            })
+
+    # Disambiguate only where two different records would claim the same instance,
+    # matching how technology instance labels are made unique.
+    base_owners: dict[str, set[str]] = {}
+    for expansion in carrier_data_expansions:
+        base_owners.setdefault(str(expansion["base"]), set()).add(str(expansion["record_id"]))
+
+    for expansion in carrier_data_expansions:
+        carrier = expansion["carrier"]
+        base = str(expansion["base"])
+        label = base if len(base_owners[base]) == 1 else f"{base}_{expansion['record_id']}"
+        carrier_class, _ = classify_carrier(carrier)
+        subject = carrier_data_uri(label, carrier_class)
+
+        attribute_subjects = []
+        attribute_blocks = []
+        for attr_id, raw, cfg, unit_label in expansion["entries"]:
+            attr_subject = f"{subject}/{cfg.get('uri_segment', cfg['class'])}"
+            attribute_subjects.append(u(attr_subject))
+            po_attr = [
+                ("a", f"dici_onto:{cfg['class']}"),
+                ("a", f"dici_onto:{cfg['category']}"),
+                ("dici_onto:hasAttributeValue", fv(raw, cfg.get("dtype", "decimal"))),
+            ]
+            if unit_label:
+                po_attr.append(("dici_onto:hasUnitLabel", f'"{esc(unit_label)}"^^xsd:string'))
+            qudt_unit = infer_qudt_unit_from_unit_label(unit_label)
+            if qudt_unit:
+                po_attr.append(("qudt:unit", u(qudt_unit)))
+            currency = infer_currency_from_unit_label(unit_label)
+            if currency:
+                po_attr.append(("dici_onto:currency", u(currency)))
+            for source_id in expansion["attr_sources"].get(attr_id, []):
+                source_name = source_by_id.get(source_id, {}).get("source_name")
+                if source_name:
+                    po_attr.append(("prov:wasDerivedFrom", u(reference_uri(source_name))))
+            attribute_blocks.append(tb(u(attr_subject), po_attr))
+
+        if not attribute_subjects:
+            continue
+
+        po = [("a", f"dici_onto:{carrier_class}")]
+        if expansion["year"]:
+            po.append(("dici_onto:occursDuring", u(temporal_uri(str(expansion["year"])))))
+        if expansion["geo"]:
+            po.append(("dici_onto:locatedIn", u(location_uri(str(expansion["geo"])))))
+        po.append(("rdfs:label", f'"{esc(carrier["carrier_name"])}"'))
+        po.append(("dici_onto:hasAttribute", ", ".join(attribute_subjects)))
+        blocks.append(tb(u(subject), po))
+        blocks.extend(attribute_blocks)
+        stats["carrier_data"] += 1
 
     return "\n\n".join(block for block in blocks if block), stats, warnings
 
