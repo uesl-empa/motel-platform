@@ -1,4 +1,4 @@
-## updated date: 2026-06-21
+## updated date: 2026-08-24
 # NOTE:
 #  - remove unit and description for attribute, to make it more flexible for ingestion of raw data
 #    the unit could be included in the value field (e.g. 5 kW) or notes
