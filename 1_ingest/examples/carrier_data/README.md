@@ -10,7 +10,7 @@ Energy prices and carbon intensities are the motivating cases. A price for grid 
 1_ingest/examples/carrier_data/
 |-- README.md                   this guide
 `-- output/
-    `-- unmapped_carrier_data_example.yaml   illustrative staging records
+    `-- unmapped_carrier_data_TEMPLATE.yaml   illustrative staging records
 ```
 
 ## Input / Process / Output
@@ -21,13 +21,13 @@ Energy prices and carbon intensities are the motivating cases. A price for grid 
 - Output schema (produced by Step 2):
   - `../../../schema/linked_entity_carrier.yaml`
 - Example staging file:
-  - `output/unmapped_carrier_data_example.yaml`
+  - `output/unmapped_carrier_data_TEMPLATE.yaml`
 - Published staging location:
   - `../../../motel-db/unmapped_carrier_data/`
 - Published harmonised output:
   - `../../../motel-db/linked_carrier_data/linked_carrier_data.yaml`
 
-> The example file contains **illustrative placeholder numbers only**. They are invented to show the record shape and to let the pipeline be exercised end to end. Nothing in it is measured or citable. Replace it with real, licensed source data before publishing.
+> `output/unmapped_carrier_data_TEMPLATE.yaml` is a **template, not a dataset**. Every `value:` in it is `null`. It shows the shape of a carrier-bound record so you can copy it. Fill the values from a real source, replace the source block, and confirm that source permits redistribution before publishing.
 
 ## What a Record Looks Like
 
@@ -52,7 +52,7 @@ Scope carries more weight here than on the technology side, because carrier valu
 Copy the staging file into the database staging folder, then harmonise it:
 
 ```powershell
-Copy-Item 1_ingest\examples\carrier_data\output\unmapped_carrier_data_example.yaml `
+Copy-Item 1_ingest\examples\carrier_data\output\unmapped_carrier_data_TEMPLATE.yaml `
           motel-db\unmapped_carrier_data\unmapped_carrier_data.yaml
 ```
 

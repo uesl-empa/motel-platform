@@ -12,7 +12,7 @@ This folder is Step 1 of the MOTEL workflow. It converts raw source data into th
     |-- carrier_data/           carrier-bound staging example (prices, intensities)
     |   |-- README.md           carrier data ingestion guide
     |   `-- output/
-    |       `-- unmapped_carrier_data_example.yaml
+    |       `-- unmapped_carrier_data_TEMPLATE.yaml
     `-- refuel/
         |-- ingestion_pipeline.ipynb   worked source-specific notebook
         |-- input/                     raw source files

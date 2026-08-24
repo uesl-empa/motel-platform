@@ -22,18 +22,44 @@ Two consequences worth keeping in mind:
 
 ## Blocking release
 
-- [] clear source-data licences for `motel-db/unmapped_entity/` and
-      `motel-db/unmapped_carrier_data/`. Staging records reproduce source numbers,
-      notes, and locators nearly verbatim, so they are more exposed than a
-      harmonised derivative. Top blocker, independent of everything else here.
-- [] merge `feat/carrier-data-track`. The renamed schemas
-      (`unmapped_entity_technology`, `unmapped_entity_carrier`,
-      `linked_entity_technology`, `linked_entity_carrier`) exist only on that
-      branch. Any downstream repo written against them is pinned to an unmerged
-      branch until this lands.
-- [] state in the README what a staging-only release does and does not promise.
-- [] replace `1_ingest/examples/carrier_data/output/unmapped_carrier_data_example.yaml`
-      or clearly gate it. Every number in it is an invented placeholder.
+- [] **IMPORTANT — source-data licence clearance.** This is the one blocker that
+      cannot be solved by writing code, and it carries legal exposure.
+
+      `DATA_LICENSE` places everything in `motel-db/` under CC BY 4.0: anyone may
+      reuse it, commercially, indefinitely. But MOTEL did not create most of that
+      data. `motel-db/unmapped_entity/` publishes **2080 attribute values**
+      extracted from **31 registered sources**, including the Danish Energy Agency
+      technology catalogue, VSE, JRC, and a dozen journal articles behind
+      `doi.org/10.1016/...`. As it stands the repository re-licenses other
+      people's numbers under CC BY 4.0.
+
+      Some of those are fine — JRC publications are typically CC BY, and the
+      Danish catalogue is generally permissive. Journal articles under commercial
+      publisher copyright typically are not: extracted data tables usually may not
+      be republished.
+
+      This gets *worse*, not better, under the staging-first priority. Staging
+      records reproduce source values, column headers, and locators nearly
+      verbatim, whereas a harmonised derivative is at least transformed.
+
+      What has to happen:
+      - go through all 31 rows of `motel-db/secondary/source.csv` and record, per
+        source, whether its terms permit redistribution of extracted values
+      - for any source that does not permit it: drop the values, or publish only
+        the reference and let users fetch the numbers themselves
+      - re-check after each new ingestion, including the Dübendorf project
+
+      Related: there is currently **no licence field** in
+      `schema/secondary/source.yaml` or in the `sources` block of either staging
+      schema, so this cannot be recorded at ingest time and has to be redone as an
+      audit every time. See the ingestion-workflow item below.
+- [] add a source licence field to the schemas so clearance becomes a data-entry
+      step rather than a recurring audit. `source.csv` stores source_id,
+      source_name, source_description, source_type, link, access_date,
+      confidence_level, assessment_method, reference_year, note — nothing about
+      terms of use. A `source_licence` plus `redistribution_permitted` pair on the
+      staging `sources` block and on `secondary/source.yaml` would let the
+      validator flag an unlicensed source before it ever reaches `motel-db/`.
 - [] ensure each unmapped entity has a `harmonisation_record.mapping_status`, and
       document that `to_be_mapped` is a legitimate terminal state under this
       priority rather than unfinished work.
@@ -148,6 +174,12 @@ blocks a staging-first release.
       which the harmoniser has always written but the schema never described
 - [x] check the carrier ontology terms against digicities-ontology core, and
       correct the assumption that minting terms was itself the problem
+- [x] state in the README what a staging-only release provides, and stop the
+      licensing section implying MOTEL can re-license third-party source data
+- [x] convert the carrier example into a data-free TEMPLATE with null values;
+      the validator now treats *TEMPLATE* files as structure, not data
+- [x] merge the carrier track (PR #13) and tag v0.1.0 / v0.2.0, so a downstream
+      repository can pin a schema release instead of a branch
 - [x] tag v0.1.0 on the pre-carrier state, declare `schema_version` in every
       schema and staging record, and bump this release to 0.2.0
 - [x] build `tools/validate_unmapped.py` and wire it into CI. First run found
