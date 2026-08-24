@@ -62,6 +62,11 @@ Two consequences worth keeping in mind:
       document that `to_be_mapped` is a legitimate terminal state under this
       priority rather than unfinished work.
 - [] confirm attribute names follow the schema naming guidance.
+- [] `schema_human/helper_schema2human.ipynb` emits `field: "<description>"`
+      without escaping, so any description containing a double quote produces a
+      schema_human file that is not valid YAML. It broke once while adding the
+      licence fields and was worked around by rewording. Escape the quote in the
+      generator so the next person does not hit it.
 
 ## Nice to have — linked entity
 
