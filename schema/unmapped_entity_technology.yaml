@@ -4,12 +4,16 @@
 #    the unit could be included in the value field (e.g. 5 kW) or notes
 
 $schema: "http://json-schema.org/draft-07/schema#"
+schema_version: "0.2.0"
 title: UnmappedEntityTechnology
 type: object
 description: Staging schema for raw, unstructured data ingestion. All fields capture free-text inputs before data normalization.
 required:
   - technology_name
 properties:
+  schema_version:
+    type: string
+    description: Version of the MOTEL schema release this record was authored against (e.g. 0.2.0). Lets an ingesting repository pin a contract and lets validation report a mismatch instead of failing obscurely.
 
   technology_name:
     type: string
@@ -165,8 +169,6 @@ properties:
           type: object
           required:
             - carrier_name
-            - share
-            - unit
           properties:
             carrier_name:
               type: string
@@ -191,8 +193,6 @@ properties:
           type: object
           required:
             - carrier_name
-            - share
-            - unit
           properties:
             carrier_name:
               type: string
@@ -227,8 +227,8 @@ properties:
         items:
           type: string
       other_notes:
-        type: string
-        description: Any additional free-text notes or flags for project-level context.
+        type: [string, array]
+        description: Any additional free-text notes or flags for project-level context. A single note or a list of notes; ingestion pipelines commonly append one provenance line per stage.
 
   harmonisation_record:
     type: object

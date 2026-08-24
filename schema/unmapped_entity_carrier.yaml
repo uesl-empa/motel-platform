@@ -8,12 +8,16 @@
 #    field (e.g. 0.21 EUR/kWh) or in attribute_notes.
 
 $schema: "http://json-schema.org/draft-07/schema#"
+schema_version: "0.2.0"
 title: UnmappedEntityCarrier
 type: object
 description: Staging schema for raw, unstructured carrier-level modelling data such as energy prices, emission intensities, and availability, captured before normalisation.
 required:
   - carrier_name
 properties:
+  schema_version:
+    type: string
+    description: Version of the MOTEL schema release this record was authored against (e.g. 0.2.0). Lets an ingesting repository pin a contract and lets validation report a mismatch instead of failing obscurely.
 
   carrier_name:
     type: string
@@ -162,8 +166,8 @@ properties:
         items:
           type: string
       other_notes:
-        type: string
-        description: Any additional free-text notes or flags for project-level context.
+        type: [string, array]
+        description: Any additional free-text notes or flags for project-level context. A single note or a list of notes; ingestion pipelines commonly append one provenance line per stage.
 
   harmonisation_record:
     type: object

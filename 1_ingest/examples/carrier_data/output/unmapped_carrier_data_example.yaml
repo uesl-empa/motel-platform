@@ -8,7 +8,8 @@
 # exists so the Step 2 carrier data pipeline can be exercised end to end without
 # a real source attached. Replace the whole file before publishing anything.
 
-- carrier_name: Grid Electricity
+- schema_version: "0.2.0"
+  carrier_name: Grid Electricity
   carrier:
     carrier_description: Grid-level electricity, levels 4-7 (1-36 kV)
     carrier_type: electricity
@@ -49,7 +50,8 @@
   harmonisation_record:
     mapping_status: to_be_mapped
 
-- carrier_name: Grid Electricity
+- schema_version: "0.2.0"
+  carrier_name: Grid Electricity
   carrier:
     carrier_description: Grid-level electricity, levels 4-7 (1-36 kV)
     carrier_type: electricity
@@ -103,7 +105,8 @@
   harmonisation_record:
     mapping_status: to_be_mapped
 
-- carrier_name: Energy Wood
+- schema_version: "0.2.0"
+  carrier_name: Energy Wood
   carrier:
     carrier_description: Energy wood (generic)
     carrier_type: fuel

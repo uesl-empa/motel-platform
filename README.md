@@ -82,6 +82,36 @@ Following the same convention as the technology track, `time_index` is a scalar:
 
 Runtime logs and local backups are intentionally excluded from the public repository.
 
+## Schema Versioning
+
+The schemas are released with the repository. Each schema file declares a
+`schema_version`, and every staging record may carry a matching `schema_version`
+field so a downstream project can pin the contract it was written against.
+
+| Release | Staging schemas |
+| ------- | --------------- |
+| `v0.1.0` | `schema/unmapped_entity.yaml` |
+| `v0.2.0` | `schema/unmapped_entity_technology.yaml`, `schema/unmapped_entity_carrier.yaml` |
+
+A repository ingesting into MOTEL should pin a tag rather than track the default
+branch, and stamp the version it targeted onto its records.
+
+## Validating Staging Records
+
+`tools/validate_unmapped.py` checks staging records against the unmapped schemas:
+required fields, unknown keys (so a typo is caught rather than silently dropped),
+declared types, enum membership, and `schema_version` agreement.
+
+```bash
+python tools/validate_unmapped.py motel-db/unmapped_entity/
+python tools/validate_unmapped.py records.yaml --schema unmapped_entity_carrier
+```
+
+It is standalone — standard library plus PyYAML, no imports from this repository
+— so a project staging its own data can copy the single file next to its
+ingestion script. It runs on every push through the `Validate Repository`
+workflow.
+
 ## Quick Start
 
 Create a Python environment and install the notebook/data dependencies:

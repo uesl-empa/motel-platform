@@ -1,3 +1,4 @@
+schema_version: "0.2.0"
 technology_name: Direct Air Carbon Capture and Storage (DACCS) - Belfer Center 2023 cost, scale and funding benchmark
 technology:
   technology_description: Direct air carbon capture and storage technology removing CO2 from ambient air and storing it permanently;

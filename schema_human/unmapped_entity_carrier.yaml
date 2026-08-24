@@ -1,4 +1,5 @@
 UnmappedEntityCarrier: # Staging schema for raw, unstructured carrier-level modelling data such as energy prices, emission intensities, and availability, captured before normalisation.
+    schema_version: "[String] Version of the MOTEL schema release this record was authored against (e.g. 0.2.0). Lets an ingesting repository pin a contract and lets validation report a mismatch instead of failing obscurely."
     carrier_name: "[Required; String] The literal unparsed name or label of the energy carrier or commodity as specified in the raw source material."
     carrier: # [Dictionary] Contains raw descriptive properties detailing the physical and market context of the unmapped carrier.
         carrier_description: "[String] Free-text description of the carrier, including purity, phase, voltage level, or infrastructure context as stated in the source."
@@ -38,7 +39,7 @@ UnmappedEntityCarrier: # Staging schema for raw, unstructured carrier-level mode
     metadata: # [Dictionary] Metadata grouping flags used to sort and locate the entity within project directories.
         related_project: "[String] Name of the overarching study consortium, database cluster, or project framework."
         tags: "[List of Strings] Arbitrary categorical tag index strings for filtering."
-        other_notes: "[String] Any additional free-text notes or flags for project-level context."
+        other_notes: "[String/List] Any additional free-text notes or flags for project-level context. A single note or a list of notes; ingestion pipelines commonly append one provenance line per stage."
     harmonisation_record: # [Dictionary] Operational tracking fields created and updated by the harmonisation pipeline after ingestion.
         mapping_status: "[String] Lifecycle state set to to_be_mapped during ingestion and changed to mapped after successful harmonisation."
         linked_carrier_data_id: "[String] Linked carrier data identifier assigned after successful harmonisation."
