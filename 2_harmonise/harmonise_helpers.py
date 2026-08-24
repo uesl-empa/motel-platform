@@ -234,6 +234,8 @@ ENTITY_CONFIG = {
             "confidence_level",
             "assessment_method",
             "reference_year",
+            "source_licence",
+            "redistribution_permitted",
             "note",
         ],
         "schema_key": "source.yaml",
@@ -961,6 +963,10 @@ def resolve_entity(entity_type, candidate, registry, all_schemas, skip_llm_match
             target_fields=["carrier_description", "carrier_type", "carrier_category"],
         )
     if entity_type == "source" and schema:
+        # source_licence and redistribution_permitted are deliberately absent from
+        # this list. A model guessing "CC BY 4.0" for a paywalled article would
+        # manufacture a licensing exposure that looks like a checked fact, so those
+        # two fields are only ever carried through from what a person recorded.
         candidate = llm_fill_fields(
             candidate,
             schema,
@@ -1256,6 +1262,8 @@ def collect_candidates(unmapped_entities):
                     "confidence_level":   src.get("confidence_level"),
                     "assessment_method":  src.get("assessment_method"),
                     "reference_year":     src.get("reference_year"),
+                    "source_licence":     src.get("source_licence"),
+                    "redistribution_permitted": src.get("redistribution_permitted"),
                     "note":               " | ".join(
                         str(value).strip()
                         for value in [

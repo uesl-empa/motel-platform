@@ -49,17 +49,15 @@ Two consequences worth keeping in mind:
         the reference and let users fetch the numbers themselves
       - re-check after each new ingestion, including the Dübendorf project
 
-      Related: there is currently **no licence field** in
-      `schema/secondary/source.yaml` or in the `sources` block of either staging
-      schema, so this cannot be recorded at ingest time and has to be redone as an
-      audit every time. See the ingestion-workflow item below.
-- [] add a source licence field to the schemas so clearance becomes a data-entry
-      step rather than a recurring audit. `source.csv` stores source_id,
-      source_name, source_description, source_type, link, access_date,
-      confidence_level, assessment_method, reference_year, note — nothing about
-      terms of use. A `source_licence` plus `redistribution_permitted` pair on the
-      staging `sources` block and on `secondary/source.yaml` would let the
-      validator flag an unlicensed source before it ever reaches `motel-db/`.
+      The fields to record it now exist (v0.3.0): `source_licence` and
+      `redistribution_permitted` on both the staging `sources` block and
+      `secondary/source.yaml`. All 31 rows are currently `unknown`. List the ones
+      still needing a decision with:
+
+          python tools/validate_unmapped.py motel-db/unmapped_entity --strict
+
+      Once every source is cleared, add `--strict` to the CI workflow so an
+      unrecorded licence fails the build.
 - [] ensure each unmapped entity has a `harmonisation_record.mapping_status`, and
       document that `to_be_mapped` is a legitimate terminal state under this
       priority rather than unfinished work.
@@ -180,6 +178,9 @@ blocks a staging-first release.
       the validator now treats *TEMPLATE* files as structure, not data
 - [x] merge the carrier track (PR #13) and tag v0.1.0 / v0.2.0, so a downstream
       repository can pin a schema release instead of a branch
+- [x] add `source_licence` and `redistribution_permitted` to the staging sources
+      block and the source registry (v0.3.0), excluded from LLM field filling so a
+      licence is never guessed, and checked by the validator
 - [x] tag v0.1.0 on the pre-carrier state, declare `schema_version` in every
       schema and staging record, and bump this release to 0.2.0
 - [x] build `tools/validate_unmapped.py` and wire it into CI. First run found

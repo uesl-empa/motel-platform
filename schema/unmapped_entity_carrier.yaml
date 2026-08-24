@@ -8,7 +8,7 @@
 #    field (e.g. 0.21 EUR/kWh) or in attribute_notes.
 
 $schema: "http://json-schema.org/draft-07/schema#"
-schema_version: "0.2.0"
+schema_version: "0.3.0"
 title: UnmappedEntityCarrier
 type: object
 description: Staging schema for raw, unstructured carrier-level modelling data such as energy prices, emission intensities, and availability, captured before normalisation.
@@ -17,7 +17,7 @@ required:
 properties:
   schema_version:
     type: string
-    description: Version of the MOTEL schema release this record was authored against (e.g. 0.2.0). Lets an ingesting repository pin a contract and lets validation report a mismatch instead of failing obscurely.
+    description: Version of the MOTEL schema release this record was authored against (e.g. 0.3.0). Lets an ingesting repository pin a contract and lets validation report a mismatch instead of failing obscurely.
 
   carrier_name:
     type: string
@@ -124,6 +124,13 @@ properties:
           description: Free-text list of attribute names this source supports; no foreign key enforcement at this stage.
           items:
             type: string
+        source_licence:
+          type: string
+          description: Licence or terms of use of the source material, exactly as the publisher states it (e.g. CC BY 4.0, OGL, "all rights reserved", or the publisher name for a paywalled article). Record what the source says; leave it empty rather than guessing.
+        redistribution_permitted:
+          type: string
+          enum: [permitted, not_permitted, unknown]
+          description: Whether the source terms allow republishing the extracted values inside MOTEL under the repository data licence. Defaults to unknown until a person has checked. Deliberately not yes/no, because YAML reads bare yes and no as booleans. Never inferred automatically - a wrong "permitted" is a licensing exposure. Put conditions and caveats in source_notes.
         source_notes:
           type: string
           description: Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields.

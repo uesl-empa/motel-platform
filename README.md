@@ -196,3 +196,8 @@ Special thanks to the reFuel.ch project for important input to the platform and 
   structuring, vocabularies, and mappings — it does not and cannot re-license the
   underlying source material. Check the terms of the originating source, cited on
   each record, before redistributing extracted values.
+- Each source records its own terms: `source_licence` holds the licence as the
+  publisher states it, and `redistribution_permitted` (`permitted`,
+  `not_permitted`, `unknown`) holds the decision. Both are captured at ingest and
+  never inferred by the LLM. `python tools/validate_unmapped.py <path> --strict`
+  fails on any source whose terms have not been recorded.

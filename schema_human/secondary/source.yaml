@@ -8,4 +8,6 @@ Source: # Stores historical literature origins, validation criteria, and source 
     confidence_level: "[String] Data governance quality score based on source prestige, transparency, and data age parameters."
     assessment_method: "[String] Procedural framework tracking how the source data point values were fundamentally calculated."
     reference_year: "[Integer] Four-digit publication or release year of the referenced source material (for example, 2025)."
+    source_licence: "[String] Licence or terms of use of the source material, exactly as the publisher states it (e.g. CC BY 4.0, OGL, "all rights reserved", or the publisher name for a paywalled article). Carried through from ingestion; never inferred."
+    redistribution_permitted: "[String] Whether the source terms allow republishing the extracted values inside MOTEL under the repository data licence. Defaults to unknown until a person has checked. Records marked not_permitted should keep the citation and drop the values."
     note: "[String] Internal notes tracking specific data point idiosyncrasies, parsing edge cases, or source reliability caveats."

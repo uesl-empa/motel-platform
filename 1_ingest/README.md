@@ -68,6 +68,24 @@ The schema is auto-detected per record from its anchor field (`technology_name`
 or `carrier_name`). Set `schema_version` on each record to pin the contract it
 was written against; the validator warns when it is missing or disagrees.
 
+## Record the Source Licence
+
+Every source you cite needs two fields filled in at ingest:
+
+- `source_licence` — the licence as the publisher states it (`CC BY 4.0`, `OGL`,
+  `all rights reserved`, or the publisher name for a paywalled article)
+- `redistribution_permitted` — `permitted`, `not_permitted`, or `unknown`
+
+MOTEL republishes extracted values under the repository data licence, which is
+only defensible where the source allows it. Recording the decision while you have
+the source open costs seconds; auditing it afterwards means revisiting every
+source. Neither field is ever filled by the LLM — a guessed licence looks exactly
+like a checked one.
+
+Where a source does not permit redistribution, keep the citation and drop the
+values. `--strict` turns unrecorded terms into a failure, so it can be switched on
+as a release gate once the existing sources are cleared.
+
 ## Step Boundary
 
 - Step 1 creates `unmapped` staging records from raw source material.
