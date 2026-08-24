@@ -44,7 +44,7 @@ properties:
     description: Four-digit publication or release year of the referenced source material (for example, 2025).
   source_licence:
     type: string
-    description: Licence or terms of use of the source material, exactly as the publisher states it (e.g. CC BY 4.0, OGL, "all rights reserved", or the publisher name for a paywalled article). Carried through from ingestion; never inferred.
+    description: Licence or terms of use of the source material, exactly as the publisher states it (e.g. CC BY 4.0, OGL, all-rights-reserved, or the publisher name for a paywalled article). Carried through from ingestion; never inferred.
   redistribution_permitted:
     type: string
     enum: [permitted, not_permitted, unknown]
