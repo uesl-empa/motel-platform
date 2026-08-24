@@ -2,10 +2,17 @@
 
 This folder is Step 1 of the MOTEL workflow. It converts raw source data into the `unmapped_entity` staging format used by Step 2 harmonisation.
 
+> **Converting a source?** Start with [`ingestion_guide.md`](ingestion_guide.md).
+> It is the contract and the decision rules, written for whoever does the
+> conversion — most often an LLM working from a raw file. MOTEL deliberately does
+> not ship generic ingestion code: every source is shaped differently, so what
+> generalises is the guide, the schemas, and the validator that closes the loop.
+
 ## Structure
 
 ```text
 1_ingest/
+|-- ingestion_guide.md          contract and decision rules for writing records
 |-- 1_data_ingestion.ipynb      generic Step 1 notebook and schema walkthrough
 |-- README.md                   folder guide
 `-- examples/

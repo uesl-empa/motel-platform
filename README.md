@@ -24,6 +24,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
 ## Data Workflow
 
 1. **Ingest** source data into the unmapped entity schema.
+   - **Ingestion guide: `1_ingest/ingestion_guide.md`** — the contract and decision rules for converting a source, written for humans and LLMs alike
    - Main notebook: `1_ingest/1_data_ingestion.ipynb`
    - Folder guide: `1_ingest/README.md`
    - reFuel.ch example: `1_ingest/examples/refuel/ingestion_pipeline.ipynb`
