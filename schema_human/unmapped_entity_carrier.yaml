@@ -1,5 +1,5 @@
 UnmappedEntityCarrier: # Staging schema for raw, unstructured carrier-level modelling data such as energy prices, emission intensities, and availability, captured before normalisation.
-    schema_version: "[String] Version of the MOTEL schema release this record was authored against (e.g. 0.2.0). Lets an ingesting repository pin a contract and lets validation report a mismatch instead of failing obscurely."
+    schema_version: "[String] Version of the MOTEL schema release this record was authored against (e.g. 0.3.0). Lets an ingesting repository pin a contract and lets validation report a mismatch instead of failing obscurely."
     carrier_name: "[Required; String] The literal unparsed name or label of the energy carrier or commodity as specified in the raw source material."
     carrier: # [Dictionary] Contains raw descriptive properties detailing the physical and market context of the unmapped carrier.
         carrier_description: "[String] Free-text description of the carrier, including purity, phase, voltage level, or infrastructure context as stated in the source."
@@ -29,6 +29,8 @@ UnmappedEntityCarrier: # Staging schema for raw, unstructured carrier-level mode
         assessment_method: "[String] Short note on how the source was assessed or how values were derived."
         source_locator: "[String] Page numbers, table references, section names, sheet names, or other location hints showing where the evidence can be found within the source."
         linked_attribute: "[List of Strings] Free-text list of attribute names this source supports; no foreign key enforcement at this stage."
+        source_licence: "[String] Licence or terms of use of the source material, exactly as the publisher states it (e.g. CC BY 4.0, OGL, "all rights reserved", or the publisher name for a paywalled article). Record what the source says; leave it empty rather than guessing."
+        redistribution_permitted: "[String] Whether the source terms allow republishing the extracted values inside MOTEL under the repository data licence. Defaults to unknown until a person has checked. Deliberately not yes/no, because YAML reads bare yes and no as booleans. Never inferred automatically - a wrong "permitted" is a licensing exposure. Put conditions and caveats in source_notes."
         source_notes: "[String] Additional free-text source context, caveats, extraction notes, or provenance remarks not captured by the other source fields."
     attributes: # [List of Dictionaries] Array of carrier-level metrics populated directly from the unstructured raw intake profile, such as price, emission intensity, or annual availability. A metric reported for several periods contributes one entry per period.
         attribute_name: "[Required; String] Target metric descriptive identifier."

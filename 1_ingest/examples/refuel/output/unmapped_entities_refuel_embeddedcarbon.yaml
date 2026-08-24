@@ -1,4 +1,4 @@
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Air_DAC_CO2
   technology:
     technology_description: null
@@ -81,7 +81,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: direct air capture system
       | lca_activity: direct air capture system, sorbent-based, 100ktCO2'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: null
@@ -164,7 +164,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: anaerobic digestion plant,
       agricultural | lca_activity: anaerobic digestion plant construction, agricultural'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: C12_Tank_C12
   technology:
     technology_description: null
@@ -263,7 +263,7 @@
       organics | lca_activity: liquid storage tank production, chemicals, organics
       | notes: 4000m3 of storage capacity, 44.1 MJ/kg, 750 kg/m3 density -> 36750000
       kWh of storage capacity rough estimation'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: C8_Tank_C8
   technology:
     technology_description: null
@@ -362,7 +362,7 @@
       organics | lca_activity: liquid storage tank production, chemicals, organics
       | notes: 4000m3 of storage capacity, 44.4 MJ/kg, 700 kg/m3 density -> 34500000
       kWh of storage capacity rough estimation'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Boiler_ThBdg
   technology:
     technology_description: null
@@ -445,7 +445,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_activity:
       market for gas boiler'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Boiler_ThInd
   technology:
     technology_description: null
@@ -528,7 +528,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_activity:
       market for gas boiler'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_CCGT_El
   technology:
     technology_description: null
@@ -619,7 +619,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: gas power plant, combined
       cycle, 400MW electrical | lca_activity: market for gas power plant, combined
       cycle, 400MW electrical'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_CHP_ElTh
   technology:
     technology_description: null
@@ -718,7 +718,7 @@
       unit, 160kW electrical, common components for heat+electricity | lca_activity:
       heat and power co-generation unit construction, 160kW electrical, common components
       for heat+electricity'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_FuelCell_El
   technology:
     technology_description: null
@@ -809,7 +809,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: fuel cell, solid oxide,
       125kW electrical, future | lca_activity: fuel cell production, solid oxide,
       125kW electrical, future'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_FuelCell_ElBdg
   technology:
     technology_description: null
@@ -900,7 +900,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: fuel cell, solid oxide,
       125kW electrical, future | lca_activity: fuel cell production, solid oxide,
       125kW electrical, future'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_GridStorage_CH4
   technology:
     technology_description: null
@@ -991,7 +991,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/km | ref_product: pipeline, natural gas, high
       pressure distribution network | lca_activity: pipeline construction, natural
       gas, high pressure distribution network'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_OCGT_El
   technology:
     technology_description: null
@@ -1074,7 +1074,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: micro gas turbine, 100kW
       electrical | lca_activity: micro gas turbine production, 100kW electrical'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Tank_CH4
   technology:
     technology_description: null
@@ -1165,7 +1165,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: fuel tank, compressed natural
       gas, 200 bar | lca_activity: fuel tank assembly, compressed natural gas, 200
       bar | notes: for a 154.66 kg tank, of 1074kWh fuel capacity'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2Flue_AmineScrub_CO2
   technology:
     technology_description: null
@@ -1248,7 +1248,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: monoethanolamine | lca_activity:
       market for monoethanolamine'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: null
@@ -1331,7 +1331,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: potassium carbonate | lca_activity:
       potassium carbonate production, from potassium hydroxide'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: null
@@ -1414,7 +1414,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: electricity storage capacity
       | lca_activity: market for battery capacity, Li-ion, LFP'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_AirCon_ThSc
   technology:
     technology_description: null
@@ -1505,7 +1505,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: heat pump, diffusion absorption,
       4kW, future | lca_activity: heat pump production, diffusion absorption, 4kW,
       future'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: null
@@ -1588,7 +1588,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: electricity storage capacity
       | lca_activity: market for battery capacity (MIX scenario)'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: null
@@ -1679,7 +1679,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: electrolyzer, 1MWe, SOEC,
       Balance of Plant + 2 * Stack | lca_activity: electrolyzer production, 1MWe,
       SOEC, Balance of Plant + 2 * Stack'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Electrolysis_H2
   technology:
     technology_description: null
@@ -1770,7 +1770,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: electrolyzer, 1MWe, AEC,
       Balance of Plant + 2 * Stack | lca_activity: electrolyzer production, 1MWe,
       AEC, Balance of Plant + 2 * Stack'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_HeatPump_ThBdg
   technology:
     technology_description: null
@@ -1853,7 +1853,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: heat pump, 30kW | lca_activity:
       heat pump production, 30kW'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_HeatPump_ThInd
   technology:
     technology_description: null
@@ -1936,7 +1936,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: heat pump, 30kW | lca_activity:
       heat pump production, 30kW'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Heater_ThBdg
   technology:
     technology_description: null
@@ -2019,7 +2019,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: auxiliary heating unit,
       electric, 5kW | lca_activity: auxiliary heating unit production, electric, 5kW'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Heater_ThInd
   technology:
     technology_description: null
@@ -2102,7 +2102,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: auxiliary heating unit,
       electric, 5kW | lca_activity: auxiliary heating unit production, electric, 5kW'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_PumpedHydro_Pump
   technology:
     technology_description: null
@@ -2193,7 +2193,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: hydropower plant, reservoir,
       alpine region | lca_activity: hydropower plant construction, reservoir, alpine
       region'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Geothermal_CHP_ElTh
   technology:
     technology_description: null
@@ -2276,7 +2276,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: geothermal power plant,
       5.5MWel | lca_activity: geothermal power plant construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Boiler_ThInd
   technology:
     technology_description: null
@@ -2359,7 +2359,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_activity:
       market for gas boiler'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CCGT_El
   technology:
     technology_description: null
@@ -2450,7 +2450,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: auto-thermal reforming-hydrogen
       GT power plant, 400MWe | lca_activity: auto-thermal reforming-hydrogen GT power
       plant, 400MWe'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: null
@@ -2533,7 +2533,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: methanol production facility,
       construction | lca_activity: methanol production facility, construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_FuelCell_El
   technology:
     technology_description: null
@@ -2624,7 +2624,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: fuel cell, solid oxide,
       125kW electrical, future | lca_activity: fuel cell production, solid oxide,
       125kW electrical, future'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: null
@@ -2715,7 +2715,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: fuel cell, solid oxide,
       125kW electrical, future | lca_activity: fuel cell production, solid oxide,
       125kW electrical, future'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_HaberBosch_NH3
   technology:
     technology_description: null
@@ -2798,7 +2798,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: ammonia synthesis catalyst
       | lca_activity: ammonia synthesis catalyst production'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_OCGT_El
   technology:
     technology_description: null
@@ -2881,7 +2881,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: micro gas turbine, 100kW
       electrical | lca_activity: micro gas turbine production, 100kW electrical'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_RWGS_CO
   technology:
     technology_description: null
@@ -2964,7 +2964,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: RWGS tank construction |
       lca_activity: RWGS tank construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Sabatier_CH4
   technology:
     technology_description: null
@@ -3047,7 +3047,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: sabatier reaction methanation
       unit | lca_activity: sabatier reaction methanation unit construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Tank_H2
   technology:
     technology_description: null
@@ -3138,7 +3138,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: fuel tank, compressed hydrogen
       gas, 700bar | lca_activity: fuel tank assembly, compressed hydrogen gas, 700bar
       | notes: for a 117.39 kg tank, of 200 kWh fuel capacity'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_PumpedReservoir_Hydro
   technology:
     technology_description: null
@@ -3229,7 +3229,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: hydropower plant, reservoir
       | lca_activity: hydropower plant construction, reservoir | notes: Already included
       in the electricity generation dataset, so not added here to avoid double counting.'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_PumpedTurbine_El
   technology:
     technology_description: null
@@ -3320,7 +3320,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: hydropower plant, reservoir,
       alpine region | lca_activity: hydropower plant construction, reservoir, alpine
       region'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_Reservoir_El
   technology:
     technology_description: null
@@ -3411,7 +3411,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: hydropower plant, reservoir,
       alpine region | lca_activity: hydropower plant construction, reservoir, alpine
       region'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_Reservoir_Hydro
   technology:
     technology_description: null
@@ -3502,7 +3502,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: hydropower plant, reservoir
       | lca_activity: hydropower plant construction, reservoir | notes: Already included
       in the electricity generation dataset, so not added here to avoid double counting.'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_RunOfRiver_El
   technology:
     technology_description: null
@@ -3585,7 +3585,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: hydropower plant, run-of-river
       | lca_activity: hydropower plant construction, run-of-river'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Gasification_H2
   technology:
     technology_description: null
@@ -3668,7 +3668,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: synthetic gas factory |
       lca_activity: synthetic gas factory construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Gasification_Syngas
   technology:
     technology_description: null
@@ -3751,7 +3751,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: synthetic gas factory |
       lca_activity: synthetic gas factory construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Incineration_El
   technology:
     technology_description: null
@@ -3834,7 +3834,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: municipal waste incineration
       facility | lca_activity: municipal waste incineration facility construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_CCGT_El
   technology:
     technology_description: null
@@ -3925,7 +3925,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: gas power plant, combined
       cycle, 400MW electrical | lca_activity: market for gas power plant, combined
       cycle, 400MW electrical'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_OCGT_El
   technology:
     technology_description: null
@@ -4008,7 +4008,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: micro gas turbine, 100kW
       electrical | lca_activity: micro gas turbine production, 100kW electrical'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_Tank_NH3
   technology:
     technology_description: null
@@ -4107,7 +4107,7 @@
       organics | lca_activity: liquid storage tank production, chemicals, organics
       | notes: 4000m3 of storage capacity, 18.6 MJ/kg, 600 kg/m3 density -> 12400000
       kWh of storage capacity rough estimation'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Oil_Boiler_ThBdg
   technology:
     technology_description: null
@@ -4190,7 +4190,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_activity:
       market for gas boiler'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Oil_Boiler_ThInd
   technology:
     technology_description: null
@@ -4273,7 +4273,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: gas boiler | lca_activity:
       market for gas boiler'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVAlpine_El
   technology:
     technology_description: null
@@ -4364,7 +4364,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: photovoltaic plant, 570kWp,
       multi-Si, on open ground | lca_activity: photovoltaic plant construction, 570kWp,
       multi-Si, on open ground'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVRooftop_El
   technology:
     technology_description: null
@@ -4455,7 +4455,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: photovoltaic flat-roof installation,
       3kWp, multi-Si, on roof | lca_activity: photovoltaic flat-roof installation,
       3kWp, multi-Si, on roof'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: null
@@ -4538,7 +4538,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: sabatier reaction methanation
       unit | lca_activity: sabatier reaction methanation unit construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: null
@@ -4621,7 +4621,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: methanol production facility,
       construction | lca_activity: methanol production facility, construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C12
   technology:
     technology_description: null
@@ -4704,7 +4704,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid plant | lca_activity:
       gas-to-liquid plant construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C8
   technology:
     technology_description: null
@@ -4787,7 +4787,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid plant | lca_activity:
       gas-to-liquid plant construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_HeatStore_Th
   technology:
     technology_description: null
@@ -4878,7 +4878,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: thermal storage system,
       solar tower power plant, 20 MW | lca_activity: market for thermal storage system,
       solar tower power plant, 20 MW | notes: 440MWh thermal storage capacity'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_HotWaterTank_Th
   technology:
     technology_description: null
@@ -4961,7 +4961,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: hot water tank, 600l |
       lca_activity: hot water tank production, 600l'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_SeasonalStore_Th
   technology:
     technology_description: null
@@ -5044,7 +5044,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kWh | ref_product: heat storage, 2000l | lca_activity:
       heat storage production, 2000l'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: U235_Nuclear_El
   technology:
     technology_description: null
@@ -5135,7 +5135,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: nuclear power plant, pressure
       water reactor, 1000MW | lca_activity: nuclear power plant construction, pressure
       water reactor, 1000MW'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wind_Turbine_El
   technology:
     technology_description: null
@@ -5218,7 +5218,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: wind turbine, 2MW, onshore
       | lca_activity: wind turbine construction, 2MW, onshore'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Boiler_ThBdg
   technology:
     technology_description: null
@@ -5301,7 +5301,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: furnace, wood chips, with
       silo, 50kW | lca_activity: furnace production, wood chips, with silo, 50kW'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Boiler_ThInd
   technology:
     technology_description: null
@@ -5384,7 +5384,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: furnace, wood chips, with
       silo, 50kW | lca_activity: furnace production, wood chips, with silo, 50kW'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_CHP_ElTh
   technology:
     technology_description: null
@@ -5475,7 +5475,7 @@
     attribute_notes: 'lca_unit: kgCO2eq/kW | ref_product: heat and power co-generation
       unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity: heat and power co-generation
       unit construction, 1MWel'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Gasification_H2
   technology:
     technology_description: null
@@ -5558,7 +5558,7 @@
     time_index: '2050'
     attribute_notes: 'lca_unit: kgCO2eq/kg | ref_product: synthetic gas factory |
       lca_activity: synthetic gas factory construction'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Gasification_Syngas
   technology:
     technology_description: null

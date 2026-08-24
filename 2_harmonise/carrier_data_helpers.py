@@ -206,6 +206,8 @@ def collect_carrier_data_candidates(carrier_data_records):
                 "confidence_level": source.get("confidence_level"),
                 "assessment_method": source.get("assessment_method"),
                 "reference_year": source.get("reference_year"),
+                "source_licence": source.get("source_licence"),
+                "redistribution_permitted": source.get("redistribution_permitted"),
                 "note": " | ".join(
                     str(value).strip()
                     for value in [

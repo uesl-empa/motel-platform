@@ -1,4 +1,4 @@
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2025
@@ -169,7 +169,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2030
@@ -338,7 +338,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2040
@@ -507,7 +507,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2050
@@ -676,7 +676,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2020
@@ -849,7 +849,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2030
@@ -1022,7 +1022,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2040
@@ -1195,7 +1195,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2050
@@ -1368,7 +1368,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_PumpedReservoir_Hydro
   technology:
     technology_description: Pumped hydro reservoir, without pump and generator
@@ -1536,7 +1536,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_Reservoir_Hydro
   technology:
     technology_description: Pumped hydro reservoir, without pump and generator
@@ -1704,7 +1704,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_HeatStore_Th
   technology:
     technology_description: null
@@ -1862,7 +1862,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_HotWaterTank_Th
   technology:
     technology_description: Hot water storage tank at home
@@ -2028,7 +2028,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_SeasonalStore_Th
   technology:
     technology_description: Thermal storage for district heating, seasonal storage
@@ -2195,7 +2195,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Tank_H2
   technology:
     technology_description: null
@@ -2361,7 +2361,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_GridStorage_CH4
   technology:
     technology_description: Storaging methane via compressing in the pipelines
@@ -2546,7 +2546,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Tank_CH4
   technology:
     technology_description: Tank storage for methane (compressed)
@@ -2730,7 +2730,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Underground_CH4
   technology:
     technology_description: Underground methane storage
@@ -2914,7 +2914,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2_Tank_CO2
   technology:
     technology_description: null
@@ -3072,7 +3072,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO_Tank_CO
   technology:
     technology_description: null
@@ -3230,7 +3230,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: C12_Tank_C12
   technology:
     technology_description: null
@@ -3388,7 +3388,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: C8_Tank_C8
   technology:
     technology_description: null
@@ -3546,7 +3546,7 @@
     balancing_notes: null
     inputs: []
     outputs: []
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_Tank_NH3
   technology:
     technology_description: Tank storage for ammonia

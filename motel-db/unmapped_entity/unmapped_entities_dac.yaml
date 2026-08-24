@@ -1,4 +1,4 @@
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Direct Air Carbon Capture and Storage (DACCS) - Belfer Center 2023
     cost, scale and funding benchmark
   technology:
@@ -131,7 +131,7 @@
       not as separate attribute fields. Source tag: Belfer_Center_2023.'
   harmonisation_record:
     mapping_status: to_be_mapped
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Direct Air Capture (DAC) - National Academies 2019 solid sorbent
     and solvent DAC benchmarks
   technology:
@@ -282,7 +282,7 @@
       not as separate attribute fields. Source tag: National_Academies_2019.'
   harmonisation_record:
     mapping_status: to_be_mapped
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Direct Air Capture (DAC) - Sievert, Schmidt and Steffen 2024 cost
     projection benchmark
   technology:
@@ -419,7 +419,7 @@
       not as separate attribute fields. Source tag: Sievert_Schmidt_Steffen_2024.'
   harmonisation_record:
     mapping_status: to_be_mapped
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Direct Air Capture and Storage (DACS) - Young et al. 2023 cost
     trajectory benchmark
   technology:

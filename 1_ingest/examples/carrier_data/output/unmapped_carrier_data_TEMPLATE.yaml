@@ -11,7 +11,7 @@
 # Validate what you produce:
 #   python tools/validate_unmapped.py <your-file>.yaml
 
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   carrier_name: Grid Electricity
   carrier:
     carrier_description: Grid-level electricity, levels 4-7 (1-36 kV)
@@ -53,7 +53,7 @@
   harmonisation_record:
     mapping_status: to_be_mapped
 
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   carrier_name: Grid Electricity
   carrier:
     carrier_description: Grid-level electricity, levels 4-7 (1-36 kV)
@@ -108,7 +108,7 @@
   harmonisation_record:
     mapping_status: to_be_mapped
 
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   carrier_name: Energy Wood
   carrier:
     carrier_description: Energy wood (generic)
