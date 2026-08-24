@@ -53,6 +53,8 @@ def get_harmonisation_paths(project_root: Path | None = None) -> dict[str, Path]
         "database_dir": root / "motel-db",
         "unmapped_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
         "linked_entity_path": root / "motel-db" / "linked_entity" / "linked_entity.yaml",
+        "unmapped_carrier_data_path": root / "motel-db" / "unmapped_carrier_data" / "unmapped_carrier_data.yaml",
+        "linked_carrier_data_path": root / "motel-db" / "linked_carrier_data" / "linked_carrier_data.yaml",
         "mapping_dir": root / "motel-db" / "mapping",
         "notebook_path": root / "2_harmonise" / "2_data_harmonisation.ipynb",
     }
@@ -239,7 +241,15 @@ ENTITY_CONFIG = {
     "carrier": {
         "path": "../motel-db/controlled_vocabulary/carrier.csv",
         "id_field": "carrier_id", "prefix": "CAR", "name_field": "carrier_name",
-        "cols": ["carrier_id", "carrier_name", "carrier_description", "carrier_type", "carrier_category"],
+        "cols": [
+            "carrier_id",
+            "carrier_name",
+            "carrier_description",
+            "carrier_type",
+            "carrier_category",
+            "carrier_reference",
+            "note",
+        ],
         "schema_key": "carrier.yaml",
     },
 }
@@ -262,11 +272,29 @@ SCOPE_CONFIG = {
 
 ATTR_PATH = "../motel-db/controlled_vocabulary/attribute.csv"
 # All properties from attribute.yaml (required + optional)
-ATTR_COLS = ["attribute_id", "attribute_name", "attribute_description", "unit", "data_format", "ontology_iri", "note"]
+ATTR_COLS = [
+    "attribute_id",
+    "attribute_name",
+    "attribute_description",
+    "unit",
+    "data_format",
+    "ontology_iri",
+    "applies_to",
+    "note",
+]
 
 LE_PATH = "../motel-db/linked_entity/linked_entity.yaml"
 # linked_entity uses YAML (not CSV) because its schema is deeply nested —
 # sources, balancing, and values are arrays/objects that don't flatten cleanly into columns.
+
+# Carrier-bound track: modelling data that belongs to an energy carrier rather than
+# to a technology (energy prices, emission intensities, availability). Same shape as
+# the technology-bound track, so it reuses the carrier, source, attribute, and scope
+# registries. See carrier_data_helpers.py for the pipeline itself.
+LCD_PATH = "../motel-db/linked_carrier_data/linked_carrier_data.yaml"
+DEFAULT_UNMAPPED_CARRIER_DATA_PATH = Path(
+    "../motel-db/unmapped_carrier_data/unmapped_carrier_data.yaml"
+)
 
 MAPPING_DIR = Path("../motel-db/mapping")
 UNMAPPED_STATUS_PENDING = "to_be_mapped"
@@ -331,13 +359,19 @@ def load_pending_unmapped(path):
 
 
 def mark_unmapped_entities_mapped(
-    path, all_entities, source_indices, linked_entities, date_mapped
+    path, all_entities, source_indices, linked_entities, date_mapped,
+    id_field="linked_entity_id",
 ):
     """
     Mark successfully harmonised staging records as mapped and save atomically.
 
     The status file is updated only after the caller has successfully written
     the linked entities.
+
+    Args:
+        id_field (str): Key holding the new record ID, both in the linked records
+            and in the staging harmonisation_record. Carrier-bound staging files
+            use "linked_carrier_data_id".
     """
     if len(source_indices) != len(linked_entities):
         raise ValueError(
@@ -348,11 +382,11 @@ def mark_unmapped_entities_mapped(
         entity = all_entities[source_index]
         record = dict(entity.get("harmonisation_record") or {})
         record["mapping_status"] = UNMAPPED_STATUS_MAPPED
-        record["linked_entity_id"] = linked_entity["linked_entity_id"]
+        record[id_field] = linked_entity[id_field]
         record["date_mapped"] = str(date_mapped)
         entity["harmonisation_record"] = record
         entity.pop("mapping_status", None)
-        entity.pop("linked_entity_id", None)
+        entity.pop(id_field, None)
         entity.pop("date_mapped", None)
 
     path = Path(path)
@@ -379,10 +413,12 @@ def mark_all_unmapped_entities_pending(path, all_entities):
         record = dict(entity.get("harmonisation_record") or {})
         record["mapping_status"] = UNMAPPED_STATUS_PENDING
         record.pop("linked_entity_id", None)
+        record.pop("linked_carrier_data_id", None)
         record.pop("date_mapped", None)
         entity["harmonisation_record"] = record
         entity.pop("mapping_status", None)
         entity.pop("linked_entity_id", None)
+        entity.pop("linked_carrier_data_id", None)
         entity.pop("date_mapped", None)
 
     path = Path(path)
@@ -994,7 +1030,7 @@ def resolve_entity(entity_type, candidate, registry, all_schemas, skip_llm_match
 # ---------------------------------------------------------------------------
 # Attribute and scope helpers
 # ---------------------------------------------------------------------------
-def ensure_attr(name, registry, notes="", attr_schema=None):
+def ensure_attr(name, registry, notes="", attr_schema=None, applies_to=""):
     """
     Return the attribute ID for the given name, creating a new registry entry if needed.
 
@@ -1008,6 +1044,8 @@ def ensure_attr(name, registry, notes="", attr_schema=None):
         registry (dict[str, str]): In-memory {name: id} mapping; mutated on creation.
         notes (str): Raw notes string from the unmapped entity YAML attribute entry.
         attr_schema (dict | None): JSON Schema for the attribute entity.
+        applies_to (str): Subject class the metric describes ("technology",
+            "carrier", or "both"). Set on newly created rows only.
 
     Returns:
         tuple[str, str, str]: (attribute_id, canonical_name, status) where
@@ -1031,6 +1069,7 @@ def ensure_attr(name, registry, notes="", attr_schema=None):
         "attribute_description": "",
         "unit":                  "",
         "data_format":           "",
+        "applies_to":            applies_to,
     }
     if attr_schema:
         new_row = llm_fill_fields(new_row, attr_schema, extra_context=attr_context)
@@ -1877,7 +1916,8 @@ def backup_derived_data(backup_dir="../motel-db/_backup", confirm=True):
     - supplementary/review.csv
     - mapping/ (directory, all files)
 
-    Entity folders (linked_entity/, unmapped_entity/) are intentionally excluded.
+    Entity folders (linked_entity/, linked_carrier_data/, unmapped_entity/,
+    unmapped_carrier_data/) are intentionally excluded.
 
     Args:
         backup_dir (str): Root directory for all backups.
@@ -1954,6 +1994,7 @@ def reset_derived_data(confirm=True, schema_dir="../schema/"):
     - controlled_vocabulary/capacity_scope.csv   → all properties in capacity_scope.yaml
     - controlled_vocabulary/system_boundary.csv  → all properties in system_boundary.yaml
     - linked_entity/linked_entity.yaml            → empty YAML list (schema is nested)
+    - linked_carrier_data/linked_carrier_data.yaml → empty YAML list (schema is nested)
 
     The mapping/ directory is wiped (no header stubs — rebuilt by Step 5).
 
@@ -1980,13 +2021,13 @@ def reset_derived_data(confirm=True, schema_dir="../schema/"):
         status = "reset" if existed else "created"
         reset_log.append((path, cols, status))
 
-    # linked_entity: YAML file — reset to an empty list
-    le_path = Path(LE_PATH)
-    existed = le_path.exists()
-    le_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(le_path, "w", encoding="utf-8") as f:
-        yaml.dump([], f)
-    reset_log.append((le_path, ["(yaml — no columns)"], "reset" if existed else "created"))
+    # linked_entity and linked_carrier_data: YAML files — reset to empty lists
+    for yaml_path in (Path(LE_PATH), Path(LCD_PATH)):
+        existed = yaml_path.exists()
+        yaml_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(yaml_path, "w", encoding="utf-8") as f:
+            yaml.dump([], f)
+        reset_log.append((yaml_path, ["(yaml — no columns)"], "reset" if existed else "created"))
 
     mapping_note = None
     if MAPPING_DIR.exists():

@@ -1,4 +1,5 @@
-- technology_name: NH3_CCGT_El
+- schema_version: "0.2.0"
+  technology_name: NH3_CCGT_El
   technology:
     technology_description: null
     technology_type: Conversion
@@ -160,7 +161,8 @@
         | Type: Energy'
       share: 0.58
       unit: kWh
-- technology_name: NH3_OCGT_El
+- schema_version: "0.2.0"
+  technology_name: NH3_OCGT_El
   technology:
     technology_description: null
     technology_type: Conversion
@@ -322,7 +324,8 @@
         | Type: Energy'
       share: 0.4
       unit: kWh
-- technology_name: CH4_CCGT_El
+- schema_version: "0.2.0"
+  technology_name: CH4_CCGT_El
   technology:
     technology_description: Methane-fueled CCGT with carbon capture and storage (CCS)
       (2030).
@@ -509,7 +512,8 @@
         | Type: Energy'
       share: 0.61
       unit: kWh
-- technology_name: CH4_CHP_ElTh
+- schema_version: "0.2.0"
+  technology_name: CH4_CHP_ElTh
   technology:
     technology_description: Combined heat and power (CHP) generation using methane
       (CH₄).
@@ -691,7 +695,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.6
       unit: kWh
-- technology_name: CH4_FuelCell_El
+- schema_version: "0.2.0"
+  technology_name: CH4_FuelCell_El
   technology:
     technology_description: Methane-fueled fuel cell electricity generation at El47
       (2030).
@@ -863,7 +868,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.28
       unit: kWh
-- technology_name: CH4_FuelCell_ElBdg
+- schema_version: "0.2.0"
+  technology_name: CH4_FuelCell_ElBdg
   technology:
     technology_description: Methane-fueled fuel cell electricity generation in buildings
       (2030).
@@ -1037,7 +1043,8 @@
         | Type: Energy'
       share: 0.43
       unit: kWh
-- technology_name: CH4_OCGT_El
+- schema_version: "0.2.0"
+  technology_name: CH4_OCGT_El
   technology:
     technology_description: Methane-fueled open cycle gas turbine (OCGT) electricity
       generation (2030).
@@ -1223,7 +1230,8 @@
         | Type: Energy'
       share: 0.42
       unit: kWh
-- technology_name: Geothermal_CHP_ElTh
+- schema_version: "0.2.0"
+  technology_name: Geothermal_CHP_ElTh
   technology:
     technology_description: Geothermal-based CHP generation (2040).
     technology_type: Conversion
@@ -1395,7 +1403,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.7
       unit: kWh
-- technology_name: H2_CCGT_El
+- schema_version: "0.2.0"
+  technology_name: H2_CCGT_El
   technology:
     technology_description: Hydrogen-fueled combined cycle gas turbine (CCGT) electricity
       generation (2050).
@@ -1587,7 +1596,8 @@
         | Type: Energy'
       share: 0.61
       unit: kWh
-- technology_name: H2_FuelCell_El
+- schema_version: "0.2.0"
+  technology_name: H2_FuelCell_El
   technology:
     technology_description: Electricity generation via fuel cells at node El47 (2040).
     technology_type: Conversion
@@ -1766,7 +1776,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.26
       unit: kWh
-- technology_name: H2_FuelCell_El
+- schema_version: "0.2.0"
+  technology_name: H2_FuelCell_El
   technology:
     technology_description: Electricity generation via fuel cells at node El47 (2050).
     technology_type: Conversion
@@ -1945,7 +1956,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.25
       unit: kWh
-- technology_name: H2_FuelCell_ElBdg
+- schema_version: "0.2.0"
+  technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: Electricity generation via fuel cells in buildings (2030).
     technology_type: Conversion
@@ -2121,7 +2133,8 @@
         | Type: Energy'
       share: 0.42
       unit: kWh
-- technology_name: H2_FuelCell_ElBdg
+- schema_version: "0.2.0"
+  technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: Electricity generation via fuel cells in buildings (2050).
     technology_type: Conversion
@@ -2297,7 +2310,8 @@
         | Type: Energy'
       share: 0.4
       unit: kWh
-- technology_name: H2_OCGT_El
+- schema_version: "0.2.0"
+  technology_name: H2_OCGT_El
   technology:
     technology_description: Hydrogen-fueled open cycle gas turbine (OCGT) electricity
       generation (2050).
@@ -2483,7 +2497,8 @@
         | Type: Energy'
       share: 0.42
       unit: kWh
-- technology_name: El_PumpedHydro_Pump
+- schema_version: "0.2.0"
+  technology_name: El_PumpedHydro_Pump
   technology:
     technology_description: Pumped hydroelectric energy storage (pump mode).
     technology_type: Conversion
@@ -2658,7 +2673,8 @@
       carrier_notes: 'Description: Pumped hydro storage | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: Hydro_PumpedTurbine_El
+- schema_version: "0.2.0"
+  technology_name: Hydro_PumpedTurbine_El
   technology:
     technology_description: Pumped hydroelectric power generation (turbine mode).
     technology_type: Conversion
@@ -2833,7 +2849,8 @@
         | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: Hydro_RunOfRiver_El
+- schema_version: "0.2.0"
+  technology_name: Hydro_RunOfRiver_El
   technology:
     technology_description: Run-of-river hydroelectric power plant.
     technology_type: Conversion
@@ -3008,7 +3025,8 @@
         | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: Hydro_Reservoir_El
+- schema_version: "0.2.0"
+  technology_name: Hydro_Reservoir_El
   technology:
     technology_description: Hydroelectric power generation from storage reservoirs.
     technology_type: Conversion
@@ -3183,7 +3201,8 @@
         | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: MSW_Incineration_El
+- schema_version: "0.2.0"
+  technology_name: MSW_Incineration_El
   technology:
     technology_description: Electricity generation from municipal solid waste (MSW)
       incineration.
@@ -3359,7 +3378,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.3
       unit: kWh
-- technology_name: Solar_PVAlpine_El
+- schema_version: "0.2.0"
+  technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024
     technology_type: Conversion
@@ -3517,7 +3537,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: Solar_PVAlpine_El
+- schema_version: "0.2.0"
+  technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
       to 2030
@@ -3676,7 +3697,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: Solar_PVAlpine_El
+- schema_version: "0.2.0"
+  technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
       to 2040
@@ -3835,7 +3857,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: Solar_PVAlpine_El
+- schema_version: "0.2.0"
+  technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
       to 2050
@@ -3994,7 +4017,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: Solar_PVRooftop_El
+- schema_version: "0.2.0"
+  technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2025
     technology_type: Conversion
@@ -4167,7 +4191,8 @@
         Energy'
       share: 0.17
       unit: kWh
-- technology_name: Solar_PVRooftop_El
+- schema_version: "0.2.0"
+  technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2030
     technology_type: Conversion
@@ -4340,7 +4365,8 @@
         Energy'
       share: 0.2
       unit: kWh
-- technology_name: Solar_PVRooftop_El
+- schema_version: "0.2.0"
+  technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2040
     technology_type: Conversion
@@ -4513,7 +4539,8 @@
         Energy'
       share: 0.2
       unit: kWh
-- technology_name: Solar_PVRooftop_El
+- schema_version: "0.2.0"
+  technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2050
     technology_type: Conversion
@@ -4686,7 +4713,8 @@
         Energy'
       share: 0.2
       unit: kWh
-- technology_name: U235_Nuclear_El
+- schema_version: "0.2.0"
+  technology_name: U235_Nuclear_El
   technology:
     technology_description: Electricity generation from nuclear power (U235) at node
       El13.
@@ -4865,7 +4893,8 @@
         | Type: Energy'
       share: 0.33
       unit: kWh
-- technology_name: Wind_Turbine_El
+- schema_version: "0.2.0"
+  technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2020).
     technology_type: Conversion
@@ -5035,7 +5064,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: Wind_Turbine_El
+- schema_version: "0.2.0"
+  technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2030).
     technology_type: Conversion
@@ -5205,7 +5235,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: Wind_Turbine_El
+- schema_version: "0.2.0"
+  technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2040).
     technology_type: Conversion
@@ -5375,7 +5406,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: Wind_Turbine_El
+- schema_version: "0.2.0"
+  technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2050).
     technology_type: Conversion
@@ -5545,7 +5577,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: Wood_CHP_ElTh
+- schema_version: "0.2.0"
+  technology_name: Wood_CHP_ElTh
   technology:
     technology_description: Combined heat and power (CHP) generation using wood.
     technology_type: Conversion
@@ -5720,7 +5753,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.6
       unit: kWh
-- technology_name: CH4_Boiler_ThBdg
+- schema_version: "0.2.0"
+  technology_name: CH4_Boiler_ThBdg
   technology:
     technology_description: Methane-fueled heating system for buildings.
     technology_type: Conversion
@@ -5890,7 +5924,8 @@
         | Type: Energy'
       share: 0.93
       unit: kWh
-- technology_name: CH4_Boiler_ThInd
+- schema_version: "0.2.0"
+  technology_name: CH4_Boiler_ThInd
   technology:
     technology_description: Methane-fueled heating system for thermal power plants.
     technology_type: Conversion
@@ -6059,7 +6094,8 @@
       carrier_notes: 'Description: High-temperature process heat | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: El_Heater_ThBdg
+- schema_version: "0.2.0"
+  technology_name: El_Heater_ThBdg
   technology:
     technology_description: Electric heating system for buildings.
     technology_type: Conversion
@@ -6235,7 +6271,8 @@
         | Type: Energy'
       share: 1.0
       unit: kWh
-- technology_name: El_Heater_ThInd
+- schema_version: "0.2.0"
+  technology_name: El_Heater_ThInd
   technology:
     technology_description: Electric heating system for thermal power plants.
     technology_type: Conversion
@@ -6405,7 +6442,8 @@
       carrier_notes: 'Description: High-temperature process heat | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: El_AirCon_ThSc
+- schema_version: "0.2.0"
+  technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
     technology_type: Conversion
@@ -6574,7 +6612,8 @@
       carrier_notes: 'Description: Space cooling | Type: Energy'
       share: 2.8
       unit: kWh
-- technology_name: El_AirCon_ThSc
+- schema_version: "0.2.0"
+  technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
     technology_type: Conversion
@@ -6749,7 +6788,8 @@
       carrier_notes: 'Description: Space cooling | Type: Energy'
       share: 4.2
       unit: kWh
-- technology_name: El_AirCon_ThSc
+- schema_version: "0.2.0"
+  technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
     technology_type: Conversion
@@ -6924,7 +6964,8 @@
       carrier_notes: 'Description: Space cooling | Type: Energy'
       share: 4.2
       unit: kWh
-- technology_name: El_AirCon_ThSc
+- schema_version: "0.2.0"
+  technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
     technology_type: Conversion
@@ -7093,7 +7134,8 @@
       carrier_notes: 'Description: Space cooling | Type: Energy'
       share: 4.2
       unit: kWh
-- technology_name: H2_Boiler_ThInd
+- schema_version: "0.2.0"
+  technology_name: H2_Boiler_ThInd
   technology:
     technology_description: Hydrogen-fueled heating system for thermal power plants
       (2030).
@@ -7263,7 +7305,8 @@
       carrier_notes: 'Description: High-temperature process heat | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: El_HeatPump_ThBdg
+- schema_version: "0.2.0"
+  technology_name: El_HeatPump_ThBdg
   technology:
     technology_description: Generic heat pump for residential heating, fixed COP 4
     technology_type: Conversion
@@ -7433,7 +7476,8 @@
         | Type: Energy'
       share: 4.0
       unit: kWh
-- technology_name: El_HeatPump_ThInd
+- schema_version: "0.2.0"
+  technology_name: El_HeatPump_ThInd
   technology:
     technology_description: Low-temperature heat upgrade for district heating (2030).
     technology_type: Conversion
@@ -7608,7 +7652,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 4.0
       unit: kWh
-- technology_name: Oil_Boiler_ThBdg
+- schema_version: "0.2.0"
+  technology_name: Oil_Boiler_ThBdg
   technology:
     technology_description: Hydrocarbon-fueled heating system for buildings.
     technology_type: Conversion
@@ -7781,7 +7826,8 @@
         | Type: Energy'
       share: 0.87
       unit: kWh
-- technology_name: Oil_Boiler_ThInd
+- schema_version: "0.2.0"
+  technology_name: Oil_Boiler_ThInd
   technology:
     technology_description: Hydrocarbon-fueled heating system for thermal power plants.
     technology_type: Conversion
@@ -7951,7 +7997,8 @@
       carrier_notes: 'Description: High-temperature process heat | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: Wood_Boiler_ThBdg
+- schema_version: "0.2.0"
+  technology_name: Wood_Boiler_ThBdg
   technology:
     technology_description: Wood-fueled heating system for buildings.
     technology_type: Conversion
@@ -8121,7 +8168,8 @@
         | Type: Energy'
       share: 0.77
       unit: kWh
-- technology_name: Wood_Boiler_ThInd
+- schema_version: "0.2.0"
+  technology_name: Wood_Boiler_ThInd
   technology:
     technology_description: Wood-fueled heating system for thermal power plants.
     technology_type: Conversion
@@ -8290,7 +8338,8 @@
       carrier_notes: 'Description: High-temperature process heat | Type: Energy'
       share: 0.85
       unit: kWh
-- technology_name: H2_HaberBosch_NH3
+- schema_version: "0.2.0"
+  technology_name: H2_HaberBosch_NH3
   technology:
     technology_description: Ammonia synthesis (Haber Bosch process)
     technology_type: Conversion
@@ -8467,7 +8516,8 @@
       carrier_notes: 'Description: High-temperature process heat | Type: Energy'
       share: 0.126
       unit: kWh
-- technology_name: BioWet_Digestion_CH4
+- schema_version: "0.2.0"
+  technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
     technology_type: Conversion
@@ -8639,7 +8689,8 @@
       carrier_notes: 'Description: Methane (generic) | Type: Energy'
       share: 0.6325
       unit: kWh
-- technology_name: BioWet_Digestion_CH4
+- schema_version: "0.2.0"
+  technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
     technology_type: Conversion
@@ -8811,7 +8862,8 @@
       carrier_notes: 'Description: Methane (generic) | Type: Energy'
       share: 0.6325
       unit: kWh
-- technology_name: BioWet_Digestion_CH4
+- schema_version: "0.2.0"
+  technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
     technology_type: Conversion
@@ -8983,7 +9035,8 @@
       carrier_notes: 'Description: Methane (generic) | Type: Energy'
       share: 0.6325
       unit: kWh
-- technology_name: H2_Sabatier_CH4
+- schema_version: "0.2.0"
+  technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
       Sabatier reaction.
@@ -9169,7 +9222,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.134
       unit: kg
-- technology_name: H2_Sabatier_CH4
+- schema_version: "0.2.0"
+  technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
       Sabatier reaction.
@@ -9355,7 +9409,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.134
       unit: kg
-- technology_name: H2_Sabatier_CH4
+- schema_version: "0.2.0"
+  technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
       Sabatier reaction.
@@ -9541,7 +9596,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.134
       unit: kg
-- technology_name: H2_Sabatier_CH4
+- schema_version: "0.2.0"
+  technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
       Sabatier reaction.
@@ -9727,7 +9783,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.134
       unit: kg
-- technology_name: CookingOil_HEFA_C12
+- schema_version: "0.2.0"
+  technology_name: CookingOil_HEFA_C12
   technology:
     technology_description: SAF Production via esterification of used cooking oil
       and animal fat
@@ -9901,7 +9958,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.027
       unit: kWh
-- technology_name: H2_CO2Hydro_MeOH
+- schema_version: "0.2.0"
+  technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
     technology_type: Conversion
@@ -10080,7 +10138,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.125
       unit: kWh
-- technology_name: H2_CO2Hydro_MeOH
+- schema_version: "0.2.0"
+  technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
     technology_type: Conversion
@@ -10259,7 +10318,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.125
       unit: kWh
-- technology_name: H2_CO2Hydro_MeOH
+- schema_version: "0.2.0"
+  technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
     technology_type: Conversion
@@ -10445,7 +10505,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.125
       unit: kWh
-- technology_name: H2_CO2Hydro_MeOH
+- schema_version: "0.2.0"
+  technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
     technology_type: Conversion
@@ -10624,7 +10685,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.125
       unit: kWh
-- technology_name: H2_CO2Hydro_MeOH
+- schema_version: "0.2.0"
+  technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
     technology_type: Conversion
@@ -10803,7 +10865,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.125
       unit: kWh
-- technology_name: H2_RWGS_CO
+- schema_version: "0.2.0"
+  technology_name: H2_RWGS_CO
   technology:
     technology_description: 'Reverse water gas shift reaction plant. Emerging technology,
       2030. '
@@ -10996,7 +11059,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.268
       unit: kg
-- technology_name: El_Electrolysis_H2
+- schema_version: "0.2.0"
+  technology_name: El_Electrolysis_H2
   technology:
     technology_description: 'Electrolysis 2030, Alkaline technology (10 MW) from Danish
       Energy Reports 2025 is the benchmark '
@@ -11168,7 +11232,8 @@
       carrier_notes: 'Description: Hydrogen (generic) | Type: Energy'
       share: 0.63
       unit: kWh
-- technology_name: El_Electrolysis_H2
+- schema_version: "0.2.0"
+  technology_name: El_Electrolysis_H2
   technology:
     technology_description: Electrolysis 2040, Alkaline technology is the benchmark
     technology_type: Conversion
@@ -11338,7 +11403,8 @@
       carrier_notes: 'Description: Hydrogen (generic) | Type: Energy'
       share: 0.65
       unit: kWh
-- technology_name: El_Electrolysis_H2
+- schema_version: "0.2.0"
+  technology_name: El_Electrolysis_H2
   technology:
     technology_description: Electrolysis 2050, Alkaline technology is the benchmark
     technology_type: Conversion
@@ -11508,7 +11574,8 @@
       carrier_notes: 'Description: Hydrogen (generic) | Type: Energy'
       share: 0.7
       unit: kWh
-- technology_name: Syngas_FT_C12
+- schema_version: "0.2.0"
+  technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
     technology_type: Conversion
@@ -11704,7 +11771,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.129
       unit: kg
-- technology_name: Syngas_FT_C12
+- schema_version: "0.2.0"
+  technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
     technology_type: Conversion
@@ -11900,7 +11968,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.129
       unit: kg
-- technology_name: Syngas_FT_C12
+- schema_version: "0.2.0"
+  technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
     technology_type: Conversion
@@ -12096,7 +12165,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.129
       unit: kg
-- technology_name: Syngas_FT_C12
+- schema_version: "0.2.0"
+  technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
     technology_type: Conversion
@@ -12292,7 +12362,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.129
       unit: kg
-- technology_name: Syngas_FT_C8
+- schema_version: "0.2.0"
+  technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
     technology_type: Conversion
@@ -12488,7 +12559,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.126
       unit: kg
-- technology_name: Syngas_FT_C8
+- schema_version: "0.2.0"
+  technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
     technology_type: Conversion
@@ -12684,7 +12756,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.126
       unit: kg
-- technology_name: Syngas_FT_C8
+- schema_version: "0.2.0"
+  technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
     technology_type: Conversion
@@ -12880,7 +12953,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.126
       unit: kg
-- technology_name: Syngas_FT_C8
+- schema_version: "0.2.0"
+  technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
     technology_type: Conversion
@@ -13076,7 +13150,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.126
       unit: kg
-- technology_name: Syngas_COHydro_CH4
+- schema_version: "0.2.0"
+  technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
       CO hydrogenation. '
@@ -13269,7 +13344,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.089
       unit: kg
-- technology_name: Syngas_COHydro_CH4
+- schema_version: "0.2.0"
+  technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
       CO hydrogenation. '
@@ -13462,7 +13538,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.089
       unit: kg
-- technology_name: Syngas_COHydro_CH4
+- schema_version: "0.2.0"
+  technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
       CO hydrogenation. '
@@ -13655,7 +13732,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.089
       unit: kg
-- technology_name: Syngas_COHydro_CH4
+- schema_version: "0.2.0"
+  technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
       CO hydrogenation. '
@@ -13848,7 +13926,8 @@
       carrier_notes: 'Description: Water | Type: Material'
       share: 0.089
       unit: kg
-- technology_name: Syngas_COHydro_MeOH
+- schema_version: "0.2.0"
+  technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
       CO hydrogenation
@@ -14030,7 +14109,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.265
       unit: kWh
-- technology_name: Syngas_COHydro_MeOH
+- schema_version: "0.2.0"
+  technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
       CO hydrogenation
@@ -14212,7 +14292,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.265
       unit: kWh
-- technology_name: Syngas_COHydro_MeOH
+- schema_version: "0.2.0"
+  technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
       CO hydrogenation
@@ -14394,7 +14475,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: 0.265
       unit: kWh
-- technology_name: MSW_Gasification_Syngas
+- schema_version: "0.2.0"
+  technology_name: MSW_Gasification_Syngas
   technology:
     technology_description: Municipal solid waste gasification to syngas
     technology_type: Conversion
@@ -14540,7 +14622,8 @@
         Material'
       share: null
       unit: kg
-- technology_name: MSW_Gasification_H2
+- schema_version: "0.2.0"
+  technology_name: MSW_Gasification_H2
   technology:
     technology_description: Municipal solid waste gasification to hydrogen
     technology_type: Conversion
@@ -14686,7 +14769,8 @@
         Material'
       share: null
       unit: kg
-- technology_name: Wood_Gasification_H2
+- schema_version: "0.2.0"
+  technology_name: Wood_Gasification_H2
   technology:
     technology_description: Woody biomass gasification to hydrogen
     technology_type: Conversion
@@ -14843,7 +14927,8 @@
       carrier_notes: 'Description: Carbon monoxide | Type: Material'
       share: 0.222
       unit: kWh
-- technology_name: Wood_Gasification_Syngas
+- schema_version: "0.2.0"
+  technology_name: Wood_Gasification_Syngas
   technology:
     technology_description: Woody biomass gasification to syngas
     technology_type: Conversion
@@ -14994,7 +15079,8 @@
         Material'
       share: 0.052
       unit: kg
-- technology_name: MeOH_MtJ_C12
+- schema_version: "0.2.0"
+  technology_name: MeOH_MtJ_C12
   technology:
     technology_description: Methanol-to-Jet fuel via MtO and oligomerisation. Near-term
       projection.
@@ -15100,7 +15186,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: null
       unit: null
-- technology_name: MeOH_MtJ_C12
+- schema_version: "0.2.0"
+  technology_name: MeOH_MtJ_C12
   technology:
     technology_description: Methanol-to-Jet fuel via MtO and oligomerisation. Long-term
       projection.
@@ -15206,7 +15293,8 @@
       carrier_notes: 'Description: High-temperature heat | Type: Energy'
       share: null
       unit: null
-- technology_name: El_CoElectrolysis_Syngas
+- schema_version: "0.2.0"
+  technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: High-temperature co-electrolysis of CO₂ and H₂O to syngas
       (SOEC). Near-term.
@@ -15322,7 +15410,8 @@
       carrier_notes: 'Description: Oxygen | Type: Material'
       share: null
       unit: null
-- technology_name: El_CoElectrolysis_Syngas
+- schema_version: "0.2.0"
+  technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: High-temperature co-electrolysis of CO₂ and H₂O to syngas
       (SOEC). Long-term.
@@ -15438,7 +15527,8 @@
       carrier_notes: 'Description: Oxygen | Type: Material'
       share: null
       unit: null
-- technology_name: CH4_Pyrolysis_H2
+- schema_version: "0.2.0"
+  technology_name: CH4_Pyrolysis_H2
   technology:
     technology_description: Methane pyrolysis (turquoise hydrogen). Thermal decomposition
       of CH₄ into H₂ and solid carbon. Near-term.
@@ -15545,7 +15635,8 @@
         Material'
       share: null
       unit: null
-- technology_name: CH4_Pyrolysis_H2
+- schema_version: "0.2.0"
+  technology_name: CH4_Pyrolysis_H2
   technology:
     technology_description: Methane pyrolysis (turquoise hydrogen). Thermal decomposition
       of CH₄ into H₂ and solid carbon. Long-term.
@@ -15652,7 +15743,8 @@
         Material'
       share: null
       unit: null
-- technology_name: CO2Flue_AmineScrub_CO2
+- schema_version: "0.2.0"
+  technology_name: CO2Flue_AmineScrub_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Amine washing. Temperature
       swing process. 2030 reference based on an approx. 150 ktCO2/a plant size. '
@@ -15828,7 +15920,8 @@
         Material'
       share: 0.95
       unit: kg
-- technology_name: BioWet_Pyrolysis_Biochar
+- schema_version: "0.2.0"
+  technology_name: BioWet_Pyrolysis_Biochar
   technology:
     technology_description: Biochar production via pyrolysis of wet biomass.
     technology_type: Conversion
@@ -15992,7 +16085,8 @@
         Material'
       share: 0.063
       unit: kg
-- technology_name: Air_DAC_CO2
+- schema_version: "0.2.0"
+  technology_name: Air_DAC_CO2
   technology:
     technology_description: Direct air capture using adsorption technology (2030 and
       2040).
@@ -16150,7 +16244,8 @@
         Material'
       share: 0.395
       unit: kg
-- technology_name: Air_DAC_CO2
+- schema_version: "0.2.0"
+  technology_name: Air_DAC_CO2
   technology:
     technology_description: Direct air capture using adsorption technology (2050).
     technology_type: Conversion
@@ -16307,7 +16402,8 @@
         Material'
       share: 0.67
       unit: kg
-- technology_name: CO2Flue_PSA_CO2
+- schema_version: "0.2.0"
+  technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
       cycling. Pressure swing process. 2030 reference based on an approx. 150 ktCO2/a
@@ -16485,7 +16581,8 @@
         Material'
       share: 0.95
       unit: kg
-- technology_name: CO2Flue_PSA_CO2
+- schema_version: "0.2.0"
+  technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
       cycling. Pressure swing process. 2030 reference based on an approx. 150 ktCO2/a
@@ -16663,7 +16760,8 @@
         Material'
       share: 0.95
       unit: kg
-- technology_name: CO2Flue_PSA_CO2
+- schema_version: "0.2.0"
+  technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
       cycling. Pressure swing process. 2050 reference based on an approx. 150 ktCO2/a
@@ -16840,7 +16938,8 @@
         Material'
       share: 0.95
       unit: kg
-- technology_name: Wood_Pyrolysis_Biochar
+- schema_version: "0.2.0"
+  technology_name: Wood_Pyrolysis_Biochar
   technology:
     technology_description: Biochar production via pyrolysis of wood.
     technology_type: Conversion

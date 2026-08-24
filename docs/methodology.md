@@ -4,7 +4,7 @@
 
 MOTEL (Methodology for Open Technology Data in Energy Models) provides a workflow for turning heterogeneous technology data into structured records that can be reviewed, harmonised, and reused in energy system modelling. In the current repository, the implemented core is the ingestion of source data into an `unmapped` staging format, the harmonisation of those staged records into a MOTEL database structure with controlled vocabularies, secondary entities, mapping tables, and a `linked_entity` schema, and a notebook-first exploration layer for inspecting the published data product.
 
-The repository already includes machine-readable schemas in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml), [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml), and the supporting entity schemas under [schema/secondary](/E:/Barton/repositories/motel-platform/schema/secondary/source.yaml) and [schema/controlled_vocabulary](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml). It also includes human-readable blueprints under [schema_human/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/unmapped_entity.yaml) and [schema_human/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/linked_entity.yaml). The current implementation does not yet include a populated ontology-linked graph database, backend API, or web application in the public tree. Those parts should therefore be treated as future work rather than current capabilities.
+The repository already includes machine-readable schemas in [schema/unmapped_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity_technology.yaml), [schema/linked_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity_technology.yaml), and the supporting entity schemas under [schema/secondary](/E:/Barton/repositories/motel-platform/schema/secondary/source.yaml) and [schema/controlled_vocabulary](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml). It also includes human-readable blueprints under [schema_human/unmapped_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema_human/unmapped_entity_technology.yaml) and [schema_human/linked_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema_human/linked_entity_technology.yaml). Alongside this technology-bound track, MOTEL carries a carrier-bound track for modelling data that belongs to an energy carrier rather than to a piece of hardware, such as energy prices and carbon intensities; see [schema/unmapped_entity_carrier.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity_carrier.yaml) and [schema/linked_entity_carrier.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity_carrier.yaml). The current implementation does not yet include a populated ontology-linked graph database, backend API, or web application in the public tree. Those parts should therefore be treated as future work rather than current capabilities.
 
 ## 2. Overall workflow
 
@@ -29,6 +29,7 @@ In the current repository snapshot, the implemented steps are:
 3. Harmonise data into the MOTEL database structure.
 4. Create referenced entities and mapping tables for technologies, processes, sources, carriers, attributes, and scopes.
 5. Create populated `linked_entity` records that link harmonised technologies, sources, scopes, carriers, and attributes.
+6. Stage and harmonise carrier-bound modelling data such as energy prices and emission intensities into `linked_carrier_data` records anchored to a carrier rather than a technology.
 
 Current limitation:
 Graph database construction, backend querying, frontend interaction, and model-ready export are still downstream work rather than implemented end-to-end features in the present public repository. The current tree does include an implemented ontology-mapping step under `3_ontology_mapping/`, but no backend or frontend application code is present here.
@@ -37,7 +38,7 @@ Graph database construction, backend querying, frontend interaction, and model-r
 
 ### Data ingestion
 
-The primary ingestion method implemented in MOTEL is schema-first staging into the `unmapped` format. For a new project or external user, the intended starting point is not the reFuel.ch notebook itself, but the generic `unmapped` contract defined in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml) and explained in human-readable form in [schema_human/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/unmapped_entity.yaml). The introductory notebook [1_ingest/1_data_ingestion.ipynb](/E:/Barton/repositories/motel-platform/1_ingest/1_data_ingestion.ipynb) serves as the current guide to that structure.
+The primary ingestion method implemented in MOTEL is schema-first staging into the `unmapped` format. For a new project or external user, the intended starting point is not the reFuel.ch notebook itself, but the generic `unmapped` contract defined in [schema/unmapped_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity_technology.yaml) and explained in human-readable form in [schema_human/unmapped_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema_human/unmapped_entity_technology.yaml). The introductory notebook [1_ingest/1_data_ingestion.ipynb](/E:/Barton/repositories/motel-platform/1_ingest/1_data_ingestion.ipynb) serves as the current guide to that structure.
 
 In practice, a new contributor can work as follows:
 
@@ -48,7 +49,7 @@ In practice, a new contributor can work as follows:
 
 This staging can be done manually or with project-specific transformation code:
 
-- Manual route: a user can prepare YAML directly against [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml).
+- Manual route: a user can prepare YAML directly against [schema/unmapped_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity_technology.yaml).
 - Scripted route: a project can create its own ingestion notebook or helper script, following the pattern used in the existing reFuel.ch example.
 - LLM-supported route: in the current repository, LLM support is implemented mainly in harmonisation rather than in generic ingestion. The harmonisation helper in [2_harmonise/harmonise_helpers.py](/E:/Barton/repositories/motel-platform/2_harmonise/harmonise_helpers.py) uses a local Ollama model to help standardise names, fill required fields, and match records against existing registries after the `unmapped` YAML has been created.
 
@@ -73,9 +74,9 @@ Current limitation:
 
 ### Unmapped versus linked entities
 
-`unmapped` data is the raw staging format. It keeps source-oriented names, raw scope values paired with human-readable scope descriptions, flexible attribute payloads, and source references before they are matched to MOTEL registries. This contract is defined in [schema/unmapped_entity.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity.yaml).
+`unmapped` data is the raw staging format. It keeps source-oriented names, raw scope values paired with human-readable scope descriptions, flexible attribute payloads, and source references before they are matched to MOTEL registries. This contract is defined in [schema/unmapped_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity_technology.yaml).
 
-`linked_entity` is the target relational structure for harmonised records. It is defined in [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml) and explained in a human-readable form in [schema_human/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema_human/linked_entity.yaml). It is intended to reference standardised technologies, attributes, carriers, scopes, and sources through foreign-key style identifiers.
+`linked_entity` is the target relational structure for harmonised records. It is defined in [schema/linked_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity_technology.yaml) and explained in a human-readable form in [schema_human/linked_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema_human/linked_entity_technology.yaml). It is intended to reference standardised technologies, attributes, carriers, scopes, and sources through foreign-key style identifiers.
 
 In practice, the harmonisation step currently writes:
 
@@ -89,6 +90,35 @@ Current limitation:
 
 - The linked-entity structure is implemented and populated, but some field names and schema details are still being aligned as the workflow evolves.
 
+### Carrier-bound modelling data
+
+Not every value an energy model needs belongs to a piece of hardware. Energy prices, carbon and emission intensities, and resource availability are properties of an energy carrier: the price of grid electricity in a given region and year applies to every technology that consumes it, and does not belong to any one of them. Recording such values on a `linked_entity` would duplicate them across every consumer and give them a `tech_id` they do not have.
+
+MOTEL therefore carries a second, symmetric track anchored to a `carrier_id` instead of a `tech_id`:
+
+```text
+raw carrier data
+    -> unmapped_carrier_data YAML records
+    -> linked_carrier_data records and carrier data mapping tables
+```
+
+- Staging contract: [schema/unmapped_entity_carrier.yaml](/E:/Barton/repositories/motel-platform/schema/unmapped_entity_carrier.yaml), human-readable in [schema_human/unmapped_entity_carrier.yaml](/E:/Barton/repositories/motel-platform/schema_human/unmapped_entity_carrier.yaml)
+- Harmonised contract: [schema/linked_entity_carrier.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity_carrier.yaml), human-readable in [schema_human/linked_entity_carrier.yaml](/E:/Barton/repositories/motel-platform/schema_human/linked_entity_carrier.yaml)
+- Pipeline: [2_harmonise/carrier_data_helpers.py](/E:/Barton/repositories/motel-platform/2_harmonise/carrier_data_helpers.py)
+- Worked example: [1_ingest/examples/carrier_data/README.md](/E:/Barton/repositories/motel-platform/1_ingest/examples/carrier_data/README.md)
+
+The two tracks deliberately share everything except their anchor. Carrier data records resolve against the same carrier, source, attribute, and scope registries, follow the same `harmonisation_record` staging lifecycle, and are written by the same kind of append-only, atomically saved step. A single attribute vocabulary serves both, with the `applies_to` column marking whether a metric describes a technology, a carrier, or both.
+
+Scope carries more weight on the carrier side, because carrier values are only comparable within a stated boundary. `system_boundary` separates a retail tariff from a wholesale price and a combustion-only emission factor from a cradle-to-gate one; `capacity_scope` carries the consumption band or contract size a tariff refers to; `scenario` separates competing price tracks for the same year. A `data_category` field (`price`, `emission_intensity`, `availability`, `resource_potential`, `demand`, `other`) gives downstream consumers a coarse grouping without having to interpret attribute names.
+
+Multi-period series follow the same convention as the technology track: `time_index` is a scalar, so a price or intensity trajectory contributes one attribute entry per period, all within a single record that carries the shared scope and provenance once.
+
+The carrier data pipeline can run in two modes. With `use_llm=True` it reuses the same semantic matching applied to technology records and needs a reachable Ollama service. With `use_llm=False` it resolves names by exact match against the existing registries and creates deterministic entries otherwise, which suits the already-clean labels typical of statistical-agency data and allows the step to run without a model.
+
+Current limitation:
+
+- The carrier data track is implemented and validated, but `motel-db/linked_carrier_data/` ships empty. Populating it requires source data whose licence permits redistribution.
+
 ## 4. MOTEL data structure
 
 The implemented data model in this repository is split across schemas and CSV/YAML registries.
@@ -101,7 +131,8 @@ Main entities currently represented:
 - `attribute`: controlled parameter vocabulary in [schema/controlled_vocabulary/attribute.yaml](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/attribute.yaml) and [motel-db/controlled_vocabulary/attribute.csv](/E:/Barton/repositories/motel-platform/motel-db/controlled_vocabulary/attribute.csv)
 - `carrier`: controlled carrier vocabulary in [schema/controlled_vocabulary/carrier.yaml](/E:/Barton/repositories/motel-platform/schema/controlled_vocabulary/carrier.yaml)
 - scope vocabularies: `geographic_scope`, `temporal_scope`, `capacity_scope`, `system_boundary`
-- `linked_entity`: harmonised record structure in [schema/linked_entity.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity.yaml)
+- `linked_entity`: harmonised technology-bound record structure in [schema/linked_entity_technology.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity_technology.yaml)
+- `linked_carrier_data`: harmonised carrier-bound record structure in [schema/linked_entity_carrier.yaml](/E:/Barton/repositories/motel-platform/schema/linked_entity_carrier.yaml) and [motel-db/linked_carrier_data/linked_carrier_data.yaml](/E:/Barton/repositories/motel-platform/motel-db/linked_carrier_data/linked_carrier_data.yaml)
 
 Minimum fields for a technology in the current schema:
 
@@ -118,7 +149,15 @@ Minimum fields for an attribute in the current schema:
 - `unit`
 - `data_format`
 
-Additional currently defined fields include `ontology_iri` and `note`.
+Additional currently defined fields include `ontology_iri`, `applies_to`, and `note`. `applies_to` records whether a metric describes a `technology`, a `carrier`, or `both`, so one attribute vocabulary can serve the technology-bound and carrier-bound tracks without ambiguity.
+
+Minimum fields for a carrier data record in the current schema:
+
+- `linked_carrier_data_id`
+- `carrier_id`
+- `sources`
+
+Additional currently defined fields include `data_category`, `version`, `scope`, `assumptions`, `values`, and `date_created`.
 
 The `unmapped` record structure is broader and includes:
 
@@ -152,6 +191,9 @@ The current mapping tables in [motel-db/mapping](/E:/Barton/repositories/motel-p
 | `attribute.ontology_iri` | external ontology IRI | placeholder field for linking an attribute to an ontology concept |
 | `linked_entity.tech_id` | `technology.tech_id` foreign-key style reference | connects a harmonised record to a standard technology entity |
 | `linked_entity.values[].attribute_id` | `attribute.attribute_id` foreign-key style reference | connects a harmonised value to a standard attribute definition |
+| `linked_carrier_data.carrier_id` | `carrier.carrier_id` foreign-key style reference | connects a carrier-bound value to a standard carrier entity |
+
+Carrier data records are exported alongside technology records. Each record becomes a carrier instance scoped by region and year, carrying its price, intensity, or availability as attribute nodes, and a record holding a time series expands into one scoped instance per period. The ontology class names used for these attributes are declared under the carrier-bound section of [3_ontology_mapping/config/attribute_ontology_mapping.yaml](/E:/Barton/repositories/motel-platform/3_ontology_mapping/config/attribute_ontology_mapping.yaml) and are MOTEL placeholders pending alignment with the DigiCities ontology.
 
 Current limitation:
 
@@ -168,7 +210,8 @@ What is implemented today is the relational precondition for graph construction:
 - harmonised entities in `motel-db/secondary/`
 - controlled vocabularies in `motel-db/controlled_vocabulary/`
 - source mappings in `motel-db/mapping/`
-- linked-entity schema in `schema/linked_entity.yaml`
+- linked-entity schema in `schema/linked_entity_technology.yaml`
+- carrier data schema in `schema/linked_entity_carrier.yaml`
 
 If a graph layer is added later, the likely relationship pattern would be:
 

@@ -30,6 +30,7 @@ def main() -> None:
     print(f"Lines: {ttl.count(chr(10)):,}")
     print(f"hasAttributeValue triples: {ttl.count('dici_onto:hasAttributeValue'):,}")
     print(f"Flow nodes: {stats['flows']:,}")
+    print(f"Carrier data nodes: {stats['carrier_data']:,}")
     if warnings:
         print(f"Warnings: {len(warnings):,}")
         for warning in warnings[:20]:

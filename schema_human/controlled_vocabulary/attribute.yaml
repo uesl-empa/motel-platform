@@ -5,4 +5,5 @@ Attribute: # Controlled registry defining standardised cost, parameter, and capa
     unit: "[Required; String] The strict target standardised canonical unit mandated for this field across database entities (e.g., EUR/kW, ratio, years). When source notes specify a currency for generic 'Currency' formats, preserve that stated currency and do not assume USD."
     data_format: "[Required; String] Structural parser instruction flag mapping validation rules for primitive cell entry variables."
     ontology_iri: "[String] External ontology database URI link matching global terminology networks."
+    applies_to: "[String] Subject class this metric describes. Use technology for hardware-bound metrics recorded in linked_entity, carrier for commodity-bound metrics recorded in linked_carrier_data (prices, emission intensities, availability), and both when the same metric is used on either side."
     note: "[String] System administration annotations detailing specific boundary conditions or parsing edge cases."

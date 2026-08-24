@@ -406,3 +406,134 @@ def prepare_carrier_analysis(carriers_df, carrier_query):
         "matched_carriers": matched_carriers,
         "technology_by_carrier": summarize_technologies_by_carrier(matched_carriers),
     }
+
+
+# ---------------------------------------------------------------------------
+# Carrier-bound modelling data (motel-db/linked_carrier_data/)
+# ---------------------------------------------------------------------------
+def load_carrier_data(linked_carrier_data_path, vocab_dir):
+    """
+    Load carrier data records into a tidy table, one row per value observation.
+
+    Records holding a series are expanded so each ``time_index`` entry becomes its
+    own row, which makes prices and emission intensities directly plottable
+    against year without further reshaping.
+
+    Args:
+        linked_carrier_data_path (Path): motel-db/linked_carrier_data/linked_carrier_data.yaml
+        vocab_dir (Path): motel-db/controlled_vocabulary/
+
+    Returns:
+        dict: {"carrier_data": [...], "carrier_data_df": DataFrame, "carrier_data_sources_df": DataFrame}
+    """
+    if not linked_carrier_data_path.exists():
+        empty = pd.DataFrame()
+        return {"carrier_data": [], "carrier_data_df": empty, "carrier_data_sources_df": empty}
+
+    records = read_yaml(linked_carrier_data_path) or []
+    carrier_vocab_df = pd.read_csv(vocab_dir / "carrier.csv")
+    attribute_vocab_df = pd.read_csv(vocab_dir / "attribute.csv")
+    carrier_lookup = make_lookup(carrier_vocab_df, "carrier_id", "carrier_name")
+    carrier_type_lookup = make_lookup(carrier_vocab_df, "carrier_id", "carrier_type")
+    attribute_lookup = make_lookup(attribute_vocab_df, "attribute_id", "attribute_name")
+    unit_lookup = make_lookup(attribute_vocab_df, "attribute_id", "unit")
+
+    value_rows = []
+    source_rows = []
+    for record in records:
+        record_id = record.get("linked_carrier_data_id")
+        carrier_id = record.get("carrier_id")
+        scope = record.get("scope", {}) or {}
+        common = {
+            "linked_carrier_data_id": record_id,
+            "carrier_id": carrier_id,
+            "carrier_name": lookup_label(carrier_id, carrier_lookup),
+            "carrier_type": lookup_label(carrier_id, carrier_type_lookup),
+            "data_category": record.get("data_category"),
+            "geographic_scope": scope.get("geographic_scope"),
+            "temporal_scope": scope.get("temporal_scope"),
+            "capacity_scope": scope.get("capacity_scope"),
+            "system_boundary": scope.get("system_boundary"),
+            "scenario": scope.get("scenario"),
+        }
+
+        for entry in record.get("values", []) or []:
+            attribute_id = entry.get("attribute_id")
+            unit = entry.get("unit") or lookup_label(attribute_id, unit_lookup)
+            # time_index is a scalar per entry, so a multi-period series already
+            # arrives as one entry per period; fall back to the record's scope
+            # when an entry states no period of its own.
+            period = entry.get("time_index") or scope.get("temporal_scope")
+            value_rows.append({
+                **common,
+                "attribute_id": attribute_id,
+                "attribute_name": entry.get("attribute_name")
+                or lookup_label(attribute_id, attribute_lookup),
+                "unit": unit,
+                "value_type": entry.get("value_type"),
+                "note": entry.get("note"),
+                "period": period,
+                "year": extract_year(period),
+                "value": entry.get("value"),
+            })
+
+        for source in record.get("sources", []) or []:
+            for attribute_id in source.get("linked_attributes", []) or []:
+                source_rows.append({
+                    "linked_carrier_data_id": record_id,
+                    "carrier_name": common["carrier_name"],
+                    "source_id": source.get("source_id"),
+                    "attribute_id": attribute_id,
+                    "attribute_name": lookup_label(attribute_id, attribute_lookup),
+                })
+
+    return {
+        "carrier_data": records,
+        "carrier_data_df": pd.DataFrame(value_rows),
+        "carrier_data_sources_df": pd.DataFrame(source_rows),
+    }
+
+
+def filter_carrier_data(carrier_data_df, carrier_query=None, data_category=None, attribute_query=None):
+    """Narrow the carrier data table by carrier name, data category, or attribute name."""
+    if carrier_data_df.empty:
+        return carrier_data_df
+    filtered = carrier_data_df
+    if carrier_query:
+        filtered = filtered[
+            filtered["carrier_name"].astype(str).str.contains(carrier_query, case=False, na=False)
+        ]
+    if data_category:
+        filtered = filtered[filtered["data_category"] == data_category]
+    if attribute_query:
+        filtered = filtered[
+            filtered["attribute_name"].astype(str).str.contains(attribute_query, case=False, na=False)
+        ]
+    return filtered.copy()
+
+
+def summarize_carrier_data(carrier_data_df):
+    """Summarise coverage per carrier, category, and attribute."""
+    if carrier_data_df.empty:
+        return carrier_data_df
+    return (
+        carrier_data_df.groupby(
+            ["carrier_name", "data_category", "attribute_name", "unit"], as_index=False, dropna=False
+        )
+        .agg(
+            observations=("value", "size"),
+            records=("linked_carrier_data_id", "nunique"),
+            first_year=("year", "min"),
+            last_year=("year", "max"),
+        )
+        .sort_values(["carrier_name", "data_category", "attribute_name"])
+    )
+
+
+def prepare_carrier_data_analysis(carrier_data_df, carrier_query=None, data_category=None):
+    """Bundle the filtered carrier data table with its coverage summary."""
+    matched = filter_carrier_data(carrier_data_df, carrier_query, data_category)
+    return {
+        "matched_carrier_data": matched,
+        "carrier_data_summary": summarize_carrier_data(matched),
+    }

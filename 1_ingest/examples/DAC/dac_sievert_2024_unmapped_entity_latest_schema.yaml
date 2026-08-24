@@ -1,3 +1,4 @@
+schema_version: "0.2.0"
 technology_name: Direct Air Capture (DAC) - Sievert, Schmidt and Steffen 2024 cost projection benchmark
 technology:
   technology_description: Technology family for capturing CO2 directly from ambient air; the source compares solid-filter,

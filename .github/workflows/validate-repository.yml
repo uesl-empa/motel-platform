@@ -21,7 +21,11 @@ jobs:
         run: python -m pip install pyyaml
 
       - name: Check Python syntax
-        run: python -m compileall 1_ingest 2_harmonise
+        run: python -m compileall 1_ingest 2_harmonise 3_ontology_mapping 4_data_explore tools
+
+      - name: Validate staging records against the unmapped schemas
+        run: |
+          python tools/validate_unmapped.py             motel-db/unmapped_entity             motel-db/unmapped_carrier_data             1_ingest/examples
 
       - name: Validate YAML and CSV files
         run: |
@@ -31,7 +35,7 @@ jobs:
 
           import yaml
 
-          roots = [Path("schema"), Path("schema_simple"), Path("motel-db")]
+          roots = [Path("schema"), Path("schema_human"), Path("motel-db")]
 
           for root in roots:
               for path in root.rglob("*.yaml"):

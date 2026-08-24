@@ -1,3 +1,4 @@
+schema_version: "0.2.0"
 technology_name: Direct Air Capture (DAC) - National Academies 2019 solid sorbent and solvent DAC benchmarks
 technology:
   technology_description: Direct air capture technology removing CO2 from ambient air; raw staging record for DAC techno-economic

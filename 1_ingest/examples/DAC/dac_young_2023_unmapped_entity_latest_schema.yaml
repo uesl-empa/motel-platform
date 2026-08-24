@@ -1,3 +1,4 @@
+schema_version: "0.2.0"
 technology_name: Direct Air Capture and Storage (DACS) - Young et al. 2023 cost trajectory benchmark
 technology:
   technology_description: Direct air capture technology removing CO2 from ambient air; raw staging record for DAC techno-economic
