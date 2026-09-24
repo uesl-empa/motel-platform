@@ -33,7 +33,9 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
 
 2. **Harmonise** unmapped entities into controlled vocabularies and linked records.
    - Main notebook: `2_harmonise/2_data_harmonisation.ipynb`
+   - CLI entrypoint: `2_harmonise/harmonise.py` (adds a new source to the populated database)
    - Helper module: `2_harmonise/harmonise_helpers.py`
+   - LLM client (Claude by default, local Ollama optional): `2_harmonise/llm_client.py`
    - Carrier data helper module: `2_harmonise/carrier_data_helpers.py`
    - Outputs: `motel-db/secondary/`, `motel-db/controlled_vocabulary/`, `motel-db/mapping/`, `motel-db/linked_entity/`, and `motel-db/linked_carrier_data/`
 
@@ -67,7 +69,7 @@ MOTEL records two kinds of modelling data, using the same registries and the sam
 
 A price for grid electricity in a given region and year applies to every technology that consumes that carrier, so it belongs to the carrier rather than to any one consumer. Both tracks resolve against the same carrier, source, attribute, and scope vocabularies; the `applies_to` column in `attribute.csv` marks which side a metric belongs to.
 
-Following the same convention as the technology track, `time_index` is a scalar: a multi-period series is one attribute entry per period. The carrier-bound pipeline runs either with LLM-assisted matching (`use_llm=True`, needs Ollama) or with deterministic exact-match resolution (`use_llm=False`, no model required). See `1_ingest/examples/carrier_data/README.md` for a worked example.
+Following the same convention as the technology track, `time_index` is a scalar: a multi-period series is one attribute entry per period. The carrier-bound pipeline runs either with LLM-assisted matching (`use_llm=True`, calls Claude) or with deterministic exact-match resolution (`use_llm=False`, no model required). See `1_ingest/examples/carrier_data/README.md` for a worked example.
 
 ## Database Layout
 
@@ -112,6 +114,27 @@ It is standalone — standard library plus PyYAML, no imports from this reposito
 ingestion script. It runs on every push through the `Validate Repository`
 workflow.
 
+## Adding a New Source
+
+Stage the new source's records as `unmapped_entity_technology` YAML (Step 1),
+save them in `motel-db/unmapped_entity/`, then harmonise them into the
+populated database:
+
+```bash
+python 2_harmonise/harmonise.py motel-db/unmapped_entity/unmapped_entities_<source>.yaml
+```
+
+The run validates the staging records first and writes nothing if any is
+invalid. It backs up the derived files, resolves every name against the
+existing registries, appends the new linked entities, and checks that every
+reference in them resolves. Existing IDs are never renumbered, and the mapping
+tables are merged rather than overwritten, so a name resolved in an earlier run
+maps to the same ID again without another LLM call. `--limit N` harmonises only
+the first N pending records, so the decisions can be reviewed on a few records
+before the rest; `--llm-provider ollama` uses the local model instead of
+Claude, and `--no-llm` resolves by exact name match and needs no LLM at all.
+See `2_harmonise/README.md` for details.
+
 ## Quick Start
 
 Create a Python environment and install the notebook/data dependencies:
@@ -123,7 +146,15 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-Open the notebooks in Jupyter, VS Code, or another notebook environment. The harmonisation helper currently uses a local Ollama model (`qwen3:14b`) for LLM-assisted matching and field completion.
+Open the notebooks in Jupyter, VS Code, or another notebook environment.
+
+LLM-assisted harmonisation uses Claude through the Anthropic API by default, so no local model or GPU is needed. Set an API key before starting Jupyter or running `harmonise.py`:
+
+```powershell
+$env:ANTHROPIC_API_KEY = "sk-ant-..."
+```
+
+The model defaults to `claude-opus-5`. A local model served by Ollama (default `qwen3:14b`) remains available: set `MOTEL_LLM_PROVIDER=ollama`, `llm_provider = "ollama"` in the notebook, or `--llm-provider ollama` on the CLI. With `use_llm=False` or `--no-llm`, harmonisation resolves by exact match and needs neither. See `2_harmonise/README.md` for all settings.
 
 To generate the ontology-ready TTL from the harmonised MOTEL database:
 

@@ -20,7 +20,8 @@ Two resolution modes are available:
 
 - ``use_llm=True`` (default) reuses the Step 2 LLM resolvers from
   ``harmonise_helpers``, so free-text carrier and source labels are matched
-  semantically. Requires a reachable Ollama service.
+  semantically. Uses Claude by default, or a local Ollama model (see
+  ``llm_client.py``).
 - ``use_llm=False`` resolves by exact (case- and whitespace-insensitive) name
   against the existing registries and creates deterministic new entries
   otherwise. Carrier data usually arrives from statistical agencies with
@@ -31,7 +32,6 @@ Two resolution modes are available:
 import csv
 import datetime
 import json
-import re
 import time
 from pathlib import Path
 
@@ -39,15 +39,18 @@ import yaml
 
 import harmonise_helpers as hh
 from harmonise_helpers import (
-    ATTR_COLS,
     ATTR_PATH,
-    ENTITY_CONFIG,
+    DB_DIR,
     HARMONISATION_VERSION,
     LCD_PATH,
     MAPPING_DIR,
+    SCHEMA_DIR,
     SCOPE_CONFIG,
+    _ensure_attr_exact,
+    _ensure_scope_exact,
     _has_value,
-    append_row,
+    _infer_value_type,
+    _resolve_entity_exact,
     ensure_attr,
     ensure_scope,
     get_scope_description_context,
@@ -58,6 +61,7 @@ from harmonise_helpers import (
     load_registry,
     log_harmonisation_event,
     mark_unmapped_entities_mapped,
+    merge_mapping_file,
     resolve_entity,
 )
 
@@ -70,14 +74,6 @@ CARRIER_DATA_ENTITY_TYPES = ["carrier", "source"]
 
 LCD_PREFIX = "LCD"
 CARRIER_DATA_ID_FIELD = "linked_carrier_data_id"
-
-# Token prefixes used when a scope value has to be created without the LLM.
-SCOPE_TOKEN_PREFIX = {
-    "geographic_scope": "GEO",
-    "temporal_scope": "TIME",
-    "capacity_scope": "CAP",
-    "system_boundary": "BOUND",
-}
 
 # Allowed data_category values, mirroring the enum in schema/linked_entity_carrier.yaml.
 DATA_CATEGORIES = [
@@ -92,65 +88,10 @@ DATA_CATEGORIES = [
 CARRIER_DATA_PROVENANCE_FILE = "unmapped_to_linked_carrier_data.csv"
 CARRIER_DATA_ATTRIBUTE_MAP_FILE = "carrier_data_attribute_map.csv"
 
-# Deterministic mode reads the unit from a note written as "Unit: EUR/kWh" or
-# "Unit EUR/kWh". Only the first token is taken, matching the single-token unit
-# convention used throughout the attribute controlled vocabulary.
-_UNIT_IN_NOTES = re.compile(r"\bunits?\s*[:=]?\s+(\S+)", re.IGNORECASE)
-
 
 # ---------------------------------------------------------------------------
-# Small shared utilities
+# Staging I/O
 # ---------------------------------------------------------------------------
-def _norm(value):
-    """Normalise a label for case- and whitespace-insensitive comparison."""
-    return " ".join(str(value or "").split()).strip().lower()
-
-
-def _slug(value, max_length=40):
-    """
-    Build an uppercase token fragment from a free-text scope value.
-
-    Long values are cut back to the last complete word inside ``max_length`` so
-    tokens stay readable instead of ending mid-word.
-    """
-    cleaned = re.sub(r"[^0-9A-Za-z]+", "_", str(value or "").strip()).strip("_").upper()
-    if len(cleaned) > max_length:
-        cleaned = cleaned[:max_length]
-        if "_" in cleaned:
-            cleaned = cleaned.rsplit("_", 1)[0]
-    return cleaned.strip("_") or "UNSPECIFIED"
-
-
-def _unit_from_notes(notes):
-    """Pull a unit out of an attribute note such as 'Unit: EUR/kWh'."""
-    match = _UNIT_IN_NOTES.search(str(notes or ""))
-    return match.group(1).strip().rstrip(".,;:|") if match else ""
-
-
-def _next_free_id(prefix, taken, width=5):
-    """Build the next unused sequential ID so appends never reuse an existing key."""
-    number = len(taken) + 1
-    while f"{prefix}_{number:0{width}d}" in taken:
-        number += 1
-    return f"{prefix}_{number:0{width}d}"
-
-
-def _infer_value_type(value):
-    """
-    Classify a staged value so downstream solvers know how to read it.
-
-    time_index is a scalar, so one attribute entry always holds one value; a
-    multi-period series arrives as one entry per period.
-    """
-    if isinstance(value, (list, tuple)):
-        return "array"
-    if isinstance(value, bool):
-        return "boolean"
-    if isinstance(value, (int, float)):
-        return "numeric"
-    return "text"
-
-
 def load_pending_carrier_data(path):
     """
     Load a carrier data staging file and select records that still need harmonisation.
@@ -221,130 +162,6 @@ def collect_carrier_data_candidates(carrier_data_records):
                     existing[field] = value
 
     return candidates
-
-
-# ---------------------------------------------------------------------------
-# Deterministic (no-LLM) resolvers
-# ---------------------------------------------------------------------------
-def _resolve_entity_exact(entity_type, candidate, registry):
-    """
-    Resolve a candidate against a registry by exact name, creating a row if absent.
-
-    This is the ``use_llm=False`` counterpart of ``harmonise_helpers.resolve_entity``.
-
-    Returns:
-        tuple[str, str]: (resolved_id, status) with status "exact" or "created".
-    """
-    cfg = ENTITY_CONFIG[entity_type]
-    id_field, name_field = cfg["id_field"], cfg["name_field"]
-    candidate_name = _norm(candidate.get(name_field))
-
-    for row in registry:
-        if _norm(row.get(name_field)) == candidate_name:
-            return row[id_field], "exact"
-
-    new_id = _next_free_id(cfg["prefix"], {str(row.get(id_field, "")) for row in registry})
-    new_row = {id_field: new_id}
-    for key in cfg["cols"]:
-        if key != id_field and _has_value(candidate.get(key)):
-            new_row[key] = candidate[key]
-    append_row(entity_type, new_row)
-    registry.append(new_row)
-    return new_id, "created"
-
-
-def _ensure_attr_exact(name, registry, notes="", applies_to="carrier"):
-    """
-    Resolve an attribute by exact name, creating a registry row if absent.
-
-    This is the ``use_llm=False`` counterpart of ``harmonise_helpers.ensure_attr``.
-    The canonical name is taken as given, and the unit is read from the staging
-    note when it is written as ``Unit: <unit>``.
-
-    Args:
-        name (str): Attribute name from the staging record.
-        registry (dict[str, str]): In-memory {name: id} mapping; mutated on creation.
-        notes (str): Raw attribute_notes string from the staging record.
-        applies_to (str): Subject class recorded on newly created rows.
-
-    Returns:
-        tuple[str, str, str]: (attribute_id, canonical_name, status).
-    """
-    canonical_name = " ".join(str(name).split()).strip()
-    for existing_name, existing_id in registry.items():
-        if _norm(existing_name) == _norm(canonical_name):
-            return existing_id, existing_name, "existing"
-
-    new_id = _next_free_id("ATTR", set(registry.values()))
-    new_row = {
-        "attribute_id": new_id,
-        "attribute_name": canonical_name,
-        "attribute_description": str(notes or "").strip(),
-        "unit": _unit_from_notes(notes),
-        "data_format": "float",
-        "applies_to": applies_to,
-    }
-    registry[canonical_name] = new_id
-    Path(ATTR_PATH).parent.mkdir(parents=True, exist_ok=True)
-    file_exists = Path(ATTR_PATH).exists()
-    with open(ATTR_PATH, "a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=ATTR_COLS)
-        if not file_exists:
-            writer.writeheader()
-        writer.writerow({key: new_row.get(key, "") for key in ATTR_COLS})
-    return new_id, canonical_name, "created"
-
-
-def _ensure_scope_exact(scope_type, value, description_seed="", extra_context=""):
-    """
-    Resolve a scope value against its CSV by token or description, creating it if absent.
-
-    This is the ``use_llm=False`` counterpart of ``harmonise_helpers.ensure_scope``.
-    Staging records that already carry a canonical token (``GEO_CHE``) match it
-    directly; free-text values are matched against existing descriptions and
-    otherwise become ``<PREFIX>_<SLUG>``.
-
-    Returns:
-        tuple[str | None, str | None]: (scope_token, status) or (None, None) when empty.
-    """
-    if not _has_value(value):
-        return None, None
-
-    raw_value = str(value).strip()
-    path = Path(SCOPE_CONFIG[scope_type])
-    description_field = f"{scope_type}_description"
-    seeded_description = description_seed or raw_value
-
-    existing_rows = []
-    if path.exists():
-        with path.open(encoding="utf-8-sig", newline="") as f:
-            existing_rows = list(csv.DictReader(f))
-
-    for row in existing_rows:
-        token = str(row.get(scope_type, "")).strip()
-        if _norm(token) == _norm(raw_value):
-            return token, "existing"
-        if _norm(row.get(description_field)) == _norm(raw_value):
-            return token, "existing"
-
-    prefix = SCOPE_TOKEN_PREFIX[scope_type]
-    token = raw_value if raw_value.upper().startswith(f"{prefix}_") else f"{prefix}_{_slug(raw_value)}"
-    if any(_norm(row.get(scope_type)) == _norm(token) for row in existing_rows):
-        return token, "existing"
-
-    cols = [scope_type, description_field, "note"]
-    path.parent.mkdir(parents=True, exist_ok=True)
-    file_exists = path.exists()
-    with path.open("a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=cols)
-        if not file_exists:
-            writer.writeheader()
-        writer.writerow({
-            scope_type: token,
-            description_field: seeded_description,
-            "note": extra_context or "",
-        })
-    return token, "created"
 
 
 # ---------------------------------------------------------------------------
@@ -730,10 +547,11 @@ def save_carrier_data_mapping_files_step(
     harmonisation_log=None,
 ):
     """
-    Write the carrier data provenance map and attribute lookup map.
+    Merge this run into the carrier data provenance map and attribute lookup map.
 
     These are separate files from the technology-track maps so a carrier data run
-    never overwrites provenance produced by a technology run.
+    never overwrites provenance produced by a technology run. Rows from earlier
+    carrier data runs are kept.
     """
     step_started = time.perf_counter()
     MAPPING_DIR.mkdir(parents=True, exist_ok=True)
@@ -745,41 +563,44 @@ def save_carrier_data_mapping_files_step(
         "geographic_scope", "temporal_scope", "capacity_scope", "system_boundary",
         "scenario", "source_ids", "date_mapped",
     ]
-    with open(provenance_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=provenance_cols)
-        writer.writeheader()
-        for source_index, record, linked in zip(pending_indices, pending_records, linked_carrier_data):
-            scope = linked.get("scope", {})
-            writer.writerow({
-                "unmapped_index": source_index,
-                "carrier_name": record.get("carrier_name", ""),
-                CARRIER_DATA_ID_FIELD: linked[CARRIER_DATA_ID_FIELD],
-                "carrier_id": linked["carrier_id"],
-                "data_category": linked.get("data_category", ""),
-                "geographic_scope": scope.get("geographic_scope", ""),
-                "temporal_scope": scope.get("temporal_scope", ""),
-                "capacity_scope": scope.get("capacity_scope", ""),
-                "system_boundary": scope.get("system_boundary", ""),
-                "scenario": scope.get("scenario", ""),
-                "source_ids": json.dumps([s["source_id"] for s in linked.get("sources", [])]),
-                "date_mapped": today,
-            })
-    print(f"Provenance map: saved {len(linked_carrier_data)} rows -> {provenance_path}")
+    provenance_rows = []
+    for source_index, record, linked in zip(pending_indices, pending_records, linked_carrier_data):
+        scope = linked.get("scope", {})
+        provenance_rows.append({
+            "unmapped_index": source_index,
+            "carrier_name": record.get("carrier_name", ""),
+            CARRIER_DATA_ID_FIELD: linked[CARRIER_DATA_ID_FIELD],
+            "carrier_id": linked["carrier_id"],
+            "data_category": linked.get("data_category", ""),
+            "geographic_scope": scope.get("geographic_scope", ""),
+            "temporal_scope": scope.get("temporal_scope", ""),
+            "capacity_scope": scope.get("capacity_scope", ""),
+            "system_boundary": scope.get("system_boundary", ""),
+            "scenario": scope.get("scenario", ""),
+            "source_ids": json.dumps([s["source_id"] for s in linked.get("sources", [])]),
+            "date_mapped": today,
+        })
+    total = merge_mapping_file(
+        provenance_path, provenance_cols, provenance_rows, key=CARRIER_DATA_ID_FIELD
+    )
+    print(f"Provenance map: added {len(provenance_rows)} rows ({total} total) -> {provenance_path.name}")
 
     attribute_map_path = MAPPING_DIR / CARRIER_DATA_ATTRIBUTE_MAP_FILE
-    with open(attribute_map_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(
-            f, fieldnames=["original_name", "attribute_name", "attribute_id", "status"]
-        )
-        writer.writeheader()
-        for name, attribute_id in attr_ids.items():
-            writer.writerow({
+    total = merge_mapping_file(
+        attribute_map_path,
+        ["original_name", "attribute_name", "attribute_id", "status"],
+        [
+            {
                 "original_name": name,
                 "attribute_name": attr_names.get(name, name),
                 "attribute_id": attribute_id,
                 "status": attr_status.get(name, "created"),
-            })
-    print(f"Entity lookup map: {CARRIER_DATA_ATTRIBUTE_MAP_FILE}  ({len(attr_ids)} rows)")
+            }
+            for name, attribute_id in attr_ids.items()
+        ],
+        key="original_name",
+    )
+    print(f"Entity lookup map: {CARRIER_DATA_ATTRIBUTE_MAP_FILE}  ({total} rows)")
 
     if harmonisation_log:
         log_harmonisation_event(
@@ -803,7 +624,7 @@ def save_carrier_data_mapping_files_step(
 # ---------------------------------------------------------------------------
 def run_carrier_data_harmonisation(
     unmapped_carrier_data_path,
-    schema_dir="../schema/",
+    schema_dir=SCHEMA_DIR,
     linked_carrier_data_path=LCD_PATH,
     use_llm=True,
     test_limit=None,
@@ -909,7 +730,7 @@ def run_carrier_data_harmonisation(
 # ---------------------------------------------------------------------------
 def validate_linked_carrier_data(
     linked_carrier_data_path=LCD_PATH,
-    database_dir="../motel-db/",
+    database_dir=DB_DIR,
 ):
     """
     Check saved carrier data records for missing required fields and broken foreign keys.
