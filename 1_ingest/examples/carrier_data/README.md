@@ -62,12 +62,12 @@ import carrier_data_helpers as cdh
 
 result = cdh.run_carrier_data_harmonisation(
     "../motel-db/unmapped_carrier_data/unmapped_carrier_data.yaml",
-    use_llm=False,   # exact-match resolution, no Ollama required
+    use_llm=False,   # exact-match resolution, no API key required
 )
 print(cdh.validate_linked_carrier_data() or "no problems found")
 ```
 
-Set `use_llm=True` to reuse the same semantic matching Step 2 applies to technology records; that path needs a reachable Ollama service and the model named in `harmonise_helpers.MODEL`.
+Set `use_llm=True` to reuse the same semantic matching Step 2 applies to technology records; that path calls Claude by default and needs `ANTHROPIC_API_KEY` set, or a local Ollama model with `MOTEL_LLM_PROVIDER=ollama` (settings in `2_harmonise/llm_client.py`).
 
 ## Writing an Ingestion Script
 

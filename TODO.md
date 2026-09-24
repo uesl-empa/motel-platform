@@ -41,11 +41,27 @@ Two consequences worth keeping in mind:
 
 ## Nice to have — linked entity
 
-- [] make harmonisation runnable without an LLM. `carrier_data_helpers.py` already
-      supports `use_llm=False` (exact-match resolution, no Ollama); the technology
-      track still requires a local `qwen3:14b`. Stage 2 being both optional *and*
-      requiring a GPU is a hard sell for external contributors; exact-match
-      resolution would make it optional and cheap.
+- [] repair the scope tokens of the 186 published linked entities. Until
+      2026-09-24 `build_and_save_linked_entities` preferred the raw staged value
+      over the resolved token, so 441 scope values are strings such as `ECA`,
+      `2050`, or `Plant ready to operate` instead of vocabulary tokens such as
+      `GEO_ECA`. New records are written correctly; the existing ones need a
+      remap through the scope maps in `mapping/` (`geographic_scope_map.csv`,
+      `temporal_scope_map.csv`, `capacity_scope_map.csv`,
+      `system_boundary_map.csv`) or a re-harmonisation.
+      `hh.validate_linked_entities()` lists every case.
+- [] the same validator reports 187 source links to placeholder attributes
+      (`[unregistered: ratios_in]`, `[unregistered: ratios_out]`) and 76 linked
+      entities with no source. Decide whether balancing ratios become attributes
+      or the links are dropped, and trace the sourceless records.
+- [] restructure the DAC staging records before harmonising them.
+      `unmapped_entities_dac.yaml` holds 30 attributes, 28 of them unique and
+      mostly single-use narrative labels (`early_full_scale_2030_net_removal_cost`,
+      value `"around 400-1000 USD/tCO2 toward 2030"`). Harmonised as-is they
+      double the shared attribute vocabulary (28 -> 56). Model-ready staging would
+      reuse existing attributes (for example a net removal cost in USD/tCO2), put
+      the year in `time_index`, the range in `uncertainty.lower_value` /
+      `upper_value`, and the route in `technology_variant` or `scope.scenario`.
 - [] populate `motel-db/linked_carrier_data/` — currently empty, and 0 of 28
       attributes are marked `applies_to: carrier`. Needs prices and emission
       factors under a licence that permits redistribution. ecoinvent-derived
@@ -64,12 +80,11 @@ Two consequences worth keeping in mind:
       `process_type` already classify the asset at ingest time, and per-record
       metrics are split by `attribute_id` instead. Revisit only if a technology
       use case emerges that actually needs the same kind of record-level split.
-- [] the harmonisation process seem not working with non-empty datasets in motel-db
-      — this affects a carrier run against a populated database too
-- [] in source, the LLM cannot identify which one is journal paper
+- [] in source, the LLM cannot identify which one is journal paper. Re-check with
+      Claude: `source_type` is now constrained to the schema enum, where a journal
+      paper is `article`.
 - [] review generated mapping tables for duplicate records and rerun harmonisation
       where needed.
-- [] record the LLM model and harmonisation settings used for each production run.
 - [] decide whether carrier records need review coverage.
       `supplementary/review.csv` keys on `linked_entity_id`, so there is no path to
       review a `linked_carrier_data` record. Cheaper to decide before records exist.
@@ -80,9 +95,10 @@ Two consequences worth keeping in mind:
 - [] rename `linked_carrier_data_id` and `motel-db/linked_carrier_data/` to match
       the `linked_entity_carrier` schema name. Free now because nothing published
       or downstream depends on them; expensive later.
-- [] add a Step 2 smoke test to the validation workflow using `use_llm=False`,
-      plus `validate_linked_carrier_data()`. Also add `3_ontology_mapping` to the
-      `compileall` list.
+- [] add a carrier-track smoke test to the validation workflow
+      (`run_carrier_data_harmonisation(use_llm=False)` plus
+      `validate_linked_carrier_data()`). The technology track already runs
+      `harmonise.py --no-llm` there.
 - [] add a schema drift test asserting that the blocks shared by the technology
       and carrier schemas stay byte-identical (`sources`, `metadata`, `scope`,
       `version`, `values`, `assumptions`), with an explicit allow-list for the
@@ -133,6 +149,25 @@ blocks a staging-first release.
 - [] check the whole workflow again, after assessment_date was change to reference_year (link to ontology!?)
 
 ## DONE
+
+- [x] make Claude through the Anthropic API the default harmonisation LLM, keeping
+      the local Ollama model (`qwen3:14b`) as a selectable alternative
+      (`2_harmonise/llm_client.py`, `MOTEL_LLM_PROVIDER`). Claude replies use
+      structured outputs, so enum fields are constrained to the schema; with
+      either backend a match can only name an existing ID. The default path no
+      longer needs a local model or GPU.
+- [x] make harmonisation runnable without an LLM on the technology track too:
+      `use_llm=False` in the notebook, `--no-llm` in `harmonise.py`.
+- [x] make harmonisation work against a populated database, so a new source can
+      be added. The causes were: the attribute registry was deleted and rebuilt
+      from one staging file on every run (renumbering `ATTR_` IDs under existing
+      linked entities); the mapping tables and provenance map were overwritten
+      with only the current run's rows; new IDs came from the registry length;
+      and resolved scope tokens lost to raw staged values. Mapping tables are now
+      merged, known names reuse their ID without an LLM call, and
+      `2_harmonise/harmonise.py` runs the whole step with validation.
+- [x] record the LLM model and harmonisation settings used for each production run
+      (model, effort, and token usage are in the run log).
 
 - [x] more guidelines needed to be added to classify technology and process, now the process.csv only has name but no other info.
 - [x] add a carrier-bound track so prices and emission intensities are recorded
