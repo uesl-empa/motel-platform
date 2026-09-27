@@ -199,12 +199,13 @@
             process suitable for LLM-assisted acceleration.
           </p>
           <p>
-            In this repository, a local Ollama model
-            (<code>qwen3:14b</code>) is used during harmonisation to help
+            In this repository, Claude (run through Claude Code) is used
+            during harmonisation to help
             standardise entity names, semantically match staged records to
             existing registries when exact matches are missing, fill required
             schema fields for new entries, and create or normalise attribute and
-            scope vocabulary entries.
+            scope vocabulary entries. The Claude API or a local model served
+            by Ollama (for example <code>qwen3:14b</code>) can be used instead.
           </p>
         </section>
 
@@ -373,6 +374,21 @@ pip install -r requirements.txt</code></pre>
             <li><code>4_data_explore/4_data_exploration.ipynb</code></li>
           </ul>
           <p>
+            To add a new source to the populated database, stage its records in
+            <code>motel-db/unmapped_entity/</code> and harmonise them from the
+            terminal. The command validates the staging records, backs up the
+            derived files, appends the new linked entities without renumbering
+            existing IDs, and checks every reference it created:
+          </p>
+          <pre class="example-block"><code>.\.venv\Scripts\python.exe 2_harmonise\harmonise.py motel-db\unmapped_entity\unmapped_entities_&lt;source&gt;.yaml --limit 1</code></pre>
+          <p>
+            LLM-assisted steps use Claude through Claude Code under a Claude
+            subscription by default, so no API key is needed. Use
+            <code>--llm-provider anthropic</code> for the Claude API,
+            <code>--llm-provider ollama</code> for a local model, or
+            <code>--no-llm</code> for exact-match resolution only.
+          </p>
+          <p>
             Or run the ontology mapping step directly after harmonisation:
           </p>
           <pre class="example-block"><code>.\.venv\Scripts\python.exe 3_ontology_mapping\scripts\gen_ttl.py</code></pre>
@@ -398,6 +414,7 @@ pip install -r requirements.txt</code></pre>
               <h3>Current Status</h3>
               <ul>
                 <li>Data ingestion and harmonisation workflow implemented</li>
+                <li>New sources can be added to the populated database from the command line, with reference validation</li>
                 <li>Unmapped and linked data structures defined</li>
                 <li>Controlled vocabularies and mapping tables generated</li>
                 <li>Ontology-mapping workflow and graph-layer handoff documented</li>
@@ -410,6 +427,7 @@ pip install -r requirements.txt</code></pre>
                 <li>The public repo currently demonstrates a selected set of technologies</li>
                 <li>Ontology mapping, GraphDB, backend, and frontend are in the separate repository <a href="https://github.com/uesl-empa/motel-webapp" target="_blank" rel="noopener noreferrer">uesl-empa/motel-webapp</a></li>
                 <li>Model-ready YAML export is a downstream target, not a full feature of this repo alone</li>
+                <li>Some published linked entities still carry raw scope values instead of vocabulary tokens; a repair is planned</li>
                 <li>Additional validation and richer export formats remain future work</li>
               </ul>
             </div>

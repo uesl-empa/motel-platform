@@ -7,15 +7,17 @@ This folder is Step 2 of the MOTEL workflow. It takes staged `unmapped_entity` r
 ```text
 2_harmonise/
 |-- 2_data_harmonisation.ipynb   workflow-facing Step 2 notebook
+|-- harmonise.py                 CLI: add a new source to the populated database
 |-- harmonise_helpers.py         shared harmonisation logic (technology-bound track)
 |-- carrier_data_helpers.py      harmonisation logic for the carrier-bound track
+|-- llm_client.py                LLM client: Claude (default) or a local Ollama model
 `-- README.md                    folder guide
 ```
 
 ## Input / Process / Output
 
 - Input data:
-  - `../motel-db/unmapped_entity/unmapped_entities_refuel.yaml`
+  - `../motel-db/unmapped_entity/*.yaml` (for example `unmapped_entities_refuel.yaml`, `unmapped_entities_dac.yaml`)
   - `../motel-db/unmapped_carrier_data/` for carrier-bound records
 - Input schemas:
   - `../schema/`
@@ -23,6 +25,7 @@ This folder is Step 2 of the MOTEL workflow. It takes staged `unmapped_entity` r
   - `../1_ingest/examples/refuel/input/reFuel_TechDatabase_Clean_2026-06-03.xlsx`
 - Process notebook and script:
   - `2_data_harmonisation.ipynb` is the main Step 2 workflow
+  - `harmonise.py` runs the same steps from a terminal
   - `harmonise_helpers.py` contains the reusable harmonisation logic
   - `carrier_data_helpers.py` contains the carrier-bound counterpart
 - Canonical outputs written by Step 2:
@@ -31,6 +34,140 @@ This folder is Step 2 of the MOTEL workflow. It takes staged `unmapped_entity` r
   - `../motel-db/mapping/`
   - `../motel-db/linked_entity/linked_entity.yaml`
   - `../motel-db/linked_carrier_data/linked_carrier_data.yaml`
+
+## Adding a New Source
+
+The database grows one source at a time. Stage the new records in
+`motel-db/unmapped_entity/` (Step 1), then from the repository root:
+
+```bash
+python 2_harmonise/harmonise.py motel-db/unmapped_entity/unmapped_entities_dac.yaml --limit 1
+python 2_harmonise/harmonise.py motel-db/unmapped_entity/unmapped_entities_dac.yaml
+```
+
+The first command harmonises one pending record so its decisions can be checked
+in the audit output; the second picks up the remaining pending records. Passing
+the directory instead of a file harmonises every file that still has pending
+records.
+
+Each run:
+
+1. validates the staging records with `tools/validate_unmapped.py` and writes
+   nothing if any record is invalid,
+2. backs up the derived files to `motel-db/_backup/` (skip with `--no-backup`),
+3. resolves every technology, process, source, carrier, attribute, and scope
+   against the existing registries and vocabularies, creating only what is new,
+4. appends the linked entities, marks the staging records `mapped`, and merges
+   the mapping tables,
+5. checks that every reference in the new linked entities resolves
+   (`validate_linked_entities`), exiting with status 1 if one does not.
+
+Running on a populated database is safe by design:
+
+- IDs are never renumbered. New registry rows, attributes, and linked entities
+  continue the existing sequences, and the attribute registry is appended to
+  rather than rebuilt.
+- The mapping tables in `motel-db/mapping/` are merged, not overwritten, so they
+  keep the provenance of every earlier run. `unmapped_to_linked.csv` records the
+  staging file each linked entity came from.
+- A name that an earlier run already resolved is looked up in the mapping tables
+  and reuses the recorded ID without an LLM call (status `known`), so repeated
+  names across sources resolve consistently and cheaply.
+
+Resolution order for each name is: known alias, exact name match, LLM
+semantic match, then creation of a new row. `--no-llm` stops after the exact
+match and creates new rows as named in the staging data; it needs no API key or
+local model and is what the `Validate Repository` workflow runs as a smoke test.
+
+## LLM Configuration
+
+LLM-assisted steps run on Claude by default, through Claude Code under your
+Claude subscription: each question is one short headless Claude Code run
+(`claude -p`), so there is no API key and no per-token bill, and usage counts
+against the subscription's limits. Two alternatives stay available: the Claude
+API, and a local model served by Ollama (for example when data must not leave
+the machine). `llm_client.py` holds all three backends; the helpers call its
+single `ask_json()` function and never see which one answered.
+
+Choose the backend per run:
+
+| Where | Claude via subscription (default) | Claude API | Local model |
+| --- | --- | --- | --- |
+| Environment | `MOTEL_LLM_PROVIDER=claude_code` | `MOTEL_LLM_PROVIDER=anthropic` | `MOTEL_LLM_PROVIDER=ollama` |
+| Notebook run controls | `llm_provider = "claude_code"` | `llm_provider = "anthropic"` | `llm_provider = "ollama"` |
+| CLI | `harmonise.py <file>` | `--llm-provider anthropic` | `--llm-provider ollama` |
+| Needs | Claude Code installed and signed in | `ANTHROPIC_API_KEY` | a running Ollama server |
+
+| Environment variable | Default | Purpose |
+| --- | --- | --- |
+| `MOTEL_LLM_PROVIDER` | `claude_code` | `claude_code`, `anthropic`, or `ollama` |
+| `MOTEL_LLM_MODEL` | `claude-opus-5` / `qwen3:14b` | model name; the default depends on the provider (CLI: `--model`) |
+| `MOTEL_CLAUDE_EFFORT` | `high` | Claude only: `low` to `max`; empty for models without effort support such as `claude-haiku-4-5` |
+| `MOTEL_CLAUDE_CLI` | found automatically | path to the `claude` executable; by default the one on PATH, else the newest one bundled with the VS Code extension |
+| `CLAUDE_CODE_OAUTH_TOKEN` | — | subscription token for unattended runs (Task Scheduler, CI), created once with `claude setup-token` |
+| `ANTHROPIC_API_KEY` | — | Claude API credential, used only by `anthropic` |
+| `OLLAMA_HOST` | `http://localhost:11434` | Ollama server address |
+
+The `claude_code` backend removes `ANTHROPIC_API_KEY` from the environment of
+the Claude Code runs it starts, so they always use the subscription even when a
+key is set. Each run starts outside the repository, with all Claude Code tools
+disabled and a JSON schema for the reply. A question takes roughly 5 to 15
+seconds; one DAC record (34 questions) took about 7 minutes at effort `high`.
+Lower `MOTEL_CLAUDE_EFFORT` or use `--model claude-sonnet-5` for faster runs that
+use less of the subscription.
+
+For the local model, start the server and pull the model once:
+
+```bash
+ollama serve
+ollama pull qwen3:14b
+```
+
+How the calls are made:
+
+- Every call sends a JSON schema for the reply. Claude enforces it (structured
+  outputs through `claude -p --json-schema`, or `output_config.format` on the
+  API), so the reply always parses and enum fields such as `source_type` or
+  `carrier_category` can only take values the MOTEL schema allows. Ollama
+  receives the same schema as its `format`; its reply is parsed defensively
+  (thinking blocks and code fences are stripped) and retried once if it is not
+  valid JSON.
+- A proposed entity match is accepted only if its ID exists in the registry,
+  whichever backend proposed it.
+- Name patterns and length limits are checked after the reply, and a failing
+  name is sent back once with the reason.
+- When an attribute or scope value is named, the existing vocabulary is shown
+  alongside it, so a metric or scope that already exists (for example
+  `GEO_GLO`, or `Capital Expenditure Per Capacity`) is reused instead of
+  duplicated.
+- Claude API only: the registry listing used for matching is sent as a cached
+  system block, so consecutive matches against an unchanged registry are billed
+  at the cache-read rate, and server-side refusal fallbacks are enabled
+  (`fallbacks: "default"`).
+- The run log records the provider, model, and token usage of the run, and the
+  notebook and CLI print a usage summary at the end.
+
+A run makes a few calls per new name (standardise the name, fill fields, match)
+and none for known names. Harmonising the four DAC records against the current
+database takes on the order of a hundred calls.
+
+## Running It on a Schedule
+
+Harmonisation only has work to do when new staging records arrive, so a
+schedule is optional. Three ways to run it without an API key:
+
+- **Windows Task Scheduler (or cron):** run
+  `python 2_harmonise/harmonise.py motel-db/unmapped_entity` from the repository,
+  with `CLAUDE_CODE_OAUTH_TOKEN` set for the task. Files with nothing pending
+  are skipped, so a nightly run only acts on new records.
+- **Claude Code routines** (`/schedule` in Claude Code): a routine runs in
+  Anthropic's cloud on a schedule, clones the repository, can run the script,
+  and pushes a `claude/`-prefixed branch with a pull request for review. It
+  counts against the subscription, with a minimum interval of one hour and a
+  daily run cap; organisation owners can disable routines.
+- **Claude Code GitHub Action**: authenticates with a `CLAUDE_CODE_OAUTH_TOKEN`
+  repository secret instead of an API key, so a workflow can harmonise on a
+  schedule or when staging files change.
 
 ## Carrier-Bound Track
 
