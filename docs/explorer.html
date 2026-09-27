@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MOTEL Data Explorer</title>
+    <meta
+      name="description"
+      content="Browse the MOTEL technology database: technologies, parameters by year, sources, and controlled vocabularies."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="explorer.css" />
+  </head>
+  <body>
+    <div class="docs-shell">
+      <aside class="sidebar" aria-label="Explorer navigation">
+        <div class="sidebar-inner">
+          <a class="brand" href="#/">
+            <span class="brand-title">MOTEL Data</span>
+            <span class="brand-subtitle">Explorer</span>
+          </a>
+
+          <nav class="toc" id="explorer-nav">
+            <a href="#/" data-view="technologies">Technologies</a>
+            <a href="#/compare" data-view="compare">Compare a parameter</a>
+            <a href="#/sources" data-view="sources">Sources</a>
+            <a href="#/vocabulary" data-view="vocabulary">Vocabulary</a>
+          </nav>
+
+          <div class="sidebar-actions">
+            <a href="index.html">Documentation</a>
+            <a href="data/motel-values.csv" download>Download values (CSV)</a>
+            <a href="data/motel-data.json" download>Download database (JSON)</a>
+            <a
+              href="https://github.com/uesl-empa/motel-platform/tree/main/motel-db"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Source files on GitHub</a
+            >
+          </div>
+        </div>
+      </aside>
+
+      <main class="content" id="app" tabindex="-1">
+        <p class="subtitle">Loading the MOTEL database…</p>
+        <noscript>
+          <p>The explorer needs JavaScript. The data is also available as
+          <a href="data/motel-values.csv">a CSV table</a>.</p>
+        </noscript>
+      </main>
+    </div>
+
+    <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+
+    <script src="data/motel-data.js"></script>
+    <script src="explorer.js"></script>
+  </body>
+</html>
