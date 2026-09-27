@@ -2,8 +2,10 @@
 # Compatible with Python 3.13 on PyPI as of 2026-09-24.
 #
 # Note on harmonisation (`2_harmonise/`):
-# - `anthropic` is the Claude API client, the default LLM backend. It needs
-#   ANTHROPIC_API_KEY at run time; no local model or GPU is required.
+# - The default LLM backend runs Claude through the Claude Code CLI under a
+#   Claude subscription; it needs Claude Code installed, not a Python package.
+# - `anthropic` is the client for the optional Claude API backend
+#   (MOTEL_LLM_PROVIDER=anthropic). It needs ANTHROPIC_API_KEY at run time.
 # - `ollama` is the client for the optional local backend
 #   (MOTEL_LLM_PROVIDER=ollama). It needs a running Ollama server and model
 #   (for example `qwen3:14b`), which standard Renku sessions usually do not provide.

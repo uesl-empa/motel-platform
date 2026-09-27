@@ -21,14 +21,16 @@ For each run the script:
 1. validates the staging records against ``schema/unmapped_entity_technology.yaml``
    and stops before touching the database if any record is invalid,
 2. backs up the derived database files to ``motel-db/_backup/``,
-3. harmonises the pending records (Claude by default, a local Ollama model with
+3. harmonises the pending records (Claude through Claude Code by default, the
+   Claude API with ``--llm-provider anthropic``, a local Ollama model with
    ``--llm-provider ollama``, exact match with ``--no-llm``), appends linked
    entities, and merges the mapping tables,
 4. checks the foreign keys of the linked entities it created.
 
-Claude needs ``ANTHROPIC_API_KEY`` (or another credential the Anthropic SDK
-resolves); the local model needs a running Ollama server. See ``llm_client.py``
-for the provider and model settings.
+The default backend runs ``claude -p`` under your Claude Code login, so it uses
+your Claude subscription and needs no API key. The Claude API needs
+``ANTHROPIC_API_KEY``; the local model needs a running Ollama server. See
+``llm_client.py`` for the provider and model settings.
 
 Exit status is 1 when staging validation fails or a created record has a
 broken reference, 0 otherwise.
@@ -82,7 +84,8 @@ def main(argv=None):
     )
     parser.add_argument(
         "--llm-provider", choices=hh.llm_client.PROVIDERS, default=None,
-        help="LLM backend: anthropic (Claude, the default) or ollama (local model); "
+        help="LLM backend: claude_code (Claude via your subscription, the default), "
+             "anthropic (Claude API, needs ANTHROPIC_API_KEY), or ollama (local model); "
              "overrides MOTEL_LLM_PROVIDER",
     )
     parser.add_argument(

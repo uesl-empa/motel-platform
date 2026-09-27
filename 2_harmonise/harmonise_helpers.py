@@ -965,8 +965,15 @@ def _name_matches_schema_guideline(entity_type, proposed_name):
     return True, ""
 
 
-def llm_name_from_schema(entity_type, candidate, schema, extra_context=""):
-    """Ask the LLM to name an entity using its schema guideline."""
+def llm_name_from_schema(entity_type, candidate, schema, extra_context="", reference=""):
+    """
+    Ask the LLM to name an entity using its schema guideline.
+
+    Args:
+        reference (str): A listing of the existing vocabulary, so the LLM can
+            return an existing name when the candidate means the same thing.
+            It is sent as stable context (cached by the Claude API backend).
+    """
     if entity_type == "attribute":
         name_field = "attribute_name"
     elif entity_type in SCOPE_CONFIG:
@@ -1009,6 +1016,7 @@ def llm_name_from_schema(entity_type, candidate, schema, extra_context=""):
             ),
             prompt=prompt + feedback,
             schema=reply_schema,
+            context=reference,
         )
         proposed_name = str(result.get(name_field, "")).strip()
         try:
@@ -1315,6 +1323,7 @@ def ensure_attr(
         candidate,
         attr_schema or {},
         extra_context=attr_context,
+        reference=vocabulary_reference("attribute"),
     )
     for existing_name, existing_id in registry.items():
         if _norm(existing_name) == _norm(canonical_name):
@@ -1387,6 +1396,47 @@ def _ensure_attr_exact(name, registry, notes="", applies_to="carrier", data_form
     return new_id, canonical_name, "created"
 
 
+def vocabulary_reference(vocabulary, max_description=160):
+    """
+    List an existing controlled vocabulary for a naming prompt.
+
+    Attributes and scope values have no separate matching step, so the naming
+    call is where reuse happens: shown the existing entries, the LLM can return
+    an existing name, which then resolves as "existing" instead of creating a
+    near-duplicate such as GEO_GLOBAL next to GEO_GLO.
+
+    Args:
+        vocabulary (str): "attribute" or a key of SCOPE_CONFIG.
+    """
+    if vocabulary == "attribute":
+        path, name_field = ATTR_PATH, "attribute_name"
+        detail_fields = ("unit", "attribute_description")
+        label = "attribute_name"
+    else:
+        path, name_field = SCOPE_CONFIG[vocabulary], vocabulary
+        detail_fields = (f"{vocabulary}_description",)
+        label = f"{vocabulary} token"
+
+    lines = []
+    for row in load_mapping_rows(path):
+        name = str(row.get(name_field) or "").strip()
+        if not name:
+            continue
+        details = " | ".join(
+            str(row.get(field) or "").strip()[:max_description]
+            for field in detail_fields
+            if str(row.get(field) or "").strip()
+        )
+        lines.append(f"- {name}" + (f": {details}" if details else ""))
+    if not lines:
+        return ""
+    return (
+        f"Existing {vocabulary} vocabulary. If the candidate means the same as one "
+        f"of these entries, return that {label} exactly as written; only propose a "
+        "new name for something genuinely different.\n" + "\n".join(lines)
+    )
+
+
 def load_scope_tokens(scope_type):
     """Return the set of tokens already in one scope vocabulary CSV."""
     path = Path(SCOPE_CONFIG[scope_type])
@@ -1450,6 +1500,7 @@ def ensure_scope(
         candidate,
         scope_schema or {},
         extra_context="\n".join(part for part in [raw_value, extra_context] if part),
+        reference=vocabulary_reference(scope_type),
     )
     if token in load_scope_tokens(scope_type):
         return token, "existing"
@@ -1766,7 +1817,9 @@ def resolve_entities_step(candidates, all_schemas, harmonisation_log=None, use_l
                         if row.get(ENTITY_CONFIG["technology"]["id_field"]) == rid
                     )
                     main_process_id = resolved_ids["technology_process"][name]
-                    if main_process_id and technology_row.get("main_process") != main_process_id:
+                    # Only fill a missing main_process: a technology matched from
+                    # a new source must not lose the process its own rows set.
+                    if main_process_id and not _has_value(technology_row.get("main_process")):
                         technology_row["main_process"] = main_process_id
                         save_registry("technology", registries["technology"])
             resolved_name = resolved_names[entity_type][name]

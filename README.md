@@ -35,7 +35,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Main notebook: `2_harmonise/2_data_harmonisation.ipynb`
    - CLI entrypoint: `2_harmonise/harmonise.py` (adds a new source to the populated database)
    - Helper module: `2_harmonise/harmonise_helpers.py`
-   - LLM client (Claude by default, local Ollama optional): `2_harmonise/llm_client.py`
+   - LLM client (Claude via Claude Code by default; Claude API or local Ollama optional): `2_harmonise/llm_client.py`
    - Carrier data helper module: `2_harmonise/carrier_data_helpers.py`
    - Outputs: `motel-db/secondary/`, `motel-db/controlled_vocabulary/`, `motel-db/mapping/`, `motel-db/linked_entity/`, and `motel-db/linked_carrier_data/`
 
@@ -148,13 +148,14 @@ pip install -r requirements.txt
 
 Open the notebooks in Jupyter, VS Code, or another notebook environment.
 
-LLM-assisted harmonisation uses Claude through the Anthropic API by default, so no local model or GPU is needed. Set an API key before starting Jupyter or running `harmonise.py`:
+LLM-assisted harmonisation uses Claude by default, run through Claude Code under your Claude subscription, so it needs neither an API key nor a local model or GPU. Claude Code only has to be installed and signed in; the copy bundled with the VS Code extension is found automatically.
 
-```powershell
-$env:ANTHROPIC_API_KEY = "sk-ant-..."
-```
+Two alternatives remain available (see `2_harmonise/README.md` for all settings):
 
-The model defaults to `claude-opus-5`. A local model served by Ollama (default `qwen3:14b`) remains available: set `MOTEL_LLM_PROVIDER=ollama`, `llm_provider = "ollama"` in the notebook, or `--llm-provider ollama` on the CLI. With `use_llm=False` or `--no-llm`, harmonisation resolves by exact match and needs neither. See `2_harmonise/README.md` for all settings.
+- the Claude API: `--llm-provider anthropic` (or `MOTEL_LLM_PROVIDER=anthropic`), which needs `ANTHROPIC_API_KEY` and is billed per token separately from the subscription;
+- a local model served by Ollama (default `qwen3:14b`): `--llm-provider ollama`, or `llm_provider = "ollama"` in the notebook.
+
+With `use_llm=False` or `--no-llm`, harmonisation resolves by exact match and needs no model at all.
 
 To generate the ontology-ready TTL from the harmonised MOTEL database:
 
