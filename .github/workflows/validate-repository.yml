@@ -27,6 +27,11 @@ jobs:
         run: |
           python tools/validate_unmapped.py             motel-db/unmapped_entity             motel-db/unmapped_carrier_data             1_ingest/examples
 
+      - name: Smoke-test Step 2 harmonisation without an LLM
+        # Harmonises any pending staging records into this throwaway checkout
+        # and fails if a created linked entity has a broken reference.
+        run: python 2_harmonise/harmonise.py motel-db/unmapped_entity --no-llm --no-backup
+
       - name: Validate YAML and CSV files
         run: |
           python - <<'PY'
