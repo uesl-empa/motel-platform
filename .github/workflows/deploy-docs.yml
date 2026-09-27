@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - docs/**
+      - motel-db/**
       - .github/workflows/deploy-docs.yml
   workflow_dispatch:
 
@@ -26,6 +27,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build the data explorer's data from motel-db
+        run: |
+          python -m pip install pyyaml
+          python docs/build_data.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
