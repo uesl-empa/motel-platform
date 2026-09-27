@@ -81,28 +81,40 @@ local model and is what the `Validate Repository` workflow runs as a smoke test.
 
 ## LLM Configuration
 
-LLM-assisted steps run on Claude through the Anthropic API by default. A local
-model served by Ollama remains available as an alternative, for example when
-data must not leave the machine or no API key is at hand. `llm_client.py` holds
-both backends; the helpers call its single `ask_json()` function and never see
-which one answered.
+LLM-assisted steps run on Claude by default, through Claude Code under your
+Claude subscription: each question is one short headless Claude Code run
+(`claude -p`), so there is no API key and no per-token bill, and usage counts
+against the subscription's limits. Two alternatives stay available: the Claude
+API, and a local model served by Ollama (for example when data must not leave
+the machine). `llm_client.py` holds all three backends; the helpers call its
+single `ask_json()` function and never see which one answered.
 
 Choose the backend per run:
 
-| Where | Claude (default) | Local model |
-| --- | --- | --- |
-| Environment | `MOTEL_LLM_PROVIDER=anthropic` | `MOTEL_LLM_PROVIDER=ollama` |
-| Notebook run controls | `llm_provider = "anthropic"` | `llm_provider = "ollama"` |
-| CLI | `harmonise.py <file>` | `harmonise.py <file> --llm-provider ollama` |
-| Python | `llm_client.configure(provider="anthropic")` | `llm_client.configure(provider="ollama")` |
+| Where | Claude via subscription (default) | Claude API | Local model |
+| --- | --- | --- | --- |
+| Environment | `MOTEL_LLM_PROVIDER=claude_code` | `MOTEL_LLM_PROVIDER=anthropic` | `MOTEL_LLM_PROVIDER=ollama` |
+| Notebook run controls | `llm_provider = "claude_code"` | `llm_provider = "anthropic"` | `llm_provider = "ollama"` |
+| CLI | `harmonise.py <file>` | `--llm-provider anthropic` | `--llm-provider ollama` |
+| Needs | Claude Code installed and signed in | `ANTHROPIC_API_KEY` | a running Ollama server |
 
 | Environment variable | Default | Purpose |
 | --- | --- | --- |
-| `MOTEL_LLM_PROVIDER` | `anthropic` | `anthropic` or `ollama` |
+| `MOTEL_LLM_PROVIDER` | `claude_code` | `claude_code`, `anthropic`, or `ollama` |
 | `MOTEL_LLM_MODEL` | `claude-opus-5` / `qwen3:14b` | model name; the default depends on the provider (CLI: `--model`) |
 | `MOTEL_CLAUDE_EFFORT` | `high` | Claude only: `low` to `max`; empty for models without effort support such as `claude-haiku-4-5` |
-| `ANTHROPIC_API_KEY` | — | Claude credential (any credential the Anthropic SDK resolves also works) |
+| `MOTEL_CLAUDE_CLI` | found automatically | path to the `claude` executable; by default the one on PATH, else the newest one bundled with the VS Code extension |
+| `CLAUDE_CODE_OAUTH_TOKEN` | — | subscription token for unattended runs (Task Scheduler, CI), created once with `claude setup-token` |
+| `ANTHROPIC_API_KEY` | — | Claude API credential, used only by `anthropic` |
 | `OLLAMA_HOST` | `http://localhost:11434` | Ollama server address |
+
+The `claude_code` backend removes `ANTHROPIC_API_KEY` from the environment of
+the Claude Code runs it starts, so they always use the subscription even when a
+key is set. Each run starts outside the repository, with all Claude Code tools
+disabled and a JSON schema for the reply. A question takes roughly 5 to 15
+seconds; one DAC record (34 questions) took about 7 minutes at effort `high`.
+Lower `MOTEL_CLAUDE_EFFORT` or use `--model claude-sonnet-5` for faster runs that
+use less of the subscription.
 
 For the local model, start the server and pull the model once:
 
@@ -113,17 +125,22 @@ ollama pull qwen3:14b
 
 How the calls are made:
 
-- Every call sends a JSON schema for the reply. Claude enforces it through
-  structured outputs, so the reply always parses and enum fields such as
-  `source_type` or `carrier_category` can only take values the MOTEL schema
-  allows. Ollama receives the same schema as its `format`; its reply is parsed
-  defensively (thinking blocks and code fences are stripped) and retried once
-  if it is not valid JSON.
+- Every call sends a JSON schema for the reply. Claude enforces it (structured
+  outputs through `claude -p --json-schema`, or `output_config.format` on the
+  API), so the reply always parses and enum fields such as `source_type` or
+  `carrier_category` can only take values the MOTEL schema allows. Ollama
+  receives the same schema as its `format`; its reply is parsed defensively
+  (thinking blocks and code fences are stripped) and retried once if it is not
+  valid JSON.
 - A proposed entity match is accepted only if its ID exists in the registry,
   whichever backend proposed it.
 - Name patterns and length limits are checked after the reply, and a failing
   name is sent back once with the reason.
-- Claude only: the registry listing used for matching is sent as a cached
+- When an attribute or scope value is named, the existing vocabulary is shown
+  alongside it, so a metric or scope that already exists (for example
+  `GEO_GLO`, or `Capital Expenditure Per Capacity`) is reused instead of
+  duplicated.
+- Claude API only: the registry listing used for matching is sent as a cached
   system block, so consecutive matches against an unchanged registry are billed
   at the cache-read rate, and server-side refusal fallbacks are enabled
   (`fallbacks: "default"`).
@@ -133,6 +150,24 @@ How the calls are made:
 A run makes a few calls per new name (standardise the name, fill fields, match)
 and none for known names. Harmonising the four DAC records against the current
 database takes on the order of a hundred calls.
+
+## Running It on a Schedule
+
+Harmonisation only has work to do when new staging records arrive, so a
+schedule is optional. Three ways to run it without an API key:
+
+- **Windows Task Scheduler (or cron):** run
+  `python 2_harmonise/harmonise.py motel-db/unmapped_entity` from the repository,
+  with `CLAUDE_CODE_OAUTH_TOKEN` set for the task. Files with nothing pending
+  are skipped, so a nightly run only acts on new records.
+- **Claude Code routines** (`/schedule` in Claude Code): a routine runs in
+  Anthropic's cloud on a schedule, clones the repository, can run the script,
+  and pushes a `claude/`-prefixed branch with a pull request for review. It
+  counts against the subscription, with a minimum interval of one hour and a
+  daily run cap; organisation owners can disable routines.
+- **Claude Code GitHub Action**: authenticates with a `CLAUDE_CODE_OAUTH_TOKEN`
+  repository secret instead of an API key, so a workflow can harmonise on a
+  schedule or when staging files change.
 
 ## Carrier-Bound Track
 

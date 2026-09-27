@@ -150,8 +150,9 @@ blocks a staging-first release.
 
 ## DONE
 
-- [x] make Claude through the Anthropic API the default harmonisation LLM, keeping
-      the local Ollama model (`qwen3:14b`) as a selectable alternative
+- [x] make Claude the default harmonisation LLM, run through Claude Code under
+      the Claude subscription (`claude -p`, no API key), with the Claude API and
+      the local Ollama model (`qwen3:14b`) as selectable alternatives
       (`2_harmonise/llm_client.py`, `MOTEL_LLM_PROVIDER`). Claude replies use
       structured outputs, so enum fields are constrained to the schema; with
       either backend a match can only name an existing ID. The default path no

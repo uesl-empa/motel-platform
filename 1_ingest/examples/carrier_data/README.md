@@ -67,7 +67,7 @@ result = cdh.run_carrier_data_harmonisation(
 print(cdh.validate_linked_carrier_data() or "no problems found")
 ```
 
-Set `use_llm=True` to reuse the same semantic matching Step 2 applies to technology records; that path calls Claude by default and needs `ANTHROPIC_API_KEY` set, or a local Ollama model with `MOTEL_LLM_PROVIDER=ollama` (settings in `2_harmonise/llm_client.py`).
+Set `use_llm=True` to reuse the same semantic matching Step 2 applies to technology records; that path calls Claude through Claude Code under your subscription by default, or the Claude API or a local Ollama model when selected (settings in `2_harmonise/llm_client.py`).
 
 ## Writing an Ingestion Script
 
