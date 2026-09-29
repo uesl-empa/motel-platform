@@ -1,4 +1,4 @@
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_CCGT_El
   technology:
     technology_description: null
@@ -165,7 +165,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00001
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_OCGT_El
   technology:
     technology_description: null
@@ -332,7 +332,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00002
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_CCGT_El
   technology:
     technology_description: Methane-fueled CCGT with carbon capture and storage (CCS)
@@ -524,7 +524,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00003
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_CHP_ElTh
   technology:
     technology_description: Combined heat and power (CHP) generation using methane
@@ -711,7 +711,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00004
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_FuelCell_El
   technology:
     technology_description: Methane-fueled fuel cell electricity generation at El47
@@ -888,7 +888,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00005
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_FuelCell_ElBdg
   technology:
     technology_description: Methane-fueled fuel cell electricity generation in buildings
@@ -1067,7 +1067,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00006
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_OCGT_El
   technology:
     technology_description: Methane-fueled open cycle gas turbine (OCGT) electricity
@@ -1258,7 +1258,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00007
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Geothermal_CHP_ElTh
   technology:
     technology_description: Geothermal-based CHP generation (2040).
@@ -1435,7 +1435,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00008
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CCGT_El
   technology:
     technology_description: Hydrogen-fueled combined cycle gas turbine (CCGT) electricity
@@ -1632,7 +1632,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00009
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_FuelCell_El
   technology:
     technology_description: Electricity generation via fuel cells at node El47 (2040).
@@ -1816,7 +1816,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00010
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_FuelCell_El
   technology:
     technology_description: Electricity generation via fuel cells at node El47 (2050).
@@ -2000,7 +2000,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00011
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: Electricity generation via fuel cells in buildings (2030).
@@ -2181,7 +2181,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00012
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: Electricity generation via fuel cells in buildings (2050).
@@ -2362,7 +2362,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00013
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_OCGT_El
   technology:
     technology_description: Hydrogen-fueled open cycle gas turbine (OCGT) electricity
@@ -2553,7 +2553,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00014
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_PumpedHydro_Pump
   technology:
     technology_description: Pumped hydroelectric energy storage (pump mode).
@@ -2733,7 +2733,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00015
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_PumpedTurbine_El
   technology:
     technology_description: Pumped hydroelectric power generation (turbine mode).
@@ -2913,7 +2913,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00016
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_RunOfRiver_El
   technology:
     technology_description: Run-of-river hydroelectric power plant.
@@ -3093,7 +3093,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00017
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_Reservoir_El
   technology:
     technology_description: Hydroelectric power generation from storage reservoirs.
@@ -3273,7 +3273,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00018
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Incineration_El
   technology:
     technology_description: Electricity generation from municipal solid waste (MSW)
@@ -3454,7 +3454,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00019
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024
@@ -3617,7 +3617,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00020
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
@@ -3781,7 +3781,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00021
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
@@ -3945,7 +3945,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00022
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVAlpine_El
   technology:
     technology_description: gound-mounted Alpine PV, from ETHZ study in 2024, project
@@ -4109,7 +4109,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00023
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2025
@@ -4287,7 +4287,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00024
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2030
@@ -4465,7 +4465,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00025
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2040
@@ -4643,7 +4643,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00026
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVRooftop_El
   technology:
     technology_description: rooftop PV, small scale, in 2050
@@ -4821,7 +4821,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00027
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: U235_Nuclear_El
   technology:
     technology_description: Electricity generation from nuclear power (U235) at node
@@ -5005,7 +5005,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00028
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2020).
@@ -5180,7 +5180,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00029
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2030).
@@ -5355,7 +5355,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00030
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2040).
@@ -5530,7 +5530,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00031
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wind_Turbine_El
   technology:
     technology_description: Generic wind turbine electricity generation (2050).
@@ -5705,7 +5705,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00032
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_CHP_ElTh
   technology:
     technology_description: Combined heat and power (CHP) generation using wood.
@@ -5885,7 +5885,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00033
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Boiler_ThBdg
   technology:
     technology_description: Methane-fueled heating system for buildings.
@@ -6060,7 +6060,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00034
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Boiler_ThInd
   technology:
     technology_description: Methane-fueled heating system for thermal power plants.
@@ -6234,7 +6234,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00035
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Heater_ThBdg
   technology:
     technology_description: Electric heating system for buildings.
@@ -6415,7 +6415,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00036
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Heater_ThInd
   technology:
     technology_description: Electric heating system for thermal power plants.
@@ -6590,7 +6590,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00037
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
@@ -6764,7 +6764,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00038
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
@@ -6944,7 +6944,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00039
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
@@ -7124,7 +7124,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00040
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_AirCon_ThSc
   technology:
     technology_description: Electric heating system for buildings with thermal storage.
@@ -7298,7 +7298,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00041
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Boiler_ThInd
   technology:
     technology_description: Hydrogen-fueled heating system for thermal power plants
@@ -7473,7 +7473,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00042
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_HeatPump_ThBdg
   technology:
     technology_description: Generic heat pump for residential heating, fixed COP 4
@@ -7648,7 +7648,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00043
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_HeatPump_ThInd
   technology:
     technology_description: Low-temperature heat upgrade for district heating (2030).
@@ -7828,7 +7828,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00044
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Oil_Boiler_ThBdg
   technology:
     technology_description: Hydrocarbon-fueled heating system for buildings.
@@ -8006,7 +8006,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00045
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Oil_Boiler_ThInd
   technology:
     technology_description: Hydrocarbon-fueled heating system for thermal power plants.
@@ -8181,7 +8181,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00046
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Boiler_ThBdg
   technology:
     technology_description: Wood-fueled heating system for buildings.
@@ -8356,7 +8356,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00047
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Boiler_ThInd
   technology:
     technology_description: Wood-fueled heating system for thermal power plants.
@@ -8530,7 +8530,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00048
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_HaberBosch_NH3
   technology:
     technology_description: Ammonia synthesis (Haber Bosch process)
@@ -8712,7 +8712,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00049
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
@@ -8889,7 +8889,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00050
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
@@ -9066,7 +9066,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00051
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: Wet biomass anaerobic digestion with gas upgrading
@@ -9243,7 +9243,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00052
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
@@ -9434,7 +9434,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00053
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
@@ -9625,7 +9625,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00054
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
@@ -9816,7 +9816,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00055
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Sabatier_CH4
   technology:
     technology_description: Methane synthesis from H2 and CO2 via the thermo catalytic
@@ -10007,7 +10007,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00056
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CookingOil_HEFA_C12
   technology:
     technology_description: SAF Production via esterification of used cooking oil
@@ -10186,7 +10186,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00057
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -10370,7 +10370,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00058
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -10554,7 +10554,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00059
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -10745,7 +10745,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00060
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -10929,7 +10929,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00061
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: Methanol synthesis from CO2 hydrogenation
@@ -11113,7 +11113,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00062
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_RWGS_CO
   technology:
     technology_description: 'Reverse water gas shift reaction plant. Emerging technology,
@@ -11311,7 +11311,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00063
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Electrolysis_H2
   technology:
     technology_description: 'Electrolysis 2030, Alkaline technology (10 MW) from Danish
@@ -11488,7 +11488,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00064
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Electrolysis_H2
   technology:
     technology_description: Electrolysis 2040, Alkaline technology is the benchmark
@@ -11663,7 +11663,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00065
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Electrolysis_H2
   technology:
     technology_description: Electrolysis 2050, Alkaline technology is the benchmark
@@ -11838,7 +11838,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00066
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
@@ -12039,7 +12039,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00067
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
@@ -12240,7 +12240,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00068
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
@@ -12441,7 +12441,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00069
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C12
   technology:
     technology_description: Hydrocarbon (C12) synthesis via Fischer-Tropsch process.
@@ -12642,7 +12642,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00070
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
@@ -12843,7 +12843,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00071
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
@@ -13044,7 +13044,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00072
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
@@ -13245,7 +13245,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00073
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C8
   technology:
     technology_description: Hydrocarbon (C8) synthesis via Fischer-Tropsch process.
@@ -13446,7 +13446,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00074
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
@@ -13644,7 +13644,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00075
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
@@ -13842,7 +13842,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00076
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
@@ -14040,7 +14040,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00077
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: 'Methane synthesis from Syngas via the thermo catalytic
@@ -14238,7 +14238,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00078
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
@@ -14425,7 +14425,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00079
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
@@ -14612,7 +14612,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00080
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: Methanol synthesis from Syngas via the thermo catalytic
@@ -14799,7 +14799,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00081
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Gasification_Syngas
   technology:
     technology_description: Municipal solid waste gasification to syngas
@@ -14950,7 +14950,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00082
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Gasification_H2
   technology:
     technology_description: Municipal solid waste gasification to hydrogen
@@ -15101,7 +15101,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00083
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Gasification_H2
   technology:
     technology_description: Woody biomass gasification to hydrogen
@@ -15263,7 +15263,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00084
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Gasification_Syngas
   technology:
     technology_description: Woody biomass gasification to syngas
@@ -15419,7 +15419,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00085
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MeOH_MtJ_C12
   technology:
     technology_description: Methanol-to-Jet fuel via MtO and oligomerisation. Near-term
@@ -15530,7 +15530,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00086
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MeOH_MtJ_C12
   technology:
     technology_description: Methanol-to-Jet fuel via MtO and oligomerisation. Long-term
@@ -15641,7 +15641,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00087
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: High-temperature co-electrolysis of CO₂ and H₂O to syngas
@@ -15762,7 +15762,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00088
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: High-temperature co-electrolysis of CO₂ and H₂O to syngas
@@ -15883,7 +15883,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00089
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Pyrolysis_H2
   technology:
     technology_description: Methane pyrolysis (turquoise hydrogen). Thermal decomposition
@@ -15995,7 +15995,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00090
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Pyrolysis_H2
   technology:
     technology_description: Methane pyrolysis (turquoise hydrogen). Thermal decomposition
@@ -16107,7 +16107,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00091
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2Flue_AmineScrub_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Amine washing. Temperature
@@ -16288,7 +16288,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00092
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: BioWet_Pyrolysis_Biochar
   technology:
     technology_description: Biochar production via pyrolysis of wet biomass.
@@ -16457,7 +16457,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00093
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Air_DAC_CO2
   technology:
     technology_description: Direct air capture using adsorption technology (2030 and
@@ -16620,7 +16620,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00094
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Air_DAC_CO2
   technology:
     technology_description: Direct air capture using adsorption technology (2050).
@@ -16782,7 +16782,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00095
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
@@ -16965,7 +16965,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00096
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
@@ -17148,7 +17148,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00097
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: 'CO2 post combustion capture via Hot-Potassium Carbonate
@@ -17330,7 +17330,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00098
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Pyrolysis_Biochar
   technology:
     technology_description: Biochar production via pyrolysis of wood.
@@ -17510,7 +17510,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00099
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2025
@@ -17685,7 +17685,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00100
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2030
@@ -17858,7 +17858,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00101
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2040
@@ -18031,7 +18031,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00102
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: Electric battery storage at home, 2050
@@ -18204,7 +18204,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00103
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2020
@@ -18381,7 +18381,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00104
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2030
@@ -18558,7 +18558,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00105
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2040
@@ -18735,7 +18735,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00106
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: Electric battery storage at the grid, 2050
@@ -18912,7 +18912,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00107
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_PumpedReservoir_Hydro
   technology:
     technology_description: Pumped hydro reservoir, without pump and generator
@@ -19084,7 +19084,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00108
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_Reservoir_Hydro
   technology:
     technology_description: Pumped hydro reservoir, without pump and generator
@@ -19256,7 +19256,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00109
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_HeatStore_Th
   technology:
     technology_description: null
@@ -19418,7 +19418,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00110
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_HotWaterTank_Th
   technology:
     technology_description: Hot water storage tank at home
@@ -19588,7 +19588,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00111
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_SeasonalStore_Th
   technology:
     technology_description: Thermal storage for district heating, seasonal storage
@@ -19759,7 +19759,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00112
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Tank_H2
   technology:
     technology_description: null
@@ -19929,7 +19929,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00113
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_GridStorage_CH4
   technology:
     technology_description: Storaging methane via compressing in the pipelines
@@ -20118,7 +20118,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00114
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Tank_CH4
   technology:
     technology_description: Tank storage for methane (compressed)
@@ -20306,7 +20306,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00115
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Underground_CH4
   technology:
     technology_description: Underground methane storage
@@ -20494,7 +20494,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00116
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2_Tank_CO2
   technology:
     technology_description: null
@@ -20656,7 +20656,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00117
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO_Tank_CO
   technology:
     technology_description: null
@@ -20818,7 +20818,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00118
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: C12_Tank_C12
   technology:
     technology_description: null
@@ -20980,7 +20980,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00119
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: C8_Tank_C8
   technology:
     technology_description: null
@@ -21142,7 +21142,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00120
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_Tank_NH3
   technology:
     technology_description: Tank storage for ammonia
@@ -21299,7 +21299,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00121
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Air_DAC_CO2
   technology:
     technology_description: null
@@ -21386,7 +21386,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00122
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: BioWet_Digestion_CH4
   technology:
     technology_description: null
@@ -21473,7 +21473,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00123
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: C12_Tank_C12
   technology:
     technology_description: null
@@ -21576,7 +21576,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00124
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: C8_Tank_C8
   technology:
     technology_description: null
@@ -21679,7 +21679,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00125
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Boiler_ThBdg
   technology:
     technology_description: null
@@ -21766,7 +21766,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00126
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Boiler_ThInd
   technology:
     technology_description: null
@@ -21853,7 +21853,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00127
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_CCGT_El
   technology:
     technology_description: null
@@ -21948,7 +21948,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00128
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_CHP_ElTh
   technology:
     technology_description: null
@@ -22051,7 +22051,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00129
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_FuelCell_El
   technology:
     technology_description: null
@@ -22146,7 +22146,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00130
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_FuelCell_ElBdg
   technology:
     technology_description: null
@@ -22241,7 +22241,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00131
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_GridStorage_CH4
   technology:
     technology_description: null
@@ -22336,7 +22336,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00132
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_OCGT_El
   technology:
     technology_description: null
@@ -22423,7 +22423,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00133
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CH4_Tank_CH4
   technology:
     technology_description: null
@@ -22518,7 +22518,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00134
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2Flue_AmineScrub_CO2
   technology:
     technology_description: null
@@ -22605,7 +22605,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00135
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: CO2Flue_PSA_CO2
   technology:
     technology_description: null
@@ -22692,7 +22692,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00136
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: ElBdg_Battery_ElBdg
   technology:
     technology_description: null
@@ -22779,7 +22779,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00137
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_AirCon_ThSc
   technology:
     technology_description: null
@@ -22874,7 +22874,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00138
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Battery_El
   technology:
     technology_description: null
@@ -22961,7 +22961,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00139
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_CoElectrolysis_Syngas
   technology:
     technology_description: null
@@ -23056,7 +23056,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00140
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Electrolysis_H2
   technology:
     technology_description: null
@@ -23151,7 +23151,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00141
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_HeatPump_ThBdg
   technology:
     technology_description: null
@@ -23238,7 +23238,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00142
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_HeatPump_ThInd
   technology:
     technology_description: null
@@ -23325,7 +23325,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00143
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Heater_ThBdg
   technology:
     technology_description: null
@@ -23412,7 +23412,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00144
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_Heater_ThInd
   technology:
     technology_description: null
@@ -23499,7 +23499,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00145
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: El_PumpedHydro_Pump
   technology:
     technology_description: null
@@ -23594,7 +23594,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00146
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Geothermal_CHP_ElTh
   technology:
     technology_description: null
@@ -23681,7 +23681,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00147
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Boiler_ThInd
   technology:
     technology_description: null
@@ -23768,7 +23768,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00148
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CCGT_El
   technology:
     technology_description: null
@@ -23863,7 +23863,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00149
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_CO2Hydro_MeOH
   technology:
     technology_description: null
@@ -23950,7 +23950,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00150
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_FuelCell_El
   technology:
     technology_description: null
@@ -24045,7 +24045,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00151
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_FuelCell_ElBdg
   technology:
     technology_description: null
@@ -24140,7 +24140,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00152
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_HaberBosch_NH3
   technology:
     technology_description: null
@@ -24227,7 +24227,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00153
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_OCGT_El
   technology:
     technology_description: null
@@ -24314,7 +24314,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00154
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_RWGS_CO
   technology:
     technology_description: null
@@ -24401,7 +24401,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00155
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Sabatier_CH4
   technology:
     technology_description: null
@@ -24488,7 +24488,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00156
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: H2_Tank_H2
   technology:
     technology_description: null
@@ -24583,7 +24583,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00157
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_PumpedReservoir_Hydro
   technology:
     technology_description: null
@@ -24678,7 +24678,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00158
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_PumpedTurbine_El
   technology:
     technology_description: null
@@ -24773,7 +24773,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00159
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_Reservoir_El
   technology:
     technology_description: null
@@ -24868,7 +24868,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00160
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_Reservoir_Hydro
   technology:
     technology_description: null
@@ -24963,7 +24963,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00161
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Hydro_RunOfRiver_El
   technology:
     technology_description: null
@@ -25050,7 +25050,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00162
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Gasification_H2
   technology:
     technology_description: null
@@ -25137,7 +25137,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00163
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Gasification_Syngas
   technology:
     technology_description: null
@@ -25224,7 +25224,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00164
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: MSW_Incineration_El
   technology:
     technology_description: null
@@ -25311,7 +25311,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00165
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_CCGT_El
   technology:
     technology_description: null
@@ -25406,7 +25406,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00166
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_OCGT_El
   technology:
     technology_description: null
@@ -25493,7 +25493,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00167
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: NH3_Tank_NH3
   technology:
     technology_description: null
@@ -25596,7 +25596,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00168
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Oil_Boiler_ThBdg
   technology:
     technology_description: null
@@ -25683,7 +25683,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00169
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Oil_Boiler_ThInd
   technology:
     technology_description: null
@@ -25770,7 +25770,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00170
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVAlpine_El
   technology:
     technology_description: null
@@ -25865,7 +25865,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00171
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Solar_PVRooftop_El
   technology:
     technology_description: null
@@ -25960,7 +25960,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00172
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_CH4
   technology:
     technology_description: null
@@ -26047,7 +26047,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00173
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_COHydro_MeOH
   technology:
     technology_description: null
@@ -26134,7 +26134,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00174
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C12
   technology:
     technology_description: null
@@ -26221,7 +26221,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00175
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Syngas_FT_C8
   technology:
     technology_description: null
@@ -26308,7 +26308,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00176
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_HeatStore_Th
   technology:
     technology_description: null
@@ -26403,7 +26403,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00177
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_HotWaterTank_Th
   technology:
     technology_description: null
@@ -26490,7 +26490,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00178
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Th_SeasonalStore_Th
   technology:
     technology_description: null
@@ -26577,7 +26577,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00179
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: U235_Nuclear_El
   technology:
     technology_description: null
@@ -26672,7 +26672,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00180
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wind_Turbine_El
   technology:
     technology_description: null
@@ -26759,7 +26759,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00181
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Boiler_ThBdg
   technology:
     technology_description: null
@@ -26846,7 +26846,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00182
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Boiler_ThInd
   technology:
     technology_description: null
@@ -26933,7 +26933,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00183
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_CHP_ElTh
   technology:
     technology_description: null
@@ -27028,7 +27028,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00184
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Gasification_H2
   technology:
     technology_description: null
@@ -27115,7 +27115,7 @@
     mapping_status: mapped
     linked_entity_id: LE_00185
     date_mapped: '2026-07-01'
-- schema_version: "0.2.0"
+- schema_version: "0.3.0"
   technology_name: Wood_Gasification_Syngas
   technology:
     technology_description: null

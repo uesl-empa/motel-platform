@@ -31,6 +31,13 @@ What it checks
 - declared types, including nested objects and arrays of objects
 - ``enum`` membership
 - ``schema_version`` agreement with the schema being validated against
+- every cited source has a licence and a redistribution decision recorded
+  (warnings, so ``--strict`` turns them into a release gate)
+
+A file whose name contains ``TEMPLATE`` is treated as showing record structure
+rather than carrying data: an empty required field becomes a warning instead of
+an error, so a template can ship with ``value: null`` while still being checked
+for unknown keys, wrong types, and bad enum values.
 
 It is not a full JSON Schema implementation: MOTEL's schemas use a flat subset
 (``type``, ``required``, ``properties``, ``items``, ``enum``) and this covers
@@ -121,7 +128,7 @@ def type_matches(value: object, declared: object) -> bool:
     return isinstance(value, expected)
 
 
-def check_value(value, spec, source, index, path, findings):
+def check_value(value, spec, source, index, path, findings, template=False):
     """Validate one value against one schema property spec."""
     declared = spec.get("type")
     if not type_matches(value, declared):
@@ -139,25 +146,34 @@ def check_value(value, spec, source, index, path, findings):
         ))
 
     if declared == "object" and isinstance(value, dict) and "properties" in spec:
-        check_object(value, spec, source, index, path, findings)
+        check_object(value, spec, source, index, path, findings, template)
 
     if declared == "array" and isinstance(value, list):
         item_spec = spec.get("items") or {}
         if item_spec:
             for position, item in enumerate(value):
-                check_value(item, item_spec, source, index, f"{path}[{position}]", findings)
+                check_value(item, item_spec, source, index, f"{path}[{position}]", findings, template)
 
 
-def check_object(record, schema, source, index, prefix, findings):
-    """Validate required fields, unknown keys, and each property of one object."""
+def check_object(record, schema, source, index, prefix, findings, template=False):
+    """
+    Validate required fields, unknown keys, and each property of one object.
+
+    In template mode an absent required field is a warning rather than an error:
+    a template exists to show the shape of a record, so its value slots are
+    deliberately empty. Every other check still applies, so a typo in a template
+    is still caught.
+    """
     properties = schema.get("properties") or {}
     required = schema.get("required") or []
 
     for field in required:
         if field not in record or is_empty(record.get(field)):
             findings.append(Finding(
-                "error", source, index, f"{prefix}.{field}".lstrip("."),
-                "required field is missing or empty",
+                "warning" if template else "error",
+                source, index, f"{prefix}.{field}".lstrip("."),
+                "required field is empty (expected in a template)" if template
+                else "required field is missing or empty",
             ))
 
     for key, value in record.items():
@@ -170,7 +186,7 @@ def check_object(record, schema, source, index, prefix, findings):
             continue
         if value is None:
             continue
-        check_value(value, properties[key], source, index, path, findings)
+        check_value(value, properties[key], source, index, path, findings, template)
 
 
 def load_schema(schema_dir: Path, name: str) -> dict:
@@ -188,9 +204,15 @@ def pick_schema(record: dict) -> str | None:
     return None
 
 
+def is_template(path: Path) -> bool:
+    """A file named *TEMPLATE* shows record structure and carries no data."""
+    return "TEMPLATE" in path.stem.upper()
+
+
 def validate_file(path: Path, schemas: dict, forced: str | None) -> list[Finding]:
     findings: list[Finding] = []
     source = path.name
+    template = is_template(path)
     try:
         records = yaml.safe_load(path.read_text(encoding="utf-8"))
     except yaml.YAMLError as exc:
@@ -237,15 +259,53 @@ def validate_file(path: Path, schemas: dict, forced: str | None) -> list[Finding
                 "warning", source, index, "schema_version",
                 f"record targets {declared}, validating against {expected}",
             ))
-        elif not declared:
+        elif not declared and not template:
             findings.append(Finding(
                 "warning", source, index, "schema_version",
                 f"not set; recommend \"{expected}\" so the contract is pinned",
             ))
 
-        check_object(record, schema, source, index, "", findings)
+        check_object(record, schema, source, index, "", findings, template)
+        if not template:
+            check_source_licensing(record, source, index, findings)
 
     return findings
+
+
+def check_source_licensing(record, source, index, findings):
+    """
+    Warn when a source has no redistribution decision recorded.
+
+    MOTEL republishes values extracted from third-party sources under the
+    repository data licence, which is only defensible where the source permits
+    it. Recording the decision at ingest is far cheaper than auditing every
+    source afterwards, so an unrecorded one is surfaced here rather than left to
+    a later review. It is a warning, not an error: run with --strict to gate on
+    it once the existing sources have been cleared.
+    """
+    for position, entry in enumerate(record.get("sources") or []):
+        if not isinstance(entry, dict):
+            continue
+        path = f"sources[{position}]"
+        name = entry.get("source_name") or "?"
+        permitted = (entry.get("redistribution_permitted") or "").strip()
+        if not permitted or permitted == "unknown":
+            findings.append(Finding(
+                "warning", source, index, f"{path}.redistribution_permitted",
+                f"{name!r}: nobody has recorded whether this source permits "
+                "republishing its values",
+            ))
+        elif permitted == "not_permitted":
+            findings.append(Finding(
+                "warning", source, index, f"{path}.redistribution_permitted",
+                f"{name!r}: marked not_permitted — keep the citation, drop the values "
+                "before publishing",
+            ))
+        if not (entry.get("source_licence") or "").strip():
+            findings.append(Finding(
+                "warning", source, index, f"{path}.source_licence",
+                f"{name!r}: no licence recorded",
+            ))
 
 
 def collect_files(targets: list[str]) -> list[Path]:
@@ -292,7 +352,8 @@ def main(argv=None) -> int:
         warnings += len(file_warnings)
 
         status = "FAIL" if file_errors else ("warn" if file_warnings else "ok")
-        print(f"[{status}] {path}")
+        label = " (template: structure only)" if is_template(path) else ""
+        print(f"[{status}] {path}{label}")
         for finding in findings:
             print(finding)
 

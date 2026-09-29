@@ -24,6 +24,7 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
 ## Data Workflow
 
 1. **Ingest** source data into the unmapped entity schema.
+   - **Ingestion guide: `1_ingest/ingestion_guide.md`** — the contract and decision rules for converting a source, written for humans and LLMs alike
    - Main notebook: `1_ingest/1_data_ingestion.ipynb`
    - Folder guide: `1_ingest/README.md`
    - reFuel.ch example: `1_ingest/examples/refuel/ingestion_pipeline.ipynb`
@@ -52,6 +53,32 @@ This repository contains the current MOTEL data workflow, schemas, curated datab
    - Folder guide: `4_data_explore/README.md`
    - Input: `motel-db/`
    - Output: interactive inspection, filtering, and ad hoc analysis
+
+## What This Release Provides
+
+MOTEL has three workflow stages and they are not equally complete. Read this
+before building on `motel-db/`.
+
+| Stage | Status | What it gives you |
+| ----- | ------ | ----------------- |
+| 1. `unmapped_entity` staging | **Complete** | Source data captured in a structured, citable form, with provenance attached to every value. |
+| 2. `linked_entity` harmonisation | **Partial** | Controlled vocabularies, canonical units, deduplicated entities. Implemented, but not run for every dataset, and it requires a local LLM. |
+| 3. Ontology mapping | **Off the critical path** | Ontology-ready TTL. Runs and produces valid output, but its terms are not yet aligned with the DigiCities ontology. |
+
+**A staging-only dataset is a structured archive, not a model-ready one.**
+Everything that makes values directly comparable across sources is produced by
+stage 2:
+
+- canonical units — staging keeps the unit in free text, inside `attribute_notes`
+- controlled attribute and carrier names — staging keeps the source's own labels
+- deduplicated sources and technologies — staging keeps one entry per source spelling
+- scope tokens — staging keeps raw scope values
+
+So a record may read `technical_efficiency: 0.58` with its unit in a note, or
+carry the literal string `na` where a source gave no value. That is intentional
+at stage 1: staging preserves what the source said, including its silences.
+Feeding `motel-db/` into a solver means running stage 2 first, or normalising the
+values yourself.
 
 ## Two Data Tracks
 
@@ -221,4 +248,15 @@ Special thanks to the reFuel.ch project for important input to the platform and 
 ## Licensing
 
 - Code and workflow scripts are released under the MIT License.
-- Data, schemas, documentation, and ontology-ready database files are released under CC BY 4.0 unless otherwise stated.
+- Schemas, documentation, and MOTEL-authored database files are released under CC BY 4.0 unless otherwise stated.
+- **Source data retains the licence of its origin.** Records under `motel-db/`
+  carry values extracted from third-party sources listed in
+  `motel-db/secondary/source.csv`. The CC BY 4.0 grant covers MOTEL's own
+  structuring, vocabularies, and mappings — it does not and cannot re-license the
+  underlying source material. Check the terms of the originating source, cited on
+  each record, before redistributing extracted values.
+- Each source records its own terms: `source_licence` holds the licence as the
+  publisher states it, and `redistribution_permitted` (`permitted`,
+  `not_permitted`, `unknown`) holds the decision. Both are captured at ingest and
+  never inferred by the LLM. `python tools/validate_unmapped.py <path> --strict`
+  fails on any source whose terms have not been recorded.

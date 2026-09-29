@@ -154,7 +154,7 @@ def is_placeholder_text(value) -> bool:
     return text in {"", "n/a", "na", "nan", "-", "—"}
 
 
-SCHEMA_VERSION = "0.2.0"
+SCHEMA_VERSION = "0.3.0"
 """MOTEL schema release these records are authored against.
 
 Stamped onto every generated record so a consumer can tell which contract the
