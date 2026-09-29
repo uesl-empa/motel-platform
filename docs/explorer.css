@@ -1,0 +1,433 @@
+/* MOTEL data explorer. Builds on style.css and reuses its colour tokens. */
+
+:root {
+  --bar: #1f7a57;
+  --bar-hover: #2b9a6f;
+  --grid: #e3ece7;
+  --axis: #b9cdc3;
+}
+
+.explorer-hero {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.explorer-hero h1 {
+  font-size: 2rem;
+}
+
+.explorer-hero .subtitle {
+  margin-bottom: 0.4rem;
+}
+
+.breadcrumb {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.88rem;
+}
+
+/* Stat tiles */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.stat {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  padding: 0.7rem 0.85rem;
+}
+
+.stat-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+/* Filters: one row above the content they scope */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.8rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.filter-row label {
+  display: grid;
+  gap: 0.2rem;
+  max-width: 22rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.filter-row input,
+.filter-row select {
+  min-width: 14rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.filter-row input[type="search"] {
+  min-width: 20rem;
+}
+
+.filter-row input:focus-visible,
+.filter-row select:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+}
+
+/* Tables */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  margin: 0.6rem 0 1.2rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.data-table caption {
+  text-align: left;
+  padding: 0.6rem 0.75rem 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--soft-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  background: #f5faf7;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.data-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table td.num,
+.data-table th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.data-table a {
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.data-table a:hover {
+  text-decoration: underline;
+}
+
+/* Detail pages */
+.meta-list {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.3rem 1rem;
+  margin: 0.8rem 0 1rem;
+  font-size: 0.94rem;
+}
+
+.meta-list dt {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.meta-list dd {
+  margin: 0;
+}
+
+.record-card {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: #fcfffd;
+  padding: 0.9rem 1rem 0.4rem;
+  margin: 1rem 0 1.2rem;
+  scroll-margin-top: 1rem;
+}
+
+.record-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li + li {
+  margin-top: 0;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  background: #edf5f1;
+  color: var(--brand-dark);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.chip-key {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.flow-list {
+  margin: 0.2rem 0 0.8rem;
+}
+
+.feedback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0;
+}
+
+/* Bar chart (horizontal bars, one series) */
+.chart-card {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: var(--surface);
+  padding: 0.9rem 1rem 0.8rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.chart-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.chart-subtitle {
+  margin: 0.15rem 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.bar-chart {
+  --label-width: minmax(9rem, 17rem);
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: var(--label-width) minmax(0, 1fr);
+  align-items: center;
+  min-height: 28px;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.bar-row:hover,
+.bar-row:focus-visible {
+  background: #f3f8f5;
+  outline: none;
+}
+
+.bar-row:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--ring);
+}
+
+.bar-label {
+  padding-right: 0.7rem;
+  text-align: right;
+  font-size: 0.86rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bar-label .bar-label-detail {
+  color: var(--muted);
+}
+
+.bar-track {
+  position: relative;
+  height: 28px;
+}
+
+.grid-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--grid);
+}
+
+.grid-line.zero {
+  background: var(--axis);
+}
+
+.bar {
+  position: absolute;
+  top: 6px;
+  height: 16px;
+  background: var(--bar);
+  border-radius: 0 4px 4px 0;
+}
+
+.bar.negative {
+  border-radius: 4px 0 0 4px;
+}
+
+.bar-row:hover .bar,
+.bar-row:focus-visible .bar {
+  background: var(--bar-hover);
+}
+
+/* A value label placed inside its bar, where the bar fill is the background. */
+.bar-value.inside {
+  color: #ffffff;
+  font-weight: 650;
+}
+
+.bar-value {
+  position: absolute;
+  top: 4px;
+  padding: 0 0.35rem;
+  font-size: 0.8rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.axis-row {
+  display: grid;
+  grid-template-columns: var(--label-width) minmax(0, 1fr);
+  margin-top: 0.2rem;
+}
+
+.axis-ticks {
+  position: relative;
+  height: 1.3rem;
+  border-top: 1px solid var(--axis);
+}
+
+.axis-tick {
+  position: absolute;
+  top: 0.15rem;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.empty-state {
+  padding: 1rem;
+  color: var(--muted);
+}
+
+/* Tooltip */
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  max-width: 22rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: var(--surface);
+  box-shadow: 0 6px 20px rgba(18, 40, 31, 0.12);
+  font-size: 0.84rem;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.tooltip-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tooltip-line {
+  display: block;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bar-chart,
+  .axis-row {
+    --label-width: minmax(6rem, 9rem);
+  }
+
+  .filter-row input,
+  .filter-row select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .filter-row label {
+    width: 100%;
+    max-width: none;
+  }
+
+  .meta-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.toc a[aria-current="page"] {
+  background: #edf5f1;
+  color: var(--brand-dark);
+}

@@ -448,7 +448,9 @@ a:focus-visible,
 
 @media (max-width: 980px) {
   .docs-shell {
-    grid-template-columns: 1fr;
+    /* minmax(0, ...) lets the column shrink below the width of the
+       horizontally scrolling navigation, so the page never overflows. */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .sidebar {

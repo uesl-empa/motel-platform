@@ -32,6 +32,9 @@ jobs:
         # and fails if a created linked entity has a broken reference.
         run: python 2_harmonise/harmonise.py motel-db/unmapped_entity --no-llm --no-backup
 
+      - name: Build the data explorer's data
+        run: python docs/build_data.py
+
       - name: Validate YAML and CSV files
         run: |
           python - <<'PY'
