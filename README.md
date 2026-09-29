@@ -171,6 +171,32 @@ The static documentation site is in `docs/` and is deployed by GitHub Pages from
 - Local entrypoint: `docs/index.html`
 - Downstream webapp repository: https://github.com/uesl-empa/motel-webapp
 
+### Data explorer
+
+`docs/explorer.html` (published at https://uesl-empa.github.io/motel-platform/explorer.html)
+lets anyone browse the database without installing anything:
+
+- every technology with its records, parameters by year, units, scope, energy
+  balance, and the source of each value;
+- a comparison of one parameter across all technologies, for a chosen year and
+  region, as a bar chart with the full table below it;
+- the sources and the controlled vocabularies;
+- downloads of the whole database as JSON and of every value as one CSV table.
+
+Each technology page has a "Suggest a correction or a source" button that opens
+a pre-filled GitHub issue, so feedback arrives in the repository where it can be
+reviewed.
+
+The explorer's data is generated from `motel-db/` by `docs/build_data.py`; the
+`Deploy Docs` workflow runs it on every publish and republishes whenever
+`motel-db/` changes on `main`. The generated files in `docs/data/` are not
+committed. To view the explorer locally:
+
+```bash
+python docs/build_data.py
+# then open docs/explorer.html in a browser
+```
+
 ## Contributors and Acknowledgement
 
 MOTEL is a collaborative project. We gratefully acknowledge the following contributors:
