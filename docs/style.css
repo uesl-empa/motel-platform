@@ -1,15 +1,15 @@
 :root {
-  --bg: #f5f8f6;
+  --bg: #f6f6f6;
   --surface: #ffffff;
-  --sidebar: #f8fbfa;
-  --ink: #12281f;
-  --muted: #51685e;
-  --brand: #1f7a57;
-  --brand-dark: #0f3b2b;
-  --line: #dce9e2;
-  --soft-line: #edf3f0;
-  --code-bg: #f7fbf9;
-  --ring: #9ecdb9;
+  --sidebar: #fafafa;
+  --ink: #1d1d1b;
+  --muted: #5c5c5a;
+  --brand: #e2001a;
+  --brand-dark: #9d0d16;
+  --line: #e2e2e2;
+  --soft-line: #efefef;
+  --code-bg: #f8f8f8;
+  --ring: #f08c97;
 }
 
 * {
@@ -82,14 +82,14 @@ a {
   display: block;
   padding: 0.42rem 0.55rem;
   border-radius: 0.45rem;
-  color: #244a3b;
+  color: #3a3a38;
   text-decoration: none;
   font-size: 0.94rem;
   font-weight: 600;
 }
 
 .toc a:hover {
-  background: #edf5f1;
+  background: #fbe9eb;
 }
 
 .toc a.toc-subitem {
@@ -226,7 +226,7 @@ li + li {
   width: 100%;
   margin: 0;
   border: 1px solid var(--line);
-  background: #fcfffd;
+  background: #fdfdfd;
   border-radius: 0.6rem;
   padding: 0.8rem;
 }
@@ -244,7 +244,7 @@ li + li {
   margin-bottom: 0.45rem;
   padding: 0.2rem 0.5rem;
   border-radius: 999px;
-  background: #edf5f1;
+  background: #fbe9eb;
   color: var(--brand-dark);
   font-size: 0.75rem;
   font-weight: 800;
@@ -306,7 +306,7 @@ li + li {
 
 .markdown-body p,
 .markdown-body li {
-  color: #244236;
+  color: #2e2e2c;
 }
 
 .markdown-body img {
@@ -320,7 +320,7 @@ li + li {
   margin: 1rem 0 1.2rem;
   border: 1px solid var(--line);
   border-radius: 0.6rem;
-  background: #fcfffd;
+  background: #fdfdfd;
   padding: 0.75rem;
 }
 
@@ -352,7 +352,7 @@ li + li {
 }
 
 .markdown-body th {
-  background: #f5faf7;
+  background: #f7f7f7;
   font-weight: 700;
 }
 
@@ -368,7 +368,7 @@ li + li {
 .markdown-body pre code {
   font-family: Consolas, "Courier New", monospace;
   font-size: 0.92rem;
-  color: #183327;
+  color: #2a2a28;
 }
 
 .repo-tree,
@@ -390,7 +390,7 @@ code {
 .repo-tree code,
 .example-block code {
   font-size: 0.92rem;
-  color: #183327;
+  color: #2a2a28;
 }
 
 .grid-2 {
@@ -415,7 +415,7 @@ code {
   padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 0.6rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f6fbf8 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
 }
 
 .logo-card img {
