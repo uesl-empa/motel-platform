@@ -1,10 +1,10 @@
 /* MOTEL data explorer. Builds on style.css and reuses its colour tokens. */
 
 :root {
-  --bar: #1f7a57;
-  --bar-hover: #2b9a6f;
-  --grid: #e3ece7;
-  --axis: #b9cdc3;
+  --bar: #e2001a;
+  --bar-hover: #bd0518;
+  --grid: #ececec;
+  --axis: #cfcfcf;
 }
 
 .explorer-hero {
@@ -140,7 +140,7 @@
 }
 
 .data-table th {
-  background: #f5faf7;
+  background: #f7f7f7;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -186,7 +186,7 @@
 .record-card {
   border: 1px solid var(--line);
   border-radius: 0.6rem;
-  background: #fcfffd;
+  background: #fdfdfd;
   padding: 0.9rem 1rem 0.4rem;
   margin: 1rem 0 1.2rem;
   scroll-margin-top: 1rem;
@@ -214,7 +214,7 @@
   display: inline-block;
   padding: 0.12rem 0.55rem;
   border-radius: 999px;
-  background: #edf5f1;
+  background: #fbe9eb;
   color: var(--brand-dark);
   font-size: 0.8rem;
   font-weight: 650;
@@ -271,7 +271,7 @@
 
 .bar-row:hover,
 .bar-row:focus-visible {
-  background: #f3f8f5;
+  background: #fbf1f2;
   outline: none;
 }
 
@@ -378,7 +378,7 @@
   border: 1px solid var(--line);
   border-radius: 0.45rem;
   background: var(--surface);
-  box-shadow: 0 6px 20px rgba(18, 40, 31, 0.12);
+  box-shadow: 0 6px 20px rgba(29, 29, 27, 0.12);
   font-size: 0.84rem;
   line-height: 1.4;
   pointer-events: none;
@@ -428,6 +428,6 @@
 }
 
 .toc a[aria-current="page"] {
-  background: #edf5f1;
+  background: #fbe9eb;
   color: var(--brand-dark);
 }
