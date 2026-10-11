@@ -51,8 +51,15 @@ Two consequences worth keeping in mind:
 
       The fields to record it now exist (v0.3.0): `source_licence` and
       `redistribution_permitted` on both the staging `sources` block and
-      `secondary/source.yaml`. All 31 rows are currently `unknown`. List the ones
-      still needing a decision with:
+      `secondary/source.yaml`. First pass done 2026-10-11 from Crossref, OpenAlex,
+      and publisher terms (evidence in each row's `note`): 11 registry sources
+      `permitted`, 5 `not_permitted`, 15 still `unknown`; of the 4 DAC sources, 2
+      `permitted`, 1 `not_permitted`, 1 `unknown`. The open ones are VSE 2022/2025
+      (largest share of values; ask VSE), JRC 2021 and ASSET 2018 (confirm the EU
+      copyright page), BFE, OST, the unidentified gas storage report, Belfer, and
+      reFuel's own values (needs the consortium's agreement). Mutschler 2018 can
+      move to `permitted` if the authors clear the preprint. List the ones still
+      needing a decision with:
 
           python tools/validate_unmapped.py motel-db/unmapped_entity --strict
 
