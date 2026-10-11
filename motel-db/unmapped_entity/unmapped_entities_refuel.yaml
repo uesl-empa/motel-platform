@@ -56,17 +56,22 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: 'Elsevier copyright, closed access'
+    redistribution_permitted: not_permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -223,17 +228,22 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: 'Elsevier copyright, closed access'
+    redistribution_permitted: not_permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -388,6 +398,8 @@
     link: https://doi.org/10.1016/j.energy.2024.131246
     linked_attribute:
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -397,6 +409,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -405,6 +419,8 @@
     linked_attribute:
     - lifetime_yr
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -583,6 +599,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -590,11 +608,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -767,11 +788,14 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'EU publication: ''This is a public document. You can share this publication.'''
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -945,11 +969,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: 'EU publication: ''This is a public document. You can share this publication.'''
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -1127,6 +1154,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -1134,11 +1163,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -1316,16 +1348,20 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: assumption_reFuelWP3_2025
     source_description: Expert Assumption
     source_type: other
     linked_attribute:
     - technical_efficiency
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -1492,6 +1528,8 @@
     link: https://doi.org/10.1016/j.energy.2024.131246
     linked_attribute:
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -1501,6 +1539,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -1508,11 +1548,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -1691,15 +1734,20 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_jrc_2021
     link: https://doi.org/10.2760/527879
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'EU publication: ''This is a public document. You can share this publication.'''
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -1875,15 +1923,20 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_jrc_2021
     link: https://doi.org/10.2760/527879
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'EU publication: ''This is a public document. You can share this publication.'''
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -2059,11 +2112,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -2240,11 +2296,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -2422,6 +2481,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -2429,11 +2490,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -2607,6 +2671,8 @@
     link: https://doi.org/10.1016/B978-0-08-102886-5.00015-3
     linked_attribute:
     - technical_efficiency
+    source_licence: 'Elsevier copyright, book chapter without open licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -2616,6 +2682,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -2623,11 +2691,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -2787,6 +2858,8 @@
     link: https://doi.org/10.1016/B978-0-08-102886-5.00015-3
     linked_attribute:
     - technical_efficiency
+    source_licence: 'Elsevier copyright, book chapter without open licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -2796,6 +2869,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -2803,11 +2878,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -2967,6 +3045,8 @@
     link: https://doi.org/10.1016/B978-0-08-102886-5.00015-3
     linked_attribute:
     - technical_efficiency
+    source_licence: 'Elsevier copyright, book chapter without open licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -2976,6 +3056,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -2983,11 +3065,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -3147,6 +3232,8 @@
     link: https://doi.org/10.1016/B978-0-08-102886-5.00015-3
     linked_attribute:
     - technical_efficiency
+    source_licence: 'Elsevier copyright, book chapter without open licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -3156,6 +3243,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -3163,11 +3252,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -3333,6 +3425,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -3340,11 +3434,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -3507,10 +3604,12 @@
       "paper_PVcostProjection_2025"
     linked_attribute:
     - capex_per_capacity
+    redistribution_permitted: unknown
   - source_name: assumption_Empa_PV_OM
     source_description: currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050
     linked_attribute:
     - opex_per_capacity_yr
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -3671,10 +3770,12 @@
       "paper_PVcostProjection_2025"
     linked_attribute:
     - capex_per_capacity
+    redistribution_permitted: unknown
   - source_name: assumption_Empa_PV_OM
     source_description: currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050
     linked_attribute:
     - opex_per_capacity_yr
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -3835,10 +3936,12 @@
       "paper_PVcostProjection_2025"
     linked_attribute:
     - capex_per_capacity
+    redistribution_permitted: unknown
   - source_name: assumption_Empa_PV_OM
     source_description: currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050
     linked_attribute:
     - opex_per_capacity_yr
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -3999,10 +4102,12 @@
       "paper_PVcostProjection_2025"
     linked_attribute:
     - capex_per_capacity
+    redistribution_permitted: unknown
   - source_name: assumption_Empa_PV_OM
     source_description: currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050
     linked_attribute:
     - opex_per_capacity_yr
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -4168,12 +4273,16 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
     link: https://doi.org/10.1016/j.apenergy.2024.124019
     linked_attribute:
     - ratios_out
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -4346,12 +4455,16 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
     link: https://doi.org/10.1016/j.apenergy.2024.124019
     linked_attribute:
     - ratios_out
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -4524,12 +4637,16 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
     link: https://doi.org/10.1016/j.apenergy.2024.124019
     linked_attribute:
     - ratios_out
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -4702,12 +4819,16 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
     link: https://doi.org/10.1016/j.apenergy.2024.124019
     linked_attribute:
     - ratios_out
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -4881,11 +5002,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 1000
@@ -5063,6 +5187,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -5070,11 +5196,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -5238,6 +5367,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -5245,11 +5376,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -5413,6 +5547,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -5420,11 +5556,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -5588,6 +5727,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -5595,11 +5736,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -5764,11 +5908,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -5942,6 +6089,8 @@
     - capex_per_capacity
     - lifetime_yr
     - opex_per_capacity_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -5950,11 +6099,14 @@
     linked_attribute:
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -6118,6 +6270,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6125,11 +6279,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -6291,6 +6448,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6298,11 +6457,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -6473,6 +6635,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6480,11 +6644,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -6647,6 +6814,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6654,11 +6823,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -6821,12 +6993,15 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute:
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6834,11 +7009,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -7001,12 +7179,15 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute:
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -7014,11 +7195,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -7181,6 +7365,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -7188,11 +7374,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -7357,6 +7546,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -7364,11 +7555,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -7531,11 +7725,14 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -7707,11 +7904,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -7887,6 +8087,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute:
@@ -7895,11 +8097,13 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -8064,6 +8268,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -8071,11 +8277,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -8239,6 +8448,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -8246,11 +8457,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -8414,6 +8628,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -8421,11 +8637,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -8589,17 +8808,22 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: 'Elsevier copyright, closed access'
+    redistribution_permitted: not_permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -8767,6 +8991,8 @@
     link: https://doi.org/10.1016/j.rser.2020.110588
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY-NC-ND 4.0'
+    redistribution_permitted: not_permitted
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
@@ -8775,6 +9001,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -8782,11 +9010,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -8944,6 +9175,8 @@
     link: https://doi.org/10.1016/j.rser.2020.110588
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY-NC-ND 4.0'
+    redistribution_permitted: not_permitted
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
@@ -8952,6 +9185,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -8959,11 +9194,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -9121,6 +9359,8 @@
     link: https://doi.org/10.1016/j.rser.2020.110588
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY-NC-ND 4.0'
+    redistribution_permitted: not_permitted
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
@@ -9129,6 +9369,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -9136,11 +9378,14 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -9305,11 +9550,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 5
@@ -9496,11 +9744,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 5
@@ -9687,11 +9938,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 50
@@ -9878,11 +10132,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 100
@@ -10065,6 +10322,7 @@
     - opex_per_capacity_yr
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 1100
@@ -10244,6 +10502,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
@@ -10252,11 +10512,14 @@
     - operating_temperature_c
     - opex_per_energy
     - trl
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 8
@@ -10428,6 +10691,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
@@ -10436,11 +10701,14 @@
     - operating_temperature_c
     - opex_per_energy
     - trl
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 8
@@ -10612,6 +10880,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: linear_interpolation_2030_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute:
@@ -10619,6 +10889,7 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
@@ -10627,11 +10898,14 @@
     - operating_temperature_c
     - opex_per_energy
     - trl
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -10803,6 +11077,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
@@ -10811,11 +11087,14 @@
     - operating_temperature_c
     - opex_per_energy
     - trl
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -10987,6 +11266,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
@@ -10995,11 +11276,14 @@
     - operating_temperature_c
     - opex_per_energy
     - trl
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -11170,6 +11454,8 @@
     link: https://doi.org/10.1002/cssc.202400865
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: Allgoewer_2024
     source_description: Paper by ETH from PATHFNDR
     source_type: other
@@ -11180,21 +11466,27 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: paper_mutschler_2018
     source_type: other
     link: https://doi.org/10.1016/j.jcat.2018.08.002
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'Elsevier copyright, closed access'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 6
@@ -11371,11 +11663,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 10
@@ -11546,11 +11841,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 10
@@ -11721,11 +12019,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 10
@@ -11893,6 +12194,8 @@
     link: https://doi.org/10.1016/j.isci.2024.109154
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: paper_müller_PowerX_2025
     source_description: 'The costs of future energy technologies: A comprehensive
       review of power-to-X processes'
@@ -11903,17 +12206,22 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -11921,6 +12229,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 7
@@ -12094,6 +12404,8 @@
     link: https://doi.org/10.1016/j.isci.2024.109154
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: paper_müller_PowerX_2025
     source_description: 'The costs of future energy technologies: A comprehensive
       review of power-to-X processes'
@@ -12104,17 +12416,22 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -12122,6 +12439,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 8
@@ -12295,6 +12614,8 @@
     link: https://doi.org/10.1016/j.isci.2024.109154
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: paper_müller_PowerX_2025
     source_description: 'The costs of future energy technologies: A comprehensive
       review of power-to-X processes'
@@ -12305,17 +12626,22 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -12323,6 +12649,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 8
@@ -12496,6 +12824,8 @@
     link: https://doi.org/10.1016/j.isci.2024.109154
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: paper_müller_PowerX_2025
     source_description: 'The costs of future energy technologies: A comprehensive
       review of power-to-X processes'
@@ -12506,17 +12836,22 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -12524,6 +12859,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -12697,6 +13034,8 @@
     link: https://doi.org/10.1016/j.isci.2024.109154
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: paper_müller_PowerX_2025
     source_description: 'The costs of future energy technologies: A comprehensive
       review of power-to-X processes'
@@ -12707,17 +13046,22 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -12725,6 +13069,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 7
@@ -12898,6 +13244,8 @@
     link: https://doi.org/10.1016/j.isci.2024.109154
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: paper_müller_PowerX_2025
     source_description: 'The costs of future energy technologies: A comprehensive
       review of power-to-X processes'
@@ -12908,17 +13256,22 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -12926,6 +13279,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 8
@@ -13099,6 +13454,8 @@
     link: https://doi.org/10.1016/j.isci.2024.109154
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: paper_müller_PowerX_2025
     source_description: 'The costs of future energy technologies: A comprehensive
       review of power-to-X processes'
@@ -13109,17 +13466,22 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -13127,6 +13489,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 8
@@ -13300,6 +13664,8 @@
     link: https://doi.org/10.1016/j.isci.2024.109154
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: paper_müller_PowerX_2025
     source_description: 'The costs of future energy technologies: A comprehensive
       review of power-to-X processes'
@@ -13310,17 +13676,22 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
     link: https://ens.dk/technologydata
     access_date: '2025-09-19'
     linked_attribute:
     - operating_temperature_c
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -13328,6 +13699,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -13508,11 +13881,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 100
@@ -13706,11 +14082,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 100
@@ -13904,11 +14283,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 100
@@ -14102,11 +14484,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 100
@@ -14300,11 +14685,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 8
@@ -14487,11 +14875,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -14674,11 +15065,14 @@
     - reference_unit_size
     - tech_maturity
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: conversion_parametrization
     source_description: Calculating Input Output Ratios of Reactions
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -14852,6 +15246,7 @@
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 7
@@ -15003,6 +15398,7 @@
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 6
@@ -15156,11 +15552,14 @@
     link: https://doi.org/10.3390/su17156704
     linked_attribute:
     - tech_maturity
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 6
@@ -15316,6 +15715,7 @@
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 8
@@ -16167,6 +16567,8 @@
     - ratios_in
     - ratios_out
     - technical_efficiency
+    source_licence: 'Open Government Licence v3.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: reference_unit_size
     value: 20
@@ -16345,6 +16747,8 @@
     - capex_per_capacity
     - lifetime_yr
     - opex_per_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: reference_unit_size
     value: 0.05
@@ -16518,6 +16922,8 @@
     - ratios_in
     - ratios_out
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 8
@@ -16680,6 +17086,8 @@
     - ratios_in
     - ratios_out
     - technical_efficiency
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -16844,6 +17252,8 @@
     - ratios_in
     - ratios_out
     - technical_efficiency
+    source_licence: 'Open Government Licence v3.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: reference_unit_size
     value: 20
@@ -17027,6 +17437,8 @@
     - ratios_in
     - ratios_out
     - technical_efficiency
+    source_licence: 'Open Government Licence v3.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: reference_unit_size
     value: 20
@@ -17210,6 +17622,8 @@
     - ratios_in
     - ratios_out
     - technical_efficiency
+    source_licence: 'Open Government Licence v3.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: reference_unit_size
     value: 20
@@ -17387,6 +17801,8 @@
     - capex_per_capacity
     - lifetime_yr
     - opex_per_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: report_BFE_EP2050plus_CCS_2020
     source_description: BFE Energieperspektiven 2050+, Excursus on Negative Emission
       Technologies and CCS (2020)
@@ -17395,6 +17811,7 @@
     linked_attribute:
     - ratios_in
     - ratios_out
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: reference_unit_size
     value: 0.05
@@ -17563,12 +17980,16 @@
     link: https://alpvolt.com/en/news/solar-batteries-in-switzerland
     linked_attribute:
     - capex_per_stor_capacity
+    source_licence: 'All rights reserved, Alpvolt Schweiz AG'
+    redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
     link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
     linked_attribute:
     - opex_per_stor_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -17736,12 +18157,15 @@
     source_description: assumption based on various info
     linked_attribute:
     - capex_per_stor_capacity
+    redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
     link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
     linked_attribute:
     - opex_per_stor_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -17909,12 +18333,15 @@
     source_description: assumption based on various info
     linked_attribute:
     - capex_per_stor_capacity
+    redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
     link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
     linked_attribute:
     - opex_per_stor_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -18082,12 +18509,15 @@
     source_description: assumption based on various info
     linked_attribute:
     - capex_per_stor_capacity
+    redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
     link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
     linked_attribute:
     - opex_per_stor_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -18259,12 +18689,16 @@
     access_date: '2023-09-06'
     linked_attribute:
     - capex_per_stor_capacity
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
     link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
     linked_attribute:
     - opex_per_stor_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -18436,12 +18870,16 @@
     access_date: '2023-09-06'
     linked_attribute:
     - capex_per_stor_capacity
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
     link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
     linked_attribute:
     - opex_per_stor_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -18613,12 +19051,16 @@
     access_date: '2023-09-06'
     linked_attribute:
     - capex_per_stor_capacity
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
     link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
     linked_attribute:
     - opex_per_stor_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -18790,12 +19232,16 @@
     access_date: '2023-09-06'
     linked_attribute:
     - capex_per_stor_capacity
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
     link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
     linked_attribute:
     - opex_per_stor_capacity_yr
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -18968,6 +19414,8 @@
     linked_attribute:
     - capex_per_stor_capacity
     - opex_per_stor_capacity_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -19140,6 +19588,8 @@
     linked_attribute:
     - capex_per_stor_capacity
     - opex_per_stor_capacity_yr
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -19472,6 +19922,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -19643,6 +20095,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -19813,6 +20267,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -19984,6 +20440,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
@@ -19991,17 +20449,20 @@
     link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   - source_name: report_gas_compression_2014
     source_description: Energieaufwand für Gaskomprimierung (November 2014)
     source_type: other
     link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   - source_name: report_gas_storage_2017
     source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
     source_locator: cannot find the link of the report
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -20172,6 +20633,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
@@ -20179,17 +20642,20 @@
     link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   - source_name: report_gas_compression_2014
     source_description: Energieaufwand für Gaskomprimierung (November 2014)
     source_type: other
     link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   - source_name: report_gas_storage_2017
     source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
     source_locator: cannot find the link of the report
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -20360,6 +20826,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
+    source_licence: '© VSE, no reuse terms stated'
+    redistribution_permitted: unknown
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
@@ -20367,17 +20835,20 @@
     link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   - source_name: report_gas_compression_2014
     source_description: Energieaufwand für Gaskomprimierung (November 2014)
     source_type: other
     link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   - source_name: report_gas_storage_2017
     source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
     source_locator: cannot find the link of the report
     linked_attribute:
     - ALL
+    redistribution_permitted: unknown
   attributes:
   - attribute_name: trl
     value: 9
@@ -21196,6 +21667,8 @@
     link: https://doi.org/10.1016/j.ijhydene.2018.06.121
     linked_attribute:
     - capex_per_stor_capacity
+    source_licence: 'Elsevier copyright, closed access'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
