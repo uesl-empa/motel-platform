@@ -51,15 +51,24 @@ Two consequences worth keeping in mind:
 
       The fields to record it now exist (v0.3.0): `source_licence` and
       `redistribution_permitted` on both the staging `sources` block and
-      `secondary/source.yaml`. First pass done 2026-10-11 from Crossref, OpenAlex,
-      and publisher terms (evidence in each row's `note`): 11 registry sources
-      `permitted`, 5 `not_permitted`, 15 still `unknown`; of the 4 DAC sources, 2
-      `permitted`, 1 `not_permitted`, 1 `unknown`. The open ones are VSE 2022/2025
-      (largest share of values; ask VSE), JRC 2021 and ASSET 2018 (confirm the EU
-      copyright page), BFE, OST, the unidentified gas storage report, Belfer, and
-      reFuel's own values (needs the consortium's agreement). Mutschler 2018 can
-      move to `permitted` if the authors clear the preprint. List the ones still
-      needing a decision with:
+      `secondary/source.yaml`. Checked 2026-10-11 from Crossref, OpenAlex, the
+      publishers' terms, and each report's copyright page (evidence in each row's
+      `note`): 13 registry sources `permitted`, 10 `not_permitted`, 8 `unknown`;
+      the 4 DAC sources are 2 `permitted`, 2 `not_permitted`.
+
+      Still to do:
+      - ask VSE for permission: VSE 2022/2025 carry 89 of the 287 source
+        citations in the reFuel data and state no reuse licence
+      - ask BFE (tables © Prognos / TEP / INFRAS) and OST; or recompute the OST
+        gas compression values as reFuel's own
+      - get the reFuel consortium's agreement for its own values (shares,
+        conversion ratios, assumptions, interpolations)
+      - identify "Speicherkapazität von Erdgas in der Schweiz (2017)"
+      - Mutschler 2018 can move to `permitted` if the authors clear the preprint
+      - `not_permitted` is only recorded so far; nothing filters those values out
+        of the published data yet
+
+      List the ones still needing a decision with:
 
           python tools/validate_unmapped.py motel-db/unmapped_entity --strict
 

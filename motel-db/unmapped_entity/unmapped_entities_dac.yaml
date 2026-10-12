@@ -56,7 +56,8 @@
     source_notes: Mentioned in the DAC review email as a benchmark expecting early
       full-scale plants around 400-1000 USD/t net CO2 toward 2030 and 2050 costs around
       200-400 USD/t if large-scale deployment succeeds.
-    redistribution_permitted: unknown
+    source_licence: 'Copyright 2023, President and Fellows of Harvard College'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: deployment_state
     value: No commercial-scale DACCS plants are currently operating, but several projects

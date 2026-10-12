@@ -409,8 +409,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -419,8 +419,8 @@
     linked_attribute:
     - lifetime_yr
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -599,8 +599,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -608,8 +608,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -788,8 +788,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - technical_efficiency
-    source_licence: 'EU publication: ''This is a public document. You can share this publication.'''
-    redistribution_permitted: unknown
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -969,8 +969,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: 'EU publication: ''This is a public document. You can share this publication.'''
-    redistribution_permitted: unknown
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -1154,8 +1154,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -1163,8 +1163,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -1348,8 +1348,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -1539,8 +1539,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -1548,8 +1548,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -1734,14 +1734,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_jrc_2021
     link: https://doi.org/10.2760/527879
     linked_attribute:
     - operating_temperature_c
-    source_licence: 'EU publication: ''This is a public document. You can share this publication.'''
-    redistribution_permitted: unknown
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -1923,14 +1923,14 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_jrc_2021
     link: https://doi.org/10.2760/527879
     linked_attribute:
     - operating_temperature_c
-    source_licence: 'EU publication: ''This is a public document. You can share this publication.'''
-    redistribution_permitted: unknown
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -2112,8 +2112,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -2296,8 +2296,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -2481,8 +2481,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -2490,8 +2490,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -2682,8 +2682,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -2691,8 +2691,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -2869,8 +2869,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -2878,8 +2878,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -3056,8 +3056,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -3065,8 +3065,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -3243,8 +3243,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -3252,8 +3252,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -3425,8 +3425,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -3434,8 +3434,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -4273,8 +4273,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
@@ -4455,8 +4455,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
@@ -4637,8 +4637,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
@@ -4819,8 +4819,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
@@ -5002,8 +5002,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -5187,8 +5187,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -5196,8 +5196,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -5367,8 +5367,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -5376,8 +5376,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -5547,8 +5547,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -5556,8 +5556,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -5727,8 +5727,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -5736,8 +5736,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -5908,8 +5908,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -6089,8 +6089,8 @@
     - capex_per_capacity
     - lifetime_yr
     - opex_per_capacity_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
@@ -6099,8 +6099,8 @@
     linked_attribute:
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -6270,8 +6270,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6279,8 +6279,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -6448,8 +6448,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6457,8 +6457,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -6635,8 +6635,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6644,8 +6644,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -6814,8 +6814,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -6823,8 +6823,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -6993,8 +6993,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute:
@@ -7009,8 +7009,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -7179,8 +7179,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute:
@@ -7195,8 +7195,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -7365,8 +7365,8 @@
     - capex_per_capacity
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -7374,8 +7374,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -7546,8 +7546,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -7555,8 +7555,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -7725,8 +7725,8 @@
     - lifetime_yr
     - opex_per_capacity_yr
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -7904,8 +7904,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -8087,8 +8087,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute:
@@ -8268,8 +8268,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -8277,8 +8277,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -8448,8 +8448,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -8457,8 +8457,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -8628,8 +8628,8 @@
     - opex_per_capacity_yr
     - opex_per_energy
     - technical_efficiency
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
@@ -8637,8 +8637,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -9010,8 +9010,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -9194,8 +9194,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -9378,8 +9378,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - lifetime_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -10322,7 +10322,8 @@
     - opex_per_capacity_yr
     - ratios_in
     - ratios_out
-    redistribution_permitted: unknown
+    source_licence: 'CC BY 4.0'
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: reference_unit_size
     value: 1100
@@ -12229,8 +12230,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 7
@@ -12439,8 +12440,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 8
@@ -12649,8 +12650,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 8
@@ -12859,8 +12860,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -13069,8 +13070,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 7
@@ -13279,8 +13280,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 8
@@ -13489,8 +13490,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 8
@@ -13699,8 +13700,8 @@
     access_date: '2025-05-26'
     linked_attribute:
     - opex_per_energy
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -17811,7 +17812,8 @@
     linked_attribute:
     - ratios_in
     - ratios_out
-    redistribution_permitted: unknown
+    source_licence: '© Prognos AG / TEP Energy GmbH / INFRAS AG 2021, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: reference_unit_size
     value: 0.05
@@ -18689,8 +18691,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - capex_per_stor_capacity
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
@@ -18870,8 +18872,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - capex_per_stor_capacity
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
@@ -19051,8 +19053,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - capex_per_stor_capacity
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
@@ -19232,8 +19234,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - capex_per_stor_capacity
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
@@ -19414,8 +19416,8 @@
     linked_attribute:
     - capex_per_stor_capacity
     - opex_per_stor_capacity_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -19588,8 +19590,8 @@
     linked_attribute:
     - capex_per_stor_capacity
     - opex_per_stor_capacity_yr
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -19922,8 +19924,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -20095,8 +20097,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -20267,8 +20269,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   attributes:
   - attribute_name: trl
     value: 9
@@ -20440,8 +20442,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
@@ -20449,14 +20451,16 @@
     link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
     linked_attribute:
     - ALL
-    redistribution_permitted: unknown
+    source_licence: '© E3Mlab PRIMES model 2018; tables marked ''Confidential - Not to be used without permission'''
+    redistribution_permitted: not_permitted
   - source_name: report_gas_compression_2014
     source_description: Energieaufwand für Gaskomprimierung (November 2014)
     source_type: other
     link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
     linked_attribute:
     - ALL
-    redistribution_permitted: unknown
+    source_licence: 'No licence stated'
+    redistribution_permitted: not_permitted
   - source_name: report_gas_storage_2017
     source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
     source_locator: cannot find the link of the report
@@ -20633,8 +20637,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
@@ -20642,14 +20646,16 @@
     link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
     linked_attribute:
     - ALL
-    redistribution_permitted: unknown
+    source_licence: '© E3Mlab PRIMES model 2018; tables marked ''Confidential - Not to be used without permission'''
+    redistribution_permitted: not_permitted
   - source_name: report_gas_compression_2014
     source_description: Energieaufwand für Gaskomprimierung (November 2014)
     source_type: other
     link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
     linked_attribute:
     - ALL
-    redistribution_permitted: unknown
+    source_licence: 'No licence stated'
+    redistribution_permitted: not_permitted
   - source_name: report_gas_storage_2017
     source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
     source_locator: cannot find the link of the report
@@ -20826,8 +20832,8 @@
     access_date: '2023-09-06'
     linked_attribute:
     - ALL
-    source_licence: '© VSE, no reuse terms stated'
-    redistribution_permitted: unknown
+    source_licence: '© VSE, no reuse licence'
+    redistribution_permitted: not_permitted
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
@@ -20835,14 +20841,16 @@
     link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
     linked_attribute:
     - ALL
-    redistribution_permitted: unknown
+    source_licence: '© E3Mlab PRIMES model 2018; tables marked ''Confidential - Not to be used without permission'''
+    redistribution_permitted: not_permitted
   - source_name: report_gas_compression_2014
     source_description: Energieaufwand für Gaskomprimierung (November 2014)
     source_type: other
     link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
     linked_attribute:
     - ALL
-    redistribution_permitted: unknown
+    source_licence: 'No licence stated'
+    redistribution_permitted: not_permitted
   - source_name: report_gas_storage_2017
     source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
     source_locator: cannot find the link of the report
