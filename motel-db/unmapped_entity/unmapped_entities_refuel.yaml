@@ -226,7 +226,8 @@
       market
     source_type: other
     link: https://doi.org/10.1016/j.energy.2024.131246
-    linked_attribute: []
+    linked_attribute:
+    - technical_efficiency
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
   - source_name: report_VSE_2025
@@ -234,18 +235,60 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
-  attributes: []
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.64'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 23
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 890
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 21
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.002
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -317,24 +360,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.3'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 15
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1000
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 12
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.004
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -651,24 +736,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.42'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 23
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 489
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 21
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.002
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -739,9 +866,13 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -753,7 +884,36 @@
     source_type: other
     linked_attribute: []
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 30
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 8000
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 222
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.005
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -839,17 +999,21 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -865,6 +1029,35 @@
       Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
       energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
       fuels)'
+  - attribute_name: lifetime_yr
+    value: 23
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 979
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 43
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.002
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -935,9 +1128,14 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_jrc_2021
     link: https://doi.org/10.2760/527879
     linked_attribute:
@@ -951,6 +1149,14 @@
     - ratios_out
     redistribution_permitted: unknown
   attributes:
+  - attribute_name: technical_efficiency
+    value: '0.65'
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
   - attribute_name: operating_temperature_c
     value: 1000
     uncertainty_notes: null
@@ -958,6 +1164,35 @@
     attribute_notes: 'Column Header: Operating Temperature, Unit / Format: [°C], Allowed
       Values: —, Description: Characteristic operating temperature of the core process.,
       Note: Relevant for thermal integration'
+  - attribute_name: lifetime_yr
+    value: 23
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 4000
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 50
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1032,9 +1267,14 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_jrc_2021
     link: https://doi.org/10.2760/527879
     linked_attribute:
@@ -1048,6 +1288,14 @@
     - ratios_out
     redistribution_permitted: unknown
   attributes:
+  - attribute_name: technical_efficiency
+    value: '0.65'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
   - attribute_name: operating_temperature_c
     value: 1000
     uncertainty_notes: null
@@ -1055,6 +1303,35 @@
     attribute_notes: 'Column Header: Operating Temperature, Unit / Format: [°C], Allowed
       Values: —, Description: Characteristic operating temperature of the core process.,
       Note: Relevant for thermal integration'
+  - attribute_name: lifetime_yr
+    value: 23
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 3000
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 45
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1129,16 +1406,58 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.5'
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 23
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 6000
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 235
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1214,16 +1533,58 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.5'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 23
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 4000
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 200
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1301,24 +1662,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.42'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 23
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 538
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 24
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.002
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1396,24 +1799,57 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 80
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1890
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 9
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1491,24 +1927,57 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 80
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 3640
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 9
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1586,24 +2055,57 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 80
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 3200
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 64
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1681,24 +2183,57 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 80
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 3000
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 30
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -1771,24 +2306,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.2'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 40
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 4600
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 96
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2170,9 +2747,14 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
@@ -2181,7 +2763,44 @@
     - ratios_out
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '1.0'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 2647
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 41
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2253,9 +2872,14 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
@@ -2264,7 +2888,44 @@
     - ratios_out
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '1.0'
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1880
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 37.6
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2336,9 +2997,14 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
@@ -2347,7 +3013,44 @@
     - ratios_out
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '1.0'
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1400
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 28
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2419,9 +3122,14 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: paper_alpinePV_2024
     source_description: ETHZ paper on Alpine PV cost and financial viability
     source_type: other
@@ -2430,7 +3138,44 @@
     - ratios_out
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '1.0'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1020
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 21
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2503,16 +3248,58 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.33'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 60
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 8000
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 200
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.009
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2583,24 +3370,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.45'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 2500
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 39
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2671,24 +3500,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.45'
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 2084
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 33
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2759,24 +3630,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.45'
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1668
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 27
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2847,24 +3760,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.45'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1253
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 21
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -2935,16 +3890,58 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.15'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 15
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1400
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 135
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.004
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3019,24 +4016,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2025
     source_description: VSE Energiezukunft 2050, Update 2025
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.93'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 1900
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 114
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3107,24 +4146,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.85'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 300
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 9
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3194,24 +4275,57 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 65
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 1
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.001
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3283,24 +4397,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.85'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 30
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 275
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 1.4
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3371,24 +4527,57 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 962
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 4
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3461,7 +4650,7 @@
     access_date: '2025-05-26'
     linked_attribute: []
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute: []
@@ -3471,16 +4660,23 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
   balancing:
     balancing_notes: null
     inputs:
@@ -3553,7 +4749,7 @@
     access_date: '2025-05-26'
     linked_attribute: []
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute: []
@@ -3563,16 +4759,23 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
   balancing:
     balancing_notes: null
     inputs:
@@ -3643,24 +4846,57 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 962
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 4
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3732,24 +4968,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.85'
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 765
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 1
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3819,16 +5097,49 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 2700
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 81
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3900,16 +5211,58 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - lifetime_yr
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '4.0'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 800
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 12
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -3986,7 +5339,7 @@
     access_date: '2025-05-26'
     linked_attribute: []
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
     linked_attribute: []
@@ -4069,24 +5422,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.85'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 17
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 300
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 9
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.001
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -4157,24 +5552,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.77'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 2600
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 156
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -4245,24 +5682,66 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_capacity
+    - opex_per_capacity_yr
+    - opex_per_energy
+    - technical_efficiency
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
     - ratios_in
     - ratios_out
     redistribution_permitted: unknown
-  attributes: []
+  attributes:
+  - attribute_name: technical_efficiency
+    value: '0.85'
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technical Efficiency, Unit / Format: [0–1], Allowed
+      Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
+      energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
+      fuels)'
+  - attribute_name: lifetime_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_per_capacity
+    value: 500
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Capacity (kW), Unit / Format: [Currency
+      / kW], Allowed Values: ≥ 0, Description: Specific capital expenditure per unit
+      of installed power capacity., Note: Primary scaling parameter (ConvTech) | source
+      currency: EUR'
+  - attribute_name: opex_per_capacity_yr
+    value: 15
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
+      / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
+      per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.003
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -4452,9 +5931,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -4470,6 +5950,12 @@
       Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
       energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
       fuels)'
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_per_capacity
     value: 1130
     uncertainty_notes: null
@@ -4577,9 +6063,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -4595,6 +6082,12 @@
       Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
       energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
       fuels)'
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_per_capacity
     value: 1056
     uncertainty_notes: null
@@ -4702,9 +6195,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - lifetime_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
     linked_attribute:
@@ -4720,6 +6214,12 @@
       Values: 0 < η ≤ 1, Description: Overall energy conversion efficiency: main output
       energy / main input energy., Note: Based on kWh (electricity, heat) or LHV (chemical
       fuels)'
+  - attribute_name: lifetime_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
   - attribute_name: capex_per_capacity
     value: 995
     uncertainty_notes: null
@@ -6788,9 +8288,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: tech_maturity
     value: Emerging
@@ -6835,6 +8336,14 @@
     attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
       / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
       per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.015
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -6953,9 +8462,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: tech_maturity
     value: Emerging
@@ -7000,6 +8510,14 @@
     attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
       / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
       per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.015
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -7118,9 +8636,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: tech_maturity
     value: Emerging
@@ -7165,6 +8684,14 @@
     attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
       / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
       per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.015
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -7283,9 +8810,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: tech_maturity
     value: Mature
@@ -7330,6 +8858,14 @@
     attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
       / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
       per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.015
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -7448,9 +8984,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: tech_maturity
     value: Emerging
@@ -7495,6 +9032,14 @@
     attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
       / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
       per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.015
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -7613,9 +9158,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: tech_maturity
     value: Emerging
@@ -7660,6 +9206,14 @@
     attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
       / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
       per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.015
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -7778,9 +9332,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: tech_maturity
     value: Emerging
@@ -7825,6 +9380,14 @@
     attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
       / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
       per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.015
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -7943,9 +9506,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute: []
+    linked_attribute:
+    - opex_per_energy
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   attributes:
   - attribute_name: tech_maturity
     value: Mature
@@ -7990,6 +9554,14 @@
     attribute_notes: 'Column Header: OPEX per Capacity (kW), Unit / Format: [Currency
       / kW / yr], Allowed Values: ≥ 0, Description: Fixed annual operational expenditure
       per unit of installed capacity, excluding fuel costs. | source currency: EUR'
+  - attribute_name: opex_per_energy
+    value: 0.015
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Energy, Unit / Format: [Currency / kWh]
+      or [Currency / kg], Allowed Values: ≥ 0, Description: Variable operational expenditure
+      per unit of energy or mass output, excluding fuel costs. | source currency:
+      EUR'
   balancing:
     balancing_notes: null
     inputs:
@@ -11082,9 +12654,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_stor_capacity
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
@@ -11094,6 +12667,14 @@
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
   attributes:
+  - attribute_name: capex_per_stor_capacity
+    value: 800
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 20
     uncertainty_notes: null
@@ -11162,9 +12743,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_stor_capacity
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
@@ -11174,6 +12756,14 @@
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
   attributes:
+  - attribute_name: capex_per_stor_capacity
+    value: 460
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 11.5
     uncertainty_notes: null
@@ -11242,9 +12832,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_stor_capacity
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
@@ -11254,6 +12845,14 @@
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
   attributes:
+  - attribute_name: capex_per_stor_capacity
+    value: 400
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 10
     uncertainty_notes: null
@@ -11322,9 +12921,10 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_stor_capacity
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
     source_type: other
@@ -11334,6 +12934,14 @@
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
   attributes:
+  - attribute_name: capex_per_stor_capacity
+    value: 350
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
   - attribute_name: opex_per_stor_capacity_yr
     value: 8.75
     uncertainty_notes: null
@@ -11402,10 +13010,27 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_stor_capacity
+    - opex_per_stor_capacity_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
-  attributes: []
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: capex_per_stor_capacity
+    value: 0.3
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 0.003
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
   balancing:
     balancing_notes: null
     inputs: []
@@ -11467,10 +13092,27 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute: []
+    linked_attribute:
+    - capex_per_stor_capacity
+    - opex_per_stor_capacity_yr
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
-  attributes: []
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: capex_per_stor_capacity
+    value: 0.3
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 0.003
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
   balancing:
     balancing_notes: null
     inputs: []
@@ -11589,8 +13231,115 @@
     linked_attribute:
     - ALL
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
-  attributes: []
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: trl
+    value: 9
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
+      Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
+      TRL values progress across tech_year., Note: See Nomenclature 4.2'
+  - attribute_name: tech_maturity
+    value: Mature
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
+      Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
+      derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
+  - attribute_name: storage_carrier
+    value: ThDhw
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
+      Carrier abbreviation, Description: The energy or material carrier being stored.
+      References Carrier tab.'
+  - attribute_name: min_installation
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
+      Values: ≥ 0, Description: Smallest assumed storage capacity.'
+  - attribute_name: charging_capacity_factor
+    value: 1
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
+      Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
+      storage capacity (C-rate equivalent).'
+  - attribute_name: discharging_capacity_factor
+    value: 1
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
+      Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
+      storage capacity.'
+  - attribute_name: charging_efficiency
+    value: 0.99
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
+      Values: 0–1, Description: Energy efficiency during charging.'
+  - attribute_name: discharging_efficiency
+    value: 0.99
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
+      Values: 0–1, Description: Energy efficiency during discharging.'
+  - attribute_name: min_soc
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
+      0–1, Description: Minimum state of charge as fraction of total capacity.'
+  - attribute_name: max_soc
+    value: 1
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
+      0–1, Description: Maximum state of charge as fraction of total capacity.'
+  - attribute_name: standby_loss_per_hour
+    value: 0.00971305
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
+      Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
+      (self-discharge rate)., Note: 0 for negligible loss'
+  - attribute_name: lifetime_yr
+    value: 40
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_one_time
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
+      Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
+      installed capacity., Note: Per-project lump sum | source currency: EUR'
+  - attribute_name: capex_per_stor_capacity
+    value: 60
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
+  - attribute_name: opex_one_time
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
+      Values: ≥ 0, Description: Fixed one-time operational expenditure independent
+      of capacity. | source currency: EUR'
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 0.6
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
   balancing:
     balancing_notes: null
     inputs: []
@@ -11655,8 +13404,115 @@
     linked_attribute:
     - ALL
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
-  attributes: []
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: trl
+    value: 9
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
+      Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
+      TRL values progress across tech_year., Note: See Nomenclature 4.2'
+  - attribute_name: tech_maturity
+    value: Mature
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
+      Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
+      derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
+  - attribute_name: storage_carrier
+    value: ThPhII
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
+      Carrier abbreviation, Description: The energy or material carrier being stored.
+      References Carrier tab.'
+  - attribute_name: min_installation
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
+      Values: ≥ 0, Description: Smallest assumed storage capacity.'
+  - attribute_name: charging_capacity_factor
+    value: 1
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
+      Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
+      storage capacity (C-rate equivalent).'
+  - attribute_name: discharging_capacity_factor
+    value: 1
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
+      Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
+      storage capacity.'
+  - attribute_name: charging_efficiency
+    value: 0.99
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
+      Values: 0–1, Description: Energy efficiency during charging.'
+  - attribute_name: discharging_efficiency
+    value: 0.99
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
+      Values: 0–1, Description: Energy efficiency during discharging.'
+  - attribute_name: min_soc
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
+      0–1, Description: Minimum state of charge as fraction of total capacity.'
+  - attribute_name: max_soc
+    value: 1
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
+      0–1, Description: Maximum state of charge as fraction of total capacity.'
+  - attribute_name: standby_loss_per_hour
+    value: 0.000158053
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
+      Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
+      (self-discharge rate)., Note: 0 for negligible loss'
+  - attribute_name: lifetime_yr
+    value: 40
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_one_time
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
+      Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
+      installed capacity., Note: Per-project lump sum | source currency: EUR'
+  - attribute_name: capex_per_stor_capacity
+    value: 3
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
+  - attribute_name: opex_one_time
+    value: 0
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
+      Values: ≥ 0, Description: Fixed one-time operational expenditure independent
+      of capacity. | source currency: EUR'
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 0.026
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
   balancing:
     balancing_notes: null
     inputs: []
@@ -11720,8 +13576,115 @@
     linked_attribute:
     - ALL
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
-  attributes: []
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: trl
+    value: 9
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: TRL, Unit / Format: —, Allowed Values: 1–9, Description:
+      Technology Readiness Level on the standard 1–9 scale. For non-mature technologies,
+      TRL values progress across tech_year., Note: See Nomenclature 4.2'
+  - attribute_name: tech_maturity
+    value: Mature
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Technology Maturity, Unit / Format: —, Allowed
+      Values: {Prototype, Emerging, Mature}, Description: Aggregated maturity classification
+      derived from TRL. Updated per tech_year., Note: See Nomenclature 4.2'
+  - attribute_name: storage_carrier
+    value: H2
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Storage Carrier, Unit / Format: —, Allowed Values:
+      Carrier abbreviation, Description: The energy or material carrier being stored.
+      References Carrier tab.'
+  - attribute_name: min_installation
+    value: 300000
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Minimum Installation, Unit / Format: [kWh], Allowed
+      Values: ≥ 0, Description: Smallest assumed storage capacity.'
+  - attribute_name: charging_capacity_factor
+    value: 1
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Charging Capacity Factor, Unit / Format: [—],
+      Allowed Values: 0–1, Description: Maximum charging power as fraction of rated
+      storage capacity (C-rate equivalent).'
+  - attribute_name: discharging_capacity_factor
+    value: 1
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Discharging Capacity Factor, Unit / Format: [—],
+      Allowed Values: 0–1, Description: Maximum discharging power as fraction of rated
+      storage capacity.'
+  - attribute_name: charging_efficiency
+    value: 0.938
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Charging Efficiency, Unit / Format: [—], Allowed
+      Values: 0–1, Description: Energy efficiency during charging.'
+  - attribute_name: discharging_efficiency
+    value: 0.938
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Discharging Efficiency, Unit / Format: [—], Allowed
+      Values: 0–1, Description: Energy efficiency during discharging.'
+  - attribute_name: min_soc
+    value: 0
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Minimum SOC, Unit / Format: [—], Allowed Values:
+      0–1, Description: Minimum state of charge as fraction of total capacity.'
+  - attribute_name: max_soc
+    value: 1
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Maximum SOC, Unit / Format: [—], Allowed Values:
+      0–1, Description: Maximum state of charge as fraction of total capacity.'
+  - attribute_name: standby_loss_per_hour
+    value: 0
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Standby Loss per Hour, Unit / Format: [1/h],
+      Allowed Values: ≥ 0, Description: Fractional energy loss per hour during standby
+      (self-discharge rate)., Note: 0 for negligible loss'
+  - attribute_name: lifetime_yr
+    value: 30
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: Economic Lifetime, Unit / Format: [years], Allowed
+      Values: > 0, Description: Expected operational lifetime'
+  - attribute_name: capex_one_time
+    value: 0
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: CAPEX One-Time, Unit / Format: [Currency], Allowed
+      Values: ≥ 0, Description: Fixed one-time capital expenditure independent of
+      installed capacity., Note: Per-project lump sum | source currency: EUR'
+  - attribute_name: capex_per_stor_capacity
+    value: 7
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: CAPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh], Allowed Values: ≥ 0, Description: Specific capital expenditure
+      per unit of installed storage capacity., Note: Primary scaling parameter (StorTech)
+      | source currency: EUR'
+  - attribute_name: opex_one_time
+    value: 0
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX One-Time, Unit / Format: [Currency], Allowed
+      Values: ≥ 0, Description: Fixed one-time operational expenditure independent
+      of capacity. | source currency: EUR'
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 0.13
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
   balancing:
     balancing_notes: null
     inputs: []
@@ -11786,7 +13749,7 @@
     linked_attribute:
     - ALL
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
@@ -11875,7 +13838,7 @@
     linked_attribute:
     - ALL
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
@@ -11964,7 +13927,7 @@
     linked_attribute:
     - ALL
     source_licence: © VSE, no reuse licence
-    redistribution_permitted: not_permitted
+    redistribution_permitted: permitted
   - source_name: report_ASSET_2018
     source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
       2018)'
