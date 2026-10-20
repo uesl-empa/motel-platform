@@ -155,7 +155,8 @@ A value is released only when at least one source is linked to it and every
 linked source is marked `permitted`. Values from `not_permitted` or `unknown`
 sources, and values with no source linked at all, are removed; records, scopes,
 carriers, and every source citation stay, so a withheld value can be looked up
-in its source. `dist/motel-db/WITHHELD.csv` lists each withheld value (without
+in its source. The free-text notes of a source that is not `permitted` are
+withheld too, because notes tend to restate the source's numbers. `dist/motel-db/WITHHELD.csv` lists each withheld value (without
 the value) and the reason, and `RELEASE.md` summarises the run.
 
 The script re-reads its own output and fails if a withheld value is still in it,

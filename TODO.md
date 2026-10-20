@@ -128,7 +128,7 @@ Two consequences worth keeping in mind:
 - [] restructure the DAC staging records before harmonising them.
       `unmapped_entities_dac.yaml` holds 30 attributes, 28 of them unique and
       mostly single-use narrative labels (`early_full_scale_2030_net_removal_cost`,
-      value `"a free-text cost range"`). Harmonised as-is they
+      a free-text cost range as its value). Harmonised as-is they
       double the shared attribute vocabulary (28 -> 56). Model-ready staging would
       reuse existing attributes (for example a net removal cost in USD/tCO2), put
       the year in `time_index`, the range in `uncertainty.lower_value` /
