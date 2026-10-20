@@ -1,0 +1,4 @@
+capacity_scope,capacity_scope_description,note
+CAP_400000KW,400000 kW,"capacity_scope metadata: Minimum Installation Size; Column Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed unit capacity for the technology., Note: 0 if no minimum constraint"
+CAP_MIN_INSTALL_SIZE,1000 kW,"capacity_scope metadata: Minimum Installation Size; Column Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed unit capacity for the technology., Note: 0 if no minimum constraint"
+CAP_MIN_INSTALL_SIZE_20000KG_H,20000 kg/h,"capacity_scope metadata: Minimum Installation Size; Column Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values: ≥ 0, Description: Smallest assumed unit capacity for the technology., Note: 0 if no minimum constraint"

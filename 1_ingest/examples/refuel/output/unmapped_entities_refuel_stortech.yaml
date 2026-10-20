@@ -1,0 +1,1481 @@
+- schema_version: 0.3.0
+  technology_name: ElBdg_Battery_ElBdg
+  technology:
+    technology_description: Electric battery storage at home, 2025
+    technology_type: Storage
+    technology_category: Battery storage
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
+    process_name: Li-ion battery (residential)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Electric battery storage at home, 2025'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: web_BatteryCH_2023
+    source_description: article about market price of home batteries in CH, in 2023
+    source_type: other
+    link: https://alpvolt.com/en/news/solar-batteries-in-switzerland
+    linked_attribute:
+    - capex_per_stor_capacity
+    source_licence: All rights reserved, Alpvolt Schweiz AG
+    redistribution_permitted: not_permitted
+  - source_name: web_Battery_OM_2025
+    source_description: FOM costs are estimated at 2.5% of the capital costs
+    source_type: other
+    link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
+    linked_attribute:
+    - opex_per_stor_capacity_yr
+    source_licence: CC BY 4.0
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 25
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: ElBdg_Battery_ElBdg
+  technology:
+    technology_description: Electric battery storage at home, 2030
+    technology_type: Storage
+    technology_category: Battery storage
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
+    process_name: Li-ion battery (residential)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Electric battery storage at home, 2030'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2030'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: assumption_Empa_battery_capex_2025
+    source_description: assumption based on various info
+    linked_attribute:
+    - capex_per_stor_capacity
+    redistribution_permitted: unknown
+  - source_name: web_Battery_OM_2025
+    source_description: FOM costs are estimated at 2.5% of the capital costs
+    source_type: other
+    link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
+    linked_attribute:
+    - opex_per_stor_capacity_yr
+    source_licence: CC BY 4.0
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 16.25
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: ElBdg_Battery_ElBdg
+  technology:
+    technology_description: Electric battery storage at home, 2040
+    technology_type: Storage
+    technology_category: Battery storage
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
+    process_name: Li-ion battery (residential)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Electric battery storage at home, 2040'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2040'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: assumption_Empa_battery_capex_2025
+    source_description: assumption based on various info
+    linked_attribute:
+    - capex_per_stor_capacity
+    redistribution_permitted: unknown
+  - source_name: web_Battery_OM_2025
+    source_description: FOM costs are estimated at 2.5% of the capital costs
+    source_type: other
+    link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
+    linked_attribute:
+    - opex_per_stor_capacity_yr
+    source_licence: CC BY 4.0
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 13.75
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: ElBdg_Battery_ElBdg
+  technology:
+    technology_description: Electric battery storage at home, 2050
+    technology_type: Storage
+    technology_category: Battery storage
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
+    process_name: Li-ion battery (residential)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Electric battery storage at home, 2050'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2050'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: assumption_Empa_battery_capex_2025
+    source_description: assumption based on various info
+    linked_attribute:
+    - capex_per_stor_capacity
+    redistribution_permitted: unknown
+  - source_name: web_Battery_OM_2025
+    source_description: FOM costs are estimated at 2.5% of the capital costs
+    source_type: other
+    link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
+    linked_attribute:
+    - opex_per_stor_capacity_yr
+    source_licence: CC BY 4.0
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 12.5
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: El_Battery_El
+  technology:
+    technology_description: Electric battery storage at the grid, 2020
+    technology_type: Storage
+    technology_category: Battery storage
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
+    process_name: Li-ion battery (grid-scale)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Electric battery storage at the grid,
+      2020'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - capex_per_stor_capacity
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  - source_name: web_Battery_OM_2025
+    source_description: FOM costs are estimated at 2.5% of the capital costs
+    source_type: other
+    link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
+    linked_attribute:
+    - opex_per_stor_capacity_yr
+    source_licence: CC BY 4.0
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 20
+    uncertainty_notes: null
+    time_index: '2025'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: El_Battery_El
+  technology:
+    technology_description: Electric battery storage at the grid, 2030
+    technology_type: Storage
+    technology_category: Battery storage
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
+    process_name: Li-ion battery (grid-scale)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Electric battery storage at the grid,
+      2030'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2030'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - capex_per_stor_capacity
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  - source_name: web_Battery_OM_2025
+    source_description: FOM costs are estimated at 2.5% of the capital costs
+    source_type: other
+    link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
+    linked_attribute:
+    - opex_per_stor_capacity_yr
+    source_licence: CC BY 4.0
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 11.5
+    uncertainty_notes: null
+    time_index: '2030'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: El_Battery_El
+  technology:
+    technology_description: Electric battery storage at the grid, 2040
+    technology_type: Storage
+    technology_category: Battery storage
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
+    process_name: Li-ion battery (grid-scale)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Electric battery storage at the grid,
+      2040'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2040'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - capex_per_stor_capacity
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  - source_name: web_Battery_OM_2025
+    source_description: FOM costs are estimated at 2.5% of the capital costs
+    source_type: other
+    link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
+    linked_attribute:
+    - opex_per_stor_capacity_yr
+    source_licence: CC BY 4.0
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 10
+    uncertainty_notes: null
+    time_index: '2040'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: El_Battery_El
+  technology:
+    technology_description: Electric battery storage at the grid, 2050
+    technology_type: Storage
+    technology_category: Battery storage
+    technology_notes: 'technology_category = Technology class Battery storage: Electrochemical
+      energy storage (e.g., Li-ion batteries)'
+    process_name: Li-ion battery (grid-scale)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Electric battery storage at the grid,
+      2050'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2050'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - capex_per_stor_capacity
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  - source_name: web_Battery_OM_2025
+    source_description: FOM costs are estimated at 2.5% of the capital costs
+    source_type: other
+    link: https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage
+    linked_attribute:
+    - opex_per_stor_capacity_yr
+    source_licence: CC BY 4.0
+    redistribution_permitted: permitted
+  attributes:
+  - attribute_name: opex_per_stor_capacity_yr
+    value: 8.75
+    uncertainty_notes: null
+    time_index: '2050'
+    attribute_notes: 'Column Header: OPEX per Storage Capacity (kWh), Unit / Format:
+      [Currency / kWh / yr], Allowed Values: ≥ 0, Description: Fixed annual operational
+      expenditure per unit of storage capacity. | source currency: EUR'
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: Hydro_PumpedReservoir_Hydro
+  technology:
+    technology_description: Pumped hydro reservoir, without pump and generator
+    technology_type: Storage
+    technology_category: Reservoir storage
+    technology_notes: 'technology_category = Technology class Reservoir storage: Large-scale
+      gravitational water storage (hydro reservoirs).'
+    process_name: Pumped hydro reservoir
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Pumped hydro reservoir, without pump and
+      generator'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - capex_per_stor_capacity
+    - opex_per_stor_capacity_yr
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: Hydro_Reservoir_Hydro
+  technology:
+    technology_description: Pumped hydro reservoir, without pump and generator
+    technology_type: Storage
+    technology_category: Reservoir storage
+    technology_notes: 'technology_category = Technology class Reservoir storage: Large-scale
+      gravitational water storage (hydro reservoirs).'
+    process_name: Hydro reservoir
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Pumped hydro reservoir, without pump and
+      generator'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - capex_per_stor_capacity
+    - opex_per_stor_capacity_yr
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: Th_HeatStore_Th
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: Thermal storage
+    technology_notes: 'technology_category = Technology class Thermal storage: Sensible
+      or latent heat storage (hot water tanks, seasonal storage)'
+    process_name: High-temperature heat storage
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: Th_HotWaterTank_Th
+  technology:
+    technology_description: Hot water storage tank at home
+    technology_type: Storage
+    technology_category: Thermal storage
+    technology_notes: 'technology_category = Technology class Thermal storage: Sensible
+      or latent heat storage (hot water tanks, seasonal storage)'
+    process_name: Hot water tank (residential)
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Hot water storage tank at home'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - ALL
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: Th_SeasonalStore_Th
+  technology:
+    technology_description: Thermal storage for district heating, seasonal storage
+    technology_type: Storage
+    technology_category: Thermal storage
+    technology_notes: 'technology_category = Technology class Thermal storage: Sensible
+      or latent heat storage (hot water tanks, seasonal storage)'
+    process_name: Seasonal thermal storage
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Thermal storage for district heating,
+      seasonal storage'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - ALL
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: H2_Tank_H2
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: Compressed gas storage
+    technology_notes: 'technology_category = Technology class Compressed gas storage:
+      Pressurised tank storage for gases (H₂, CH₄, CO₂, CO)'
+    process_name: Compressed H₂ tank
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2030'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - ALL
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: CH4_GridStorage_CH4
+  technology:
+    technology_description: Storaging methane via compressing in the pipelines
+    technology_type: Storage
+    technology_category: Pipeline storage
+    technology_notes: 'technology_category = Technology class Pipeline storage: Gas
+      storage via compression in existing pipeline infrastructure (linepack)'
+    process_name: Pipeline linepack
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Storaging methane via compressing in the
+      pipelines'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - ALL
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  - source_name: report_ASSET_2018
+    source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
+      2018)'
+    source_type: other
+    link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
+    linked_attribute:
+    - ALL
+    source_licence: © E3Mlab PRIMES model 2018; tables marked 'Confidential - Not
+      to be used without permission'
+    redistribution_permitted: not_permitted
+  - source_name: report_gas_compression_2014
+    source_description: Energieaufwand für Gaskomprimierung (November 2014)
+    source_type: other
+    link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
+    linked_attribute:
+    - ALL
+    source_licence: No licence stated
+    redistribution_permitted: not_permitted
+  - source_name: report_gas_storage_2017
+    source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
+    source_locator: cannot find the link of the report
+    linked_attribute:
+    - ALL
+    redistribution_permitted: unknown
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: CH4_Tank_CH4
+  technology:
+    technology_description: Tank storage for methane (compressed)
+    technology_type: Storage
+    technology_category: Compressed gas storage
+    technology_notes: 'technology_category = Technology class Compressed gas storage:
+      Pressurised tank storage for gases (H₂, CH₄, CO₂, CO)'
+    process_name: Compressed CH₄ tank
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Tank storage for methane (compressed)'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - ALL
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  - source_name: report_ASSET_2018
+    source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
+      2018)'
+    source_type: other
+    link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
+    linked_attribute:
+    - ALL
+    source_licence: © E3Mlab PRIMES model 2018; tables marked 'Confidential - Not
+      to be used without permission'
+    redistribution_permitted: not_permitted
+  - source_name: report_gas_compression_2014
+    source_description: Energieaufwand für Gaskomprimierung (November 2014)
+    source_type: other
+    link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
+    linked_attribute:
+    - ALL
+    source_licence: No licence stated
+    redistribution_permitted: not_permitted
+  - source_name: report_gas_storage_2017
+    source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
+    source_locator: cannot find the link of the report
+    linked_attribute:
+    - ALL
+    redistribution_permitted: unknown
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: CH4_Underground_CH4
+  technology:
+    technology_description: Underground methane storage
+    technology_type: Storage
+    technology_category: Underground storage
+    technology_notes: 'technology_category = Technology class Underground storage:
+      Subsurface geological storage for gases (salt caverns, depleted reservoirs)'
+    process_name: Underground gas storage
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Underground methane storage'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2030'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_VSE_2022
+    source_description: VSE Energiezukunft 2050, Studie 2022
+    source_type: other
+    link: https://www.strom.ch/de/energiezukunft-2050/download
+    access_date: '2023-09-06'
+    linked_attribute:
+    - ALL
+    source_licence: © VSE, no reuse licence
+    redistribution_permitted: not_permitted
+  - source_name: report_ASSET_2018
+    source_description: 'ASSET: Technology pathways in decarbonisation scenarios (July
+      2018)'
+    source_type: other
+    link: https://build-up.ec.europa.eu/sites/default/files/content/2018_06_27_technology_pathways_-_finalreportmain2.pdf
+    linked_attribute:
+    - ALL
+    source_licence: © E3Mlab PRIMES model 2018; tables marked 'Confidential - Not
+      to be used without permission'
+    redistribution_permitted: not_permitted
+  - source_name: report_gas_compression_2014
+    source_description: Energieaufwand für Gaskomprimierung (November 2014)
+    source_type: other
+    link: https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/technik/3.7.1_erneuerbare_energien_und_umwelttechnik/iet/power-to-x/06_energie_fuer_gaskomprimierung.pdf
+    linked_attribute:
+    - ALL
+    source_licence: No licence stated
+    redistribution_permitted: not_permitted
+  - source_name: report_gas_storage_2017
+    source_description: Speicherkapazität von Erdgas in der Schweiz (24 Feb 2017)
+    source_locator: cannot find the link of the report
+    linked_attribute:
+    - ALL
+    redistribution_permitted: unknown
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: CO2_Tank_CO2
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: Compressed gas storage
+    technology_notes: 'technology_category = Technology class Compressed gas storage:
+      Pressurised tank storage for gases (H₂, CH₄, CO₂, CO)'
+    process_name: Compressed CO₂ tank
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: CO_Tank_CO
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: Compressed gas storage
+    technology_notes: 'technology_category = Technology class Compressed gas storage:
+      Pressurised tank storage for gases (H₂, CH₄, CO₂, CO)'
+    process_name: Compressed CO tank
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: C12_Tank_C12
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: Liquid storage
+    technology_notes: 'technology_category = Technology class Liquid storage: Tank
+      storage for liquid fuels and chemicals (C8, C12, NH₃)'
+    process_name: Liquid fuel tank (diesel/kerosene)
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: C8_Tank_C8
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: Liquid storage
+    technology_notes: 'technology_category = Technology class Liquid storage: Tank
+      storage for liquid fuels and chemicals (C8, C12, NH₃)'
+    process_name: Liquid fuel tank (gasoline)
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []
+- schema_version: 0.3.0
+  technology_name: NH3_Tank_NH3
+  technology:
+    technology_description: Tank storage for ammonia
+    technology_type: Storage
+    technology_category: Liquid storage
+    technology_notes: 'technology_category = Technology class Liquid storage: Tank
+      storage for liquid fuels and chemicals (C8, C12, NH₃)'
+    process_name: Ammonia storage tank
+    process_type: null
+    process_category: null
+    process_notes: 'Technology description: Tank storage for ammonia'
+  scope:
+    geographic_scope: ECA
+    geographic_scope_description: Europe and Central Asia; based on World Bank regional
+      classification
+    temporal_scope: '2025'
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: Plant ready to operate
+    system_boundary_description: Default boundary. Equipment, installation, and essential
+      auxiliary systems required for operation. Excludes external grid reinforcement
+      and land acquisition.
+    scope_notes: 'geographic_scope metadata: Cost Base; Column Header: Cost Base,
+      Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic
+      region on which cost parameters are based. Default is ECA (Europe). Supports
+      future multi-region extension., Note: Designed for multi-region extension |
+      temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit
+      / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection
+      year for which the techno-economic parameters are reported., Note: Time-invariant
+      techs use 2025 | capacity_scope metadata: Minimum Installation Size; Column
+      Header: Minimum Installation Size, Unit / Format: [kW] or [kg/h], Allowed Values:
+      ≥ 0, Description: Smallest assumed unit capacity for the technology., Note:
+      0 if no minimum constraint | system_boundary metadata: Technology Boundary;
+      Column Header: Technology Boundary, Unit / Format: —, Allowed Values: See Nomenclature
+      4.3, Description: System boundary for CAPEX. ''Plant ready to operate'' (default),
+      ''Complete installation'', or ''Plant extension ready to operate''.'
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    other_notes:
+    - This unmapped entity was generated from the reFuel TechDatabase (2026-06-03)
+      using the MOTEL ingestion pipeline.
+  sources:
+  - source_name: report_power_to_ammonia_2018
+    source_description: Power-to-ammonia in future North European 100 %  renewable
+      power and heat system
+    source_type: other
+    link: https://doi.org/10.1016/j.ijhydene.2018.06.121
+    linked_attribute:
+    - capex_per_stor_capacity
+    source_licence: Elsevier copyright, closed access
+    redistribution_permitted: not_permitted
+  attributes: []
+  balancing:
+    balancing_notes: null
+    inputs: []
+    outputs: []

@@ -173,8 +173,11 @@ already a release, with nothing left to withhold.
 
 The full database, the raw source workbooks, and everything extracted from them
 belong in the private `uesl-empa/motel-data` repository, because many sources do
-not permit their values to be republished. This repository is meant to carry
-only the public release in `motel-db/`. To work on the full data, clone
+not permit their values to be republished. This repository carries
+only the public release in `motel-db/`; CI runs
+`tools/build_release.py --check motel-db` to keep it that way, and
+`tools/publish_release.py` proposes each new release as a pull request. To work
+on the full data, clone
 `motel-data` next to this repository and point `MOTEL_DATA` at it:
 
 ```bash
@@ -285,18 +288,17 @@ Each technology page has a "Suggest a correction or a source" button that opens
 a pre-filled GitHub issue, so feedback arrives in the repository where it can be
 reviewed.
 
-The explorer shows the public release, not `motel-db/` directly: the
-`Deploy Docs` workflow builds the release with `tools/build_release.py`, then
-generates the explorer's data from it with `docs/build_data.py`, on every
-publish and whenever `motel-db/` changes on `main`. Values whose sources do not
+The explorer shows the public release in `motel-db/`: the `Deploy Docs`
+workflow checks that it is a release, then generates the explorer's data from
+it with `docs/build_data.py`, on every publish and whenever `motel-db/` changes
+on `main`. Values whose sources do not
 permit redistribution are therefore withheld from the pages and the downloads;
 the explorer says so, links the list of withheld values, and shows each
 source's redistribution status. The generated files in `docs/data/` are not
 committed. To view the explorer locally:
 
 ```bash
-python tools/build_release.py
-python docs/build_data.py --db dist/motel-db
+python docs/build_data.py
 # then open docs/explorer.html in a browser
 ```
 

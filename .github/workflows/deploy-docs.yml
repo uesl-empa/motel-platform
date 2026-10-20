@@ -35,20 +35,20 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Build the public release of motel-db
-        # Withholds every value whose sources do not permit redistribution, and
-        # fails if any such value is still in the release.
+      - name: Check that motel-db is a release
+        # Refuses to publish if any value is not backed exclusively by
+        # permitted sources.
         run: |
           python -m pip install pyyaml
-          python tools/build_release.py --out dist/motel-db
+          python tools/build_release.py --check motel-db
 
-      - name: Build the data explorer's data from the public release
-        run: python docs/build_data.py --db dist/motel-db
+      - name: Build the data explorer's data
+        run: python docs/build_data.py --db motel-db
 
-      - name: Build the ontology TTL from the public release
+      - name: Build the ontology TTL from the release
         # Published at data/cls_atr_motel.ttl for motel-webapp and other
-        # consumers, instead of committing a TTL built from the full database.
-        run: python 3_ontology_mapping/scripts/gen_ttl.py --db dist/motel-db --out docs/data/cls_atr_motel.ttl
+        # consumers, instead of committing a TTL.
+        run: python 3_ontology_mapping/scripts/gen_ttl.py --db motel-db --out docs/data/cls_atr_motel.ttl
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

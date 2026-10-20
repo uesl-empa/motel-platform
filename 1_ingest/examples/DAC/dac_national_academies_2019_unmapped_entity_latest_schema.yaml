@@ -1,0 +1,101 @@
+schema_version: 0.3.0
+technology_name: Direct Air Capture (DAC) - National Academies 2019 solid sorbent
+  and solvent DAC benchmarks
+technology:
+  technology_description: Direct air capture technology removing CO2 from ambient
+    air; raw staging record for DAC techno-economic review before harmonisation.
+  technology_type: conversion
+  technology_category: carbon_dioxide_removal
+  technology_notes: Record covers direct air capture benchmarks from the National
+    Academies negative emissions technologies report, especially solid sorbent DAC
+    cost and energy-source caveats.
+  process_name: Direct air capture of atmospheric CO2
+  process_type: conversion
+  process_category: carbon_dioxide_removal
+  process_notes: Raw process description kept broad at ingestion stage; source-specific
+    DAC and possible storage/net-removal implications are preserved in scope and attribute
+    notes.
+scope:
+  geographic_scope: global_or_literature_generic
+  geographic_scope_description: Global / technology-generic literature benchmark;
+    not tied to one model region at ingestion stage.
+  temporal_scope: 2019_report_benchmark
+  temporal_scope_description: 2019 report perspective; includes current/near-term
+    benchmark statements and potential future large-scale values from report analysis.
+  capacity_scope: one_MtCO2_per_year_reference_and_literature_benchmark
+  capacity_scope_description: Includes a 1 MtCO2/year reference plant scale for some
+    solid sorbent DAC analysis; other cost statements are broad literature benchmarks.
+  system_boundary: dac_capture_and_energy_source_emissions_caveat
+  system_boundary_description: DAC capture cost and net-removal implications depending
+    on energy source; report discusses capture, energy-source emissions and sequestration
+    context.
+  scenario: National Academies negative emissions technology benchmark for DAC
+  scope_notes: Report year is 2019; values are useful as a benchmark but should be
+    reviewed before applying to 2050 TechDB central assumptions.
+sources:
+- source_name: National_Academies_2019_NETs_DAC_Chapter
+  source_description: 'National Academies of Sciences, Engineering, and Medicine.
+    Negative Emissions Technologies and Reliable Sequestration: A Research Agenda.
+    Chapter 5: Direct Air Capture. Washington, DC: The National Academies Press, 2019.
+    DOI: 10.17226/25259.'
+  link: https://doi.org/10.17226/25259
+  source_type: report
+  access_date: '2026-07-01'
+  confidence_level: high_for_source_metadata; review_required_for_model_adoption
+  reference_year: 2019
+  assessment_method: Manual extraction from National Academies chapter text and summary
+    lines; retained as raw staging values before harmonisation.
+  source_locator: Chapter 5 Direct Air Capture; Table 5.8 and surrounding discussion;
+    summary chapter
+  linked_attribute:
+  - deployed_air_capture_cost_statement
+  - solid_sorbent_middle_range_capture_cost
+  - designed_DAC_process_cost_range
+  - first_generation_commercial_plant_capture_cost
+  - unoptimized_process_cost
+  - large_scale_promising_scenario_cost_potential
+  - reference_plant_scale
+  - adsorbent_cost_driver
+  - solid_sorbent_DAC_emissions_solar_solar_mid_range
+  - solid_sorbent_DAC_emissions_natural_gas_natural_gas_mid_range
+  source_licence: All rights reserved, National Academy of Sciences
+  redistribution_permitted: not_permitted
+attributes: []
+balancing:
+  inputs:
+  - carrier_name: ambient air
+    carrier_notes: Dilute atmospheric air used as CO2 source; no quantified air-flow
+      ratio extracted at this staging step.
+    share: null
+    unit: fraction
+  main_input: ambient air
+  outputs:
+  - carrier_name: CO2 captured / removed
+    carrier_notes: CO2 separated from ambient air; storage or net-removal boundary
+      depends on the source-specific DAC, DACS, or DACCS definition.
+    share: null
+    unit: fraction
+  main_output: CO2 captured / removed
+  balancing_notes: The report analyses DAC capture and net-removal implications for
+    different energy sources; exact material and energy balances are not harmonised
+    here.
+metadata:
+  related_project: MOTEL / SWEET reFuel TechDB review
+  tags:
+  - DAC
+  - DACS
+  - DACCS
+  - carbon_dioxide_removal
+  - technology_cost_review
+  - MOTEL
+  - reFuel_TechDB
+  - reference_9
+  - NationalAcademies2019
+  - NETs
+  - DAC_chapter
+  - solid_sorbent_DAC
+  other_notes: 'Created as a single UnmappedEntity YAML object following the latest
+    schema supplied by the user. Units are kept inside value or attribute_notes, not
+    as separate attribute fields. Source tag: National_Academies_2019.'
+harmonisation_record:
+  mapping_status: to_be_mapped

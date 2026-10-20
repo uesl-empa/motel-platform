@@ -1,0 +1,56 @@
+original_name,process_name,process_id,status
+CCGT,Methane-Fueled CCGT with CCS Electricity Generation,PROC_00001,created
+OCGT,Methane-Fueled Open Cycle Gas Turbine Electricity Generation,PROC_00002,created
+CHP plant,Combined Heat and Power (CHP) Generation using Methane,PROC_00003,created
+SOFC,Methane-Fueled Fuel Cell Electricity and Heat Generation,PROC_00004,created
+Geothermal power plant,Geothermal CHP Generation,PROC_00005,created
+Pumped hydro (pump mode),Pumped Hydro Storage,PROC_00006,created
+Pumped hydro (turbine mode),Pumped Hydro Power Generation,PROC_00007,created
+Run-of-river plant,Run-of-river Hydroelectric Power Generation,PROC_00008,created
+Reservoir plant,Hydroelectric Reservoir Plant,PROC_00009,created
+Incineration plant,Electricity Generation from Municipal Solid Waste Incineration,PROC_00010,created
+Ground-mounted PV (alpine),Alpine Ground-Mounted Photovoltaic,PROC_00011,created
+Rooftop PV,Rooftop Photovoltaic,PROC_00012,created
+Pressurised water reactor,Electricity Generation via Nuclear Fission,PROC_00013,created
+Onshore wind turbine,Onshore Wind Electricity Generation,PROC_00014,created
+Biomass CHP plant,Biomass Combined Heat and Power Plant,PROC_00015,created
+Gas-fired boiler,Methane-Fired Boiler,PROC_00016,created
+Resistance heater,Electric Heating System for Buildings,PROC_00017,created
+Air conditioning unit,Electric Heat Pump with Thermal Storage for Building Heating,PROC_00018,created
+Hydrogen burner,Hydrogen-Fueled Boiler,PROC_00019,created
+Air-source heat pump,Residential Air-source Heat Pump Operation,PROC_00020,created
+Industrial heat pump,Low-Temperature Heat Upgrade for District Heating,PROC_00021,created
+Oil-fired boiler,Building Heating via Oil-Fired Boiler,PROC_00022,created
+Biomass furnace,Biomass-Fueled Boiler for Building Heating,PROC_00023,created
+Haber–Bosch reactor,Ammonia Synthesis (Haber–Bosch Process),PROC_00024,created
+Anaerobic digester,Anaerobic Digestion with Gas Upgrading,PROC_00025,created
+Sabatier reactor,Sabatier Reactor,PROC_00026,created
+HEFA reactor,SAF Production via Hydrotreatment of Used Cooking Oil and Animal Fat,PROC_00027,created
+Methanol synthesis reactor,Methanol Synthesis,PROC_00028,created
+RWGS reactor,Reverse Water Gas Shift,PROC_00029,created
+Alkaline electrolyser,Hydrogen Production via Alkaline Electrolysis,PROC_00030,created
+FT reactor,Fischer-Tropsch Hydrocarbon Synthesis,PROC_00031,created
+Fluidised bed gasifier,Municipal Solid Waste Gasification to Syngas,PROC_00032,created
+MtO + oligomerisation reactor,Methanol-to-Jet Fuel Production via MtO and Oligomerisation,PROC_00033,created
+SOEC co-electrolyser,High-Temperature Co-Electrolysis of CO₂ and H₂O to Syngas,PROC_00034,created
+Methane pyrolysis reactor,Methane Pyrolysis,PROC_00035,created
+Amine absorber,CO2 Post-Combustion Capture via Amine Absorption,PROC_00036,created
+Pyrolysis reactor,Biochar Production via Pyrolysis,PROC_00037,created
+DAC (sorbent-based),Direct Air Capture via Adsorption,PROC_00038,created
+Pressure swing adsorption,CO2 Post-Combustion Capture via Pressure Swing Adsorption,PROC_00039,created
+Li-ion battery (residential),Residential Li-ion Battery Storage,PROC_00040,created
+Li-ion battery (grid-scale),Li-ion Battery (Grid-Scale),PROC_00041,created
+Pumped hydro reservoir,Pumped Hydro Reservoir Storage,PROC_00042,created
+Hydro reservoir,Hydro Reservoir Storage,PROC_00043,created
+High-temperature heat storage,High-Temperature Heat Storage,PROC_00044,created
+Hot water tank (residential),Residential Hot Water Storage Tank,PROC_00045,created
+Seasonal thermal storage,Seasonal Thermal Storage,PROC_00046,created
+Compressed H₂ tank,Compressed Hydrogen Storage,PROC_00047,created
+Pipeline linepack,Pipeline Linepack Storage,PROC_00048,created
+Compressed CH₄ tank,Compressed Methane Storage,PROC_00049,created
+Underground gas storage,Underground Methane Storage,PROC_00050,created
+Compressed CO₂ tank,Compressed CO₂ Storage,PROC_00051,created
+Compressed CO tank,Compressed CO Storage,PROC_00052,created
+Liquid fuel tank (diesel/kerosene),Liquid Fuel Storage (Diesel/Kerosene),PROC_00053,created
+Liquid fuel tank (gasoline),Gasoline Storage,PROC_00054,created
+Ammonia storage tank,Ammonia Storage,PROC_00055,created

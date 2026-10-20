@@ -1,0 +1,2275 @@
+- schema_version: 0.3.0
+  technology_name: Air_DAC_CO2
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: BioWet_Digestion_CH4
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: C12_Tank_C12
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: C8_Tank_C8
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_Boiler_ThBdg
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_Boiler_ThInd
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_CCGT_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_CHP_ElTh
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_FuelCell_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_FuelCell_ElBdg
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_GridStorage_CH4
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_OCGT_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CH4_Tank_CH4
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CO2Flue_AmineScrub_CO2
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: CO2Flue_PSA_CO2
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: ElBdg_Battery_ElBdg
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_AirCon_ThSc
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_Battery_El
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_CoElectrolysis_Syngas
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_Electrolysis_H2
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_HeatPump_ThBdg
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_HeatPump_ThInd
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_Heater_ThBdg
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_Heater_ThInd
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: El_PumpedHydro_Pump
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Geothermal_CHP_ElTh
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_Boiler_ThInd
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_CCGT_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_CO2Hydro_MeOH
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_FuelCell_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_FuelCell_ElBdg
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_HaberBosch_NH3
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_OCGT_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_RWGS_CO
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_Sabatier_CH4
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: H2_Tank_H2
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Hydro_PumpedReservoir_Hydro
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Hydro_PumpedTurbine_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Hydro_Reservoir_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Hydro_Reservoir_Hydro
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Hydro_RunOfRiver_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: MSW_Gasification_H2
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: MSW_Gasification_Syngas
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: MSW_Incineration_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: NH3_CCGT_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: NH3_OCGT_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: NH3_Tank_NH3
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Oil_Boiler_ThBdg
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Oil_Boiler_ThInd
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Solar_PVAlpine_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Solar_PVRooftop_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Syngas_COHydro_CH4
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Syngas_COHydro_MeOH
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: RER
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Syngas_FT_C12
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Syngas_FT_C8
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Th_HeatStore_Th
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Th_HotWaterTank_Th
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Th_SeasonalStore_Th
+  technology:
+    technology_description: null
+    technology_type: Storage
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: U235_Nuclear_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Wind_Turbine_El
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: GLO
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Wood_Boiler_ThBdg
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Wood_Boiler_ThInd
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Wood_CHP_ElTh
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Wood_Gasification_H2
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []
+- schema_version: 0.3.0
+  technology_name: Wood_Gasification_Syngas
+  technology:
+    technology_description: null
+    technology_type: Conversion
+    technology_category: null
+    technology_notes: null
+    process_name: null
+    process_type: null
+    process_category: null
+    process_notes: null
+  scope:
+    geographic_scope: CH
+    geographic_scope_description: null
+    temporal_scope: null
+    temporal_scope_description: null
+    capacity_scope: null
+    capacity_scope_description: null
+    system_boundary: null
+    system_boundary_description: null
+    scope_notes: null
+  sources: []
+  balancing:
+    inputs: []
+    outputs: []
+  metadata:
+    related_project: reFuel.ch
+    tags:
+    - Switzerland
+    - power-to-X
+    - embedded-carbon
+    - LCA
+    other_notes:
+    - Generated from the reFuel TechDatabase (2026-06-03) EmbeddedCarbon sheet.
+  attributes: []

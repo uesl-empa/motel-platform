@@ -1,0 +1,5 @@
+temporal_scope,temporal_scope_description,note
+TIME_2050,2050,"temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection year for which the techno-economic parameters are reported., Note: Time-invariant techs use 2025"
+TIME_2030,2030,"temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection year for which the techno-economic parameters are reported., Note: Time-invariant techs use 2025"
+TIME_2040,2040,"temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection year for which the techno-economic parameters are reported., Note: Time-invariant techs use 2025"
+TIME_2025,2025,"temporal_scope metadata: Technology Year; Column Header: Technology Year, Unit / Format: [year], Allowed Values: {2025, 2030, 2040, 2050}, Description: Projection year for which the techno-economic parameters are reported., Note: Time-invariant techs use 2025"

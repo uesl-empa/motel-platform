@@ -1,0 +1,5 @@
+geographic_scope,geographic_scope_description,note
+GEO_ECA,Europe and Central Asia; based on World Bank regional classification,"geographic_scope metadata: Cost Base; Column Header: Cost Base, Unit / Format: [ISO 3166-1], Allowed Values: ECA (default), Description: Geographic region on which cost parameters are based. Default is ECA (Europe). Supports future multi-region extension., Note: Designed for multi-region extension"
+GEO_RER,RER,
+GEO_CH,CH,
+GEO_GLO,GLO,
