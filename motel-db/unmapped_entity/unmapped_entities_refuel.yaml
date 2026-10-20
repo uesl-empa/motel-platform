@@ -50,12 +50,7 @@
       power and heat system
     source_type: other
     link: https://doi.org/10.1016/j.ijhydene.2018.06.121
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: Elsevier copyright, closed access
     redistribution_permitted: not_permitted
   - source_name: conversion_parametrization
@@ -142,12 +137,7 @@
       power and heat system
     source_type: other
     link: https://doi.org/10.1016/j.ijhydene.2018.06.121
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: Elsevier copyright, closed access
     redistribution_permitted: not_permitted
   - source_name: conversion_parametrization
@@ -236,8 +226,7 @@
       market
     source_type: other
     link: https://doi.org/10.1016/j.energy.2024.131246
-    linked_attribute:
-    - technical_efficiency
+    linked_attribute: []
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
   - source_name: report_VSE_2025
@@ -245,10 +234,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -256,9 +242,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes: []
@@ -333,11 +317,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -345,8 +325,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -672,11 +651,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -684,8 +659,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -765,11 +739,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -781,8 +751,7 @@
   - source_name: assumption_reFuelWP3_2025
     source_description: Expert Assumption
     source_type: other
-    linked_attribute:
-    - technical_efficiency
+    linked_attribute: []
     redistribution_permitted: unknown
   attributes: []
   balancing:
@@ -870,10 +839,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -881,8 +847,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -970,12 +935,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_jrc_2021
@@ -1072,12 +1032,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_jrc_2021
@@ -1174,12 +1129,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -1264,12 +1214,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -1356,11 +1301,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -1368,8 +1309,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -1448,8 +1388,7 @@
     source_description: Future Energy (Third Edition)
     source_type: other
     link: https://doi.org/10.1016/B978-0-08-102886-5.00015-3
-    linked_attribute:
-    - technical_efficiency
+    linked_attribute: []
     source_licence: Elsevier copyright, book chapter without open licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
@@ -1457,10 +1396,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -1468,8 +1404,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -1548,8 +1483,7 @@
     source_description: Future Energy (Third Edition)
     source_type: other
     link: https://doi.org/10.1016/B978-0-08-102886-5.00015-3
-    linked_attribute:
-    - technical_efficiency
+    linked_attribute: []
     source_licence: Elsevier copyright, book chapter without open licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
@@ -1557,10 +1491,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -1568,8 +1499,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -1648,8 +1578,7 @@
     source_description: Future Energy (Third Edition)
     source_type: other
     link: https://doi.org/10.1016/B978-0-08-102886-5.00015-3
-    linked_attribute:
-    - technical_efficiency
+    linked_attribute: []
     source_licence: Elsevier copyright, book chapter without open licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
@@ -1657,10 +1586,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -1668,8 +1594,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -1748,8 +1673,7 @@
     source_description: Future Energy (Third Edition)
     source_type: other
     link: https://doi.org/10.1016/B978-0-08-102886-5.00015-3
-    linked_attribute:
-    - technical_efficiency
+    linked_attribute: []
     source_licence: Elsevier copyright, book chapter without open licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
@@ -1757,10 +1681,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -1768,8 +1689,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -1851,11 +1771,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -1863,8 +1779,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -1946,13 +1861,11 @@
   - source_name: assumption_PVcostProjection
     source_description: 4/3/2% cost reduction per year in 2030/2040/2050, see ref_id
       "paper_PVcostProjection_2025"
-    linked_attribute:
-    - capex_per_capacity
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: assumption_Empa_PV_OM
     source_description: currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050
-    linked_attribute:
-    - opex_per_capacity_yr
+    linked_attribute: []
     redistribution_permitted: unknown
   attributes: []
   balancing:
@@ -2025,13 +1938,11 @@
   - source_name: assumption_PVcostProjection
     source_description: 4/3/2% cost reduction per year in 2030/2040/2050, see ref_id
       "paper_PVcostProjection_2025"
-    linked_attribute:
-    - capex_per_capacity
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: assumption_Empa_PV_OM
     source_description: currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050
-    linked_attribute:
-    - opex_per_capacity_yr
+    linked_attribute: []
     redistribution_permitted: unknown
   attributes: []
   balancing:
@@ -2104,13 +2015,11 @@
   - source_name: assumption_PVcostProjection
     source_description: 4/3/2% cost reduction per year in 2030/2040/2050, see ref_id
       "paper_PVcostProjection_2025"
-    linked_attribute:
-    - capex_per_capacity
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: assumption_Empa_PV_OM
     source_description: currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050
-    linked_attribute:
-    - opex_per_capacity_yr
+    linked_attribute: []
     redistribution_permitted: unknown
   attributes: []
   balancing:
@@ -2183,13 +2092,11 @@
   - source_name: assumption_PVcostProjection
     source_description: 4/3/2% cost reduction per year in 2030/2040/2050, see ref_id
       "paper_PVcostProjection_2025"
-    linked_attribute:
-    - capex_per_capacity
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: assumption_Empa_PV_OM
     source_description: currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050
-    linked_attribute:
-    - opex_per_capacity_yr
+    linked_attribute: []
     redistribution_permitted: unknown
   attributes: []
   balancing:
@@ -2263,12 +2170,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: paper_alpinePV_2024
@@ -2351,12 +2253,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: paper_alpinePV_2024
@@ -2439,12 +2336,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: paper_alpinePV_2024
@@ -2527,12 +2419,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: paper_alpinePV_2024
@@ -2616,12 +2503,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -2701,11 +2583,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -2713,8 +2591,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -2794,11 +2671,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -2806,8 +2679,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -2887,11 +2759,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -2899,8 +2767,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -2980,11 +2847,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -2992,8 +2855,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3073,12 +2935,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3162,10 +3019,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2025
@@ -3173,9 +3027,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3255,11 +3107,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -3267,8 +3115,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3347,10 +3194,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -3358,8 +3202,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3440,11 +3283,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -3452,8 +3291,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3533,10 +3371,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -3544,8 +3379,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3625,26 +3459,19 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3724,26 +3551,19 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: report_VSE_2022
     source_description: VSE Energiezukunft 2050, Studie 2022
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3823,10 +3643,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -3834,8 +3651,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -3916,11 +3732,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -3928,8 +3740,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -4008,11 +3819,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -4093,12 +3900,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -4182,22 +3984,12 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: linear_interpolation_2020_2050
     source_description: linear interpolate the values between 2020 and 2050
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: source_share
     source_description: Temporary reference ID for input and output shares
@@ -4277,11 +4069,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -4289,8 +4077,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -4370,11 +4157,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -4382,8 +4165,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -4463,11 +4245,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - capex_per_capacity
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: report_VSE_2022
@@ -4475,8 +4253,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -4555,12 +4332,7 @@
       power and heat system
     source_type: other
     link: https://doi.org/10.1016/j.ijhydene.2018.06.121
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - opex_per_energy
-    - technical_efficiency
+    linked_attribute: []
     source_licence: Elsevier copyright, closed access
     redistribution_permitted: not_permitted
   - source_name: conversion_parametrization
@@ -4662,8 +4434,7 @@
       assessment in a life cycle perspective'
     source_type: other
     link: https://doi.org/10.1016/j.rser.2020.110588
-    linked_attribute:
-    - tech_maturity
+    linked_attribute: []
     source_licence: CC BY-NC-ND 4.0
     redistribution_permitted: not_permitted
   - source_name: report_danish_energy_2025
@@ -4681,8 +4452,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -4789,8 +4559,7 @@
       assessment in a life cycle perspective'
     source_type: other
     link: https://doi.org/10.1016/j.rser.2020.110588
-    linked_attribute:
-    - tech_maturity
+    linked_attribute: []
     source_licence: CC BY-NC-ND 4.0
     redistribution_permitted: not_permitted
   - source_name: report_danish_energy_2025
@@ -4808,8 +4577,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -4916,8 +4684,7 @@
       assessment in a life cycle perspective'
     source_type: other
     link: https://doi.org/10.1016/j.rser.2020.110588
-    linked_attribute:
-    - tech_maturity
+    linked_attribute: []
     source_licence: CC BY-NC-ND 4.0
     redistribution_permitted: not_permitted
   - source_name: report_danish_energy_2025
@@ -4935,8 +4702,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - lifetime_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -6037,20 +5803,12 @@
       review of power-to-X processes'
     source_type: other
     link: https://doi.org/10.1016/j.jcou.2025.103019
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - technical_efficiency
+    linked_attribute: []
     source_licence: CC BY 4.0
     redistribution_permitted: permitted
   - source_name: linear_interpolation_2030_2050
     source_description: linear interpolate the values between 2020 and 2050
-    linked_attribute:
-    - capex_per_capacity
-    - lifetime_yr
-    - opex_per_capacity_yr
-    - technical_efficiency
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: report_danish_energy_2025
     source_description: Report from Danish Energy Agency
@@ -6502,8 +6260,7 @@
   - source_name: paper_mutschler_2018
     source_type: other
     link: https://doi.org/10.1016/j.jcat.2018.08.002
-    linked_attribute:
-    - operating_temperature_c
+    linked_attribute: []
     source_licence: Elsevier copyright, closed access
     redistribution_permitted: not_permitted
   - source_name: source_share
@@ -7031,8 +6788,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes:
@@ -7197,8 +6953,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes:
@@ -7363,8 +7118,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes:
@@ -7529,8 +7283,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes:
@@ -7695,8 +7448,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes:
@@ -7861,8 +7613,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes:
@@ -8027,8 +7778,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes:
@@ -8193,8 +7943,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2025-05-26'
-    linked_attribute:
-    - opex_per_energy
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes:
@@ -11028,8 +10777,7 @@
     source_description: article about market price of home batteries in CH, in 2023
     source_type: other
     link: https://alpvolt.com/en/news/solar-batteries-in-switzerland
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     source_licence: All rights reserved, Alpvolt Schweiz AG
     redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
@@ -11105,8 +10853,7 @@
   sources:
   - source_name: assumption_Empa_battery_capex_2025
     source_description: assumption based on various info
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
@@ -11181,8 +10928,7 @@
   sources:
   - source_name: assumption_Empa_battery_capex_2025
     source_description: assumption based on various info
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
@@ -11257,8 +11003,7 @@
   sources:
   - source_name: assumption_Empa_battery_capex_2025
     source_description: assumption based on various info
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     redistribution_permitted: unknown
   - source_name: web_Battery_OM_2025
     source_description: FOM costs are estimated at 2.5% of the capital costs
@@ -11337,8 +11082,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
@@ -11418,8 +11162,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
@@ -11499,8 +11242,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
@@ -11580,8 +11322,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   - source_name: web_Battery_OM_2025
@@ -11661,9 +11402,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_stor_capacity
-    - opex_per_stor_capacity_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes: []
@@ -11728,9 +11467,7 @@
     source_type: other
     link: https://www.strom.ch/de/energiezukunft-2050/download
     access_date: '2023-09-06'
-    linked_attribute:
-    - capex_per_stor_capacity
-    - opex_per_stor_capacity_yr
+    linked_attribute: []
     source_licence: © VSE, no reuse licence
     redistribution_permitted: not_permitted
   attributes: []
@@ -12533,8 +12270,7 @@
       power and heat system
     source_type: other
     link: https://doi.org/10.1016/j.ijhydene.2018.06.121
-    linked_attribute:
-    - capex_per_stor_capacity
+    linked_attribute: []
     source_licence: Elsevier copyright, closed access
     redistribution_permitted: not_permitted
   attributes: []
