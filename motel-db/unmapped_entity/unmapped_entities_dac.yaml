@@ -44,15 +44,7 @@
     assessment_method: Manual extraction from Belfer Center report summary and DAC
       review email; retained as raw staging values before harmonisation.
     source_locator: Report summary / executive discussion on costs, scale and funding
-    linked_attribute:
-    - deployment_state
-    - early_full_scale_2030_net_removal_cost
-    - large_scale_2050s_net_removal_cost
-    - aspirational_cost_target_assessment
-    - ambitious_2050_deployment_level
-    - gigatonne_scale_timing
-    - low_carbon_energy_requirement_for_1Gt_DACCS
-    - policy_support_requirement
+    linked_attribute: []
     source_licence: Copyright 2023, President and Fellows of Harvard College
     redistribution_permitted: not_permitted
   attributes: []
@@ -142,17 +134,7 @@
       summary lines; retained as raw staging values before harmonisation.
     source_locator: Chapter 5 Direct Air Capture; Table 5.8 and surrounding discussion;
       summary chapter
-    linked_attribute:
-    - deployed_air_capture_cost_statement
-    - solid_sorbent_middle_range_capture_cost
-    - designed_DAC_process_cost_range
-    - first_generation_commercial_plant_capture_cost
-    - unoptimized_process_cost
-    - large_scale_promising_scenario_cost_potential
-    - reference_plant_scale
-    - adsorbent_cost_driver
-    - solid_sorbent_DAC_emissions_solar_solar_mid_range
-    - solid_sorbent_DAC_emissions_natural_gas_natural_gas_mid_range
+    linked_attribute: []
     source_licence: All rights reserved, National Academy of Sciences
     redistribution_permitted: not_permitted
   attributes: []

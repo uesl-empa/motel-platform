@@ -53,7 +53,9 @@ The run reports each disagreement and each stale record it finds.
 Withholding removes the value and keeps everything around it: the record, its
 scope, its carriers, and the citation of every source, so a reader can see what
 exists and fetch the numbers from the source. Attribute and value entries are
-removed whole, uncertainty included; balancing shares are set to null.
+removed whole, uncertainty included; balancing shares are set to null. A
+staging source's ``linked_attribute`` drops the names of attributes the release
+removed, so the released record stays consistent for harmonisation.
 
 Free text attached to a source that is not ``permitted`` is withheld as well,
 because notes tend to restate the source's headline numbers: the source's
@@ -292,9 +294,19 @@ def filter_file(path: Path, kind: str, relative: str, registry: Registry,
             where = {"file": relative, "record": index,
                      "subject": record.get("technology_name") or record.get("carrier_name")}
             sources = registry.staging_sources(record)
+            names = lambda: {a.get("attribute_name") for a in record.get("attributes") or []
+                             if isinstance(a, dict)}
+            before = names()
             released += filter_record(record, sources, "attributes", "attribute_name",
                                       where, withheld)
             entries = [entry for entry in record.get("sources") or [] if isinstance(entry, dict)]
+            # Keep the record consistent: a source no longer links an attribute
+            # that the release removed from the record.
+            gone = before - names()
+            for entry in entries:
+                if gone and isinstance(entry.get("linked_attribute"), list):
+                    entry["linked_attribute"] = [link for link in entry["linked_attribute"]
+                                                 if link not in gone]
             for entry, (label, decision, _) in zip(entries, sources):
                 if decision != PERMITTED and str(entry.get("source_notes") or "").strip():
                     entry.pop("source_notes")
