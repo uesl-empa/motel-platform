@@ -1,7 +1,7 @@
 """
 Build the data files behind the MOTEL data explorer (docs/explorer.html).
 
-Reads the published database in motel-db/ and writes, under docs/data/:
+Reads a MOTEL database and writes, under docs/data/:
 
 - motel-data.js     the explorer's data as `window.MOTEL_DATA = {...}`, loaded
                     with a <script> tag so explorer.html also works when opened
@@ -10,6 +10,13 @@ Reads the published database in motel-db/ and writes, under docs/data/:
 - motel-values.csv  one row per value with its technology, attribute, unit,
                     year, scope, and sources: the long table most modelling
                     tools load directly
+- withheld-values.csv  the release's list of withheld values, when the database
+                    is a public release built by tools/build_release.py
+
+The Deploy Docs workflow builds the public release first and points --db at
+it, so the published explorer carries only values whose sources permit
+redistribution. Without --db it reads motel-db/ directly, which is for local
+use only.
 
 Standard library plus PyYAML only, so the Deploy Docs workflow can run it
 before publishing. The output is generated, not committed (docs/data/ is
@@ -17,13 +24,17 @@ ignored by git).
 
 Usage:
     python docs/build_data.py
+    python docs/build_data.py --db dist/motel-db
 """
 
 from __future__ import annotations
 
+import argparse
 import csv
 import datetime
 import json
+import shutil
+from collections import Counter
 from pathlib import Path
 
 import yaml
@@ -61,7 +72,7 @@ def pick(row: dict, *fields: str) -> dict:
     return {field: clean(row.get(field)) for field in fields}
 
 
-def load_scopes() -> tuple[dict, dict]:
+def load_scopes(db: Path) -> tuple[dict, dict]:
     """
     Return the scope vocabularies and a map from raw staged values to tokens.
 
@@ -72,7 +83,7 @@ def load_scopes() -> tuple[dict, dict]:
     """
     vocab, aliases = {}, {}
     for scope_type in SCOPE_TYPES:
-        rows = read_csv(DB / "controlled_vocabulary" / f"{scope_type}.csv")
+        rows = read_csv(db / "controlled_vocabulary" / f"{scope_type}.csv")
         vocab[scope_type] = {
             row[scope_type].strip(): clean(row.get(f"{scope_type}_description"))
             for row in rows
@@ -80,7 +91,7 @@ def load_scopes() -> tuple[dict, dict]:
         }
         aliases[scope_type] = {
             row["original_value"].strip(): row["scope_token"].strip()
-            for row in read_csv(DB / "mapping" / f"{scope_type}_map.csv")
+            for row in read_csv(db / "mapping" / f"{scope_type}_map.csv")
             if clean(row.get("original_value")) and clean(row.get("scope_token"))
         }
     return vocab, aliases
@@ -96,40 +107,41 @@ def resolve_scope(scope: dict, vocab: dict, aliases: dict) -> dict:
     return resolved
 
 
-def build() -> dict:
+def build(db: Path) -> dict:
     technologies = [
         {
             "id": row["tech_id"],
             **pick(row, "technology_name", "technology_description", "technology_variant",
                    "main_process", "main_operation_unit"),
         }
-        for row in read_csv(DB / "secondary" / "technology.csv")
+        for row in read_csv(db / "secondary" / "technology.csv")
     ]
     processes = [
         {"id": row["process_id"], **pick(row, "process_name", "process_description",
                                           "process_type", "process_category", "main_sector")}
-        for row in read_csv(DB / "secondary" / "process.csv")
+        for row in read_csv(db / "secondary" / "process.csv")
     ]
     sources = [
         {"id": row["source_id"], **pick(row, "source_name", "source_description", "source_type",
                                          "link", "reference_year", "confidence_level",
-                                         "assessment_method")}
-        for row in read_csv(DB / "secondary" / "source.csv")
+                                         "assessment_method", "source_licence",
+                                         "redistribution_permitted")}
+        for row in read_csv(db / "secondary" / "source.csv")
     ]
     carriers = [
         {"id": row["carrier_id"], **pick(row, "carrier_name", "carrier_description",
                                           "carrier_type", "carrier_category")}
-        for row in read_csv(DB / "controlled_vocabulary" / "carrier.csv")
+        for row in read_csv(db / "controlled_vocabulary" / "carrier.csv")
     ]
     attributes = [
         {"id": row["attribute_id"], **pick(row, "attribute_name", "attribute_description",
                                             "unit", "data_format", "applies_to")}
-        for row in read_csv(DB / "controlled_vocabulary" / "attribute.csv")
+        for row in read_csv(db / "controlled_vocabulary" / "attribute.csv")
     ]
-    scope_vocab, scope_aliases = load_scopes()
+    scope_vocab, scope_aliases = load_scopes(db)
 
     records = []
-    for entity in read_yaml_list(DB / "linked_entity" / "linked_entity.yaml"):
+    for entity in read_yaml_list(db / "linked_entity" / "linked_entity.yaml"):
         balancing = entity.get("balancing") or {}
         records.append({
             "id": entity.get("linked_entity_id"),
@@ -167,7 +179,7 @@ def build() -> dict:
         })
 
     carrier_records = []
-    for record in read_yaml_list(DB / "linked_carrier_data" / "linked_carrier_data.yaml"):
+    for record in read_yaml_list(db / "linked_carrier_data" / "linked_carrier_data.yaml"):
         carrier_records.append({
             "id": record.get("linked_carrier_data_id"),
             "carrier_id": record.get("carrier_id"),
@@ -201,6 +213,28 @@ def build() -> dict:
         "scopes": scope_vocab,
         "records": records,
         "carrier_records": carrier_records,
+        "withheld": load_withheld(db),
+    }
+
+
+def load_withheld(db: Path) -> dict | None:
+    """
+    Summarise the values a public release withheld from the harmonised records.
+
+    None when db is not a release, which the explorer reads as "nothing was
+    filtered". Only the harmonised records are counted, since they are what the
+    explorer shows; the staging and human-readable copies repeat the same values.
+    """
+    if not (db / "WITHHELD.csv").exists():
+        return None
+    rows = [
+        row for row in read_csv(db / "WITHHELD.csv")
+        if row.get("file", "").startswith(("linked_entity/", "linked_carrier_data/"))
+    ]
+    return {
+        "values": sum(1 for row in rows if not row["item"].startswith("balancing.")),
+        "balancing": sum(1 for row in rows if row["item"].startswith("balancing.")),
+        "by_reason": dict(Counter(row["reason"] for row in rows)),
     }
 
 
@@ -247,9 +281,20 @@ def write_values_csv(data: dict, path: Path) -> int:
     return rows
 
 
-def main() -> int:
-    data = build()
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description="Build the data explorer's data files.")
+    parser.add_argument("--db", default=str(DB),
+                        help="database to read (default: <repo>/motel-db; publish from "
+                             "a release built by tools/build_release.py)")
+    db = Path(parser.parse_args(argv).db).resolve()
+
+    data = build(db)
     OUT.mkdir(parents=True, exist_ok=True)
+    withheld_list = OUT / "withheld-values.csv"
+    if (db / "WITHHELD.csv").exists():
+        shutil.copyfile(db / "WITHHELD.csv", withheld_list)
+    elif withheld_list.exists():
+        withheld_list.unlink()
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"), default=str)
     (OUT / "motel-data.json").write_text(payload, encoding="utf-8")
     (OUT / "motel-data.js").write_text(f"window.MOTEL_DATA = {payload};\n", encoding="utf-8")
@@ -258,6 +303,8 @@ def main() -> int:
         f"Wrote {OUT.relative_to(ROOT)}: {len(data['technologies'])} technologies, "
         f"{len(data['records'])} records, {rows} values, "
         f"{len(data['carrier_records'])} carrier records ({len(payload) / 1024:.0f} KiB)"
+        + (f", {data['withheld']['values']} values withheld" if data["withheld"] else
+           " — unfiltered motel-db, not for publishing")
     )
     return 0
 

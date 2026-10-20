@@ -364,6 +364,16 @@
   white-space: nowrap;
 }
 
+.release-note {
+  margin: 0 0 1.2rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brand);
+  border-radius: 0.45rem;
+  background: var(--surface);
+  font-size: 0.92rem;
+}
+
 .empty-state {
   padding: 1rem;
   color: var(--muted);

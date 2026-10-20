@@ -6,6 +6,7 @@ on:
     paths:
       - docs/**
       - motel-db/**
+      - tools/build_release.py
       - .github/workflows/deploy-docs.yml
   workflow_dispatch:
 
@@ -33,10 +34,15 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Build the data explorer's data from motel-db
+      - name: Build the public release of motel-db
+        # Withholds every value whose sources do not permit redistribution, and
+        # fails if any such value is still in the release.
         run: |
           python -m pip install pyyaml
-          python docs/build_data.py
+          python tools/build_release.py --out dist/motel-db
+
+      - name: Build the data explorer's data from the public release
+        run: python docs/build_data.py --db dist/motel-db
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

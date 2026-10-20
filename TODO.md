@@ -65,8 +65,26 @@ Two consequences worth keeping in mind:
         conversion ratios, assumptions, interpolations)
       - identify "Speicherkapazität von Erdgas in der Schweiz (2017)"
       - Mutschler 2018 can move to `permitted` if the authors clear the preprint
-      - `not_permitted` is only recorded so far; nothing filters those values out
-        of the published data yet
+      - trace the values that have **no source linked at all**: 1496 of the 2050
+        reFuel values, led by Embedded Carbon (520), one-time CAPEX and OPEX
+        (121 each), TRL (116), and theoretical efficiency (99). The release
+        withholds them because nobody can say whose they are. Link the source
+        each came from at ingest; if it is reFuel's own work, that is covered by
+        the consortium agreement above. Check the Embedded Carbon values in
+        particular: ecoinvent-derived factors are not redistributable.
+
+      `tools/build_release.py` now withholds every value not backed exclusively
+      by `permitted` sources, and the data explorer is published from its output
+      (2026-10-20: 226 of the 2050 reFuel linked values released, 12 of the 30
+      DAC staging values). Still exposed, because the release does not reach
+      them:
+      - `motel-db/` itself on the public default branch, and the git history.
+        Moving restricted values out of a public repository, or rewriting its
+        history, is a decision for the project, not a script.
+      - `3_ontology_mapping/output_ttl/cls_atr_motel.ttl`, committed, with 1943
+        attribute values. Generate it from the release, or stop committing it.
+      - the explorer's "Source files on GitHub" link, and `motel-webapp` if it
+        reads `motel-db/` from this repository.
 
       List the ones still needing a decision with:
 
@@ -83,6 +101,11 @@ Two consequences worth keeping in mind:
       schema_human file that is not valid YAML. It broke once while adding the
       licence fields and was worked around by rewording. Escape the quote in the
       generator so the next person does not hit it.
+- [] regenerate `motel-db/linked_entity_human/linked_entity.yaml`: it has drifted
+      from `linked_entity/`. LE_00060 lacks its `SRC_00014` source link there.
+      `tools/build_release.py` reports the drift and judges the copy by the
+      canonical sources, so the release is unaffected, but readers of the copy
+      see the wrong provenance.
 
 ## Nice to have — linked entity
 
