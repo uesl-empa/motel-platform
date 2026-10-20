@@ -16,6 +16,14 @@ Usage
 -----
     python tools/build_release.py
     python tools/build_release.py --db motel-db --out dist/motel-db
+    python tools/build_release.py --check motel-db
+
+--db defaults to $MOTEL_DATA/motel-db when MOTEL_DATA is set (a checkout of
+the private motel-data repository), else to motel-db/ in this repository.
+
+--check builds into a temporary folder and exits with status 1 unless nothing
+had to be withheld, which is how the public repository proves that the motel-db
+it carries is already a release.
 
 The rule
 --------
@@ -47,6 +55,11 @@ scope, its carriers, and the citation of every source, so a reader can see what
 exists and fetch the numbers from the source. Attribute and value entries are
 removed whole, uncertainty included; balancing shares are set to null.
 
+Free text attached to a source that is not ``permitted`` is withheld as well,
+because notes tend to restate the source's headline numbers: the source's
+``source_notes`` in staging records and its ``note`` in secondary/source.csv.
+The citation and the recorded licence stay.
+
 Every withheld value is listed, without the value, in WITHHELD.csv next to the
 copied database, and RELEASE.md summarises the run. The script then re-reads its
 own output and exits with status 1 if any value that should have been withheld
@@ -60,8 +73,10 @@ import argparse
 import csv
 import datetime
 import shutil
+import os
 import subprocess
 import sys
+import tempfile
 from collections import Counter
 from pathlib import Path
 
@@ -95,6 +110,8 @@ BALANCING_LINKS = {"inputs": "ratios_in", "outputs": "ratios_out"}
 STRICTNESS = {PERMITTED: 0, "unknown": 1, "not_permitted": 2}
 
 WITHHELD_COLUMNS = ["file", "record", "subject", "item", "time_index", "reason", "sources"]
+# WITHHELD.csv items that are source notes rather than values.
+NOTE_ITEMS = ("source_notes", "note")
 
 
 def status_of(value) -> str:
@@ -274,8 +291,16 @@ def filter_file(path: Path, kind: str, relative: str, registry: Registry,
         if kind == "staging":
             where = {"file": relative, "record": index,
                      "subject": record.get("technology_name") or record.get("carrier_name")}
-            released += filter_record(record, registry.staging_sources(record),
-                                      "attributes", "attribute_name", where, withheld)
+            sources = registry.staging_sources(record)
+            released += filter_record(record, sources, "attributes", "attribute_name",
+                                      where, withheld)
+            entries = [entry for entry in record.get("sources") or [] if isinstance(entry, dict)]
+            for entry, (label, decision, _) in zip(entries, sources):
+                if decision != PERMITTED and str(entry.get("source_notes") or "").strip():
+                    entry.pop("source_notes")
+                    withheld.append({**where, "item": "source_notes", "time_index": None,
+                                     "reason": verdict([decision]),
+                                     "sources": f"{label}={decision}"})
         else:
             sources = (registry.projection_sources(record, relative) if projection
                        else registry.linked_sources(record))
@@ -285,6 +310,22 @@ def filter_file(path: Path, kind: str, relative: str, registry: Registry,
     return records, released
 
 
+def filter_registry(path: Path, relative: str, withheld: list) -> tuple[list, list]:
+    """Blank the notes of sources that are not permitted; return (columns, rows)."""
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        rows = list(reader)
+    for row in rows:
+        decision = status_of(row.get("redistribution_permitted"))
+        if decision != PERMITTED and (row.get("note") or "").strip():
+            row["note"] = ""
+            withheld.append({"file": relative, "record": row.get("source_id"),
+                             "subject": row.get("source_name"), "item": "note",
+                             "time_index": None, "reason": verdict([decision]),
+                             "sources": f"{row.get('source_id')}={decision}"})
+    return reader.fieldnames, rows
+
+
 def classify(db: Path) -> tuple[list, list]:
     """Sort every file under db into (kind, path) jobs; return (jobs, unknown files)."""
     jobs, unknown = [], []
@@ -292,7 +333,14 @@ def classify(db: Path) -> tuple[list, list]:
         parts = path.relative_to(db).parts
         if parts[0] in SKIPPED_DIRS or path.suffix in SKIPPED_SUFFIXES or path.name == ".gitkeep":
             continue
-        if path.suffix == ".md":
+        if parts == (MARKER,):
+            continue
+        # A release's own list, rewritten by every build; lets --check run on a release.
+        if parts == ("WITHHELD.csv",):
+            continue
+        if parts == ("secondary", "source.csv"):
+            jobs.append(("registry", path))
+        elif path.suffix == ".md":
             jobs.append(("copy", path))
         elif len(parts) == 2 and parts[0] in STAGING_DIRS and path.suffix in (".yaml", ".yml"):
             jobs.append(("staging", path))
@@ -319,10 +367,11 @@ def prepare_out(out: Path, db: Path) -> None:
                               encoding="utf-8")
 
 
-def git_version() -> str:
+def git_version(db: Path) -> str:
+    """The commit of the repository holding the database, which is what the release is built from."""
     try:
         result = subprocess.run(["git", "describe", "--always", "--dirty", "--tags"],
-                                cwd=ROOT, capture_output=True, text=True, check=True)
+                                cwd=db, capture_output=True, text=True, check=True)
         return result.stdout.strip()
     except (OSError, subprocess.CalledProcessError):
         return "unknown"
@@ -330,7 +379,8 @@ def git_version() -> str:
 
 def tally(released: Counter, withheld: list) -> list[tuple]:
     """(file, released, withheld by reason...) for every filtered file."""
-    reasons = Counter((row["file"], row["reason"]) for row in withheld)
+    reasons = Counter((row["file"], row["reason"]) for row in withheld
+                      if row["item"] not in NOTE_ITEMS)
     return [
         (name, released[name], *(reasons[(name, reason)] for reason in REASONS))
         for name in sorted(released)
@@ -344,7 +394,7 @@ def write_withheld(path: Path, rows: list) -> None:
         writer.writerows(rows)
 
 
-def write_summary(path: Path, version: str, rows: list[tuple]) -> None:
+def write_summary(path: Path, version: str, rows: list[tuple], notes: int) -> None:
     lines = [
         "# MOTEL public release",
         "",
@@ -362,6 +412,9 @@ def write_summary(path: Path, version: str, rows: list[tuple]) -> None:
         "`not_permitted`, a linked source does not allow redistribution; `unknown`, "
         "a linked source has no decision recorded yet. The same value appears in the "
         "staging file and in each linked file, so the rows below do not add up.",
+        "",
+        f"The free-text notes of sources that are not permitted are withheld too "
+        f"({notes} in all), because notes tend to restate a source's numbers.",
         "",
         "| File | Released | " + " | ".join(f"`{reason}`" for reason in REASONS) + " |",
         "| ---- | -------: | " + " | ".join("-------:" for _ in REASONS) + " |",
@@ -398,13 +451,21 @@ def build(db: Path, out: Path) -> int:
         if kind == "copy":
             shutil.copy2(path, target)
             continue
+        if kind == "registry":
+            columns, rows = filter_registry(path, relative, withheld)
+            with target.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=columns)
+                writer.writeheader()
+                writer.writerows(rows)
+            continue
         records, released[relative] = filter_file(path, kind, relative, registry, withheld)
         with target.open("w", encoding="utf-8") as handle:
             yaml.safe_dump(records, handle, sort_keys=False, allow_unicode=True)
 
     rows = tally(released, withheld)
     write_withheld(out / "WITHHELD.csv", withheld)
-    write_summary(out / "RELEASE.md", git_version(), rows)
+    notes = sum(1 for row in withheld if row["item"] in NOTE_ITEMS)
+    write_summary(out / "RELEASE.md", git_version(db), rows, notes)
 
     for name, source_id, staged, registered in sorted(registry.conflicts):
         print(f"  NOTE    {name!r} is {staged} in staging but {registered} for {source_id} "
@@ -418,13 +479,16 @@ def build(db: Path, out: Path) -> int:
         detail = ", ".join(f"{n} {reason}" for n, reason in zip(reasons, REASONS) if n)
         print(f"  {name}: {count} released, {sum(reasons)} withheld"
               + (f" ({detail})" if detail else ""))
+    print(f"  source notes withheld: {notes}")
     print(f"\nWrote {out}")
 
     # Read the release back and apply the rule again: nothing may be withheld twice.
     leaks = []
     for kind, path in jobs:
-        if kind != "copy":
-            relative = path.relative_to(db).as_posix()
+        relative = path.relative_to(db).as_posix()
+        if kind == "registry":
+            filter_registry(out / relative, relative, leaks)
+        elif kind != "copy":
             filter_file(out / relative, kind, relative, registry, leaks)
     if leaks:
         for row in leaks[:20]:
@@ -434,16 +498,40 @@ def build(db: Path, out: Path) -> int:
     return 0
 
 
+def check(db: Path) -> int:
+    """Exit status 0 only when db is already a release: nothing left to withhold."""
+    with tempfile.TemporaryDirectory() as scratch:
+        status = build(db, Path(scratch) / "motel-db")
+        withheld = read_csv(Path(scratch) / "motel-db" / "WITHHELD.csv")
+    if status:
+        return status
+    if withheld:
+        print(f"\n{db} is not a release: {len(withheld)} withheld entries, counted per "
+              "file. Publish the output of tools/build_release.py, not the full database.")
+        return 1
+    print(f"\n{db} is a release: every value is backed by permitted sources only.")
+    return 0
+
+
+def default_db() -> Path:
+    data_root = os.environ.get("MOTEL_DATA", "").strip()
+    return Path(data_root).expanduser() / "motel-db" if data_root else ROOT / "motel-db"
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
         description="Write motel-db with every value withheld whose sources do not "
                     "permit redistribution.",
     )
-    parser.add_argument("--db", default=str(ROOT / "motel-db"),
-                        help="database to release (default: <repo>/motel-db)")
+    parser.add_argument("--db", default=str(default_db()),
+                        help="database to release (default: $MOTEL_DATA/motel-db, else <repo>/motel-db)")
     parser.add_argument("--out", default=str(ROOT / "dist" / "motel-db"),
                         help="folder to write the release to (default: <repo>/dist/motel-db)")
+    parser.add_argument("--check", metavar="DB",
+                        help="verify that DB is already a release instead of building one")
     args = parser.parse_args(argv)
+    if args.check:
+        return check(Path(args.check).resolve())
     return build(Path(args.db).resolve(), Path(args.out).resolve())
 
 

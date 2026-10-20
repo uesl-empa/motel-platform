@@ -19,6 +19,7 @@ Covers:
 import csv
 import datetime
 import json
+import os
 import re
 import shutil
 import time
@@ -36,7 +37,26 @@ HARMONISATION_VERSION = "1.1.0"
 # Paths are anchored to the repository root rather than the working directory,
 # so the helpers behave the same from the notebook, the CLI, or a test.
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DB_DIR = PROJECT_ROOT / "motel-db"
+
+
+def database_dir(project_root: Path = PROJECT_ROOT) -> Path:
+    """
+    Return the motel-db this run reads and writes.
+
+    The public repository carries only the public release of motel-db. The full
+    database lives in the private motel-data repository; set MOTEL_DATA to a
+    checkout of it to harmonise against the full data.
+    """
+    data_root = os.environ.get("MOTEL_DATA", "").strip()
+    if not data_root:
+        return project_root / "motel-db"
+    path = Path(data_root).expanduser().resolve() / "motel-db"
+    if not path.is_dir():
+        raise FileNotFoundError(f"MOTEL_DATA is set, but {path} does not exist.")
+    return path
+
+
+DB_DIR = database_dir()
 SCHEMA_DIR = PROJECT_ROOT / "schema"
 LOG_DIR = DB_DIR / "log"
 BACKUP_DIR = DB_DIR / "_backup"
@@ -48,7 +68,7 @@ def find_project_root(start: Path | None = None) -> Path:
     """Find the repository root from any path inside motel-platform."""
     start = (start or Path.cwd()).resolve()
     for candidate in [start, *start.parents]:
-        if (candidate / "motel-db").is_dir() and (candidate / "schema").is_dir():
+        if (candidate / "2_harmonise").is_dir() and (candidate / "schema").is_dir():
             return candidate
     raise FileNotFoundError(
         "Could not locate the repository root. Start the notebook from inside motel-platform."
@@ -58,15 +78,16 @@ def find_project_root(start: Path | None = None) -> Path:
 def get_harmonisation_paths(project_root: Path | None = None) -> dict[str, Path]:
     """Return the main repository paths used by the harmonisation workflow."""
     root = (project_root or find_project_root()).resolve()
+    db = database_dir(root)
     return {
         "project_root": root,
         "schema_dir": root / "schema",
-        "database_dir": root / "motel-db",
-        "unmapped_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
-        "linked_entity_path": root / "motel-db" / "linked_entity" / "linked_entity.yaml",
-        "unmapped_carrier_data_path": root / "motel-db" / "unmapped_carrier_data" / "unmapped_carrier_data.yaml",
-        "linked_carrier_data_path": root / "motel-db" / "linked_carrier_data" / "linked_carrier_data.yaml",
-        "mapping_dir": root / "motel-db" / "mapping",
+        "database_dir": db,
+        "unmapped_path": db / "unmapped_entity" / "unmapped_entities_refuel.yaml",
+        "linked_entity_path": db / "linked_entity" / "linked_entity.yaml",
+        "unmapped_carrier_data_path": db / "unmapped_carrier_data" / "unmapped_carrier_data.yaml",
+        "linked_carrier_data_path": db / "linked_carrier_data" / "linked_carrier_data.yaml",
+        "mapping_dir": db / "mapping",
         "notebook_path": root / "2_harmonise" / "2_data_harmonisation.ipynb",
     }
 
@@ -631,12 +652,20 @@ _DATA_FORMAT_BY_VALUE_TYPE = {
 
 
 def _relative_to_root(path):
-    """Return a repository-relative POSIX path for provenance columns."""
+    """
+    Return a portable POSIX path for provenance columns and messages.
+
+    Paths under the data root (the folder holding motel-db, which is this
+    repository unless MOTEL_DATA points elsewhere) come out as
+    ``motel-db/...`` either way, so provenance never records a local path.
+    """
     path = Path(path).resolve()
-    try:
-        return path.relative_to(PROJECT_ROOT).as_posix()
-    except ValueError:
-        return path.as_posix()
+    for root in (DB_DIR.parent.resolve(), PROJECT_ROOT):
+        try:
+            return path.relative_to(root).as_posix()
+        except ValueError:
+            continue
+    return path.as_posix()
 
 
 # ---------------------------------------------------------------------------

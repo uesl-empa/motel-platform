@@ -5,6 +5,7 @@
 
 
 import math
+import os
 import re
 from copy import deepcopy
 from collections import defaultdict
@@ -106,7 +107,7 @@ def find_project_root(start: Path | None = None) -> Path:
     """Find the repository root from any path inside motel-platform."""
     start = (start or Path.cwd()).resolve()
     for candidate in [start, *start.parents]:
-        if (candidate / "motel-db").is_dir() and (candidate / "schema_human").is_dir():
+        if (candidate / "1_ingest").is_dir() and (candidate / "schema_human").is_dir():
             return candidate
     raise FileNotFoundError(
         "Could not locate the repository root. Start the notebook from inside motel-platform."
@@ -117,17 +118,32 @@ def get_refuel_paths(project_root: Path | None = None) -> dict[str, Path]:
     """Return the key notebook, data, schema, and output paths for this pipeline."""
     root = (project_root or find_project_root()).resolve()
     example_dir = root / "1_ingest" / "examples" / "refuel"
+    # The reFuel workbook and everything extracted from it carry source values
+    # that may not be republished, so with MOTEL_DATA set (a checkout of the
+    # private motel-data repository) they are read from and written there.
+    # Without it the paths point inside this repository, where the workbook is
+    # not committed and the outputs hold only the public release.
+    data_root = os.environ.get("MOTEL_DATA", "").strip()
+    if data_root:
+        data = Path(data_root).expanduser().resolve()
+        input_dir = data / "raw" / "refuel"
+        output_dir = data / "ingest_output" / "refuel"
+        db = data / "motel-db"
+    else:
+        input_dir = example_dir / "input"
+        output_dir = example_dir / "output"
+        db = root / "motel-db"
     return {
         "project_root": root,
         "example_dir": example_dir,
         "notebook_dir": example_dir,
         "notebook_path": example_dir / "ingestion_pipeline.ipynb",
-        "workbook_path": example_dir / "input" / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
+        "workbook_path": input_dir / "reFuel_TechDatabase_Clean_2026-06-03.xlsx",
         "schema_path": root / "schema_human" / "unmapped_entity_technology.yaml",
-        "staging_path": root / "motel-db" / "unmapped_entity" / "unmapped_entities_refuel.yaml",
-        "convtech_output": example_dir / "output" / "unmapped_entities_refuel_convtech.yaml",
-        "stortech_output": example_dir / "output" / "unmapped_entities_refuel_stortech.yaml",
-        "embeddedcarbon_output": example_dir / "output" / "unmapped_entities_refuel_embeddedcarbon.yaml",
+        "staging_path": db / "unmapped_entity" / "unmapped_entities_refuel.yaml",
+        "convtech_output": output_dir / "unmapped_entities_refuel_convtech.yaml",
+        "stortech_output": output_dir / "unmapped_entities_refuel_stortech.yaml",
+        "embeddedcarbon_output": output_dir / "unmapped_entities_refuel_embeddedcarbon.yaml",
     }
 
 

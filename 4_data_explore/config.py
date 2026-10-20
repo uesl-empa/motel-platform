@@ -1,11 +1,19 @@
+import os
 from pathlib import Path
 
 
 ROOT = Path.cwd().resolve().parent
-LINKED_ENTITY_PATH = ROOT / "motel-db" / "linked_entity" / "linked_entity.yaml"
-LINKED_CARRIER_DATA_PATH = ROOT / "motel-db" / "linked_carrier_data" / "linked_carrier_data.yaml"
-MAPPING_DIR = ROOT / "motel-db" / "mapping"
-VOCAB_DIR = ROOT / "motel-db" / "controlled_vocabulary"
+# The public release by default; the full database when MOTEL_DATA points at a
+# checkout of the private motel-data repository.
+DB_DIR = (
+    Path(os.environ["MOTEL_DATA"]).expanduser().resolve() / "motel-db"
+    if os.environ.get("MOTEL_DATA", "").strip()
+    else ROOT / "motel-db"
+)
+LINKED_ENTITY_PATH = DB_DIR / "linked_entity" / "linked_entity.yaml"
+LINKED_CARRIER_DATA_PATH = DB_DIR / "linked_carrier_data" / "linked_carrier_data.yaml"
+MAPPING_DIR = DB_DIR / "mapping"
+VOCAB_DIR = DB_DIR / "controlled_vocabulary"
 
 
 DEFAULT_TECHNOLOGY_KEYWORDS = ["hydrogen", "fuel cell"]

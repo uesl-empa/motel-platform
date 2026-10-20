@@ -76,15 +76,18 @@ Two consequences worth keeping in mind:
       `tools/build_release.py` now withholds every value not backed exclusively
       by `permitted` sources, and the data explorer is published from its output
       (2026-10-20: 226 of the 2050 reFuel linked values released, 12 of the 30
-      DAC staging values). Still exposed, because the release does not reach
-      them:
-      - `motel-db/` itself on the public default branch, and the git history.
-        Moving restricted values out of a public repository, or rewriting its
-        history, is a decision for the project, not a script.
-      - `3_ontology_mapping/output_ttl/cls_atr_motel.ttl`, committed, with 1943
-        attribute values. Generate it from the release, or stop committing it.
-      - the explorer's "Source files on GitHub" link, and `motel-webapp` if it
-        reads `motel-db/` from this repository.
+      DAC staging values).
+
+      Decided 2026-10-20: move the full data to a private `motel-data`
+      repository, keep only the release public, and rewrite the public git
+      history (which also holds 10 versions of the raw reFuel workbook). Code
+      support is in place: `MOTEL_DATA` points every stage at the private
+      checkout, notebook outputs are cleared, the examples are filtered, the TTL
+      is published from the release instead of committed, and CI rejects
+      spreadsheets and notebook outputs. Still to do, and exposed until then:
+      - the cutover: `motel-db/` on the public default branch and the git
+        history still hold every value
+      - `motel-webapp`, which commits TTL copies built from the full database
 
       List the ones still needing a decision with:
 
@@ -125,7 +128,7 @@ Two consequences worth keeping in mind:
 - [] restructure the DAC staging records before harmonising them.
       `unmapped_entities_dac.yaml` holds 30 attributes, 28 of them unique and
       mostly single-use narrative labels (`early_full_scale_2030_net_removal_cost`,
-      value `"a free-text cost range"`). Harmonised as-is they
+      a free-text cost range as its value). Harmonised as-is they
       double the shared attribute vocabulary (28 -> 56). Model-ready staging would
       reuse existing attributes (for example a net removal cost in USD/tCO2), put
       the year in `time_index`, the range in `uncertainty.lower_value` /
