@@ -141,6 +141,33 @@ It is standalone — standard library plus PyYAML, no imports from this reposito
 ingestion script. It runs on every push through the `Validate Repository`
 workflow.
 
+## Building the Public Release
+
+`motel-db/` holds values extracted from third-party sources, and many of those
+sources do not permit their numbers to be republished. `tools/build_release.py`
+writes a copy of the database in which every such value is withheld:
+
+```bash
+python tools/build_release.py            # writes dist/motel-db/
+```
+
+A value is released only when at least one source is linked to it and every
+linked source is marked `permitted`. Values from `not_permitted` or `unknown`
+sources, and values with no source linked at all, are removed; records, scopes,
+carriers, and every source citation stay, so a withheld value can be looked up
+in its source. `dist/motel-db/WITHHELD.csv` lists each withheld value (without
+the value) and the reason, and `RELEASE.md` summarises the run.
+
+The script re-reads its own output and fails if a withheld value is still in it,
+and it refuses to build when `motel-db/` holds a file it does not know how to
+filter. The `Validate Repository` workflow builds the release on every push, and
+the `Deploy Docs` workflow publishes the data explorer from it. To release more
+values, record the source's terms (or link a cleared source) at ingest; the
+release picks the change up on the next build.
+
+The release filters what MOTEL distributes from here on. It does not change
+`motel-db/` itself, which still holds every value, nor the git history.
+
 ## Adding a New Source
 
 Stage the new source's records as `unmapped_entity_technology` YAML (Step 1),
@@ -214,15 +241,23 @@ Each technology page has a "Suggest a correction or a source" button that opens
 a pre-filled GitHub issue, so feedback arrives in the repository where it can be
 reviewed.
 
-The explorer's data is generated from `motel-db/` by `docs/build_data.py`; the
-`Deploy Docs` workflow runs it on every publish and republishes whenever
-`motel-db/` changes on `main`. The generated files in `docs/data/` are not
+The explorer shows the public release, not `motel-db/` directly: the
+`Deploy Docs` workflow builds the release with `tools/build_release.py`, then
+generates the explorer's data from it with `docs/build_data.py`, on every
+publish and whenever `motel-db/` changes on `main`. Values whose sources do not
+permit redistribution are therefore withheld from the pages and the downloads;
+the explorer says so, links the list of withheld values, and shows each
+source's redistribution status. The generated files in `docs/data/` are not
 committed. To view the explorer locally:
 
 ```bash
-python docs/build_data.py
+python tools/build_release.py
+python docs/build_data.py --db dist/motel-db
 # then open docs/explorer.html in a browser
 ```
+
+Without `--db`, `build_data.py` reads `motel-db/` unfiltered, which is fine for
+local inspection but must not be published.
 
 ## Contributors and Acknowledgement
 
@@ -241,6 +276,7 @@ Special thanks to the reFuel.ch project for important input to the platform and 
 ## Public Release Checklist
 
 - Review source-data licensing before publishing any raw or derived third-party data.
+- Distribute the output of `tools/build_release.py`, not `motel-db/` itself.
 - Confirm `motel-db/` contains only records intended for public release.
 - Run the repository validation workflow locally or in GitHub Actions before tagging a release.
 - Update `CITATION.cff` with final author, affiliation, DOI, and release metadata when available.
@@ -260,3 +296,6 @@ Special thanks to the reFuel.ch project for important input to the platform and 
   `not_permitted`, `unknown`) holds the decision. Both are captured at ingest and
   never inferred by the LLM. `python tools/validate_unmapped.py <path> --strict`
   fails on any source whose terms have not been recorded.
+- What MOTEL distributes is built by `tools/build_release.py`, which withholds
+  every value that is not backed exclusively by `permitted` sources; see
+  [Building the Public Release](#building-the-public-release).

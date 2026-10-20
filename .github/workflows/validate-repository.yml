@@ -32,8 +32,19 @@ jobs:
         # and fails if a created linked entity has a broken reference.
         run: python 2_harmonise/harmonise.py motel-db/unmapped_entity --no-llm --no-backup
 
-      - name: Build the data explorer's data
-        run: python docs/build_data.py
+      - name: Build the public release of motel-db
+        # Fails if a value whose sources do not permit redistribution is still
+        # in the release, or if motel-db gained a file the filter does not know.
+        run: python tools/build_release.py --out dist/motel-db
+
+      - name: Validate the released staging records
+        run: |
+          python tools/validate_unmapped.py \
+            dist/motel-db/unmapped_entity \
+            dist/motel-db/unmapped_carrier_data
+
+      - name: Build the data explorer's data from the public release
+        run: python docs/build_data.py --db dist/motel-db
 
       - name: Validate YAML and CSV files
         run: |

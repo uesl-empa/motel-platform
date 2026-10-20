@@ -174,6 +174,26 @@
     );
   }
 
+  const REDISTRIBUTION_LABELS = {
+    permitted: "Permitted",
+    not_permitted: "Not permitted",
+  };
+
+  function redistributionLabel(source) {
+    return REDISTRIBUTION_LABELS[source && source.redistribution_permitted] || "Not yet cleared";
+  }
+
+  function releaseNote() {
+    if (!withheld) return null;
+    return el(
+      "p",
+      { className: "release-note" },
+      `This is MOTEL's public release. ${countFormat.format(withheld.values)} values are withheld because a source behind them does not permit redistribution, its licence has not been cleared yet, or no source is recorded for them. Records and source citations are kept, so a withheld value can be looked up in its source. `,
+      el("a", { href: "data/withheld-values.csv", download: "" }, "List of withheld values (CSV)"),
+      "."
+    );
+  }
+
   function searchBox(placeholder, onInput) {
     const input = el("input", { type: "search", placeholder, "aria-label": placeholder });
     input.addEventListener("input", () => onInput(input.value.trim().toLowerCase()));
@@ -222,6 +242,9 @@
   const technologies = byId(data.technologies);
   const processes = byId(data.processes);
   const sources = byId(data.sources);
+  // Present when the data is a public release built by tools/build_release.py,
+  // which withholds values whose sources do not permit redistribution.
+  const withheld = data.withheld || null;
   const carriers = byId(data.carriers);
   const attributes = byId(data.attributes);
   const recordsByTech = groupBy(data.records, (record) => record.tech_id);
@@ -304,6 +327,7 @@
         "MOTEL Data Explorer",
         `Browse the technologies, parameters, and sources in the MOTEL database. Data generated ${data.generated} from motel-db.`
       ),
+      releaseNote(),
       el(
         "div",
         { className: "stat-grid" },
@@ -421,7 +445,8 @@
       ...record.outputs.map((flow) => ["Output", flow]),
     ].map(([direction, flow]) => {
       const carrier = carriers.get(flow.carrier_id);
-      return el("tr", {}, cell(direction), cell(carrier ? carrier.carrier_name : flow.carrier_id), cell(formatValue(flow.share), true), cell(flow.unit || ""));
+      const share = flow.share === null && withheld ? el("span", { className: "muted" }, "withheld") : formatValue(flow.share);
+      return el("tr", {}, cell(direction), cell(carrier ? carrier.carrier_name : flow.carrier_id), cell(share, true), cell(flow.unit || ""));
     });
 
     const scopeChips = SCOPE_TYPES.filter((type) => record.scope[type]).map((type) =>
@@ -442,7 +467,23 @@
             [{ label: "Parameter" }, { label: "Unit" }, ...years.map((y) => ({ label: y || "No year", num: true })), { label: "Sources" }],
             rows
           )
-        : el("p", { className: "muted" }, "No values recorded."),
+        : el(
+            "p",
+            { className: "muted" },
+            !withheld
+              ? "No values recorded."
+              : record.sources.length
+                ? "No values published for this record; see its sources."
+                : "No values published for this record: no source is recorded for them."
+          ),
+      withheld && record.sources.length
+        ? el(
+            "p",
+            { className: "muted small" },
+            "Cited sources: ",
+            joinNodes(record.sources.map((link) => sourceNode(sources.get(link.source_id)) || link.source_id), ", ")
+          )
+        : null,
       flows.length ? table([{ label: "Flow" }, { label: "Carrier" }, { label: "Share", num: true }, { label: "Unit" }], flows, "Energy and material balance") : null,
       record.date_created ? el("p", { className: "muted small" }, `Harmonised ${record.date_created}`) : null
     );
@@ -751,6 +792,7 @@
           cell(source.reference_year || "", true),
           cell(source.confidence_level || ""),
           cell(source.assessment_method || ""),
+          cell(el("span", { title: source.source_licence || "No licence recorded" }, redistributionLabel(source))),
           cell(countFormat.format(records.length), true),
           cell(countFormat.format(techCount), true)
         );
@@ -766,7 +808,8 @@
     }
 
     mount(
-      hero("Sources", "Every source cited by the harmonised records, with how many records and technologies use it."),
+      hero("Sources", "Every source cited by the harmonised records, with how many records and technologies use it. Redistribution says whether a source's terms allow its values to be republished; hover it for the licence."),
+      releaseNote(),
       el("div", { className: "filter-row" }, el("label", {}, "Search sources", searchBox("Name, description, or type", apply))),
       count,
       el(
@@ -781,7 +824,7 @@
             el(
               "tr",
               {},
-              [["Source"], ["Type"], ["Year", true], ["Confidence"], ["Method"], ["Records", true], ["Technologies", true]].map(([label, num]) =>
+              [["Source"], ["Type"], ["Year", true], ["Confidence"], ["Method"], ["Redistribution"], ["Records", true], ["Technologies", true]].map(([label, num]) =>
                 el("th", { scope: "col", className: num ? "num" : null }, label)
               )
             )
