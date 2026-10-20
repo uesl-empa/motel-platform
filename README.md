@@ -198,6 +198,18 @@ Without `MOTEL_DATA`, everything runs on the release in this repository. Do not
 commit spreadsheets or notebooks with saved outputs here; the `Validate
 Repository` workflow rejects both.
 
+After committing a change to `motel-data`, propose the new release here:
+
+```bash
+python tools/publish_release.py --data ../motel-data
+```
+
+It builds the release from the full database, replaces `motel-db/` with it,
+checks it, and opens a pull request on a `sync/release-<commit>` branch, using
+your own git and `gh` login. A change that only touches withheld values
+produces no pull request, because the release does not change. `--no-push`
+stops after the local commit.
+
 ## Adding a New Source
 
 Stage the new source's records as `unmapped_entity_technology` YAML (Step 1),
