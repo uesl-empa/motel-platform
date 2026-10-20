@@ -20,6 +20,31 @@ jobs:
       - name: Install validation dependencies
         run: python -m pip install pyyaml
 
+      - name: Check that no restricted source material is committed
+        # Raw source workbooks and saved notebook outputs carry source values
+        # that may not be republished; they belong in the private motel-data
+        # repository.
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          import sys
+
+          tracked = subprocess.run(["git", "ls-files"], capture_output=True, text=True,
+                                   check=True).stdout.splitlines()
+          problems = [f"{path}: spreadsheet" for path in tracked
+                      if path.lower().endswith((".xlsx", ".xls", ".xlsm"))]
+          for path in tracked:
+              if path.endswith(".ipynb"):
+                  with open(path, encoding="utf-8") as handle:
+                      cells = json.load(handle)["cells"]
+                  if any(cell.get("outputs") for cell in cells):
+                      problems.append(f"{path}: saved outputs (clear them before committing)")
+          for problem in problems:
+              print(problem)
+          sys.exit(1 if problems else 0)
+          PY
+
       - name: Check Python syntax
         run: python -m compileall 1_ingest 2_harmonise 3_ontology_mapping 4_data_explore tools
 

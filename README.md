@@ -165,8 +165,37 @@ the `Deploy Docs` workflow publishes the data explorer from it. To release more
 values, record the source's terms (or link a cleared source) at ingest; the
 release picks the change up on the next build.
 
-The release filters what MOTEL distributes from here on. It does not change
-`motel-db/` itself, which still holds every value, nor the git history.
+`python tools/build_release.py --check <db>` verifies that a database is
+already a release, with nothing left to withhold.
+
+## Working With the Full Data
+
+The full database, the raw source workbooks, and everything extracted from them
+belong in the private `uesl-empa/motel-data` repository, because many sources do
+not permit their values to be republished. This repository is meant to carry
+only the public release in `motel-db/`. To work on the full data, clone
+`motel-data` next to this repository and point `MOTEL_DATA` at it:
+
+```bash
+export MOTEL_DATA=../motel-data      # PowerShell: $env:MOTEL_DATA = "..\motel-data"
+```
+
+With `MOTEL_DATA` set, every stage reads and writes the private checkout instead
+of this repository: harmonisation (`harmonise.py` and the notebook), the reFuel
+ingestion helper, the ontology generator, the exploration notebook,
+`tools/build_release.py`, and `docs/build_data.py`. The private checkout is laid
+out as:
+
+```text
+motel-data/
+|-- motel-db/              the full database
+|-- raw/refuel/            source workbooks, e.g. reFuel_TechDatabase_Clean_2026-06-03.xlsx
+`-- ingest_output/refuel/  ingestion outputs extracted from them
+```
+
+Without `MOTEL_DATA`, everything runs on the release in this repository. Do not
+commit spreadsheets or notebooks with saved outputs here; the `Validate
+Repository` workflow rejects both.
 
 ## Adding a New Source
 
@@ -211,7 +240,9 @@ Two alternatives remain available (see `2_harmonise/README.md` for all settings)
 
 With `use_llm=False` or `--no-llm`, harmonisation resolves by exact match and needs no model at all.
 
-To generate the ontology-ready TTL from the harmonised MOTEL database:
+To generate the ontology-ready TTL from the harmonised MOTEL database (written
+to `3_ontology_mapping/output_ttl/`, which is not committed; `--db` and `--out`
+choose other paths):
 
 ```powershell
 .\.venv\Scripts\python.exe 3_ontology_mapping\scripts\gen_ttl.py
@@ -255,6 +286,11 @@ python tools/build_release.py
 python docs/build_data.py --db dist/motel-db
 # then open docs/explorer.html in a browser
 ```
+
+The `Deploy Docs` workflow also publishes the ontology TTL built from the
+release, at https://uesl-empa.github.io/motel-platform/data/cls_atr_motel.ttl.
+The TTL is no longer committed, because one built from the full database carries
+every value.
 
 Without `--db`, `build_data.py` reads `motel-db/` unfiltered, which is fine for
 local inspection but must not be published.

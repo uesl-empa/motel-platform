@@ -24,6 +24,7 @@ Main public functions:
 """
 
 import csv
+import os
 import re
 import yaml
 from collections import Counter
@@ -32,7 +33,13 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parents[1]
-DEFAULT_MOTEL_DB_PATH = REPO_ROOT / "motel-db"
+# The public release by default; the full database when MOTEL_DATA points at a
+# checkout of the private motel-data repository.
+DEFAULT_MOTEL_DB_PATH = (
+    Path(os.environ["MOTEL_DATA"]).expanduser().resolve() / "motel-db"
+    if os.environ.get("MOTEL_DATA", "").strip()
+    else REPO_ROOT / "motel-db"
+)
 DEFAULT_OUTPUT_TTL = REPO_ROOT / "3_ontology_mapping" / "output_ttl" / "cls_atr_motel.ttl"
 DEFAULT_CONFIG_DIR = REPO_ROOT / "3_ontology_mapping" / "config"
 DEFAULT_ATTRIBUTE_MAPPING_CONFIG = DEFAULT_CONFIG_DIR / "attribute_ontology_mapping.yaml"

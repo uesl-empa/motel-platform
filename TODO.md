@@ -76,15 +76,18 @@ Two consequences worth keeping in mind:
       `tools/build_release.py` now withholds every value not backed exclusively
       by `permitted` sources, and the data explorer is published from its output
       (2026-10-20: 226 of the 2050 reFuel linked values released, 12 of the 30
-      DAC staging values). Still exposed, because the release does not reach
-      them:
-      - `motel-db/` itself on the public default branch, and the git history.
-        Moving restricted values out of a public repository, or rewriting its
-        history, is a decision for the project, not a script.
-      - `3_ontology_mapping/output_ttl/cls_atr_motel.ttl`, committed, with 1943
-        attribute values. Generate it from the release, or stop committing it.
-      - the explorer's "Source files on GitHub" link, and `motel-webapp` if it
-        reads `motel-db/` from this repository.
+      DAC staging values).
+
+      Decided 2026-10-20: move the full data to a private `motel-data`
+      repository, keep only the release public, and rewrite the public git
+      history (which also holds 10 versions of the raw reFuel workbook). Code
+      support is in place: `MOTEL_DATA` points every stage at the private
+      checkout, notebook outputs are cleared, the examples are filtered, the TTL
+      is published from the release instead of committed, and CI rejects
+      spreadsheets and notebook outputs. Still to do, and exposed until then:
+      - the cutover: `motel-db/` on the public default branch and the git
+        history still hold every value
+      - `motel-webapp`, which commits TTL copies built from the full database
 
       List the ones still needing a decision with:
 

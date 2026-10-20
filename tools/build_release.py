@@ -16,6 +16,14 @@ Usage
 -----
     python tools/build_release.py
     python tools/build_release.py --db motel-db --out dist/motel-db
+    python tools/build_release.py --check motel-db
+
+--db defaults to $MOTEL_DATA/motel-db when MOTEL_DATA is set (a checkout of
+the private motel-data repository), else to motel-db/ in this repository.
+
+--check builds into a temporary folder and exits with status 1 unless nothing
+had to be withheld, which is how the public repository proves that the motel-db
+it carries is already a release.
 
 The rule
 --------
@@ -60,8 +68,10 @@ import argparse
 import csv
 import datetime
 import shutil
+import os
 import subprocess
 import sys
+import tempfile
 from collections import Counter
 from pathlib import Path
 
@@ -292,6 +302,11 @@ def classify(db: Path) -> tuple[list, list]:
         parts = path.relative_to(db).parts
         if parts[0] in SKIPPED_DIRS or path.suffix in SKIPPED_SUFFIXES or path.name == ".gitkeep":
             continue
+        if parts == (MARKER,):
+            continue
+        # A release's own list, rewritten by every build; lets --check run on a release.
+        if parts == ("WITHHELD.csv",):
+            continue
         if path.suffix == ".md":
             jobs.append(("copy", path))
         elif len(parts) == 2 and parts[0] in STAGING_DIRS and path.suffix in (".yaml", ".yml"):
@@ -434,16 +449,40 @@ def build(db: Path, out: Path) -> int:
     return 0
 
 
+def check(db: Path) -> int:
+    """Exit status 0 only when db is already a release: nothing left to withhold."""
+    with tempfile.TemporaryDirectory() as scratch:
+        status = build(db, Path(scratch) / "motel-db")
+        withheld = read_csv(Path(scratch) / "motel-db" / "WITHHELD.csv")
+    if status:
+        return status
+    if withheld:
+        print(f"\n{db} is not a release: {len(withheld)} withheld entries, counted per "
+              "file. Publish the output of tools/build_release.py, not the full database.")
+        return 1
+    print(f"\n{db} is a release: every value is backed by permitted sources only.")
+    return 0
+
+
+def default_db() -> Path:
+    data_root = os.environ.get("MOTEL_DATA", "").strip()
+    return Path(data_root).expanduser() / "motel-db" if data_root else ROOT / "motel-db"
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
         description="Write motel-db with every value withheld whose sources do not "
                     "permit redistribution.",
     )
-    parser.add_argument("--db", default=str(ROOT / "motel-db"),
-                        help="database to release (default: <repo>/motel-db)")
+    parser.add_argument("--db", default=str(default_db()),
+                        help="database to release (default: $MOTEL_DATA/motel-db, else <repo>/motel-db)")
     parser.add_argument("--out", default=str(ROOT / "dist" / "motel-db"),
                         help="folder to write the release to (default: <repo>/dist/motel-db)")
+    parser.add_argument("--check", metavar="DB",
+                        help="verify that DB is already a release instead of building one")
     args = parser.parse_args(argv)
+    if args.check:
+        return check(Path(args.check).resolve())
     return build(Path(args.db).resolve(), Path(args.out).resolve())
 
 

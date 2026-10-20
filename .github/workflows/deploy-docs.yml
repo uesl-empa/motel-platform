@@ -7,6 +7,7 @@ on:
       - docs/**
       - motel-db/**
       - tools/build_release.py
+      - 3_ontology_mapping/**
       - .github/workflows/deploy-docs.yml
   workflow_dispatch:
 
@@ -43,6 +44,11 @@ jobs:
 
       - name: Build the data explorer's data from the public release
         run: python docs/build_data.py --db dist/motel-db
+
+      - name: Build the ontology TTL from the public release
+        # Published at data/cls_atr_motel.ttl for motel-webapp and other
+        # consumers, instead of committing a TTL built from the full database.
+        run: python 3_ontology_mapping/scripts/gen_ttl.py --db dist/motel-db --out docs/data/cls_atr_motel.ttl
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

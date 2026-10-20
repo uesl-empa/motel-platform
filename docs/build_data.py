@@ -15,8 +15,8 @@ Reads a MOTEL database and writes, under docs/data/:
 
 The Deploy Docs workflow builds the public release first and points --db at
 it, so the published explorer carries only values whose sources permit
-redistribution. Without --db it reads motel-db/ directly, which is for local
-use only.
+redistribution. Without --db it reads motel-db/ (or $MOTEL_DATA/motel-db),
+which is for local use only.
 
 Standard library plus PyYAML only, so the Deploy Docs workflow can run it
 before publishing. The output is generated, not committed (docs/data/ is
@@ -33,6 +33,7 @@ import argparse
 import csv
 import datetime
 import json
+import os
 import shutil
 from collections import Counter
 from pathlib import Path
@@ -40,7 +41,13 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-DB = ROOT / "motel-db"
+# Full database when MOTEL_DATA points at a checkout of the private motel-data
+# repository; the public release in this repository otherwise.
+DB = (
+    Path(os.environ["MOTEL_DATA"]).expanduser().resolve() / "motel-db"
+    if os.environ.get("MOTEL_DATA", "").strip()
+    else ROOT / "motel-db"
+)
 OUT = Path(__file__).resolve().parent / "data"
 
 SCOPE_TYPES = ("geographic_scope", "temporal_scope", "capacity_scope", "system_boundary")
@@ -284,7 +291,7 @@ def write_values_csv(data: dict, path: Path) -> int:
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Build the data explorer's data files.")
     parser.add_argument("--db", default=str(DB),
-                        help="database to read (default: <repo>/motel-db; publish from "
+                        help="database to read (default: $MOTEL_DATA/motel-db, else <repo>/motel-db; publish from "
                              "a release built by tools/build_release.py)")
     db = Path(parser.parse_args(argv).db).resolve()
 
