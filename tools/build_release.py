@@ -367,10 +367,11 @@ def prepare_out(out: Path, db: Path) -> None:
                               encoding="utf-8")
 
 
-def git_version() -> str:
+def git_version(db: Path) -> str:
+    """The commit of the repository holding the database, which is what the release is built from."""
     try:
         result = subprocess.run(["git", "describe", "--always", "--dirty", "--tags"],
-                                cwd=ROOT, capture_output=True, text=True, check=True)
+                                cwd=db, capture_output=True, text=True, check=True)
         return result.stdout.strip()
     except (OSError, subprocess.CalledProcessError):
         return "unknown"
@@ -464,7 +465,7 @@ def build(db: Path, out: Path) -> int:
     rows = tally(released, withheld)
     write_withheld(out / "WITHHELD.csv", withheld)
     notes = sum(1 for row in withheld if row["item"] in NOTE_ITEMS)
-    write_summary(out / "RELEASE.md", git_version(), rows, notes)
+    write_summary(out / "RELEASE.md", git_version(db), rows, notes)
 
     for name, source_id, staged, registered in sorted(registry.conflicts):
         print(f"  NOTE    {name!r} is {staged} in staging but {registered} for {source_id} "
