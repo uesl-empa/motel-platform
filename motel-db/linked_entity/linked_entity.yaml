@@ -5814,8 +5814,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005743
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: direct
+      air capture system | lca_activity: direct air capture system, sorbent-based,
+      100ktCO2'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005003
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: direct
+      air capture system | lca_activity: direct air capture system, sorbent-based,
+      100ktCO2'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.003832
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: direct
+      air capture system | lca_activity: direct air capture system, sorbent-based,
+      100ktCO2'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.003016
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: direct
+      air capture system | lca_activity: direct air capture system, sorbent-based,
+      100ktCO2'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005743
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      direct air capture system | lca_activity: direct air capture system, sorbent-based,
+      100ktCO2'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.00498
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      direct air capture system | lca_activity: direct air capture system, sorbent-based,
+      100ktCO2'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.003655
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      direct air capture system | lca_activity: direct air capture system, sorbent-based,
+      100ktCO2'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.002608
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      direct air capture system | lca_activity: direct air capture system, sorbent-based,
+      100ktCO2'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00123
   tech_id: TECH_00032
@@ -5828,8 +5887,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000361
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: anaerobic
+      digestion plant, agricultural | lca_activity: anaerobic digestion plant construction,
+      agricultural'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000334
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: anaerobic
+      digestion plant, agricultural | lca_activity: anaerobic digestion plant construction,
+      agricultural'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000273
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: anaerobic
+      digestion plant, agricultural | lca_activity: anaerobic digestion plant construction,
+      agricultural'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000217
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: anaerobic
+      digestion plant, agricultural | lca_activity: anaerobic digestion plant construction,
+      agricultural'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000361
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      anaerobic digestion plant, agricultural | lca_activity: anaerobic digestion
+      plant construction, agricultural'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000333
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      anaerobic digestion plant, agricultural | lca_activity: anaerobic digestion
+      plant construction, agricultural'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000265
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      anaerobic digestion plant, agricultural | lca_activity: anaerobic digestion
+      plant construction, agricultural'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000189
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      anaerobic digestion plant, agricultural | lca_activity: anaerobic digestion
+      plant construction, agricultural'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00124
   tech_id: TECH_00064
@@ -5842,8 +5960,75 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.043964
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 44.1 MJ/kg, 750 kg/m3
+      density -> 36750000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.040153
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 44.1 MJ/kg, 750 kg/m3
+      density -> 36750000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.03343
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 44.1 MJ/kg, 750 kg/m3
+      density -> 36750000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.029002
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 44.1 MJ/kg, 750 kg/m3
+      density -> 36750000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.043963
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 44.1 MJ/kg,
+      750 kg/m3 density -> 36750000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.039948
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 44.1 MJ/kg,
+      750 kg/m3 density -> 36750000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.032387
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 44.1 MJ/kg,
+      750 kg/m3 density -> 36750000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.02568
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 44.1 MJ/kg,
+      750 kg/m3 density -> 36750000 kWh of storage capacity rough estimation'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00125
   tech_id: TECH_00065
@@ -5856,8 +6041,75 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.047221
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 44.4 MJ/kg, 700 kg/m3
+      density -> 34500000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.043127
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 44.4 MJ/kg, 700 kg/m3
+      density -> 34500000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.035906
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 44.4 MJ/kg, 700 kg/m3
+      density -> 34500000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.03115
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 44.4 MJ/kg, 700 kg/m3
+      density -> 34500000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.047219
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 44.4 MJ/kg,
+      700 kg/m3 density -> 34500000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.042907
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 44.4 MJ/kg,
+      700 kg/m3 density -> 34500000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.034786
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 44.4 MJ/kg,
+      700 kg/m3 density -> 34500000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.027582
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 44.4 MJ/kg,
+      700 kg/m3 density -> 34500000 kWh of storage capacity rough estimation'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00126
   tech_id: TECH_00022
@@ -5870,8 +6122,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14423
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 38.03264
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 27.00465
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 21.90161
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14153
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 37.91954
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 25.27903
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 18.38265
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00127
   tech_id: TECH_00022
@@ -5884,8 +6187,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14423
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 38.03264
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 27.00465
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 21.90161
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14153
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 37.91954
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 25.27903
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 18.38265
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00128
   tech_id: TECH_00003
@@ -5898,8 +6252,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 150.3133
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas power
+      plant, combined cycle, 400MW electrical | lca_activity: market for gas power
+      plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 134.0643
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas power
+      plant, combined cycle, 400MW electrical | lca_activity: market for gas power
+      plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 104.1564
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas power
+      plant, combined cycle, 400MW electrical | lca_activity: market for gas power
+      plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 81.92722
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas power
+      plant, combined cycle, 400MW electrical | lca_activity: market for gas power
+      plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 150.3054
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas power plant, combined cycle, 400MW electrical | lca_activity: market for
+      gas power plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 133.5907
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas power plant, combined cycle, 400MW electrical | lca_activity: market for
+      gas power plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 99.518
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas power plant, combined cycle, 400MW electrical | lca_activity: market for
+      gas power plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 72.8924
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas power plant, combined cycle, 400MW electrical | lca_activity: market for
+      gas power plant, combined cycle, 400MW electrical'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00129
   tech_id: TECH_00004
@@ -5912,8 +6325,75 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 330.1446
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat and
+      power co-generation unit, 160kW electrical, common components for heat+electricity
+      | lca_activity: heat and power co-generation unit construction, 160kW electrical,
+      common components for heat+electricity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 247.6906
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat and
+      power co-generation unit, 160kW electrical, common components for heat+electricity
+      | lca_activity: heat and power co-generation unit construction, 160kW electrical,
+      common components for heat+electricity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 175.3857
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat and
+      power co-generation unit, 160kW electrical, common components for heat+electricity
+      | lca_activity: heat and power co-generation unit construction, 160kW electrical,
+      common components for heat+electricity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 131.0822
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat and
+      power co-generation unit, 160kW electrical, common components for heat+electricity
+      | lca_activity: heat and power co-generation unit construction, 160kW electrical,
+      common components for heat+electricity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 330.1335
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat and power co-generation unit, 160kW electrical, common components for heat+electricity
+      | lca_activity: heat and power co-generation unit construction, 160kW electrical,
+      common components for heat+electricity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 237.947
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat and power co-generation unit, 160kW electrical, common components for heat+electricity
+      | lca_activity: heat and power co-generation unit construction, 160kW electrical,
+      common components for heat+electricity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 154.6427
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat and power co-generation unit, 160kW electrical, common components for heat+electricity
+      | lca_activity: heat and power co-generation unit construction, 160kW electrical,
+      common components for heat+electricity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 109.8049
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat and power co-generation unit, 160kW electrical, common components for heat+electricity
+      | lca_activity: heat and power co-generation unit construction, 160kW electrical,
+      common components for heat+electricity'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00130
   tech_id: TECH_00005
@@ -5926,8 +6406,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 916.4007
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 757.7304
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 545.4283
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 452.5358
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 916.3501
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 753.1903
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 504.8533
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 375.5101
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00131
   tech_id: TECH_00005
@@ -5940,8 +6479,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 916.4007
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 757.7304
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 545.4283
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 452.5358
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 916.3501
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 753.1903
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 504.8533
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 375.5101
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00132
   tech_id: TECH_00059
@@ -5954,8 +6552,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 85723.57
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/km | ref_product: pipeline,
+      natural gas, high pressure distribution network | lca_activity: pipeline construction,
+      natural gas, high pressure distribution network'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 77546.28
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/km | ref_product: pipeline,
+      natural gas, high pressure distribution network | lca_activity: pipeline construction,
+      natural gas, high pressure distribution network'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 64799.53
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/km | ref_product: pipeline,
+      natural gas, high pressure distribution network | lca_activity: pipeline construction,
+      natural gas, high pressure distribution network'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 55586.81
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/km | ref_product: pipeline,
+      natural gas, high pressure distribution network | lca_activity: pipeline construction,
+      natural gas, high pressure distribution network'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 85718.69
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/km | ref_product:
+      pipeline, natural gas, high pressure distribution network | lca_activity: pipeline
+      construction, natural gas, high pressure distribution network'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 77219.78
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/km | ref_product:
+      pipeline, natural gas, high pressure distribution network | lca_activity: pipeline
+      construction, natural gas, high pressure distribution network'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 62042.36
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/km | ref_product:
+      pipeline, natural gas, high pressure distribution network | lca_activity: pipeline
+      construction, natural gas, high pressure distribution network'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 48509.24
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/km | ref_product:
+      pipeline, natural gas, high pressure distribution network | lca_activity: pipeline
+      construction, natural gas, high pressure distribution network'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00133
   tech_id: TECH_00006
@@ -5968,8 +6625,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 147.7244
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 122.8306
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 92.41997
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 78.20154
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 147.7159
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 121.5891
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 85.64105
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 62.63381
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00134
   tech_id: TECH_00060
@@ -5982,8 +6698,71 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.728192
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: fuel
+      tank, compressed natural gas, 200 bar | lca_activity: fuel tank assembly, compressed
+      natural gas, 200 bar | notes: for a 154.66 kg tank, of 1074kWh fuel capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.601382
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: fuel
+      tank, compressed natural gas, 200 bar | lca_activity: fuel tank assembly, compressed
+      natural gas, 200 bar | notes: for a 154.66 kg tank, of 1074kWh fuel capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.429012
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: fuel
+      tank, compressed natural gas, 200 bar | lca_activity: fuel tank assembly, compressed
+      natural gas, 200 bar | notes: for a 154.66 kg tank, of 1074kWh fuel capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.331617
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: fuel
+      tank, compressed natural gas, 200 bar | lca_activity: fuel tank assembly, compressed
+      natural gas, 200 bar | notes: for a 154.66 kg tank, of 1074kWh fuel capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.728146
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      fuel tank, compressed natural gas, 200 bar | lca_activity: fuel tank assembly,
+      compressed natural gas, 200 bar | notes: for a 154.66 kg tank, of 1074kWh fuel
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.599559
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      fuel tank, compressed natural gas, 200 bar | lca_activity: fuel tank assembly,
+      compressed natural gas, 200 bar | notes: for a 154.66 kg tank, of 1074kWh fuel
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.388691
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      fuel tank, compressed natural gas, 200 bar | lca_activity: fuel tank assembly,
+      compressed natural gas, 200 bar | notes: for a 154.66 kg tank, of 1074kWh fuel
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.282748
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      fuel tank, compressed natural gas, 200 bar | lca_activity: fuel tank assembly,
+      compressed natural gas, 200 bar | notes: for a 154.66 kg tank, of 1074kWh fuel
+      capacity'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00135
   tech_id: TECH_00049
@@ -5996,8 +6775,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.004459
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: monoethanolamine
+      | lca_activity: market for monoethanolamine'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.004009
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: monoethanolamine
+      | lca_activity: market for monoethanolamine'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.00342
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: monoethanolamine
+      | lca_activity: market for monoethanolamine'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.00316
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: monoethanolamine
+      | lca_activity: market for monoethanolamine'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.004459
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      monoethanolamine | lca_activity: market for monoethanolamine'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.004016
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      monoethanolamine | lca_activity: market for monoethanolamine'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.003404
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      monoethanolamine | lca_activity: market for monoethanolamine'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.003121
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      monoethanolamine | lca_activity: market for monoethanolamine'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00136
   tech_id: TECH_00052
@@ -6010,8 +6840,63 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001517
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: potassium
+      carbonate | lca_activity: potassium carbonate production, from potassium hydroxide'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001096
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: potassium
+      carbonate | lca_activity: potassium carbonate production, from potassium hydroxide'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000544
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: potassium
+      carbonate | lca_activity: potassium carbonate production, from potassium hydroxide'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000348
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: potassium
+      carbonate | lca_activity: potassium carbonate production, from potassium hydroxide'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001517
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      potassium carbonate | lca_activity: potassium carbonate production, from potassium
+      hydroxide'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001113
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      potassium carbonate | lca_activity: potassium carbonate production, from potassium
+      hydroxide'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.00049
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      potassium carbonate | lca_activity: potassium carbonate production, from potassium
+      hydroxide'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000277
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      potassium carbonate | lca_activity: potassium carbonate production, from potassium
+      hydroxide'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00137
   tech_id: TECH_00053
@@ -6024,8 +6909,63 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 103.0537
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: electricity
+      storage capacity | lca_activity: market for battery capacity, Li-ion, LFP'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 76.03558
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: electricity
+      storage capacity | lca_activity: market for battery capacity, Li-ion, LFP'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 40.58896
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: electricity
+      storage capacity | lca_activity: market for battery capacity, Li-ion, LFP'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 28.56935
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: electricity
+      storage capacity | lca_activity: market for battery capacity, Li-ion, LFP'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 103.0487
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      electricity storage capacity | lca_activity: market for battery capacity, Li-ion,
+      LFP'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 75.3427
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      electricity storage capacity | lca_activity: market for battery capacity, Li-ion,
+      LFP'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 36.41054
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      electricity storage capacity | lca_activity: market for battery capacity, Li-ion,
+      LFP'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 25.37145
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      electricity storage capacity | lca_activity: market for battery capacity, Li-ion,
+      LFP'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00138
   tech_id: TECH_00024
@@ -6038,8 +6978,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 292.1159
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      diffusion absorption, 4kW, future | lca_activity: heat pump production, diffusion
+      absorption, 4kW, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 240.13
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      diffusion absorption, 4kW, future | lca_activity: heat pump production, diffusion
+      absorption, 4kW, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 172.6567
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      diffusion absorption, 4kW, future | lca_activity: heat pump production, diffusion
+      absorption, 4kW, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 146.3641
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      diffusion absorption, 4kW, future | lca_activity: heat pump production, diffusion
+      absorption, 4kW, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 292.1004
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, diffusion absorption, 4kW, future | lca_activity: heat pump production,
+      diffusion absorption, 4kW, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 238.7896
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, diffusion absorption, 4kW, future | lca_activity: heat pump production,
+      diffusion absorption, 4kW, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 161.8018
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, diffusion absorption, 4kW, future | lca_activity: heat pump production,
+      diffusion absorption, 4kW, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 123.9771
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, diffusion absorption, 4kW, future | lca_activity: heat pump production,
+      diffusion absorption, 4kW, future'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00139
   tech_id: TECH_00053
@@ -6052,8 +7051,63 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 91.90198
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: electricity
+      storage capacity | lca_activity: market for battery capacity (MIX scenario)'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 65.52432
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: electricity
+      storage capacity | lca_activity: market for battery capacity (MIX scenario)'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 33.36153
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: electricity
+      storage capacity | lca_activity: market for battery capacity (MIX scenario)'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 24.13433
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: electricity
+      storage capacity | lca_activity: market for battery capacity (MIX scenario)'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 91.89765
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      electricity storage capacity | lca_activity: market for battery capacity (MIX
+      scenario)'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 65.03175
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      electricity storage capacity | lca_activity: market for battery capacity (MIX
+      scenario)'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 30.69876
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      electricity storage capacity | lca_activity: market for battery capacity (MIX
+      scenario)'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 21.90533
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      electricity storage capacity | lca_activity: market for battery capacity (MIX
+      scenario)'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00140
   tech_id: TECH_00047
@@ -6066,8 +7120,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 285.9869
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: electrolyzer,
+      1MWe, SOEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer production,
+      1MWe, SOEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 211.775
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: electrolyzer,
+      1MWe, SOEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer production,
+      1MWe, SOEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 146.9699
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: electrolyzer,
+      1MWe, SOEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer production,
+      1MWe, SOEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 112.8366
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: electrolyzer,
+      1MWe, SOEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer production,
+      1MWe, SOEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 285.9709
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      electrolyzer, 1MWe, SOEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer
+      production, 1MWe, SOEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 206.9049
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      electrolyzer, 1MWe, SOEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer
+      production, 1MWe, SOEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 130.7839
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      electrolyzer, 1MWe, SOEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer
+      production, 1MWe, SOEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 95.18833
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      electrolyzer, 1MWe, SOEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer
+      production, 1MWe, SOEC, Balance of Plant + 2 * Stack'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00141
   tech_id: TECH_00037
@@ -6080,8 +7193,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 656.3468
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: electrolyzer,
+      1MWe, AEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer production,
+      1MWe, AEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 525.6723
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: electrolyzer,
+      1MWe, AEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer production,
+      1MWe, AEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 369.4778
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: electrolyzer,
+      1MWe, AEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer production,
+      1MWe, AEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 301.2053
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: electrolyzer,
+      1MWe, AEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer production,
+      1MWe, AEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 656.3221
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      electrolyzer, 1MWe, AEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer
+      production, 1MWe, AEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 526.3791
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      electrolyzer, 1MWe, AEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer
+      production, 1MWe, AEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 353.3523
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      electrolyzer, 1MWe, AEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer
+      production, 1MWe, AEC, Balance of Plant + 2 * Stack'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 281.4842
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      electrolyzer, 1MWe, AEC, Balance of Plant + 2 * Stack | lca_activity: electrolyzer
+      production, 1MWe, AEC, Balance of Plant + 2 * Stack'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00142
   tech_id: TECH_00026
@@ -6094,8 +7266,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 159.911
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 151.0149
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 137.5379
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 130.9958
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 159.9075
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, 30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 151.0277
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, 30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 135.2801
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, 30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 127.0299
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, 30kW | lca_activity: heat pump production, 30kW'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00143
   tech_id: TECH_00027
@@ -6108,8 +7331,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 159.911
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 151.0149
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 137.5379
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 130.9958
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat pump,
+      30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 159.9075
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, 30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 151.0277
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, 30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 135.2801
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, 30kW | lca_activity: heat pump production, 30kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 127.0299
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat pump, 30kW | lca_activity: heat pump production, 30kW'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00144
   tech_id: TECH_00023
@@ -6122,8 +7396,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1.286441
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auxiliary
+      heating unit, electric, 5kW | lca_activity: auxiliary heating unit production,
+      electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1.08261
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auxiliary
+      heating unit, electric, 5kW | lca_activity: auxiliary heating unit production,
+      electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.786603
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auxiliary
+      heating unit, electric, 5kW | lca_activity: auxiliary heating unit production,
+      electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.641235
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auxiliary
+      heating unit, electric, 5kW | lca_activity: auxiliary heating unit production,
+      electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1.286364
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auxiliary heating unit, electric, 5kW | lca_activity: auxiliary heating unit
+      production, electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1.08369
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auxiliary heating unit, electric, 5kW | lca_activity: auxiliary heating unit
+      production, electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.731118
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auxiliary heating unit, electric, 5kW | lca_activity: auxiliary heating unit
+      production, electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.567885
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auxiliary heating unit, electric, 5kW | lca_activity: auxiliary heating unit
+      production, electric, 5kW'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00145
   tech_id: TECH_00023
@@ -6136,8 +7469,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1.286441
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auxiliary
+      heating unit, electric, 5kW | lca_activity: auxiliary heating unit production,
+      electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1.08261
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auxiliary
+      heating unit, electric, 5kW | lca_activity: auxiliary heating unit production,
+      electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.786603
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auxiliary
+      heating unit, electric, 5kW | lca_activity: auxiliary heating unit production,
+      electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.641235
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auxiliary
+      heating unit, electric, 5kW | lca_activity: auxiliary heating unit production,
+      electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1.286364
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auxiliary heating unit, electric, 5kW | lca_activity: auxiliary heating unit
+      production, electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1.08369
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auxiliary heating unit, electric, 5kW | lca_activity: auxiliary heating unit
+      production, electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.731118
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auxiliary heating unit, electric, 5kW | lca_activity: auxiliary heating unit
+      production, electric, 5kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.567885
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auxiliary heating unit, electric, 5kW | lca_activity: auxiliary heating unit
+      production, electric, 5kW'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00146
   tech_id: TECH_00012
@@ -6150,8 +7542,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1508.637
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1393.634
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1253.907
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1152.55
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1508.549
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1384.238
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1096.815
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 714.382
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00147
   tech_id: TECH_00007
@@ -6164,8 +7615,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 12216.03
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: geothermal
+      power plant, 5.5MWel | lca_activity: geothermal power plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 8520.427
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: geothermal
+      power plant, 5.5MWel | lca_activity: geothermal power plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 4720.774
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: geothermal
+      power plant, 5.5MWel | lca_activity: geothermal power plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 3827.319
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: geothermal
+      power plant, 5.5MWel | lca_activity: geothermal power plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 12215.54
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      geothermal power plant, 5.5MWel | lca_activity: geothermal power plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 8371.454
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      geothermal power plant, 5.5MWel | lca_activity: geothermal power plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 4460.345
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      geothermal power plant, 5.5MWel | lca_activity: geothermal power plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 3193.336
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      geothermal power plant, 5.5MWel | lca_activity: geothermal power plant construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00148
   tech_id: TECH_00025
@@ -6178,8 +7680,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14423
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 38.03264
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 27.00465
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 21.90161
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14153
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 37.91954
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 25.27903
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 18.38265
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00149
   tech_id: TECH_00008
@@ -6192,8 +7745,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 158.3285
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auto-thermal
+      reforming-hydrogen GT power plant, 400MWe | lca_activity: auto-thermal reforming-hydrogen
+      GT power plant, 400MWe'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 145.0629
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auto-thermal
+      reforming-hydrogen GT power plant, 400MWe | lca_activity: auto-thermal reforming-hydrogen
+      GT power plant, 400MWe'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 122.9648
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auto-thermal
+      reforming-hydrogen GT power plant, 400MWe | lca_activity: auto-thermal reforming-hydrogen
+      GT power plant, 400MWe'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 107.0775
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: auto-thermal
+      reforming-hydrogen GT power plant, 400MWe | lca_activity: auto-thermal reforming-hydrogen
+      GT power plant, 400MWe'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 158.322
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auto-thermal reforming-hydrogen GT power plant, 400MWe | lca_activity: auto-thermal
+      reforming-hydrogen GT power plant, 400MWe'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 144.6324
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auto-thermal reforming-hydrogen GT power plant, 400MWe | lca_activity: auto-thermal
+      reforming-hydrogen GT power plant, 400MWe'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 121.2735
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auto-thermal reforming-hydrogen GT power plant, 400MWe | lca_activity: auto-thermal
+      reforming-hydrogen GT power plant, 400MWe'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 101.5919
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      auto-thermal reforming-hydrogen GT power plant, 400MWe | lca_activity: auto-thermal
+      reforming-hydrogen GT power plant, 400MWe'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00150
   tech_id: TECH_00035
@@ -6206,8 +7818,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.034779
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: methanol
+      production facility, construction | lca_activity: methanol production facility,
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.029282
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: methanol
+      production facility, construction | lca_activity: methanol production facility,
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.021694
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: methanol
+      production facility, construction | lca_activity: methanol production facility,
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.018071
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: methanol
+      production facility, construction | lca_activity: methanol production facility,
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.034776
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      methanol production facility, construction | lca_activity: methanol production
+      facility, construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.029318
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      methanol production facility, construction | lca_activity: methanol production
+      facility, construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.020899
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      methanol production facility, construction | lca_activity: methanol production
+      facility, construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.016415
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      methanol production facility, construction | lca_activity: methanol production
+      facility, construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00151
   tech_id: TECH_00009
@@ -6220,8 +7891,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 916.4007
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 757.7304
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 545.4283
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 452.5358
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 916.3501
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 753.1903
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 504.8533
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 375.5101
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00152
   tech_id: TECH_00010
@@ -6234,8 +7964,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 916.4007
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 757.7304
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 545.4283
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 452.5358
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: fuel cell,
+      solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 916.3501
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 753.1903
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 504.8533
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 375.5101
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      fuel cell, solid oxide, 125kW electrical, future | lca_activity: fuel cell production,
+      solid oxide, 125kW electrical, future'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00153
   tech_id: TECH_00031
@@ -6248,8 +8037,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000127
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: ammonia
+      synthesis catalyst | lca_activity: ammonia synthesis catalyst production'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 9.01e-05
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: ammonia
+      synthesis catalyst | lca_activity: ammonia synthesis catalyst production'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 4.24e-05
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: ammonia
+      synthesis catalyst | lca_activity: ammonia synthesis catalyst production'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 3.05e-05
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: ammonia
+      synthesis catalyst | lca_activity: ammonia synthesis catalyst production'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000127
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      ammonia synthesis catalyst | lca_activity: ammonia synthesis catalyst production'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 9.25e-05
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      ammonia synthesis catalyst | lca_activity: ammonia synthesis catalyst production'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 4.07e-05
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      ammonia synthesis catalyst | lca_activity: ammonia synthesis catalyst production'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 2.73e-05
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      ammonia synthesis catalyst | lca_activity: ammonia synthesis catalyst production'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00154
   tech_id: TECH_00011
@@ -6262,8 +8102,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 147.7244
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 122.8306
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 92.41997
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 78.20154
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 147.7159
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 121.5891
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 85.64105
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 62.63381
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00155
   tech_id: TECH_00036
@@ -6276,8 +8175,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.006293
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: RWGS tank
+      construction | lca_activity: RWGS tank construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005231
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: RWGS tank
+      construction | lca_activity: RWGS tank construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.003517
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: RWGS tank
+      construction | lca_activity: RWGS tank construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.002569
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: RWGS tank
+      construction | lca_activity: RWGS tank construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.006293
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      RWGS tank construction | lca_activity: RWGS tank construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005251
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      RWGS tank construction | lca_activity: RWGS tank construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.00314
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      RWGS tank construction | lca_activity: RWGS tank construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.002094
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      RWGS tank construction | lca_activity: RWGS tank construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00156
   tech_id: TECH_00033
@@ -6290,8 +8240,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.009781
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: sabatier
+      reaction methanation unit | lca_activity: sabatier reaction methanation unit
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.008175
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: sabatier
+      reaction methanation unit | lca_activity: sabatier reaction methanation unit
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005603
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: sabatier
+      reaction methanation unit | lca_activity: sabatier reaction methanation unit
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.004181
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: sabatier
+      reaction methanation unit | lca_activity: sabatier reaction methanation unit
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.00978
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      sabatier reaction methanation unit | lca_activity: sabatier reaction methanation
+      unit construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.008204
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      sabatier reaction methanation unit | lca_activity: sabatier reaction methanation
+      unit construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005052
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      sabatier reaction methanation unit | lca_activity: sabatier reaction methanation
+      unit construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.003469
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      sabatier reaction methanation unit | lca_activity: sabatier reaction methanation
+      unit construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00157
   tech_id: TECH_00058
@@ -6304,8 +8313,71 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 20.81867
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: fuel
+      tank, compressed hydrogen gas, 700bar | lca_activity: fuel tank assembly, compressed
+      hydrogen gas, 700bar | notes: for a 117.39 kg tank, of 200 kWh fuel capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 16.75091
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: fuel
+      tank, compressed hydrogen gas, 700bar | lca_activity: fuel tank assembly, compressed
+      hydrogen gas, 700bar | notes: for a 117.39 kg tank, of 200 kWh fuel capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 14.73974
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: fuel
+      tank, compressed hydrogen gas, 700bar | lca_activity: fuel tank assembly, compressed
+      hydrogen gas, 700bar | notes: for a 117.39 kg tank, of 200 kWh fuel capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 13.35187
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: fuel
+      tank, compressed hydrogen gas, 700bar | lca_activity: fuel tank assembly, compressed
+      hydrogen gas, 700bar | notes: for a 117.39 kg tank, of 200 kWh fuel capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 20.81836
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      fuel tank, compressed hydrogen gas, 700bar | lca_activity: fuel tank assembly,
+      compressed hydrogen gas, 700bar | notes: for a 117.39 kg tank, of 200 kWh fuel
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 16.14384
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      fuel tank, compressed hydrogen gas, 700bar | lca_activity: fuel tank assembly,
+      compressed hydrogen gas, 700bar | notes: for a 117.39 kg tank, of 200 kWh fuel
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 14.14699
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      fuel tank, compressed hydrogen gas, 700bar | lca_activity: fuel tank assembly,
+      compressed hydrogen gas, 700bar | notes: for a 117.39 kg tank, of 200 kWh fuel
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 13.16525
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      fuel tank, compressed hydrogen gas, 700bar | lca_activity: fuel tank assembly,
+      compressed hydrogen gas, 700bar | notes: for a 117.39 kg tank, of 200 kWh fuel
+      capacity'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00158
   tech_id: TECH_00054
@@ -6318,8 +8390,75 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hydropower
+      plant, reservoir | lca_activity: hydropower plant construction, reservoir |
+      notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hydropower
+      plant, reservoir | lca_activity: hydropower plant construction, reservoir |
+      notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hydropower
+      plant, reservoir | lca_activity: hydropower plant construction, reservoir |
+      notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hydropower
+      plant, reservoir | lca_activity: hydropower plant construction, reservoir |
+      notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hydropower plant, reservoir | lca_activity: hydropower plant construction, reservoir
+      | notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hydropower plant, reservoir | lca_activity: hydropower plant construction, reservoir
+      | notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hydropower plant, reservoir | lca_activity: hydropower plant construction, reservoir
+      | notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hydropower plant, reservoir | lca_activity: hydropower plant construction, reservoir
+      | notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00159
   tech_id: TECH_00013
@@ -6332,8 +8471,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1508.637
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1393.634
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1253.907
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1152.55
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1508.549
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1384.238
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1096.815
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 714.382
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00160
   tech_id: TECH_00015
@@ -6346,8 +8544,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1508.637
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1393.634
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1253.907
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1152.55
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, reservoir, alpine region | lca_activity: hydropower plant construction,
+      reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1508.549
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1384.238
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1096.815
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 714.382
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, reservoir, alpine region | lca_activity: hydropower plant
+      construction, reservoir, alpine region'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00161
   tech_id: TECH_00054
@@ -6360,8 +8617,75 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hydropower
+      plant, reservoir | lca_activity: hydropower plant construction, reservoir |
+      notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hydropower
+      plant, reservoir | lca_activity: hydropower plant construction, reservoir |
+      notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hydropower
+      plant, reservoir | lca_activity: hydropower plant construction, reservoir |
+      notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hydropower
+      plant, reservoir | lca_activity: hydropower plant construction, reservoir |
+      notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hydropower plant, reservoir | lca_activity: hydropower plant construction, reservoir
+      | notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hydropower plant, reservoir | lca_activity: hydropower plant construction, reservoir
+      | notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hydropower plant, reservoir | lca_activity: hydropower plant construction, reservoir
+      | notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hydropower plant, reservoir | lca_activity: hydropower plant construction, reservoir
+      | notes: Already included in the electricity generation dataset, so not added
+      here to avoid double counting.'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00162
   tech_id: TECH_00014
@@ -6374,8 +8698,63 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1335.991
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, run-of-river | lca_activity: hydropower plant construction, run-of-river'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1226.973
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, run-of-river | lca_activity: hydropower plant construction, run-of-river'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 991.286
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, run-of-river | lca_activity: hydropower plant construction, run-of-river'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 762.9803
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: hydropower
+      plant, run-of-river | lca_activity: hydropower plant construction, run-of-river'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1335.96
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, run-of-river | lca_activity: hydropower plant construction,
+      run-of-river'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1222.328
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, run-of-river | lca_activity: hydropower plant construction,
+      run-of-river'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 973.325
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, run-of-river | lca_activity: hydropower plant construction,
+      run-of-river'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 669.514
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      hydropower plant, run-of-river | lca_activity: hydropower plant construction,
+      run-of-river'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00163
   tech_id: TECH_00043
@@ -6388,8 +8767,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000222
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000205
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000172
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000142
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000222
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000204
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000164
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000113
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00164
   tech_id: TECH_00042
@@ -6402,8 +8832,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000222
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000205
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000172
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000142
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000222
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000204
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000164
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000113
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00165
   tech_id: TECH_00016
@@ -6416,8 +8897,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1636.039
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: municipal
+      waste incineration facility | lca_activity: municipal waste incineration facility
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1505.553
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: municipal
+      waste incineration facility | lca_activity: municipal waste incineration facility
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1259.97
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: municipal
+      waste incineration facility | lca_activity: municipal waste incineration facility
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1080.614
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: municipal
+      waste incineration facility | lca_activity: municipal waste incineration facility
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1635.965
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      municipal waste incineration facility | lca_activity: municipal waste incineration
+      facility construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1499.45
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      municipal waste incineration facility | lca_activity: municipal waste incineration
+      facility construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1216.434
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      municipal waste incineration facility | lca_activity: municipal waste incineration
+      facility construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 932.7112
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      municipal waste incineration facility | lca_activity: municipal waste incineration
+      facility construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00166
   tech_id: TECH_00001
@@ -6430,8 +8970,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 150.3133
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas power
+      plant, combined cycle, 400MW electrical | lca_activity: market for gas power
+      plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 134.0643
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas power
+      plant, combined cycle, 400MW electrical | lca_activity: market for gas power
+      plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 104.1564
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas power
+      plant, combined cycle, 400MW electrical | lca_activity: market for gas power
+      plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 81.92722
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas power
+      plant, combined cycle, 400MW electrical | lca_activity: market for gas power
+      plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 150.3054
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas power plant, combined cycle, 400MW electrical | lca_activity: market for
+      gas power plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 133.5907
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas power plant, combined cycle, 400MW electrical | lca_activity: market for
+      gas power plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 99.518
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas power plant, combined cycle, 400MW electrical | lca_activity: market for
+      gas power plant, combined cycle, 400MW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 72.8924
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas power plant, combined cycle, 400MW electrical | lca_activity: market for
+      gas power plant, combined cycle, 400MW electrical'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00167
   tech_id: TECH_00002
@@ -6444,8 +9043,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 147.7244
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 122.8306
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 92.41997
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 78.20154
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: micro
+      gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 147.7159
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 121.5891
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 85.64105
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 62.63381
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      micro gas turbine, 100kW electrical | lca_activity: micro gas turbine production,
+      100kW electrical'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00168
   tech_id: TECH_00066
@@ -6458,8 +9116,75 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.131893
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 18.6 MJ/kg, 600 kg/m3
+      density -> 12400000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.120459
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 18.6 MJ/kg, 600 kg/m3
+      density -> 12400000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.100291
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 18.6 MJ/kg, 600 kg/m3
+      density -> 12400000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.087006
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: liquid
+      storage tank, chemicals, organics | lca_activity: liquid storage tank production,
+      chemicals, organics | notes: 4000m3 of storage capacity, 18.6 MJ/kg, 600 kg/m3
+      density -> 12400000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.131888
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 18.6 MJ/kg,
+      600 kg/m3 density -> 12400000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.119843
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 18.6 MJ/kg,
+      600 kg/m3 density -> 12400000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.097161
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 18.6 MJ/kg,
+      600 kg/m3 density -> 12400000 kWh of storage capacity rough estimation'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.077041
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      liquid storage tank, chemicals, organics | lca_activity: liquid storage tank
+      production, chemicals, organics | notes: 4000m3 of storage capacity, 18.6 MJ/kg,
+      600 kg/m3 density -> 12400000 kWh of storage capacity rough estimation'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00169
   tech_id: TECH_00028
@@ -6472,8 +9197,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14423
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 38.03264
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 27.00465
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 21.90161
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14153
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 37.91954
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 25.27903
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 18.38265
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00170
   tech_id: TECH_00028
@@ -6486,8 +9262,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14423
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 38.03264
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 27.00465
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 21.90161
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: gas boiler
+      | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 45.14153
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 37.91954
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 25.27903
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 18.38265
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      gas boiler | lca_activity: market for gas boiler'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00171
   tech_id: TECH_00017
@@ -6500,8 +9327,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1335.138
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: photovoltaic
+      plant, 570kWp, multi-Si, on open ground | lca_activity: photovoltaic plant construction,
+      570kWp, multi-Si, on open ground'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 989.4235
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: photovoltaic
+      plant, 570kWp, multi-Si, on open ground | lca_activity: photovoltaic plant construction,
+      570kWp, multi-Si, on open ground'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 568.9162
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: photovoltaic
+      plant, 570kWp, multi-Si, on open ground | lca_activity: photovoltaic plant construction,
+      570kWp, multi-Si, on open ground'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 430.5717
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: photovoltaic
+      plant, 570kWp, multi-Si, on open ground | lca_activity: photovoltaic plant construction,
+      570kWp, multi-Si, on open ground'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1335.093
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      photovoltaic plant, 570kWp, multi-Si, on open ground | lca_activity: photovoltaic
+      plant construction, 570kWp, multi-Si, on open ground'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 992.592
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      photovoltaic plant, 570kWp, multi-Si, on open ground | lca_activity: photovoltaic
+      plant construction, 570kWp, multi-Si, on open ground'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 544.4262
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      photovoltaic plant, 570kWp, multi-Si, on open ground | lca_activity: photovoltaic
+      plant construction, 570kWp, multi-Si, on open ground'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 402.4267
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      photovoltaic plant, 570kWp, multi-Si, on open ground | lca_activity: photovoltaic
+      plant construction, 570kWp, multi-Si, on open ground'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00172
   tech_id: TECH_00018
@@ -6514,8 +9400,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1273.599
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: photovoltaic
+      flat-roof installation, 3kWp, multi-Si, on roof | lca_activity: photovoltaic
+      flat-roof installation, 3kWp, multi-Si, on roof'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 938.1259
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: photovoltaic
+      flat-roof installation, 3kWp, multi-Si, on roof | lca_activity: photovoltaic
+      flat-roof installation, 3kWp, multi-Si, on roof'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 529.6729
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: photovoltaic
+      flat-roof installation, 3kWp, multi-Si, on roof | lca_activity: photovoltaic
+      flat-roof installation, 3kWp, multi-Si, on roof'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 400.063
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: photovoltaic
+      flat-roof installation, 3kWp, multi-Si, on roof | lca_activity: photovoltaic
+      flat-roof installation, 3kWp, multi-Si, on roof'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 1273.557
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      photovoltaic flat-roof installation, 3kWp, multi-Si, on roof | lca_activity:
+      photovoltaic flat-roof installation, 3kWp, multi-Si, on roof'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 944.3021
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      photovoltaic flat-roof installation, 3kWp, multi-Si, on roof | lca_activity:
+      photovoltaic flat-roof installation, 3kWp, multi-Si, on roof'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 508.4619
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      photovoltaic flat-roof installation, 3kWp, multi-Si, on roof | lca_activity:
+      photovoltaic flat-roof installation, 3kWp, multi-Si, on roof'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 376.995
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      photovoltaic flat-roof installation, 3kWp, multi-Si, on roof | lca_activity:
+      photovoltaic flat-roof installation, 3kWp, multi-Si, on roof'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00173
   tech_id: TECH_00040
@@ -6528,8 +9473,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.009781
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: sabatier
+      reaction methanation unit | lca_activity: sabatier reaction methanation unit
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.008175
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: sabatier
+      reaction methanation unit | lca_activity: sabatier reaction methanation unit
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005603
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: sabatier
+      reaction methanation unit | lca_activity: sabatier reaction methanation unit
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.004181
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: sabatier
+      reaction methanation unit | lca_activity: sabatier reaction methanation unit
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.00978
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      sabatier reaction methanation unit | lca_activity: sabatier reaction methanation
+      unit construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.008204
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      sabatier reaction methanation unit | lca_activity: sabatier reaction methanation
+      unit construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.005052
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      sabatier reaction methanation unit | lca_activity: sabatier reaction methanation
+      unit construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.003469
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      sabatier reaction methanation unit | lca_activity: sabatier reaction methanation
+      unit construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00174
   tech_id: TECH_00041
@@ -6542,8 +9546,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.034779
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: methanol
+      production facility, construction | lca_activity: methanol production facility,
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.029282
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: methanol
+      production facility, construction | lca_activity: methanol production facility,
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.021694
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: methanol
+      production facility, construction | lca_activity: methanol production facility,
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.018071
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: methanol
+      production facility, construction | lca_activity: methanol production facility,
+      construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.034776
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      methanol production facility, construction | lca_activity: methanol production
+      facility, construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.029318
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      methanol production facility, construction | lca_activity: methanol production
+      facility, construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.020899
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      methanol production facility, construction | lca_activity: methanol production
+      facility, construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.016415
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      methanol production facility, construction | lca_activity: methanol production
+      facility, construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00175
   tech_id: TECH_00038
@@ -6556,8 +9619,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001086
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid
+      plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001014
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid
+      plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000821
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid
+      plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000603
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid
+      plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001086
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      gas-to-liquid plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001014
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      gas-to-liquid plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000799
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      gas-to-liquid plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000515
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      gas-to-liquid plant | lca_activity: gas-to-liquid plant construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00176
   tech_id: TECH_00039
@@ -6570,8 +9684,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001086
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid
+      plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001014
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid
+      plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000821
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid
+      plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000603
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: gas-to-liquid
+      plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001086
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      gas-to-liquid plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.001014
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      gas-to-liquid plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000799
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      gas-to-liquid plant | lca_activity: gas-to-liquid plant construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000515
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      gas-to-liquid plant | lca_activity: gas-to-liquid plant construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00177
   tech_id: TECH_00055
@@ -6584,8 +9749,75 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 6.695504
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: thermal
+      storage system, solar tower power plant, 20 MW | lca_activity: market for thermal
+      storage system, solar tower power plant, 20 MW | notes: 440MWh thermal storage
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 6.256095
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: thermal
+      storage system, solar tower power plant, 20 MW | lca_activity: market for thermal
+      storage system, solar tower power plant, 20 MW | notes: 440MWh thermal storage
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 5.373831
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: thermal
+      storage system, solar tower power plant, 20 MW | lca_activity: market for thermal
+      storage system, solar tower power plant, 20 MW | notes: 440MWh thermal storage
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 4.60437
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: thermal
+      storage system, solar tower power plant, 20 MW | lca_activity: market for thermal
+      storage system, solar tower power plant, 20 MW | notes: 440MWh thermal storage
+      capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 6.694429
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      thermal storage system, solar tower power plant, 20 MW | lca_activity: market
+      for thermal storage system, solar tower power plant, 20 MW | notes: 440MWh thermal
+      storage capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 6.276926
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      thermal storage system, solar tower power plant, 20 MW | lca_activity: market
+      for thermal storage system, solar tower power plant, 20 MW | notes: 440MWh thermal
+      storage capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 4.642119
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      thermal storage system, solar tower power plant, 20 MW | lca_activity: market
+      for thermal storage system, solar tower power plant, 20 MW | notes: 440MWh thermal
+      storage capacity'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 3.625887
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      thermal storage system, solar tower power plant, 20 MW | lca_activity: market
+      for thermal storage system, solar tower power plant, 20 MW | notes: 440MWh thermal
+      storage capacity'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00178
   tech_id: TECH_00056
@@ -6598,8 +9830,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 11.95727
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hot water
+      tank, 600l | lca_activity: hot water tank production, 600l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 10.184
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hot water
+      tank, 600l | lca_activity: hot water tank production, 600l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 7.506902
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hot water
+      tank, 600l | lca_activity: hot water tank production, 600l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 6.226944
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: hot water
+      tank, 600l | lca_activity: hot water tank production, 600l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 11.95654
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hot water tank, 600l | lca_activity: hot water tank production, 600l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 10.1325
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hot water tank, 600l | lca_activity: hot water tank production, 600l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 7.009026
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hot water tank, 600l | lca_activity: hot water tank production, 600l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 5.087231
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      hot water tank, 600l | lca_activity: hot water tank production, 600l'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00179
   tech_id: TECH_00057
@@ -6612,8 +9895,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 6.218017
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: heat
+      storage, 2000l | lca_activity: heat storage production, 2000l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 5.305749
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: heat
+      storage, 2000l | lca_activity: heat storage production, 2000l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 3.931643
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: heat
+      storage, 2000l | lca_activity: heat storage production, 2000l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 3.283876
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kWh | ref_product: heat
+      storage, 2000l | lca_activity: heat storage production, 2000l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 6.217638
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      heat storage, 2000l | lca_activity: heat storage production, 2000l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 5.274674
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      heat storage, 2000l | lca_activity: heat storage production, 2000l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 3.680122
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      heat storage, 2000l | lca_activity: heat storage production, 2000l'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 2.677152
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kWh | ref_product:
+      heat storage, 2000l | lca_activity: heat storage production, 2000l'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00180
   tech_id: TECH_00019
@@ -6626,8 +9960,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 369.5315
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: nuclear
+      power plant, pressure water reactor, 1000MW | lca_activity: nuclear power plant
+      construction, pressure water reactor, 1000MW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 282.0743
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: nuclear
+      power plant, pressure water reactor, 1000MW | lca_activity: nuclear power plant
+      construction, pressure water reactor, 1000MW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 185.0116
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: nuclear
+      power plant, pressure water reactor, 1000MW | lca_activity: nuclear power plant
+      construction, pressure water reactor, 1000MW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 151.5385
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: nuclear
+      power plant, pressure water reactor, 1000MW | lca_activity: nuclear power plant
+      construction, pressure water reactor, 1000MW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 369.5177
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      nuclear power plant, pressure water reactor, 1000MW | lca_activity: nuclear
+      power plant construction, pressure water reactor, 1000MW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 278.7286
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      nuclear power plant, pressure water reactor, 1000MW | lca_activity: nuclear
+      power plant construction, pressure water reactor, 1000MW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 179.9264
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      nuclear power plant, pressure water reactor, 1000MW | lca_activity: nuclear
+      power plant construction, pressure water reactor, 1000MW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 136.528
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      nuclear power plant, pressure water reactor, 1000MW | lca_activity: nuclear
+      power plant construction, pressure water reactor, 1000MW'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00181
   tech_id: TECH_00020
@@ -6640,8 +10033,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 579.1915
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: wind turbine,
+      2MW, onshore | lca_activity: wind turbine construction, 2MW, onshore'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 503.2972
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: wind turbine,
+      2MW, onshore | lca_activity: wind turbine construction, 2MW, onshore'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 388.3157
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: wind turbine,
+      2MW, onshore | lca_activity: wind turbine construction, 2MW, onshore'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 335.491
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: wind turbine,
+      2MW, onshore | lca_activity: wind turbine construction, 2MW, onshore'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 579.1249
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      wind turbine, 2MW, onshore | lca_activity: wind turbine construction, 2MW, onshore'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 503.1784
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      wind turbine, 2MW, onshore | lca_activity: wind turbine construction, 2MW, onshore'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 376.6415
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      wind turbine, 2MW, onshore | lca_activity: wind turbine construction, 2MW, onshore'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 301.3948
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      wind turbine, 2MW, onshore | lca_activity: wind turbine construction, 2MW, onshore'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00182
   tech_id: TECH_00029
@@ -6654,8 +10098,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 104.587
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: furnace,
+      wood chips, with silo, 50kW | lca_activity: furnace production, wood chips,
+      with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 93.18166
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: furnace,
+      wood chips, with silo, 50kW | lca_activity: furnace production, wood chips,
+      with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 74.28769
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: furnace,
+      wood chips, with silo, 50kW | lca_activity: furnace production, wood chips,
+      with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 59.04199
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: furnace,
+      wood chips, with silo, 50kW | lca_activity: furnace production, wood chips,
+      with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 104.5837
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      furnace, wood chips, with silo, 50kW | lca_activity: furnace production, wood
+      chips, with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 92.64437
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      furnace, wood chips, with silo, 50kW | lca_activity: furnace production, wood
+      chips, with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 71.64974
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      furnace, wood chips, with silo, 50kW | lca_activity: furnace production, wood
+      chips, with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 50.4481
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      furnace, wood chips, with silo, 50kW | lca_activity: furnace production, wood
+      chips, with silo, 50kW'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00183
   tech_id: TECH_00030
@@ -6668,8 +10171,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 104.587
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: furnace,
+      wood chips, with silo, 50kW | lca_activity: furnace production, wood chips,
+      with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 93.18166
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: furnace,
+      wood chips, with silo, 50kW | lca_activity: furnace production, wood chips,
+      with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 74.28769
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: furnace,
+      wood chips, with silo, 50kW | lca_activity: furnace production, wood chips,
+      with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 59.04199
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: furnace,
+      wood chips, with silo, 50kW | lca_activity: furnace production, wood chips,
+      with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 104.5837
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      furnace, wood chips, with silo, 50kW | lca_activity: furnace production, wood
+      chips, with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 92.64437
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      furnace, wood chips, with silo, 50kW | lca_activity: furnace production, wood
+      chips, with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 71.64974
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      furnace, wood chips, with silo, 50kW | lca_activity: furnace production, wood
+      chips, with silo, 50kW'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 50.4481
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      furnace, wood chips, with silo, 50kW | lca_activity: furnace production, wood
+      chips, with silo, 50kW'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00184
   tech_id: TECH_00021
@@ -6682,8 +10244,67 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 300.1288
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat and
+      power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity:
+      heat and power co-generation unit construction, 1MWel'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 259.497
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat and
+      power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity:
+      heat and power co-generation unit construction, 1MWel'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 202.0779
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat and
+      power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity:
+      heat and power co-generation unit construction, 1MWel'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 167.741
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kW | ref_product: heat and
+      power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity:
+      heat and power co-generation unit construction, 1MWel'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 300.11
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat and power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity:
+      heat and power co-generation unit construction, 1MWel'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 258.4405
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat and power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity:
+      heat and power co-generation unit construction, 1MWel'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 193.3632
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat and power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity:
+      heat and power co-generation unit construction, 1MWel'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 148.1322
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kW | ref_product:
+      heat and power co-generation unit, organic Rankine cycle, 1MWe, 6.4 MWth | lca_activity:
+      heat and power co-generation unit construction, 1MWel'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00185
   tech_id: TECH_00044
@@ -6696,8 +10317,59 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000222
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000205
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000172
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000142
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000222
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000204
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000164
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000113
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
   date_created: '2026-07-01'
 - linked_entity_id: LE_00186
   tech_id: TECH_00045
@@ -6710,6 +10382,57 @@
   balancing:
     inputs: []
     outputs: []
-  sources: []
-  values: []
+  sources:
+  - source_id: SRC_00032
+    linked_attributes:
+    - ATTR_00028
+  values:
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000222
+    time_index: 2025
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000205
+    time_index: 2030
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000172
+    time_index: 2040
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000142
+    time_index: 2050
+    note: 'climate scenario: ssp2_ndc | lca_unit: kgCO2eq/kg | ref_product: synthetic
+      gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000222
+    time_index: 2025
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000204
+    time_index: 2030
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000164
+    time_index: 2040
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
+  - attribute_id: ATTR_00028
+    attribute_name: Embedded Carbon
+    value: 0.000113
+    time_index: 2050
+    note: 'climate scenario: ssp2_pkbudg1000 | lca_unit: kgCO2eq/kg | ref_product:
+      synthetic gas factory | lca_activity: synthetic gas factory construction'
   date_created: '2026-07-01'
