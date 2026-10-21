@@ -96,7 +96,27 @@
     linked_attributes:
     - ATTR_00005
     - ATTR_00003
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.64'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 23
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 890
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 21
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.002
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00004
   tech_id: TECH_00004
@@ -132,7 +152,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.3'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 15
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1000
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 12
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.004
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00005
   tech_id: TECH_00005
@@ -268,7 +308,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.42'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 23
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 489
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 21
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.002
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00008
   tech_id: TECH_00007
@@ -304,7 +364,23 @@
   - source_id: SRC_00009
     linked_attributes:
     - ATTR_00003
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 30
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 8000
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 222
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.005
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00009
   tech_id: TECH_00008
@@ -344,6 +420,22 @@
     attribute_name: Technical Efficiency
     value: '0.6'
     time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 23
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 979
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 43
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.002
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00010
   tech_id: TECH_00009
@@ -381,9 +473,29 @@
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
   values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.65'
+    time_index: 2040
   - attribute_id: ATTR_00012
     attribute_name: Operating Temperature
     value: 1000
+    time_index: 2040
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 23
+    time_index: 2040
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 4000
+    time_index: 2040
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 50
+    time_index: 2040
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
     time_index: 2040
   date_created: '2026-07-01'
 - linked_entity_id: LE_00011
@@ -422,9 +534,29 @@
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
   values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.65'
+    time_index: 2050
   - attribute_id: ATTR_00012
     attribute_name: Operating Temperature
     value: 1000
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 23
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 3000
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 45
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
     time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00012
@@ -459,7 +591,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.5'
+    time_index: 2040
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 23
+    time_index: 2040
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 6000
+    time_index: 2040
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 235
+    time_index: 2040
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2040
   date_created: '2026-07-01'
 - linked_entity_id: LE_00013
   tech_id: TECH_00010
@@ -493,7 +645,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.5'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 23
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 4000
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 200
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00014
   tech_id: TECH_00011
@@ -526,7 +698,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.42'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 23
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 538
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 24
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.002
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00015
   tech_id: TECH_00012
@@ -561,7 +753,23 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 80
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1890
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 9
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00016
   tech_id: TECH_00013
@@ -596,7 +804,23 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 80
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 3640
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 9
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00017
   tech_id: TECH_00014
@@ -631,7 +855,23 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 80
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 3200
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 64
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00018
   tech_id: TECH_00015
@@ -666,7 +906,23 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 80
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 3000
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 30
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00019
   tech_id: TECH_00016
@@ -702,7 +958,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.2'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 40
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 4600
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 96
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00020
   tech_id: TECH_00017
@@ -836,7 +1112,27 @@
   - source_id: SRC_00013
     linked_attributes:
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '1.0'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 2647
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 41
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00025
   tech_id: TECH_00018
@@ -866,7 +1162,27 @@
   - source_id: SRC_00013
     linked_attributes:
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '1.0'
+    time_index: 2030
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2030
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1880
+    time_index: 2030
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 37.6
+    time_index: 2030
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2030
   date_created: '2026-07-01'
 - linked_entity_id: LE_00026
   tech_id: TECH_00018
@@ -896,7 +1212,27 @@
   - source_id: SRC_00013
     linked_attributes:
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '1.0'
+    time_index: 2040
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2040
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1400
+    time_index: 2040
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 28
+    time_index: 2040
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2040
   date_created: '2026-07-01'
 - linked_entity_id: LE_00027
   tech_id: TECH_00018
@@ -926,7 +1262,27 @@
   - source_id: SRC_00013
     linked_attributes:
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '1.0'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1020
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 21
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00028
   tech_id: TECH_00019
@@ -957,7 +1313,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.33'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 60
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 8000
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 200
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.009
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00029
   tech_id: TECH_00020
@@ -990,7 +1366,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.45'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 2500
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 39
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00030
   tech_id: TECH_00020
@@ -1023,7 +1419,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.45'
+    time_index: 2030
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2030
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 2084
+    time_index: 2030
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 33
+    time_index: 2030
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2030
   date_created: '2026-07-01'
 - linked_entity_id: LE_00031
   tech_id: TECH_00020
@@ -1056,7 +1472,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.45'
+    time_index: 2040
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2040
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1668
+    time_index: 2040
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 27
+    time_index: 2040
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2040
   date_created: '2026-07-01'
 - linked_entity_id: LE_00032
   tech_id: TECH_00020
@@ -1089,7 +1525,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.45'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1253
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 21
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00033
   tech_id: TECH_00021
@@ -1123,7 +1579,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.15'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 15
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1400
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 135
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.004
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00034
   tech_id: TECH_00022
@@ -1156,7 +1632,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.93'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 1900
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 114
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00035
   tech_id: TECH_00022
@@ -1189,7 +1685,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.85'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 300
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 9
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00036
   tech_id: TECH_00023
@@ -1221,7 +1737,23 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 65
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 1
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.001
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00037
   tech_id: TECH_00023
@@ -1254,7 +1786,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.85'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 30
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 275
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 1.4
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00038
   tech_id: TECH_00024
@@ -1286,7 +1838,23 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 962
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 4
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00039
   tech_id: TECH_00024
@@ -1323,7 +1891,11 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2030
   date_created: '2026-07-01'
 - linked_entity_id: LE_00040
   tech_id: TECH_00024
@@ -1360,7 +1932,11 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2040
   date_created: '2026-07-01'
 - linked_entity_id: LE_00041
   tech_id: TECH_00024
@@ -1392,7 +1968,23 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 962
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 4
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00042
   tech_id: TECH_00025
@@ -1425,7 +2017,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.85'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2050
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 765
+    time_index: 2050
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 1
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00043
   tech_id: TECH_00026
@@ -1455,7 +2067,23 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 2700
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 81
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00044
   tech_id: TECH_00027
@@ -1489,7 +2117,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '4.0'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 800
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 12
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00045
   tech_id: TECH_00028
@@ -1560,7 +2208,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.85'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 17
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 300
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 9
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.001
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00047
   tech_id: TECH_00029
@@ -1593,7 +2261,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.77'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 2600
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 156
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00048
   tech_id: TECH_00030
@@ -1626,7 +2314,27 @@
     linked_attributes:
     - '[unregistered: ratios_in]'
     - '[unregistered: ratios_out]'
-  values: []
+  values:
+  - attribute_id: ATTR_00003
+    attribute_name: Technical Efficiency
+    value: '0.85'
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 25
+    time_index: 2025
+  - attribute_id: ATTR_00007
+    attribute_name: Capital Expenditure Per Capacity
+    value: 500
+    time_index: 2025
+  - attribute_id: ATTR_00010
+    attribute_name: Annual Operational Expenditure Per Installed Capacity
+    value: 15
+    time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.003
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00049
   tech_id: TECH_00031
@@ -1713,6 +2421,10 @@
     attribute_name: Technical Efficiency
     value: '0.458'
     time_index: 2030
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2030
   - attribute_id: ATTR_00007
     attribute_name: Capital Expenditure Per Capacity
     value: 1130
@@ -1763,6 +2475,10 @@
     attribute_name: Technical Efficiency
     value: '0.458'
     time_index: 2040
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
+    time_index: 2040
   - attribute_id: ATTR_00007
     attribute_name: Capital Expenditure Per Capacity
     value: 1056
@@ -1812,6 +2528,10 @@
   - attribute_id: ATTR_00003
     attribute_name: Technical Efficiency
     value: '0.458'
+    time_index: 2050
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 20
     time_index: 2050
   - attribute_id: ATTR_00007
     attribute_name: Capital Expenditure Per Capacity
@@ -2762,6 +3482,10 @@
     attribute_name: Annual Operational Expenditure Per Installed Capacity
     value: 42
     time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.015
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00068
   tech_id: TECH_00038
@@ -2833,6 +3557,10 @@
   - attribute_id: ATTR_00010
     attribute_name: Annual Operational Expenditure Per Installed Capacity
     value: 34.8
+    time_index: 2030
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.015
     time_index: 2030
   date_created: '2026-07-01'
 - linked_entity_id: LE_00069
@@ -2906,6 +3634,10 @@
     attribute_name: Annual Operational Expenditure Per Installed Capacity
     value: 30.8
     time_index: 2040
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.015
+    time_index: 2040
   date_created: '2026-07-01'
 - linked_entity_id: LE_00070
   tech_id: TECH_00038
@@ -2977,6 +3709,10 @@
   - attribute_id: ATTR_00010
     attribute_name: Annual Operational Expenditure Per Installed Capacity
     value: 28
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.015
     time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00071
@@ -3050,6 +3786,10 @@
     attribute_name: Annual Operational Expenditure Per Installed Capacity
     value: 42
     time_index: 2025
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.015
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00072
   tech_id: TECH_00039
@@ -3121,6 +3861,10 @@
   - attribute_id: ATTR_00010
     attribute_name: Annual Operational Expenditure Per Installed Capacity
     value: 34.8
+    time_index: 2030
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.015
     time_index: 2030
   date_created: '2026-07-01'
 - linked_entity_id: LE_00073
@@ -3194,6 +3938,10 @@
     attribute_name: Annual Operational Expenditure Per Installed Capacity
     value: 30.8
     time_index: 2040
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.015
+    time_index: 2040
   date_created: '2026-07-01'
 - linked_entity_id: LE_00074
   tech_id: TECH_00039
@@ -3265,6 +4013,10 @@
   - attribute_id: ATTR_00010
     attribute_name: Annual Operational Expenditure Per Installed Capacity
     value: 28
+    time_index: 2050
+  - attribute_id: ATTR_00011
+    attribute_name: Operating Expenditure per Energy
+    value: 0.015
     time_index: 2050
   date_created: '2026-07-01'
 - linked_entity_id: LE_00075
@@ -4498,6 +5250,10 @@
     linked_attributes:
     - ATTR_00027
   values:
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 800
+    time_index: 2025
   - attribute_id: ATTR_00027
     attribute_name: Operational Expenditure Per Storage Capacity
     value: 20
@@ -4522,6 +5278,10 @@
     linked_attributes:
     - ATTR_00027
   values:
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 460
+    time_index: 2030
   - attribute_id: ATTR_00027
     attribute_name: Operational Expenditure Per Storage Capacity
     value: 11.5
@@ -4546,6 +5306,10 @@
     linked_attributes:
     - ATTR_00027
   values:
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 400
+    time_index: 2040
   - attribute_id: ATTR_00027
     attribute_name: Operational Expenditure Per Storage Capacity
     value: 10
@@ -4570,6 +5334,10 @@
     linked_attributes:
     - ATTR_00027
   values:
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 350
+    time_index: 2050
   - attribute_id: ATTR_00027
     attribute_name: Operational Expenditure Per Storage Capacity
     value: 8.75
@@ -4591,7 +5359,15 @@
     linked_attributes:
     - ATTR_00026
     - ATTR_00027
-  values: []
+  values:
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 0.3
+    time_index: 2025
+  - attribute_id: ATTR_00027
+    attribute_name: Operational Expenditure Per Storage Capacity
+    value: 0.003
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00109
   tech_id: TECH_00054
@@ -4609,7 +5385,15 @@
     linked_attributes:
     - ATTR_00026
     - ATTR_00027
-  values: []
+  values:
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 0.3
+    time_index: 2025
+  - attribute_id: ATTR_00027
+    attribute_name: Operational Expenditure Per Storage Capacity
+    value: 0.003
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00110
   tech_id: TECH_00055
@@ -4640,7 +5424,71 @@
   - source_id: SRC_00006
     linked_attributes:
     - '[unregistered: ALL]'
-  values: []
+  values:
+  - attribute_id: ATTR_00001
+    attribute_name: Technology Readiness Level
+    value: 9
+    time_index: 2025
+  - attribute_id: ATTR_00002
+    attribute_name: Technology Maturity
+    value: Mature
+    time_index: 2025
+  - attribute_id: ATTR_00017
+    attribute_name: Storage Carrier
+    value: ThDhw
+    time_index: 2025
+  - attribute_id: ATTR_00018
+    attribute_name: Minimum Installation
+    value: 0
+    time_index: 2025
+  - attribute_id: ATTR_00019
+    attribute_name: ChargingCapacityFactor
+    value: 1
+    time_index: 2025
+  - attribute_id: ATTR_00020
+    attribute_name: Discharging Capacity Factor
+    value: 1
+    time_index: 2025
+  - attribute_id: ATTR_00021
+    attribute_name: Charging Efficiency
+    value: 0.99
+    time_index: 2025
+  - attribute_id: ATTR_00022
+    attribute_name: Discharging Efficiency
+    value: 0.99
+    time_index: 2025
+  - attribute_id: ATTR_00023
+    attribute_name: Minimum Soc
+    value: 0
+    time_index: 2025
+  - attribute_id: ATTR_00024
+    attribute_name: Maximum Soc
+    value: 1
+    time_index: 2025
+  - attribute_id: ATTR_00025
+    attribute_name: Standby Loss Per Hour
+    value: 0.00971305
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 40
+    time_index: 2025
+  - attribute_id: ATTR_00006
+    attribute_name: Capital Expenditure One Time
+    value: 0
+    time_index: 2025
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 60
+    time_index: 2025
+  - attribute_id: ATTR_00008
+    attribute_name: One-Time Operational Expenditure
+    value: 0
+    time_index: 2025
+  - attribute_id: ATTR_00027
+    attribute_name: Operational Expenditure Per Storage Capacity
+    value: 0.6
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00112
   tech_id: TECH_00057
@@ -4657,7 +5505,71 @@
   - source_id: SRC_00006
     linked_attributes:
     - '[unregistered: ALL]'
-  values: []
+  values:
+  - attribute_id: ATTR_00001
+    attribute_name: Technology Readiness Level
+    value: 9
+    time_index: 2025
+  - attribute_id: ATTR_00002
+    attribute_name: Technology Maturity
+    value: Mature
+    time_index: 2025
+  - attribute_id: ATTR_00017
+    attribute_name: Storage Carrier
+    value: ThPhII
+    time_index: 2025
+  - attribute_id: ATTR_00018
+    attribute_name: Minimum Installation
+    value: 0
+    time_index: 2025
+  - attribute_id: ATTR_00019
+    attribute_name: ChargingCapacityFactor
+    value: 1
+    time_index: 2025
+  - attribute_id: ATTR_00020
+    attribute_name: Discharging Capacity Factor
+    value: 1
+    time_index: 2025
+  - attribute_id: ATTR_00021
+    attribute_name: Charging Efficiency
+    value: 0.99
+    time_index: 2025
+  - attribute_id: ATTR_00022
+    attribute_name: Discharging Efficiency
+    value: 0.99
+    time_index: 2025
+  - attribute_id: ATTR_00023
+    attribute_name: Minimum Soc
+    value: 0
+    time_index: 2025
+  - attribute_id: ATTR_00024
+    attribute_name: Maximum Soc
+    value: 1
+    time_index: 2025
+  - attribute_id: ATTR_00025
+    attribute_name: Standby Loss Per Hour
+    value: 0.000158053
+    time_index: 2025
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 40
+    time_index: 2025
+  - attribute_id: ATTR_00006
+    attribute_name: Capital Expenditure One Time
+    value: 0
+    time_index: 2025
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 3
+    time_index: 2025
+  - attribute_id: ATTR_00008
+    attribute_name: One-Time Operational Expenditure
+    value: 0
+    time_index: 2025
+  - attribute_id: ATTR_00027
+    attribute_name: Operational Expenditure Per Storage Capacity
+    value: 0.026
+    time_index: 2025
   date_created: '2026-07-01'
 - linked_entity_id: LE_00113
   tech_id: TECH_00058
@@ -4674,7 +5586,71 @@
   - source_id: SRC_00006
     linked_attributes:
     - '[unregistered: ALL]'
-  values: []
+  values:
+  - attribute_id: ATTR_00001
+    attribute_name: Technology Readiness Level
+    value: 9
+    time_index: 2030
+  - attribute_id: ATTR_00002
+    attribute_name: Technology Maturity
+    value: Mature
+    time_index: 2030
+  - attribute_id: ATTR_00017
+    attribute_name: Storage Carrier
+    value: H2
+    time_index: 2030
+  - attribute_id: ATTR_00018
+    attribute_name: Minimum Installation
+    value: 300000
+    time_index: 2030
+  - attribute_id: ATTR_00019
+    attribute_name: ChargingCapacityFactor
+    value: 1
+    time_index: 2030
+  - attribute_id: ATTR_00020
+    attribute_name: Discharging Capacity Factor
+    value: 1
+    time_index: 2030
+  - attribute_id: ATTR_00021
+    attribute_name: Charging Efficiency
+    value: 0.938
+    time_index: 2030
+  - attribute_id: ATTR_00022
+    attribute_name: Discharging Efficiency
+    value: 0.938
+    time_index: 2030
+  - attribute_id: ATTR_00023
+    attribute_name: Minimum Soc
+    value: 0
+    time_index: 2030
+  - attribute_id: ATTR_00024
+    attribute_name: Maximum Soc
+    value: 1
+    time_index: 2030
+  - attribute_id: ATTR_00025
+    attribute_name: Standby Loss Per Hour
+    value: 0
+    time_index: 2030
+  - attribute_id: ATTR_00005
+    attribute_name: Economic Lifetime
+    value: 30
+    time_index: 2030
+  - attribute_id: ATTR_00006
+    attribute_name: Capital Expenditure One Time
+    value: 0
+    time_index: 2030
+  - attribute_id: ATTR_00026
+    attribute_name: Capital Expenditure per Storage Capacity
+    value: 7
+    time_index: 2030
+  - attribute_id: ATTR_00008
+    attribute_name: One-Time Operational Expenditure
+    value: 0
+    time_index: 2030
+  - attribute_id: ATTR_00027
+    attribute_name: Operational Expenditure Per Storage Capacity
+    value: 0.13
+    time_index: 2030
   date_created: '2026-07-01'
 - linked_entity_id: LE_00114
   tech_id: TECH_00059
