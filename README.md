@@ -5,7 +5,35 @@
 
 MOTEL (Methodology for Open Technology Data in Energy Models) is an ETH Domain ORD Program project for collecting, harmonising, and publishing technology data for energy system models.
 
-This repository contains the current MOTEL data workflow, schemas, curated database files, ontology-mapping scripts, and a static documentation site. The separate public downstream application stack lives in [`uesl-empa/motel-webapp`](https://github.com/uesl-empa/motel-webapp).
+This repository contains the MOTEL code (ingestion, harmonisation, ontology mapping, and release tools), the schemas, the documentation site with its data explorer, and the public release of the MOTEL database in `motel-db/`.
+
+## The MOTEL Repositories
+
+```text
+uesl-empa/motel-data  (private)     full database, including values whose
+        |                           sources do not permit redistribution
+        |  tools/build_release.py: only values backed by permitted sources
+        v
+uesl-empa/motel-platform  (public)  code, schemas, docs, and the release in
+        |                           motel-db/; explorer and downloads at
+        |                           https://uesl-empa.github.io/motel-platform/
+        |  ontology TTL built from the release:
+        |  https://uesl-empa.github.io/motel-platform/data/cls_atr_motel.ttl
+        v
+uesl-empa/motel-webapp  (public)    knowledge graph (GraphDB), API, and web app
+```
+
+| Repository | Visibility | Holds |
+| --- | --- | --- |
+| `uesl-empa/motel-data` | private, for the MOTEL team | the full database and its history; no code |
+| [`uesl-empa/motel-platform`](https://github.com/uesl-empa/motel-platform) (this one) | public | all code, the schemas, the docs, and the release of the database |
+| [`uesl-empa/motel-webapp`](https://github.com/uesl-empa/motel-webapp) | public | the knowledge-graph stack that serves the data through an API and web app |
+
+Code lives only here and data changes start in `motel-data`; a new release
+arrives here as a pull request made by `tools/publish_release.py` (see
+[Working With the Full Data](#working-with-the-full-data)). Everything in this
+repository's `motel-db/` is the release: `motel-db/RELEASE.md` says how it was
+built and `motel-db/WITHHELD.csv` lists what it withholds.
 
 ## Repository Structure
 
