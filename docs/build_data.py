@@ -34,6 +34,7 @@ import csv
 import datetime
 import json
 import os
+import re
 import shutil
 from collections import Counter
 from pathlib import Path
@@ -73,6 +74,29 @@ def clean(value):
         return None
     text = str(value).strip()
     return text if text and text.lower() != "nan" else None
+
+
+SCENARIO_NOTE = re.compile(r"climate scenario:\s*([^|]+)")
+
+
+def value_note(value: dict) -> tuple[str | None, str | None]:
+    """
+    Return (scenario, note) for one value.
+
+    Values from scenario-dependent sources (the reFuel LCA, for example) carry
+    "climate scenario: ssp2_ndc | ..." in their note; the scenario is pulled
+    out so the explorer can keep the scenarios apart, and the rest of the note
+    is kept as it is.
+    """
+    note = clean(value.get("note"))
+    if not note:
+        return None, None
+    match = SCENARIO_NOTE.search(note)
+    if not match:
+        return None, note
+    rest = " | ".join(part.strip() for part in note.split("|")
+                      if not SCENARIO_NOTE.search(part) and part.strip())
+    return match.group(1).strip(), rest or None
 
 
 def pick(row: dict, *fields: str) -> dict:
@@ -178,6 +202,7 @@ def build(db: Path) -> dict:
                     "attribute_id": value.get("attribute_id"),
                     "value": value.get("value"),
                     "time_index": clean(value.get("time_index")),
+                    **dict(zip(("scenario", "note"), value_note(value))),
                 }
                 for value in entity.get("values") or []
                 if value.get("attribute_id")
@@ -253,8 +278,8 @@ def write_values_csv(data: dict, path: Path) -> int:
     source_names = {s["id"]: s["source_name"] for s in data["sources"]}
     columns = [
         "linked_entity_id", "tech_id", "technology_name", "process_id", "process_name",
-        "attribute_id", "attribute_name", "value", "unit", "time_index",
-        *SCOPE_TYPES, "source_ids", "source_names",
+        "attribute_id", "attribute_name", "value", "unit", "time_index", "scenario",
+        *SCOPE_TYPES, "source_ids", "source_names", "note",
     ]
     rows = 0
     with path.open("w", encoding="utf-8", newline="") as handle:
@@ -280,9 +305,11 @@ def write_values_csv(data: dict, path: Path) -> int:
                     "value": value["value"],
                     "unit": attribute.get("unit"),
                     "time_index": value["time_index"],
+                    "scenario": value.get("scenario"),
                     **record["scope"],
                     "source_ids": ";".join(value_sources),
                     "source_names": ";".join(source_names.get(s) or s for s in value_sources),
+                    "note": value.get("note"),
                 })
                 rows += 1
     return rows
