@@ -31,3 +31,4 @@ assumption_Empa_battery_capex_2025,Empa2025,SRC_00028,created
 report_ASSET_2018,ASSET2018,SRC_00029,created
 report_gas_compression_2014,OstGasCompression2014,SRC_00030,created
 report_gas_storage_2017,GasStorageSwitzerland2017,SRC_00031,created
+lca_refuel_premise_ecoinvent_2025,ReFuelLCAPremiseEcoinvent2025,SRC_00032,created
