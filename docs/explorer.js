@@ -78,6 +78,13 @@
     return unit && !NO_UNIT.has(unit.trim()) ? unit : "";
   }
 
+  // Scenario names as the reFuel LCA writes them, and how to show them.
+  const SCENARIO_LABELS = { ssp2_ndc: "SSP2-NDC", ssp2_pkbudg1000: "SSP2-PkBudg1000" };
+
+  function scenarioLabel(scenario) {
+    return scenario ? SCENARIO_LABELS[scenario] || scenario : "";
+  }
+
   function compareText(a, b) {
     return String(a ?? "").localeCompare(String(b ?? ""), "en", { numeric: true, sensitivity: "base" });
   }
@@ -419,9 +426,14 @@
 
   function recordCard(record) {
     const years = [...new Set(record.values.map((v) => v.time_index || ""))].sort(compareText);
-    const byAttribute = groupBy(record.values, (v) => v.attribute_id);
+    // One row per parameter and scenario: values of different scenarios are
+    // not comparable, so they must not share a cell.
+    const byAttribute = groupBy(record.values, (v) => `${v.attribute_id}|${v.scenario || ""}`);
 
-    const rows = [...byAttribute.entries()].map(([attributeId, values]) => {
+    const rows = [...byAttribute.entries()].map(([key, values]) => {
+      const attributeId = key.split("|")[0];
+      const scenario = values[0].scenario;
+      const note = (values.find((v) => v.note) || {}).note;
       const attribute = attributes.get(attributeId) || { id: attributeId };
       const numeric = values.some((v) => isNumber(v.value));
       const nameNode = numeric
@@ -430,7 +442,11 @@
       return el(
         "tr",
         {},
-        cell(nameNode),
+        cell([
+          nameNode,
+          scenario ? el("span", { className: "muted" }, ` · ${scenarioLabel(scenario)}`) : null,
+          note ? el("div", { className: "muted small" }, note) : null,
+        ]),
         cell(unitOf(attribute)),
         years.map((year) => {
           const matches = values.filter((v) => (v.time_index || "") === year);
@@ -508,6 +524,7 @@
       attribute: requested && numericCount.get(requested.id) ? requested.id : fallback.id,
       year: route.params.get("year"),
       region: route.params.get("region") || "",
+      scenario: route.params.get("scenario") || "",
     };
 
     const attributeSelect = el(
@@ -519,6 +536,8 @@
     );
     const yearSelect = el("select", { "aria-label": "Year" });
     const regionSelect = el("select", { "aria-label": "Region" });
+    const scenarioSelect = el("select", { "aria-label": "Scenario" });
+    const scenarioLabelNode = el("label", { hidden: true }, "Scenario", scenarioSelect);
     const chartHolder = el("div");
     const tableHolder = el("div");
 
@@ -540,13 +559,19 @@
       state.year = fillSelect(yearSelect, years.map((y) => [y, y || "No year"]), state.year ?? defaultYear);
       const regions = [...new Set(values.map((v) => v.record.scope.geographic_scope).filter(Boolean))].sort(compareText);
       state.region = fillSelect(regionSelect, [["", "All regions"], ...regions.map((r) => [r, `${shortScope("geographic_scope", r)} · ${scopeDescription("geographic_scope", r)}`])], state.region);
+      // Only parameters with scenario-dependent values get a scenario filter;
+      // one scenario is shown at a time, since values across scenarios are not comparable.
+      const scenarios = [...new Set(values.map((v) => v.scenario).filter(Boolean))].sort(compareText);
+      scenarioLabelNode.hidden = !scenarios.length;
+      state.scenario = scenarios.length ? fillSelect(scenarioSelect, scenarios.map((sc) => [sc, scenarioLabel(sc)]), state.scenario) : "";
     }
 
     function update() {
       const attribute = attributes.get(state.attribute);
       const unit = unitOf(attribute);
       const inRegion = (v) => !state.region || v.record.scope.geographic_scope === state.region;
-      const values = valuesFor(state.attribute).filter(inRegion);
+      const inScenario = (v) => !state.scenario || v.scenario === state.scenario;
+      const values = valuesFor(state.attribute).filter(inRegion).filter(inScenario);
       const points = values.filter((v) => isNumber(v.value) && (v.time_index || "") === state.year);
       const textCount = values.filter((v) => !isNumber(v.value) && (v.time_index || "") === state.year).length;
 
@@ -561,7 +586,7 @@
         el(
           "section",
           { className: "chart-card", "aria-label": "Chart" },
-          el("h2", { className: "chart-title" }, `${attribute.attribute_name}${unit ? ` (${unit})` : ""}, ${state.year || "no year"}`),
+          el("h2", { className: "chart-title" }, `${attribute.attribute_name}${unit ? ` (${unit})` : ""}, ${state.year || "no year"}${state.scenario ? `, ${scenarioLabel(state.scenario)}` : ""}`),
           el("p", { className: "chart-subtitle" }, subtitle),
           attribute.attribute_description ? el("p", { className: "chart-subtitle" }, attribute.attribute_description) : null,
           points.length ? barChart(points, unit) : el("p", { className: "empty-state" }, "No numeric values for this selection.")
@@ -589,12 +614,13 @@
         table(
           [{ label: "Technology" }, { label: "Record" }, { label: "Year" }, { label: "Value", num: true }, { label: "Unit" }, { label: "Region" }, { label: "Sources" }],
           tableRows,
-          `${attribute.attribute_name}: every year${state.region ? `, ${shortScope("geographic_scope", state.region)} only` : ""}`
+          `${attribute.attribute_name}: every year${state.scenario ? `, ${scenarioLabel(state.scenario)}` : ""}${state.region ? `, ${shortScope("geographic_scope", state.region)} only` : ""}`
         )
       );
 
       const query = new URLSearchParams({ attribute: state.attribute, year: state.year });
       if (state.region) query.set("region", state.region);
+      if (state.scenario) query.set("scenario", state.scenario);
       history.replaceState(null, "", `#/compare?${query}`);
     }
 
@@ -613,6 +639,10 @@
       state.region = regionSelect.value;
       update();
     });
+    scenarioSelect.addEventListener("change", () => {
+      state.scenario = scenarioSelect.value;
+      update();
+    });
 
     mount(
       hero("Compare a parameter", "One parameter across every technology that reports it, for a chosen year and region."),
@@ -621,7 +651,8 @@
         { className: "filter-row" },
         el("label", {}, "Parameter", attributeSelect),
         el("label", {}, "Year", yearSelect),
-        el("label", {}, "Region", regionSelect)
+        el("label", {}, "Region", regionSelect),
+        scenarioLabelNode
       ),
       chartHolder,
       tableHolder
