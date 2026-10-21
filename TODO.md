@@ -57,37 +57,47 @@ Two consequences worth keeping in mind:
       the 4 DAC sources are 2 `permitted`, 2 `not_permitted`.
 
       Still to do:
-      - ask VSE for permission: VSE 2022/2025 carry 89 of the 287 source
-        citations in the reFuel data and state no reuse licence
       - ask BFE (tables © Prognos / TEP / INFRAS) and OST; or recompute the OST
         gas compression values as reFuel's own
       - get the reFuel consortium's agreement for its own values (shares,
         conversion ratios, assumptions, interpolations)
       - identify "Speicherkapazität von Erdgas in der Schweiz (2017)"
       - Mutschler 2018 can move to `permitted` if the authors clear the preprint
-      - trace the values that have **no source linked at all**: 1496 of the 2050
-        reFuel values, led by Embedded Carbon (520), one-time CAPEX and OPEX
-        (121 each), TRL (116), and theoretical efficiency (99). The release
-        withholds them because nobody can say whose they are. Link the source
-        each came from at ingest; if it is reFuel's own work, that is covered by
-        the consortium agreement above. Check the Embedded Carbon values in
-        particular: ecoinvent-derived factors are not redistributable.
+      - 976 reFuel values still have **no source linked at all**. Traced
+        2026-10-21 against the workbook: the ingestion is faithful, the workbook
+        simply cites nothing for them. 861 sit in rows that cite sources for
+        other attributes only (one-time CAPEX and OPEX, all `0` placeholders;
+        TRL, maturity, uncertainty rating, fixed OPEX share, theoretical
+        efficiency: reFuel's own assessments); 110 are in eight technologies
+        whose rows cite nothing (CH4 pyrolysis, co-electrolysis, MeOH-to-jet,
+        five storage tanks); 5 cite IDs missing from the workbook's Reference
+        sheet (`EP2050+Exkurs`, `paper_biomass to syngas`,
+        `report_wood to hydrogen`). Releasing the reFuel-own ones needs one
+        explicit "reFuel TechDatabase, own assessment" source and the consortium
+        agreement above.
+      - when the reFuel open-data publication is out, use its link for the
+        reFuel-derived sources (SRC_00032 points to PREMISE for now)
 
-      `tools/build_release.py` now withholds every value not backed exclusively
-      by `permitted` sources, and the data explorer is published from its output
-      (2026-10-20: 226 of the 2050 reFuel linked values released, 12 of the 30
-      DAC staging values).
+      Resolved 2026-10-21:
+      - VSE Energiezukunft 2050 (2022, 2025; 89 citations) is treated as
+        `permitted`: its model and data were produced by the team that
+        maintains MOTEL.
+      - Embedded Carbon (520 values) is linked to a new source, SRC_00032, the
+        reFuel LCA computed with PREMISE v2.3.6 and ecoinvent v3.11, and is
+        `permitted`: PSI confirmed that these aggregated results may be
+        redistributed as long as no raw ecoinvent data is shared. Each value
+        keeps its scenario and ecoinvent activity in its note.
 
-      Decided 2026-10-20: move the full data to a private `motel-data`
-      repository, keep only the release public, and rewrite the public git
-      history (which also holds 10 versions of the raw reFuel workbook). Code
-      support is in place: `MOTEL_DATA` points every stage at the private
-      checkout, notebook outputs are cleared, the examples are filtered, the TTL
-      is published from the release instead of committed, and CI rejects
-      spreadsheets and notebook outputs. Still to do, and exposed until then:
-      - the cutover: `motel-db/` on the public default branch and the git
-        history still hold every value
-      - `motel-webapp`, which commits TTL copies built from the full database
+      `tools/build_release.py` withholds every value not backed exclusively by
+      `permitted` sources, and the data explorer is published from its output:
+      226 of the 2050 reFuel linked values on 2026-10-20, 990 after the two
+      decisions above; 12 of the 30 DAC staging values.
+
+      Done 2026-10-20: the full data lives in the private `motel-data`
+      repository, this repository carries only the release, and its history was
+      rewritten without the restricted data (including 10 versions of the raw
+      reFuel workbook). Still exposed: `motel-webapp`, which commits TTL copies
+      built from the full database (left as it is for now).
 
       List the ones still needing a decision with:
 
@@ -135,9 +145,9 @@ Two consequences worth keeping in mind:
       `upper_value`, and the route in `technology_variant` or `scope.scenario`.
 - [] populate `motel-db/linked_carrier_data/` — currently empty, and 0 of 28
       attributes are marked `applies_to: carrier`. Needs prices and emission
-      factors under a licence that permits redistribution. ecoinvent-derived
-      factors are **not** redistributable; check KBOB, BFE, and Swissgrid terms
-      before ingesting.
+      factors under a licence that permits redistribution. Raw ecoinvent data
+      is **not** redistributable (aggregated results computed with it may be,
+      as for SRC_00032); check KBOB, BFE, and Swissgrid terms before ingesting.
 - [] `scope.scenario` is staged in both unmapped schemas but never written into
       `linked_entity`, so the value is lost during harmonisation. Either write it
       in `build_and_save_linked_entities` or drop it from the staging schema.
